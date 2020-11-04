@@ -54,10 +54,8 @@ drop_char c (x:xs)
         | c == x = drop_char c xs
 
 encode :: String -> String
--- encode = error "Not implemented"
 encode []       = []
 encode (x:xs)   = x : int_to_char(length_char x (x:xs)) : encode (drop_char x xs)
-
 
 -- Part C
 
