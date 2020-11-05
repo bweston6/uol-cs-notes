@@ -16,3 +16,7 @@ tag: COMP111
 @include(Week 3/COMP111201028.md)
 @include(Week 4/COMP111201104-1.md)
 @include(Week 4/COMP111201104-2.md)
+@include(Week 4/COMP111201105-1.md)
+@include(Week 4/COMP111201105-2.md)
+@include(Week 4/COMP111201105-3.md)
+@include(Week 4/COMP111201105-4.md)
