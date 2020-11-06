@@ -14,3 +14,4 @@ tags: COMP109
 @include(Week 4/COMP109201103-1.md)
 @include(Week 4/COMP109201103-2.md)
 @include(Week 4/COMP109201103-3.md)
+@include(Week 4/COMP109201106.md)
