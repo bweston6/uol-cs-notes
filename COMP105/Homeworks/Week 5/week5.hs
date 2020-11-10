@@ -1,4 +1,4 @@
--- Lecture 5 - Partial Application
+-- Lecture 12 - Partial Application
 
 plus_ten = (+ 10)
 
@@ -20,3 +20,13 @@ cakeis   = xisy "cake"
 -- func3 :: Eq a => [a] -> Bool
 
 -- func4 :: (Num a, Ord a) => [a] -> [a]
+
+-- Lecture 14 - Function Composition
+
+-- head . head $ [[1]]
+
+-- (+1) . (*2) $ 4
+
+-- sum . tail . tail $ [1,2,3,4]
+
+-- filter (>10) . map (*2) $ [1..10]
