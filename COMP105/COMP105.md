@@ -30,3 +30,5 @@ tags: COMP105
 @include(Week 5/COMP105201110-1.md)
 @include(Week 5/COMP105201110-2.md)
 @include(Week 5/COMP105201110-3.md)
+@include(Week 5/COMP105201112-1.md)
+@include(Week 5/COMP105201112-2.md)
