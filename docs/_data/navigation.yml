@@ -3,19 +3,17 @@ header:
     url: /COMP105/COMP105 - Lectures
 
   - title: COMP107
-    url: /archive.html
+    url: /COMP107/COMP107 - Lectures
 
   - title: COMP109
-    url: /archive.html
+    url: /COMP109/COMP109 - Lectures
 
   - title: COMP111
-    url: /archive.html
+    url: /COMP111/COMP111 - Lectures
 
   - title: Archive
     url: /archive.html
 
-  - title: About
-    url: /about.html
 categories:
   - title:      Types
     children:

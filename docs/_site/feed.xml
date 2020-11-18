@@ -1,327 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-18T20:21:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
-</subtitle><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><entry><title type="html">COMP107</title><link href="http://localhost:4000/2020/11/18/COMP107-test.html" rel="alternate" type="text/html" title="COMP107" /><published>2020-11-18T00:00:00+00:00</published><updated>2020-11-18T00:00:00+00:00</updated><id>http://localhost:4000/2020/11/18/COMP107-test</id><content type="html" xml:base="http://localhost:4000/2020/11/18/COMP107-test.html">&lt;h1 id=&quot;basic-definitions-in-the-er-model&quot;&gt;Basic Definitions in the ER Model&lt;/h1&gt;
-&lt;p&gt;The entity relationship model is used to express the conceptual schema of a database. It was originally proposed in 1976 as a means to unify the network and relational DB models.&lt;/p&gt;
-
-&lt;p&gt;Many theoretical extensions and practical applications have been developed including the &lt;strong&gt;Enhanced Entity Relationship (EER)&lt;/strong&gt; model.&lt;/p&gt;
-
-&lt;p&gt;It is simple enough to learn and understand the basic concepts and powerful enough to be used in the development of complex applications.&lt;/p&gt;
-
-&lt;p&gt;Conceptual designs using the ER model are called &lt;strong&gt;ER Schemas&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;er-model-components&quot;&gt;ER Model Components&lt;/h2&gt;
-&lt;p&gt;The ER model describes data in terms of three primitive notions.&lt;/p&gt;
-
-&lt;h3 id=&quot;entities&quot;&gt;Entities&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;An entity is a thing, which can be distinctly identified.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;attributes&quot;&gt;Attributes&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;A property of an entity.&lt;/li&gt;
-  &lt;li&gt;They are common properties that are shared by all instances of the entity type.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;complexity-of-attributes&quot;&gt;Complexity of Attributes&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Complex attributes have structure.
-    &lt;ul&gt;
-      &lt;li&gt;Dates&lt;/li&gt;
-      &lt;li&gt;Addresses&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Simple attributes only have one component.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;cardinality&quot;&gt;Cardinality&lt;/h4&gt;
-&lt;p&gt;Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality $&amp;gt;0$.&lt;/p&gt;
-
-&lt;h4 id=&quot;primitiveness&quot;&gt;Primitiveness&lt;/h4&gt;
-&lt;p&gt;A primitive attribute is any attribute which will be stored as data in the system.&lt;/p&gt;
-
-&lt;p&gt;A non-primitive, or derived attribute, can be calculated from other attributes.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In some cases it is important that both attributes are indicated on the model
-    &lt;ul&gt;
-      &lt;li&gt;We should indicate which ones are redundant so that they can be derived.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;relationships&quot;&gt;Relationships&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;An association among entities.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;degree-of-relationships&quot;&gt;Degree of Relationships&lt;/h4&gt;
-&lt;p&gt;A relationship has a degree that is the number of participating entity types:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Binary relationship (degree two).
-    &lt;ul&gt;
-      &lt;li&gt;A &lt;strong&gt;person&lt;/strong&gt; owns a &lt;strong&gt;car&lt;/strong&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Ternary relationships (degree three).
-    &lt;ul&gt;
-      &lt;li&gt;A &lt;strong&gt;lecturer&lt;/strong&gt; teaches a &lt;strong&gt;course&lt;/strong&gt; to a &lt;strong&gt;student&lt;/strong&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;attributes-of-relationships&quot;&gt;Attributes of Relationships&lt;/h4&gt;
-&lt;p&gt;Relationships can have attributes in the case that the attribute is not of an entity but when it is related to the relationship.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;In the relationship type, “person owns a car” the attribute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date of purchase&lt;/code&gt; is not an attribute of a person and is not an attribute of the car, it is an attribute of the ownership.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;structural-constrains-on-relationships&quot;&gt;Structural Constrains on Relationships&lt;/h4&gt;
-&lt;p&gt;Relationship constraints regulate the possible combinations of entities that can participate in a relationship:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We can constrain the number of entities that can participate.&lt;/li&gt;
-  &lt;li&gt;We can put a constraint on whether some entities must participate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;relationship-participation&quot;&gt;Relationship Participation&lt;/h5&gt;
-&lt;p&gt;A participation constraint specifies whether an entity must be in the given relationship.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A &lt;strong&gt;total participation constraint&lt;/strong&gt;, indicates that each instance of an entity must be in that relationship.
-    &lt;ul&gt;
-      &lt;li&gt;A programme must belong to a department.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A &lt;strong&gt;partial participation constraint&lt;/strong&gt; specifies that there may exist an entity which does not participate in the relationship.
-    &lt;ul&gt;
-      &lt;li&gt;Not all lecturers supervise students.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;cardinality-of-relationships&quot;&gt;Cardinality of Relationships&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;One to One
-    &lt;ul&gt;
-      &lt;li&gt;One department only has one head.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;One to Many
-    &lt;ul&gt;
-      &lt;li&gt;Each team can have many players but one player can only play for one team.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Many to Many
-    &lt;ul&gt;
-      &lt;li&gt;A student can be registered for many courses and a course will have may students.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;er-diagram-basics&quot;&gt;ER Diagram Basics&lt;/h2&gt;
-&lt;p&gt;Entity types are represented as boxes:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph TD
-Lecturer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Relationship types are represented as diamonds connected with each participating entity type. The relationship must have a name.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph TD
-a{works_in}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Attributes are shown as ovals connected to the relevant entity or relation type. In addition key attributes are underlined.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The key attribute should only be underlined if it arises naturally. If not there should be a key put in later in implementation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph TD
-a((Name))
-b((&amp;lt;u&amp;gt;Key&amp;lt;/u&amp;gt;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will come together to form the following diagram:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
-d[Department] --- a{works_in}
-a --- l[Lecturer]
-l --- n((Name))
-l --- s((&amp;lt;u&amp;gt;Staff Number&amp;lt;/u&amp;gt;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;er-diagram-attributes&quot;&gt;ER Diagram Attributes&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;A simple primitive attribute is represented as an oval:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;  graph TD
-  d((Date of Birth))
-  t((Tax Code))
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Complex attributes can have their own structure made of simple attributes:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;  graph BT
-  n((Name))
-  n --- f((First Name))
-  n --- m((Middle Name))
-  n --- l((Last Name))
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A multi-valued attribute is a double oval:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;  graph TD
-  e((&quot;(E-Mail Address)&quot;))
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A derived attribute is a dotted oval:&lt;/p&gt;
-
-    &lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;  graph TD
-  a((Age))
-  style a stroke-dasharray: 2 4
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;er-diagram-relationships&quot;&gt;ER Diagram Relationships&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The degree of a relationship type is simply the number of entity types it connects.&lt;/li&gt;
-  &lt;li&gt;Binary relationships between two entities.&lt;/li&gt;
-  &lt;li&gt;Ternary relationships among three entities.&lt;/li&gt;
-  &lt;li&gt;If entities participate to several relationships, a &lt;em&gt;role&lt;/em&gt; may be added to some edges for clarity.&lt;/li&gt;
-  &lt;li&gt;The cardinality is represented on the connecting lines (an $N$ represents the many side.
-    &lt;ul&gt;
-      &lt;li&gt;One to many (works_in)&lt;/li&gt;
-      &lt;li&gt;Many to many (teaches, advises)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Total participation is represented by a double line. (I have used thick)
-    &lt;ul&gt;
-      &lt;li&gt;A lecturer must work in a Dept.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Relationships can have attributes.
-    &lt;ul&gt;
-      &lt;li&gt;A student may have different advisors for different majors.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
-l[Lecturer] ===|N| w{works_in}
-w ---|1| d[Department]
-l ---|N| t{teaches}
-t ---|N| c[Course]
-t ---|N| s[Student]
-l ---|N, academic advisor| a{advises}
-a ---|N| s
-m((Major)) --- a
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP107" /><summary type="html">Basic Definitions in the ER Model The entity relationship model is used to express the conceptual schema of a database. It was originally proposed in 1976 as a means to unify the network and relational DB models. Many theoretical extensions and practical applications have been developed including the Enhanced Entity Relationship (EER) model. It is simple enough to learn and understand the basic concepts and powerful enough to be used in the development of complex applications. Conceptual designs using the ER model are called ER Schemas ER Model Components The ER model describes data in terms of three primitive notions. Entities An entity is a thing, which can be distinctly identified. Attributes A property of an entity. They are common properties that are shared by all instances of the entity type. Complexity of Attributes Complex attributes have structure. Dates Addresses Simple attributes only have one component. Cardinality Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality $&amp;gt;0$. Primitiveness A primitive attribute is any attribute which will be stored as data in the system. A non-primitive, or derived attribute, can be calculated from other attributes. In some cases it is important that both attributes are indicated on the model We should indicate which ones are redundant so that they can be derived. Relationships An association among entities. Degree of Relationships A relationship has a degree that is the number of participating entity types: Binary relationship (degree two). A person owns a car. Ternary relationships (degree three). A lecturer teaches a course to a student. Attributes of Relationships Relationships can have attributes in the case that the attribute is not of an entity but when it is related to the relationship. In the relationship type, “person owns a car” the attribute date of purchase is not an attribute of a person and is not an attribute of the car, it is an attribute of the ownership. Structural Constrains on Relationships Relationship constraints regulate the possible combinations of entities that can participate in a relationship: We can constrain the number of entities that can participate. We can put a constraint on whether some entities must participate. Relationship Participation A participation constraint specifies whether an entity must be in the given relationship. A total participation constraint, indicates that each instance of an entity must be in that relationship. A programme must belong to a department. A partial participation constraint specifies that there may exist an entity which does not participate in the relationship. Not all lecturers supervise students. Cardinality of Relationships One to One One department only has one head. One to Many Each team can have many players but one player can only play for one team. Many to Many A student can be registered for many courses and a course will have may students. ER Diagram Basics Entity types are represented as boxes: graph TD Lecturer Relationship types are represented as diamonds connected with each participating entity type. The relationship must have a name. graph TD a{works_in} Attributes are shown as ovals connected to the relevant entity or relation type. In addition key attributes are underlined. The key attribute should only be underlined if it arises naturally. If not there should be a key put in later in implementation. graph TD a((Name)) b((&amp;lt;u&amp;gt;Key&amp;lt;/u&amp;gt;)) This will come together to form the following diagram: graph LR d[Department] --- a{works_in} a --- l[Lecturer] l --- n((Name)) l --- s((&amp;lt;u&amp;gt;Staff Number&amp;lt;/u&amp;gt;)) ER Diagram Attributes A simple primitive attribute is represented as an oval: graph TD d((Date of Birth)) t((Tax Code)) Complex attributes can have their own structure made of simple attributes: graph BT n((Name)) n --- f((First Name)) n --- m((Middle Name)) n --- l((Last Name)) A multi-valued attribute is a double oval: graph TD e((&quot;(E-Mail Address)&quot;)) A derived attribute is a dotted oval: graph TD a((Age)) style a stroke-dasharray: 2 4 ER Diagram Relationships The degree of a relationship type is simply the number of entity types it connects. Binary relationships between two entities. Ternary relationships among three entities. If entities participate to several relationships, a role may be added to some edges for clarity. The cardinality is represented on the connecting lines (an $N$ represents the many side. One to many (works_in) Many to many (teaches, advises) Total participation is represented by a double line. (I have used thick) A lecturer must work in a Dept. Relationships can have attributes. A student may have different advisors for different majors. graph LR l[Lecturer] ===|N| w{works_in} w ---|1| d[Department] l ---|N| t{teaches} t ---|N| c[Course] t ---|N| s[Student] l ---|N, academic advisor| a{advises} a ---|N| s m((Major)) --- a</summary></entry><entry><title type="html">COMP111</title><link href="http://localhost:4000/2020/11/18/COMP111-test.html" rel="alternate" type="text/html" title="COMP111" /><published>2020-11-18T00:00:00+00:00</published><updated>2020-11-18T00:00:00+00:00</updated><id>http://localhost:4000/2020/11/18/COMP111-test</id><content type="html" xml:base="http://localhost:4000/2020/11/18/COMP111-test.html">&lt;h1 id=&quot;reasoning-under-uncertainty&quot;&gt;Reasoning Under Uncertainty&lt;/h1&gt;
-&lt;p&gt;Logic based knowledge representation and reasoning methods mostly assume that knowledge is certain. Often, this is not the case (or it is impossible to list all assumptions that make it certain):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;When going to the airport by car, how early should I start? 45 minutes should be enough from Liverpool to Manchester Airport, but only under the assumption that there are no accidents, no lane closures, that my car does not break down, and so on.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A dental patient has a toothache. Does the patient have a cavity? You might say:&lt;/p&gt;
-
-\[\text{Toothache}(x)\rightarrow\text{Cavity}(x)\]
-
-    &lt;p&gt;This is not right as there are many factors that play into this and not just the fact that they have a toothache.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;uncertainty&quot;&gt;Uncertainty&lt;/h2&gt;
-&lt;p&gt;Trying to use exact rules to cope with a domain like medical diagnosis or traffic fails for three main reasons:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Laziness
-    &lt;ul&gt;
-      &lt;li&gt;It is too much work to list an exception-less set of rules.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Theoretical ignorance
-    &lt;ul&gt;
-      &lt;li&gt;Medical science has, in many cases, no strict laws connecting symptoms with diseases.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Practical ignorance
-    &lt;ul&gt;
-      &lt;li&gt;Even if we have strict laws, we might be uncertain about a particular patient because not all the necessary tests have been or can be run.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;probability-in-ai&quot;&gt;Probability in AI&lt;/h2&gt;
-
-&lt;p&gt;Probability provides a way of summarising the uncertainty that comes form our laziness and ignorance.&lt;/p&gt;
-
-&lt;p&gt;We might not know for sure what disease a particular patient has, but we believe that there is an 80% chance that a patient with toothache has a cavity. The 80% summarises those cases in which all the factors needed for a cavity to cause a toothache are present and other cases in which the patient has both toothache and cavity but the two are unconnected.&lt;/p&gt;
-
-&lt;p&gt;The missing 20% summarises all the other possible causes we are too lazy or ignorant to find.&lt;/p&gt;
-
-&lt;h2 id=&quot;discrete-probability&quot;&gt;Discrete Probability&lt;/h2&gt;
-&lt;p&gt;We represent random experiments using discrete probability spaces $(S,P)$ consisting of:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The sample space $S$ of all elementary events $x\in S$. Members of $S$ are also called outcomes of the experiment.&lt;/li&gt;
-  &lt;li&gt;A probability distribution $P$ assigning a real number $P(x)$ to every elementary event $x\in S$ such that:
-    &lt;ul&gt;
-      &lt;li&gt;For every $x\in S: 0\leq P(x) \leq 1$&lt;/li&gt;
-      &lt;li&gt;And $\sum_{x\in S}P(x)=1$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Recall that if $S$ consists of $x_1,\ldots,x_n$, then:&lt;/p&gt;
-
-\[\sum_{x\in S}P(x)=P(x_1)+\ldots+P(x_n)\]
-
-&lt;h3 id=&quot;example---flipping-a-fair-coin&quot;&gt;Example - Flipping a Fair Coin&lt;/h3&gt;
-&lt;p&gt;Consider the random experiment of flipping a coin. The then corresponding probability space $(S,P)$ is given by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$S={H,T}$&lt;/li&gt;
-  &lt;li&gt;$P(H)=P(T)=\frac{1}{2}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Consider the random experiment of flipping a count two times, one after the other. Then the corresponding probability space $(S,P)$ is:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$S={HH,HT,TH,TT}$&lt;/li&gt;
-  &lt;li&gt;$P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;example---rolling-a-fair-die&quot;&gt;Example - Rolling a fair die&lt;/h3&gt;
-&lt;p&gt;Consider the random experiment of rolling a die. Then the corresponding probability space $(S, P)$ is given by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;S = {1, 2, 3, 4, 5, 6};&lt;/li&gt;
-  &lt;li&gt;For every $x ∈ S: P(x) = \frac{1}{6}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Consider the random experiment of rolling a die $n$ times. Then the corresponding probability space $(S, P)$ is given as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$S$ is the set of sequences of length $n$ over the alphabet ${1,\ldots, 6}$
-    &lt;ul&gt;
-      &lt;li&gt;Sometimes denoted ${1,\ldots, 6}^n$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;$P(x) = \frac{1}{6^n}$ for every elementary event $x$, since $S$ has $6^n$ elements.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;uniform-probability-distributions&quot;&gt;Uniform Probability Distributions&lt;/h2&gt;
-&lt;p&gt;A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $|S|$ of outcomes in $S$:&lt;/p&gt;
-
-\[P(x)=\frac{1}{|S|}\]</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP111" /><summary type="html">Reasoning Under Uncertainty Logic based knowledge representation and reasoning methods mostly assume that knowledge is certain. Often, this is not the case (or it is impossible to list all assumptions that make it certain): When going to the airport by car, how early should I start? 45 minutes should be enough from Liverpool to Manchester Airport, but only under the assumption that there are no accidents, no lane closures, that my car does not break down, and so on. A dental patient has a toothache. Does the patient have a cavity? You might say: \[\text{Toothache}(x)\rightarrow\text{Cavity}(x)\] This is not right as there are many factors that play into this and not just the fact that they have a toothache. Uncertainty Trying to use exact rules to cope with a domain like medical diagnosis or traffic fails for three main reasons: Laziness It is too much work to list an exception-less set of rules. Theoretical ignorance Medical science has, in many cases, no strict laws connecting symptoms with diseases. Practical ignorance Even if we have strict laws, we might be uncertain about a particular patient because not all the necessary tests have been or can be run. Probability in AI Probability provides a way of summarising the uncertainty that comes form our laziness and ignorance. We might not know for sure what disease a particular patient has, but we believe that there is an 80% chance that a patient with toothache has a cavity. The 80% summarises those cases in which all the factors needed for a cavity to cause a toothache are present and other cases in which the patient has both toothache and cavity but the two are unconnected. The missing 20% summarises all the other possible causes we are too lazy or ignorant to find. Discrete Probability We represent random experiments using discrete probability spaces $(S,P)$ consisting of: The sample space $S$ of all elementary events $x\in S$. Members of $S$ are also called outcomes of the experiment. A probability distribution $P$ assigning a real number $P(x)$ to every elementary event $x\in S$ such that: For every $x\in S: 0\leq P(x) \leq 1$ And $\sum_{x\in S}P(x)=1$ Recall that if $S$ consists of $x_1,\ldots,x_n$, then: \[\sum_{x\in S}P(x)=P(x_1)+\ldots+P(x_n)\] Example - Flipping a Fair Coin Consider the random experiment of flipping a coin. The then corresponding probability space $(S,P)$ is given by: $S={H,T}$ $P(H)=P(T)=\frac{1}{2}$ Consider the random experiment of flipping a count two times, one after the other. Then the corresponding probability space $(S,P)$ is: $S={HH,HT,TH,TT}$ $P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}$ Example - Rolling a fair die Consider the random experiment of rolling a die. Then the corresponding probability space $(S, P)$ is given by: S = {1, 2, 3, 4, 5, 6}; For every $x ∈ S: P(x) = \frac{1}{6}$ Consider the random experiment of rolling a die $n$ times. Then the corresponding probability space $(S, P)$ is given as follows: $S$ is the set of sequences of length $n$ over the alphabet ${1,\ldots, 6}$ Sometimes denoted ${1,\ldots, 6}^n$ $P(x) = \frac{1}{6^n}$ for every elementary event $x$, since $S$ has $6^n$ elements. Uniform Probability Distributions A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $|S|$ of outcomes in $S$: \[P(x)=\frac{1}{|S|}\]</summary></entry><entry><title type="html">Test</title><link href="http://localhost:4000/2020/11/18/test.html" rel="alternate" type="text/html" title="Test" /><published>2020-11-18T00:00:00+00:00</published><updated>2020-11-18T00:00:00+00:00</updated><id>http://localhost:4000/2020/11/18/test</id><content type="html" xml:base="http://localhost:4000/2020/11/18/test.html">&lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
-&lt;p&gt;This is a test&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><summary type="html">Test This is a test</summary></entry><entry><title type="html">COMP105 - Lecture 3 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 1" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/1.html">&lt;h2 id=&quot;functions-and-libraries&quot;&gt;Functions and Libraries&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-18T21:40:38+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
+</subtitle><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><entry><title type="html">COMP105 - Lecture 3 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 1" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/1.html">&lt;h2 id=&quot;functions-and-libraries&quot;&gt;Functions and Libraries&lt;/h2&gt;
 &lt;p&gt;When using Haskell the default library is Prelude.&lt;/p&gt;
 
 &lt;p&gt;Haskell uses special syntax for function calls. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt; from the Prelude library will work as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min 1 2&lt;/code&gt;. This is as functions are called as:&lt;/p&gt;
@@ -352,7 +30,9 @@ m((Major)) --- a
 &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Functions and Libraries When using Haskell the default library is Prelude. Haskell uses special syntax for function calls. min from the Prelude library will work as min 1 2. This is as functions are called as: [function name][space][arg1][space][arg2]... Additionally in Haskell functions bind tighter than mathematical operators: Prelude&amp;gt; min 28 100/4 7.0 Prelude&amp;gt; min 28 (100/4) 25.0 Two Argument Function Syntax Functions will two arguments can be infixed by surrounding with back-ticks: Prelude&amp;gt; mod 10 4 2 Prelude&amp;gt; 10 `mod` 4 2 For infix functions like + you can surround them with brackets and use them like a prefix function: Prelude&amp;gt; 1 + 1 2 Prelude&amp;gt; (+) 1 1 2</summary></entry><entry><title type="html">COMP105 - Lecture 3 - 2</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/2.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 2" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/2</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/2.html">&lt;h2 id=&quot;defining-custom-functions&quot;&gt;Defining Custom Functions&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;info&quot;&gt;Additional functions are available in &lt;a href=&quot;http://localhost:4000/assets/COMP105/2020-10-14-1.pdf&quot;&gt;the slides&lt;/a&gt;.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Functions and Libraries When using Haskell the default library is Prelude. Haskell uses special syntax for function calls. min from the Prelude library will work as min 1 2. This is as functions are called as: [function name][space][arg1][space][arg2]... Additionally in Haskell functions bind tighter than mathematical operators: Prelude&amp;gt; min 28 100/4 7.0 Prelude&amp;gt; min 28 (100/4) 25.0 Two Argument Function Syntax Functions will two arguments can be infixed by surrounding with back-ticks: Prelude&amp;gt; mod 10 4 2 Prelude&amp;gt; 10 `mod` 4 2 For infix functions like + you can surround them with brackets and use them like a prefix function: Prelude&amp;gt; 1 + 1 2 Prelude&amp;gt; (+) 1 1 2 Additional functions are available in the slides.</summary></entry><entry><title type="html">COMP105 - Lecture 3 - 2</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/2.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 2" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/2</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/2.html">&lt;h2 id=&quot;defining-custom-functions&quot;&gt;Defining Custom Functions&lt;/h2&gt;
 &lt;p&gt;Functions are defined as such:&lt;/p&gt;
 
 &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;functionName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -365,6 +45,8 @@ m((Major)) --- a
 &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addTwo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;twoInAddTwo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p class=&quot;info&quot;&gt;Additional functions are available in &lt;a href=&quot;http://localhost:4000/assets/COMP105/2020-10-14-2.pdf&quot;&gt;the slides&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;loading-functions&quot;&gt;Loading Functions&lt;/h2&gt;
 &lt;ul&gt;
@@ -404,7 +86,7 @@ m((Major)) --- a
     &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;maxFour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Defining Custom Functions Functions are defined as such: [functionName][arguments][=][body] Functions and arguments must start with small letters as only types use capitals. They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function: addTwo x = x + 2 twoInAddTwo x y = x + y + 2 Loading Functions To load a functions from a file run GHCI on the file. $ ghci functions.hs To reload the current file run :reload in GHCI. To load in a file run :load and the file-path. Comments Single line comments can be written -- like this Multi-line comments can be written: {- Like this-} Compilation Instead of running code in the interpreter you can compile it using GHC. To print the output to the StdOut you can use the two functions putStrln(show()) to convert the output to a string and print that to the StdOut. This is part of the IO function-set and won’t be used again for a while. Exercises double x = 2 * x pythagoras a b = sqrt (a ** 2 + b ** 2) Must use the float exponentiation operator to allow for floats as a or b. maxFour a b c d = max (max a b) (max c d)`</summary></entry><entry><title type="html">COMP105 - Lecture 2 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/13/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 2 - 1" /><published>2020-10-13T00:00:00+01:00</published><updated>2020-10-13T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/13/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/13/1.html">&lt;h2 id=&quot;what-is-a-pure-function&quot;&gt;What is a pure function?&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Defining Custom Functions Functions are defined as such: [functionName][arguments][=][body] Functions and arguments must start with small letters as only types use capitals. They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function: addTwo x = x + 2 twoInAddTwo x y = x + y + 2 Additional functions are available in the slides. Loading Functions To load a functions from a file run GHCI on the file. $ ghci functions.hs To reload the current file run :reload in GHCI. To load in a file run :load and the file-path. Comments Single line comments can be written -- like this Multi-line comments can be written: {- Like this-} Compilation Instead of running code in the interpreter you can compile it using GHC. To print the output to the StdOut you can use the two functions putStrln(show()) to convert the output to a string and print that to the StdOut. This is part of the IO function-set and won’t be used again for a while. Exercises double x = 2 * x pythagoras a b = sqrt (a ** 2 + b ** 2) Must use the float exponentiation operator to allow for floats as a or b. maxFour a b c d = max (max a b) (max c d)`</summary></entry><entry><title type="html">COMP105 - Lecture 2 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/13/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 2 - 1" /><published>2020-10-13T00:00:00+01:00</published><updated>2020-10-13T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/13/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/13/1.html">&lt;h2 id=&quot;what-is-a-pure-function&quot;&gt;What is a pure function?&lt;/h2&gt;
 &lt;p&gt;A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$&lt;/p&gt;
 
 &lt;p&gt;In imperative languages, functions can do much more and are called &lt;em&gt;subroutines&lt;/em&gt;.&lt;/p&gt;
@@ -593,14 +275,4 @@ m((Major)) --- a
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Weekly homework sheets - 10%&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Covering dates and logistics of homework and lectures. Learning Outcomes Describe functional and imperative languages and the differences between them. Weeks 1 - 2 Apply recursion to solve algorithmic tasks. Weeks 3 - 4 Apply common functional programming idioms such as map, filter, fold and scan. Weeks 5 - 8 Write programs using a functional programming language. Weeks 9 - 10 Assessments Three programming assignments Assignment 1 - Recursion - 20% Week 4, deadline week 6 Assignment 2 - Functional Programming idioms - 20% Week 7, deadline week 9 Assignment 3 Write a full program - 25% Week 10, deadline week 12 One class test - 25% Week 10, deadline week 12 Weekly homework sheets - 10%</summary></entry><entry><title type="html">Welcome</title><link href="http://localhost:4000/2018/07/01/welcome.html" rel="alternate" type="text/html" title="Welcome" /><published>2018-07-01T00:00:00+01:00</published><updated>2018-07-01T00:00:00+01:00</updated><id>http://localhost:4000/2018/07/01/welcome</id><content type="html" xml:base="http://localhost:4000/2018/07/01/welcome.html">&lt;p&gt;If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost:&lt;/p&gt;
-
-&lt;p&gt;You may want to &lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/docs/en/configuration&quot;&gt;config the site&lt;/a&gt; or &lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/docs/en/writing-posts&quot;&gt;writing a post&lt;/a&gt; next. Please feel free to &lt;a href=&quot;https://github.com/kitian616/jekyll-TeXt-theme/issues&quot;&gt;create an issue&lt;/a&gt; or &lt;a href=&quot;mailto:kitian616@outlook.com&quot;&gt;send me email&lt;/a&gt; if you have any questions.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;If you like TeXt, don’t forget to give me a star. :star2:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kitian616/jekyll-TeXt-theme/&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/kitian616/jekyll-TeXt-theme.svg?label=Stars&amp;amp;style=social&quot; alt=&quot;Star This Project&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="TeXt" /><summary type="html">If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost: You may want to config the site or writing a post next. Please feel free to create an issue or send me email if you have any questions.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Covering dates and logistics of homework and lectures. Learning Outcomes Describe functional and imperative languages and the differences between them. Weeks 1 - 2 Apply recursion to solve algorithmic tasks. Weeks 3 - 4 Apply common functional programming idioms such as map, filter, fold and scan. Weeks 5 - 8 Write programs using a functional programming language. Weeks 9 - 10 Assessments Three programming assignments Assignment 1 - Recursion - 20% Week 4, deadline week 6 Assignment 2 - Functional Programming idioms - 20% Week 7, deadline week 9 Assignment 3 Write a full program - 25% Week 10, deadline week 12 One class test - 25% Week 10, deadline week 12 Weekly homework sheets - 10%</summary></entry></feed>

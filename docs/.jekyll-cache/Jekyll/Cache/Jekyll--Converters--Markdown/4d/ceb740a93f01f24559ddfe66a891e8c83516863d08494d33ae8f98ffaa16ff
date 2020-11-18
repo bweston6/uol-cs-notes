@@ -1,0 +1,296 @@
+I"A
+<h1 id="comp105---lecture-1---1"><a href="/comp105/lectures/2020/10/12/1.html">COMP105 - Lecture 1 - 1</a></h1>
+<p>Programming languages can be split into imperative and functional. This course will focus on the functional language of Haskell.</p>
+
+<ul>
+  <li>Imperative programs tell the computer how to compute the answer.
+    <ul>
+      <li>Declare variables</li>
+      <li>Go around a loop</li>
+      <li>Do the same instructions each time</li>
+    </ul>
+  </li>
+  <li>Functional programming languages follow mathematic definitions and focus on recursion. No variables are declared and no explicit loops.
+    <ul>
+      <li>No variables
+        <ul>
+          <li>No such thing as a variable in functional programming.</li>
+        </ul>
+      </li>
+      <li>No explicit loops
+        <ul>
+          <li>using recursive functions.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Functional programming is a style of programming the isn’t dependant on the language that is is written in. Functional programming languages are built to support this style.</p>
+
+<h2 id="course-focus">Course Focus</h2>
+<p>The course will focus on functional languages but we will compare the two styles of programming.</p>
+
+<p>Haskell is a pure functional languages as you cannot program in an imperative style easily.</p>
+
+<h2 id="why-functional-languages-are-important">Why Functional Languages are Important</h2>
+<ol>
+  <li>Their usefulness is increasing
+    <ul>
+      <li>Multi-core systems and GPUs prefer highly parallel code which functional programs are.</li>
+    </ul>
+  </li>
+  <li>Learning the functional style can make you a better imperative programmer.
+    <ul>
+      <li>Sometimes the functional style is more appropriate.</li>
+      <li>Many imperative languages support functional styles.</li>
+    </ul>
+  </li>
+  <li>Functional programming is a good preparation fo a computer science education.
+    <ul>
+      <li>Algorithms in CS are often presented in a functional way.</li>
+      <li>Functional programming helps you translate the algorithms into functional code.</li>
+      <li>The functional paradigm is also used in the analysis of algorithms.</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-1---2"><a href="/comp105/lectures/2020/10/12/2.html">COMP105 - Lecture 1 - 2</a></h1>
+<p>Covering dates and logistics of homework and lectures.</p>
+
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<ol>
+  <li>Describe functional and imperative languages and the differences between them.
+    <ul>
+      <li>Weeks 1 - 2</li>
+    </ul>
+  </li>
+  <li>Apply recursion to solve algorithmic tasks.
+    <ul>
+      <li>Weeks 3 - 4</li>
+    </ul>
+  </li>
+  <li>Apply common functional programming idioms such as map, filter, fold and scan.
+    <ul>
+      <li>Weeks 5 - 8</li>
+    </ul>
+  </li>
+  <li>Write programs using a functional programming language.
+    <ul>
+      <li>Weeks 9 - 10</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="assessments">Assessments</h2>
+<ul>
+  <li>Three programming assignments
+    <ul>
+      <li>Assignment 1 - Recursion - 20%
+        <ul>
+          <li>Week 4, deadline week 6</li>
+        </ul>
+      </li>
+      <li>Assignment 2 - Functional Programming idioms - 20%
+        <ul>
+          <li>Week 7, deadline week 9</li>
+        </ul>
+      </li>
+      <li>Assignment 3 Write a full program - 25%
+        <ul>
+          <li>Week 10, deadline week 12</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>One class test - 25%
+    <ul>
+      <li>Week 10, deadline week 12</li>
+    </ul>
+  </li>
+  <li>Weekly homework sheets - 10%</li>
+</ul>
+
+<h1 id="comp105---lecture-2---1"><a href="/comp105/lectures/2020/10/13/1.html">COMP105 - Lecture 2 - 1</a></h1>
+<h2 id="what-is-a-pure-function">What is a pure function?</h2>
+<p>A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$</p>
+
+<p>In imperative languages, functions can do much more and are called <em>subroutines</em>.</p>
+
+<p class="info">Every function can be implemented in a subroutine but not all subroutines are functions.</p>
+
+<p>A function maps inputs to outputs, however subroutines can have an effect on the <strong>global state</strong>. The global state is anything that is not within the function, such as modifying global variables, printing, network access…</p>
+
+<p class="info">Pure functions only influence the outside world through the return value.</p>
+
+<h2 id="when-does-this-matter">When does this matter?</h2>
+<p>When the compiler compiles the code it may want to change the order of the instructions:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For a function this will work but for a subroutine it may write out globally and not produce the desired effect.</p>
+
+<p>Using functions makes compiler optimisations, code refactoring, and parallelization easier as the functions can be run in different orders, or concurrently at runtime.</p>
+
+<h2 id="more-rules">More Rules</h2>
+<p class="info">Pure functions <strong>always</strong> return a value</p>
+
+<p>This is because pure functions only interact via their return value. If they don’t have a return value they have no effect.</p>
+
+<p class="info">Pure functions must be <strong>deterministic</strong>.</p>
+
+<p>This means that they must return the same value every time, provided that they have the same input.</p>
+
+<p>Determinism allows for logical assumptions such as <code class="language-plaintext highlighter-rouge">f(x) + f(x) == 2 * f(x)</code>. If the function was a subroutine and returned a random value this wouldn’t be the case.</p>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>Pure Functions
+    <ul>
+      <li>Are a black box</li>
+      <li>Have no side effects</li>
+      <li>Are deterministic</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Every pure function is a subroutine, some subroutines are not pure functions.</p>
+
+<h1 id="comp105---lecture-2---2"><a href="/comp105/lectures/2020/10/13/2.html">COMP105 - Lecture 2 - 2</a></h1>
+<h2 id="what-is-functional-programming">What is Functional Programming?</h2>
+<p>In a functional programming language <strong>everything is a pure function</strong>.</p>
+
+<ul>
+  <li>The program is built out of pure functions.</li>
+  <li>Simple functions are combined to build more complex functions.</li>
+</ul>
+
+<p>This very different style still allows you to do anything you could have done in an imperative language.</p>
+
+<h2 id="building-functions">Building Functions</h2>
+<p><strong>Every</strong> line is built in the form of:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">some</span> <span class="n">other</span> <span class="n">function</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Functions are built up from other functions:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+<span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">i</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">j</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>A pure functional program is similar to an imperative language where each subroutine only has one line and immediately returns a value.</p>
+
+<h2 id="what-isnt-in-functional-programming">What isn’t in Functional Programming?</h2>
+<ul>
+  <li>Functional programming has no concept of a variable as variables rely on side effects to operate.</li>
+  <li>Functional Programming doesn’t allow loops. This is because loops need variables to operate. Recursion is used instead.
+    <ul>
+      <li>Anything you can do with a loop can also be done with recursion.</li>
+    </ul>
+  </li>
+  <li>There is no notion of <strong>control flow</strong> as everything is just function application.
+    <ul>
+      <li>Control flow is the notion that instructions are followed one at a time in a list.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Functional programming is about passing around your answers.</p>
+
+<h1 id="comp105---lecture-3---1"><a href="/comp105/lectures/2020/10/14/1.html">COMP105 - Lecture 3 - 1</a></h1>
+<h2 id="functions-and-libraries">Functions and Libraries</h2>
+<p>When using Haskell the default library is Prelude.</p>
+
+<p>Haskell uses special syntax for function calls. <code class="language-plaintext highlighter-rouge">min</code> from the Prelude library will work as <code class="language-plaintext highlighter-rouge">min 1 2</code>. This is as functions are called as:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">function</span> <span class="n">name</span><span class="p">][</span><span class="n">space</span><span class="p">][</span><span class="n">arg1</span><span class="p">][</span><span class="n">space</span><span class="p">][</span><span class="n">arg2</span><span class="p">]</span><span class="o">...</span>
+</code></pre></div></div>
+
+<p>Additionally in Haskell functions bind tighter than mathematical operators:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">min</span> <span class="mi">28</span> <span class="mi">100</span><span class="o">/</span><span class="mi">4</span>
+<span class="mf">7.0</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">min</span> <span class="mi">28</span> <span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="mf">25.0</span>
+</code></pre></div></div>
+
+<h2 id="two-argument-function-syntax">Two Argument Function Syntax</h2>
+<p>Functions will two arguments can be infixed by surrounding with back-ticks:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">mod</span> <span class="mi">10</span> <span class="mi">4</span>
+<span class="mi">2</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="mi">10</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">4</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<p>For infix functions like <code class="language-plaintext highlighter-rouge">+</code> you can surround them with brackets and use them like a prefix function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">2</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<p class="info">Additional functions are available in <a href="http://localhost:4000/assets/COMP105/2020-10-14-1.pdf">the slides</a>.</p>
+
+<h1 id="comp105---lecture-3---2"><a href="/comp105/lectures/2020/10/14/2.html">COMP105 - Lecture 3 - 2</a></h1>
+<h2 id="defining-custom-functions">Defining Custom Functions</h2>
+<p>Functions are defined as such:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">functionName</span><span class="p">][</span><span class="n">arguments</span><span class="p">][</span><span class="o">=</span><span class="p">][</span><span class="n">body</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Functions and arguments must start with small letters as only types use capitals.</p>
+
+<p>They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">addTwo</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">twoInAddTwo</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p class="info">Additional functions are available in <a href="http://localhost:4000/assets/COMP105/2020-10-14-2.pdf">the slides</a>.</p>
+
+<h2 id="loading-functions">Loading Functions</h2>
+<ul>
+  <li>To load a functions from a file run GHCI on the file. <code class="language-plaintext highlighter-rouge">$ ghci functions.hs</code></li>
+  <li>To reload the current file run <code class="language-plaintext highlighter-rouge">:reload</code> in GHCI.</li>
+  <li>To load in a file run <code class="language-plaintext highlighter-rouge">:load</code> and the file-path.</li>
+</ul>
+
+<h2 id="comments">Comments</h2>
+<p>Single line comments can be written <code class="language-plaintext highlighter-rouge">-- like this</code></p>
+
+<p>Multi-line comments can be written:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">{- Like
+   this-}</span>
+</code></pre></div></div>
+
+<h2 id="compilation">Compilation</h2>
+<p>Instead of running code in the interpreter you can compile it using GHC. To print the output to the <code class="language-plaintext highlighter-rouge">StdOut</code> you can use the two functions <code class="language-plaintext highlighter-rouge">putStrln(show())</code> to convert the output to a string and print that to the <code class="language-plaintext highlighter-rouge">StdOut</code>.</p>
+
+<p>This is part of the IO function-set and won’t be used again for a while.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">pythagoras</span> <span class="n">a</span> <span class="n">b</span>  <span class="o">=</span> <span class="n">sqrt</span> <span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>Must use the float exponentiation operator to allow for floats as a or b.</li>
+    </ul>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">maxFour</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">=</span> <span class="n">max</span> <span class="p">(</span><span class="n">max</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span> <span class="p">(</span><span class="n">max</span> <span class="n">c</span> <span class="n">d</span><span class="p">)`</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+:ET

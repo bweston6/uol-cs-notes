@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2018/06/01/header-image.html</loc>
-<lastmod>2018-06-01T00:00:00+01:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2018/07/01/welcome.html</loc>
-<lastmod>2018-07-01T00:00:00+01:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/comp105/lectures/2020/10/12/1.html</loc>
 <lastmod>2020-10-12T00:00:00+01:00</lastmod>
 </url>
@@ -33,19 +25,16 @@
 <lastmod>2020-10-14T00:00:00+01:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2020/11/18/COMP107-test.html</loc>
-<lastmod>2020-11-18T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2020/11/18/COMP111-test.html</loc>
-<lastmod>2020-11-18T00:00:00+00:00</lastmod>
-</url>
-<url>
-<loc>http://localhost:4000/2020/11/18/test.html</loc>
-<lastmod>2020-11-18T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/COMP105/COMP105%20-%20Lectures.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/COMP107/COMP107%20-%20Lectures.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/COMP109/COMP109%20-%20Lectures.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/COMP111/COMP111%20-%20Lectures.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/about.html</loc>
@@ -57,6 +46,11 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/page2/</loc>
+<loc>http://localhost:4000/assets/COMP105/2020-10-14-1.pdf</loc>
+<lastmod>2020-11-02T19:21:16+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/assets/COMP105/2020-10-14-2.pdf</loc>
+<lastmod>2020-11-02T19:21:16+00:00</lastmod>
 </url>
 </urlset>
