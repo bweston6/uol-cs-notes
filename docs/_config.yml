@@ -19,7 +19,7 @@
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : UoL # does not include hostname
+baseurl : # does not include hostname
 title   : UoL
 description: > # this means to ignore newlines until "Language & timezone"
   A site containing my notes for all my modules taken at the University of Liverpool.
