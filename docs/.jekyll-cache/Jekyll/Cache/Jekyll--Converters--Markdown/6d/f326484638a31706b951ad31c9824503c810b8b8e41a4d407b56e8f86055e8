@@ -1,0 +1,226 @@
+I"�<h1 id="basic-definitions-in-the-er-model">Basic Definitions in the ER Model</h1>
+<p>The entity relationship model is used to express the conceptual schema of a database. It was originally proposed in 1976 as a means to unify the network and relational DB models.</p>
+
+<p>Many theoretical extensions and practical applications have been developed including the <strong>Enhanced Entity Relationship (EER)</strong> model.</p>
+
+<p>It is simple enough to learn and understand the basic concepts and powerful enough to be used in the development of complex applications.</p>
+
+<p>Conceptual designs using the ER model are called <strong>ER Schemas</strong></p>
+
+<h2 id="er-model-components">ER Model Components</h2>
+<p>The ER model describes data in terms of three primitive notions.</p>
+
+<h3 id="entities">Entities</h3>
+<ul>
+  <li>An entity is a thing, which can be distinctly identified.</li>
+</ul>
+
+<h3 id="attributes">Attributes</h3>
+<ul>
+  <li>A property of an entity.</li>
+  <li>They are common properties that are shared by all instances of the entity type.</li>
+</ul>
+
+<h4 id="complexity-of-attributes">Complexity of Attributes</h4>
+<ul>
+  <li>Complex attributes have structure.
+    <ul>
+      <li>Dates</li>
+      <li>Addresses</li>
+    </ul>
+  </li>
+  <li>Simple attributes only have one component.</li>
+</ul>
+
+<h4 id="cardinality">Cardinality</h4>
+<p>Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality $&gt;0$.</p>
+
+<h4 id="primitiveness">Primitiveness</h4>
+<p>A primitive attribute is any attribute which will be stored as data in the system.</p>
+
+<p>A non-primitive, or derived attribute, can be calculated from other attributes.</p>
+
+<ul>
+  <li>In some cases it is important that both attributes are indicated on the model
+    <ul>
+      <li>We should indicate which ones are redundant so that they can be derived.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="relationships">Relationships</h3>
+<ul>
+  <li>An association among entities.</li>
+</ul>
+
+<h4 id="degree-of-relationships">Degree of Relationships</h4>
+<p>A relationship has a degree that is the number of participating entity types:</p>
+
+<ul>
+  <li>Binary relationship (degree two).
+    <ul>
+      <li>A <strong>person</strong> owns a <strong>car</strong>.</li>
+    </ul>
+  </li>
+  <li>Ternary relationships (degree three).
+    <ul>
+      <li>A <strong>lecturer</strong> teaches a <strong>course</strong> to a <strong>student</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="attributes-of-relationships">Attributes of Relationships</h4>
+<p>Relationships can have attributes in the case that the attribute is not of an entity but when it is related to the relationship.</p>
+
+<ul>
+  <li>In the relationship type, “person owns a car” the attribute <code class="language-plaintext highlighter-rouge">date of purchase</code> is not an attribute of a person and is not an attribute of the car, it is an attribute of the ownership.</li>
+</ul>
+
+<h4 id="structural-constrains-on-relationships">Structural Constrains on Relationships</h4>
+<p>Relationship constraints regulate the possible combinations of entities that can participate in a relationship:</p>
+
+<ul>
+  <li>We can constrain the number of entities that can participate.</li>
+  <li>We can put a constraint on whether some entities must participate.</li>
+</ul>
+
+<h5 id="relationship-participation">Relationship Participation</h5>
+<p>A participation constraint specifies whether an entity must be in the given relationship.</p>
+
+<ul>
+  <li>A <strong>total participation constraint</strong>, indicates that each instance of an entity must be in that relationship.
+    <ul>
+      <li>A programme must belong to a department.</li>
+    </ul>
+  </li>
+  <li>A <strong>partial participation constraint</strong> specifies that there may exist an entity which does not participate in the relationship.
+    <ul>
+      <li>Not all lecturers supervise students.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="cardinality-of-relationships">Cardinality of Relationships</h4>
+<ul>
+  <li>One to One
+    <ul>
+      <li>One department only has one head.</li>
+    </ul>
+  </li>
+  <li>One to Many
+    <ul>
+      <li>Each team can have many players but one player can only play for one team.</li>
+    </ul>
+  </li>
+  <li>Many to Many
+    <ul>
+      <li>A student can be registered for many courses and a course will have may students.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="er-diagram-basics">ER Diagram Basics</h2>
+<p>Entity types are represented as boxes:</p>
+
+<pre><code class="language-mermaid">graph TD
+Lecturer
+</code></pre>
+
+<p>Relationship types are represented as diamonds connected with each participating entity type. The relationship must have a name.</p>
+
+<pre><code class="language-mermaid">graph TD
+a{works_in}
+</code></pre>
+
+<p>Attributes are shown as ovals connected to the relevant entity or relation type. In addition key attributes are underlined.</p>
+
+<ul>
+  <li>The key attribute should only be underlined if it arises naturally. If not there should be a key put in later in implementation.</li>
+</ul>
+
+<pre><code class="language-mermaid">graph TD
+a((Name))
+b((&lt;u&gt;Key&lt;/u&gt;))
+</code></pre>
+
+<p>This will come together to form the following diagram:</p>
+
+<pre><code class="language-mermaid">graph LR
+d[Department] --- a{works_in}
+a --- l[Lecturer]
+l --- n((Name))
+l --- s((&lt;u&gt;Staff Number&lt;/u&gt;))
+</code></pre>
+
+<h3 id="er-diagram-attributes">ER Diagram Attributes</h3>
+<ul>
+  <li>
+    <p>A simple primitive attribute is represented as an oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  d((Date of Birth))
+  t((Tax Code))
+</code></pre>
+  </li>
+  <li>
+    <p>Complex attributes can have their own structure made of simple attributes:</p>
+
+    <pre><code class="language-mermaid">  graph BT
+  n((Name))
+  n --- f((First Name))
+  n --- m((Middle Name))
+  n --- l((Last Name))
+</code></pre>
+  </li>
+  <li>
+    <p>A multi-valued attribute is a double oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  e(("(E-Mail Address)"))
+</code></pre>
+  </li>
+  <li>
+    <p>A derived attribute is a dotted oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  a((Age))
+  style a stroke-dasharray: 2 4
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="er-diagram-relationships">ER Diagram Relationships</h3>
+<ul>
+  <li>The degree of a relationship type is simply the number of entity types it connects.</li>
+  <li>Binary relationships between two entities.</li>
+  <li>Ternary relationships among three entities.</li>
+  <li>If entities participate to several relationships, a <em>role</em> may be added to some edges for clarity.</li>
+  <li>The cardinality is represented on the connecting lines (an $N$ represents the many side.
+    <ul>
+      <li>One to many (works_in)</li>
+      <li>Many to many (teaches, advises)</li>
+    </ul>
+  </li>
+  <li>Total participation is represented by a double line. (I have used thick)
+    <ul>
+      <li>A lecturer must work in a Dept.</li>
+    </ul>
+  </li>
+  <li>Relationships can have attributes.
+    <ul>
+      <li>A student may have different advisors for different majors.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph LR
+l[Lecturer] ===|N| w{works_in}
+w ---|1| d[Department]
+l ---|N| t{teaches}
+t ---|N| c[Course]
+t ---|N| s[Student]
+l ---|N, academic advisor| a{advises}
+a ---|N| s
+m((Major)) --- a
+</code></pre>
+:ET

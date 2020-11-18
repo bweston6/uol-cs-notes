@@ -1,1 +1,1 @@
-window.TEXT_SEARCH_DATA={'posts':[{'title':"Post with Header Image",'url':"/2018/06/01/header-image.html"},{'title':"Welcome",'url':"/2018/07/01/welcome.html"}]};
+window.TEXT_SEARCH_DATA={'posts':[{'title':"Post with Header Image",'url':"/2018/06/01/header-image.html"},{'title':"Welcome",'url':"/2018/07/01/welcome.html"},{'title':"COMP107",'url':"/2020/11/18/COMP107-test.html"},{'title':"COMP111",'url':"/2020/11/18/COMP111-test.html"},{'title':"Test",'url':"/2020/11/18/test.html"}]};
