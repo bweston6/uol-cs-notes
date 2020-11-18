@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+
+\title{Tutorial for Week 3 - Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}\setcounter{enumi}{3}
+        \item{Prove by mathematical induction that the sum of the first $n$ positive integers is $n^2+n$.
+
+                        \subsection*{Proof:}
+                        \subsubsection*{Base Case:}
+                        \begin{equation}
+                                \begin{split}
+                                        n &=0\\
+                                        0 &=0^2+0=0
+                                \end{split}
+                        \end{equation}
+                        \subsubsection*{Inductive Step:}
+                        Suppose for $n=m$ the property holds.\\
+                        Then, 
+                        \begin{equation}
+                                0+2+4+\ldots+2(m)=m^2+m
+                        \end{equation}
+                        Consider the statement for $n=m+1$:
+                        \begin{equation}
+                                0+2+4+\ldots+2(m)+2(m+1)
+                        \end{equation}
+                        By induction hypothesis,
+                        \begin{equation}
+                                0+2+4+\ldots+2(m)=m^2+m
+                        \end{equation}
+                        So,
+                        \begin{equation}
+                                \begin{split}
+                                        0+2+4+\ldots+2(m)+2(m+1) &=m^2+m+2(m+1)\\
+                                                                 &=m^2+m+m+1+(m+1)\\
+                                                                 &=m^2+2m+1+(m+1)\\
+                                                                 &=(m=1)^2+(m+1)
+                                \end{split}
+                        \end{equation}
+                        By the principle of mathematical induction $0+2+4+\ldots+2(n)=n^2+n$ for all natural n. \hfill$\blacksquare$
+                }
+\end{enumerate}
+\end{document}

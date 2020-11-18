@@ -1,0 +1,42 @@
+I"J
+<h2 id="what-is-functional-programming">What is Functional Programming?</h2>
+<p>In a functional programming language <strong>everything is a pure function</strong>.</p>
+
+<ul>
+  <li>The program is built out of pure functions.</li>
+  <li>Simple functions are combined to build more complex functions.</li>
+</ul>
+
+<p>This very different style still allows you to do anything you could have done in an imperative language.</p>
+
+<h2 id="building-functions">Building Functions</h2>
+<p><strong>Every</strong> line is built in the form of:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">some</span> <span class="n">other</span> <span class="n">function</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Functions are built up from other functions:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+<span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">i</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">j</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>A pure functional program is similar to an imperative language where each subroutine only has one line and immediately returns a value.</p>
+
+<h2 id="what-isnt-in-functional-programming">What isn’t in Functional Programming?</h2>
+<ul>
+  <li>Functional programming has no concept of a variable as variables rely on side effects to operate.</li>
+  <li>Functional Programming doesn’t allow loops. This is because loops need variables to operate. Recursion is used instead.
+    <ul>
+      <li>Anything you can do with a loop can also be done with recursion.</li>
+    </ul>
+  </li>
+  <li>There is no notion of <strong>control flow</strong> as everything is just function application.
+    <ul>
+      <li>Control flow is the notion that instructions are followed one at a time in a list.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Functional programming is about passing around your answers.</p>
+:ET

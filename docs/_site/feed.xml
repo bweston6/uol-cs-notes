@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-18T17:34:39+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-18T20:21:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
 </subtitle><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><entry><title type="html">COMP107</title><link href="http://localhost:4000/2020/11/18/COMP107-test.html" rel="alternate" type="text/html" title="COMP107" /><published>2020-11-18T00:00:00+00:00</published><updated>2020-11-18T00:00:00+00:00</updated><id>http://localhost:4000/2020/11/18/COMP107-test</id><content type="html" xml:base="http://localhost:4000/2020/11/18/COMP107-test.html">&lt;h1 id=&quot;basic-definitions-in-the-er-model&quot;&gt;Basic Definitions in the ER Model&lt;/h1&gt;
 &lt;p&gt;The entity relationship model is used to express the conceptual schema of a database. It was originally proposed in 1976 as a means to unify the network and relational DB models.&lt;/p&gt;
 
@@ -321,7 +321,279 @@ m((Major)) --- a
 &lt;p&gt;A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $|S|$ of outcomes in $S$:&lt;/p&gt;
 
 \[P(x)=\frac{1}{|S|}\]</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP111" /><summary type="html">Reasoning Under Uncertainty Logic based knowledge representation and reasoning methods mostly assume that knowledge is certain. Often, this is not the case (or it is impossible to list all assumptions that make it certain): When going to the airport by car, how early should I start? 45 minutes should be enough from Liverpool to Manchester Airport, but only under the assumption that there are no accidents, no lane closures, that my car does not break down, and so on. A dental patient has a toothache. Does the patient have a cavity? You might say: \[\text{Toothache}(x)\rightarrow\text{Cavity}(x)\] This is not right as there are many factors that play into this and not just the fact that they have a toothache. Uncertainty Trying to use exact rules to cope with a domain like medical diagnosis or traffic fails for three main reasons: Laziness It is too much work to list an exception-less set of rules. Theoretical ignorance Medical science has, in many cases, no strict laws connecting symptoms with diseases. Practical ignorance Even if we have strict laws, we might be uncertain about a particular patient because not all the necessary tests have been or can be run. Probability in AI Probability provides a way of summarising the uncertainty that comes form our laziness and ignorance. We might not know for sure what disease a particular patient has, but we believe that there is an 80% chance that a patient with toothache has a cavity. The 80% summarises those cases in which all the factors needed for a cavity to cause a toothache are present and other cases in which the patient has both toothache and cavity but the two are unconnected. The missing 20% summarises all the other possible causes we are too lazy or ignorant to find. Discrete Probability We represent random experiments using discrete probability spaces $(S,P)$ consisting of: The sample space $S$ of all elementary events $x\in S$. Members of $S$ are also called outcomes of the experiment. A probability distribution $P$ assigning a real number $P(x)$ to every elementary event $x\in S$ such that: For every $x\in S: 0\leq P(x) \leq 1$ And $\sum_{x\in S}P(x)=1$ Recall that if $S$ consists of $x_1,\ldots,x_n$, then: \[\sum_{x\in S}P(x)=P(x_1)+\ldots+P(x_n)\] Example - Flipping a Fair Coin Consider the random experiment of flipping a coin. The then corresponding probability space $(S,P)$ is given by: $S={H,T}$ $P(H)=P(T)=\frac{1}{2}$ Consider the random experiment of flipping a count two times, one after the other. Then the corresponding probability space $(S,P)$ is: $S={HH,HT,TH,TT}$ $P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}$ Example - Rolling a fair die Consider the random experiment of rolling a die. Then the corresponding probability space $(S, P)$ is given by: S = {1, 2, 3, 4, 5, 6}; For every $x ∈ S: P(x) = \frac{1}{6}$ Consider the random experiment of rolling a die $n$ times. Then the corresponding probability space $(S, P)$ is given as follows: $S$ is the set of sequences of length $n$ over the alphabet ${1,\ldots, 6}$ Sometimes denoted ${1,\ldots, 6}^n$ $P(x) = \frac{1}{6^n}$ for every elementary event $x$, since $S$ has $6^n$ elements. Uniform Probability Distributions A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $|S|$ of outcomes in $S$: \[P(x)=\frac{1}{|S|}\]</summary></entry><entry><title type="html">Test</title><link href="http://localhost:4000/2020/11/18/test.html" rel="alternate" type="text/html" title="Test" /><published>2020-11-18T00:00:00+00:00</published><updated>2020-11-18T00:00:00+00:00</updated><id>http://localhost:4000/2020/11/18/test</id><content type="html" xml:base="http://localhost:4000/2020/11/18/test.html">&lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
-&lt;p&gt;This is a test&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><summary type="html">Test This is a test</summary></entry><entry><title type="html">Welcome</title><link href="http://localhost:4000/2018/07/01/welcome.html" rel="alternate" type="text/html" title="Welcome" /><published>2018-07-01T00:00:00+01:00</published><updated>2018-07-01T00:00:00+01:00</updated><id>http://localhost:4000/2018/07/01/welcome</id><content type="html" xml:base="http://localhost:4000/2018/07/01/welcome.html">&lt;p&gt;If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost:&lt;/p&gt;
+&lt;p&gt;This is a test&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><summary type="html">Test This is a test</summary></entry><entry><title type="html">COMP105 - Lecture 3 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 1" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/1.html">&lt;h2 id=&quot;functions-and-libraries&quot;&gt;Functions and Libraries&lt;/h2&gt;
+&lt;p&gt;When using Haskell the default library is Prelude.&lt;/p&gt;
+
+&lt;p&gt;Haskell uses special syntax for function calls. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min&lt;/code&gt; from the Prelude library will work as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min 1 2&lt;/code&gt;. This is as functions are called as:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;space&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally in Haskell functions bind tighter than mathematical operators:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;25.0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;two-argument-function-syntax&quot;&gt;Two Argument Function Syntax&lt;/h2&gt;
+&lt;p&gt;Functions will two arguments can be infixed by surrounding with back-ticks:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For infix functions like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; you can surround them with brackets and use them like a prefix function:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;Prelude&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Functions and Libraries When using Haskell the default library is Prelude. Haskell uses special syntax for function calls. min from the Prelude library will work as min 1 2. This is as functions are called as: [function name][space][arg1][space][arg2]... Additionally in Haskell functions bind tighter than mathematical operators: Prelude&amp;gt; min 28 100/4 7.0 Prelude&amp;gt; min 28 (100/4) 25.0 Two Argument Function Syntax Functions will two arguments can be infixed by surrounding with back-ticks: Prelude&amp;gt; mod 10 4 2 Prelude&amp;gt; 10 `mod` 4 2 For infix functions like + you can surround them with brackets and use them like a prefix function: Prelude&amp;gt; 1 + 1 2 Prelude&amp;gt; (+) 1 1 2</summary></entry><entry><title type="html">COMP105 - Lecture 3 - 2</title><link href="http://localhost:4000/comp105/lectures/2020/10/14/2.html" rel="alternate" type="text/html" title="COMP105 - Lecture 3 - 2" /><published>2020-10-14T00:00:00+01:00</published><updated>2020-10-14T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/14/2</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/14/2.html">&lt;h2 id=&quot;defining-custom-functions&quot;&gt;Defining Custom Functions&lt;/h2&gt;
+&lt;p&gt;Functions are defined as such:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;functionName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Functions and arguments must start with small letters as only types use capitals.&lt;/p&gt;
+
+&lt;p&gt;They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;addTwo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;twoInAddTwo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;loading-functions&quot;&gt;Loading Functions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;To load a functions from a file run GHCI on the file. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$ ghci functions.hs&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;To reload the current file run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:reload&lt;/code&gt; in GHCI.&lt;/li&gt;
+  &lt;li&gt;To load in a file run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:load&lt;/code&gt; and the file-path.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+&lt;p&gt;Single line comments can be written &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-- like this&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Multi-line comments can be written:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;{- Like
+   this-}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;compilation&quot;&gt;Compilation&lt;/h2&gt;
+&lt;p&gt;Instead of running code in the interpreter you can compile it using GHC. To print the output to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;StdOut&lt;/code&gt; you can use the two functions &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;putStrln(show())&lt;/code&gt; to convert the output to a string and print that to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;StdOut&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is part of the IO function-set and won’t be used again for a while.&lt;/p&gt;
+
+&lt;h2 id=&quot;exercises&quot;&gt;Exercises&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;pythagoras&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Must use the float exponentiation operator to allow for floats as a or b.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;maxFour&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Defining Custom Functions Functions are defined as such: [functionName][arguments][=][body] Functions and arguments must start with small letters as only types use capitals. They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function: addTwo x = x + 2 twoInAddTwo x y = x + y + 2 Loading Functions To load a functions from a file run GHCI on the file. $ ghci functions.hs To reload the current file run :reload in GHCI. To load in a file run :load and the file-path. Comments Single line comments can be written -- like this Multi-line comments can be written: {- Like this-} Compilation Instead of running code in the interpreter you can compile it using GHC. To print the output to the StdOut you can use the two functions putStrln(show()) to convert the output to a string and print that to the StdOut. This is part of the IO function-set and won’t be used again for a while. Exercises double x = 2 * x pythagoras a b = sqrt (a ** 2 + b ** 2) Must use the float exponentiation operator to allow for floats as a or b. maxFour a b c d = max (max a b) (max c d)`</summary></entry><entry><title type="html">COMP105 - Lecture 2 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/13/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 2 - 1" /><published>2020-10-13T00:00:00+01:00</published><updated>2020-10-13T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/13/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/13/1.html">&lt;h2 id=&quot;what-is-a-pure-function&quot;&gt;What is a pure function?&lt;/h2&gt;
+&lt;p&gt;A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$&lt;/p&gt;
+
+&lt;p&gt;In imperative languages, functions can do much more and are called &lt;em&gt;subroutines&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;Every function can be implemented in a subroutine but not all subroutines are functions.&lt;/p&gt;
+
+&lt;p&gt;A function maps inputs to outputs, however subroutines can have an effect on the &lt;strong&gt;global state&lt;/strong&gt;. The global state is anything that is not within the function, such as modifying global variables, printing, network access…&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;Pure functions only influence the outside world through the return value.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-does-this-matter&quot;&gt;When does this matter?&lt;/h2&gt;
+&lt;p&gt;When the compiler compiles the code it may want to change the order of the instructions:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For a function this will work but for a subroutine it may write out globally and not produce the desired effect.&lt;/p&gt;
+
+&lt;p&gt;Using functions makes compiler optimisations, code refactoring, and parallelization easier as the functions can be run in different orders, or concurrently at runtime.&lt;/p&gt;
+
+&lt;h2 id=&quot;more-rules&quot;&gt;More Rules&lt;/h2&gt;
+&lt;p class=&quot;info&quot;&gt;Pure functions &lt;strong&gt;always&lt;/strong&gt; return a value&lt;/p&gt;
+
+&lt;p&gt;This is because pure functions only interact via their return value. If they don’t have a return value they have no effect.&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;Pure functions must be &lt;strong&gt;deterministic&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This means that they must return the same value every time, provided that they have the same input.&lt;/p&gt;
+
+&lt;p&gt;Determinism allows for logical assumptions such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f(x) + f(x) == 2 * f(x)&lt;/code&gt;. If the function was a subroutine and returned a random value this wouldn’t be the case.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pure Functions
+    &lt;ul&gt;
+      &lt;li&gt;Are a black box&lt;/li&gt;
+      &lt;li&gt;Have no side effects&lt;/li&gt;
+      &lt;li&gt;Are deterministic&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Every pure function is a subroutine, some subroutines are not pure functions.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">What is a pure function? A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$ In imperative languages, functions can do much more and are called subroutines. Every function can be implemented in a subroutine but not all subroutines are functions. A function maps inputs to outputs, however subroutines can have an effect on the global state. The global state is anything that is not within the function, such as modifying global variables, printing, network access… Pure functions only influence the outside world through the return value. When does this matter? When the compiler compiles the code it may want to change the order of the instructions: y = f(1) + f(2) y = f(2) + f(1) For a function this will work but for a subroutine it may write out globally and not produce the desired effect. Using functions makes compiler optimisations, code refactoring, and parallelization easier as the functions can be run in different orders, or concurrently at runtime. More Rules Pure functions always return a value This is because pure functions only interact via their return value. If they don’t have a return value they have no effect. Pure functions must be deterministic. This means that they must return the same value every time, provided that they have the same input. Determinism allows for logical assumptions such as f(x) + f(x) == 2 * f(x). If the function was a subroutine and returned a random value this wouldn’t be the case. Summary Pure Functions Are a black box Have no side effects Are deterministic Every pure function is a subroutine, some subroutines are not pure functions.</summary></entry><entry><title type="html">COMP105 - Lecture 2 - 2</title><link href="http://localhost:4000/comp105/lectures/2020/10/13/2.html" rel="alternate" type="text/html" title="COMP105 - Lecture 2 - 2" /><published>2020-10-13T00:00:00+01:00</published><updated>2020-10-13T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/13/2</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/13/2.html">&lt;h2 id=&quot;what-is-functional-programming&quot;&gt;What is Functional Programming?&lt;/h2&gt;
+&lt;p&gt;In a functional programming language &lt;strong&gt;everything is a pure function&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The program is built out of pure functions.&lt;/li&gt;
+  &lt;li&gt;Simple functions are combined to build more complex functions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This very different style still allows you to do anything you could have done in an imperative language.&lt;/p&gt;
+
+&lt;h2 id=&quot;building-functions&quot;&gt;Building Functions&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Every&lt;/strong&gt; line is built in the form of:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Functions are built up from other functions:&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A pure functional program is similar to an imperative language where each subroutine only has one line and immediately returns a value.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-isnt-in-functional-programming&quot;&gt;What isn’t in Functional Programming?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Functional programming has no concept of a variable as variables rely on side effects to operate.&lt;/li&gt;
+  &lt;li&gt;Functional Programming doesn’t allow loops. This is because loops need variables to operate. Recursion is used instead.
+    &lt;ul&gt;
+      &lt;li&gt;Anything you can do with a loop can also be done with recursion.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;There is no notion of &lt;strong&gt;control flow&lt;/strong&gt; as everything is just function application.
+    &lt;ul&gt;
+      &lt;li&gt;Control flow is the notion that instructions are followed one at a time in a list.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Functional programming is about passing around your answers.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">What is Functional Programming? In a functional programming language everything is a pure function. The program is built out of pure functions. Simple functions are combined to build more complex functions. This very different style still allows you to do anything you could have done in an imperative language. Building Functions Every line is built in the form of: f(x) = &amp;lt;some other function&amp;gt; Functions are built up from other functions: f(x) = square(x) + x g(x) = h(i(x), j(x)) A pure functional program is similar to an imperative language where each subroutine only has one line and immediately returns a value. What isn’t in Functional Programming? Functional programming has no concept of a variable as variables rely on side effects to operate. Functional Programming doesn’t allow loops. This is because loops need variables to operate. Recursion is used instead. Anything you can do with a loop can also be done with recursion. There is no notion of control flow as everything is just function application. Control flow is the notion that instructions are followed one at a time in a list. Functional programming is about passing around your answers.</summary></entry><entry><title type="html">COMP105 - Lecture 1 - 1</title><link href="http://localhost:4000/comp105/lectures/2020/10/12/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 1 - 1" /><published>2020-10-12T00:00:00+01:00</published><updated>2020-10-12T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/12/1</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/12/1.html">&lt;p&gt;Programming languages can be split into imperative and functional. This course will focus on the functional language of Haskell.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Imperative programs tell the computer how to compute the answer.
+    &lt;ul&gt;
+      &lt;li&gt;Declare variables&lt;/li&gt;
+      &lt;li&gt;Go around a loop&lt;/li&gt;
+      &lt;li&gt;Do the same instructions each time&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Functional programming languages follow mathematic definitions and focus on recursion. No variables are declared and no explicit loops.
+    &lt;ul&gt;
+      &lt;li&gt;No variables
+        &lt;ul&gt;
+          &lt;li&gt;No such thing as a variable in functional programming.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;No explicit loops
+        &lt;ul&gt;
+          &lt;li&gt;using recursive functions.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Functional programming is a style of programming the isn’t dependant on the language that is is written in. Functional programming languages are built to support this style.&lt;/p&gt;
+
+&lt;h2 id=&quot;course-focus&quot;&gt;Course Focus&lt;/h2&gt;
+&lt;p&gt;The course will focus on functional languages but we will compare the two styles of programming.&lt;/p&gt;
+
+&lt;p&gt;Haskell is a pure functional languages as you cannot program in an imperative style easily.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-functional-languages-are-important&quot;&gt;Why Functional Languages are Important&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Their usefulness is increasing
+    &lt;ul&gt;
+      &lt;li&gt;Multi-core systems and GPUs prefer highly parallel code which functional programs are.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Learning the functional style can make you a better imperative programmer.
+    &lt;ul&gt;
+      &lt;li&gt;Sometimes the functional style is more appropriate.&lt;/li&gt;
+      &lt;li&gt;Many imperative languages support functional styles.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Functional programming is a good preparation fo a computer science education.
+    &lt;ul&gt;
+      &lt;li&gt;Algorithms in CS are often presented in a functional way.&lt;/li&gt;
+      &lt;li&gt;Functional programming helps you translate the algorithms into functional code.&lt;/li&gt;
+      &lt;li&gt;The functional paradigm is also used in the analysis of algorithms.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Programming languages can be split into imperative and functional. This course will focus on the functional language of Haskell. Imperative programs tell the computer how to compute the answer. Declare variables Go around a loop Do the same instructions each time Functional programming languages follow mathematic definitions and focus on recursion. No variables are declared and no explicit loops. No variables No such thing as a variable in functional programming. No explicit loops using recursive functions. Functional programming is a style of programming the isn’t dependant on the language that is is written in. Functional programming languages are built to support this style. Course Focus The course will focus on functional languages but we will compare the two styles of programming. Haskell is a pure functional languages as you cannot program in an imperative style easily. Why Functional Languages are Important Their usefulness is increasing Multi-core systems and GPUs prefer highly parallel code which functional programs are. Learning the functional style can make you a better imperative programmer. Sometimes the functional style is more appropriate. Many imperative languages support functional styles. Functional programming is a good preparation fo a computer science education. Algorithms in CS are often presented in a functional way. Functional programming helps you translate the algorithms into functional code. The functional paradigm is also used in the analysis of algorithms.</summary></entry><entry><title type="html">COMP105 - Lecture 1 - 2</title><link href="http://localhost:4000/comp105/lectures/2020/10/12/2.html" rel="alternate" type="text/html" title="COMP105 - Lecture 1 - 2" /><published>2020-10-12T00:00:00+01:00</published><updated>2020-10-12T00:00:00+01:00</updated><id>http://localhost:4000/comp105/lectures/2020/10/12/2</id><content type="html" xml:base="http://localhost:4000/comp105/lectures/2020/10/12/2.html">&lt;p&gt;Covering dates and logistics of homework and lectures.&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-outcomes&quot;&gt;Learning Outcomes&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Describe functional and imperative languages and the differences between them.
+    &lt;ul&gt;
+      &lt;li&gt;Weeks 1 - 2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Apply recursion to solve algorithmic tasks.
+    &lt;ul&gt;
+      &lt;li&gt;Weeks 3 - 4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Apply common functional programming idioms such as map, filter, fold and scan.
+    &lt;ul&gt;
+      &lt;li&gt;Weeks 5 - 8&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Write programs using a functional programming language.
+    &lt;ul&gt;
+      &lt;li&gt;Weeks 9 - 10&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;assessments&quot;&gt;Assessments&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Three programming assignments
+    &lt;ul&gt;
+      &lt;li&gt;Assignment 1 - Recursion - 20%
+        &lt;ul&gt;
+          &lt;li&gt;Week 4, deadline week 6&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Assignment 2 - Functional Programming idioms - 20%
+        &lt;ul&gt;
+          &lt;li&gt;Week 7, deadline week 9&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Assignment 3 Write a full program - 25%
+        &lt;ul&gt;
+          &lt;li&gt;Week 10, deadline week 12&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;One class test - 25%
+    &lt;ul&gt;
+      &lt;li&gt;Week 10, deadline week 12&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Weekly homework sheets - 10%&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Covering dates and logistics of homework and lectures. Learning Outcomes Describe functional and imperative languages and the differences between them. Weeks 1 - 2 Apply recursion to solve algorithmic tasks. Weeks 3 - 4 Apply common functional programming idioms such as map, filter, fold and scan. Weeks 5 - 8 Write programs using a functional programming language. Weeks 9 - 10 Assessments Three programming assignments Assignment 1 - Recursion - 20% Week 4, deadline week 6 Assignment 2 - Functional Programming idioms - 20% Week 7, deadline week 9 Assignment 3 Write a full program - 25% Week 10, deadline week 12 One class test - 25% Week 10, deadline week 12 Weekly homework sheets - 10%</summary></entry><entry><title type="html">Welcome</title><link href="http://localhost:4000/2018/07/01/welcome.html" rel="alternate" type="text/html" title="Welcome" /><published>2018-07-01T00:00:00+01:00</published><updated>2018-07-01T00:00:00+01:00</updated><id>http://localhost:4000/2018/07/01/welcome</id><content type="html" xml:base="http://localhost:4000/2018/07/01/welcome.html">&lt;p&gt;If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost:&lt;/p&gt;
 
 &lt;p&gt;You may want to &lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/docs/en/configuration&quot;&gt;config the site&lt;/a&gt; or &lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/docs/en/writing-posts&quot;&gt;writing a post&lt;/a&gt; next. Please feel free to &lt;a href=&quot;https://github.com/kitian616/jekyll-TeXt-theme/issues&quot;&gt;create an issue&lt;/a&gt; or &lt;a href=&quot;mailto:kitian616@outlook.com&quot;&gt;send me email&lt;/a&gt; if you have any questions.&lt;/p&gt;
 
@@ -331,6 +603,4 @@ m((Major)) --- a
 
 &lt;p&gt;If you like TeXt, don’t forget to give me a star. :star2:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/kitian616/jekyll-TeXt-theme/&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/kitian616/jekyll-TeXt-theme.svg?label=Stars&amp;amp;style=social&quot; alt=&quot;Star This Project&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="TeXt" /><summary type="html">If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost: You may want to config the site or writing a post next. Please feel free to create an issue or send me email if you have any questions.</summary></entry><entry><title type="html">Post with Header Image</title><link href="http://localhost:4000/2018/06/01/header-image.html" rel="alternate" type="text/html" title="Post with Header Image" /><published>2018-06-01T00:00:00+01:00</published><updated>2018-06-01T00:00:00+01:00</updated><id>http://localhost:4000/2018/06/01/header-image</id><content type="html" xml:base="http://localhost:4000/2018/06/01/header-image.html">&lt;p&gt;A Post with Header Image, See &lt;a href=&quot;https://tianqi.name/jekyll-TeXt-theme/samples.html#page-layout&quot;&gt;Page layout&lt;/a&gt; for more examples.&lt;/p&gt;
-
-&lt;!--more--&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="TeXt" /><summary type="html">A Post with Header Image, See Page layout for more examples.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/kitian616/jekyll-TeXt-theme/&quot;&gt;&lt;img src=&quot;https://img.shields.io/github/stars/kitian616/jekyll-TeXt-theme.svg?label=Stars&amp;amp;style=social&quot; alt=&quot;Star This Project&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="TeXt" /><summary type="html">If you see this page, that means you have setup your site. enjoy! :ghost: :ghost: :ghost: You may want to config the site or writing a post next. Please feel free to create an issue or send me email if you have any questions.</summary></entry></feed>

@@ -1,0 +1,55 @@
+I"÷<p>Covering dates and logistics of homework and lectures.</p>
+
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<ol>
+  <li>Describe functional and imperative languages and the differences between them.
+    <ul>
+      <li>Weeks 1 - 2</li>
+    </ul>
+  </li>
+  <li>Apply recursion to solve algorithmic tasks.
+    <ul>
+      <li>Weeks 3 - 4</li>
+    </ul>
+  </li>
+  <li>Apply common functional programming idioms such as map, filter, fold and scan.
+    <ul>
+      <li>Weeks 5 - 8</li>
+    </ul>
+  </li>
+  <li>Write programs using a functional programming language.
+    <ul>
+      <li>Weeks 9 - 10</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="assessments">Assessments</h2>
+<ul>
+  <li>Three programming assignments
+    <ul>
+      <li>Assignment 1 - Recursion - 20%
+        <ul>
+          <li>Week 4, deadline week 6</li>
+        </ul>
+      </li>
+      <li>Assignment 2 - Functional Programming idioms - 20%
+        <ul>
+          <li>Week 7, deadline week 9</li>
+        </ul>
+      </li>
+      <li>Assignment 3 Write a full program - 25%
+        <ul>
+          <li>Week 10, deadline week 12</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>One class test - 25%
+    <ul>
+      <li>Week 10, deadline week 12</li>
+    </ul>
+  </li>
+  <li>Weekly homework sheets - 10%</li>
+</ul>
+:ET
