@@ -6,6 +6,6 @@ aside:
 ---
 {% assign sorted = site.tags.COMP109 | reverse | sort: 'date' %}
 {% for post in sorted %}
-# [{{post.title}}]({{post.url}})
+# [{{post.title}}]({{site.baseurl}}{{post.url}})
 {{post.content}}
 {% endfor %}
