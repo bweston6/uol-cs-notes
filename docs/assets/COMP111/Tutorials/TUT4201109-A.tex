@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\title{COMP111 - Tutorial 4 Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}\setcounter{enumi}{3}
+        \item \emph{DerivedAssertions}$=\{A_1(a),A_2(a),A_1(b),A(a),C(a)\}$
+                \setcounter{enumi}{5}
+        \item The first statement, $\{A(a),B(b),A(x)\rightarrow B(x)\}\models B(a)$, is correct. This is because the assertion, $A(a)$, follows the rule, $A(x)\rightarrow B(x)\}\models B(a)$, to become $B(a)$. This then validates the statement as $B(a)$ is in the set \emph{DerivedAssertions}. 
+
+                Statement two is incorrect as the list of \emph{DerivedAssertions} is: $$\{A(a),B(b),B(a)\}$$ As $A(b)$ isn't in that set then the statement is incorrect.
+\end{enumerate}
+\end{document}

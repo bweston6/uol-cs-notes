@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{qtree}
+\title{COMP111 - Exercise 1 Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+%	\item{
+%	\begin{enumerate}
+%			\item{Football player:\\
+%				Performance Measure - Number of Goals Scored\\
+%				Environment - Football Pitch, Other Players, Ball\\
+%				Actuators - Legs (for running, kicking, dribbling), Head (Headers)\\
+%				Sensors - Cameras, Gyroscope/Accelerometer (For keeping upright)\\
+%
+%				This task is partially observable, stochastic, sequential, dynamic and continuous.
+%				}
+%			\item{Robot Exploring Mars:\\
+%				}
+%			\item{Shopping for used Computer Science Books on the Internet:\\
+%				}
+%	\end{enumerate}}
+%	\item{Simple reflex agents have no memory and make simple decisions based on what their sensors can see at that point in time.
+%
+%		Model based reflex agents have a memory that helps deal with partially observable situations. To make better use of this memory they have a model of how the world evolves and how it's actions affect the world.
+%
+%		Goal based agents involve all the previous features but select appropriate actions to achieve an end goal. This means that it plans what to do over a long sequence of actions but also means that the agent may not know what to do at any particular time.
+%
+%		Utility-based agents make use of a utility function to compare how desirable the effect of a particular action will be. The agent will maximise this function to create the most desirable outcome from its actions
+%
+%		Learning agents find ways form maximising with utility function based on previous experience. Learning agent have a learning element that informs the agent how to act based on past experience of maximising its utility.}
+%	\item{
+%	\begin{enumerate}
+%		\item{b,c,d}
+%		\item{e}
+%		\item{a $\rightarrow$ b $\rightarrow$ e $\rightarrow$ f\\
+%			a $\rightarrow$ c $\rightarrow$ e $\rightarrow$ f\\
+%			a $\rightarrow$ d $\rightarrow$ e $\rightarrow$ f}
+%	\end{enumerate}}
+		\setcounter{enumi}{\numexpr3}
+	\item{
+			\begin{enumerate}
+				\item{a $\rightarrow$ b\\
+					a $\rightarrow$ b $\rightarrow$ a\\
+					a $\rightarrow$ b $\rightarrow$ a $\rightarrow$ b\\
+					a $\rightarrow$ b $\rightarrow$ a $\rightarrow$ b $\rightarrow$ a\\
+					a $\rightarrow$ b $\rightarrow$ c\\
+					a $\rightarrow$ b $\rightarrow$ a $\rightarrow$ b $\rightarrow$ c}
+				\item{\qtreecenterfalse \Tree[.a [.b [.a [.b [.a {\ldots} ] c ]] c ]]}
+			\end{enumerate}}
+\end{enumerate}
+\end{document}
