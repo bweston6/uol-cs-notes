@@ -1,0 +1,50 @@
+I"Ã<h2 id="polymorphic-types">Polymorphic Types</h2>
+<p>Some functions accept many different types. An example of this is <code class="language-plaintext highlighter-rouge">length</code> which accepts many different types of lists.</p>
+
+<p>if you ask what the type of then function <code class="language-plaintext highlighter-rouge">length</code> is then it will return the type:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">length</span> <span class="o">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">a</code> is a type variable. This means that:</p>
+
+<ul>
+  <li>The function can be applied to any list.</li>
+  <li><code class="language-plaintext highlighter-rouge">a</code> will represent the type of list elements.</li>
+</ul>
+
+<p>This type is called <strong>polymorphism</strong>. This is a feature of functional languages.</p>
+
+<h2 id="type-variables">Type Variables</h2>
+<p>In the function <code class="language-plaintext highlighter-rouge">head</code> it will return the type variable which it was given in the list. Hence asking for the type returns:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span> <span class="o">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>Type variables can appear more than once. These types specify that the return type will be determined by the type of the input.</p>
+
+<p>Multiple type variables can be included in one declaration for example the function <code class="language-plaintext highlighter-rouge">fst</code> returns the following:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fst</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>As a result the types of function can tell you a lot about what the function does.</p>
+
+<h2 id="type-annotations">Type Annotations</h2>
+<p>Is it good practice to insert type annotations for your functions. This is so that Haskell assigns the types to your functions that you expect. You do this with the following syntax.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+<span class="n">f</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>The annotation is usually place before the function definition. If you donâ€™t give a type annotation, then Haskell will <em>infer</em> one for you based on the functions used in your function. This is a result of the language being strongly typed.</p>
+
+<p>Annotating your function can make it easier to catch bugs. This will give the compiler more to work with and make errors more descriptive.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">take :: Int -&gt; [a] -&gt; [a]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">(:) :: a -&gt; [a] -&gt; [a]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">(++) :: [a] -&gt; [a] -&gt; [a]</code></li>
+</ol>
+:ET

@@ -1,0 +1,48 @@
+I"Î<h2 id="tuples">Tuples</h2>
+<p>A tuples allows us to bind two or more values together:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"few"</span><span class="p">,</span> <span class="s">"words"</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s">"six"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Tuples can have any size but must be at least 2.</li>
+  <li>The size should be thought of as being fixed as it is not easy to change  the length of a tuple.</li>
+  <li>Tuples can mix types.</li>
+</ul>
+
+<h3 id="example-functions">Example Functions</h3>
+<h4 id="taking-tuples-as-input">Taking Tuples as Input</h4>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>This will take a tuple with the elements <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code> and will return the first element of the tuple.</p>
+
+<h4 id="returning-tuples-as-output">Returning Tuples as Output</h4>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">max</span> <span class="n">x</span> <span class="n">y</span><span class="p">,</span> <span class="n">min</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="syntax">Syntax</h3>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">g</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p>Both will give the same output but the recommendation is to use the Haskell method instead of always passing tuples.</p>
+
+<h3 id="exercises">Exercises</h3>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exercise1</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exercise2</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exercise3</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

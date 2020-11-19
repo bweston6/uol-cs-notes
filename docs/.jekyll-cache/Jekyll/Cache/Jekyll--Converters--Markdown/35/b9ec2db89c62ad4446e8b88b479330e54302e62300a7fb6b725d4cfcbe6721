@@ -1,0 +1,104 @@
+I"¸<h2 id="recursion">Recursion</h2>
+<p>There is no such thing as a while loop in Haskell so you must use recursion to complete the same task. This links into Assignment 1 as it leans heavily on recursion.</p>
+
+<h3 id="factorial">Factorial</h3>
+<p>A recursive function is one that calls itself:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">factorial</span> <span class="n">n</span> <span class="o">=</span> <span class="kr">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span>
+				<span class="kr">then</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="kr">else</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>A recursive function has:</p>
+
+<ul>
+  <li>A base case.
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">else</code> case is the base case and is the state where recursion stops.</li>
+    </ul>
+  </li>
+  <li>One or more recursive rules that move us closer to the base case. When the base case is reached then the program will terminate.
+    <ul>
+      <li>The rule is calling ourself with <code class="language-plaintext highlighter-rouge">n - 1</code>
+        <ul>
+          <li>This makes progress to the base case as you are making <code class="language-plaintext highlighter-rouge">n</code> smaller and getting closer to 0.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="result-of-factorial">Result of Factorial</h4>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">factorial</span> <span class="mi">4</span>
+<span class="o">&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">3</span>
+<span class="o">&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">factorial</span> <span class="mi">1</span>
+<span class="o">&gt;</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="o">&gt;</span> <span class="mi">24</span>
+</code></pre></div></div>
+
+<p>A good way to debug smaller iterations is to expand and follow the iterations to find the issue.</p>
+
+<h3 id="factorial-using-pattern-matching">Factorial Using Pattern Matching</h3>
+<p>You can use pattern matching to remove the <code class="language-plaintext highlighter-rouge">if</code> in a recursive function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">factorial</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">factorial</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is possible as Haskell processes functions from top to bottom. This means that first it will check if the argument matches 1 and if not fall through to the next case.</p>
+
+<p>Another simple example:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">f</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">f</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>If the pattern matching isnâ€™t exhaustive then you may get an error if an unmapped input is supplied. An <strong>exhaustive function</strong> maps all inputs.</p>
+
+<p>This style of pattern matching is similar to a case select.</p>
+
+<h3 id="base-cases">Base Cases</h3>
+<p>Every function must have a base case:</p>
+
+<ul>
+  <li>It gives a stopping condition for the recursion.</li>
+  <li>It is usually the simplest case.</li>
+  <li>You can have more than one base case.</li>
+</ul>
+
+<p>Recursion with no base case will never terminate.</p>
+
+<h3 id="comparison-to-imperative-languages">Comparison to Imperative Languages</h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="o">&lt;</span><span class="n">lots</span> <span class="kr">of</span> <span class="n">computation</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Base cases</strong> are like the <em>stopping condition</em>.</li>
+  <li><strong>Recursive rules</strong> do the <em>computation</em>.</li>
+  <li>Anything you can do in a loop can be done by recursion but there is no simple way to translate between the two.</li>
+</ul>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">smallPrime</span> <span class="mi">2</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">smallPrime</span> <span class="mi">3</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">smallPrime</span> <span class="mi">5</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">smallPrime</span> <span class="mi">7</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">smallPrime</span> <span class="n">x</span> <span class="o">=</span> <span class="kt">Fase</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sumUpTo</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="n">sumUpTo</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sumUpTo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

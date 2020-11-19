@@ -5,14 +5,14 @@
 
 <meta name="description" content="A site containing my notes for all my modules taken at the University of Liverpool.
 ">
-<link rel="canonical" href="http://localhost:4000/"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="canonical" href="http://localhost:4000/UoL/"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
+<link rel="stylesheet" href="/UoL/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
 
 <!-- end custom head snippets -->
 <script>(function() {
@@ -248,7 +248,7 @@
         }
       },
       paths: {
-        search_js: '/assets/search.js'
+        search_js: '/UoL/assets/search.js'
       }
     };
     window.TEXT_VARIABLES = TEXT_VARIABLES;
@@ -830,8 +830,8 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </g>
 </svg>
 <a title="A site containing my notes for all my modules taken at the University of Liverpool.
-" href="/">Uni Notes</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
-        <ul><li class="navigation__item"><a href="/COMP105/COMP105 - Lectures">COMP105</a></li><li class="navigation__item"><a href="/COMP107/COMP107 - Lectures">COMP107</a></li><li class="navigation__item"><a href="/COMP109/COMP109 - Lectures">COMP109</a></li><li class="navigation__item"><a href="/COMP111/COMP111 - Lectures">COMP111</a></li><li class="navigation__item"><a href="/archive.html">Archive</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+" href="/UoL/">Uni Notes</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/UoL/COMP105/COMP105 - Lectures">COMP105</a></li><li class="navigation__item"><a href="/UoL/COMP107/COMP107 - Lectures">COMP107</a></li><li class="navigation__item"><a href="/UoL/COMP109/COMP109 - Lectures">COMP109</a></li><li class="navigation__item"><a href="/UoL/COMP111/COMP111 - Lectures">COMP111</a></li><li class="navigation__item"><a href="/UoL/archive.html">Archive</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
       </nav></div>
   </header>
 </div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
@@ -842,140 +842,264 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/14/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 3 - 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Defining Custom Functions
-Functions are defined as such:
+          <header><a href="/UoL/comp105/lectures/2020/11/19/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 18-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">First Past the Post Example
+This example covers a first past the post election. This means whoever gets the most votes wins. We are aiming to make a function that performs this task:
 
-[functionName][arguments][=][body]
-
-
-Functions and arguments must start with small letters as only types use capitals.
-
-They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function:
-
-addTwo x = x + 2
-twoInAddTwo x y = x + y + 2
+&gt; winner ["red", "blue", "red", "red", "green"]
+&gt; "red"
 
 
-A...</div><p><a href="/comp105/lectures/2020/10/14/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Getting the Candidates
+First we need to figure out who the candidates are:
+
+uniq [] = []
+uniq (x:xs...</div><p><a href="/UoL/comp105/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/14/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 3 - 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Functions and Libraries
-When using Haskell the default library is Prelude.
+          <header><a href="/UoL/comp105/lectures/2020/11/19/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 18-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Marks to Report Example
+This lecture covers a mini assignment example about converting a csv file containing students marks into a report containing the students averages. These are presented in the following format:
 
-Haskell uses special syntax for function calls. min from the Prelude library will work as min 1 2. This is as functions are called as:
+aaa		70	65	67	60
+bbb		55	60	55	65
+ccc		40	40	40	40
+ddd		80	60	75	60
+ccc		0	0	0	100
 
-[function name][space][arg1][space][arg2]...
 
+And should be transformed to be:
 
-Additionally in Haskell functions bind tighter than mathematical operators:
-
-Prelude&gt;...</div><p><a href="/comp105/lectures/2020/10/14/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+aaa		65.5
+...</div><p><a href="/UoL/comp105/lectures/2020/11/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/13/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 2 - 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">What is Functional Programming?
-In a functional programming language everything is a pure function.
+          <header><a href="/UoL/comp105/lectures/2020/11/17/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 17-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Higher Order Functions - Continued
+takewhile
+This function takes while a condition is true.
+
+&gt; takeWhile (&lt;=5) [1..10]
+&gt; [1,2,3,4,5]
 
 
-  The program is built out of pure functions.
-  Simple functions are combined to build more complex functions.
+This is different to filter which only removes individual elements.
+
+&gt; takeWhile (\ x -&gt; length x &lt;= 2) ["ab","cd","efg"]
+&gt; ["ab", "cd"]
 
 
-This very different style still allows you to do anything you could have done in an imperative language.
+Implementation
 
-Building Functions
-Every l...</div><p><a href="/comp105/lectures/2020/10/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+takeWhile' :: (a -&gt; Bool) -&...</div><p><a href="/UoL/comp105/lectures/2020/11/17/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 17, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-17T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/13/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 2 - 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">What is a pure function?
-A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$
+          <header><a href="/UoL/comp105/lectures/2020/11/17/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 17-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Higher Order Functions
+Scan
+The scan set of functions is similar to the fold set of functions. However instead of outputting a single value it outputs a list showing the accumulator at each step in the function:
 
-In imperative languages, functions can do much more and are called subroutines.
+&gt; scanr (+) 0 [1,2,3,4]
+&gt; [10,9,7,4,0]
 
-Every function can be implemented in a subroutine but not all subroutines are functions.
 
-A function maps inputs to outputs, however subroutines can have an effec...</div><p><a href="/comp105/lectures/2020/10/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+The function scanr is implemented like so:
+
+scanr' :: (a-&gt; b -&gt; b -&gt;) -&g...</div><p><a href="/UoL/comp105/lectures/2020/11/17/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 17, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-17T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 1 - 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Covering dates and logistics of homework and lectures.
+          <header><a href="/UoL/comp105/lectures/2020/11/16/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold Continued
+A fold output can be a different type to the input list.
 
-Learning Outcomes
+to_csv list = foldr (\x acc -&gt; show x ++ "," ++ acc)  "" list
 
-  Describe functional and imperative languages and the differences between them.
-    
-      Weeks 1 - 2
-    
-  
-  Apply recursion to solve algorithmic tasks.
-    
-      Weeks 3 - 4
-    
-  
-  Apply common functional programming idioms such as map, filter, fold and scan.
-  ...</div><p><a href="/comp105/lectures/2020/10/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+&gt; to_csv [1,2,3,4]
+&gt; "1,2,3,4,"
+
+
+By using foldr you cannot get the desired outcome as it applies the same rule to every item in the list.
+
+foldr1
+The function foldr1 uses the final value of the list to...</div><p><a href="/UoL/comp105/lectures/2020/11/16/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/comp105/lectures/2020/10/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 1 - 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Programming languages can be split into imperative and functional. This course will focus on the functional language of Haskell.
+          <header><a href="/UoL/comp105/lectures/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold
+Some functions take lists and turn them into a single value. This type of computation is called a fold. The things that you can change are:
 
 
-  Imperative programs tell the computer how to compute the answer.
-    
-      Declare variables
-      Go around a loop
-      Do the same instructions each time
-    
-  
-  Functional programming languages follow mathem...</div><p><a href="/comp105/lectures/2020/10/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  The base case.
+  The operation applied to the list.
+
+
+foldr
+
+foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+
+foldr' _ init [] = init
+foldr' f init (x:xs) = f x (foldr' f init xs)
+
+&gt; fold...</div><p><a href="/UoL/comp105/lectures/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">filter
+filterkeeps only the elements for which f returns True.
+
+filter' :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+filter' _ [] = []
+filter' f (x:xs)
+	| f x 		= x : rest
+	| otherwise	= rest
+	where rest 	= filter' f xs
+	
+filter' even [1..10]
+&gt; [2,4,6,8,10]
+
+
+In comparison to map which applies a function to each element in a list. filter will apply ...</div><p><a href="/UoL/comp105/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">map
+map applies a funciton f to every element in a list.
+
+map' :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map' _ [] = []
+map' f (x:xs) = f x : map' f xs
+
+
+This saves you from writing out the generic code for applying a function to a list. This allows you to implement the standard functions instead of having to make your own.
+
+map even [1..5]
+&gt; [False...</div><p><a href="/UoL/comp105/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/10/3.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Anonymous Functions
+Sometimes is it convenient to define a function inline. Anonymous functions allow you to use a function without a name.
+
+&gt; (\ x -&gt; x + 1) 7
+&gt; 8
+
+
+This allows you to pass functions to a higher order function without giving it a name:
+
+&gt; apply_twice (\ x -&gt; 2 * x ) 2
+&gt; 8
+
+
+Syntax
+The syntax for an anonymous fu...</div><p><a href="/UoL/comp105/lectures/2020/11/10/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/10/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Higher Order Functions
+A higher order function is a function that:
+
+
+  Takes another function as an argument.
+  Returns a function.
+
+
+apply_twice :: (a -&gt; a) -&gt; a -&gt; a
+apply_twice f input = f (f input)
+
+&gt; apply_twice tail [1,2,3,4]
+&gt; [3,4]
+
+
+This function takes a function and an input as an argument and then uses the supplied func...</div><p><a href="/UoL/comp105/lectures/2020/11/10/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article></div>
-</div><div class="layout--home"></div>
+</div><div class="layout--home"><div class="pagination"><p>36 post articles, 4 pages.</p>
+    <div class="pagination__menu">
+      <ul class="menu menu--nowrap"><li><div class="button button--secondary button--circle disabled">
+            <i class="fas fa-angle-left"></i>
+          </div></li><li>
+              <div class="button button--primary button--circle focus"><span>1</span></div>
+            </li><li>
+                <a class="button button--secondary button--circle" href="/UoL/page2"><span>2</span></a>
+              </li><li>
+                <a class="button button--secondary button--circle" href="/UoL/page3"><span>3</span></a>
+              </li><li>
+                <a class="button button--secondary button--circle" href="/UoL/page4"><span>4</span></a>
+              </li><li><a class="button button--secondary button--circle" href="/UoL/page2">
+            <i class="fas fa-angle-right"></i>
+          </a></li></ul>
+    </div>
+  </div></div>
 <script>/*(function () {
 
 })();*/
@@ -990,7 +1114,7 @@ Learning Outcomes
             </div></div></div><div class="page__footer d-print-none">
 <footer class="footer py-4 js-page-footer">
   <div class="main"><div itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ben Weston"><meta itemprop="url" content="/bweston6.github.io/UoL"><meta itemprop="description" content="A student studying at Universtiy of Liverpool"><div class="footer__author-links"><div class="author-links">
+      <meta itemprop="name" content="Ben Weston"><meta itemprop="url" content="/UoL/bweston6.github.io/UoL"><meta itemprop="description" content="A student studying at Universtiy of Liverpool"><div class="footer__author-links"><div class="author-links">
   <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="bweston6.github.io/UoL"><li title="Send me an Email.">
       <a class="button button--circle mail-button" itemprop="email" href="mailto:b.weston60@gmail.com" target="_blank">
         <i class="fas fa-envelope"></i>

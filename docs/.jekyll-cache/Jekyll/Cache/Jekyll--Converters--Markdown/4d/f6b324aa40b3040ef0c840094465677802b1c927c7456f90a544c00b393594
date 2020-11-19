@@ -1,0 +1,75 @@
+I"'<h2 id="where-syntax"><code class="language-plaintext highlighter-rouge">where</code> Syntax</h2>
+<p>Sometimes it is useful to bind names across a whole function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">remove_twos</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">[]</span>
+<span class="n">remove_twos</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+	<span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>	<span class="o">=</span> <span class="n">rest</span>
+	<span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">x</span><span class="o">:</span><span class="n">rest</span>
+	<span class="kr">where</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">remove_twos</span> <span class="n">xs</span>
+</code></pre></div></div>
+
+<p>As the two expressions are in different guards then you can’t use a <code class="language-plaintext highlighter-rouge">let</code> expression.</p>
+
+<p>A general example is:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+	<span class="kr">where</span> 	<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">where</code> comes at the end of a function. Like <code class="language-plaintext highlighter-rouge">let</code> it can bind any number of names</p>
+
+<ul>
+  <li>These names are available throughout the function.</li>
+  <li>They are not variables.</li>
+  <li>You can do pattern matching in <code class="language-plaintext highlighter-rouge">where</code> clauses (and also in <code class="language-plaintext highlighter-rouge">let</code> expressions too).</li>
+</ul>
+
+<p>An example of pattern matching:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">initials</span> <span class="n">first</span> <span class="n">last</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+	<span class="kr">where</span>	<span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">first</span>
+			<span class="p">(</span><span class="n">y</span><span class="o">:</span><span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">last</span>
+</code></pre></div></div>
+
+<h2 id="let-vs-where"><code class="language-plaintext highlighter-rouge">let</code> v.s. <code class="language-plaintext highlighter-rouge">where</code></h2>
+<p><code class="language-plaintext highlighter-rouge">let</code> is an expression.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">(</span><span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="kr">in</span> <span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="kr">in</span> <span class="n">a</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">where</code> is syntax</p>
+
+<ul>
+  <li>One <code class="language-plaintext highlighter-rouge">where</code> clause per function.</li>
+  <li>Particularly useful when used with guards.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">remove_twos</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">[]</span>
+<span class="n">remove_twos</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+	<span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>	<span class="o">=</span> <span class="n">rest</span>
+	<span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">x</span><span class="o">:</span><span class="n">rest</span>
+	<span class="kr">where</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">remove_twos</span> <span class="n">xs</span>	
+</code></pre></div></div>
+
+<p>This means that where has to be joined to a function body and is always bound to that function body.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">func</span> <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">x</span>
+     <span class="kr">where</span> 	<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+             <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">-</span> <span class="n">x</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">countTwos</span> <span class="kt">[]</span> 	<span class="o">=</span> <span class="mi">0</span>
+ <span class="n">countTwos</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span>	<span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">rest</span>
+     <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">rest</span>
+     <span class="kr">where</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">countTwos</span> <span class="n">xs</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

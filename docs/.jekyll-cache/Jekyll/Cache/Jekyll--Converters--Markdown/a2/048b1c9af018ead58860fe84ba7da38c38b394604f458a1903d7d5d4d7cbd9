@@ -1,0 +1,96 @@
+I"( <h2 id="more-complex-recursion-and-guards">More Complex Recursion and Guards</h2>
+<h3 id="multiple-base-cases">Multiple Base Cases</h3>
+<p>Each base case represents a different stopping position:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">isEven</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">isEven</span> <span class="mi">1</span> <span class="o">=</span> <span class="kt">False</span>
+<span class="n">isEven</span> <span class="n">n</span> <span class="o">=</span> <span class="n">isEven</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fibonacci</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fibonacci</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fibonacci</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fibonacci</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="multiple-recursive-rules">Multiple Recursive Rules</h3>
+<p>More complex recursive functions may have more than one recursive rule.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">evenSum</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">evenSum</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">evenSum</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">if</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+			<span class="kr">then</span> <span class="n">x</span> <span class="o">+</span> <span class="n">evenSum</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+			<span class="kr">else</span> <span class="n">evenSum</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This function adds the even numbers less than the number provided. Hence it only adds <code class="language-plaintext highlighter-rouge">x</code> into the sum when it is even and if not it goes onto the next value.</p>
+
+<p>It is important to make sure that the rules are comprehensive and that no value will crash the program.</p>
+
+<h3 id="guards">Guards</h3>
+<p>This is the same function as before but using guards:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">evenSum</span> <span class="n">x</span>
+	<span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">evenSum</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">evenSum</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To use guards, you write your function name and parameters. On the next line, with a pipe, you can write your test and return value:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">func</span> <span class="n">x</span>
+	<span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span>		<span class="o">=</span> <span class="s">"less than five"</span>
+	<span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">6</span>		<span class="o">=</span> <span class="s">"bigger than five"</span>
+	<span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span>	<span class="o">=</span> <span class="s">"equal to five"</span>
+</code></pre></div></div>
+
+<p>They are parsed from top to bottom and should take into account all cases as the interpreter won’t check for completeness. The word <code class="language-plaintext highlighter-rouge">otherwise</code> will cover all edge cases and make any <strong>partial</strong> function <strong>total</strong>.</p>
+
+<h3 id="guards-vs-pattern-matching">Guards vs. Pattern Matching</h3>
+<ul>
+  <li>For tests of just equality the best way is to use pattern matching.</li>
+  <li>Otherwise guards are to be used as it will save lines written.</li>
+</ul>
+
+<h2 id="advice-on-recursion">Advice on Recursion</h2>
+<ul>
+  <li>When  do you want to stop?
+    <ul>
+      <li>These are the base cases.</li>
+    </ul>
+  </li>
+  <li>How do you make progress towards a base case?
+    <ul>
+      <li>How do you make the problem smaller.</li>
+      <li>There might be multiple cases to consider.
+        <ul>
+          <li>These will be the recursive rules.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>What do you  need to do to get to the smaller case?
+    <ul>
+      <li>These will be the operations that you need to carry out within each rule.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sign</span> <span class="n">x</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>		<span class="o">=</span> <span class="s">"negative"</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span>	<span class="o">=</span> <span class="s">"zero"</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> 	<span class="o">=</span> <span class="s">"positive"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">odd_product</span> <span class="n">x</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span>		<span class="o">=</span> <span class="mi">1</span>
+     <span class="o">|</span> <span class="n">mod</span> <span class="n">x</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>	<span class="o">=</span> <span class="n">odd_product</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+     <span class="o">|</span> <span class="n">otherwise</span>		<span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">odd_product</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

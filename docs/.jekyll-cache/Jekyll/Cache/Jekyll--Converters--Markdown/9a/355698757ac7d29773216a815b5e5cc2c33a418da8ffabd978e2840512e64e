@@ -1,0 +1,56 @@
+I"ø<h2 id="more-type-classes">More Type Classes</h2>
+<h3 id="show"><code class="language-plaintext highlighter-rouge">show</code></h3>
+<p>This function converts other types to strings. However, it can only take the type class of <code class="language-plaintext highlighter-rouge">Show</code> into a string:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">show</span> <span class="o">::</span> <span class="kt">Show</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Show</code> contains:</p>
+
+<ul>
+  <li>All basic types.</li>
+  <li>All tuples of show-able types.</li>
+  <li>All lists of show-able types.</li>
+</ul>
+
+<h3 id="read"><code class="language-plaintext highlighter-rouge">read</code></h3>
+<p>This converts strings to other types, provided they are formatted correctly:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read</span> <span class="s">"123"</span> <span class="o">::</span> <span class="kt">Int</span>
+</code></pre></div></div>
+
+<p>In this case the use of <code class="language-plaintext highlighter-rouge">::</code> is necessary to tell Haskell what type the function should return.</p>
+
+<p>In cases where type inference can be used, the <code class="language-plaintext highlighter-rouge">::</code> is not required:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">not</span> <span class="p">(</span><span class="n">read</span> <span class="s">"False"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The type of <code class="language-plaintext highlighter-rouge">read</code> is the type class <code class="language-plaintext highlighter-rouge">Read</code>:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">read</span> <span class="o">::</span> <span class="kt">Read</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Read</code> contains:</p>
+
+<ul>
+  <li>All basic types.</li>
+  <li>All tuples of readable types.</li>
+  <li>All lists of readable types.</li>
+</ul>
+
+<h3 id="ordered-types">Ordered Types</h3>
+<p>The type class to compare two objects by inequality is <code class="language-plaintext highlighter-rouge">Ord</code>. This is required for using functions such as <code class="language-plaintext highlighter-rouge">&gt;</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">::</span> <span class="kt">Ord</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+</code></pre></div></div>
+
+<p>All basic types can be compared including tuples and lists. Tuples and lists are compared <strong>lexicographically</strong> (similar to alphabetically ordering words).</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">showTuple :: (Show a, Show b) =&gt; (a, b) -&gt; [Char]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">addThree :: (Num a, Read a) =&gt; String -&gt; a</code></li>
+  <li><code class="language-plaintext highlighter-rouge">headLt10 :: (Num a, Ord a) =&gt; [a] -&gt; Bool</code></li>
+</ol>
+:ET

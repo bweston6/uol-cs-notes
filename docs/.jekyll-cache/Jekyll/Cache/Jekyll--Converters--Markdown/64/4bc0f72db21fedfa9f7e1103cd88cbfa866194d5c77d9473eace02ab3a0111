@@ -1,0 +1,43 @@
+I"1<h2 id="filter"><code class="language-plaintext highlighter-rouge">filter</code></h2>
+<p><code class="language-plaintext highlighter-rouge">filter</code>keeps only the elements for which <code class="language-plaintext highlighter-rouge">f</code> returns <code class="language-plaintext highlighter-rouge">True</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filter'</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+<span class="n">filter'</span> <span class="kr">_</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">[]</span>
+<span class="n">filter'</span> <span class="n">f</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+	<span class="o">|</span> <span class="n">f</span> <span class="n">x</span> 		<span class="o">=</span> <span class="n">x</span> <span class="o">:</span> <span class="n">rest</span>
+	<span class="o">|</span> <span class="n">otherwise</span>	<span class="o">=</span> <span class="n">rest</span>
+	<span class="kr">where</span> <span class="n">rest</span> 	<span class="o">=</span> <span class="n">filter'</span> <span class="n">f</span> <span class="n">xs</span>
+	
+<span class="n">filter'</span> <span class="n">even</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>In comparison to <code class="language-plaintext highlighter-rouge">map</code> which applies a function to each element in a list. <code class="language-plaintext highlighter-rouge">filter</code> will apply a boolean test to each element in the list and if it fails it will remove the element from the list.</p>
+
+<h3 id="combining-map--filter">Combining <code class="language-plaintext highlighter-rouge">map</code> &amp; <code class="language-plaintext highlighter-rouge">filter</code></h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">square_even</span> <span class="o">::</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
+<span class="n">square_even</span> <span class="n">list</span> <span class="o">=</span> <span class="n">map</span> <span class="p">(</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="n">filter</span> <span class="n">even</span> <span class="n">list</span><span class="p">)</span>
+
+<span class="n">square_even</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="higher-order-programming">Higher Order Programming</h2>
+<p><code class="language-plaintext highlighter-rouge">map</code> and <code class="language-plaintext highlighter-rouge">filter</code> are examples of higher order programming. This style:</p>
+
+<ul>
+  <li>De-emphasises recursion.</li>
+  <li>Focuses on applying functions to lists.</li>
+  <li>Are available in imperative languages (Python C++).</li>
+</ul>
+
+<p>There is a whole family of higher order programming functions available in Haskell.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">onlyDiv3 = filter (\x -&gt; mod x 3 == 0)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onlyLower = filter (\x -&gt; elem x ['a'..'z'])</code></li>
+  <li><code class="language-plaintext highlighter-rouge">noEven = map (filter odd)</code></li>
+</ol>
+:ET

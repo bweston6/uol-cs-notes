@@ -1,0 +1,24 @@
+I"Þ<h2 id="the-caesar-cipher">The Caesar Cipher</h2>
+<p>The Caesar Cipher is a shift method of encoding. This shifts every letter forward by three and wraps around when <code class="language-plaintext highlighter-rouge">z</code> is reached.</p>
+
+<p>There is no particular reason to shift by three and you can shift by any number between zero and 25. Shifting by 13 would be a ROT13.</p>
+
+<h3 id="working-with-characters">Working with Characters</h3>
+<p>The <code class="language-plaintext highlighter-rouge">Data.Char</code> package has some useful functions for working with characters.</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">ord</code> function takes a character and returns its ASCII value.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">chr</code> function turns an ASCII value into a character.</li>
+</ul>
+
+<p>To import a package use the line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import ...
+</code></pre></div></div>
+
+<p>using the name of the package you want to import.</p>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>View the slides and the source code to find the implementation of the Caesar Shift functions.</p>
+:ET

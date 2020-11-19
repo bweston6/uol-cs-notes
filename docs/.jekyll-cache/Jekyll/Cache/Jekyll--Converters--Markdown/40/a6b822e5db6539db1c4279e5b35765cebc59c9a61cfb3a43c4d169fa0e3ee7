@@ -1,0 +1,103 @@
+I"�<h2 id="let">Let</h2>
+<p>Sometimes we want to use the same expression more than once:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">sqrt</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The problem of writing out the same equation over again can be solved using the following example:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">let</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="kr">in</span> <span class="n">s</span> <span class="o">+</span> <span class="n">sqrt</span> <span class="n">s</span>
+</code></pre></div></div>
+
+<h3 id="syntax">Syntax</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let &lt;bindings&gt; in &lt;expression&gt;
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;binding&gt;</code> gives names to bindings separated by <code class="language-plaintext highlighter-rouge">;</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">let a = 1; b = a + 1 in a + b</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;expression&gt;</code> uses those bindings</li>
+</ul>
+
+<h3 id="let-vs-variables">Let vs Variables</h3>
+<p>A let expression doesn’t create variables:</p>
+
+<ul>
+  <li>They are names for particular expressions.</li>
+  <li>You cannot change a binding once it has been made.</li>
+  <li>They are made for convenience only.</li>
+</ul>
+
+<h3 id="let-in-ghci">Let in GHCI</h3>
+<p>In GHCI you can write:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>To define a let for the rest of the session.</p>
+
+<h3 id="let-across-multiple-lines">Let across multiple lines</h3>
+
+<p>Usually  it is clearer to write let across multiple lines:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+		<span class="kr">in</span>
+			<span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>When splitting across line breaks you don’t need to use <code class="language-plaintext highlighter-rouge">;</code> to separate the bindings.</p>
+
+<h3 id="scope">Scope</h3>
+<p>When using let the bindings are only defined within the let function.</p>
+
+<h3 id="examples">Examples</h3>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cylinder</span> <span class="n">r</span> <span class="n">h</span> <span class="o">=</span>
+	<span class="kr">let</span> <span class="n">sideArea</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">h</span>
+		<span class="n">topArea</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">e</span> <span class="o">**</span> <span class="mi">2</span>
+	<span class="kr">in</span> <span class="n">sideArea</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">topArea</span>
+</code></pre></div></div>
+
+<h3 id="exercises">Exercises</h3>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exercise1</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="kr">in</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exercise2</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">let</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">bb</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="n">ccc</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">bb</span> <span class="kr">in</span> <span class="n">ccc</span> <span class="o">*</span>  <span class="n">ccc</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="haskells-layout-rule">Haskell’s Layout Rule</h2>
+<p>Each definition at the same level should start on exactly the same column:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="o">=</span> <span class="kr">let</span>
+			<span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> 
+			<span class="n">cc</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span>
+		<span class="kr">in</span>
+			<span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<h3 id="ignoring-the-layout-rule">Ignoring the Layout Rule</h3>
+<p>You can ignore the layout rule by using curly braces to separate the bindings.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">let</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span>
+	<span class="n">c</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">}</span>
+<span class="kr">in</span>
+	<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+:ET

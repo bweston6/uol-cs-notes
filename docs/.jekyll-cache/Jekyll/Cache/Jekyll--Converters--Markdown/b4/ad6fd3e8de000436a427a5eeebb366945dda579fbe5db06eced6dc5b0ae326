@@ -1,0 +1,72 @@
+I"Á<h2 id="mutual-and-multiple-recursion">Mutual and Multiple Recursion</h2>
+<h3 id="mutual-recursion">Mutual Recursion</h3>
+<p>Mutual recursion is when two functions call each other:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">even'</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">True</span>
+<span class="n">even'</span> <span class="n">n</span> <span class="o">=</span> <span class="n">odd'</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">odd'</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">False</span>
+<span class="n">odd'</span> <span class="n">n</span> <span class="o">=</span> <span class="n">even'</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We have to make sure that:</p>
+
+<ul>
+  <li>We terminate in a base case.</li>
+  <li>We always make progress towards a base case.</li>
+</ul>
+
+<p>Mutual recursion is a stylistic choice.</p>
+
+<h2 id="multiple-recursion">Multiple Recursion</h2>
+<p>Multiple recursion is when a function makes more than one recursive call in the same recursive rule. This has been see in the <code class="language-plaintext highlighter-rouge">fib</code> function that we made.</p>
+
+<p>Multiple recursion <strong>can</strong> make your code slow as each call makes two additional threads growing the recursive tree exponentially. Additionally the same function is called multiple times with the same parameters.</p>
+
+<pre><code class="language-mermaid">graph TD
+A[fib 4] --&gt; B[fib 3]
+A --&gt; C[fib 2]
+B --&gt; D[fib 2]
+B --&gt; E[fib 1]
+D --&gt; F[fib 1]
+D --&gt; G[fib 0]
+C --&gt; H[fib 1]
+C --&gt; I[fib 0]
+</code></pre>
+
+<h3 id="faster-fib">Faster <code class="language-plaintext highlighter-rouge">fib</code></h3>
+<p>Create a <strong>helper function</strong> that computes the Fibonacci list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fast_fib_help</span> <span class="mi">1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fast_fib_help</span> <span class="n">n</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">:</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">y</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+	<span class="kr">where</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">y</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">fast_fib_help</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This returns the first <code class="language-plaintext highlighter-rouge">n</code> Fibonacci numbers counting down to 0. To turn this into a more presentable list we can use another user facing function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fast_fib</span> <span class="n">n</span> <span class="o">=</span> <span class="n">head</span> <span class="p">(</span><span class="n">fast_fib_help</span> <span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This function is not <strong>multiply recursive</strong> and is therefore must faster to compute.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">multipleThree</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">True</span>
+ <span class="n">multipleThree</span> <span class="n">x</span> <span class="o">=</span> <span class="n">two</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	
+ <span class="n">one</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">False</span>
+ <span class="n">one</span> <span class="n">x</span> <span class="o">=</span> <span class="n">multipleThree</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	
+ <span class="n">two</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">False</span>
+ <span class="n">two</span> <span class="n">x</span> <span class="o">=</span> <span class="n">one</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">lucas</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">2</span>
+ <span class="n">lucas</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+ <span class="n">lucas</span> <span class="n">n</span> <span class="o">=</span> <span class="n">lucas</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">lucas</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

@@ -1,0 +1,62 @@
+I"ô<h2 id="list-ranges">List Ranges</h2>
+<p>A list range lets us write a long list in a compact way:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>If the start is bigger than the end then you will get an empty list. This means you canâ€™t count down in a list in this way. Using <code class="language-plaintext highlighter-rouge">..</code> also works with letters to fill in the letters in between.</p>
+
+<p>To give a step size give the first two elements and then a number to stop before or on:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="o">..</span><span class="mi">20</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>To count backwards use the a step size of <code class="language-plaintext highlighter-rouge">-1</code>:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="o">..</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="infinite-lists--functions">Infinite Lists &amp; Functions</h3>
+<ul>
+  <li>
+    <p>You can also use this notation to define an infinite list:</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span>
+  <span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">...</span>
+</code></pre></div>    </div>
+
+    <p>This will last forever and you can pass then on to functions. This may be useful if you want some number of elements in an infinite list <code class="language-plaintext highlighter-rouge">take 3 [1..]</code>.</p>
+  </li>
+  <li>
+    <p>To make a list of an an infinitely long value you can use <code class="language-plaintext highlighter-rouge">repeat</code>.</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="n">repeat</span> <span class="sc">'a'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To make a list of an infinite cycle you can use the <code class="language-plaintext highlighter-rouge">cycle</code> function.</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="n">cycle</span> <span class="s">"abc"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">onetox</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">..</span> <span class="n">x</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">evensupto</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">..</span> <span class="n">x</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">countdown</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">..</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

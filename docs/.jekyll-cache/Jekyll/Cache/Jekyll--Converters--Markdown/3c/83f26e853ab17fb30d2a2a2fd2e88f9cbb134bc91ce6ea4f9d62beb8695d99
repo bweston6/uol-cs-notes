@@ -1,0 +1,110 @@
+I"¾&<h2 id="fold">Fold</h2>
+<p>Some functions take lists and turn them into a single value. This type of computation is called a fold. The things that you can change are:</p>
+
+<ul>
+  <li>The base case.</li>
+  <li>The operation applied to the list.</li>
+</ul>
+
+<h3 id="foldr"><code class="language-plaintext highlighter-rouge">foldr</code></h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foldr'</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">b</span>
+
+<span class="n">foldr'</span> <span class="kr">_</span> <span class="n">init</span> <span class="kt">[]</span> <span class="o">=</span> <span class="n">init</span>
+<span class="n">foldr'</span> <span class="n">f</span> <span class="n">init</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span> <span class="n">x</span> <span class="p">(</span><span class="n">foldr'</span> <span class="n">f</span> <span class="n">init</span> <span class="n">xs</span><span class="p">)</span>
+
+<span class="o">&gt;</span> <span class="n">foldr'</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">55</span>
+
+<span class="o">&gt;</span> <span class="n">foldr'</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">3628800</span>
+</code></pre></div></div>
+
+<h4 id="the-folded-function">The Folded Function</h4>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum''</span> <span class="n">list</span> <span class="o">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span> <span class="n">x</span> <span class="n">acc</span> <span class="o">-&gt;</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="mi">0</span> <span class="n">list</span>
+</code></pre></div></div>
+
+<p>The folded function <code class="language-plaintext highlighter-rouge">f</code> takes two arguments:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">x</code> is an element form the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">acc</code> is the accumulator.</li>
+</ul>
+
+<p>The function outputs a new value for the accumulator:</p>
+
+<ul>
+  <li>The initial value for the accumulator is <code class="language-plaintext highlighter-rouge">init</code>.</li>
+  <li>The final value for the accumulator is the output of <code class="language-plaintext highlighter-rouge">foldr</code>.</li>
+</ul>
+
+<h5 id="example">Example</h5>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span> <span class="n">x</span> <span class="n">acc</span> <span class="o">-&gt;</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="mi">0</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Values for the accumulator:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>init	= 0
+0 + 4	= 4
+4 + 3	= 7
+7 + 2	= 9
+9 + 1	= 10
+</code></pre></div></div>
+
+<p>Final output: <code class="language-plaintext highlighter-rouge">10</code></p>
+
+<h4 id="an-imperative-equivalent">An Imperative Equivalent:</h4>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foldr</span> <span class="n">f</span> <span class="n">init</span> <span class="n">input_list</span>
+</code></pre></div></div>
+
+<p>In python this would be implemented as:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acc</span> <span class="o">=</span> <span class="n">init</span>
+<span class="n">input_list</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_list</span><span class="p">)):</span>
+	<span class="n">acc</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">input_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">acc</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">acc</span>
+</code></pre></div></div>
+
+<h4 id="foldr-examples"><code class="language-plaintext highlighter-rouge">foldr</code> Examples</h4>
+
+<p>Whenever you fold a binary operator you are putting that operator in-between each element on the list. If you are using <code class="language-plaintext highlighter-rouge">foldr</code> then you will put the initial value on the right hand side.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">concat'</span> <span class="n">list</span> <span class="o">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">++</span><span class="p">)</span> <span class="kt">[]</span> <span class="n">list</span>
+
+<span class="o">&gt;</span> <span class="n">concat'</span> <span class="p">[</span><span class="s">"Hello "</span><span class="p">,</span> <span class="s">"there."</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="s">"Hello there."</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all'</span> <span class="n">list</span> <span class="o">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="o">&amp;&amp;</span><span class="p">)</span> <span class="kt">True</span> <span class="n">list</span>
+
+<span class="o">&gt;</span> <span class="n">all'</span> <span class="p">[</span><span class="kt">True</span><span class="p">,</span> <span class="kt">True</span><span class="p">,</span> <span class="kt">True</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="kt">True</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">length'</span> <span class="n">list</span> <span class="o">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span> <span class="kr">_</span> <span class="n">acc</span> <span class="o">-&gt;</span> <span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">0</span> <span class="n">list</span>
+
+<span class="o">&gt;</span> <span class="n">length'</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">4</span>
+</code></pre></div></div>
+
+<p>This example shows that you just need to apply a function to the accumulator for each element in the list. It doesnâ€™t need to be specifically including items in the list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count_ones</span> <span class="n">list</span> <span class="o">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span> <span class="n">x</span> <span class="n">acc</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="kr">then</span> <span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span> <span class="kr">else</span> <span class="n">acc</span><span class="p">)</span> <span class="mi">0</span> <span class="n">list</span>
+
+<span class="o">&gt;</span> <span class="n">count_ones</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">any' list = foldr (||) False list</code></li>
+  <li><code class="language-plaintext highlighter-rouge">countEs string = foldr (\ x acc -&gt; if x == 'e' then acc + 1 else acc) 0  string</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sumOfEvens list  = foldr (\ x acc -&gt; if even x then acc + x else acc) 0 list</code></li>
+</ol>
+:ET
