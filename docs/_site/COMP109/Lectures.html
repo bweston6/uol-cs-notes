@@ -861,14 +861,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h2 id="uncountable-sets">Uncountable Sets</h2>
 <p>A set that is not countable is called uncountable. The following set is uncountable:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[S={x\in\mathbb{R}</td>
-      <td>0&lt;x&lt;1}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[S = { x \in \mathbb{R} \vert 0 &lt; x &lt; 1 }]</p>
 
 <p>There is no bijective function from this set to the set of all natural numbers.</p>
 
@@ -886,7 +879,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>$\vdots$</li>
 </ul>
 
-<p><em>In this proof we treat this as a table without the leading zero and consider the main diagonal where the digit  $a_{ij}$ has equal $i$ and $j$.</em></p>
+<p class="info">In this proof we treat this as a table without the leading zero and consider the main diagonal where the digit  $a_{ij}$ has equal $i$ and $j$.</p>
 
 <p>We show that there exists $d\in S$ such that for no $i\in\mathbb{N^+}$ we have $f(i)=d$.</p>
 
@@ -1390,12 +1383,7 @@ x5 --&gt; 1
 
 <p>This is logically equivalent to $a_1\neq a_2 \Rightarrow f(a_1) \neq f(a_2)$ and so injective functions never repeat values. In other words:</p>
 
-<hr />
-
-<p>@figure
-Different inputs give different outputs.
-@/
-—</p>
+<p class="info">Different inputs give different outputs.</p>
 
 <h3 id="example-1">Example 1</h3>
 <p>$f:\mathbb{Z}\rightarrow \mathbb{Z}$ given by $f(x)=x^2$ is not injective.</p>
@@ -1485,7 +1473,6 @@ F --&gt;|Output| fx
 
 <p>If $f$ is a function from $A$ to $B$ we write $f: A\rightarrow B$.</p>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph LR
 subgraph x
 1
@@ -1502,8 +1489,7 @@ end
 3 --&gt; 4
 6
 </code></pre>
-<p>@caption(A function f:{1,2,3} -&gt; {4,5,6})
-@/</p>
+<p><em>A function $f:{1,2,3} \rightarrow {4,5,6}$.</em></p>
 
 <p>For every value on the left there should be a <strong>single</strong> value associated to it on the right.</p>
 
@@ -1528,15 +1514,13 @@ end
 <h3 id="co-domain-vs-range">Co-domain v.s. Range</h3>
 <p>The difference between co-domain and range is that the co-domain is all values in the set $B$ and the range is all the values, $f(x)$, that $A$ maps to via the function $f$.</p>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph LR
 subgraph B
 fA
 end
 A --&gt;|f| fA
 </code></pre>
-<p>@caption(The range of f)
-@/</p>
+<p><em>The range of $f$.</em></p>
 
 <h4 id="example">Example</h4>
 <p>Give the range of the function:</p>
@@ -2085,21 +2069,14 @@ Then
 <h3 id="examples">Examples</h3>
 <p>\(\{3,4,5\}\subseteq\{1,5,4,2,1,3\},\ \{3,3,5\}\subseteq\{3,5\},\ \{5,3\}\subseteq\{3,5\}\)</p>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph TB
     subgraph A
     B(B)
     end
 </code></pre>
-<p>@caption(Venn diagram of B subset A
-@/</p>
+<p><em>Venn diagram of $B$ subset $A$.</em></p>
 
-<hr />
-
-<p>@figure
-Therefore, $\forall$ sets $A$, $A\subseteq A$
-@/
-—</p>
+<p class="info">Therefore, $\forall$ sets $A$, $A\subseteq A$</p>
 
 <p>Furthermore, $\emptyset\subseteq A$ is always true. This is as the empty set is always a subset of any other set including the empty set itself.</p>
 
@@ -2158,15 +2135,9 @@ $x_b=[0,0,1,1,0]$</p>
 
 <p>We write $a\in A$ to denote that the object $a$ is an element of the set $a$: \(7\in\{7,5,3\},4\notin\{7,5,3\}\)</p>
 
-<hr />
+<p class="info">The order of elements does not matter.</p>
 
-<p>@figure</p>
-<ul>
-  <li>The order of elements does not matter.</li>
-  <li>Repetitions don’t count.
-@/
-—</li>
-</ul>
+<p class="info">Repetitions don’t count.</p>
 
 <p>For a large set, especially an infinite set, we cannot write down all the elements. We use a <strong>predicate</strong> $P$ instead.
 \(A=\{x\in S\vert P(x)\)
@@ -2331,12 +2302,7 @@ Then:
 <h2 id="example-2">Example 2</h2>
 <p>For any integer $n\geq1$, if $x_1,x_2,\ldots,x_n$ are $n$ numbers, then no matter how the parentheses are inserted into their product, the number of multiplications used to compute the products is $n-1$.</p>
 
-<hr />
-
-<p>@figure
-As the number are all individual you can’t use tricks like using already computed values to speed up the computation.
-@/
-—</p>
+<p class="info">As the number are all individual you can’t use tricks like using already computed values to speed up the computation.</p>
 
 <h3 id="base-case-1">Base Case</h3>
 <p>\(X_1 \text{ for } n=1,\ n-1=0\)</p>
@@ -2381,12 +2347,8 @@ As the number are all individual you can’t use tricks like using already compu
 
 <h2 id="generic-particular-vs-induction-for-universal-statements">Generic Particular v.s. Induction for Universal Statements</h2>
 <h3 id="generalisation-from-the-generic-particular">Generalisation from the generic particular:</h3>
-<hr />
 
-<p>@figure
-“Suppose that $x$ is a particular but arbitrarily chosen…” “…property holds for this $x$…” “…then the property holds for all $x$”</p>
-
-<h2>@/</h2>
+<p class="info">“Suppose that $x$ is a particular but arbitrarily chosen…” “…property holds for this $x$…” “…then the property holds for all $x$”</p>
 
 <p>This argument states that as we have chosen an arbitrary value from a set then the argument will hold for all numbers within the same set.</p>
 
@@ -2464,12 +2426,7 @@ As the number are all individual you can’t use tricks like using already compu
   </li>
 </ul>
 
-<hr />
-
-<p>@figure
-How do we know that at some point in the list all numbers are eliminated?
-@/
-—</p>
+<p class="warning">How do we know that at some point in the list all numbers are eliminated?</p>
 
 <h4 id="proof">Proof</h4>
 <p>Assume for a proof by contradiction that there is a greatest prime number $P_n$.</p>
@@ -2679,7 +2636,7 @@ N[Negated Conjecture] --&gt; C
 <p>To prove 
 \(\forall \text{ if } P(x) \text{ then } Q(x)\)
 it suffices to prove<br />
-\(\forall \text{ if \textbf{not} } P(x) \text{ then \textbf{not} } Q(x)\)</p>
+\(\forall \text{ if not } P(x) \text{ then not } Q(x)\)</p>
 
 <h4 id="example">Example</h4>
 <ol>
@@ -2720,16 +2677,13 @@ This means that there exists a value to which the function $Q(x)$ holds true. Th
 \(\forall x \text{ if } P(x) \text{ then } Q(x)\)
 This means that for all of $x$ if one function is applied to $x$ another function in $x$ also holds true. For example:</p>
 
-<p>@figure
-If $a$ and $b$ are integers then $6a^2b$ is even.
-@/</p>
+<p class="info">If $a$ and $b$ are integers then $6a^2b$ is even.</p>
 
 <p>In this statement the “$a$ and $b$ are integers” count for $P(x)$ and “$6a^2b$ is even” counts for $Q(x)$.</p>
 
-<p>@figure
-$6a^2b$<br />
-$2(3a^2b)$
-@/</p>
+<p>$6a^2b$</p>
+
+<p>$2(3a^2b)$</p>
 
 <p>By halving you are proving that the answer is even as it is a multiple of two.</p>
 
@@ -2753,13 +2707,12 @@ $2(3a^2b)$
   <li>Show that the conclusion $Q(x)$ is true by using definitions, previously established results, and the rules for logical inference.</li>
 </ul>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph LR
 Definitions --&gt; A[Conjecture]
 B[Known Facts] --&gt; A
 </code></pre>
-<p>@caption(This method brings together definitions and facts into a conjecture.)
-@/</p>
+
+<p class="info">This method brings together definitions and facts into a conjecture.</p>
 
 <h3 id="example-1">Example</h3>
 <p>Prove that the sum of any two even integers is even.</p>
@@ -2790,12 +2743,7 @@ You are saying that the opposite is true:
 
 <p>No as for $n=1,\ n^2 = 1$ and $2n=2$ which is greater than $n^2$</p>
 
-<hr />
-
-<p>@figure
-You can correct this by stipulating that for ever integer greater than one the statement holds true.
-@/
-—</p>
+<p class="info">You can correct this by stipulating that for ever integer greater than one the statement holds true.</p>
 
 <h1 id="comp109---week-1-summary"><a href="/UoL/comp109/lectures/2020/10/24/1.html">COMP109 - Week 1 Summary</a></h1>
 <h2 id="notion-of-proof">Notion of Proof</h2>

@@ -906,7 +906,6 @@ end while
 <h4 id="example">Example</h4>
 <p>A uniform cost search is completed on the following graph:</p>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph TD
 S --&gt;|5| A
 S --&gt;|2| B
@@ -919,17 +918,45 @@ C --&gt;|2| F
 F --&gt;|1| G
 D --&gt;|7| H
 </code></pre>
-<p>@/
-<em>**</em>
-| Expanded Paths | Frontier |
-| — | — |
-| | {S:0} |
-| S not goal | SA:5, SB:2, SC:4 |
-| SB not goal | SA:5, SC:4, SBG:8 |
-| SC not goal | SA:5, SBG:8, SCF:6 |
-| SA not goal | SABG:8, SCF:6, SAD:14, SAE:9 |
-| SCF not goal | SABG:8, SAD:14, SAE:9, SCFG,7 |
-| SCFG is goal | SABG:8, SAD:14, SAE:9 |</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>{S:0}</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA:5, SB:2, SC:4</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SA:5, SC:4, SBG:8</td>
+    </tr>
+    <tr>
+      <td>SC not goal</td>
+      <td>SA:5, SBG:8, SCF:6</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SABG:8, SCF:6, SAD:14, SAE:9</td>
+    </tr>
+    <tr>
+      <td>SCF not goal</td>
+      <td>SABG:8, SAD:14, SAE:9, SCFG,7</td>
+    </tr>
+    <tr>
+      <td>SCFG is goal</td>
+      <td>SABG:8, SAD:14, SAE:9</td>
+    </tr>
+  </tbody>
+</table>
 
 <ul>
   <li>In this graph you always choose the frontier with the shortest path length.</li>

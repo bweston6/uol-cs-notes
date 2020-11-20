@@ -1,0 +1,77 @@
+I"B
+<h2 id="system-design-as-modelling">System design as Modelling</h2>
+
+<pre><code class="language-mermaid">graph TD
+A[The Problem to be Solved] --&gt; |Suitable for computation| B[The Program]
+B --&gt; D[The Output]
+D --&gt; |Result suitable for interpretation| C[The request required]
+A --&gt; |What we want| C
+</code></pre>
+
+<h2 id="modelling-process">Modelling Process</h2>
+
+<pre><code class="language-mermaid">graph LR
+A[Real World Problem] --&gt; B[Information Model]
+B --&gt; C[Conceptual Model]
+C --&gt; D[Logical Model]
+D --&gt; E[Physical Model]
+</code></pre>
+
+<p>An example of this process:</p>
+
+<ul>
+  <li>Problem in the real world.</li>
+  <li>A plain English description of the input, output and main components.</li>
+  <li>Entity Relationship model of the data in a database.</li>
+  <li>The definition of the table of a relational database.
+    <ul>
+      <li>The technical details of the model such as the database format and table definitions.</li>
+    </ul>
+  </li>
+  <li>MySQL or Oracle database.</li>
+</ul>
+
+<p>The purpose of the modelling process is so you can give your design to another person in a team and they know how to implement it.</p>
+
+<h1 id="assignment-1">Assignment 1</h1>
+<p>Produce a wiki-style report (between 2000 and 2500 words) introducing an innovative system/application you would like to implement.</p>
+
+<p class="info">This system will not be implemented as you can write the proposal with little concern of whether it it realisable.</p>
+
+<h2 id="things-to-include">Things to include</h2>
+<ul>
+  <li>The domain of the system.
+    <ul>
+      <li>In which context is it useful?</li>
+    </ul>
+  </li>
+  <li>What makes the solution important?
+    <ul>
+      <li>Requires references as to why it is an important problem to solve.</li>
+    </ul>
+  </li>
+  <li>What makes it new?
+    <ul>
+      <li>Research 3 - 5 direct competitors in the market and describe why yours is better.</li>
+    </ul>
+  </li>
+  <li>The purpose of the new system.</li>
+  <li>What different categories of users will the system have?
+    <ul>
+      <li>Envisaging how they will utilise the system.</li>
+    </ul>
+  </li>
+  <li>Main benefits and shortcomings of the system and the main obstacles and shortcomings of the system.
+    <ul>
+      <li>Also the main invectives for uptake of the system.</li>
+    </ul>
+  </li>
+  <li>Include a high level description of that data and what the users will use the data for.
+    <ul>
+      <li>Include a description of each of the user categories you have identified.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Any outside meeting should be recorded on canvas in the form of minutes.</p>
+:ET

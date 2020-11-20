@@ -1,0 +1,69 @@
+I"�<p>Depth first always selects the longest path from the frontier as opposed to the shortest path. From the perspective of the frontier you are expanding the path that was most recently added as opposed to the oldest path in the frontier.</p>
+
+<h2 id="change-to-pseudo-code">Change to Pseudo-code</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7:	select and remove from frontier the path s_o...s_k that was
+8: 	last added to frontier
+</code></pre></div></div>
+
+<p>As a result a stack should be used instead of a queue such that the last into the data structure is the first out.</p>
+
+<h2 id="example">Example</h2>
+
+<pre><code class="language-mermaid">graph TD
+S --&gt; A
+S --&gt; B
+S --&gt; C
+A --&gt; D
+A --&gt; E
+B --&gt; G
+E --&gt; G
+C --&gt; F
+F --&gt; G
+D --&gt; H
+</code></pre>
+<p><em>Example Graph.</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expansion Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>SA, SB, SC</td>
+    </tr>
+    <tr>
+      <td>SA is not goal</td>
+      <td>SB, SC, SAD, SAE</td>
+    </tr>
+    <tr>
+      <td>SAD is not goal</td>
+      <td>SB, SC, SAE, SADH</td>
+    </tr>
+    <tr>
+      <td>SADH is not goal</td>
+      <td>SB, SC, SAE</td>
+    </tr>
+    <tr>
+      <td>SAE is not goal</td>
+      <td>SB, SC, SAEG</td>
+    </tr>
+    <tr>
+      <td>SAEG is goal</td>
+      <td>SB, SC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This additionally illustrates that depth first doesn’t always find the shortest path as the longest paths are searched first.</p>
+
+<p>Breadth first however always finds the shortest path.</p>
+:ET

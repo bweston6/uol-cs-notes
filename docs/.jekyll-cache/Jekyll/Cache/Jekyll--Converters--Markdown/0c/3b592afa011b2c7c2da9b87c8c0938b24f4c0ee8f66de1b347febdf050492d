@@ -1,0 +1,156 @@
+I"<p>The process of obtaining, through systematic research the requirements of a system form the various users, customers and other stakeholders.</p>
+
+<ul>
+  <li>Needs a principle approach as it is often hard for users to articulate their need or their business problems.</li>
+  <li>Any system that doesn’t meet the users need is neither useful nor useable.</li>
+</ul>
+
+<h2 id="how-to-elicit-requirements">How to Elicit Requirements?</h2>
+<h3 id="from-the-artefact">From the Artefact</h3>
+<ul>
+  <li>Documents analysis</li>
+  <li>Interface analysis</li>
+  <li>Prototyping
+    <ul>
+      <li>Code</li>
+      <li>Show</li>
+      <li>Tune</li>
+    </ul>
+  </li>
+  <li>Reverse Engineering</li>
+</ul>
+
+<h3 id="from-people-or-asking-stakeholders">From People or Asking Stakeholders</h3>
+<ul>
+  <li>Questionnaires
+    <ul>
+      <li>Open or Closed questions</li>
+    </ul>
+  </li>
+  <li>Interviews</li>
+  <li>Focus groups
+    <ul>
+      <li>Guided discussions</li>
+    </ul>
+  </li>
+  <li>Brainstorming
+    <ul>
+      <li>Free discussion</li>
+    </ul>
+  </li>
+  <li>Ethnographic analysis
+    <ul>
+      <li>Watching what people do</li>
+    </ul>
+  </li>
+</ul>
+
+<p>When eliciting from people you should take into account who you want to talk to. There should be adequate stakeholders to get comprehensive coverage. There should be selection based on role, position, decision power, usage, expertise, exposure to problems, interests and influence on uptake.</p>
+
+<p>Interviewing can also be difficult as there may be:</p>
+
+<ul>
+  <li>Conflicting points of view.</li>
+  <li>Different backgrounds, culture, terminology.</li>
+  <li>Different languages, jargon, hidden knowledge.</li>
+  <li>Internal politics and dynamics.</li>
+</ul>
+
+<h3 id="example">Example</h3>
+<p>If you had to put together a new website for the University where would you start?</p>
+
+<ul>
+  <li>Have a look at the <a href="https://www.liverpool.ac.uk">existing website</a> (the artefact)</li>
+</ul>
+
+<h2 id="data-gathering-techniques">Data Gathering Techniques</h2>
+
+<p class="info">For a grid of data gathering techniques and their pros and cons view the slides for this lecture.</p>
+
+<p>User stories could apply to all three methods. These are anecdotal stories in the workplace that apply to the issue. Enduring stories capture all aspect of the organisation and are  the ones a systems analysts should be looking for.</p>
+
+<p>Stories can be used to <strong>validate</strong> the companies decision, <strong>explain</strong> why the company acted in a certain way, describe an <strong>experience</strong> or <strong>prescribe</strong> the listener how to act. They can be used to complement other methods.</p>
+
+<p>The main methods to gather information are:</p>
+
+<h3 id="questionnaires">Questionnaires</h3>
+<ul>
+  <li>They are useful in gathering form <strong>key users</strong> or potential users. They can collect information on:
+    <ul>
+      <li>Attitudes</li>
+      <li>Beliefs</li>
+      <li>Behaviours</li>
+      <li>Characteristics</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="interviewing">Interviewing</h3>
+<ul>
+  <li>They are painful as they need to be planned. The following should be considered:
+    <ul>
+      <li>Dispersion of organisation members.</li>
+      <li>Number of members.</li>
+      <li>Exploratory work required.</li>
+      <li>Problem solving prior to the interviews.</li>
+    </ul>
+  </li>
+  <li>Interviewing is an important method of collecting data on human and system information requirements. They reveal information about:
+    <ul>
+      <li>Opinions</li>
+      <li>Feelings</li>
+      <li>Goals</li>
+      <li>Key user experience concerns.</li>
+    </ul>
+  </li>
+  <li>Due to the instant nature of interviews there should be some preparation for the interview.
+    <ul>
+      <li>Reading background material.</li>
+      <li>Establishing interview objectives.</li>
+      <li>Deciding whom to interview.</li>
+      <li>Preparing the interviewee.</li>
+      <li>Deciding on question types and structure.</li>
+    </ul>
+  </li>
+  <li>A pyramid or funnel method should be used in interviewing questions. You should start with a very general question and add more details to get to the source of the problem.</li>
+  <li>Reports should be written as soon a possible after the interview so that as much detail is retained as possible. Two people can take notes to compare later.</li>
+</ul>
+
+<h3 id="joint-application-design">Joint application design</h3>
+<ul>
+  <li>Involving the users from the start in the design of the system.</li>
+  <li>The users will develop a greater link to the system. This will make the system more useful to them.</li>
+  <li>You should consider if the issue meets the following requirements before using this method:
+    <ul>
+      <li>Users want something new and bespoke.</li>
+      <li>The organisational culture supports joint problem solving behaviours and allows leave to participate in the exercise.</li>
+      <li>The analyst reckons that many more ideas will be generated using JAD than with one-to-one sessions.</li>
+      <li>The analyst should also be trained in the technique.</li>
+    </ul>
+  </li>
+  <li>People involved:
+    <ul>
+      <li>Executive sponsor</li>
+      <li>System analyst</li>
+      <li>Users</li>
+      <li>Session leaders</li>
+      <li>Observers</li>
+      <li>Scribe</li>
+    </ul>
+  </li>
+  <li>Benefits of JAD:
+    <ul>
+      <li>Time is saved, compared with traditional interviewing.</li>
+      <li>Rapid development of systems.</li>
+      <li>Creative idea production is improved.</li>
+    </ul>
+  </li>
+  <li>Drawbacks of JAD:
+    <ul>
+      <li>It requires a large block of time to be available for all session participants.</li>
+      <li>If preparation or the follow-up report is incomplete the session may not be successful.</li>
+      <li>The organisational skills and culture may not be conducive to a JAD session.</li>
+    </ul>
+  </li>
+</ul>
+:ET

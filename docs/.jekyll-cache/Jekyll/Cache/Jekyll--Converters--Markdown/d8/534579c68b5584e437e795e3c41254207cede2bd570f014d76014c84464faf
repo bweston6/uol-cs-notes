@@ -1,0 +1,101 @@
+I"�<h2 id="lists">Lists</h2>
+<p>A list contains any number of items that all have the same type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Lists are built with <code class="language-plaintext highlighter-rouge">[]</code> as opposed to tuples which are built with<code class="language-plaintext highlighter-rouge">()</code>.</p>
+
+<ul>
+  <li>
+    <p>A list can have any number of elements including 0.</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">[]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In Haskell lists are linked lists:</p>
+    <ul>
+      <li>This means that random access is expensive.</li>
+      <li>Internally Haskell will walk the entire list to get to the last element.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="strings">Strings</h3>
+<p>In Haskell strings are just a list of characters. This means that <code class="language-plaintext highlighter-rouge">['a', 'b', 'c']</code> is equivalent to <code class="language-plaintext highlighter-rouge">"abc"</code>. This has the result of allowing any string operator to  also work on lists.</p>
+
+<h3 id="operators">Operators</h3>
+<ul>
+  <li>You can join lists together with the <code class="language-plaintext highlighter-rouge">++</code> operator, provided that they have the same type.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">!!</code> operator gets a specified element from the list.
+    <ul>
+      <li>
+        <p>Lists are zero indexed.</p>
+
+        <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">!!</span> <span class="mi">0</span>
+  <span class="o">&gt;</span> <span class="mi">1</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">head</code> takes the first element of a list.</li>
+  <li><code class="language-plaintext highlighter-rouge">tail</code> takes all but the first element of the list.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">:</code> or the cons operator glues a new head onto an existing list.</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+  <span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Any list can be built by consing onto an empty list.</li>
+    </ul>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;</span> <span class="sc">'a'</span> <span class="o">:</span> <span class="sc">'b'</span> <span class="o">:</span> <span class="sc">'c'</span> <span class="o">:</span> <span class="kt">[]</span>
+  <span class="o">&gt;</span> <span class="s">"abc"</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">last</code> gives the last element of the list.</li>
+  <li><code class="language-plaintext highlighter-rouge">init</code> gives all elements but the last element.</li>
+  <li><code class="language-plaintext highlighter-rouge">length</code> returns the number of elements in the list</li>
+</ul>
+
+<p class="info">See slides for more functions.</p>
+
+<h3 id="pattern-matching-example">Pattern Matching Example</h3>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">triple_head</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>This will name the head of the list <code class="language-plaintext highlighter-rouge">x</code> and the tail <code class="language-plaintext highlighter-rouge">xs</code> as the input is <code class="language-plaintext highlighter-rouge">x</code> consed onto <code class="language-plaintext highlighter-rouge">xs</code>.</p>
+
+<ul>
+  <li>It is common for the head to be called <code class="language-plaintext highlighter-rouge">x</code> or another value and for the tail to be called <code class="language-plaintext highlighter-rouge">xs</code> with an <code class="language-plaintext highlighter-rouge">s</code> on the tail.</li>
+  <li>If the pattern cannot be matched, such as if the list is empty, then you will get an error.</li>
+  <li>
+    <p>The wildcard pattern <code class="language-plaintext highlighter-rouge">_</code> won’t assign a letter if you don’t care about a value.</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">f</span> <span class="p">(</span><span class="kr">_</span><span class="o">:</span><span class="n">y</span><span class="o">:</span><span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="exercises">Exercises</h3>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">thricesum</span> <span class="n">list</span> <span class="o">=</span> <span class="n">sum</span> <span class="n">list</span> <span class="o">*</span> <span class="mi">3</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">thirdelement</span> <span class="kr">_</span><span class="o">:</span><span class="kr">_</span><span class="o">:</span><span class="n">x</span><span class="o">:</span><span class="kr">_</span> <span class="o">=</span> <span class="n">x</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">exclaim</span> <span class="n">string</span> <span class="o">=</span> <span class="sc">'!'</span><span class="o">:</span><span class="n">string</span><span class="o">:</span><span class="sc">'!'</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

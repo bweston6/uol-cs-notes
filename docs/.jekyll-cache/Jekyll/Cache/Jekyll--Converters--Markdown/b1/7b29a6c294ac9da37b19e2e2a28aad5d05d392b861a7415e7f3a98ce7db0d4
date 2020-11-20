@@ -1,0 +1,133 @@
+I"l<p>Basic problem solving techniques such as BFS and DFS are either incomplete, in the case of DFS or computationally expensive.</p>
+
+<p>You can make some tweaks to generate other uniform cost search algorithms or add more information to give an informed search algorithm. Either of these are an improvement</p>
+
+<ul>
+  <li><strong>Uniform cost search</strong> is similar to a BFS but including cost.</li>
+  <li>Heuristic searches include rules of thumb and can include:
+    <ul>
+      <li>Greedy search</li>
+      <li>A* search
+        <ul>
+          <li>This is the most easiest and most popular search method made in 1968.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="search-graph-with-costs">Search Graph with Costs</h2>
+<p>A path cost function,
+\(g:\text{Paths}\rightarrow\text{real numbers}\)
+gives a cost to each path. We assume that the cost of a path is the sum over the costs of the steps in the path.</p>
+
+<h3 id="uniform-cost-search">Uniform Cost Search</h3>
+<ul>
+  <li>Why not expand the cheapest path first?</li>
+  <li>Intuition: cheapest is likely to be best.</li>
+  <li>Performance is like BFS but we select the minimum cost path rather than the shortest path.</li>
+  <li>Uniform cost search behaves in exactly the same way as BFS if the cost of every step is the same.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
+		for each state s the successors of s
+		a test goal(s) checking whether s is a goal state
+		g(s_0...s_k) for every path s_0...s_k
+		
+Set frontier := {s_0}
+while frontier is not empty do
+		select and remove from the frontier the path s_0...s_k
+		with g(s_0...s_k) minimal
+		if goal(s_k) then
+			return s_0...s_k (and terminate)
+		else for every successor s of s_k add s0...s_ks to frontier
+		end if
+end while
+</code></pre></div></div>
+
+<h4 id="example">Example</h4>
+<p>A uniform cost search is completed on the following graph:</p>
+
+<pre><code class="language-mermaid">graph TD
+S --&gt;|5| A
+S --&gt;|2| B
+S --&gt;|4| C
+A --&gt;|9| D
+A --&gt;|4| E
+B --&gt;|6| G
+E --&gt;|6| G
+C --&gt;|2| F
+F --&gt;|1| G
+D --&gt;|7| H
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>{S:0}</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA:5, SB:2, SC:4</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SA:5, SC:4, SBG:8</td>
+    </tr>
+    <tr>
+      <td>SC not goal</td>
+      <td>SA:5, SBG:8, SCF:6</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SABG:8, SCF:6, SAD:14, SAE:9</td>
+    </tr>
+    <tr>
+      <td>SCF not goal</td>
+      <td>SABG:8, SAD:14, SAE:9, SCFG,7</td>
+    </tr>
+    <tr>
+      <td>SCFG is goal</td>
+      <td>SABG:8, SAD:14, SAE:9</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>In this graph you always choose the frontier with the shortest path length.</li>
+  <li>Carry on other tasks the same as BFS.</li>
+</ul>
+
+<h4 id="properties-of-uniform-cost-search">Properties of Uniform Cost Search</h4>
+
+<ul>
+  <li>Complete and optimal
+    <ul>
+      <li>Provided that the path costs grow monotonically</li>
+    </ul>
+  </li>
+  <li>Only works provided that each step makes the path more costly</li>
+  <li>If the path doesn’t grow monotonically, then exhaustive search is required</li>
+  <li>Time and space complexity
+    <ul>
+      <li>Same as BFS</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="real-life-problems">Real Life problems</h5>
+<ul>
+  <li>Whatever search technique we use, exponential time complexity.</li>
+  <li>Tweaks to the algorithm will not reduce this to polynomial.</li>
+  <li>We need a problem specific knowledge to guide the search.</li>
+  <li>Simplest from of problem specific knowledge is heuristic.</li>
+  <li>Standard implementation in search is via an evaluation function which indicates desirability of selecting a state.</li>
+</ul>
+:ET
