@@ -1,4 +1,4 @@
-I"ê*<h2 id="type-classes">Type Classes</h2>
+I"á*<h2 id="type-classes">Type Classes</h2>
 <p>Some functions are polymorphic, but can‚Äôt be applied to any type. <code class="language-plaintext highlighter-rouge">+</code> is a good example. It can work on <code class="language-plaintext highlighter-rouge">float</code> and <code class="language-plaintext highlighter-rouge">integer</code> but not on mixed types or <code class="language-plaintext highlighter-rouge">Char</code>. The type of <code class="language-plaintext highlighter-rouge">+</code> is:</p>
 
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">::</span> <span class="kt">Num</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
@@ -66,11 +66,7 @@
 <span class="n">equals_two</span> <span class="o">::</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
 </code></pre></div></div>
 
-<hr />
-<p>@figure
-The most general type annotation is the one which allows the most valid types
-@/
-‚Äî</p>
+<p class="info">The most general type annotation is the one which allows the most valid types</p>
 
 <h2 id="numbers">Numbers</h2>
 <p>In Haskell numbers, such as <code class="language-plaintext highlighter-rouge">10</code> have a <strong>polymorphic type</strong>:</p>

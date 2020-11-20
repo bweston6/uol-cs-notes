@@ -1,4 +1,4 @@
-I"¼6<h2 id="list-comprehensions">List Comprehensions</h2>
+I"³6<h2 id="list-comprehensions">List Comprehensions</h2>
 <p>List ranges can produce simple arithmetic sequences but list comprehensions can produce more complex lists:</p>
 
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">]]</span>
@@ -51,15 +51,11 @@
 <span class="o">&gt;</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">110</span><span class="p">]</span>
 </code></pre></div></div>
 
-<hr />
-<p>@figure
-Look at the slides for more examples of the topics above. This includes examples for some non-trivial functions such as:</p>
+<p>Look at the slides for more examples of the topics above. This includes examples for some non-trivial functions such as:</p>
 
-<ul>
+<ul class="info">
   <li>Factors of a Value</li>
-  <li>Prime Numbers up to a Value
-@/
-â€”</li>
+  <li>Prime Numbers up to a Value</li>
 </ul>
 
 <h2 id="lists-of-lists">Lists of Lists</h2>

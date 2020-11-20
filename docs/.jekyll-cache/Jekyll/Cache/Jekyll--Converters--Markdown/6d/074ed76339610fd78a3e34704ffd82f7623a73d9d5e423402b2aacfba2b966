@@ -1,4 +1,4 @@
-I" 
+I"
 <h1 id="comp109---functions---8"><a href="/UoL/comp109/lectures/2020/11/17/3.html">COMP109 - Functions - 8</a></h1>
 <h2 id="uncountable-sets">Uncountable Sets</h2>
 <p>A set that is not countable is called uncountable. The following set is uncountable:</p>
@@ -307,7 +307,6 @@ end
 <h4 id="case-1">Case 1</h4>
 <p>Suppose that $f(x_1)=f(x_2)=f(x_3)=1$. This means that they all know each other.</p>
 
-<p>@figure</p>
 <pre><code class="language-mermaid">graph LR
 x1 --&gt; F
 x2 --&gt; F
@@ -317,8 +316,7 @@ x1 .-&gt;|Case 1.2| x2
 x2 .-&gt;|Case 1.2| x3
 x3 .-&gt;|Case 1.2| x1
 </code></pre>
-<p>@caption(Dotted means don’t know)
-@/</p>
+<p><em>Dotted means don’t know</em></p>
 
 <h5 id="case-11">Case 1.1</h5>
 <p>There is a pair who know each other.</p>
