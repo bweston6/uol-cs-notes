@@ -1,0 +1,101 @@
+I"�$<h2 id="first-past-the-post-example">First Past the Post Example</h2>
+<p>This example covers a first past the post election. This means whoever gets the most votes wins. We are aiming to make a function that performs this task:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">winner</span> <span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="s">"red"</span>
+</code></pre></div></div>
+
+<h3 id="getting-the-candidates">Getting the Candidates</h3>
+<p>First we need to figure out who the candidates are:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">uniq</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">[]</span>
+<span class="n">uniq</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">:</span> <span class="n">uniq</span> <span class="p">(</span><span class="n">filter</span> <span class="p">(</span><span class="o">/=</span><span class="n">x</span><span class="p">)</span> <span class="n">xs</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>This function will remove duplicates from a list of strings. For every new element found the filter will remove all further occurrences from the rest of the list before recursing on the list.</p>
+
+<h3 id="counting-the-votes">Counting the Votes</h3>
+<p>This function counts the number of votes for a particular  candidate:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="n">x</span> <span class="n">list</span> <span class="o">=</span> <span class="n">length</span> <span class="p">(</span><span class="n">filter</span> <span class="p">(</span><span class="o">==</span><span class="n">x</span><span class="p">)</span> <span class="n">list</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="vote-totals">Vote Totals</h3>
+<p>This function will count all the votes for each candidate and put the number of votes and then the candidate in a list of tuples.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total</span> <span class="n">votes</span> <span class="o">=</span> 
+	<span class="kr">let</span>
+		<span class="n">candidates</span> <span class="o">=</span> <span class="n">uniq</span> <span class="n">votes</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="nf">\</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">count</span> <span class="n">c</span> <span class="n">votes</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+	<span class="kr">in</span>
+		<span class="n">map</span> <span class="n">f</span> <span class="n">candidates</span>
+</code></pre></div></div>
+
+<h3 id="comparing-candidates">Comparing Candidates</h3>
+<p>Tuples are compared lexicographically. This means that each element is compared in turn to find which satisfies the function.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">max</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s">"red"</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s">"red"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This means that if two candidates have the same number then the string is compared.</p>
+
+<h4 id="maximum"><code class="language-plaintext highlighter-rouge">maximum</code></h4>
+<p>The function <code class="language-plaintext highlighter-rouge">maximum</code> takes a list and returns the largest item in the list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">maximum</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="s">"red"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s">"green"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s">"green"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="finding-the-winner">Finding the Winner</h3>
+<p><code class="language-plaintext highlighter-rouge">snd</code> returns the second value in a tuple:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">winner</span> <span class="n">votes</span> <span class="o">=</span> <span class="n">snd</span> <span class="o">.</span> <span class="n">maximum</span> <span class="o">.</span> <span class="n">totals</span> <span class="o">$</span> <span class="n">votes</span>
+</code></pre></div></div>
+
+<p>Applying this satisfies the requirement:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">winner</span> <span class="p">[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="s">"red"</span>
+</code></pre></div></div>
+
+<h2 id="alternative-vote-example">Alternative Vote Example</h2>
+<p>In the alternative vote system, voters rank the candidates:</p>
+
+<ul>
+  <li>In each round, the candidate with the least number of first preference votes is eliminated.</li>
+  <li>The winner is the last candidate left once all other have been eliminated.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">votes</span> <span class="o">=</span> <span class="p">[[</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">],</span>
+				<span class="p">[</span><span class="s">"blue"</span><span class="p">,</span> <span class="s">"green"</span><span class="p">],</span>
+				<span class="p">[</span><span class="s">"green"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">],</span>
+				<span class="p">[</span><span class="s">"blue"</span><span class="p">,</span> <span class="s">"red"</span><span class="p">],</span>
+				<span class="p">[</span><span class="s">"red"</span><span class="p">]]</span>
+<span class="o">&gt;</span> <span class="n">av_winner</span> <span class="n">votes</span>
+<span class="o">&gt;</span> <span class="s">"red"</span>
+</code></pre></div></div>
+
+<p>You don’t need many preferences and each list is a single person’s preferences.</p>
+
+<p class="info">See <a href="/UoL/assets/COMP105/Lectures/2020-11-19-2.pdf">the slides</a> for full examples.</p>
+
+<h3 id="ranking-the-candidates">Ranking the Candidates</h3>
+<p><code class="language-plaintext highlighter-rouge">sort</code> sorts all of the items in a list and orders them from smallest to biggest.</p>
+
+<h3 id="getting-the-first-choice-votes">Getting the First Choice Votes</h3>
+<p><code class="language-plaintext highlighter-rouge">head</code> doesn’t accept empty lists as input. This should be taken into account when removing items from lists unevenly.</p>
+
+<h3 id="final-function">Final Function</h3>
+<p>All of the components give this function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">av_winner</span> <span class="n">votes</span> <span class="o">=</span>
+	<span class="kr">let</span>
+		<span class="n">ranked</span> <span class="o">=</span> <span class="n">rank_candidates</span> <span class="n">votes</span>
+		<span class="n">first</span> <span class="o">=</span> <span class="n">head</span> <span class="n">ranked</span>
+	<span class="kr">in</span>
+		<span class="kr">if</span> <span class="n">length</span> <span class="n">ranked</span> <span class="o">==</span> <span class="mi">1</span>
+		<span class="kr">then</span> <span class="n">first</span>
+		<span class="kr">else</span> <span class="n">av_winner</span> <span class="p">(</span><span class="n">remove_cand</span> <span class="n">first</span> <span class="n">votes</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

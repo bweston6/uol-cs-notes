@@ -1062,11 +1062,11 @@ plot:
 <h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
 <p>Show that in any group of six people there are either three who all know each other or three complete strangers.</p>
 
-<p><img src="img/COMP109201113-3.md.783.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Lectures/2020-11-13-3-1.png" alt="Graph 1" /></p>
 
 <p>On this graph blue is people who know each other and red is people who don’t. From the graph you can see that only two people will know each other.</p>
 
-<p><img src="img/COMP109201113-3.md.8756.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Lectures/2020-11-13-3-2.png" alt="Graph 2" /></p>
 
 <p>What the question is saying is that no matter how you colour this you will always have a triangle of three people with red lines (don’t know) or blue lines (do know).</p>
 
@@ -1149,7 +1149,7 @@ x1 .-&gt;|Case 2.2| x2
 
 <h1 id="comp109---functions---4"><a href="/UoL/comp109/lectures/2020/11/13/2.html">COMP109 - Functions - 4</a></h1>
 <h2 id="extended-pigeonhole-principle">Extended Pigeonhole Principle</h2>
-<p>Consider a function $f:A\rightarrow B$ where $A$ and $B$ are finite sets and $|A|&gt;k|B|$ for some natural number $k$. Then, there is a value of $f$ which occurs at least $k+1$ times.</p>
+<p>Consider a function $f:A\rightarrow B$ where $A$ and $B$ are finite sets and $\vert A\vert &gt;k\vert B\vert $ for some natural number $k$. Then, there is a value of $f$ which occurs at least $k+1$ times.</p>
 
 <pre><code class="language-mermaid">graph TD
 subgraph A
@@ -1192,41 +1192,15 @@ Names --&gt; a,a
 Names --&gt; ...
 </code></pre>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>B</td>
-      <td>=26^2$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert B\vert =26^2$</p>
 
 <p>Therefore:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Due to the principles covered above, $</td>
-      <td>A</td>
-      <td>&gt;4</td>
-      <td>B</td>
-      <td>$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Due to the principles covered above, $\vert A\vert &gt;4\vert B\vert $</p>
 
 <p>Thus:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>A</td>
-      <td>=4\times26\times26+1=2705$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert A\vert =4\times26\times26+1=2705$</p>
 
 <h1 id="comp109---functions---3"><a href="/UoL/comp109/lectures/2020/11/13/1.html">COMP109 - Functions - 3</a></h1>
 <h2 id="cardinality-of-finite-sets-and-functions">Cardinality of Finite Sets and Functions</h2>
@@ -1237,45 +1211,9 @@ Names --&gt; ...
 <p>For finite sets $A$ and $B$:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>\geq</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is a surjective function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>\leq</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is an injective function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>=</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is a bijection function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$\vert A\vert \geq\vert B\vert \Rightarrow$ there is a surjective function from $A$ to $B$.</li>
+  <li>$\vert A\vert \leq\vert B\vert \Rightarrow$ there is an injective function from $A$ to $B$.</li>
+  <li>$\vert A\vert =\vert B\vert \Rightarrow$ there is a bijection function from $A$ to $B$.</li>
 </ul>
 
 <pre><code class="language-mermaid">graph TD
@@ -1302,17 +1240,7 @@ e --&gt; 2
 f --&gt; n
 </code></pre>
 
-<table>
-  <tbody>
-    <tr>
-      <td>From the graph as $</td>
-      <td>A</td>
-      <td>=n=</td>
-      <td>B</td>
-      <td>$ then we can deduce that $g^{-1}\circ f$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>From the graph as $\vert A\vert =n=\vert B\vert $ then we can deduce that $g^{-1}\circ f$.</p>
 
 <ul>
   <li>Bijective means one to one.</li>
@@ -1323,17 +1251,7 @@ f --&gt; n
 <h2 id="the-pigeonhole-principle">The Pigeonhole Principle</h2>
 <p>Let $f:A\rightarrow B$ be a function where $A$ and $B$ are finite sets.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The pigeonhole principle states that if $</td>
-      <td>A</td>
-      <td>&gt;</td>
-      <td>B</td>
-      <td>$ then at least one value of $f$ occurs more than once.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The pigeonhole principle states that if $\vert A\vert &gt;\vert B\vert $ then at least one value of $f$ occurs more than once.</p>
 
 <p>In other words, we have $f(a)=f(b)$ for some distinct elements $a,b$ of $A$.</p>
 
@@ -1343,17 +1261,9 @@ f --&gt; n
 <p>There are 15 people on a bus. Show that at least two of them have a birthday in the same month of the year.</p>
 
 <h4 id="proof">Proof</h4>
-<p>Let $A$ be the set of all people on the bus. $|A|=15$</p>
+<p>Let $A$ be the set of all people on the bus. $\vert A\vert =15$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Let $B$ be the set of months. $</td>
-      <td>B</td>
-      <td>=12$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Let $B$ be the set of months. $\vert B\vert =12$</p>
 
 <p>$f$ associates the month in which a person has been born with that person.</p>
 
@@ -1362,37 +1272,13 @@ f --&gt; n
 <h3 id="example-2">Example 2</h3>
 <p>How many different surnames must appear in a telephone directory to guarantee that at least two of the surnames begin with the same letter of the alphabet and end with the same letter of the alphabet?</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>If we are solving this by the pigeonhole principle then the set $A$ of names must have same cardinality as $</td>
-      <td>B</td>
-      <td>+1$ where $B$ is the set of all pairs of letters.</td>
-    </tr>
-  </tbody>
-</table>
+<p>If we are solving this by the pigeonhole principle then the set $A$ of names must have same cardinality as $\vert B\vert +1$ where $B$ is the set of all pairs of letters.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>B</td>
-      <td>=26^2$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert B\vert =26^2$</p>
 
 <p>Therefore</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>B</td>
-      <td>+1=26^2+1$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert B\vert +1=26^2+1$</p>
 
 <h3 id="example-3">Example 3</h3>
 <p>Five number are selected from the numbers $1,2,3,4,5,6,7$ and $8$. Show that there will always be two of the numbers that sum to $9$.</p>
@@ -1418,7 +1304,7 @@ x3 --&gt; 3
 x4 --&gt; 4
 x5 --&gt; 1
 </code></pre>
-<p>$|A|=5$ and $|B|=4$. If each element with $x_n$ maps to the pair which contains its digit then there must be a pair with more than one mapping. This is to say that the two sets maps via a <em>surjective</em> function.</p>
+<p>$\vert A\vert =5$ and $\vert B\vert =4$. If each element with $x_n$ maps to the pair which contains its digit then there must be a pair with more than one mapping. This is to say that the two sets maps via a <em>surjective</em> function.</p>
 
 <p>This proves that there will always be one pair in the list that sums to 9.</p>
 
@@ -1510,8 +1396,8 @@ c --&gt; 3
 <p>A function is a method that takes an input value and gives an output value:</p>
 
 <pre><code class="language-mermaid">graph LR
-x --&gt;|Input| F[Function Machine]
-F --&gt;|Output| fx
+x --&gt;\vert Input\vert  F[Function Machine]
+F --&gt;\vert Output\vert  fx
 </code></pre>
 
 <p>A function from a set $A$ to a set $B$ is an assignment of exactly one element of $B$ to each element of $A$.</p>
@@ -1546,16 +1432,7 @@ end
 <ul>
   <li>$A$ is called the domain of $f$.</li>
   <li>$B$ is called the co-domain fo $f$.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>The range $f(A)$ of $f$ is $f(A)={f(x)</td>
-          <td>x\in A}$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>The range $f(A)$ of $f$ is $f(A)={f(x)\vert x\in A}$.</li>
 </ul>
 
 <h3 id="co-domain-vs-range">Co-domain v.s. Range</h3>
@@ -1565,7 +1442,7 @@ end
 subgraph B
 fA
 end
-A --&gt;|f| fA
+A --&gt;\vert f\vert  fA
 </code></pre>
 <p><em>The range of $f$.</em></p>
 
@@ -1576,14 +1453,7 @@ A --&gt;|f| fA
 
 <p>The range of the function would be:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[\sin(x)={x\in\mathbb{R}</td>
-      <td>-1\leq x\leq 1}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[\sin(x)={x\in\mathbb{R}\vert -1\leq x\leq 1}]</p>
 
 <h2 id="composition-of-functions">Composition of Functions</h2>
 <p>If $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ are functions, then their composition $g\circ f$ is a function from $X$ to $Z$ given by:</p>
@@ -1607,8 +1477,8 @@ end</p>
 <p>x –&gt; fx
 fx –&gt; gfx
 x –&gt; gfx
-X –&gt;|f| Y
-Y –&gt;|g| Z</p>
+X –&gt;\vert f\vert  Y
+Y –&gt;\vert g\vert  Z</p>
 
 <h1 id="comp109---russells-paradox"><a href="/UoL/comp109/lectures/2020/11/11/2.html">COMP109 - Russell’s Paradox</a></h1>
 <p>Why is this set theory “Naive”? The reason is that is suffers from paradoxes.</p>
@@ -1623,45 +1493,17 @@ Y –&gt;|g| Z</p>
 
 <p>As yet we know that you should always write a predicate like so:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x\in A</td>
-      <td>x \text{ satisfies some property}}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\in A \vert  x \text{ satisfies some property}}]</p>
 
 <p>Before Russell sets were just defined by their properties.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Russell’s Paradox shows that the ‘object’ ${x</td>
-      <td>P(x)}$ is not always meaningful.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Russell’s Paradox shows that the ‘object’ ${x\vert P(x)}$ is not always meaningful.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Set $A={B</td>
-      <td>B\notin B}$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Set $A={B\vert B\notin B}$</p>
 
 <p>Problem: do we have $A\in A$?</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Abbreviate, for any set $C$, by $P(C)$ the statement $C\notin$. Then $A={B</td>
-      <td>P(B)}$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Abbreviate, for any set $C$, by $P(C)$ the statement $C\notin$. Then $A={B\vert P(B)}$.</p>
 
 <ul>
   <li>If $A\in A$, then (from the definition of $P$), not $P(A)$. Therefore $A\notin A$.</li>
@@ -1672,38 +1514,15 @@ Y –&gt;|g| Z</p>
 
 <p>This is the reason why we must draw the elements from another set to avoid this paradox. For example, in the definition of even numbers the predicate draws from the set of natural numbers:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[x\in \mathbb{N}</td>
-      <td>x=2k\ \text{for some int. $k$}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[x\in \mathbb{N} \vert  x=2k\ \text{for some int. $k$}]</p>
 
 <h1 id="comp109---cardinality-of-sets"><a href="/UoL/comp109/lectures/2020/11/11/1.html">COMP109 - Cardinality of Sets</a></h1>
-<table>
-  <tbody>
-    <tr>
-      <td>The cardinality of a set is the number of elements in the set. The notation for this is $</td>
-      <td>A</td>
-      <td>$ where $A$ is a set to be counted.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The cardinality of a set is the number of elements in the set. The notation for this is $\vert A\vert $ where $A$ is a set to be counted.</p>
 
 <h2 id="power-set-and-bit-vectors">Power Set and Bit Vectors</h2>
-<p>We use the correspondence between bit vectors and subsets: $\left| \text{\textit{Pow}}(A)\right|$ is the number of bit vectors of length $n$.</p>
+<p>We use the correspondence between bit vectors and subsets: $\left\vert  \text{\textit{Pow}}(A)\right\vert $ is the number of bit vectors of length $n$.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[A\ s.t \left</td>
-      <td>A \right</td>
-      <td>= n,\ S_n = \langle\ldots\rangle]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[A\ s.t \left\vert  A \right\vert  = n,\ S_n = \langle\ldots\rangle]</p>
 
 <p>[B \subseteq A \rightarrow X_b = \underbrace{\left[\frac{0}{1},\ldots,\frac{0}{1}\right]}_n]</p>
 
@@ -1725,7 +1544,7 @@ Y –&gt;|g| Z</p>
 <p>$2^1=2$</p>
 
 <h3 id="inductive-step">Inductive Step:</h3>
-<p>Assume that the property holds for $n=m$, so the number of $m$-bit vectors is $2^m$. Now consider the set $B$ of all $(m+1)$-bit vectors. We must show that $\left|B\right|=2^{m+1}$.</p>
+<p>Assume that the property holds for $n=m$, so the number of $m$-bit vectors is $2^m$. Now consider the set $B$ of all $(m+1)$-bit vectors. We must show that $\left\vert B\right\vert =2^{m+1}$.</p>
 
 <p>We know that all elements of $B$ are bit vectors of length $m+1$:</p>
 
@@ -1737,141 +1556,35 @@ Y –&gt;|g| Z</p>
 
 <p>Given any bit vector there are only two ways of filling in the last value, with a 0 or a 1. As there are two ways of extending a bit vector then you times the bit vector by two.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[\left</td>
-      <td>B \right</td>
-      <td>= 2 \times 2^m = 2^{m+1}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[\left\vert  B \right\vert  = 2 \times 2^m = 2^{m+1}]</p>
 
 <h2 id="computing-the-cardinality-of-a-union-of-two-sets">Computing the Cardinality of a Union of Two Sets</h2>
 <p>If $A$ and $B$ are sets then:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[\left</td>
-      <td>A \cup B \right</td>
-      <td>= \left</td>
-      <td>A \right</td>
-      <td>+ \left</td>
-      <td>B \right</td>
-      <td>- \left</td>
-      <td>A\cap B \right</td>
-      <td>]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[\left\vert  A \cup B \right\vert  = \left\vert  A \right\vert  + \left\vert  B \right\vert  - \left\vert  A\cap B \right\vert]</p>
 
 <h3 id="example">Example</h3>
 <p>Suppose there are 100 third-year students. 40 of them take the module “Sequential Algorithms” and 80 of them take the module “Multi-Agent Systems”. 25 of them took both modules. How many students took neither modules?</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$S={s\in \text{Student}</td>
-      <td>s \text{ takes Seq. Alg.}}$</td>
-    </tr>
-    <tr>
-      <td>$M={s\in \text{Student}</td>
-      <td>s \text{ takes Mult. Agent Systems}}$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$S={s\in \text{Student} \vert  s \text{ takes Seq. Alg.}}$<br />
+$M={s\in \text{Student} \vert  s \text{ takes Mult. Agent Systems}}$</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>\text{Students}</td>
-          <td>=100$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>S</td>
-          <td>=40$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>M</td>
-          <td>= 80$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>S\cap M</td>
-          <td>=25$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$\vert \text{Students}\vert  =100$</li>
+  <li>$\vert S\vert =40$</li>
+  <li>$\vert M\vert  = 80$</li>
+  <li>$\vert S\cap M\vert  =25$</li>
 </ul>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$40+80-25=95=</td>
-      <td>S\cup M</td>
-      <td>$</td>
-    </tr>
-    <tr>
-      <td>$</td>
-      <td>\sim(S\cup M)</td>
-      <td>=100-95=5$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$40+80-25=95=\vert S\cup M\vert $<br />
+$\vert \sim(S\cup M)\vert =100-95=5$</p>
 
 <p>Therefore, 5 students took neither as they were part of the universal set but not part of the union of the two subsets.</p>
 
 <h2 id="computing-the-cardinality-of-a-union-of-three-sets">Computing the Cardinality of a Union of Three Sets</h2>
 <p>If $A$, $B$ and $C$ are sets then:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[</td>
-      <td>A\cup B \cup C</td>
-      <td>=</td>
-      <td>A</td>
-      <td>+</td>
-      <td>B</td>
-      <td>+</td>
-      <td>C</td>
-      <td>-</td>
-      <td>A\cap B</td>
-      <td>-</td>
-      <td>A\cap C</td>
-      <td>-</td>
-      <td>B\cap C</td>
-      <td>+</td>
-      <td>A\cap B\cap C</td>
-      <td>]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[\vert A\cup B \cup C\vert = \vert A\vert  +\vert B\vert  + \vert C\vert  - \vert A\cap B\vert -\vert A\cap C\vert  - \vert B\cap C\vert  + \vert A\cap B\cap C\vert]</p>
 
 <p>This and the last union are special cases of the <strong>principle of inclusion and exclusion</strong>.</p>
 
@@ -1880,32 +1593,8 @@ Y –&gt;|g| Z</p>
 
 <p>Then:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$$\left</td>
-      <td>A_1\cup\ldots\cup A_n\right</td>
-      <td>=\sum_{1\leq k\leq n} \left</td>
-      <td>A_i\right</td>
-      <td>-\sum_{1\leq j\leq k\leq n} \left</td>
-      <td>A_j \cap A_k\right</td>
-      <td>+\sum_{1\leq i\leq j\leq k\leq n} \left</td>
-      <td>A_i \cap A_j \cap A_k\right</td>
-      <td>$$</td>
-    </tr>
-    <tr>
-      <td>$$-…+(-1)^{n-1}\left</td>
-      <td>A_1\cap\ldots\cap A_n\right</td>
-      <td>$$</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+<p>\(\left\vert A_1\cup\ldots\cup A_n\right\vert =\sum_{1\leq k\leq n} \left\vert A_i\right\vert -\sum_{1\leq j\leq k\leq n} \left\vert A_j \cap A_k\right\vert +\sum_{1\leq i\leq j\leq k\leq n} \left\vert A_i \cap A_j \cap A_k\right\vert\)
+\(-...+(-1)^{n-1}\left\vert A_1\cap\ldots\cap A_n\right\vert\)</p>
 
 <h1 id="comp109---tutorial-4"><a href="/UoL/comp109/tutorials/2020/11/10/1.html">COMP109 - Tutorial 4</a></h1>
 <p>For the following questions:</p>
@@ -2244,16 +1933,16 @@ Then:
     <p>${2,-6}$</p>
   </li>
   <li>
-    <p>$B={n^2\vert n$ is an integer$}$</p>
+    <p>$B={n^2\vert n \text{ is an integer}}$</p>
 
     <p>${0,1,4,9,16,25,\ldots}$</p>
 
-    <p>$B={m\in\mathbb{Z}\vert m=n^2$ for some integer $n}$</p>
+    <p>$B={m\in\mathbb{Z}\vert m=n^2 \text{ for some integer } n}$</p>
   </li>
   <li>
-    <p>$C={x\vert x$ a day of the week not containing “u”$}$</p>
+    <p>$C={x\vert x \text{ a day of the week not containing “u”}}$</p>
 
-    <p>${$Monday, Wednesday, Friday$}$</p>
+    <p>${\text{Monday, Wednesday, Friday}}$</p>
   </li>
 </ol>
 
@@ -2867,7 +2556,7 @@ You are saying that the opposite is true:
 </ul>
 
 <h1 id="comp109---tutorial-1"><a href="/UoL/comp109/tutorials/2020/10/19/1.html">COMP109 - Tutorial 1</a></h1>
-<p>This is following the questions from the tutorial for week 1. See <a href="Tutorials/TUT1-201019.pdf">the pdf</a> for answers.</p>
+<p>This is following the questions from the tutorial for week 1.</p>
 
 <p>The tutorial leader’s email is: <a href="mailto:p.austin@liverpool.ac.uk">p.austin@liverpool.ac.uk</a></p>
 

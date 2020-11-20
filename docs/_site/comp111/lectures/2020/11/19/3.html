@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - Bayes' Theorem - Uni Notes</title>
 
-<meta name="description" content="First FormIf $P(A)&gt;0$, then:\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]ProofWe have:                              $P(A\cap B)=P(A          B)\times P(B)$   ...">
+<meta name="description" content="First FormIf $P(A)&gt;0$, then:\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]ProofWe have:  $P(A\cap B)=P(A\vert B)\times P(B)$  $P(A\cap B)=P(B\vert A)...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp111/lectures/2020/11/19/3.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -859,41 +859,23 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <div class="article__content" itemprop="articleBody"><h2 id="first-form">First Form</h2>
 <p>If $P(A)&gt;0$, then:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
 
 <h3 id="proof">Proof</h3>
 <p>We have:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A\cap B)=P(A</td>
-          <td>B)\times P(B)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A\cap B)=P(B</td>
-          <td>A)\times P(A)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\cap B)=P(A\vert B)\times P(B)$</li>
+  <li>$P(A\cap B)=P(B\vert A)\times P(A)$</li>
 </ul>
 
 <p>Thus:</p>
 
-\[P(A|B)\times P(B)=P(B|A)\times P(A)\]
+\[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)\]
 
 <p>By dividing by $P(A)$ we get:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
 
 <h3 id="application---diagnosis">Application - Diagnosis</h3>
 <p>Assume a patient walks into a doctor’s office complaining of a stiff neck. The doctor knows:</p>
@@ -912,7 +894,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>Let $A$ be the event that the patient has a stiff neck and $B$ the event that they have meningitis:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}=\frac{\frac{1}{2}\times \frac{1}{50000}}{\frac{1}{20}}=\frac{1}{5000}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}=\frac{\frac{1}{2}\times \frac{1}{50000}}{\frac{1}{20}}=\frac{1}{5000}\]
 
 <ul>
   <li>We can interpret the fact that the patient has a stiff neck as a new <strong>observation</strong>.</li>
@@ -922,7 +904,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>
     <p>We can then compute the diagnostic probabilities using:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
   </li>
 </ul>
 
@@ -931,12 +913,12 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>If $P(A)&gt;0$, then:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A|B)\times P(B)+P(A|\neg B)\times P(\neg B)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}\]
 
 <h3 id="proof-1">Proof</h3>
 <p>It suffices to show:</p>
 
-\[P(A)=P(A|B)\times P(B)+P(A|\neg B) \times P(\neg B)\]
+\[P(A)=P(A\vert B)\times P(B)+P(A\vert \neg B) \times P(\neg B)\]
 
 <p>But this follows from:</p>
 
@@ -944,15 +926,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>$=P(A\cap B)+P(A\cap\neg B)$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$=P(A</td>
-      <td>B)\times P(B)+P(A</td>
-      <td>\neg B)\times P(\neg B)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$=P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)$</p>
 
 <h3 id="application---diagnosis-1">Application - Diagnosis</h3>
 <p>Assume a drug test is:</p>
@@ -969,48 +943,21 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>We have:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A</td>
-          <td>B)=\frac{99}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(\neg A</td>
-          <td>\neg B)=\frac{99}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\vert B)=\frac{99}{100}$</li>
+  <li>$P(\neg A\vert \neg B)=\frac{99}{100}$</li>
   <li>$P(B)=\frac{1}{200}$</li>
 </ul>
 
 <p>Thus:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A</td>
-          <td>\neg B) =\frac{1}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\vert \neg B) =\frac{1}{100}$</li>
   <li>$P(\neg B) =\frac{199}{200}$</li>
 </ul>
 
 <p>Thus:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A|B)\times P(B)+P(A|\neg B)\times P(\neg B)}=\frac{99}{298}\approx0.33\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}=\frac{99}{298}\approx0.33\]
 
 <p>Due to the low value it means that it is hard to take an action based on the test. This is as a result of the low value of the people who take the drug. This results in many false positives for those that don’t.</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-11-19T00:00:00+00:00"><!-- start custom article footer snippet -->

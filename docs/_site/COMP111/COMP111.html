@@ -861,65 +861,23 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h2 id="first-form">First Form</h2>
 <p>If $P(A)&gt;0$, then:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(B</td>
-      <td>A)=\frac{P(A</td>
-      <td>B)\times P(B)}{P(A)}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}]</p>
 
 <h3 id="proof">Proof</h3>
 <p>We have:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A\cap B)=P(A</td>
-          <td>B)\times P(B)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A\cap B)=P(B</td>
-          <td>A)\times P(A)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\cap B)=P(A\vert B)\times P(B)$</li>
+  <li>$P(A\cap B)=P(B\vert A)\times P(A)$</li>
 </ul>
 
 <p>Thus:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A</td>
-      <td>B)\times P(B)=P(B</td>
-      <td>A)\times P(A)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)]</p>
 
 <p>By dividing by $P(A)$ we get:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(B</td>
-      <td>A)=\frac{P(A</td>
-      <td>B)\times P(B)}{P(A)}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}]</p>
 
 <h3 id="application---diagnosis">Application - Diagnosis</h3>
 <p>Assume a patient walks into a doctor’s office complaining of a stiff neck. The doctor knows:</p>
@@ -938,15 +896,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>Let $A$ be the event that the patient has a stiff neck and $B$ the event that they have meningitis:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(B</td>
-      <td>A)=\frac{P(A</td>
-      <td>B)\times P(B)}{P(A)}=\frac{\frac{1}{2}\times \frac{1}{50000}}{\frac{1}{20}}=\frac{1}{5000}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}=\frac{\frac{1}{2}\times \frac{1}{50000}}{\frac{1}{20}}=\frac{1}{5000}]</p>
 
 <ul>
   <li>We can interpret the fact that the patient has a stiff neck as a new <strong>observation</strong>.</li>
@@ -956,7 +906,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>
     <p>We can then compute the diagnostic probabilities using:</p>
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
   </li>
 </ul>
 
@@ -965,30 +915,12 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>If $P(A)&gt;0$, then:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(B</td>
-      <td>A)=\frac{P(A</td>
-      <td>B)\times P(B)}{P(A</td>
-      <td>B)\times P(B)+P(A</td>
-      <td>\neg B)\times P(\neg B)}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}]</p>
 
 <h3 id="proof-1">Proof</h3>
 <p>It suffices to show:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A)=P(A</td>
-      <td>B)\times P(B)+P(A</td>
-      <td>\neg B) \times P(\neg B)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A)=P(A\vert B)\times P(B)+P(A\vert \neg B) \times P(\neg B)]</p>
 
 <p>But this follows from:</p>
 
@@ -996,15 +928,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>$=P(A\cap B)+P(A\cap\neg B)$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$=P(A</td>
-      <td>B)\times P(B)+P(A</td>
-      <td>\neg B)\times P(\neg B)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$=P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)$</p>
 
 <h3 id="application---diagnosis-1">Application - Diagnosis</h3>
 <p>Assume a drug test is:</p>
@@ -1021,58 +945,21 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>We have:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A</td>
-          <td>B)=\frac{99}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(\neg A</td>
-          <td>\neg B)=\frac{99}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\vert B)=\frac{99}{100}$</li>
+  <li>$P(\neg A\vert \neg B)=\frac{99}{100}$</li>
   <li>$P(B)=\frac{1}{200}$</li>
 </ul>
 
 <p>Thus:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A</td>
-          <td>\neg B) =\frac{1}{100}$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(A\vert \neg B) =\frac{1}{100}$</li>
   <li>$P(\neg B) =\frac{199}{200}$</li>
 </ul>
 
 <p>Thus:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(B</td>
-      <td>A)=\frac{P(A</td>
-      <td>B)\times P(B)}{P(A</td>
-      <td>B)\times P(B)+P(A</td>
-      <td>\neg B)\times P(\neg B)}=\frac{99}{298}\approx0.33]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}=\frac{99}{298}\approx0.33]</p>
 
 <p>Due to the low value it means that it is hard to take an action based on the test. This is as a result of the low value of the people who take the drug. This results in many false positives for those that don’t.</p>
 
@@ -1088,29 +975,11 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <ul>
   <li>$A$ and $B$ are independent.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(B)=P(B</td>
-          <td>A)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$P(A)=P(A</td>
-          <td>B)$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$P(B)=P(B\vert A)$</li>
+  <li>$P(A)=P(A\vert B)$</li>
 </ul>
 
-<p class="info">See <a href="COMP111201119.pdf">slides 31</a> for additional examples. This covers proving independence using the definition above.</p>
+<p class="info">See <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slides 31</a> for additional examples. This covers proving independence using the definition above.</p>
 
 <h2 id="independence-for-more-than-two-events">Independence for More Than Two Events</h2>
 <p>For a finite set of events there are two different types of independence:</p>
@@ -1127,7 +996,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>Pairwise independence doesn’t imply pairwise independence. Generally, if it isn’t stated, then we are talking about <strong>mutual independence</strong>.</p>
 
-<p class="info">To see the proof and example of why pairwise independence does not imply mutual independence see <a href="COMP111201119.pdf">slide 37 onward</a>. This example also shows examples of probability set notation.</p>
+<p class="info">To see the proof and example of why pairwise independence does not imply mutual independence see <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slide 37 onward</a>. This example also shows examples of probability set notation.</p>
 
 <h1 id="comp111---conditional-probability"><a href="/UoL/comp111/lectures/2020/11/19/1.html">COMP111 - Conditional Probability</a></h1>
 <p>Often we are interested in just part of the sample space. Conditional probability gives us a means of handling this situation.</p>
@@ -1143,15 +1012,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>Now you learn that the families were selected from those who have one child at a boys’ school. Does this change probabilities.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The new sample space $S’={BB,GB,BG}$ and we re now looking for $P(BB</td>
-      <td>\text{at least one boy})+P(BB</td>
-      <td>S’)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>The new sample space $S’={BB,GB,BG}$ and we re now looking for $P(BB\vert \text{at least one boy})+P(BB\vert S’)$</p>
 
 <p>The vertical line is read <strong>given that</strong>.</p>
 
@@ -1162,29 +1023,14 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>We therefore <strong>normalise</strong> by dividing the probability $P(x)$ of the outcome $x$ in $S$ by the probability $P(S’)$ of $S’$ in $S$:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(BB</td>
-      <td>\text{at least one boy})=P(BB</td>
-      <td>S’)=\frac{P(BB)}{P(S’)}=\frac{\frac{1}{4}}{\frac{3}{4}}=\frac{1}{3}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(BB\vert \text{at least one boy})=P(BB\vert S’)=\frac{P(BB)}{P(S’)}=\frac{\frac{1}{4}}{\frac{3}{4}}=\frac{1}{3}]</p>
 
 <h2 id="conditioning">Conditioning</h2>
 <p>Assume now that evens $A$ and $B$ are given.</p>
 
 <p>Assume we know that $B$ happens. So we want to condition on $B$. Thus, we want to know:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A</td>
-      <td>B)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\vert B)]</p>
 
 <p>This is the probability that $A$ occurs given that $B$ is know to occur.</p>
 
@@ -1192,73 +1038,29 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>We cant take $P(A\cap B)$ itself but have to normalise by dividing by the probability of the new sample space $P(B)$:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A</td>
-      <td>B)=\frac{P(A\cap B)}{P(B)}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\vert B)=\frac{P(A\cap B)}{P(B)}]</p>
 
 <h3 id="formalised">Formalised</h3>
 <p>Let $A$ and $B$ be events, with $P(B)&gt;0.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The conditional probability $P(A</td>
-      <td>B)$ of $A$ given $B$ is given by:</td>
-    </tr>
-  </tbody>
-</table>
+<p>The conditional probability $P(A\vert B)$ of $A$ given $B$ is given by:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A</td>
-      <td>B)=\frac{P(A\cap B)}{P(B)}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\vert B)=\frac{P(A\cap B)}{P(B)}]</p>
 
-<p class="info">View <a href="COMP111201119.pdf">slide 27</a> for additional example.</p>
+<p class="info">View <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slide 27</a> for additional example.</p>
 
 <h2 id="multiplication-rule">Multiplication Rule</h2>
 <p>We can rewrite the previous equation like so:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A\cap B)=P(A</td>
-      <td>B)P(B)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\cap B)=P(A\vert B)P(B)]</p>
 
 <p>Or like:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A\cap B)=P(B</td>
-      <td>A)P(A)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\cap B)=P(B\vert A)P(A)]</p>
 
 <p>This rule can also be extended to more events:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(A\cap B\cap C)=P(C</td>
-      <td>B\cap A)P(A\cap B)=P(C</td>
-      <td>A\cap B)P(B</td>
-      <td>A)P(A)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(A\cap B\cap C)=P(C\vert B\cap A)P(A\cap B)=P(C\vert A\cap B)P(B\vert A)P(A)]</p>
 
 <h3 id="example-1">Example</h3>
 <p>Consider a family chosen at random from a set of families with just one pair of twins. What is the probability that both twins are boys?</p>
@@ -1273,41 +1075,17 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>By the multiplication rule:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(I\cap BB)= P(BB</td>
-      <td>I)P(I),\ P(F\cap BB) = P(BB</td>
-      <td>F)P(F)]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(I\cap BB)= P(BB\vert I)P(I),\ P(F\cap BB) = P(BB\vert F)P(F)]</p>
 
 <p>The probability of being a girl of boy for fraternal twins will be the same as for any other two-child family. For the identical twins, the outcomes $BG$ and $GB$ are no longer possible thus:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(BB</td>
-      <td>I)=\frac{1}{2},\ P(BB</td>
-      <td>F)=\frac{1}{4}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(BB\vert I)=\frac{1}{2},\ P(BB\vert F)=\frac{1}{4}]</p>
 
 <p>From this we obtain:</p>
 
 <p>$P(BB)=P(I\cap BB) + P(F\cap BB)$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$=P(BB</td>
-      <td>I)P(I)+ P(BB</td>
-      <td>F)P(F)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$=P(BB\vert I)P(I)+ P(BB\vert F)P(F)$</p>
 
 <p>$=\frac{1}{2}\times\frac{1}{3}+\frac{1}{4}\times\frac{2}{3}$</p>
 
@@ -1345,54 +1123,14 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>$+P(A\cap B \cap C)$</li>
 </ul>
 
-<p><img src="img/COMP111201118-3.md.3413.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-3-1.png" alt="Venn Diagram 1" /></p>
 
 <p>Additionally:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A\cup B \cup C</td>
-          <td>=</td>
-          <td>A</td>
-          <td>+</td>
-          <td>B</td>
-          <td>+</td>
-          <td>C</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$-</td>
-          <td>A\cap B</td>
-          <td>-</td>
-          <td>A\cap C</td>
-          <td>-</td>
-          <td>B\cap C</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$+</td>
-          <td>A\cap B \cap C</td>
-          <td>$</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$\vert A\cup B \cup C\vert  = \vert A\vert  + \vert B\vert +\vert C\vert $</li>
+  <li>$-\vert A\cap B\vert -\vert A\cap C\vert -\vert B\cap C\vert $</li>
+  <li>$+\vert A\cap B \cap C\vert $</li>
 </ul>
 
 <h3 id="example-continued">Example Continued</h3>
@@ -1449,7 +1187,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h3 id="complement">Complement</h3>
 <p>Let $\neg E = S - E$. Then $P(\neg E)=1-P(E)$</p>
 
-<p><img src="img/COMP111201118-2.md.5324.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-2-1.png" alt="Venn Diagram 1" /></p>
 
 <p>Additionally, $S=\neg E\cup E$.</p>
 
@@ -1475,23 +1213,9 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h3 id="union">Union</h3>
 <p>\(P(E_1\cup U_2)=P(E_1)+P(E_2)-P(E_1\cap E_2)\)</p>
 
-<p><img src="img/COMP111201118-2.md.8606.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-2-2.png" alt="Venn Diagram 2" /></p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Additionally, $</td>
-      <td>E_1\cup E_2</td>
-      <td>=</td>
-      <td>E_1</td>
-      <td>+</td>
-      <td>E_2</td>
-      <td>-</td>
-      <td>E_1\cap E_2</td>
-      <td>$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Additionally, $\vert E_1\cup E_2\vert  = \vert E_1\vert +\vert E_2\vert -\vert E_1\cap E_2\vert $</p>
 
 <h4 id="proof-1">Proof</h4>
 
@@ -1512,30 +1236,10 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h4 id="example-1">Example</h4>
 <p>Suppose I have a jar of 30 sweets:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">Red</th>
-      <th style="text-align: center">Blue</th>
-      <th style="text-align: center">Green</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">Circular</td>
-      <td style="text-align: center">2</td>
-      <td style="text-align: center">4</td>
-      <td style="text-align: center">3</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Square</td>
-      <td style="text-align: center">6</td>
-      <td style="text-align: center">7</td>
-      <td style="text-align: center">8</td>
-    </tr>
-  </tbody>
-</table>
+<p>\vert  \vert  Red \vert  Blue \vert  Green \vert 
+\vert  :-: \vert  :-: \vert  :-: \vert  :-: \vert 
+\vert  Circular \vert  2 \vert  4 \vert  3 \vert 
+\vert  Square \vert  6 \vert  7 \vert  8 \vert</p>
 
 <p>The sample space $S$ has 30 elements and if one chooses a sweet uniformly at random then then the probability for all $x\in S$ is:</p>
 
@@ -1647,17 +1351,9 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </ul>
 
 <h2 id="uniform-probability-distributions">Uniform Probability Distributions</h2>
-<p>A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $|S|$ of outcomes in $S$:</p>
+<p>A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $\vert S\vert $ of outcomes in $S$:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[P(x)=\frac{1}{</td>
-      <td>S</td>
-      <td>}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[P(x)=\frac{1}{\vert S\vert }]</p>
 
 <h1 id="comp111---propositional-knowledge-bases-and-reasoning"><a href="/UoL/comp111/lectures/2020/11/12/4.html">COMP111 - Propositional Knowledge Bases and Reasoning</a></h1>
 <p><em>The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.</em></p>
@@ -2089,7 +1785,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>You cannot express that something is not the case:
   \(\text{not FrenchFootballClub(LiverpoolFC)}\)</li>
   <li>You cannot connect sentences using or:<br />
-  \(\text{Today, I will do the AI exercise \texttt{or} I will play football.}\)</li>
+  \(\text{Today, I will do the AI exercise or I will play football.}\)</li>
 </ul>
 
 <p>A proposition is a statement that can be true or false, but not both at the same time.</p>
@@ -2821,7 +2517,7 @@ A3 --&gt;|A33| A33[2]
 
 <p>But do we need to explore every path?</p>
 
-<h1 id="comp111---a-search"><a href="/UoL/comp111/lectures/2020/10/28/1.html">COMP111 - A^* Search</a></h1>
+<h1 id="comp111---a-search"><a href="/UoL/comp111/lectures/2020/10/28/1.html">COMP111 - A* Search</a></h1>
 <p>It was made in 1968 in Stanford by the team that constructed Shaky, the robot.</p>
 
 <ul>
@@ -2844,7 +2540,7 @@ A3 --&gt;|A33| A33[2]
   <li>Aims to reduce the <strong>overall cost</strong>.</li>
 </ul>
 
-<h2 id="general-algorithm-for-a-search">General Algorithm for A^* Search</h2>
+<h2 id="general-algorithm-for-a-search">General Algorithm for A* Search</h2>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
 		for each state s the successors of s
 		a test goal(s) checking whether s is a goal state
@@ -2863,7 +2559,7 @@ end while
 </code></pre></div></div>
 
 <h3 id="example">Example</h3>
-<p>An A^* search is completed on the following graph:</p>
+<p>An A* search is completed on the following graph:</p>
 
 <pre><code class="language-mermaid">graph TD
 S[S, h = 8] --&gt;|1| A[A, h = 8]
@@ -2915,7 +2611,7 @@ C --&gt;|5| G[G, h = 0]
   </li>
 </ul>
 
-<h2 id="properties-of-a-search">Properties of A^* Search</h2>
+<h2 id="properties-of-a-search">Properties of A* Search</h2>
 
 <ul>
   <li>Complete and optimal under minor conditions
@@ -2939,7 +2635,7 @@ C --&gt;|5| G[G, h = 0]
       <li>Incomplete and not always optimal.</li>
     </ul>
   </li>
-  <li>A^* search expands lowest $g+h$.
+  <li>A* search expands lowest $g+h$.
     <ul>
       <li>Complete and optimal.</li>
       <li>Optimally efficient.</li>
@@ -3254,14 +2950,9 @@ D --&gt;|7| H
 
 <h2 id="properties-of-breadth-first-search">Properties of Breadth First Search</h2>
 
-<hr />
+<p class="info">The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</p>
 
-<ul>
-  <li>The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</li>
-  <li>The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</li>
-</ul>
-
-<hr />
+<p class="info">The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</p>
 
 <ul>
   <li>Time complexity
@@ -3278,17 +2969,59 @@ D --&gt;|7| H
 
 <h3 id="complexity">Complexity</h3>
 
-<p>| Depth | Paths | Time | 
-| —| — | — |
-| 0 | 1 | 1 msec |
-| 1 | 11 | .01 sec | 
-| 2 | 111 | .1 sec | 
-| 4 | 11,111|11 sec|
-|6|10^6|18 sec|
-|8|10^8|31 hours|
-|10| 10^10| 128 days|
-12|10^12|35 years|
-<em>Example of combinatorial explosion of a BFS at 1000 states/sec.</em></p>
+<table>
+  <thead>
+    <tr>
+      <th>Depth</th>
+      <th>Paths</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1 msec</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>11</td>
+      <td>.01 sec</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>111</td>
+      <td>.1 sec</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>11,111</td>
+      <td>11 sec</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>10^6</td>
+      <td>18 sec</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>10^8</td>
+      <td>31 hours</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>10^10</td>
+      <td>128 days</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>10^12</td>
+      <td>35 years</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Example of combinatorial explosion of a BFS at 1000 states/sec.</em></p>
 
 <h2 id="properties-of-depth-first-search">Properties of Depth First Search</h2>
 

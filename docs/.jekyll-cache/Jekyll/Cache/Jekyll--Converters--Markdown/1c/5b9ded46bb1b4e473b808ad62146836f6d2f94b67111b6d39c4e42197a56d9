@@ -1,0 +1,868 @@
+I"�
+<h1 id="comp107---basic-definitions-in-the-er-model"><a href="/UoL/comp107/lectures/2020/11/18/1.html">COMP107 - Basic Definitions in the ER Model</a></h1>
+<p>The entity relationship model is used to express the conceptual schema of a database. It was originally proposed in 1976 as a means to unify the network and relational DB models.</p>
+
+<p>Many theoretical extensions and practical applications have been developed including the <strong>Enhanced Entity Relationship (EER)</strong> model.</p>
+
+<p>It is simple enough to learn and understand the basic concepts and powerful enough to be used in the development of complex applications.</p>
+
+<p>Conceptual designs using the ER model are called <strong>ER Schemas</strong></p>
+
+<h2 id="er-model-components">ER Model Components</h2>
+<p>The ER model describes data in terms of three primitive notions.</p>
+
+<h3 id="entities">Entities</h3>
+<ul>
+  <li>An entity is a thing, which can be distinctly identified.</li>
+</ul>
+
+<h3 id="attributes">Attributes</h3>
+<ul>
+  <li>A property of an entity.</li>
+  <li>They are common properties that are shared by all instances of the entity type.</li>
+</ul>
+
+<h4 id="complexity-of-attributes">Complexity of Attributes</h4>
+<ul>
+  <li>Complex attributes have structure.
+    <ul>
+      <li>Dates</li>
+      <li>Addresses</li>
+    </ul>
+  </li>
+  <li>Simple attributes only have one component.</li>
+</ul>
+
+<h4 id="cardinality">Cardinality</h4>
+<p>Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality $&gt;0$.</p>
+
+<h4 id="primitiveness">Primitiveness</h4>
+<p>A primitive attribute is any attribute which will be stored as data in the system.</p>
+
+<p>A non-primitive, or derived attribute, can be calculated from other attributes.</p>
+
+<ul>
+  <li>In some cases it is important that both attributes are indicated on the model
+    <ul>
+      <li>We should indicate which ones are redundant so that they can be derived.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="relationships">Relationships</h3>
+<ul>
+  <li>An association among entities.</li>
+</ul>
+
+<h4 id="degree-of-relationships">Degree of Relationships</h4>
+<p>A relationship has a degree that is the number of participating entity types:</p>
+
+<ul>
+  <li>Binary relationship (degree two).
+    <ul>
+      <li>A <strong>person</strong> owns a <strong>car</strong>.</li>
+    </ul>
+  </li>
+  <li>Ternary relationships (degree three).
+    <ul>
+      <li>A <strong>lecturer</strong> teaches a <strong>course</strong> to a <strong>student</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="attributes-of-relationships">Attributes of Relationships</h4>
+<p>Relationships can have attributes in the case that the attribute is not of an entity but when it is related to the relationship.</p>
+
+<ul>
+  <li>In the relationship type, “person owns a car” the attribute <code class="language-plaintext highlighter-rouge">date of purchase</code> is not an attribute of a person and is not an attribute of the car, it is an attribute of the ownership.</li>
+</ul>
+
+<h4 id="structural-constrains-on-relationships">Structural Constrains on Relationships</h4>
+<p>Relationship constraints regulate the possible combinations of entities that can participate in a relationship:</p>
+
+<ul>
+  <li>We can constrain the number of entities that can participate.</li>
+  <li>We can put a constraint on whether some entities must participate.</li>
+</ul>
+
+<h5 id="relationship-participation">Relationship Participation</h5>
+<p>A participation constraint specifies whether an entity must be in the given relationship.</p>
+
+<ul>
+  <li>A <strong>total participation constraint</strong>, indicates that each instance of an entity must be in that relationship.
+    <ul>
+      <li>A programme must belong to a department.</li>
+    </ul>
+  </li>
+  <li>A <strong>partial participation constraint</strong> specifies that there may exist an entity which does not participate in the relationship.
+    <ul>
+      <li>Not all lecturers supervise students.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="cardinality-of-relationships">Cardinality of Relationships</h4>
+<ul>
+  <li>One to One
+    <ul>
+      <li>One department only has one head.</li>
+    </ul>
+  </li>
+  <li>One to Many
+    <ul>
+      <li>Each team can have many players but one player can only play for one team.</li>
+    </ul>
+  </li>
+  <li>Many to Many
+    <ul>
+      <li>A student can be registered for many courses and a course will have may students.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="er-diagram-basics">ER Diagram Basics</h2>
+<p>Entity types are represented as boxes:</p>
+
+<pre><code class="language-mermaid">graph TD
+Lecturer
+</code></pre>
+
+<p>Relationship types are represented as diamonds connected with each participating entity type. The relationship must have a name.</p>
+
+<pre><code class="language-mermaid">graph TD
+a{works_in}
+</code></pre>
+
+<p>Attributes are shown as ovals connected to the relevant entity or relation type. In addition key attributes are underlined.</p>
+
+<ul>
+  <li>The key attribute should only be underlined if it arises naturally. If not there should be a key put in later in implementation.</li>
+</ul>
+
+<pre><code class="language-mermaid">graph TD
+a((Name))
+b((&lt;u&gt;Key&lt;/u&gt;))
+</code></pre>
+
+<p>This will come together to form the following diagram:</p>
+
+<pre><code class="language-mermaid">graph LR
+d[Department] --- a{works_in}
+a --- l[Lecturer]
+l --- n((Name))
+l --- s((&lt;u&gt;Staff Number&lt;/u&gt;))
+</code></pre>
+
+<h3 id="er-diagram-attributes">ER Diagram Attributes</h3>
+<ul>
+  <li>
+    <p>A simple primitive attribute is represented as an oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  d((Date of Birth))
+  t((Tax Code))
+</code></pre>
+  </li>
+  <li>
+    <p>Complex attributes can have their own structure made of simple attributes:</p>
+
+    <pre><code class="language-mermaid">  graph BT
+  n((Name))
+  n --- f((First Name))
+  n --- m((Middle Name))
+  n --- l((Last Name))
+</code></pre>
+  </li>
+  <li>
+    <p>A multi-valued attribute is a double oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  e(("(E-Mail Address)"))
+</code></pre>
+  </li>
+  <li>
+    <p>A derived attribute is a dotted oval:</p>
+
+    <pre><code class="language-mermaid">  graph TD
+  a((Age))
+  style a stroke-dasharray: 2 4
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="er-diagram-relationships">ER Diagram Relationships</h3>
+<ul>
+  <li>The degree of a relationship type is simply the number of entity types it connects.</li>
+  <li>Binary relationships between two entities.</li>
+  <li>Ternary relationships among three entities.</li>
+  <li>If entities participate to several relationships, a <em>role</em> may be added to some edges for clarity.</li>
+  <li>The cardinality is represented on the connecting lines (an $N$ represents the many side.
+    <ul>
+      <li>One to many (works_in)</li>
+      <li>Many to many (teaches, advises)</li>
+    </ul>
+  </li>
+  <li>Total participation is represented by a double line. (I have used thick)
+    <ul>
+      <li>A lecturer must work in a Dept.</li>
+    </ul>
+  </li>
+  <li>Relationships can have attributes.
+    <ul>
+      <li>A student may have different advisors for different majors.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph LR
+l[Lecturer] ===|N| w{works_in}
+w ---|1| d[Department]
+l ---|N| t{teaches}
+t ---|N| c[Course]
+t ---|N| s[Student]
+l ---|N, academic advisor| a{advises}
+a ---|N| s
+m((Major)) --- a
+</code></pre>
+
+<h1 id="comp107---how-to-cite"><a href="/UoL/comp107/lectures/2020/10/31/3.html">COMP107 - How to Cite</a></h1>
+<p>Referencing is a description that identifies an information source, whereas citation is the use of a reference in text.</p>
+
+<ul>
+  <li>It is not a good practice to simply list all your references at the end of a document without a connection.</li>
+  <li>Need to clearly mark what is your own work and what is the work of others.</li>
+  <li>Need to help readers get more information on what they are interested in.</li>
+</ul>
+
+<h2 id="stylistic-choices">Stylistic Choices</h2>
+<p>You should place citations:</p>
+
+<ul>
+  <li>Before the punctuation mark (<cite>Smith,1994</cite>).</li>
+  <li>At a logical place (<cite>Smith,1994</cite>) in the sentence.</li>
+  <li>At a grammatically correct place in a sentence:<br />
+According to <cite>Smith (1994)</cite>, there are 50 billion neurons in the human brain.</li>
+  <li>Before a list of items:<br />
+There are five categories of users <cite>(Anderson, 2008)</cite>: Students, teachers, professors, technical staff, administrative staff.</li>
+  <li>Following quotations:<br />
+“This is a really cool quotation.” <cite>(Guy, That, 1994, p. 345)</cite></li>
+</ul>
+
+<p class="info">There are examples of correct and incorrect cases on the slides</p>
+
+<h2 id="bibliography-style">Bibliography Style</h2>
+<p>A bibliography style determines how the citations and references are presented.</p>
+
+<ol>
+  <li>
+    <p><strong>Ordinal Number</strong></p>
+
+    <p>Sources listed in the bibliography are sorted according to some ordering, typically based on the authors; names, and numbered consecutively.</p>
+
+    <p>Citations in the text are given as lists of numbers coss-referencing the bibliography, enclosed in square brackets.</p>
+  </li>
+  <li>
+    <p><strong>Author-Date</strong></p>
+
+    <p>Sources in the reference list are arranged alphabetically by the authors’ surnames.</p>
+
+    <p>Work by the same authors are arranged by year of publication, starting with the earliest.</p>
+
+    <p>More than one work with the same authors and date, a letter is added to the year of publication to distinguish them.</p>
+
+    <p>The year of the publication typically immediately follows the list of authors.</p>
+  </li>
+  <li>
+    <p><strong>Abbreviation</strong></p>
+
+    <p>Mix of ordinal number style and author-date style.</p>
+
+    <p>Sources in the bibliography are presented like in ordinal number style, but instead of numbering them, each source is given an unique identifier based on authors’ names and year of publication, with additional letter to disambiguate duplicate abbreviations.</p>
+  </li>
+</ol>
+
+<p class="info">Examples of all of these and best practices are given in the slides.</p>
+
+<h1 id="comp107---how-to-reference"><a href="/UoL/comp107/lectures/2020/10/31/2.html">COMP107 - How to Reference</a></h1>
+<p>The purpose of referencing is to show how work extends the current state-of-the-art knowledge in the area, proof originality of work, give credit to other people’s work, support and validate arguments made and demonstrate familiarity with work done in the area.</p>
+
+<h2 id="culture-of-citing">Culture of Citing</h2>
+<p>For fiction there might be sources in your work, but these are never acknowledged, unless they serve a literary purpose.</p>
+
+<p>In journalism there must be sources but these are rarely acknowledged. Exceptions may include quotations and for reports. These acknowledgements are not always in a format considered acceptable in academia.</p>
+
+<h2 id="dependency-on-discipline">Dependency on Discipline</h2>
+<p>In academic writing all sources that make a contribution to you work must be acknowledged.</p>
+
+<p>Styles can be different from discipline to discipline, for example in philosophy there is a huge amount of referencing. However, in mathematics concepts are often named after the person who made or discovered them or you may use a concept which has very specific wording but you won’t reference in the same way as a philosophy paper.</p>
+
+<h2 id="rules-of-thumb">Rules of Thumb</h2>
+<ul>
+  <li>If you use words or ideas from any documents, even produced by yourself, then the source must be cited.</li>
+  <li>If you gain words or ideas through conversation, written or spoken, the the source must be cited.</li>
+  <li>If you use the exact words from any medium it must not only be cited but also indicated as a quotation. <code class="language-plaintext highlighter-rouge">""</code></li>
+  <li>If you reproduce any material then the source must be cited.</li>
+</ul>
+
+<h3 id="no-citation-is-required-for">No Citation is Required for:</h3>
+<ul>
+  <li>Your own experiences that have not been published before.</li>
+  <li>You are writing about your own work that have not been published before.</li>
+  <li>You are reusing your own materials.</li>
+  <li>You are using common knowledge or generally accepted facts.</li>
+  <li>In the context of student submission, if you use facts but not exact words form recommended textbooks.</li>
+</ul>
+
+<h2 id="how-to-refer-to-a-source">How to Refer to a Source</h2>
+<p>Just by looking at the reference a knowledgeable reader must collect all information about the source. You should also have an idea about the type of a source from the structure.</p>
+
+<p class="info">Refer to the slides for the types of source.</p>
+
+<h3 id="urls-are-not-enough">URLs are not enough</h3>
+<p>This is as they don’t give all the information about a source and may not be valid in the future. URLs are fine when given in addition to other information.</p>
+
+<h3 id="digital-object-identifiers">Digital Object Identifiers</h3>
+<p>DOIs are a system of creating a perma-link to a digital reference online. They are preferable over URLS but still they should be given in addition to a conventional reference.</p>
+
+<h3 id="types-of-references">Types of References</h3>
+<p>What information is required about  when the work can be obtained depends on it’s type. For example here are references for a book<sup id="fnref:book" role="doc-noteref"><a href="#fn:book" class="footnote">1</a></sup> and a journal paper<sup id="fnref:paper" role="doc-noteref"><a href="#fn:paper" class="footnote">2</a></sup>.</p>
+
+<ul>
+  <li>For how to refer to any individual type of media refer to the slides. There are also examples.</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:book" role="doc-endnote">
+      <p>Herman T. Tavani. 2010. Ethics and Technology: Controversies, Questions, and Strategeis for Ethical Computing (3^rd ed.). Wiley Publishing. <a href="#fnref:book" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:paper" role="doc-endnote">
+      <p>Herman T. Tavani. 2011. Can we Develop Aritficial Agents Capable of Making Good Moral Decisions?. Minds Mach. 21 ,3 (August 2011), 465-474. DOI=<a href="http://dx.doi.org/10.1007/s11023-011-9249-8">http://dx.doi.org/10.1007/s11023-011-9249-8</a> <a href="#fnref:paper" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+<h1 id="comp107---evaluating-and-gathering-information-sources"><a href="/UoL/comp107/lectures/2020/10/31/1.html">COMP107 - Evaluating and Gathering Information Sources</a></h1>
+<h2 id="how-to-we-form-our-knowledge">How to we form our knowledge?</h2>
+<p>Generally we form our personal collection of facts from sources that we meet in our every day life. This means that a good proportion of the knowledge we might think that we have is composed of myths. This is especially found in <em>news</em> articles.</p>
+
+<p>These articles are generally based in fact in the sense that they reference real journals. The articles covert the unreadable and specialised format of the journal into a more sensationalised and popularised format.</p>
+
+<h2 id="assessing-the-source">Assessing the Source</h2>
+<h3 id="argument-from-expert-opinion">Argument from Expert Opinion</h3>
+<p>When assessing arguments from expert opinion the following must be taken into account:</p>
+
+<ul>
+  <li>Expertise
+    <ul>
+      <li>How credible is the source?</li>
+    </ul>
+  </li>
+  <li>Field
+    <ul>
+      <li>Is the source expert in the field?</li>
+    </ul>
+  </li>
+  <li>Opinion
+    <ul>
+      <li>What did the source actually say? When?</li>
+    </ul>
+  </li>
+  <li>Trustworthiness
+    <ul>
+      <li>Is the use of the source reliable or does the writer have any alternator motive where they might not want to portray the data as it was collected?</li>
+    </ul>
+  </li>
+  <li>Consistency
+    <ul>
+      <li>Is the source consistent with others?
+        <ul>
+          <li><strong>Peer Review</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="main-academic-sources">Main Academic Sources</h2>
+<h3 id="scholarly-vs-popular">Scholarly v.s. Popular</h3>
+<p>A scholarly paper is a way for expert in the field to communicate their results, typically to other experts in the field.</p>
+
+<p>A popular paper is a communication to the general public about some research. They may not be as rigorous or detailed as a scholarly paper.</p>
+
+<h3 id="conference-papers">Conference Papers</h3>
+<p>Gatherings for researchers to present and discuss their work, typically related to a particular academic discipline and often held at regular intervals.</p>
+
+<p>Output published in “conference proceedings” in the form of conference papers written by the researchers about their work, and often peer-reviewed</p>
+
+<p>Types of events:</p>
+
+<ul>
+  <li>Conference</li>
+  <li>Workshop</li>
+  <li>Symposium</li>
+</ul>
+
+<p>You should check the acceptance ratio to check what people think of the paper.</p>
+
+<h3 id="journal-articles">Journal Articles</h3>
+<p>Academic journals are peer-reviewed periodicals in with research relating to a particular academic discipline is published.</p>
+
+<p>Each issue of a journal contains a collection of articles, each article written by a group of researchers.</p>
+
+<p>There may be <em>special issues</em> on a single topic.</p>
+
+<h2 id="dependency-on-discipline">Dependency on Discipline</h2>
+<p>Computer Science is a dynamic subject, and communication of results, and publication, <strong>relies heavily on conferences</strong>.</p>
+
+<p>This is compared to other disciplines which focus on publishing in journals.</p>
+
+<h3 id="therefore">Therefore</h3>
+<p>A prestigious Computer Science conference has  a very rigorous peer review process. Papers tend to be longer and more exhaustive.</p>
+
+<p>A medical conference, for contrast, will present mainly 300 word abstracts with the intention that a full paper will follow on a journal.</p>
+
+<h2 id="publication-pipeline">Publication Pipeline</h2>
+<ol>
+  <li>Authors submit paper to conference/journal for peer review.
+    <ul>
+      <li>At least two peer reviews reading independently.</li>
+      <li>For journals, they could have many iterations.</li>
+    </ul>
+  </li>
+  <li>If accepted, the paper is revised by the authors and submitted to the conference journal editor.</li>
+  <li>The paper is processed to bring it into the publisher’s format (typesetting/layout).</li>
+  <li>The paper is then included in the publisher’s database and possibly published in printed form.</li>
+  <li>Literature databases collect the bibliographic information from several publishers, and add additional information (references with links, citation index) and link back to publisher for full text of papers.</li>
+</ol>
+
+<h2 id="publisher-databases-and-search-engines">Publisher Databases and Search Engines</h2>
+<p class="info">Have a look at <a href="/UoL/assets/COMP107/Lectures/2020-10-31-1.pdf">the slides</a> for a list of the publishers that the university subscribes to on the library page: <a href="http://liv.ac.uk/library">Discover (UoL)</a>.</p>
+
+<p>If a journal is included in a journal/proceedings database then there has been a review process in order for it to be accepted. This may mean that it is more trustworthy.</p>
+
+<p>Get into the habit of using <a href="scholar.google.com">Google Scholar</a> to find other papers or number of citations leading to a paper.</p>
+
+<p>The site <a href="arXiv.org">ArXiv.org</a> hosts pre-prints of papers that are moderated but not peer-reviewed. This allows us to get bleeding edge information on very current topics such as COVID-19. They should be taken in context.</p>
+
+<h3 id="dbs-vs-search-engines">DBs v.s. Search Engines</h3>
+<p>Literary databases cover a vast number of academic sources but:</p>
+
+<ul>
+  <li>They do not cover all journals conferences.</li>
+  <li>They do not cover books.</li>
+  <li>They do not cover workshops and similar scientific meetings.</li>
+  <li>They do not cover technical reports and pre-prints.</li>
+</ul>
+
+<p>Web search engines provide much better coverage of all types of publications but:</p>
+
+<ul>
+  <li>Typically also return a lot of irrelevant material to a query.</li>
+  <li>Leave it to the user to distinguish high quality form low quality material.</li>
+</ul>
+
+<h2 id="craap">CRAAP</h2>
+<p>This is a useful, multi-platform and multidisciplinary checklist to evaluate sources.</p>
+
+<ul>
+  <li>Currency
+    <ul>
+      <li>When was the information published or posted?</li>
+      <li>Has the information been revised or updated?</li>
+      <li>Is the information current or out-of date for your topic?</li>
+      <li>Are the links functional?</li>
+    </ul>
+  </li>
+  <li>Relevance
+    <ul>
+      <li>Does the information relate to your topic/answer your question?</li>
+      <li>Who is the intended audience?</li>
+      <li>Is the information at an appropriate level?</li>
+      <li>Have you looked at a variety of sources before determining this is one you will use?</li>
+      <li>Would you be conformable using this source in your paper?</li>
+    </ul>
+  </li>
+  <li>Authority
+    <ul>
+      <li>Who was involved in the writing of the paper?</li>
+      <li>Are the authors credentials or affiliations given?</li>
+      <li>What are the authors credentials or affiliations?</li>
+      <li>What are the authors qualifications?</li>
+      <li>Are there any contact information?</li>
+      <li>Does the URL reveal anything about the author or source (the domain)?</li>
+    </ul>
+  </li>
+  <li>Accuracy
+    <ul>
+      <li>Where does the information come from?</li>
+      <li>Is the information supported by evidence?</li>
+      <li>Has the information been reviewed or refereed?</li>
+      <li>Can you verify any of the information by another source or from personal knowledge?</li>
+      <li>Does the language or tone seem biased and free of emotion?</li>
+      <li>Are there spelling, grammar, or other typographical errors?</li>
+    </ul>
+  </li>
+  <li>Purpose
+    <ul>
+      <li>What is the purpose of the information?</li>
+      <li>Do the authors/sponsors make their intentions or purpose clear?</li>
+      <li>Is the information fact?</li>
+      <li>Does the point of view appear objective and impartial?</li>
+      <li>Are there any biased?</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For each point you can give a source a score from one to ten. If the score if above 40 then the source is good or excellent. Bellow 30 makes the source problematic as a source of information.</p>
+
+<h1 id="comp107---requirement-elicitation"><a href="/UoL/comp107/lectures/2020/10/24/1.html">COMP107 - Requirement Elicitation</a></h1>
+<p>The process of obtaining, through systematic research the requirements of a system form the various users, customers and other stakeholders.</p>
+
+<ul>
+  <li>Needs a principle approach as it is often hard for users to articulate their need or their business problems.</li>
+  <li>Any system that doesn’t meet the users need is neither useful nor useable.</li>
+</ul>
+
+<h2 id="how-to-elicit-requirements">How to Elicit Requirements?</h2>
+<h3 id="from-the-artefact">From the Artefact</h3>
+<ul>
+  <li>Documents analysis</li>
+  <li>Interface analysis</li>
+  <li>Prototyping
+    <ul>
+      <li>Code</li>
+      <li>Show</li>
+      <li>Tune</li>
+    </ul>
+  </li>
+  <li>Reverse Engineering</li>
+</ul>
+
+<h3 id="from-people-or-asking-stakeholders">From People or Asking Stakeholders</h3>
+<ul>
+  <li>Questionnaires
+    <ul>
+      <li>Open or Closed questions</li>
+    </ul>
+  </li>
+  <li>Interviews</li>
+  <li>Focus groups
+    <ul>
+      <li>Guided discussions</li>
+    </ul>
+  </li>
+  <li>Brainstorming
+    <ul>
+      <li>Free discussion</li>
+    </ul>
+  </li>
+  <li>Ethnographic analysis
+    <ul>
+      <li>Watching what people do</li>
+    </ul>
+  </li>
+</ul>
+
+<p>When eliciting from people you should take into account who you want to talk to. There should be adequate stakeholders to get comprehensive coverage. There should be selection based on role, position, decision power, usage, expertise, exposure to problems, interests and influence on uptake.</p>
+
+<p>Interviewing can also be difficult as there may be:</p>
+
+<ul>
+  <li>Conflicting points of view.</li>
+  <li>Different backgrounds, culture, terminology.</li>
+  <li>Different languages, jargon, hidden knowledge.</li>
+  <li>Internal politics and dynamics.</li>
+</ul>
+
+<h3 id="example">Example</h3>
+<p>If you had to put together a new website for the University where would you start?</p>
+
+<ul>
+  <li>Have a look at the <a href="https://www.liverpool.ac.uk">existing website</a> (the artefact)</li>
+</ul>
+
+<h2 id="data-gathering-techniques">Data Gathering Techniques</h2>
+
+<p class="info">For a grid of data gathering techniques and their pros and cons view <a href="/UoL/assets/COMP107/Lectures/2020-10-24-1.pdf">the slides</a> for this lecture.</p>
+
+<p>User stories could apply to all three methods. These are anecdotal stories in the workplace that apply to the issue. Enduring stories capture all aspect of the organisation and are  the ones a systems analysts should be looking for.</p>
+
+<p>Stories can be used to <strong>validate</strong> the companies decision, <strong>explain</strong> why the company acted in a certain way, describe an <strong>experience</strong> or <strong>prescribe</strong> the listener how to act. They can be used to complement other methods.</p>
+
+<p>The main methods to gather information are:</p>
+
+<h3 id="questionnaires">Questionnaires</h3>
+<ul>
+  <li>They are useful in gathering form <strong>key users</strong> or potential users. They can collect information on:
+    <ul>
+      <li>Attitudes</li>
+      <li>Beliefs</li>
+      <li>Behaviours</li>
+      <li>Characteristics</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="interviewing">Interviewing</h3>
+<ul>
+  <li>They are painful as they need to be planned. The following should be considered:
+    <ul>
+      <li>Dispersion of organisation members.</li>
+      <li>Number of members.</li>
+      <li>Exploratory work required.</li>
+      <li>Problem solving prior to the interviews.</li>
+    </ul>
+  </li>
+  <li>Interviewing is an important method of collecting data on human and system information requirements. They reveal information about:
+    <ul>
+      <li>Opinions</li>
+      <li>Feelings</li>
+      <li>Goals</li>
+      <li>Key user experience concerns.</li>
+    </ul>
+  </li>
+  <li>Due to the instant nature of interviews there should be some preparation for the interview.
+    <ul>
+      <li>Reading background material.</li>
+      <li>Establishing interview objectives.</li>
+      <li>Deciding whom to interview.</li>
+      <li>Preparing the interviewee.</li>
+      <li>Deciding on question types and structure.</li>
+    </ul>
+  </li>
+  <li>A pyramid or funnel method should be used in interviewing questions. You should start with a very general question and add more details to get to the source of the problem.</li>
+  <li>Reports should be written as soon a possible after the interview so that as much detail is retained as possible. Two people can take notes to compare later.</li>
+</ul>
+
+<h3 id="joint-application-design">Joint application design</h3>
+<ul>
+  <li>Involving the users from the start in the design of the system.</li>
+  <li>The users will develop a greater link to the system. This will make the system more useful to them.</li>
+  <li>You should consider if the issue meets the following requirements before using this method:
+    <ul>
+      <li>Users want something new and bespoke.</li>
+      <li>The organisational culture supports joint problem solving behaviours and allows leave to participate in the exercise.</li>
+      <li>The analyst reckons that many more ideas will be generated using JAD than with one-to-one sessions.</li>
+      <li>The analyst should also be trained in the technique.</li>
+    </ul>
+  </li>
+  <li>People involved:
+    <ul>
+      <li>Executive sponsor</li>
+      <li>System analyst</li>
+      <li>Users</li>
+      <li>Session leaders</li>
+      <li>Observers</li>
+      <li>Scribe</li>
+    </ul>
+  </li>
+  <li>Benefits of JAD:
+    <ul>
+      <li>Time is saved, compared with traditional interviewing.</li>
+      <li>Rapid development of systems.</li>
+      <li>Creative idea production is improved.</li>
+    </ul>
+  </li>
+  <li>Drawbacks of JAD:
+    <ul>
+      <li>It requires a large block of time to be available for all session participants.</li>
+      <li>If preparation or the follow-up report is incomplete the session may not be successful.</li>
+      <li>The organisational skills and culture may not be conducive to a JAD session.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="comp107---system-analysis-and-design"><a href="/UoL/comp107/lectures/2020/10/22/1.html">COMP107 - System Analysis and Design</a></h1>
+<p>SAD seeks to understand what humans need to analyse data input or data flow systematically, process or transform data, store data, and output information in the context of a particular organisation or enterprise.</p>
+
+<h2 id="information---a-key-resource">Information - A Key Resource</h2>
+<ul>
+  <li>Information needs to be managed correctly.</li>
+  <li>Managing computer-generated information differs from handling manually produced data.</li>
+</ul>
+
+<h2 id="need-for-sad">Need for SAD</h2>
+<ul>
+  <li>Installing a system without proper planning leads to great user dissatisfaction and frequently causes the system to fall into disuse.</li>
+  <li>SAD provides structure to the analysis and design of information systems.</li>
+</ul>
+
+<h2 id="system-analyst">System Analyst</h2>
+<h3 id="role">Role</h3>
+<p>The analyst must be able to work with people of all descriptions and be experience in working with computers. They have three primary roles:</p>
+
+<ul>
+  <li>Consultant
+    <ul>
+      <li>Hired specifically to address information systems  issues.</li>
+    </ul>
+  </li>
+  <li>Supporting Expert
+    <ul>
+      <li>Not managing the project but giving professional advice for specific issues.</li>
+    </ul>
+  </li>
+  <li>Agent of Change
+    <ul>
+      <li>Most comprehensive role, introduction dramatic modifications to the organisation.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="qualities">Qualities</h3>
+<ul>
+  <li>Problem Solver</li>
+  <li>Communicator</li>
+  <li>Strong personal and professional ethics.</li>
+  <li>Self-disciplined and self-motivated.</li>
+</ul>
+
+<h2 id="systems-development-life-cycle">Systems Development Life Cycle</h2>
+<p>This is a phased approach to solving business problems by using a specific cycle of analyst and user activities.</p>
+
+<ul>
+  <li>UX or user experience is a large factor in SAD and by taking a <strong>human-centred approach</strong> the project will be much more successful.</li>
+</ul>
+
+<pre><code class="language-mermaid">graph TD
+A[Identifying problems, opportunities, and objectives.] --&gt; B[Determining human information requirements.]
+B --&gt; C[Analysing system needs.]
+C --&gt; D[Designing the recommended system.]
+D --&gt; E[Developing and documenting software.]
+E --&gt; F[Testing and maintaining the system.]
+F --&gt; G[Implementing and evaluating the system.]
+G --&gt; A
+</code></pre>
+
+<h3 id="identifying-problems">Identifying Problems</h3>
+<h4 id="activity">Activity</h4>
+<ul>
+  <li>Interviewing user management.</li>
+  <li>Summarising the knowledge obtained.</li>
+  <li>Estimating the scope of the project.</li>
+  <li>Documenting the results.</li>
+</ul>
+
+<h4 id="output">Output</h4>
+<ul>
+  <li>Feasibility report containing problem definition and objective summaries from which management can make a decision on whether to proceed with the proposed project.</li>
+</ul>
+
+<h3 id="determining-human-information-requirements">Determining Human Information Requirements</h3>
+<h4 id="activity-1">Activity</h4>
+<ul>
+  <li>Interviewing</li>
+  <li>Sampling and investigating hard data.</li>
+  <li>Questionnaires</li>
+  <li>Observe decision makers’ behaviour and environment.</li>
+  <li>Prototyping</li>
+  <li>Learn the who, what, where, when, how and why of they current system.</li>
+</ul>
+
+<h4 id="output-1">Output</h4>
+<ul>
+  <li>The analyst understands how users accomplish their work when interacting with a computer.</li>
+  <li>Begin to know how to make the new system more useful and usable.</li>
+  <li>Know the business functions.</li>
+  <li>Have complete information on the:
+    <ul>
+      <li>People</li>
+      <li>Goals</li>
+      <li>Data</li>
+      <li>Procedure involved.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="analysing-system-needs">Analysing System Needs</h3>
+<h4 id="activity-2">Activity</h4>
+<ul>
+  <li>Create data flow, activity, or sequence diagrams.</li>
+  <li>Complete the data dictionary.</li>
+  <li>Analyse the structured decisions made.</li>
+  <li>Prepare and present the system proposal.</li>
+</ul>
+
+<h4 id="output-2">Output</h4>
+<ul>
+  <li>Recommendation on what, if anything, should be done.</li>
+</ul>
+
+<h3 id="designing-the-recommended-system">Designing the Recommended System</h3>
+<h4 id="activity-3">Activity</h4>
+<ul>
+  <li>Design procedures for data entry.</li>
+  <li>Design the human-computer interface.</li>
+  <li>Design system controls.</li>
+  <li>Design database and/or files.</li>
+  <li>Design backup procedures.</li>
+</ul>
+
+<h4 id="output-3">Output</h4>
+<ul>
+  <li>Model of the actual system.</li>
+</ul>
+
+<h3 id="developing-and-documenting-software">Developing and Documenting Software</h3>
+<h4 id="activity-4">Activity</h4>
+<ul>
+  <li>System analyst working with programmers to develop any original software.</li>
+  <li>Works with users to develop effective documentation.</li>
+  <li>Programmers design, code, and remove syntactical errors from computer programs.</li>
+  <li>Document software with help files, procedure manuals, and Web sites with FAQs.</li>
+</ul>
+
+<h4 id="output-4">Output</h4>
+<ul>
+  <li>Computer program and documentation.</li>
+</ul>
+
+<h3 id="testing-and-maintaining-the-system">Testing and Maintaining the System</h3>
+<h4 id="activity-5">Activity</h4>
+<ul>
+  <li>Test the information system.</li>
+  <li>System maintenance</li>
+  <li>Maintenance documentation</li>
+</ul>
+
+<h4 id="output-5">Output</h4>
+<ul>
+  <li>Problems, if any.</li>
+  <li>Updated programs</li>
+  <li>Documentation</li>
+</ul>
+
+<h3 id="implementing-and-evaluating-the-system">Implementing and Evaluating the System</h3>
+<h4 id="activity-6">Activity</h4>
+<ul>
+  <li>Train users</li>
+  <li>Analyst plans smooth conversion from old system to new system.</li>
+  <li>Review and evaluate system.</li>
+</ul>
+
+<h4 id="output-6">Output</h4>
+<ul>
+  <li>Trained personnel</li>
+  <li>Installed system</li>
+</ul>
+
+<h2 id="scope-of-comp107">Scope of COMP107</h2>
+<p>COMP107 covers the first four steps of the systems development life cycle up to, and including designing the system.</p>
+
+<ul>
+  <li>Assignment 1
+    <ul>
+      <li>Covers identifying problems and determining information requirements.</li>
+      <li>Come up with a real, complex problem and approach information gather in a way as authentic as possible, but using realistic tools.</li>
+    </ul>
+  </li>
+  <li>Assignment 2
+    <ul>
+      <li>Covers the data of the system.</li>
+      <li>Will develop a model of the data.</li>
+    </ul>
+  </li>
+</ul>
+
+:ET

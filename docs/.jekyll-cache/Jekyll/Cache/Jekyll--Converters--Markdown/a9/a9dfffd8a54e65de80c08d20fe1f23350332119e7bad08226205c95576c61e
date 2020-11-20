@@ -1,0 +1,22 @@
+I"Ê<h2 id="cracking-the-caesar-cipher">Cracking the Caesar Cipher</h2>
+<p>In order to crack a Caesar Cipher you can use the fact that, in English, each letter isnâ€™t used equally. From this you can shift around the letters until you find a shift that fits the distribution of the English language.</p>
+
+<p>As a result of this you should be able to write a program that can guess and decode an English Caesar Shift.</p>
+
+<h3 id="chi-squared-score">Chi-Squared Score</h3>
+
+\[\sum^z_{i=a}{\frac{(\text{freq}_i-\text{english}_i)^2}{\text{english}_i}}\]
+
+<p>To check if two frequency distributions are similar you can use the chi-squared score. The lower the output the closer the distributions match.</p>
+
+<p>The algorithm will complete the following tasks:</p>
+
+<ul>
+  <li>Try all 26 possible shifts</li>
+  <li>For each one, compute the letter frequency distribution of the decoded text, and the chi-squared score.</li>
+  <li>Use the shift with the lowest chi-squared score.</li>
+</ul>
+
+<h3 id="implementation">Implementation</h3>
+<p>View <a href="/UoL/assets/COMP105/Lectures/2020-11-02-2.pdf">the slides</a> and <a href="/UoL/assets/COMP105/Lectures/2020-11-02.hs">the source code</a> for the implementation and explanation.</p>
+:ET

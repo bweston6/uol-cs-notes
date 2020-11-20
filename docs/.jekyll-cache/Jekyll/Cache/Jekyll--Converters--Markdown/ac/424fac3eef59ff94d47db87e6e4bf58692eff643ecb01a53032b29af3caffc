@@ -1,0 +1,92 @@
+I"�<p>Often we are interested in just part of the sample space. Conditional probability gives us a means of handling this situation.</p>
+
+<h2 id="example">Example</h2>
+<p>Consider a family chosen at random from a set of families having two children (but not having twins). What is the probability that both children are boys?</p>
+
+<p>A suitable sample space $S={BB,GB,BG,GG}$.</p>
+
+<p>It is reasonable to assume that $P(x)=\frac{1}{4}$ for all $x\in S$.</p>
+
+<p>Thus $P(BB)=\frac{1}{4}$.</p>
+
+<p>Now you learn that the families were selected from those who have one child at a boys’ school. Does this change probabilities.</p>
+
+<p>The new sample space $S’={BB,GB,BG}$ and we re now looking for $P(BB\vert \text{at least one boy})+P(BB\vert S’)$</p>
+
+<p>The vertical line is read <strong>given that</strong>.</p>
+
+<h3 id="normalisation">Normalisation</h3>
+<p>$S’$ is a subset of $S$, so every outcome $x$ in $S’$ is also in $S$. It probability $P(x)\in S$ we can determine.</p>
+
+<p>However, if we just take the sum of these probabilities, they will sum to less than 1.</p>
+
+<p>We therefore <strong>normalise</strong> by dividing the probability $P(x)$ of the outcome $x$ in $S$ by the probability $P(S’)$ of $S’$ in $S$:</p>
+
+\[P(BB\vert \text{at least one boy})=P(BB\vert S')=\frac{P(BB)}{P(S')}=\frac{\frac{1}{4}}{\frac{3}{4}}=\frac{1}{3}\]
+
+<h2 id="conditioning">Conditioning</h2>
+<p>Assume now that evens $A$ and $B$ are given.</p>
+
+<p>Assume we know that $B$ happens. So we want to condition on $B$. Thus, we want to know:</p>
+
+\[P(A\vert B)\]
+
+<p>This is the probability that $A$ occurs given that $B$ is know to occur.</p>
+
+<p>So we want to know the probability $P(A\cap B)$. (as we know that $B$ occurs) after the conditioning on $B$.</p>
+
+<p>We cant take $P(A\cap B)$ itself but have to normalise by dividing by the probability of the new sample space $P(B)$:</p>
+
+\[P(A\vert B)=\frac{P(A\cap B)}{P(B)}\]
+
+<h3 id="formalised">Formalised</h3>
+<p>Let $A$ and $B$ be events, with $P(B)&gt;0.</p>
+
+<p>The conditional probability $P(A\vert B)$ of $A$ given $B$ is given by:</p>
+
+\[P(A\vert B)=\frac{P(A\cap B)}{P(B)}\]
+
+<p class="info">View <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slide 27</a> for additional example.</p>
+
+<h2 id="multiplication-rule">Multiplication Rule</h2>
+<p>We can rewrite the previous equation like so:</p>
+
+\[P(A\cap B)=P(A\vert B)P(B)\]
+
+<p>Or like:</p>
+
+\[P(A\cap B)=P(B\vert A)P(A)\]
+
+<p>This rule can also be extended to more events:</p>
+
+\[P(A\cap B\cap C)=P(C\vert B\cap A)P(A\cap B)=P(C\vert A\cap B)P(B\vert A)P(A)\]
+
+<h3 id="example-1">Example</h3>
+<p>Consider a family chosen at random from a set of families with just one pair of twins. What is the probability that both twins are boys?</p>
+
+<p>Twins  are either identical $I$ or fraternal $F$. We know that a third of human twins are identical:</p>
+
+\[P(I)=\frac{1}{3},P(F)=\frac{2}{3}\]
+
+<p>and</p>
+
+\[P(BB)=P(I\cap BB) + P(F\cap BB)\]
+
+<p>By the multiplication rule:</p>
+
+\[P(I\cap BB)= P(BB\vert I)P(I),\ P(F\cap BB) = P(BB\vert F)P(F)\]
+
+<p>The probability of being a girl of boy for fraternal twins will be the same as for any other two-child family. For the identical twins, the outcomes $BG$ and $GB$ are no longer possible thus:</p>
+
+\[P(BB\vert I)=\frac{1}{2},\ P(BB\vert F)=\frac{1}{4}\]
+
+<p>From this we obtain:</p>
+
+<p>$P(BB)=P(I\cap BB) + P(F\cap BB)$</p>
+
+<p>$=P(BB\vert I)P(I)+ P(BB\vert F)P(F)$</p>
+
+<p>$=\frac{1}{2}\times\frac{1}{3}+\frac{1}{4}\times\frac{2}{3}$</p>
+
+<p>$=\frac{1}{3}$</p>
+:ET

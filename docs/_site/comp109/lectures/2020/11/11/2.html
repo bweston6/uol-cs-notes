@@ -868,38 +868,17 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>As yet we know that you should always write a predicate like so:</p>
 
-\[\{x\in A | x \text{ satisfies some property}\}\]
+\[\{x\in A \vert  x \text{ satisfies some property}\}\]
 
 <p>Before Russell sets were just defined by their properties.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Russell’s Paradox shows that the ‘object’ ${x</td>
-      <td>P(x)}$ is not always meaningful.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Russell’s Paradox shows that the ‘object’ ${x\vert P(x)}$ is not always meaningful.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Set $A={B</td>
-      <td>B\notin B}$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Set $A={B\vert B\notin B}$</p>
 
 <p>Problem: do we have $A\in A$?</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Abbreviate, for any set $C$, by $P(C)$ the statement $C\notin$. Then $A={B</td>
-      <td>P(B)}$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Abbreviate, for any set $C$, by $P(C)$ the statement $C\notin$. Then $A={B\vert P(B)}$.</p>
 
 <ul>
   <li>If $A\in A$, then (from the definition of $P$), not $P(A)$. Therefore $A\notin A$.</li>
@@ -910,7 +889,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>This is the reason why we must draw the elements from another set to avoid this paradox. For example, in the definition of even numbers the predicate draws from the set of natural numbers:</p>
 
-\[x\in \mathbb{N} | x=2k\ \text{for some int. $k$}\]
+\[x\in \mathbb{N} \vert  x=2k\ \text{for some int. $k$}\]
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-11-11T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - A^* Search - Uni Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - A* Search - Uni Notes</title>
 
 <meta name="description" content="It was made in 1968 in Stanford by the team that constructed Shaky, the robot.  The basic idea was to combine uniform cost search and greedy search  We look ...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp111/lectures/2020/10/28/1.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -841,11 +841,11 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - A^* Search</h1></header><span class="split-space">&nbsp;</span>
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - A* Search</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
             href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-10-28-1.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - A^* Search"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - A* Search"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
@@ -878,7 +878,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>Aims to reduce the <strong>overall cost</strong>.</li>
 </ul>
 
-<h2 id="general-algorithm-for-a-search">General Algorithm for A^* Search</h2>
+<h2 id="general-algorithm-for-a-search">General Algorithm for A* Search</h2>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
 		for each state s the successors of s
 		a test goal(s) checking whether s is a goal state
@@ -897,7 +897,7 @@ end while
 </code></pre></div></div>
 
 <h3 id="example">Example</h3>
-<p>An A^* search is completed on the following graph:</p>
+<p>An A* search is completed on the following graph:</p>
 
 <pre><code class="language-mermaid">graph TD
 S[S, h = 8] --&gt;|1| A[A, h = 8]
@@ -949,7 +949,7 @@ C --&gt;|5| G[G, h = 0]
   </li>
 </ul>
 
-<h2 id="properties-of-a-search">Properties of A^* Search</h2>
+<h2 id="properties-of-a-search">Properties of A* Search</h2>
 
 <ul>
   <li>Complete and optimal under minor conditions
@@ -973,7 +973,7 @@ C --&gt;|5| G[G, h = 0]
       <li>Incomplete and not always optimal.</li>
     </ul>
   </li>
-  <li>A^* search expands lowest $g+h$.
+  <li>A* search expands lowest $g+h$.
     <ul>
       <li>Complete and optimal.</li>
       <li>Optimally efficient.</li>

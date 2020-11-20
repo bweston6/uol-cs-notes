@@ -1,0 +1,35 @@
+I"»<h2 id="functions-and-libraries">Functions and Libraries</h2>
+<p>When using Haskell the default library is Prelude.</p>
+
+<p>Haskell uses special syntax for function calls. <code class="language-plaintext highlighter-rouge">min</code> from the Prelude library will work as <code class="language-plaintext highlighter-rouge">min 1 2</code>. This is as functions are called as:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">function</span> <span class="n">name</span><span class="p">][</span><span class="n">space</span><span class="p">][</span><span class="n">arg1</span><span class="p">][</span><span class="n">space</span><span class="p">][</span><span class="n">arg2</span><span class="p">]</span><span class="o">...</span>
+</code></pre></div></div>
+
+<p>Additionally in Haskell functions bind tighter than mathematical operators:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">min</span> <span class="mi">28</span> <span class="mi">100</span><span class="o">/</span><span class="mi">4</span>
+<span class="mf">7.0</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">min</span> <span class="mi">28</span> <span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="mf">25.0</span>
+</code></pre></div></div>
+
+<h2 id="two-argument-function-syntax">Two Argument Function Syntax</h2>
+<p>Functions will two arguments can be infixed by surrounding with back-ticks:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="n">mod</span> <span class="mi">10</span> <span class="mi">4</span>
+<span class="mi">2</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="mi">10</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">4</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<p>For infix functions like <code class="language-plaintext highlighter-rouge">+</code> you can surround them with brackets and use them like a prefix function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Prelude</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">2</span>
+<span class="kt">Prelude</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<p class="info">Additional functions are available in <a href="/UoL/assets/COMP105/Lectures/2020-10-14-1.pdf">the slides</a>.</p>
+:ET

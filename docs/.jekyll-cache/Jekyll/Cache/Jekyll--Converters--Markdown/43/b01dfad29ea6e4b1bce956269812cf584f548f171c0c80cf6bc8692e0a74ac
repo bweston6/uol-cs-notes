@@ -1,0 +1,89 @@
+I"4
+<h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
+<p>Show that in any group of six people there are either three who all know each other or three complete strangers.</p>
+
+<p><img src="/UoL/assets/COMP109/Lectures/2020-11-13-3-1.png" alt="Graph 1" /></p>
+
+<p>On this graph blue is people who know each other and red is people who don’t. From the graph you can see that only two people will know each other.</p>
+
+<p><img src="/UoL/assets/COMP109/Lectures/2020-11-13-3-2.png" alt="Graph 2" /></p>
+
+<p>What the question is saying is that no matter how you colour this you will always have a triangle of three people with red lines (don’t know) or blue lines (do know).</p>
+
+<h3 id="proof">Proof</h3>
+<p>Let $A,B,C,D,E,\underline F$ denote people under consideration.</p>
+
+<p>Construct $f:{A,B,C,D,E}\rightarrow{0,1}$ as follows: $f(x)=1$ if $x$ knows $F$, or $0$ else.</p>
+
+<p>This means that we are taking out the person $F$ and considering who they know in a binary format.</p>
+
+<pre><code class="language-mermaid">graph TD
+subgraph A
+A
+B
+C
+D
+E
+end
+subgraph B
+0
+1
+end
+</code></pre>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$</td>
+      <td>A</td>
+      <td>=5,</td>
+      <td>B</td>
+      <td>=2$ Therefore there must exist ${x_1,x_2,x_3}\subseteq{A,B,C,D,E}$ such that $f(x_1)=f(x_2)=f(x_3)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="case-1">Case 1</h4>
+<p>Suppose that $f(x_1)=f(x_2)=f(x_3)=1$. This means that they all know each other.</p>
+
+<pre><code class="language-mermaid">graph LR
+x1 --&gt; F
+x2 --&gt; F
+x3 --&gt; F
+x2 --&gt;|Case 1.1| x3
+x1 .-&gt;|Case 1.2| x2
+x2 .-&gt;|Case 1.2| x3
+x3 .-&gt;|Case 1.2| x1
+</code></pre>
+<p><em>Dotted means don’t know.</em></p>
+
+<h5 id="case-11">Case 1.1</h5>
+<p>There is a pair who know each other.</p>
+
+<h4 id="case-12">Case 1.2</h4>
+<p>There is no pair who know each other.</p>
+
+<p>So $x_1,x_2,x_3$ are complete strangers.</p>
+
+<h3 id="case-2">Case 2</h3>
+<p>$f(x_1)=f(x_2)=f(x_3)=0$</p>
+
+<pre><code class="language-mermaid">graph LR
+x1 .-&gt; F
+x2 .-&gt; F
+x3 .-&gt; F
+x1 --&gt;|Case 2.1| x2
+x2 --&gt;|Case 2.1| x3
+x3 --&gt;|Case 2.1| x1
+x1 .-&gt;|Case 2.2| x2
+</code></pre>
+<p><em>Dotted means don’t know.</em></p>
+
+<h4 id="case-21">Case 2.1</h4>
+<p>$x_1,x_2,x_3$ all know each other.</p>
+
+<h4 id="case-22">Case 2.2</h4>
+<p>Three is a pair who don’t know each other.</p>
+
+<p>As you can see in any case there is a triangle of three people with links stating that they know or don’t know each other in any case. This proves the statement. This is as we can see that three know or don’t know each other in any situation.</p>
+:ET

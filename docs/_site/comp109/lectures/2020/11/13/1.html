@@ -864,45 +864,9 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>For finite sets $A$ and $B$:</p>
 
 <ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>\geq</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is a surjective function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>\leq</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is an injective function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>$</td>
-          <td>A</td>
-          <td>=</td>
-          <td>B</td>
-          <td>\Rightarrow$ there is a bijection function from $A$ to $B$.</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>$\vert A\vert \geq\vert B\vert \Rightarrow$ there is a surjective function from $A$ to $B$.</li>
+  <li>$\vert A\vert \leq\vert B\vert \Rightarrow$ there is an injective function from $A$ to $B$.</li>
+  <li>$\vert A\vert =\vert B\vert \Rightarrow$ there is a bijection function from $A$ to $B$.</li>
 </ul>
 
 <pre><code class="language-mermaid">graph TD
@@ -929,17 +893,7 @@ e --&gt; 2
 f --&gt; n
 </code></pre>
 
-<table>
-  <tbody>
-    <tr>
-      <td>From the graph as $</td>
-      <td>A</td>
-      <td>=n=</td>
-      <td>B</td>
-      <td>$ then we can deduce that $g^{-1}\circ f$.</td>
-    </tr>
-  </tbody>
-</table>
+<p>From the graph as $\vert A\vert =n=\vert B\vert $ then we can deduce that $g^{-1}\circ f$.</p>
 
 <ul>
   <li>Bijective means one to one.</li>
@@ -950,17 +904,7 @@ f --&gt; n
 <h2 id="the-pigeonhole-principle">The Pigeonhole Principle</h2>
 <p>Let $f:A\rightarrow B$ be a function where $A$ and $B$ are finite sets.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>The pigeonhole principle states that if $</td>
-      <td>A</td>
-      <td>&gt;</td>
-      <td>B</td>
-      <td>$ then at least one value of $f$ occurs more than once.</td>
-    </tr>
-  </tbody>
-</table>
+<p>The pigeonhole principle states that if $\vert A\vert &gt;\vert B\vert $ then at least one value of $f$ occurs more than once.</p>
 
 <p>In other words, we have $f(a)=f(b)$ for some distinct elements $a,b$ of $A$.</p>
 
@@ -970,17 +914,9 @@ f --&gt; n
 <p>There are 15 people on a bus. Show that at least two of them have a birthday in the same month of the year.</p>
 
 <h4 id="proof">Proof</h4>
-<p>Let $A$ be the set of all people on the bus. $|A|=15$</p>
+<p>Let $A$ be the set of all people on the bus. $\vert A\vert =15$</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Let $B$ be the set of months. $</td>
-      <td>B</td>
-      <td>=12$</td>
-    </tr>
-  </tbody>
-</table>
+<p>Let $B$ be the set of months. $\vert B\vert =12$</p>
 
 <p>$f$ associates the month in which a person has been born with that person.</p>
 
@@ -989,37 +925,13 @@ f --&gt; n
 <h3 id="example-2">Example 2</h3>
 <p>How many different surnames must appear in a telephone directory to guarantee that at least two of the surnames begin with the same letter of the alphabet and end with the same letter of the alphabet?</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>If we are solving this by the pigeonhole principle then the set $A$ of names must have same cardinality as $</td>
-      <td>B</td>
-      <td>+1$ where $B$ is the set of all pairs of letters.</td>
-    </tr>
-  </tbody>
-</table>
+<p>If we are solving this by the pigeonhole principle then the set $A$ of names must have same cardinality as $\vert B\vert +1$ where $B$ is the set of all pairs of letters.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>B</td>
-      <td>=26^2$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert B\vert =26^2$</p>
 
 <p>Therefore</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>B</td>
-      <td>+1=26^2+1$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert B\vert +1=26^2+1$</p>
 
 <h3 id="example-3">Example 3</h3>
 <p>Five number are selected from the numbers $1,2,3,4,5,6,7$ and $8$. Show that there will always be two of the numbers that sum to $9$.</p>
@@ -1045,7 +957,7 @@ x3 --&gt; 3
 x4 --&gt; 4
 x5 --&gt; 1
 </code></pre>
-<p>$|A|=5$ and $|B|=4$. If each element with $x_n$ maps to the pair which contains its digit then there must be a pair with more than one mapping. This is to say that the two sets maps via a <em>surjective</em> function.</p>
+<p>$\vert A\vert =5$ and $\vert B\vert =4$. If each element with $x_n$ maps to the pair which contains its digit then there must be a pair with more than one mapping. This is to say that the two sets maps via a <em>surjective</em> function.</p>
 
 <p>This proves that there will always be one pair in the list that sums to 9.</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-11-13T00:00:00+00:00"><!-- start custom article footer snippet -->

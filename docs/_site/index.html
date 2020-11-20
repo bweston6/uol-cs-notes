@@ -870,39 +870,25 @@ There are also weak entities such as tables or chairs. These simple objects donâ
           <div class="item__description"><div class="article__content" itemprop="description articleBody">First Form
 If $P(A)&gt;0$, then:
 
-\[P(B|A)=\frac{P(A|B)\times P(B)}{P(A)}\]
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
 
 Proof
 We have:
 
 
-  
-    
-      
-        
-          $P(A\cap B)=P(A
-          B)\times P(B)$
-        
-      
-    
-  
-  
-    
-      
-        
-          $P(A\cap B)=P(B
-          A)\times P(A)$
-        
-      
-    
-  
+  $P(A\cap B)=P(A\vert B)\times P(B)$
+  $P(A\cap B)=P(B\vert A)\times P(A)$
 
 
 Thus:
 
-\[P(A|B)\times P(B)=P(B|A)\times P(A)\]
+\[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)\]
 
-By di...</div><p><a href="/UoL/comp111/lectures/2020/11/19/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+By dividing by $P(A)$ we get:
+
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
+
+Application - Diagnosis...</div><p><a href="/UoL/comp111/lectures/2020/11/19/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
@@ -924,13 +910,11 @@ If $P(A)\neq 0$ and $P(B)\neq 0$, then the following are equivalent:
 
 
   $A$ and $B$ are independent.
-  
-    
-      
-        
-          $P(B)=P(B
-          A)$
- ...</div><p><a href="/UoL/comp111/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  $P(B)=P(B\vert A)$
+  $P(A)=P(A\vert B)$
+
+
+See slides 31 f...</div><p><a href="/UoL/comp111/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>

@@ -1,0 +1,40 @@
+I"Æ<h2 id="how-to-describe-data">How to Describe Data</h2>
+<p>The ER model describes data in terms of:</p>
+
+<ul>
+  <li>Entities
+    <ul>
+      <li>A thing which can be distinctly identified</li>
+    </ul>
+  </li>
+  <li>Attributes
+    <ul>
+      <li>A property of an entity.</li>
+    </ul>
+  </li>
+  <li>Relationships
+    <ul>
+      <li>An association among entities.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+</code></pre>
+
+<p>Attempt a data description of a system you know well:</p>
+
+<ul>
+  <li>Scoping which part of the system do you want to represent</li>
+  <li>Write three sentences that are relevant to the system and depict them graphically.</li>
+</ul>
+
+<p>Use the system of YouTube</p>
+
+<p>The group made the following:</p>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-13-1.png" alt="Screenshot" /></p>
+:ET

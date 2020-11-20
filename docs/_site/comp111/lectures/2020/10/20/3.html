@@ -929,13 +929,9 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <h2 id="properties-of-breadth-first-search">Properties of Breadth First Search</h2>
 
-<hr />
-<ul>
-  <li>The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</li>
-  <li>The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</li>
-</ul>
+<p class="info">The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</p>
 
-<hr />
+<p class="info">The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</p>
 
 <ul>
   <li>Time complexity
@@ -952,17 +948,59 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <h3 id="complexity">Complexity</h3>
 
-<p>| Depth | Paths | Time | 
-| —| — | — |
-| 0 | 1 | 1 msec |
-| 1 | 11 | .01 sec | 
-| 2 | 111 | .1 sec | 
-| 4 | 11,111|11 sec|
-|6|10^6|18 sec|
-|8|10^8|31 hours|
-|10| 10^10| 128 days|
-12|10^12|35 years|
-<em>Example of combinatorial explosion of a BFS at 1000 states/sec.</em></p>
+<table>
+  <thead>
+    <tr>
+      <th>Depth</th>
+      <th>Paths</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1 msec</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>11</td>
+      <td>.01 sec</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>111</td>
+      <td>.1 sec</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>11,111</td>
+      <td>11 sec</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>10^6</td>
+      <td>18 sec</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>10^8</td>
+      <td>31 hours</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>10^10</td>
+      <td>128 days</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>10^12</td>
+      <td>35 years</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Example of combinatorial explosion of a BFS at 1000 states/sec.</em></p>
 
 <h2 id="properties-of-depth-first-search">Properties of Depth First Search</h2>
 
