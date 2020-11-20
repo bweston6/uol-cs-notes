@@ -1537,6 +1537,12 @@ window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
     });
   });
 </script>
+<script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 <script>
   window.Lazyload.js('https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js', function() {
     mermaid.initialize({
