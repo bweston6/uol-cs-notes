@@ -1,4 +1,4 @@
-I"Q	<p>For a normal case of mathematical induction you can prove that a statement holds for all numbers from a particular start point.</p>
+I"a	<p>For a normal case of mathematical induction you can prove that a statement holds for all numbers from a particular start point.</p>
 
 <p>It uses a base case so show that it holds for an individual number and an induction rule that proves that it holds for all numbers following.</p>
 
@@ -53,7 +53,7 @@
 \(\underbrace{\underbrace{(x_1\times\ldots)}_{l}\times\underbrace{(\ldots\times x_{m+1})}_{m+1-l}}_{m+1}\)</p>
 
 <p>By induction hypothesis
-\(\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
+\(\require{cancel}\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
 
 <p>This proves that the property holds for the next value to infinitude. $\square$</p>
 :ET

@@ -863,14 +863,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>Each set in the power set follows this definition:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x</td>
-      <td>x\subseteq A}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\vert x\subseteq A}]</p>
 
 <h3 id="example">Example</h3>
 <p>The power set $\text{Pow}{A}$ of a set $A={1,2}$ is:</p>
@@ -879,40 +872,16 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>For any set $A$:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[</td>
-      <td>\text{Pow(A)}</td>
-      <td>=2^{</td>
-      <td>A</td>
-      <td>}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[\vert \text{Pow(A)}\vert =2^{\vert A\vert }]</p>
 
 <p>Therefore:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x</td>
-      <td>x\in\text{Pow}(A)}={\emptyset,\ldots}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\vert x\in\text{Pow}(A)}={\emptyset,\ldots}]</p>
 
 <h2 id="russells-paradox">Russell’s Paradox</h2>
 <p>People say that you can define a set just by defining the constraints of the set:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x\in\mathbb{R}</td>
-      <td>x&lt;4,x\geq-1}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\in\mathbb{R}\vert x&lt;4,x\geq-1}]</p>
 
 <p>However statements written in this way are susceptible to paradoxes. For example the following paradox:</p>
 
@@ -924,37 +893,23 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h2 id="avoiding-paradoxes">Avoiding Paradoxes</h2>
 <p>To avoid paradoxes we should write the set definition in the following way:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x\in\ldots</td>
-      <td>\ldots}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\in\ldots\vert \ldots}]</p>
 
 <p>This means that the set or value x should be taken from some other set.</p>
 
 <p>They should not be written like this:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>[{x\ldots</td>
-      <td>\ldots}]</td>
-    </tr>
-  </tbody>
-</table>
+<p>[{x\ldots\vert \ldots}]</p>
 
 <h2 id="venn-diagrams-and-set-logic">Venn Diagrams and Set Logic</h2>
 
 <p>Draw the following as a Venn diagram: $A\cap (B\cup C)$</p>
 
-<p><img src="img/COMP109201116-1.md.580.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-1.png" alt="" /></p>
 
 <p>Draw the following as a Venn diagram: $(A\cap B)\cup(A\cap C)$</p>
 
-<p><img src="img/COMP109201116-1.md.8733.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-2.png" alt="" /></p>
 
 <h1 id="comp109---catch-up-session-5"><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">COMP109 - Catch-up Session 5</a></h1>
 <h2 id="example-1">Example 1</h2>

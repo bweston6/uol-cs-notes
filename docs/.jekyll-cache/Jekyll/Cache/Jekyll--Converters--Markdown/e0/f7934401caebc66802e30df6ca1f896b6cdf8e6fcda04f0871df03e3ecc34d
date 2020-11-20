@@ -1,4 +1,4 @@
-I"–ó
+I"A
 <h1 id="comp109---functions---8"><a href="/UoL/comp109/lectures/2020/11/17/3.html">COMP109 - Functions - 8</a></h1>
 <h2 id="uncountable-sets">Uncountable Sets</h2>
 <p>A set that is not countable is called uncountable. The following set is uncountable:</p>
@@ -145,6 +145,60 @@ plot:
 </code></pre>
 
 <p>This graph shows that there is a one to one mapping of the numbers between 0 and 1 to all real numbers. This is becuse for all values for x between 0 and one all real numbers are produced on the y axis.</p>
+
+<h1 id="comp109---catch-up-session-6"><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html">COMP109 - Catch-up Session 6</a></h1>
+<h2 id="power-sets">Power Sets</h2>
+<p>The power set $\text{Pow}{A}$ of a set $A$ is the set of all possible subsets. This includes the null set $\emptyset$ and the full set.</p>
+
+<p>Each set in the power set follows this definition:</p>
+
+<p>[{x\vert x\subseteq A}]</p>
+
+<h3 id="example">Example</h3>
+<p>The power set $\text{Pow}{A}$ of a set $A={1,2}$ is:</p>
+
+<p>[{\emptyset,{1},{2},{1,2}}]</p>
+
+<p>For any set $A$:</p>
+
+<p>[\vert \text{Pow(A)}\vert =2^{\vert A\vert }]</p>
+
+<p>Therefore:</p>
+
+<p>[{x\vert x\in\text{Pow}(A)}={\emptyset,\ldots}]</p>
+
+<h2 id="russells-paradox">Russellâ€™s Paradox</h2>
+<p>People say that you can define a set just by defining the constraints of the set:</p>
+
+<p>[{x\in\mathbb{R}\vert x&lt;4,x\geq-1}]</p>
+
+<p>However statements written in this way are susceptible to paradoxes. For example the following paradox:</p>
+
+<p>Everyone from Crete is a liar. <cite>(Said by a person from Crete)</cite></p>
+
+<h3 id="paradoxes-in-general">Paradoxes in General</h3>
+<p>A paradox is a case that when expanded contains a contradiction.</p>
+
+<h2 id="avoiding-paradoxes">Avoiding Paradoxes</h2>
+<p>To avoid paradoxes we should write the set definition in the following way:</p>
+
+<p>[{x\in\ldots\vert \ldots}]</p>
+
+<p>This means that the set or value x should be taken from some other set.</p>
+
+<p>They should not be written like this:</p>
+
+<p>[{x\ldots\vert \ldots}]</p>
+
+<h2 id="venn-diagrams-and-set-logic">Venn Diagrams and Set Logic</h2>
+
+<p>Draw the following as a Venn diagram: $A\cap (B\cup C)$</p>
+
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-1.png" alt="" /></p>
+
+<p>Draw the following as a Venn diagram: $(A\cap B)\cup(A\cap C)$</p>
+
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-2.png" alt="" /></p>
 
 <h1 id="comp109---functions---5"><a href="/UoL/comp109/lectures/2020/11/13/3.html">COMP109 - Functions - 5</a></h1>
 <h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
@@ -995,6 +1049,44 @@ Y â€“&gt;|g| Z</p>
   </tbody>
 </table>
 
+<h1 id="comp109---tutorial-4"><a href="/UoL/comp109/tutorials/2020/11/10/1.html">COMP109 - Tutorial 4</a></h1>
+<p>For the following questions:</p>
+
+<ul>
+  <li>$\emptyset \in{\text{Leeds, Liverpool}}$
+    <ul>
+      <li>False</li>
+    </ul>
+  </li>
+  <li>$\emptyset \subseteq{\text{Leeds, Liverpool}}$
+    <ul>
+      <li>True</li>
+    </ul>
+  </li>
+  <li>$\emptyset = {}$
+    <ul>
+      <li>False as they are different types.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="comp109---catch-up-session-5"><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">COMP109 - Catch-up Session 5</a></h1>
+<h2 id="example-1">Example 1</h2>
+<p>$A={1,2,7,8,9}, B={x\in A\vert x \text{ is odd}}$</p>
+
+<p>Where:</p>
+
+<p>$C=A-B=A\cap B$</p>
+
+<p>Therefore:</p>
+
+<p>$B={1,7,9}$</p>
+
+<p>$C={2,8} = {x\in A \vert x \notin B}$</p>
+
+<h2 id="proving-identities">Proving Identities</h2>
+<p>To prove an identity you would consider the sections of a Venn diagram and consider each of the four cases. These cover all of the locations in the Venn diagram.</p>
+
 <h1 id="comp109---algebra-of-sets"><a href="/UoL/comp109/lectures/2020/11/06/1.html">COMP109 - Algebra of Sets</a></h1>
 <p>Suppose that $A,B,C,U$ are sets with $A \subseteq U, B \subseteq U, C \subseteq U$.</p>
 
@@ -1449,7 +1541,7 @@ Then:
 \(\underbrace{\underbrace{(x_1\times\ldots)}_{l}\times\underbrace{(\ldots\times x_{m+1})}_{m+1-l}}_{m+1}\)</p>
 
 <p>By induction hypothesis
-\(\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
+\(\require{cancel}\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
 
 <p>This proves that the property holds for the next value to infinitude. $\square$</p>
 
@@ -1915,5 +2007,49 @@ You are saying that the opposite is true:
     <p>$n$ is odd $\Leftrightarrow \exists$  an integer $k$ such that $n=2k+1$</p>
   </li>
 </ul>
+
+<h1 id="comp109---tutorial-1"><a href="/UoL/comp109/tutorials/2020/10/19/1.html">COMP109 - Tutorial 1</a></h1>
+<p>This is following the questions from the tutorial for week 1. See <a href="Tutorials/TUT1-201019.pdf">the pdf</a> for answers.</p>
+
+<p>The tutorial leaderâ€™s email is: <a href="mailto:p.austin@liverpool.ac.uk">p.austin@liverpool.ac.uk</a></p>
+
+<h1 id="comp109---catch-up-session-2"><a href="/UoL/comp109/catch-up%20sessions/2020/10/19/1.html">COMP109 - Catch-up Session 2</a></h1>
+<h2 id="methods-of-proof">Methods of Proof</h2>
+<ul>
+  <li>Counter Example Method
+    <ul>
+      <li>Prove that a statement is false by use of a counter-statement.</li>
+    </ul>
+  </li>
+  <li>Universal Proof
+    <ul>
+      <li>Applies to all integers e.g. odd if $a=2k+1$</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="example">Example</h2>
+<p>\((a+b)^2=a^2+b^2\)</p>
+
+<p>Holds for:</p>
+
+<ul>
+  <li>Some integers</li>
+  <li>All integers</li>
+  <li>No integers</li>
+</ul>
+
+<p>The answer is that it holds for some integers as when $a=0,\ b=0$. \((0+0)^2=0^2+0^2\) This also follows for $a\neq0,\ b=0$.</p>
+
+<p>The two proofs I gave as answers to the question count for both a counter example proof and a universal proof.</p>
+
+<h2 id="example-of-proof-by-contradiction">Example of Proof by Contradiction</h2>
+<p>Suppose for a proof by contradiction that $P_n$ is the largest prime number. Therefore, $P_1\ldots P_n$ are all the primes.</p>
+
+<p>Consider $P=P_1\times P_2\ldots P_n+1$</p>
+
+<p>Case 1: $P_p$ is prime</p>
+
+<p>Case 2: $P_p$ not prime. Then $P$ must have prime member.</p>
 
 :ET

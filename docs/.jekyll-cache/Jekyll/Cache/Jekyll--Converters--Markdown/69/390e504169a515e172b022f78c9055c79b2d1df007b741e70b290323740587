@@ -1,9 +1,9 @@
-I"z<h2 id="power-sets">Power Sets</h2>
+I"Ú<h2 id="power-sets">Power Sets</h2>
 <p>The power set $\text{Pow}{A}$ of a set $A$ is the set of all possible subsets. This includes the null set $\emptyset$ and the full set.</p>
 
 <p>Each set in the power set follows this definition:</p>
 
-\[\{x|x\subseteq A\}\]
+\[\{x\vert x\subseteq A\}\]
 
 <h3 id="example">Example</h3>
 <p>The power set $\text{Pow}{A}$ of a set $A={1,2}$ is:</p>
@@ -12,16 +12,16 @@
 
 <p>For any set $A$:</p>
 
-\[|\text{Pow(A)}|=2^{|A|}\]
+\[\vert \text{Pow(A)}\vert =2^{\vert A\vert }\]
 
 <p>Therefore:</p>
 
-\[\{x|x\in\text{Pow}(A)\}=\{\emptyset,\ldots\}\]
+\[\{x\vert x\in\text{Pow}(A)\}=\{\emptyset,\ldots\}\]
 
 <h2 id="russells-paradox">Russellâ€™s Paradox</h2>
 <p>People say that you can define a set just by defining the constraints of the set:</p>
 
-\[\{x\in\mathbb{R}|x&lt;4,x\geq-1\}\]
+\[\{x\in\mathbb{R}\vert x&lt;4,x\geq-1\}\]
 
 <p>However statements written in this way are susceptible to paradoxes. For example the following paradox:</p>
 
@@ -33,21 +33,21 @@
 <h2 id="avoiding-paradoxes">Avoiding Paradoxes</h2>
 <p>To avoid paradoxes we should write the set definition in the following way:</p>
 
-\[\{x\in\ldots|\ldots\}\]
+\[\{x\in\ldots\vert \ldots\}\]
 
 <p>This means that the set or value x should be taken from some other set.</p>
 
 <p>They should not be written like this:</p>
 
-\[\{x\ldots|\ldots\}\]
+\[\{x\ldots\vert \ldots\}\]
 
 <h2 id="venn-diagrams-and-set-logic">Venn Diagrams and Set Logic</h2>
 
 <p>Draw the following as a Venn diagram: $A\cap (B\cup C)$</p>
 
-<p><img src="img/COMP109201116-1.md.580.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-1.png" alt="" /></p>
 
 <p>Draw the following as a Venn diagram: $(A\cap B)\cup(A\cap C)$</p>
 
-<p><img src="img/COMP109201116-1.md.8733.png" alt="" /></p>
+<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-2.png" alt="" /></p>
 :ET
