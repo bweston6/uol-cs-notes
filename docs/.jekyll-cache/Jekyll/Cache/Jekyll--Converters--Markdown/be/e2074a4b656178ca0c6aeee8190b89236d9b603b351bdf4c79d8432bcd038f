@@ -1,0 +1,52 @@
+I"2<p>In everyday language we refer to events that have nothing to do with each other as being independent.</p>
+
+<h2 id="definition">Definition</h2>
+<p>Events $A$ and $B$ are independent if:</p>
+
+\[P(A\cap B)=P(A)\times P(B)\]
+
+<p>If $P(A)\neq 0$ and $P(B)\neq 0$, then the following are equivalent:</p>
+
+<ul>
+  <li>$A$ and $B$ are independent.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$P(B)=P(B</td>
+          <td>A)$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$P(A)=P(A</td>
+          <td>B)$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p class="info">See <a href="COMP111201119.pdf">slides 31</a> for additional examples. This covers proving independence using the definition above.</p>
+
+<h2 id="independence-for-more-than-two-events">Independence for More Than Two Events</h2>
+<p>For a finite set of events there are two different types of independence:</p>
+
+<h3 id="pairwise-independence">Pairwise Independence</h3>
+<p>$A_1,\ldots,A_n$ are pairwise independent if every pair of events is independent: for all distinct $k,m$</p>
+
+\[P(A_m\cap A_k)=P(A_m)P(A_k)\]
+
+<h3 id="mutual-independence">Mutual Independence</h3>
+<p>$A_1,\ldots,A_n$ are mutually independent if every event is independent of any intersection of the events: for all distinct $k,m$</p>
+
+\[P(A_{k1})\times\ldots\times P(A_{k_m})=P(A_{k_1}\cap\ldots\cap A_{k_m})\]
+
+<p>Pairwise independence doesn’t imply pairwise independence. Generally, if it isn’t stated, then we are talking about <strong>mutual independence</strong>.</p>
+
+<p class="info">To see the proof and example of why pairwise independence does not imply mutual independence see <a href="COMP111201119.pdf">slide 37 onward</a>. This example also shows examples of probability set notation.</p>
+:ET

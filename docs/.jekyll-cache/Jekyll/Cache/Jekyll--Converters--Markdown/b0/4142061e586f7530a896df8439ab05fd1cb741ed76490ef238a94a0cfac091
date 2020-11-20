@@ -1,0 +1,88 @@
+I"�<h2 id="two-classic-results">Two Classic Results</h2>
+<p>These are classical proofs as they we’re proven by the Ancient Greeks. They are both proofs by contradiction.</p>
+
+<h3 id="use-proof-by-contradiction-to-show-that-there-is-no-greatest-prime-number">Use proof by contradiction to show that there is no greatest prime number.</h3>
+<ul>
+  <li>2, as the smallest prime number, is known as $P_1$. All following prime numbers are numbered sequentially.</li>
+  <li>For each prime number that is identified any multiples are removed from the endless list of integers.
+    <ul>
+      <li>This is continued for $P_2=3$ where all multiples of 3 are removed.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<p>@figure
+How do we know that at some point in the list all numbers are eliminated?
+@/
+—</p>
+
+<h4 id="proof">Proof</h4>
+<p>Assume for a proof by contradiction that there is a greatest prime number $P_n$.</p>
+
+<p>Then $P_1, P_2, \ldots , P_n$ are all prime numbers.</p>
+
+<p>Consider $P=P_1\times P_2\times \ldots \times P_{n+1}$</p>
+
+<p>Consider cases:</p>
+
+<h5 id="case-1">Case 1</h5>
+<p>$P=P_1\times P_2\times \ldots \times P_{n+1}$ is prime. As $P&gt;P_n$ we derive a contradiction.</p>
+
+<h5 id="case-2">Case 2</h5>
+<p>$P$ is not a prime. Then $P$ has a divisor (all numbers can be expressed as a product of primes).</p>
+
+<p>Then $P$ has a prime factor.</p>
+
+<p>So one of $P_1, P_2, \ldots , P_n$ must divide $P$. This number can be called $P_i$.</p>
+
+<p>$P=P_i\times Q,\ Q\neq 1$</p>
+
+<p>$P_1\times\ldots P_{n+1}=P_i\times Q$</p>
+
+<p>$P_1\times\ldots P_{i-1} \times P_i \times P_{i+1} \times\ldots P_{n+1}=P_i\times Q$</p>
+
+<p>$P_i \times Q - P_i (P_1 \times\ldots\times P_{i-1} \times P_{i+1} \times P_n)=1$</p>
+
+<p>$P_i(Q-P_1 \times\ldots\times P_{i-1} \times P_{i+1} \times\ldots\times P_n) = 1$</p>
+
+<p>This is a contradiction as one is not a product of two distinct integers.</p>
+
+<p>As a result the statement that there is no greatest prime number.</p>
+
+<h3 id="prove-that-sqrt2-is-not-a-rational-number">Prove that $\sqrt{2}$ is not a Rational Number</h3>
+<p>Assume for a proof by contradiction that $\sqrt{2}$ is rational.</p>
+
+<p>Then there exist integers $m,n$ such that $\sqrt{2}=\frac{m}{n}, n\neq 0, \frac{m}{n}$ is not reducible.</p>
+
+<p>Then $(\sqrt{2})^2=(\frac{m}{n})^2$. Then $2=\frac{m^2}{n^2}$.</p>
+
+<p>Then $2n^2=m^2$. So $m^2$ is even.</p>
+
+<p>We already know that $m$ must be even.</p>
+
+<p>By definition of even $m=2k$ for some integer $k$.</p>
+
+<p>$2n^2=m^2, m=2k$</p>
+
+<p>$2m^2=(2k)^2$. Then $2n^2=4k^2$. Then $n^2=2k^2$, so $n^2$ is even.</p>
+
+<p>Then $n$ is even.</p>
+
+<p>So we derive a contradiction as n and m have a common factor of $2$. As it is reducible it doesn’t follow the rule.</p>
+
+<h2 id="indirect-proof-of-existential-statements">Indirect Proof of Existential Statements</h2>
+<p>Prove that there exist irrational numbers $q$ and $r$ such that $q^r$ is rational.</p>
+
+<p>Consider Cases:</p>
+
+<h3 id="case-1-1">Case 1</h3>
+<p>If $\sqrt{2}^{\sqrt{2}}$ is a rational number then we are done and $q=\sqrt2, r=\sqrt2$.</p>
+
+<h3 id="case-2-1">Case 2</h3>
+<p>$\sqrt{2}^{\sqrt{2}}$ is not rational. Then:</p>
+
+<p>$q=\sqrt{2}^{\sqrt{2}}, r=\sqrt2$</p>
+
+<p>$q^r = (\sqrt2^{\sqrt2})^{\sqrt2}=\sqrt2^{\sqrt2\sqrt2}=\sqrt2^2=2$</p>
+:ET

@@ -1,0 +1,114 @@
+I"<p><em>The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.</em></p>
+
+<p>Consequence: <em>If the meeting does not take place, we conclude that there were fewer than 15 members present, or there was a postal strike.</em></p>
+
+<p>Let:</p>
+
+<ul>
+  <li>$m$: The meeting takes place.</li>
+  <li>$a$: All members have been informed.</li>
+  <li>$p$: There is a postal strike.</li>
+  <li>$q$: The meeting is quorate.</li>
+  <li>$f$: There are at least 15 members present.</li>
+</ul>
+
+<p>Then the text can be formalised as the following knowledge base:</p>
+
+\[((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\]
+
+<h2 id="definition">Definition</h2>
+<p>A propositional knowledge base $X$ is a finite set of propositional formulas.</p>
+
+<p>Suppose a propositional knowledge base $X$ is given. Then a propositional formula $P$ follows from $X$ if the following folds for ever interpretation $I$:</p>
+
+\[\text{If } I(Q) = 1 \text{ for all } Q\in X, \text{ then } I(P)=1\]
+
+<p>This is denoted by:</p>
+
+\[X\models P\]
+
+<h3 id="example">Example</h3>
+<p>We have seen that:</p>
+
+\[\{((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\}\models(\neg m \Rightarrow(\neg f \vee p))\]
+
+<h2 id="simpler-example">Simpler Example</h2>
+<p>Show ${(p_1\wedge p_2)}\models(p_1\vee p_2)$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p_1$</th>
+      <th style="text-align: center">$p_2$</th>
+      <th style="text-align: center">$(p_1\wedge p_2)$</th>
+      <th style="text-align: center">$(p_1\vee p_2)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus, from $I(p_1\wedge p_2) = 1$ is follows that $I(P_1\vee p_2)=1$. We are basically seeing if the left hand side is a subset of the right hand side. “If the statement on the left is true, then the statement on the right is true.”</p>
+
+<h2 id="reasoning">Reasoning</h2>
+<p>We want a computer to solve this for us so we should take the following into account:</p>
+
+<ul>
+  <li>$X\models P$ if $I(P)=1$ for all interpretations $I$ such that $I(Q)=1$ for all $Q\in X$.</li>
+  <li>There are $2^n$ different relevant interpretations if $P$ and $X$ together heave $n$ propositional atoms.</li>
+  <li>Thus, to check $X\models P$ directly using truth tables, a table with $2^n$ rows is needed.</li>
+  <li>
+    <p>$X\models P$ can be checked using a SAT solver:</p>
+
+    <p>Assume that $X$ contains the propositional formula $P_1,\ldots,P_n$ and let</p>
+
+\[Q=P_1\wedge\ldots\wedge P_n\wedge\neg P\]
+
+    <p>Then:</p>
+
+    <p>$X\models P$ if and only if $Q$ is not satisfiable.</p>
+
+    <p>This means that the knowledge base is not satisfiable if when all propositions in the knowledge base are true but still the knowledge base is false.</p>
+  </li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>In KR&amp;R knowledge is stored in a knowledge base. Reasoning is needed to make implicit knowledge explicit.</li>
+  <li>We have considered rule-based and propositional knowledge bases and corresponding reasoning.</li>
+  <li>in the rule-based case we have given reasoning algorithms.</li>
+  <li>Databases only store atomic assertions. In contrast, knowledge bases store knowledge that goes beyond atomic assertions (such as rules and compound propositions.</li>
+  <li>Knowledge stored in knowledge bases is mostly incomplete, whereas knowledge stored in databases is mostly complete.</li>
+  <li>Many other KR&amp;R languages with corresponding reasoning algorithms have been developed.</li>
+</ul>
+:ET

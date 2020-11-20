@@ -1,0 +1,37 @@
+I"„<h2 id="declarative-approach">Declarative Approach</h2>
+<p>The declarative approach to building agents includes telling the agent what it needs to know. From this the agent uses reasoning to deduce relevant consequences. It requires:</p>
+
+<ul>
+  <li>A <strong>knowledge base</strong> / ontology
+    <ul>
+      <li>Which contains fact and general knowledge about a domain in some formal language.</li>
+    </ul>
+  </li>
+  <li>A <strong>reasoning engine</strong>
+    <ul>
+      <li>That produces relevant consequences of the knowledge base.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example">Example</h3>
+
+<p>We want to know what day it is from the following crude knowledge base:</p>
+
+<ul>
+  <li>If I have an AI lecture today, then it is Tuesday or Friday.</li>
+  <li>It is not Tuesday.</li>
+  <li>I have an AI lecture today or I have no class today.</li>
+  <li>If I have no  class today, then I am sad.</li>
+  <li>I am not sad.</li>
+</ul>
+
+<p>From this knowledge base we can <strong>infer</strong> that the day is: Friday.</p>
+
+<p>A machine would use reasoning algorithms to solve particular problems in the knowledge base.</p>
+
+<h2 id="languages-for-krr">Languages for KR&amp;R</h2>
+<p>To store knowledge in a knowledge base and so reasoning. you have to represent the knowledge in a formal language that ca be processed by machines.</p>
+
+<p>Rule-based languages and propositional logic are KR&amp;R languages.</p>
+:ET

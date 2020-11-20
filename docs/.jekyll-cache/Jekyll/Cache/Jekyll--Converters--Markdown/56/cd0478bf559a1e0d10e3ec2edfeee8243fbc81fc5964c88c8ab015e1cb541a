@@ -1,0 +1,39 @@
+I"�<p>Introducing assignment 4.</p>
+<h2 id="activities">Activities</h2>
+<ul>
+  <li>Identification of Application areas and users groups</li>
+  <li>Analysis of existing documentation of application areas</li>
+  <li>Analysis of current operating environments and the planned use of the information
+    <ul>
+      <li>Information flow</li>
+      <li>Types of transactions</li>
+    </ul>
+  </li>
+  <li>Responses to user questionnaires are analysed.</li>
+</ul>
+
+<p>As a result you should start form a place of a poorly structured set of requirements. You should use a technique to move to a more structured document.</p>
+
+<h2 id="glossary">Glossary</h2>
+
+<p>One way to rewrite the specification is to construct a glossary of terms. This will provide:</p>
+
+<p>| Term | Definition | Synonyms |
+| — | — | — |</p>
+
+<h2 id="purpose-of-assignment-2">Purpose of Assignment 2</h2>
+<p>The purpose of Assignment 2 is to analyse the data present in Assignment 1 to create the structure of a database.</p>
+
+<ul>
+  <li>You should work in groups to complete the data model.</li>
+  <li>You will proceed by view aggregation, producing one ER model (or EER if appropriate) conceptualising the view for each of at least 3 user categories you have identified.
+    <ul>
+      <li>Aim at creating 4 to 5 user stories for each user.</li>
+      <li>You will then design the relations tables which map the ER model.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="deliverable">Deliverable.</h2>
+<p>You will produce a PDF document with your report.</p>
+:ET

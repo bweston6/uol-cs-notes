@@ -1,0 +1,46 @@
+I"•<h2 id="countable-sets">Countable Sets</h2>
+<p>A set that is either finite or has the same cardinality as $\mathbb{N}$ is called countable.</p>
+
+<h3 id="mathbbz">$\mathbb{Z}$</h3>
+<p>For a set $\mathbb{Z}$ you can count it by starting at zero and then jumping from item to item by the way of a function. In this way you can produce the following mapping: $\mathbb{Z}\rightarrow\mathbb{N}$.</p>
+
+<h3 id="mathbbq">$\mathbb{Q}$</h3>
+<p>Consider an infinite table like so:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$\frac{1}{1}$</th>
+      <th style="text-align: center">$\frac{1}{2}$</th>
+      <th style="text-align: center">$\frac{1}{3}$</th>
+      <th style="text-align: center">$\ldots$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\frac{2}{1}$</td>
+      <td style="text-align: center">$\frac{2}{2}$</td>
+      <td style="text-align: center">$\frac{2}{3}$</td>
+      <td style="text-align: center">$\ldots$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{3}{1}$</td>
+      <td style="text-align: center">$\frac{3}{2}$</td>
+      <td style="text-align: center">$\frac{3}{3}$</td>
+      <td style="text-align: center">$\ldots$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\ldots$</td>
+      <td style="text-align: center">$\ldots$</td>
+      <td style="text-align: center">$\ldots$</td>
+      <td style="text-align: center">$\ddots$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this table each number is represented infinitely many times due to equivalencies.</p>
+
+<p>Start counting in the top left corner. Then count from the first diagonal from top to bottom. For equivalent elements there is no need to count them as the set only includes the most simplified fraction.</p>
+
+<p>From this you can conclude that the cardinality of the set of rational numbers is a bijection of the set of natural numbers. This means that it is countable.</p>
+:ET

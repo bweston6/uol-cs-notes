@@ -831,7 +831,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </svg>
 <a title="A site containing my notes for all my modules taken at the University of Liverpool.
 " href="/UoL/">Uni Notes</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
-        <ul><li class="navigation__item"><a href="/UoL/COMP105/COMP105 - Lectures">COMP105</a></li><li class="navigation__item"><a href="/UoL/COMP107/COMP107 - Lectures">COMP107</a></li><li class="navigation__item"><a href="/UoL/COMP109/COMP109 - Lectures">COMP109</a></li><li class="navigation__item"><a href="/UoL/COMP111/COMP111 - Lectures">COMP111</a></li><li class="navigation__item"><a href="/UoL/archive.html">Archive</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+        <ul><li class="navigation__item"><a href="/UoL/COMP105/COMP105">COMP105</a></li><li class="navigation__item"><a href="/UoL/COMP107/COMP107">COMP107</a></li><li class="navigation__item"><a href="/UoL/COMP109/COMP109">COMP109</a></li><li class="navigation__item"><a href="/UoL/COMP111/COMP111">COMP111</a></li><li class="navigation__item"><a href="/UoL/archive.html">Archive</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
       </nav></div>
   </header>
 </div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
@@ -842,277 +842,260 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/27/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 8-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Recursion Examples
-In this section we will be re-implementing the built in functions for operating on lists.
+          <header><a href="/UoL/comp109/lectures/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cardinality of Finite Sets and Functions
+The cardinality of a finite set $S$ is the number of elements in $S$.
 
-take
+A bijection $f:S\rightarrow{1,\ldots,n}$. This means that there are as many elements in the set that $S$ maps to as there are in $S$.
 
-take' 0 list	= []
-take' n []		= []
-take' n (x:xs)	= x : take' (n - 1) xs
-
-
-With the two base cases the program will end in one of two ways:
-
-
-  We take as many items as we asked for.
-  We run out of elements to take.
-
-
-drop
-
-d...</div><p><a href="/UoL/comp105/lectures/2020/10/27/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/27/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 8-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Recursion
-Lists have a head and a tail. We use these command and pattern matching to recurse lists. Generally list recursions use the empty list [] as part of the base case.
-
-Consuming Lists
-
-sum' []		= 0 
-sum' (x:xs)	= x + sum' xs
-
-
-
-  The base case is the empty list.
-  The recursive rule breaks the list into its head and tail.
-
-
-length' [...</div><p><a href="/UoL/comp105/lectures/2020/10/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/26/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 7-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Complex Recursion and Guards
-Multiple Base Cases
-Each base case represents a different stopping position:
-
-isEven 0 = True
-isEven 1 = False
-isEven n = isEven (n - 2)
-
-
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
-
-
-Multiple Recursive Rules
-More complex recursive functions may have more than one recursi...</div><p><a href="/UoL/comp105/lectures/2020/10/26/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/26/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 7-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Recursion
-There is no such thing as a while loop in Haskell so you must use recursion to complete the same task. This links into Assignment 1 as it leans heavily on recursion.
-
-Factorial
-A recursive function is one that calls itself:
-
-factorial n = if n &gt; 1
-				then n * factorial (n - 1)
-				else 1
-
-
-A recursive function has:
-
-
-  A base case....</div><p><a href="/UoL/comp105/lectures/2020/10/26/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/22/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 6-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Comprehensions
-List ranges can produce simple arithmetic sequences but list comprehensions can produce more complex lists:
-
-&gt; [x*x | x &lt;- [1..10]]
-&gt; [1,4,9,16,25,36,49,64,81,100]
-
-
-By using this you can apply a function to a list and put the result into a list.
-
-Predicates
-Predicates also add evaluations into the list to limit the ...</div><p><a href="/UoL/comp105/lectures/2020/10/22/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 22, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-22T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/22/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 6-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Ranges
-A list range lets us write a long list in a compact way:
-
-&gt; [1..10]
-&gt; [1,2,3,4,5,6,7,8,9,10]
-
-
-If the start is bigger than the end then you will get an empty list. This means you can’t count down in a list in this way. Using .. also works with letters to fill in the letters in between.
-
-To give a step size give the first two el...</div><p><a href="/UoL/comp105/lectures/2020/10/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 22, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-22T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/21/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 5-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Lists
-A list contains any number of items that all have the same type.
-
-[1, 2, 3, 4, 5]
-['a', 'b', 'c', 'd', 'e']
-
-
-Lists are built with [] as opposed to tuples which are built with().
+For finite sets $A$ and $B$:
 
 
   
-    A list can have any number of elements including 0.
+    
+      
+        
+          $
+          A
+          \geq
+      ...</div><p><a href="/UoL/comp109/lectures/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/tutorials/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">How to Describe Data
+The ER model describes data in terms of:
 
-      []
-  [1]
-  [1, 2]
+
+  Entities
+    
+      A thing which can be distinctly identified
+    
+  
+  Attributes
+    
+      A property of an entity.
+    
+  
+  Relationships
+    
+      An association among entities.
+    
+  
+
+
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+  ...</div><p><a href="/UoL/comp107/tutorials/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/11/12/4.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Knowledge Bases and Reasoning</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.
+
+Consequence: If the meeting does not take place, we conclude that there were fewer than 15 members present, or there...</div><p><a href="/UoL/comp111/lectures/2020/11/12/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/11/12/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Satisfiability of Propositional Formulas</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">A propositional formula is satisfiable if there exist an interpretation under which it is true.
+
+Example 1
+The formula $(p\wedge\neg p)$ is not satisfiable, because:
+
+\[I(p\wedge\neg p)=0\]
+
+for all interpretations $I$:
+
+
+  
+    
+      $p$
+      $\neg p$
+      $(p\wedge\neg p)$
     
   
   
-    In Haskell lists are linked lists:
     
-      This means that...</div><p><a href="/UoL/comp105/lectures/2020/10/21/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+      1
+      0
+      0
+    
+    
+      0
+      1
+  ...</div><p><a href="/UoL/comp111/lectures/2020/11/12/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Truth Values</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">An interpretations $I$ assigns to every atomic proposition $p$ a truth value:
+\(I(p)\in\{0,1\}\)
+
+This means:
+
+
+  If $I(p)=1$, then $p$ is called true under the interpretation $I$.
+  If $I(p)=1$, then $p$ is called false under the interpretation $I$.
+
+
+Given an assignment $I$ we can computer the truth value of compound formulas step by step by u...</div><p><a href="/UoL/comp111/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Logic</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">for many purposes, rules are not expressive enough. for example:
+
+
+  You cannot express that something is not the case:
+  \(\text{not FrenchFootballClub(LiverpoolFC)}\)
+  You cannot connect sentences using or:
+  \(\text{Today, I will do the AI exercise \texttt{or} I will play football.}\)
+
+
+A proposition is a statement that can be true or false,...</div><p><a href="/UoL/comp111/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">filter
+filterkeeps only the elements for which f returns True.
+
+filter' :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+filter' _ [] = []
+filter' f (x:xs)
+	| f x 		= x : rest
+	| otherwise	= rest
+	where rest 	= filter' f xs
+	
+filter' even [1..10]
+&gt; [2,4,6,8,10]
+
+
+In comparison to map which applies a function to each element in a list. filter will apply ...</div><p><a href="/UoL/comp105/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 21, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-21T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/21/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 5-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Tuples
-A tuples allows us to bind two or more values together:
+          <header><a href="/UoL/comp105/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">map
+map applies a funciton f to every element in a list.
 
-(1,2)
-("A", "few", "words")
-(6, "six")
-
-
-
-  Tuples can have any size but must be at least 2.
-  The size should be thought of as being fixed as it is not easy to change  the length of a tuple.
-  Tuples can mix types.
+map' :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map' _ [] = []
+map' f (x:xs) = f x : map' f xs
 
 
-Example Functions
-Taking Tuples as Input
-f (x, y) = x
+This saves you from writing out the generic code for applying a function to a list. This allows you to implement the standard functions instead of having to make your own.
 
-
-This will...</div><p><a href="/UoL/comp105/lectures/2020/10/21/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+map even [1..5]
+&gt; [False...</div><p><a href="/UoL/comp105/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 21, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-21T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/19/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 4-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Let
-Sometimes we want to use the same expression more than once:
+          <header><a href="/UoL/comp109/lectures/2020/11/11/4.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Injective (one-to-one) Functions
+Let $f:A\rightarrow B$ be a function. We call $f$ and injective, or one-to-one, function if:
 
-(x * x - 4) + sqrt (x * x - 4)
+\[f(a_1)=f(a_2)\Rightarrow a_1 = a_2 \text{ for all } a_1,a_2\in A\]
 
-
-The problem of writing out the same equation over again can be solved using the following example:
-
-let s = (x * x - 4) in s + sqrt s
+This is logically equivalent to $a_1\neq a_2 \Rightarrow f(a_1) \neq f(a_2)$ and so injective functions never repeat values. In other words:
 
 
-Syntax
-let &lt;bindings&gt; in &lt;expression&gt;
-
-
-Where:
-
-
-  &lt;binding&gt; gives names to bindings separated...</div><p><a href="/UoL/comp105/lectures/2020/10/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+@figure...</div><p><a href="/UoL/comp109/lectures/2020/11/11/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 4-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">IF
-Differences Between Imperative and Functional
-In imperative languages if changes the control flow but in functional languages there is no control flow.
+          <header><a href="/UoL/comp109/lectures/2020/11/11/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Basics and Definitions
+A function is a method that takes an input value and gives an output value:
 
-Functional if gives a value that you will return based on a test.
+graph LR
+x --&gt;|Input| F[Function Machine]
+F --&gt;|Output| fx
 
-if (1==1) then "yes" else "no"
 
+A function from a set $A$ to a set $B$ is an assignment of exactly one element of $B$ to each element of $A$.
 
-Rather than controlling flow, functional if chooses between two alternatives and is a pure ...</div><p><a href="/UoL/comp105/lectures/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+We write $f(a)=b$ if $b$ is the unique element of $B$ assigned by the...</div><p><a href="/UoL/comp109/lectures/2020/11/11/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>36 post articles, 4 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>105 post articles, 11 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page2">
             <i class="fas fa-angle-left"></i>
           </a></li><li>
               <a class="button button--secondary button--circle" href="/UoL/"><span>1</span></a>
             </li><li>
-                <a class="button button--secondary button--circle" href="/UoL/page2"><span>2</span></a>
-              </li><li>
+                  <a class="button button--secondary button--circle" href="/UoL/page2"><span>2</span></a>
+                </li><li>
               <div class="button button--primary button--circle focus"><span>3</span></div>
             </li><li>
-                <a class="button button--secondary button--circle" href="/UoL/page4"><span>4</span></a>
-              </li><li><a class="button button--secondary button--circle" href="/UoL/page4">
+                  <a class="button button--secondary button--circle" href="/UoL/page4"><span>4</span></a>
+                </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
+                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                </li><li><a class="button button--secondary button--circle" href="/UoL/page4">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
     </div>

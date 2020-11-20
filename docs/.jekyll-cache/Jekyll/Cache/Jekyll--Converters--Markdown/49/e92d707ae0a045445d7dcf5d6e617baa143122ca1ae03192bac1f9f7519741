@@ -1,0 +1,157 @@
+I"|<h2 id="more-examples-of-direct-proof">More Examples of Direct Proof</h2>
+<ol>
+  <li>$\forall\ n$ if $n$ is an integer then $n$ is rational.
+    <ul>
+      <li>Proof: Suppose that $n$ is a particular but arbitrarily chosen integer.
+        <ul>
+          <li>$n=\frac{n}{1}$
+            <ul>
+              <li>By definition of a rational number $\frac{n}{1}$ is rational.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>$\forall\ r$ and $s$, if $r,s$ are rational then $r+s$ is rational.
+    <ul>
+      <li>Proof: Suppose that $r$ and $s$ are particular but arbitrarily chosen rational numbers.
+        <ul>
+          <li>As $r$ is rational $r=\frac{l}{m}$ where $l,m$ are integers, $m\neq 0$.</li>
+          <li>As $s$ is rational $s=\frac{i}{k}$ where $i,k$ are integers, $k\neq 0$.
+            <ul>
+              <li>Then $r+s = \frac{l}{m} + \frac{i}{k} = \frac{lk+mi}{mk}$
+                <ul>
+                  <li>As $m\neq 0, k\neq 0$ we derive that $mk\neq 0$</li>
+                  <li>As $lk+mi,mk$ are integers, $mk\neq 0$ we conclude that $r+s$ is a rational number.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="proof-by-cases">Proof by Cases</h2>
+<p>For proofs that have multiple cases then you can prove that the statement holds for each case to give a universal proof.</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>For all integers $n,\ n^2 + n$ is even.</p>
+
+<h4 id="proof">Proof</h4>
+<p><strong>Case 1:</strong> $n$ is even</p>
+
+<ul>
+  <li>Then $n=2k$, for some integer $k$</li>
+  <li>$(2k)^2+2k=4k^2+2k=2(2k^2+k)$
+    <ul>
+      <li>By definition of even, $n^2 + n$ is even.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Case 2:</strong> $n$ is odd</p>
+
+<ul>
+  <li>Then $n=2k+1$, for some integer $k$.</li>
+  <li>$(2k+1)^2+(2k+1)=4k^2+6k+2=2(2k^2+3k+1)$
+    <ul>
+      <li>By definition of even, $n^2 + n$ is even.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>As both cases (which are all cases) conclude the same thing then the statement is considered proved.</p>
+
+<h3 id="example-2">Example 2</h3>
+<p>Prove that the product of any two consecutive integers is even.</p>
+
+<h4 id="rewording">Rewording</h4>
+<p>$\forall\ n$ if $n$ is an integer then $n(n+1)$ is even.</p>
+
+<h4 id="proof-1">Proof</h4>
+<p>Consider that $n$ is a particular but arbitrarily chosen integer. We proof the statement by a consideration of cases.</p>
+
+<p><strong>Case 1:</strong> $n$ is even.</p>
+
+<ul>
+  <li>Then $n=2k$.
+    <ul>
+      <li>So $n(n+1)=2k(2k+1)$.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Case 2:</strong> $n$ is odd.</p>
+
+<ul>
+  <li>Then $n=2k+1$, for some integer $k$.
+    <ul>
+      <li>So $n(n+1)=(2k+1)((2k+1)+1)= (2k+1)(2k+2)$ $= 2(2k+1)(k+1)$.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="indirect-proofs">Indirect proofs</h2>
+<p>In a direct proof you start with the hypothesis and make deductions until you reach the conclusion.</p>
+
+<p>For an indirect proof you can make use of contradictions to prove statements logically. An example may be in a Sudoku puzzle where you prove which number goes in a square based on the fact that it can’t be any other number.</p>
+
+<h3 id="proof-by-contradiction">Proof by Contradiction</h3>
+<p>If it is not the case that it is not true. It must be the case that it is true.</p>
+
+<pre><code class="language-mermaid">graph LR
+D[Definitions] --&gt; C[Contradiction]
+K[Known Facts] --&gt; C
+N[Negated Conjecture] --&gt; C
+</code></pre>
+
+<h4 id="examples">Examples</h4>
+<ol>
+  <li>
+    <p>Show that there is not greatest integer.</p>
+
+    <p>Proof: Suppose for a proof by contradiction that the conjecture is not true.<br />
+ Then there is an integer larger than any other integer.<br />
+ Let $N$ be such an integer.
+ So $N&gt;N+1$ and therefore 0&gt;1, which is a contradiction.<br />
+ Therefore, our  assumption that the conjecture is not true is false. So there is no greatest integer.</p>
+  </li>
+  <li>
+    <p>No integer can be both even and odd.</p>
+
+    <p>Proof: Suppose for a proof by contradiction that this conjecture is not true.<br />
+ Then there exists an integer $N$ which is both even and odd.<br />
+ By definition of even, $n=2l$, for some integer $l$. 
+ By definition of odd, $n=2k+1$, for some integer $k$.<br />
+ $2l=n=2k+1$. So $2l=2k+1$. Then $2l-2k=1$. Then $2(k-l) = 1$.<br />
+ Then 1 must be even, which is a contradiction.<br />
+ Therefore, we can conclude that no integer can be both even and odd.</p>
+  </li>
+</ol>
+
+<h3 id="proof-by-contraposition">Proof by Contraposition</h3>
+<p>To prove 
+\(\forall \text{ if } P(x) \text{ then } Q(x)\)
+it suffices to prove<br />
+\(\forall \text{ if \textbf{not} } P(x) \text{ then \textbf{not} } Q(x)\)</p>
+
+<h4 id="example">Example</h4>
+<ol>
+  <li>For all integers $m$ if $m^2$ is even then $m$ is even.
+    <ul>
+      <li>For all integers $m$ if $m$ is not even then $m^2$ is not even.</li>
+    </ul>
+
+    <p>This can be re-written as:</p>
+
+    <ul>
+      <li>For all integers $m$ if $m$ is odd then $m^2$ is odd.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This can then be taken into a direct proof however it may make more sense to prove by contradiction instead of contraposition and it is the preferred method at this time.</p>
+:ET

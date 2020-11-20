@@ -1,0 +1,147 @@
+I"Ã<p>for many purposes, rules are not expressive enough. for example:</p>
+
+<ul>
+  <li>You cannot express that something is not the case:
+  \(\text{not FrenchFootballClub(LiverpoolFC)}\)</li>
+  <li>You cannot connect sentences using or:<br />
+  \(\text{Today, I will do the AI exercise \texttt{or} I will play football.}\)</li>
+</ul>
+
+<p>A proposition is a statement that can be true or false, but not both at the same time.</p>
+
+<ul>
+  <li>Logic is easy.</li>
+  <li>I eat toast.</li>
+  <li>$2+3=5$</li>
+</ul>
+
+<p>Questions and statements are not propositions.</p>
+
+<h2 id="reasoning-about-propositions">Reasoning About Propositions</h2>
+
+<p><em>The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.</em></p>
+
+<p>Therefore:</p>
+
+<p><em>If the meeting does not take place, we conclude that there were fewer than 15 members present, or there was a postal strike.</em></p>
+
+<h3 id="understanding-compound-propositions">Understanding Compound Propositions</h3>
+<p>Compound statements are built from <strong>atomic propositions</strong> - the simplest statements that is possible to make about the world.</p>
+
+<p>To simplify this for a computer then we can assign the atomic propositions variables to form a logical statement with:</p>
+
+<ul>
+  <li>$m$: The meeting takes place.</li>
+  <li>$a$: All members have been informed.</li>
+  <li>$p$: There is a postal strike.</li>
+  <li>$q$: The meeting is quorate.</li>
+  <li>$f$: There are at least 15 members present.</li>
+</ul>
+
+<p>From:
+\(\text{If $a$ and $q$ then $m$. If $f$ then $q$. If not $p$ then $a$.}\)</p>
+
+<p>Conclude:
+\(\text{If not $m$ then not $f$ or $p$.}\)</p>
+
+<h2 id="connectives">Connectives</h2>
+<p>Propositions may be combined with other propositions to form compound propositions. These in turn may be combined into further propositions.</p>
+
+<p>The connectives that may be used are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Connective</th>
+      <th style="text-align: center">English Equivalent</th>
+      <th style="text-align: center">Math Symbol</th>
+      <th style="text-align: center">Mathematical Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\neg$</td>
+      <td style="text-align: center">not</td>
+      <td style="text-align: center">$\sim$</td>
+      <td style="text-align: center">Negation</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\wedge$</td>
+      <td style="text-align: center">and</td>
+      <td style="text-align: center">$\&amp;$ or $.$</td>
+      <td style="text-align: center">Conjuction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\vee$</td>
+      <td style="text-align: center">or</td>
+      <td style="text-align: center">$\vert$ or $+$</td>
+      <td style="text-align: center">Disjunction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\iff$ or $\Leftrightarrow$</td>
+      <td style="text-align: center">If and only if</td>
+      <td style="text-align: center">$\leftrightarrow$</td>
+      <td style="text-align: center">Equivalence</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\Rightarrow$</td>
+      <td style="text-align: center">If â€¦ then</td>
+      <td style="text-align: center">$\rightarrow$</td>
+      <td style="text-align: center">Implication</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="propositional-formulas">Propositional Formulas</h2>
+<p>The set of propositional formulas is defines as follows:</p>
+
+<ul>
+  <li>Every atomic proposition is a propositional formula. We denote atomic propositions by $p, q,a, p_1, p_2,\ldots$</li>
+  <li>If $P$ and $Q$ are propositional formulas, then:
+    <ul>
+      <li>$(P\wedge Q)$</li>
+      <li>$(P\vee Q)$</li>
+      <li>$(P\Rightarrow Q)$</li>
+      <li>$(P\Leftrightarrow Q)$</li>
+    </ul>
+
+    <p>are propositional formulas.</p>
+  </li>
+  <li>If $P$ is a propositional formula, then $\neg P$ is a propositional formula.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<p>The following are propositional formulas:</p>
+
+<ul>
+  <li>$p$</li>
+  <li>$\neg\neg p$</li>
+  <li>$(p\vee q)$</li>
+  <li>$(((p\Rightarrow q)\wedge\neg q)\Rightarrow\neg p)$</li>
+</ul>
+
+<p>The following are not propositional formulas:</p>
+
+<ul>
+  <li>$p\wedge q$</li>
+  <li>$(p)$</li>
+  <li>$(p\wedge q)\neg q$</li>
+</ul>
+
+<h3 id="example-with-compund-proposition">Example With Compund Proposition</h3>
+<p>By this syntax the proposition before would be:</p>
+
+<p>From:</p>
+
+<ul>
+  <li>$((a\wedge q) \Rightarrow m)$</li>
+  <li>$(f \Rightarrow q)$</li>
+  <li>$(\neg p \Rightarrow a)$</li>
+</ul>
+
+<p>Conclude:</p>
+
+<ul>
+  <li>$(\neg m \Rightarrow\neg (f\vee p))$</li>
+</ul>
+:ET

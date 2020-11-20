@@ -1,0 +1,63 @@
+I"Z	<p>For a normal case of mathematical induction you can prove that a statement holds for all numbers from a particular start point.</p>
+
+<p>It uses a base case so show that it holds for an individual number and an induction rule that proves that it holds for all numbers following.</p>
+
+<ul>
+  <li>Prove that the property holds for the natural number $n=0$</li>
+  <li>Prove that if the property holds for $n=0,1,\ldots,m$ (and not just for m) then it holds for $n=m+1$.</li>
+</ul>
+
+<p>Can also be used to prove a property for all integers greater than or equal to some particular natural number $b$.</p>
+
+<h2 id="example-1">Example 1</h2>
+<p>Every natural number $n \geq 2$, is a prime or product of primes.</p>
+
+<h3 id="base-case">Base Case</h3>
+<p>Take $n=2$</p>
+
+<p>Then $n$ is a prime number.</p>
+
+<h3 id="inductive-step">Inductive Step</h3>
+<p>Assume that the property holds for $n=m$ so every number $i$ such that $2\leq i\leq m$ is a prime or a product of primes.</p>
+
+<p>Now consider $n=m+1$.</p>
+
+<p>We proceed by considering cases.</p>
+
+<h4 id="case-1">Case 1</h4>
+<p>$m+1$ is prime.</p>
+
+<p>There is nothing to prove.</p>
+
+<h4 id="case-2">Case 2</h4>
+<p>$m+1$ is not prime.</p>
+
+<p>So $m+1=k\times l$, where $k\neq1,\ k\neq m+1$ and $l\neq 1,\ l\neq\ m+1$</p>
+
+<p>So $k\geq2,\ l\geq2,\ k\leq m,\ l \leq m$</p>
+
+<p>So $k=P_1\ldots P_n,\ l=Q_1\ldots Q_m$. Then $k\times l$ is a product of primes.</p>
+
+<h2 id="example-2">Example 2</h2>
+<p>For any integer $n\geq1$, if $x_1,x_2,\ldots,x_n$ are $n$ numbers, then no matter how the parentheses are inserted into their product, the number of multiplications used to compute the products is $n-1$.</p>
+
+<hr />
+<p>@figure
+As the number are all individual you can’t use tricks like using already computed values to speed up the computation.
+@/
+—</p>
+
+<h3 id="base-case-1">Base Case</h3>
+<p>\(X_1 \text{ for } n=1,\ n-1=0\)</p>
+
+<h3 id="induction-step">Induction Step</h3>
+<p>Suppose that no matter how I put parentheses on a sequence of $i$ elements, where $1\leq i\leq m$, I need $m-1$ multiplications.</p>
+
+<p>Consider, where $1\leq l \leq m$:
+\(\underbrace{\underbrace{(x_1\times\ldots)}_{l}\times\underbrace{(\ldots\times x_{m+1})}_{m+1-l}}_{m+1}\)</p>
+
+<p>By induction hypothesis
+\(\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
+
+<p>This proves that the property holds for the next value to infinitude. $\square$</p>
+:ET

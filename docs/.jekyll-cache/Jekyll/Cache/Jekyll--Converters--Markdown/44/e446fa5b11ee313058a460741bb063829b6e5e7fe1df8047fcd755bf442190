@@ -1,0 +1,142 @@
+I"�<p>Covering the tutorial sheets from week 1. The tutorial leader’s email is <a href="mailto:F.Alves@liverpool.ac.uk">F.Alves@liverpool.ac.uk</a>.</p>
+
+<ol>
+  <li>The leader chose to cover one of the options which was football.
+    <ul>
+      <li>Performance Measure
+        <ul>
+          <li>Games won, goals scored.</li>
+        </ul>
+      </li>
+      <li>Environment
+        <ul>
+          <li>Football pitch, the players, the ball.</li>
+        </ul>
+      </li>
+      <li>Actuators
+        <ul>
+          <li>Legs, head.</li>
+        </ul>
+      </li>
+      <li>Sensors
+        <ul>
+          <li>Visual, hearing, pressure.</li>
+        </ul>
+      </li>
+      <li>Classification
+        <ul>
+          <li>Partially observable environment as they can’t see what is behind them and they have to memorise the positions of the players that they can’t see.</li>
+          <li>Stochastic as there is uncertainty about the state that will come from performing an action</li>
+          <li>Sequential as the current decision could affect all future decisions.</li>
+          <li>Dynamic environment as other players are acting while you make your decision.</li>
+          <li>Continuous as there is no fixed states for the positions.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Refer to the textbook or lecture notes.</li>
+  <li>For a path $a_0 \rightarrow a_1 \rightarrow a_2 \rightarrow a_3$, the length of the path is 3 as that is the number of actions that need to be performed.
+    <ul>
+      <li>When listing paths you can list them by length
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab, ac, ad</li>
+          <li>2 : abe, ace, ade</li>
+          <li>3 : abef, acef, adef</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>This may help with drawing search trees.</p>
+
+    <ul>
+      <li></li>
+    </ul>
+
+    <pre><code class="language-mermaid"> graph LR
+ a --&gt; ab
+ a --&gt; ac
+ a --&gt; ad
+ ab --&gt; abe
+ ac --&gt; ace
+ ad --&gt; ade
+ abe --&gt; abef
+ ace --&gt; acef
+ ade --&gt; adef
+</code></pre>
+  </li>
+  <li>
+    <ul>
+      <li>Paths
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab</li>
+          <li>2 : aba, abc</li>
+          <li>3 : abab</li>
+          <li>4 : ababa, ababc</li>
+        </ul>
+      </li>
+      <li>Search graph</li>
+    </ul>
+
+    <pre><code class="language-mermaid">graph LR
+a --&gt; ab
+ab --&gt; aba
+ab --&gt; abc
+aba --&gt; abab
+abab --&gt; ababa
+abab --&gt; ababc
+ababc .-&gt; A[ ]
+</code></pre>
+    <p>You should draw the trailing arrow to indicate that the graph has bee truncated.</p>
+
+    <p>@figure
+Search graphs should be drawn with the whole path at each level as it shows the full search at each level
+@/</p>
+  </li>
+  <li>Similar to 3. and 4.</li>
+  <li>
+    <ul>
+      <li>This problem is very large so I will describe the result
+        <ul>
+          <li>The set of $S$ states are all 16 or $4^4$ states that exist as a subset of the set $N = { 1,2,3,4 }$</li>
+          <li>The start state $S_{start}$ is an empty subest ${ \phi }$ with a sum of zero.</li>
+          <li>The set of goal states $S_{goal}$ are all the subsets which add to 6</li>
+          <li>The set of actions $A$ are any addition or subtraction of a number that is in the set.</li>
+          <li>The cost function for each action should just be one such that the shortest route from $S_{start}$ is achieved.</li>
+        </ul>
+      </li>
+      <li>
+        <p>The search graph starts at level 1 with the empty list and then each subsequent level adds an additional item to the list via an action which adds or subtracts an item from the set:</p>
+
+        <pre><code class="language-mermaid">  graph TD
+  A[phi 0] --&gt; |a1| B[&lt;1&gt; 1]
+  A --&gt; |+2| C[&lt;2&gt; 2]
+  A --&gt; |+3| D[&lt;3&gt; 3]
+  A --&gt; |+4| E[&lt;4&gt; 4]
+  B --&gt; |+2| F[&lt;1,2&gt; 3]
+  B --&gt; |+3| G[&lt;1,3&gt; 4]
+  B --&gt; |+4| H[&lt;1,4&gt; 5]
+  C --&gt; |+1| F
+  C --&gt; |+3| I[&lt;2,3&gt; 5]
+  C --&gt; |+4| J[&lt;2,4&gt; 6]
+  D --&gt; |+1| G
+  D --&gt; |+2| I
+  D --&gt; |+4| K[&lt;3,4&gt; 7]
+  E --&gt; |+1| H
+  E --&gt; |+2| J
+  E --&gt; |+3| K
+  F .-&gt; L[ ]
+  G .-&gt; M[ ]
+  H .-&gt; N[ ]
+  I .-&gt; O[ ]
+  J .-&gt; P[ ]
+  K .-&gt; Q[ ]
+</code></pre>
+
+        <p>As you can see this is very tedious indeed.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+:ET

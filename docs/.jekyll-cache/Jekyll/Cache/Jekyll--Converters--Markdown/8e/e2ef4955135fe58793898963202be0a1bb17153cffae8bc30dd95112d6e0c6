@@ -1,0 +1,193 @@
+I"Â<h2 id="cardinality-of-finite-sets-and-functions">Cardinality of Finite Sets and Functions</h2>
+<p>The cardinality of a finite set $S$ is the number of elements in $S$.</p>
+
+<p>A bijection $f:S\rightarrow{1,\ldots,n}$. This means that there are as many elements in the set that $S$ maps to as there are in $S$.</p>
+
+<p>For finite sets $A$ and $B$:</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$</td>
+          <td>A</td>
+          <td>\geq</td>
+          <td>B</td>
+          <td>\Rightarrow$ there is a surjective function from $A$ to $B$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$</td>
+          <td>A</td>
+          <td>\leq</td>
+          <td>B</td>
+          <td>\Rightarrow$ there is an injective function from $A$ to $B$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>$</td>
+          <td>A</td>
+          <td>=</td>
+          <td>B</td>
+          <td>\Rightarrow$ there is a bijection function from $A$ to $B$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TD
+subgraph A
+a[ ]
+b[ ]
+c[ ]
+end
+subgraph n
+1
+2
+n
+end
+subgraph B
+d[ ]
+e[ ]
+f[ ]
+end
+a --&gt; 1
+b --&gt; 2
+c --&gt; n
+d --&gt; 1
+e --&gt; 2
+f --&gt; n
+</code></pre>
+
+<table>
+  <tbody>
+    <tr>
+      <td>From the graph as $</td>
+      <td>A</td>
+      <td>=n=</td>
+      <td>B</td>
+      <td>$ then we can deduce that $g^{-1}\circ f$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Bijective means one to one.</li>
+  <li>Surjective means many to one.</li>
+  <li>Injective means one to many.</li>
+</ul>
+
+<h2 id="the-pigeonhole-principle">The Pigeonhole Principle</h2>
+<p>Let $f:A\rightarrow B$ be a function where $A$ and $B$ are finite sets.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>The pigeonhole principle states that if $</td>
+      <td>A</td>
+      <td>&gt;</td>
+      <td>B</td>
+      <td>$ then at least one value of $f$ occurs more than once.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In other words, we have $f(a)=f(b)$ for some distinct elements $a,b$ of $A$.</p>
+
+<p>The principle is if $(N+1)$ pigeons occupy $N$ holes, then some hole must have at least 2 pigeons.</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>There are 15 people on a bus. Show that at least two of them have a birthday in the same month of the year.</p>
+
+<h4 id="proof">Proof</h4>
+<p>Let $A$ be the set of all people on the bus. $|A|=15$</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Let $B$ be the set of months. $</td>
+      <td>B</td>
+      <td>=12$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>$f$ associates the month in which a person has been born with that person.</p>
+
+<p>By the pigeonhole principle (PHP), at least two of them have a birthday on the same day.</p>
+
+<h3 id="example-2">Example 2</h3>
+<p>How many different surnames must appear in a telephone directory to guarantee that at least two of the surnames begin with the same letter of the alphabet and end with the same letter of the alphabet?</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>If we are solving this by the pigeonhole principle then the set $A$ of names must have same cardinality as $</td>
+      <td>B</td>
+      <td>+1$ where $B$ is the set of all pairs of letters.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$</td>
+      <td>B</td>
+      <td>=26^2$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Therefore</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$</td>
+      <td>B</td>
+      <td>+1=26^2+1$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-3">Example 3</h3>
+<p>Five number are selected from the numbers $1,2,3,4,5,6,7$ and $8$. Show that there will always be two of the numbers that sum to $9$.</p>
+
+<h4 id="proof-1">Proof</h4>
+<pre><code class="language-mermaid">graph LR
+subgraph B
+1[1,8]
+2[2,7]
+3[3,6]
+4[4,5]
+end
+subgraph A
+x1
+x2
+x3
+x4
+x5
+end
+x1 --&gt; 1
+x2 --&gt; 2
+x3 --&gt; 3
+x4 --&gt; 4
+x5 --&gt; 1
+</code></pre>
+<p>$|A|=5$ and $|B|=4$. If each element with $x_n$ maps to the pair which contains its digit then there must be a pair with more than one mapping. This is to say that the two sets maps via a <em>surjective</em> function.</p>
+
+<p>This proves that there will always be one pair in the list that sums to 9.</p>
+:ET
