@@ -5,7 +5,6 @@ aside:
  toc: true
 sidebar:
  nav: comp109
-mathjax: true
 ---
 {% for post in site.posts %}
 {% if post.tags contains "COMP109" %}
