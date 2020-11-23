@@ -1,5 +1,4 @@
-I"4
-<h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
+I"Ì	<h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
 <p>Show that in any group of six people there are either three who all know each other or three complete strangers.</p>
 
 <p><img src="/UoL/assets/COMP109/Lectures/2020-11-13-3-1.png" alt="Graph 1" /></p>
@@ -31,17 +30,7 @@ subgraph B
 end
 </code></pre>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>A</td>
-      <td>=5,</td>
-      <td>B</td>
-      <td>=2$ Therefore there must exist ${x_1,x_2,x_3}\subseteq{A,B,C,D,E}$ such that $f(x_1)=f(x_2)=f(x_3)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert A\vert =5, \vert B\vert =2$ Therefore there must exist ${x_1,x_2,x_3}\subseteq{A,B,C,D,E}$ such that $f(x_1)=f(x_2)=f(x_3)$</p>
 
 <h4 id="case-1">Case 1</h4>
 <p>Suppose that $f(x_1)=f(x_2)=f(x_3)=1$. This means that they all know each other.</p>

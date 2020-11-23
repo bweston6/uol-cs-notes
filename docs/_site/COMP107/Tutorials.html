@@ -857,6 +857,278 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
+<h1 id="comp107---evolutionary-modelling"><a href="/UoL/comp107/lectures/2020/11/22/1.html">COMP107 - Evolutionary Modelling</a></h1>
+<p>This type of modelling is inspired by agile principles.</p>
+
+<h2 id="designing-an-er-schema">Designing an ER Schema</h2>
+<p>You should identify the basic components:</p>
+
+<ul>
+  <li>Entity types.</li>
+  <li>Relationship types.</li>
+  <li>Attributes</li>
+  <li>And for each of these components:
+    <ul>
+      <li>Key attributes (unique for each identity).</li>
+      <li>Cardinality and participation constraints of relationships.</li>
+      <li>Different entity types.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="strategies-to-er-design">Strategies to ER Design</h2>
+<ul>
+  <li>Top-down
+    <ul>
+      <li>Start with a schema containing high-level abstractions an apply successive top-down refinements.</li>
+    </ul>
+  </li>
+  <li>Bottom-up
+    <ul>
+      <li>Start with a schema containing basic abstractions then proceed by combining and adding to these.</li>
+    </ul>
+  </li>
+  <li>Inside-out
+    <ul>
+      <li>Start from a central set of concepts, that are most evident and spread outwards,  by considering new concepts in the vicinity of existing ones.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="evolutionary-data-modelling">Evolutionary Data Modelling</h2>
+<p>This is an approach that proceeds in an incremental manner.</p>
+
+<ul>
+  <li>An initial <strong>slim</strong> model is created that satisfies some initial requirements.</li>
+  <li>The model is then refines in a set of iterations, adding details.</li>
+</ul>
+
+<p>At each iteration a database can be built with a set of functionalities, queries, interface…</p>
+
+<ul>
+  <li>We will ignore this and only discuss data modelling.</li>
+</ul>
+
+<h3 id="agile">Agile?</h3>
+<p>Agile data modelling is evolutionary data modelling done in a collaborative manner.</p>
+
+<p class="info">Agile is a set of principles, not a specific technique.</p>
+
+<p>You can decide whether you want to apply evolutionary modelling in a highly collaborative setting or in a traditional development setting.</p>
+
+<h3 id="user-stories">User Stories</h3>
+<ul>
+  <li>Primary tolls of agile programming strategies.</li>
+  <li>They are a very high level and very concise statement of a requirement.</li>
+  <li>Much much smaller than a use case.</li>
+</ul>
+
+<h4 id="example">Example</h4>
+<p>Students can only enrol in a module if it is included in their programme.</p>
+
+<p class="info">As they are so short you should have many in order to make the system.</p>
+
+<h4 id="creating-a-story-set">Creating a Story Set</h4>
+<p>You can collect them informally or use a template. You should collect them systematically:</p>
+
+<ul>
+  <li>Number them.</li>
+  <li>Order them.</li>
+  <li>Prioritise them.</li>
+</ul>
+
+<h4 id="template">Template</h4>
+<ul>
+  <li>As a (role) I want (something) to  that (benefit).</li>
+  <li>Similar format to the tutorial:
+    <ul>
+      <li>As a..</li>
+      <li>I need/want/expect to…</li>
+      <li>So that…</li>
+      <li>When…</li>
+      <li>Because… (is the user constrained by any circumstances)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="strategy">Strategy</h3>
+<ol>
+  <li>Collect, order and prioritise your user stories.</li>
+  <li>Decide how many iteration you want to make.</li>
+  <li>Decide which new stories you want to include in the design at each iteration.</li>
+  <li>Proceed to create an Entity Relationship model that represents those user stories.</li>
+</ol>
+
+<h3 id="general-criterial-for-design">General Criterial for Design</h3>
+<ol>
+  <li>If a concept has a significant amount of properties it is an <strong>entity</strong>.
+    <ul>
+      <li>It’s existence doesn’t depend from other concepts.</li>
+    </ul>
+  </li>
+  <li>If a concept has a simple structure or refers to another concept then it is an <strong>attriute</strong>.</li>
+  <li>If the requirements contain a verb or connector then it is a <strong>relationship.</strong></li>
+</ol>
+
+<h3 id="example-1">Example</h3>
+<p>Consider the following script:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 We wish to create a system for a company that runs training courses.
+2 For each course participant, identified by a code, we want to store the
+3 national insurance number, surname, age, sex, place of birth,
+4 employer’s name, address and telephone number, previous employers
+5 (and period employed), the course attended and the final assessment
+6 of each course. We need also to represent the seminars that each
+7 participant is attending at present and, for each day, the places and
+8 times the classes are held. Each course has a code and a title and any
+9 course can be given any number of times. Each time a course is given,
+10 we call it an “edition” of the course. For each edition, we represent
+11 the start and end dates and the number of participants. If a trainee is
+12 a self employed professional, we need to know his or her area of
+13 expertise, and, if appropriate, his or her title. For somebody who
+14 works for a company we store the level and position held. For each
+15 instructor we will show surname, age, place of birth, the edition the
+16 course is taught, those taught in the past and the courses the tutor is
+17 qualified to teach. All the instructor’s telephone numbers are also
+18 stored. An instructor can be permanently employed or freelance.
+</code></pre></div></div>
+
+<h4 id="1st-iteration---two-stories">1st Iteration - Two Stories</h4>
+<ol>
+  <li>Trainees attend courses.</li>
+  <li>Instructors teach courses.</li>
+</ol>
+
+<pre><code class="language-mermaid">graph LR
+t[Trainee] --- a{Attends}
+a --- c[Course]
+c --- te{Teaches}
+te --- i[Instructor]
+</code></pre>
+
+<h4 id="2nd-iteration---three-stories">2nd Iteration - Three Stories</h4>
+<ol>
+  <li>Courses are held in editions.</li>
+  <li>Trainees can be self employed, professional or work for a company.
+    <ul>
+      <li>This could be as an attribute of the trainee or you could have it as two sub-entities.</li>
+    </ul>
+  </li>
+  <li>We distinguish between current and past editions.</li>
+</ol>
+
+<pre><code class="language-mermaid">graph BT
+e[Edition] --- a
+e --- ha
+e --- ht
+a{Attends} --- t[Trainee]
+e --- te{Teaches}
+te --- i[Instructor]
+e --- h{Held In}
+h --- c[Course Type]
+t --- is{Is a}
+is --- em[Employee]
+is --- p[Professional]
+ha{Has Attended} --- t
+ht{Has Taught} --- i
+</code></pre>
+
+<h4 id="3rd-iteration---four-stories">3rd Iteration - Four Stories</h4>
+<ol>
+  <li>Course are held in classrooms.</li>
+  <li>Instructors only teach courses for which they are qualified.</li>
+  <li>We archive past editions of courses keeping summary data.</li>
+  <li>We maintain data of trainees’ employers.</li>
+</ol>
+
+<pre><code class="language-mermaid">graph BT
+Edition --- a{Attends}
+Edition --- h{Held In}
+Edition --- t{Teaches}
+a --- Trainee
+Trainee --- is{Is A}
+is --- Employee
+Employee --- wf{Works For}
+Employee --- hwf{Has Worked For}
+wf --- Employer
+hwf --- Employer
+is --- Professional
+h --- ct[Course Type]
+ct --- hbhi{Has Been Held In}
+ct --- q{Qualifies}
+hbhi --- pe[Past Editions]
+pe --- ha{Has Attended}
+Trainee --- ha
+pe --- ht{Has Taught}
+q --- Instructor
+Instructor --- ht
+t --- Instructor
+t --- Classroom
+</code></pre>
+
+<p>This type of diagram may not result in the most efficient database. You may want to make changes from this conceptualisation when implementing.</p>
+
+<h4 id="dodgy-entities"><em>Dodgy</em> Entities</h4>
+<p>Some entities such as trainee, professional and edition aren’t true entities. They are a type of entity called a <strong>weak entity</strong>.</p>
+
+<h2 id="weak-entities">Weak Entities</h2>
+<p>These are entities which cannot be identified in isolation. Instances are identified because they belong to specific entities from another entity type, known as <strong>identifying owner</strong>.</p>
+
+<ul>
+  <li>The content of a lecture theatre - whiteboards, desks - cannot be typically identified directly.
+    <ul>
+      <li>The lecture theatre is their identifying owner, so we can talk about: the front desk in the Ashton Lecture Theatre.</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="info">Weak entities are entities that have an owner.</p>
+
+<ul>
+  <li>The relationship type that relates the weak entity to its owner is the weak entity’s <strong>identifying relationship</strong>.</li>
+  <li>Weak entity types might have a partial key, to distinguish one weak entity fro other weak entities related to the same owner.</li>
+</ul>
+
+<h3 id="weak-entities-vs-total-participation">Weak Entities v.s. Total Participation</h3>
+<p>A weak entity cannot exist in isolation, it must have an owner. This means that is is often confused with a total participation relationship.</p>
+
+<h4 id="total-participation">Total Participation</h4>
+<ul>
+  <li>A lecturer <em>must</em> work for a department.
+    <ul>
+      <li>The lecturer is not a weak entity as they have a staff number and can be identified.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="weak-entity">Weak Entity</h4>
+<ul>
+  <li>A desk <em>must</em> belong to a lecture theatre.
+    <ul>
+      <li>This is weak as we don’t have a direct ID for the desk.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="er-notation">ER Notation</h3>
+<ul>
+  <li>A weak entity is represented as a double box.</li>
+  <li>The identifying relation is a double diamond.</li>
+  <li>A partial key has a dotted underline.</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP107/Lectures/2020-11-22-1.png" alt="" /></p>
+
+<p class="info">View <a href="/UoL/assets/COMP107/Lectures/2020-11-22-1.pdf">the slides</a> for the final diagram including this new notation. This also includes notation for multi-attributes. There is also a further example from the textbook.</p>
+
+<h4 id="alternate-cardinality-notation">Alternate Cardinality Notation.</h4>
+<p>Instead of using <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">N</code> to denote the cardinality of a relationship you can have finer control by stating the range of cardinalities allowed like so:</p>
+
+<pre><code class="language-mermaid">graph LR
+Employee ---|"(0,N) Supervisor"| s{Supervision}
+s ---|"(0,1) Supervisee"| Employee
+</code></pre>
+
 <h1 id="comp107---tutorial-3"><a href="/UoL/comp107/tutorials/2020/11/20/1.html">COMP107 - Tutorial 3</a></h1>
 <h2 id="designing-an-er-schema">Designing an ER Schema</h2>
 <p>You should identify basic components:</p>
@@ -873,7 +1145,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <p>There are also weak entities such as tables or chairs. These simple objects don’t need individual identification and should be a child of the strong entity.</p>
 
-<p class="info">The <a href=".pdf">lecture slides</a> have a summary and examples of the ER diagram scheme.</p>
+<p class="info">The <a href="/UoL/assets/COMP107/Tutorials/2020-11-20-1.pdf">lecture slides</a> have a summary and examples of the ER diagram scheme.</p>
 
 <h2 id="evolutionary-data-modelling">Evolutionary Data Modelling</h2>
 

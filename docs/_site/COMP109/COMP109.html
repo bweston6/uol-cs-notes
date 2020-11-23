@@ -857,6 +857,77 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
+<h1 id="comp109---relations---1"><a href="/UoL/comp109/lectures/2020/11/22/1.html">COMP109 - Relations - 1</a></h1>
+<h2 id="cartesian-product">Cartesian Product</h2>
+<p>For the Cartesian product you are making a list of all possibilities of the elements in both sets. This is similar to multiplying brackets.</p>
+
+<h3 id="example">Example</h3>
+<p>Let $A={1,2}$ and $B={a,b,c}$, then:</p>
+
+<p>[A\times B = {(1,a),(2,a),(1,b),(2,b),(1,c),(2,c)}]</p>
+
+<p>Therefore:</p>
+
+<p>[B\times A = {(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)}]</p>
+
+<h3 id="relations">Relations</h3>
+<p>Any relation between the elements in set $A$ and $B$ will be in the set of their Cartesian product.</p>
+
+<p>A <strong>binary relation</strong> between two sets $A$ and $B$ is a subset $R$ of the Cartesian product $A\times B$.</p>
+
+<p>If $A=B$, then $R$ is called <strong>a binary relation on $A$</strong>.</p>
+
+<h3 id="family-tree-example">Family Tree Example</h3>
+<p>The set $A$ is the set of all people in the tree.</p>
+
+<pre><code class="language-mermaid">graph TD
+fm[Fred and Mavis] --- Alice
+fm --- ks[Ken and Sue]
+ks --- Jane
+ks --- Fiona
+ks --- Alan
+jm[John and Mary] --- ks
+jm --- Mike
+jm --- Penny
+</code></pre>
+
+<ol>
+  <li>
+    <p>$R={(x,y)\vert x\text{ is a grandfather of } y}$</p>
+
+    <p>For this set:</p>
+
+    <p>$R={\text{(Fred, Jane), (Fred, Fiona), (Fred, Alan), (John, Jayne), (John, Fiona), (John, Alan)}}$</p>
+  </li>
+  <li>
+    <p>$S={(x,y)\vert x\text{ is a sister of } y}$</p>
+
+    <p>For this set:</p>
+
+    <p>$S={\text{(Alice, Ken), (Sue, Mike), (Sue, Penny), (Penny, Sue), (Penny, Mike), (Jane, Fiona)}}$</p>
+  </li>
+</ol>
+
+<h3 id="algebraic-example">Algebraic Example</h3>
+<p>Write down the ordered parts belonging to the following binary relations between $A={1,3,5,7}$ and $B={2,4,6}$:</p>
+
+<ol>
+  <li>
+    <p>$U={(x,y)\in A\times B \vert x + y = 9}$</p>
+
+    <p>This means the combinations from the two sets where the elements sum to 9.</p>
+
+    <p>$U={(3,6),(5,4),(7,2)}$</p>
+  </li>
+  <li>
+    <p>$V={(x,y)\in A\times B \vert x &lt; y }$</p>
+
+    <p>This is the set of all pairs such that the first element is smaller than the second element.</p>
+
+    <p>$V={(1,2),(1,4),(1,6),(3,4),(3,6),(5,6)}$</p>
+  </li>
+</ol>
+
 <h1 id="comp109---functions---8"><a href="/UoL/comp109/lectures/2020/11/17/3.html">COMP109 - Functions - 8</a></h1>
 <h2 id="uncountable-sets">Uncountable Sets</h2>
 <p>A set that is not countable is called uncountable. The following set is uncountable:</p>
@@ -1091,17 +1162,7 @@ subgraph B
 end
 </code></pre>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$</td>
-      <td>A</td>
-      <td>=5,</td>
-      <td>B</td>
-      <td>=2$ Therefore there must exist ${x_1,x_2,x_3}\subseteq{A,B,C,D,E}$ such that $f(x_1)=f(x_2)=f(x_3)$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$\vert A\vert =5, \vert B\vert =2$ Therefore there must exist ${x_1,x_2,x_3}\subseteq{A,B,C,D,E}$ such that $f(x_1)=f(x_2)=f(x_3)$</p>
 
 <h4 id="case-1">Case 1</h4>
 <p>Suppose that $f(x_1)=f(x_2)=f(x_3)=1$. This means that they all know each other.</p>
@@ -1396,8 +1457,8 @@ c --&gt; 3
 <p>A function is a method that takes an input value and gives an output value:</p>
 
 <pre><code class="language-mermaid">graph LR
-x --&gt;\vert Input\vert  F[Function Machine]
-F --&gt;\vert Output\vert  fx
+x --&gt;|Input| F[Function Machine]
+F --&gt;|Output| fx
 </code></pre>
 
 <p>A function from a set $A$ to a set $B$ is an assignment of exactly one element of $B$ to each element of $A$.</p>
@@ -1442,7 +1503,7 @@ end
 subgraph B
 fA
 end
-A --&gt;\vert f\vert  fA
+A --&gt;|f| fA
 </code></pre>
 <p><em>The range of $f$.</em></p>
 
@@ -1477,8 +1538,8 @@ end</p>
 <p>x –&gt; fx
 fx –&gt; gfx
 x –&gt; gfx
-X –&gt;\vert f\vert  Y
-Y –&gt;\vert g\vert  Z</p>
+X –&gt;|f| Y
+Y –&gt;|g| Z</p>
 
 <h1 id="comp109---russells-paradox"><a href="/UoL/comp109/lectures/2020/11/11/2.html">COMP109 - Russell’s Paradox</a></h1>
 <p>Why is this set theory “Naive”? The reason is that is suffers from paradoxes.</p>

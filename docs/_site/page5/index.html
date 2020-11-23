@@ -842,6 +842,126 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/10/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Type Classes
+show
+This function converts other types to strings. However, it can only take the type class of Show into a string:
+
+show :: Show a =&gt; a -&gt; a
+
+
+Show contains:
+
+
+  All basic types.
+  All tuples of show-able types.
+  All lists of show-able types.
+
+
+read
+This converts strings to other types, provided they are formatted corre...</div><p><a href="/UoL/comp105/lectures/2020/11/10/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 5</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Example 1
+$A={1,2,7,8,9}, B={x\in A\vert x \text{ is odd}}$
+
+Where:
+
+$C=A-B=A\cap B$
+
+Therefore:
+
+$B={1,7,9}$
+
+$C={2,8} = {x\in A \vert x \notin B}$
+
+Proving Identities
+To prove an identity you would consider the sections of a Venn diagram and consider each of the four cases. These cover all of the locations in the Venn diagram.</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/seminars/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Introducing assignment 4.
+Activities
+
+  Identification of Application areas and users groups
+  Analysis of existing documentation of application areas
+  Analysis of current operating environments and the planned use of the information
+    
+      Information flow
+      Types of transactions
+    
+  
+  Responses to user questionnaires are analysed....</div><p><a href="/UoL/comp107/seminars/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Seminars">Seminars</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Seminars"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/09/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Type Classes
+Some functions are polymorphic, but can’t be applied to any type. + is a good example. It can work on float and integer but not on mixed types or Char. The type of + is:
+
+(+) :: Num a =&gt; a -&gt; a -&gt; a
+
+
+This means that a is a number in the definition: a -&gt; a -&gt; a.
+
+Num
+Num is a type class:
+
+
+  It restricts the type vari...</div><p><a href="/UoL/comp105/lectures/2020/11/09/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Polymorphic Types
+Some functions accept many different types. An example of this is length which accepts many different types of lists.
+
+if you ask what the type of then function length is then it will return the type:
+
+length :: [a] -&gt; Int
+
+
+a is a type variable. This means that:
+
+
+  The function can be applied to any list.
+  a will represen...</div><p><a href="/UoL/comp105/lectures/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
           <header><a href="/UoL/comp109/lectures/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Algebra of Sets</h2></a></header>
           <div class="item__description"><div class="article__content" itemprop="description articleBody">Suppose that $A,B,C,U$ are sets with $A \subseteq U, B \subseteq U, C \subseteq U$.
 
@@ -948,118 +1068,8 @@ Holds 32-bit floating point ...</div><p><a href="/UoL/comp105/lectures/2020/11/0
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
             </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Derived Assertions Algorithm</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">The following algorithm take as input the knowledge base $K$ containing $K_a$ and $K_r$ and computes all assertions $E(a)$ with $E$ a class name and $a$ an individual name such that $K\models E(a)$. This set is stored in: \(\text{DerivedAssertions}\) In only remains to check whether $A(b)$ is in $\text{DerivedAssertions}$.
-
-The algorithm compute...</div><p><a href="/UoL/comp111/lectures/2020/11/05/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Rule Based Languages</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Syntax
-An individual name denote an individual object. They are also called constant symbols:
-
-
-  England
-  We also use lower case letters: $a,b,c,a_1,a_2,\ldots$
-
-
-An individual variable is a placeholder for an individual name. They are denoted by lower case letters:
-
-
-  $x,y,z,x_1,x_2,\ldots$
-
-
-A class name denotes a set of individual objects....</div><p><a href="/UoL/comp111/lectures/2020/11/05/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Basic Knowledge Representation and Reasoning</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Declarative Approach
-The declarative approach to building agents includes telling the agent what it needs to know. From this the agent uses reasoning to deduce relevant consequences. It requires:
-
-
-  A knowledge base / ontology
-    
-      Which contains fact and general knowledge about a domain in some formal language.
-    
-  
-  A reasoning engi...</div><p><a href="/UoL/comp111/lectures/2020/11/05/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/04/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Alpha - Beta Pruning</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">If you know half way through a calculation that it will succeed or fail, then there is no point in doing the rest of it. This removes redundant information.
-
-graph TD
-subgraph MAX
-A0
-end
-subgraph MIN
-A1
-A2
-A3
-end
-subgraph MAX
-A11
-A12
-A13
-A21
-A22
-A23
-A31
-A32
-A33
-end
-A0[&gt;= 3, then just 3] --&gt;|A1| A1[3]
-A0 --&gt;|A2| A2[&lt;= 2]
-A0 --&gt;|A3|...</div><p><a href="/UoL/comp111/lectures/2020/11/04/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 04, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-04T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/04/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Adversarial Search</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Adversarial search is a method of reaching a goal while making moves against another player. This allows the agent to react to the moves of another player.
-
-In search we make all moves. In games we play against an unpredictable opponent:
-
-
-  Solution is a strategy  specifying a move for every possible move of the opponent.
-  A method is need for...</div><p><a href="/UoL/comp111/lectures/2020/11/04/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 04, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-04T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>105 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page4">
             <i class="fas fa-angle-left"></i>

@@ -1,0 +1,411 @@
+I";
+<h1 id="comp107---seminar-5"><a href="/UoL/comp107/seminars/2020/11/23/1.html">COMP107 - Seminar 5</a></h1>
+<h2 id="enhanced-er">Enhanced ER</h2>
+<p>EER is an ER model bu with hierarchal relationships.</p>
+
+<p>Entities that are member of one entity type (the <strong>superclass</strong>) may be grouped into meaningful subsets (the <strong>subclasses</strong>).</p>
+
+<ul>
+  <li>Often referred to as an “is-A” relationship.
+    <ul>
+      <li>The two subclasses of TRAINEE is the training courses company: EMPLOYEE and PROFESSIONAL.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Inheritance permits economy of representation.</p>
+
+<h3 id="inheritance">Inheritance</h3>
+<p>An entity that is a member of a subclass inherits all of the attributes of the entity as a member of the superclass.</p>
+
+<ul>
+  <li>A PROFESSIONAL, as a TRAINEE, has a code, name…</li>
+</ul>
+
+<p>Also inherits all relationship types the superclass participates in.</p>
+
+<ul>
+  <li>A PROFESSIONAL, as a TRAINEE, attends editions of courses.</li>
+</ul>
+
+<h3 id="when-to-classify">When to Classify</h3>
+<h4 id="specialisation">Specialisation</h4>
+<p>Defining a set of subclasses of an entity type on the basis of some distinguishing characteristic of the entities in the superclass.</p>
+
+<ul>
+  <li>Certain attributes may apply to some by not all members of an entity type:
+    <ul>
+      <li>We keep Title and Area for professional trainees only:
+        <ul>
+          <li>A subclass is defined to group the entities to which these attributes apply.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Some relationship types may be participating in only by some members of an entity type:
+    <ul>
+      <li>Employee trainees are the only trainees who work for an employer:
+        <ul>
+          <li>A subclass is defined to group the entities participating to this relationship.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="generalisation">Generalisation</h4>
+<p>Defining a superclass from a given set of entity types.</p>
+
+<p>Inverse of specialisation as it involves realising that some entity types have lots of common features.</p>
+
+<ul>
+  <li>The main idea is to suppress difference between entity types.</li>
+  <li>Identify the common features an generalise them into a superclass:
+    <ul>
+      <li>Generalise CAR and TRUCK into a VEHICLE superclass if a common behaviour is identified.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="eer-notation">EER Notation</h3>
+<p>The two processes of generalisation and specialisation may use different notation but we will use the <strong>same notation</strong>.</p>
+
+<p>You can find a summary of the full ER notation in <a href="https://read.kortext.com/reader/pdf/125467/1193">the textbook</a> or in <a href="/UoL/assets/COMP107/Seminars/2020-11-23-1.pdf">this PDF</a>.<br />
+The notation mentioned here is notation <em>e)(i)</em> in the book.</p>
+
+<ul>
+  <li>Subclasses are attached to a circle which is connected with the superclass.</li>
+  <li>The subset symbol $\subset$ indicates direction of a relationship.</li>
+  <li>Generic attributes are attaches to the superclass.</li>
+  <li>Specific attributes are attaches to the subclasses.</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-1.png" alt="EER Notation" /></p>
+
+<h4 id="attribute-defined-subclasses">Attribute-defined Subclasses</h4>
+<p>You can sometimes determine exactly the entities that will become members of each subclass</p>
+
+<ul>
+  <li>For TRAINEE we may specify the condition of membership to be on the basis of the content of an attribute JobType.</li>
+</ul>
+
+<p>This attribute is the defining attribute of teh specialisation</p>
+
+<p class="warning"><strong>All</strong> subclasses in an attribute-defined specialisation must have the membership condition on the same attribute.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-2.png" alt="EER Notation" /></p>
+
+<h4 id="predicate-defined-subclasses">Predicate-defined Subclasses</h4>
+<p>Sometimes the membership condition depends on more than one factor:</p>
+
+<ul>
+  <li>For TRAINEE
+    <ul>
+      <li>For EMPLOYEE subclass we may specify the condition of membership to be: <strong>JobType=”Employee”</strong></li>
+      <li>We might have a subclass YOUNG representing all trainees with Age less than 30 no matter the job: <strong>Age &lt; 30</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>We are therefore establishing membership on the basis of the truth value of a defining predicate.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-3.png" alt="EER Notation" /></p>
+
+<h4 id="levels-of-specialisation">Levels of Specialisation</h4>
+<p>We can have further specialisation of the same entity type using different distinguishing characteristics.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-4.png" alt="EER Notation" /></p>
+
+<p class="info">SALARIES and HOURLY-PAID are both EMPLOYEE and TRAINEE.</p>
+
+<h4 id="disjointness-constraint">Disjointness Constraint</h4>
+<p>Specifies that subclasses of a specialisation are <strong>disjoint</strong>.</p>
+
+<ul>
+  <li>An entity can be a member of <strong>at most one</strong> of the subclasses of the specialisation.</li>
+  <li>Attribute defined specialisation implies disjoint subclasses if the defining attribute is single-valued.</li>
+</ul>
+
+<p>Subclasses that are not disjoint may <strong>overlap</strong>.</p>
+
+<ul>
+  <li>Some entities may be member of more than one subclass of the specialisation.</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-5.png" alt="EER Notation" /></p>
+
+<h4 id="completeness-constraint">Completeness Constraint</h4>
+<p>This is similar to total and practical participation in regular relationships.</p>
+
+<ul>
+  <li>Total Specialisation
+    <ul>
+      <li>Every entity in a superclass must be a member of some subclass in some specialisation
+        <ul>
+          <li>Ever EMPLOYEE must be either HOURLY-PAID or SALARIED.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Partial Specialisation
+    <ul>
+      <li>Allows an entity not to belong to any of the subclasses
+        <ul>
+          <li>TRAINEES who are neither EMPLOYEES nor PROFESSIONAL.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p class="info">Disjointness and completeness are independent.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-6.png" alt="EER Notation" />
+<em>This image states that EMPLOYEES must be paid but students don’t have to be PROFESSIONALS or EMPLOYEES.</em></p>
+
+<h3 id="insertion--deletion-rules">Insertion &amp; Deletion Rules</h3>
+<p>When implementing a database coming from an EER conceptualisation, we need to make sure the classification is preserved.</p>
+
+<p>This is especially relevant when the DBMS does not support classes.</p>
+
+<ol>
+  <li>Deleting an entity instance from a super class implies that it is automatically deleted from all of the subclasses it belongs to.</li>
+  <li>Inserting an entity instance in a superclass implies that the entity is inserted in all predicate-defined subclasses for which the entity satisfies the defining predicate.</li>
+  <li>Inserting an entity instance in a superclass of <strong>total specialisation</strong> implies that the entity is inserted in at least one of the subclasses of the specialisation.</li>
+  <li>Inserting an entity in a superclass of <strong>disjoint, total specialisation</strong> implies that the entity is inserted in one and only one of the subclasses of the specialisation.</li>
+</ol>
+
+<h1 id="comp107---seminar-4"><a href="/UoL/comp107/seminars/2020/11/09/1.html">COMP107 - Seminar 4</a></h1>
+<p>Introducing assignment 4.</p>
+<h2 id="activities">Activities</h2>
+<ul>
+  <li>Identification of Application areas and users groups</li>
+  <li>Analysis of existing documentation of application areas</li>
+  <li>Analysis of current operating environments and the planned use of the information
+    <ul>
+      <li>Information flow</li>
+      <li>Types of transactions</li>
+    </ul>
+  </li>
+  <li>Responses to user questionnaires are analysed.</li>
+</ul>
+
+<p>As a result you should start form a place of a poorly structured set of requirements. You should use a technique to move to a more structured document.</p>
+
+<h2 id="glossary">Glossary</h2>
+
+<p>One way to rewrite the specification is to construct a glossary of terms. This will provide:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+      <th>Synonyms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="purpose-of-assignment-2">Purpose of Assignment 2</h2>
+<p>The purpose of Assignment 2 is to analyse the data present in Assignment 1 to create the structure of a database.</p>
+
+<ul>
+  <li>You should work in groups to complete the data model.</li>
+  <li>You will proceed by view aggregation, producing one ER model (or EER if appropriate) conceptualising the view for each of at least 3 user categories you have identified.
+    <ul>
+      <li>Aim at creating 4 to 5 user stories for each user.</li>
+      <li>You will then design the relations tables which map the ER model.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="deliverable">Deliverable.</h2>
+<p>You will produce a PDF document with your report.</p>
+
+<h1 id="comp107---seminar-3"><a href="/UoL/comp107/seminars/2020/10/26/1.html">COMP107 - Seminar 3</a></h1>
+<p>The seminar opened with a catch-up of the lectures that had been released during the week including:</p>
+
+<ul>
+  <li>Systems Development Life-Cycle</li>
+  <li>Requirement Elicitation
+    <ul>
+      <li>Gathering information from people.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="assignment">Assignment</h2>
+<p>An overview of the assignment requirements and materials provided.</p>
+
+<ul>
+  <li>More effort should be put into accrediting team members in the meeting minutes.</li>
+</ul>
+
+<h1 id="comp107---seminar-2"><a href="/UoL/comp107/seminars/2020/10/19/1.html">COMP107 - Seminar 2</a></h1>
+<h2 id="system-design-as-modelling">System design as Modelling</h2>
+
+<pre><code class="language-mermaid">graph TD
+A[The Problem to be Solved] --&gt; |Suitable for computation| B[The Program]
+B --&gt; D[The Output]
+D --&gt; |Result suitable for interpretation| C[The request required]
+A --&gt; |What we want| C
+</code></pre>
+
+<h2 id="modelling-process">Modelling Process</h2>
+
+<pre><code class="language-mermaid">graph LR
+A[Real World Problem] --&gt; B[Information Model]
+B --&gt; C[Conceptual Model]
+C --&gt; D[Logical Model]
+D --&gt; E[Physical Model]
+</code></pre>
+
+<p>An example of this process:</p>
+
+<ul>
+  <li>Problem in the real world.</li>
+  <li>A plain English description of the input, output and main components.</li>
+  <li>Entity Relationship model of the data in a database.</li>
+  <li>The definition of the table of a relational database.
+    <ul>
+      <li>The technical details of the model such as the database format and table definitions.</li>
+    </ul>
+  </li>
+  <li>MySQL or Oracle database.</li>
+</ul>
+
+<p>The purpose of the modelling process is so you can give your design to another person in a team and they know how to implement it.</p>
+
+<h1 id="assignment-1">Assignment 1</h1>
+<p>Produce a wiki-style report (between 2000 and 2500 words) introducing an innovative system/application you would like to implement.</p>
+
+<p class="info">This system will not be implemented as you can write the proposal with little concern of whether it it realisable.</p>
+
+<h2 id="things-to-include">Things to include</h2>
+<ul>
+  <li>The domain of the system.
+    <ul>
+      <li>In which context is it useful?</li>
+    </ul>
+  </li>
+  <li>What makes the solution important?
+    <ul>
+      <li>Requires references as to why it is an important problem to solve.</li>
+    </ul>
+  </li>
+  <li>What makes it new?
+    <ul>
+      <li>Research 3 - 5 direct competitors in the market and describe why yours is better.</li>
+    </ul>
+  </li>
+  <li>The purpose of the new system.</li>
+  <li>What different categories of users will the system have?
+    <ul>
+      <li>Envisaging how they will utilise the system.</li>
+    </ul>
+  </li>
+  <li>Main benefits and shortcomings of the system and the main obstacles and shortcomings of the system.
+    <ul>
+      <li>Also the main invectives for uptake of the system.</li>
+    </ul>
+  </li>
+  <li>Include a high level description of that data and what the users will use the data for.
+    <ul>
+      <li>Include a description of each of the user categories you have identified.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Any outside meeting should be recorded on canvas in the form of minutes.</p>
+
+<h1 id="comp107---seminar-1"><a href="/UoL/comp107/seminars/2020/10/12/1.html">COMP107 - Seminar 1</a></h1>
+<h2 id="staff-list">Staff List</h2>
+<ul>
+  <li>Floriana Grasso
+    <ul>
+      <li>Module leader</li>
+    </ul>
+  </li>
+  <li>Alexis Nolan-Webster
+    <ul>
+      <li>Employability officer</li>
+    </ul>
+  </li>
+  <li>A number of graduate teaching assistants
+    <ul>
+      <li>Co-ordinate tutorials</li>
+    </ul>
+  </li>
+  <li>Guest Speakers</li>
+</ul>
+
+<h2 id="aims">Aims</h2>
+<ul>
+  <li>To provide the students with a wide-rage understanding of the discipline of computing, and to introduce students to concepts of professional ethics as well as social and legal aspects of computing.</li>
+  <li>To equip the students with communication, time and project management, and employability skills required for a computing professional.</li>
+  <li>To allow the students to gain an understanding of the importance of appropriate and efficient system design strategies, at the conceptual and logical levels.</li>
+</ul>
+
+<h2 id="progression-routes">Progression Routes</h2>
+<ul>
+  <li>COMP107
+    <ul>
+      <li>COMP207 - DB Development</li>
+      <li>COMP283 - Applied DB Management</li>
+      <li>COMP201 - Software Engineering</li>
+      <li>COMP208 - Group Project</li>
+      <li>COMP221 - Plan Career
+        <ul>
+          <li>Aimed at year in industry students</li>
+        </ul>
+      </li>
+      <li>COMP228 - App Development</li>
+      <li>COMP390 - Final Year Project</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="assessment">Assessment</h2>
+<ul>
+  <li>No Examinations</li>
+  <li>Four tasks, all worth 25% - No programming is involved but just the planning and development phase.
+    <ul>
+      <li>Group projects
+        <ul>
+          <li>Assignment 1 - Imagine your dream information system.</li>
+          <li>Assignment 2 - Design the system formally.</li>
+          <li>Assignment 3 - Pitching the system.</li>
+        </ul>
+      </li>
+      <li>Individual task throughout the module.
+        <ul>
+          <li>Assignment 4 - Building your professional identity.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Deadlines
+    <ul>
+      <li>Assignment 1 - 4</li>
+      <li>Assignment 2 - 8</li>
+      <li>Assignment 3 - Peer Assessed on 11</li>
+      <li>Assignment 4 - Continuous Assessment</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="structure">Structure</h2>
+<ul>
+  <li>Lectures - All pre-recorded clips</li>
+  <li>Live seminars - Catch-up session once per week on Monday</li>
+  <li>Tutorials - On canvas</li>
+</ul>
+
+:ET

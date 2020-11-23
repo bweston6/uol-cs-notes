@@ -1,0 +1,109 @@
+I"�<h2 id="custom-types">Custom Types</h2>
+<p>There are two ways to make types in Haskell.</p>
+
+<h3 id="the-type-keyword">The <code class="language-plaintext highlighter-rouge">type</code> Keyword</h3>
+<p>The <code class="language-plaintext highlighter-rouge">type</code> keyword gives a new name to an existing type.</p>
+
+<ul>
+  <li>All types must start with capital letters.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">String'</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+
+<span class="n">exclaim</span> <span class="o">::</span> <span class="kt">String'</span> <span class="o">-&gt;</span> <span class="kt">String'</span>
+<span class="n">exclaim</span> <span class="n">str</span> <span class="o">=</span> <span class="n">str</span> <span class="o">+</span> <span class="s">"!"</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">exclaim</span> <span class="s">"hello"</span>
+<span class="o">&gt;</span> <span class="s">"hello!!
+</span></code></pre></div></div>
+
+<p>Type is useful when you want to give a meaningful name to a complex type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">VoteResults</span> <span class="o">=</span> <span class="p">[(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">String</span><span class="p">)]</span>
+
+<span class="n">results</span> <span class="o">::</span> <span class="kt">VoteResults</span>
+</code></pre></div></div>
+
+<h3 id="the-data-keyword">The <code class="language-plaintext highlighter-rouge">data</code> Keyword</h3>
+<p>The <code class="language-plaintext highlighter-rouge">data</code> keyword is used to create an entirely  new type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Bool'</span> <span class="o">=</span> <span class="kt">True</span> <span class="o">|</span> <span class="kt">False</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">|</code> should be read as OR.</li>
+  <li>Each of the values is a constructor.
+    <ul>
+      <li>Each constructor should start with a capital letter.</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="info">To find out more about a type you can use the GHCI <code class="language-plaintext highlighter-rouge">:info</code> command. For more information about a type constructor then you can use the <code class="language-plaintext highlighter-rouge">type</code> command.</p>
+
+<h4 id="example">Example</h4>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Direction</span> <span class="o">=</span> <span class="kt">North</span> <span class="o">|</span> <span class="kt">South</span> <span class="o">|</span> <span class="kt">East</span> <span class="o">|</span> <span class="kt">West</span>
+
+<span class="n">rotate</span> <span class="kt">North</span> <span class="o">=</span> <span class="kt">East</span>
+<span class="n">rotate</span> <span class="kt">East</span> <span class="o">=</span> <span class="kt">South</span>
+<span class="n">rotate</span> <span class="kt">South</span> <span class="o">=</span> <span class="kt">West</span>
+<span class="n">rotate</span> <span class="kt">West</span> <span class="o">=</span> <span class="kt">North</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">rotate</span>
+<span class="o">&gt;</span> <span class="n">rotate</span> <span class="o">::</span> <span class="kt">Direction</span> <span class="o">-&gt;</span> <span class="kt">Direction</span>
+</code></pre></div></div>
+
+<h3 id="type-classes">Type Classes</h3>
+<p>By default, a new data type is not part of any type class. This means that running <code class="language-plaintext highlighter-rouge">rotate</code> will give an error. As is GHCI doesn’t know how to <code class="language-plaintext highlighter-rouge">show</code> it.</p>
+
+<p>We can use the <code class="language-plaintext highlighter-rouge">deriving</code> keyword to fix this:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Direction</span> <span class="o">=</span> <span class="kt">North</span> <span class="o">|</span> <span class="kt">South</span> <span class="o">|</span> <span class="kt">East</span> <span class="o">|</span> <span class="kt">West</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This will automatically put the type into the class <code class="language-plaintext highlighter-rouge">Show</code> and will allow it to print to the prompt.</p>
+
+<p>Hakell can automatically implement the following type classes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Show</code>
+    <ul>
+      <li>Will print out the type as it is in the code.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Read</code>
+    <ul>
+      <li>Will parse the type as it is in the code.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Eq</code>
+    <ul>
+      <li>The natural definition of equality.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Ord</code>
+    <ul>
+      <li>Constructors that come first are smaller.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can add these to the tuple that deriving takes as input. You should include all type classes that make sense for your type so that you can use the functions you want.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">type Marks = (String, [Int])</code></li>
+  <li><code class="language-plaintext highlighter-rouge">data Colour = Red | Blue | Green deriving (Show, Read)</code></li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">toRGB</span> <span class="o">::</span> <span class="kt">Colour</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Float</span><span class="p">,</span> <span class="kt">Float</span><span class="p">,</span> <span class="kt">Float</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Blue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p class="warning">You should note that as this type isn’t in the class <code class="language-plaintext highlighter-rouge">eq</code> then you can’t use guard and equality testing on it.</p>
+  </li>
+</ol>
+:ET

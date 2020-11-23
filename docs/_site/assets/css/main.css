@@ -130,6 +130,138 @@ pre.lineno { color: #8e908c !important; }
 
 .highlight > pre .il { color: #f5871f; }
 
+figure.highlight::before { color: #7285b7 !important; background-color: #002451 !important; }
+
+pre.lineno { color: #7285b7 !important; }
+
+.highlight > pre { color: #fff; background-color: #002451 !important; /* Comment */ /* Error */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Literal.Number.Integer.Long */ }
+
+.highlight > pre .c { color: #7285b7; }
+
+.highlight > pre .err { color: #ff9da4; }
+
+.highlight > pre .k { color: #ebbbff; }
+
+.highlight > pre .l { color: #ffc58f; }
+
+.highlight > pre .n { color: #fff; }
+
+.highlight > pre .o { color: #9ff; }
+
+.highlight > pre .p { color: #fff; }
+
+.highlight > pre .cm { color: #7285b7; }
+
+.highlight > pre .cp { color: #7285b7; }
+
+.highlight > pre .c1 { color: #7285b7; }
+
+.highlight > pre .cs { color: #7285b7; }
+
+.highlight > pre .gd { color: #ff9da4; }
+
+.highlight > pre .ge { font-style: italic; }
+
+.highlight > pre .gh { font-weight: bold; color: #fff; }
+
+.highlight > pre .gi { color: #d1f1a9; }
+
+.highlight > pre .gp { font-weight: bold; color: #7285b7; }
+
+.highlight > pre .gs { font-weight: bold; }
+
+.highlight > pre .gu { font-weight: bold; color: #9ff; }
+
+.highlight > pre .kc { color: #ebbbff; }
+
+.highlight > pre .kd { color: #ebbbff; }
+
+.highlight > pre .kn { color: #9ff; }
+
+.highlight > pre .kp { color: #ebbbff; }
+
+.highlight > pre .kr { color: #ebbbff; }
+
+.highlight > pre .kt { color: #ffeead; }
+
+.highlight > pre .ld { color: #d1f1a9; }
+
+.highlight > pre .m { color: #ffc58f; }
+
+.highlight > pre .s { color: #d1f1a9; }
+
+.highlight > pre .na { color: #bbdaff; }
+
+.highlight > pre .nb { color: #fff; }
+
+.highlight > pre .nc { color: #ffeead; }
+
+.highlight > pre .no { color: #ff9da4; }
+
+.highlight > pre .nd { color: #9ff; }
+
+.highlight > pre .ni { color: #fff; }
+
+.highlight > pre .ne { color: #ff9da4; }
+
+.highlight > pre .nf { color: #bbdaff; }
+
+.highlight > pre .nl { color: #fff; }
+
+.highlight > pre .nn { color: #ffeead; }
+
+.highlight > pre .nx { color: #bbdaff; }
+
+.highlight > pre .py { color: #fff; }
+
+.highlight > pre .nt { color: #9ff; }
+
+.highlight > pre .nv { color: #ff9da4; }
+
+.highlight > pre .ow { color: #9ff; }
+
+.highlight > pre .w { color: #fff; }
+
+.highlight > pre .mf { color: #ffc58f; }
+
+.highlight > pre .mh { color: #ffc58f; }
+
+.highlight > pre .mi { color: #ffc58f; }
+
+.highlight > pre .mo { color: #ffc58f; }
+
+.highlight > pre .sb { color: #d1f1a9; }
+
+.highlight > pre .sc { color: #fff; }
+
+.highlight > pre .sd { color: #7285b7; }
+
+.highlight > pre .s2 { color: #d1f1a9; }
+
+.highlight > pre .se { color: #ffc58f; }
+
+.highlight > pre .sh { color: #d1f1a9; }
+
+.highlight > pre .si { color: #ffc58f; }
+
+.highlight > pre .sx { color: #d1f1a9; }
+
+.highlight > pre .sr { color: #d1f1a9; }
+
+.highlight > pre .s1 { color: #d1f1a9; }
+
+.highlight > pre .ss { color: #d1f1a9; }
+
+.highlight > pre .bp { color: #fff; }
+
+.highlight > pre .vc { color: #ff9da4; }
+
+.highlight > pre .vg { color: #ff9da4; }
+
+.highlight > pre .vi { color: #ff9da4; }
+
+.highlight > pre .il { color: #ffc58f; }
+
 /* stylelint-disable at-rule-name-space-after, at-rule-semicolon-space-before  */
 .clearfix::after { display: table; clear: both; content: ""; }
 

@@ -857,7 +857,183 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
-<h1 id="comp107---seminar-5"><a href="/UoL/comp107/seminars/2020/11/09/1.html">COMP107 - Seminar 5</a></h1>
+<h1 id="comp107---seminar-5"><a href="/UoL/comp107/seminars/2020/11/23/1.html">COMP107 - Seminar 5</a></h1>
+<h2 id="enhanced-er">Enhanced ER</h2>
+<p>EER is an ER model bu with hierarchal relationships.</p>
+
+<p>Entities that are member of one entity type (the <strong>superclass</strong>) may be grouped into meaningful subsets (the <strong>subclasses</strong>).</p>
+
+<ul>
+  <li>Often referred to as an “is-A” relationship.
+    <ul>
+      <li>The two subclasses of TRAINEE is the training courses company: EMPLOYEE and PROFESSIONAL.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Inheritance permits economy of representation.</p>
+
+<h3 id="inheritance">Inheritance</h3>
+<p>An entity that is a member of a subclass inherits all of the attributes of the entity as a member of the superclass.</p>
+
+<ul>
+  <li>A PROFESSIONAL, as a TRAINEE, has a code, name…</li>
+</ul>
+
+<p>Also inherits all relationship types the superclass participates in.</p>
+
+<ul>
+  <li>A PROFESSIONAL, as a TRAINEE, attends editions of courses.</li>
+</ul>
+
+<h3 id="when-to-classify">When to Classify</h3>
+<h4 id="specialisation">Specialisation</h4>
+<p>Defining a set of subclasses of an entity type on the basis of some distinguishing characteristic of the entities in the superclass.</p>
+
+<ul>
+  <li>Certain attributes may apply to some by not all members of an entity type:
+    <ul>
+      <li>We keep Title and Area for professional trainees only:
+        <ul>
+          <li>A subclass is defined to group the entities to which these attributes apply.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Some relationship types may be participating in only by some members of an entity type:
+    <ul>
+      <li>Employee trainees are the only trainees who work for an employer:
+        <ul>
+          <li>A subclass is defined to group the entities participating to this relationship.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="generalisation">Generalisation</h4>
+<p>Defining a superclass from a given set of entity types.</p>
+
+<p>Inverse of specialisation as it involves realising that some entity types have lots of common features.</p>
+
+<ul>
+  <li>The main idea is to suppress difference between entity types.</li>
+  <li>Identify the common features an generalise them into a superclass:
+    <ul>
+      <li>Generalise CAR and TRUCK into a VEHICLE superclass if a common behaviour is identified.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="eer-notation">EER Notation</h3>
+<p>The two processes of generalisation and specialisation may use different notation but we will use the <strong>same notation</strong>.</p>
+
+<p>You can find a summary of the full ER notation in <a href="https://read.kortext.com/reader/pdf/125467/1193">the textbook</a> or in <a href="/UoL/assets/COMP107/Seminars/2020-11-23-1.pdf">this PDF</a>.<br />
+The notation mentioned here is notation <em>e)(i)</em> in the book.</p>
+
+<ul>
+  <li>Subclasses are attached to a circle which is connected with the superclass.</li>
+  <li>The subset symbol $\subset$ indicates direction of a relationship.</li>
+  <li>Generic attributes are attaches to the superclass.</li>
+  <li>Specific attributes are attaches to the subclasses.</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-1.png" alt="EER Notation" /></p>
+
+<h4 id="attribute-defined-subclasses">Attribute-defined Subclasses</h4>
+<p>You can sometimes determine exactly the entities that will become members of each subclass</p>
+
+<ul>
+  <li>For TRAINEE we may specify the condition of membership to be on the basis of the content of an attribute JobType.</li>
+</ul>
+
+<p>This attribute is the defining attribute of teh specialisation</p>
+
+<p class="warning"><strong>All</strong> subclasses in an attribute-defined specialisation must have the membership condition on the same attribute.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-2.png" alt="EER Notation" /></p>
+
+<h4 id="predicate-defined-subclasses">Predicate-defined Subclasses</h4>
+<p>Sometimes the membership condition depends on more than one factor:</p>
+
+<ul>
+  <li>For TRAINEE
+    <ul>
+      <li>For EMPLOYEE subclass we may specify the condition of membership to be: <strong>JobType=”Employee”</strong></li>
+      <li>We might have a subclass YOUNG representing all trainees with Age less than 30 no matter the job: <strong>Age &lt; 30</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>We are therefore establishing membership on the basis of the truth value of a defining predicate.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-3.png" alt="EER Notation" /></p>
+
+<h4 id="levels-of-specialisation">Levels of Specialisation</h4>
+<p>We can have further specialisation of the same entity type using different distinguishing characteristics.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-4.png" alt="EER Notation" /></p>
+
+<p class="info">SALARIES and HOURLY-PAID are both EMPLOYEE and TRAINEE.</p>
+
+<h4 id="disjointness-constraint">Disjointness Constraint</h4>
+<p>Specifies that subclasses of a specialisation are <strong>disjoint</strong>.</p>
+
+<ul>
+  <li>An entity can be a member of <strong>at most one</strong> of the subclasses of the specialisation.</li>
+  <li>Attribute defined specialisation implies disjoint subclasses if the defining attribute is single-valued.</li>
+</ul>
+
+<p>Subclasses that are not disjoint may <strong>overlap</strong>.</p>
+
+<ul>
+  <li>Some entities may be member of more than one subclass of the specialisation.</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-5.png" alt="EER Notation" /></p>
+
+<h4 id="completeness-constraint">Completeness Constraint</h4>
+<p>This is similar to total and practical participation in regular relationships.</p>
+
+<ul>
+  <li>Total Specialisation
+    <ul>
+      <li>Every entity in a superclass must be a member of some subclass in some specialisation
+        <ul>
+          <li>Ever EMPLOYEE must be either HOURLY-PAID or SALARIED.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Partial Specialisation
+    <ul>
+      <li>Allows an entity not to belong to any of the subclasses
+        <ul>
+          <li>TRAINEES who are neither EMPLOYEES nor PROFESSIONAL.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p class="info">Disjointness and completeness are independent.</p>
+
+<p><img src="/UoL/assets/COMP107/Seminars/2020-11-23-1-6.png" alt="EER Notation" />
+<em>This image states that EMPLOYEES must be paid but students don’t have to be PROFESSIONALS or EMPLOYEES.</em></p>
+
+<h3 id="insertion--deletion-rules">Insertion &amp; Deletion Rules</h3>
+<p>When implementing a database coming from an EER conceptualisation, we need to make sure the classification is preserved.</p>
+
+<p>This is especially relevant when the DBMS does not support classes.</p>
+
+<ol>
+  <li>Deleting an entity instance from a super class implies that it is automatically deleted from all of the subclasses it belongs to.</li>
+  <li>Inserting an entity instance in a superclass implies that the entity is inserted in all predicate-defined subclasses for which the entity satisfies the defining predicate.</li>
+  <li>Inserting an entity instance in a superclass of <strong>total specialisation</strong> implies that the entity is inserted in at least one of the subclasses of the specialisation.</li>
+  <li>Inserting an entity in a superclass of <strong>disjoint, total specialisation</strong> implies that the entity is inserted in one and only one of the subclasses of the specialisation.</li>
+</ol>
+
+<h1 id="comp107---seminar-4"><a href="/UoL/comp107/seminars/2020/11/09/1.html">COMP107 - Seminar 4</a></h1>
 <p>Introducing assignment 4.</p>
 <h2 id="activities">Activities</h2>
 <ul>

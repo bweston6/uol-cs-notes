@@ -857,6 +857,278 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
+<h1 id="comp105---lecture-19-2"><a href="/UoL/comp105/lectures/2020/11/23/2.html">COMP105 - Lecture 19-2</a></h1>
+<h2 id="more-complex-custom-types">More Complex Custom Types</h2>
+<h3 id="more-complex-constructors">More Complex Constructors</h3>
+<p>More complex constructors can contain other types.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Point</span> <span class="o">=</span> <span class="kt">Point</span> <span class="kt">Int</span> <span class="kt">Int</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">,</span> <span class="kt">Read</span><span class="p">,</span> <span class="kt">Eq</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is saying that the type <code class="language-plaintext highlighter-rouge">Point</code> has one constructor called <code class="language-plaintext highlighter-rouge">Point</code> and in that constructor there are two <code class="language-plaintext highlighter-rouge">Int</code>. The constructor name has no relation to the type name.</p>
+
+<p class="info">It is common that if your type has only one constructor to call constructor the same name as the type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">1</span> <span class="mi">4</span>
+<span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">1</span> <span class="mi">4</span>
+
+<span class="o">&gt;</span> <span class="n">read</span> <span class="s">"Point 10 10"</span> <span class="o">:</span> <span class="kt">Point</span>
+<span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">10</span> <span class="mi">10</span>
+
+<span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">2</span> <span class="mi">2</span> <span class="o">/=</span> <span class="kt">Point</span> <span class="mi">3</span> <span class="mi">1</span>
+<span class="o">&gt;</span> <span class="kt">True</span>
+</code></pre></div></div>
+
+<p>It is also common to use pattern matching to work with complex constructors:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">shift_up</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Point</span> <span class="n">x</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">shift_up</span> <span class="p">(</span><span class="kt">Point</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">1</span> <span class="mi">2</span>
+
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">shift_up</span>
+<span class="o">&gt;</span> <span class="n">shift_up</span> <span class="o">::</span> <span class="kt">Point</span> <span class="o">-&gt;</span> <span class="kt">Point</span>
+</code></pre></div></div>
+
+<h4 id="example">Example</h4>
+<p>This example completes a computation using almost entirely our own custom types. We are also using pattern matching on our types:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">move</span> <span class="o">::</span> <span class="kt">Point</span> <span class="o">-&gt;</span> <span class="kt">Direction</span> <span class="o">-&gt;</span> <span class="kt">Point</span>
+
+<span class="n">move</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="kt">North</span> <span class="o">=</span> <span class="kt">Point</span> <span class="n">x</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">move</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="kt">South</span> <span class="o">=</span> <span class="kt">Point</span> <span class="n">x</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">move</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="kt">East</span> <span class="o">=</span> <span class="kt">Point</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">y</span>
+<span class="n">move</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="kt">West</span> <span class="o">=</span> <span class="kt">Point</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">move</span> <span class="p">(</span><span class="kt">Point</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">)</span> <span class="kt">North</span>
+<span class="o">&gt;</span> <span class="kt">Point</span> <span class="mi">0</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="more-complex-constructors-continued">More Complex Constructors Continued</h3>
+<p>Types can have multiple constructors each of which can have their own types:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Shape</span> <span class="o">=</span> <span class="n">circle</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rect</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Circle</span> <span class="mf">2.0</span>
+<span class="o">&gt;</span> <span class="kt">Circle</span> <span class="mf">2.0</span> <span class="o">::</span> <span class="kt">Shape</span>
+
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Rect</span> <span class="mf">3.0</span> <span class="mf">4.0</span>
+<span class="o">&gt;</span> <span class="kt">Rect</span> <span class="mf">3.0</span> <span class="mf">4.0</span> <span class="o">::</span> <span class="kt">Shape</span>
+</code></pre></div></div>
+
+<h4 id="example-1">Example</h4>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">area</span> <span class="o">::</span> <span class="kt">Shape</span> <span class="o">-&gt;</span> <span class="kt">Float</span>
+
+<span class="n">area</span> <span class="p">(</span><span class="kt">Circle</span> <span class="n">radius</span><span class="p">)</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">area</span> <span class="p">(</span><span class="kt">Rect</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">area</span> <span class="p">(</span><span class="kt">Circle</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mf">12.56371</span>
+
+<span class="o">&gt;</span> <span class="n">area</span> <span class="p">(</span><span class="kt">Rect</span> <span class="mf">3.0</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mf">12.0</span>
+</code></pre></div></div>
+
+<h3 id="records">Records</h3>
+<p>You can use data types to build custom records:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Person</span> <span class="o">=</span> <span class="kt">Person</span> <span class="kt">String</span> <span class="kt">String</span> <span class="kt">Int</span> <span class="kt">String</span>
+
+<span class="n">get_first_name</span>	<span class="p">(</span><span class="kt">Person</span> <span class="n">x</span> <span class="kr">_</span> <span class="kr">_</span> <span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">get_second_name</span>	<span class="p">(</span><span class="kt">Person</span> <span class="kr">_</span> <span class="n">x</span> <span class="kr">_</span> <span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">get_age</span>		<span class="p">(</span><span class="kt">Person</span> <span class="kr">_</span> <span class="kr">_</span> <span class="n">x</span> <span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">get_nationality</span>	<span class="p">(</span><span class="kt">Person</span> <span class="kr">_</span> <span class="kr">_</span> <span class="kr">_</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">get_age</span> <span class="p">(</span><span class="kt">Person</span> <span class="s">"joe"</span> <span class="s">"bloggs"</span> <span class="mi">25</span> <span class="s">"UK"</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mi">25</span>
+</code></pre></div></div>
+
+<h4 id="record-syntax">Record Syntax</h4>
+<p>To make things easier, Haskell provides a record syntax:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Person</span> <span class="o">=</span> <span class="kt">Person</span> <span class="p">{</span>	<span class="n">firstName</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+			<span class="n">secondName</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+			<span class="n">age</span> <span class="o">::</span> <span class="kt">Int</span><span class="p">,</span>
+			<span class="kt">Nationality</span> <span class="o">::</span> <span class="kt">String</span><span class="p">}</span>
+			<span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kt">Person</span> <span class="s">"joe"</span> <span class="s">"bloggs"</span> <span class="mi">25</span> <span class="s">"UK"</span>
+<span class="o">&gt;</span> <span class="kt">Person</span> <span class="p">{</span><span class="n">firstName</span> <span class="o">=</span> <span class="s">"joe"</span><span class="p">,</span> <span class="n">secondName</span> <span class="o">=</span> <span class="s">"bloggs"</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">nationality</span> <span class="o">=</span> <span class="s">"UK"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is similar to the previous example where we made our own record type.</p>
+
+<p>Records can be created out of order, whereas normal data types cannot.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Example</span> <span class="o">=</span> <span class="kt">Example</span> <span class="p">{</span><span class="n">a</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+						<span class="n">b</span> <span class="o">::</span> <span class="kt">Int</span><span class="p">}</span>
+						<span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kt">Example</span> <span class="s">"one"</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="kt">Example</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="s">"one"</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="o">&gt;</span> <span class="kt">Example</span> <span class="p">{</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"zero"</span><span class="p">}</span>
+<span class="o">&gt;</span> <span class="kt">Example</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="s">"zero"</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you create an out of order function then you should put them in <code class="language-plaintext highlighter-rouge">{}</code> with their labels so that Haskell  can identify them.</p>
+
+<h3 id="example-2">Example</h3>
+<p>This example takes a co-ordinate <code class="language-plaintext highlighter-rouge">Point</code> to locate the shape in 2D space.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">AdvShape</span> <span class="o">=</span> <span class="kt">AdvCircle</span> <span class="kt">Point</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">AdvRect</span> <span class="kt">Point</span> <span class="kt">Point</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+<span class="n">area'</span> <span class="p">(</span><span class="kt">AdvCircle</span> <span class="kr">_</span> <span class="n">radius</span><span class="p">)</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">area'</span> <span class="p">(</span><span class="kt">AdvRect</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x1</span> <span class="n">y1</span><span class="p">)</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x2</span> <span class="n">y2</span><span class="p">))</span> <span class="o">=</span>
+	<span class="kr">let</span>
+		<span class="n">w</span> <span class="o">=</span> <span class="n">abs</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span>
+		<span class="n">h</span> <span class="o">=</span> <span class="n">abs</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span>
+	<span class="kr">in</span>
+		<span class="n">fromIntergral</span> <span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">Point</span> <span class="o">=</span> <span class="kt">Point</span> <span class="kt">Int</span> <span class="kt">Int</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">,</span> <span class="kt">Read</span><span class="p">,</span> <span class="kt">Eq</span><span class="p">)</span>
+ <span class="n">distance</span> <span class="o">::</span> <span class="kt">Point</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+ <span class="n">distance</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">HTTPResponse</span> 	<span class="o">=</span> <span class="kt">Data</span> <span class="kt">Int</span> <span class="kt">String</span> 
+             <span class="o">|</span> <span class="kt">Error</span> <span class="kt">String</span>
+             <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">,</span> <span class="kt">Read</span><span class="p">,</span> <span class="kt">Eq</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">Student</span> <span class="o">=</span> <span class="kt">Student</span> <span class="p">{</span><span class="n">name</span> <span class="o">::</span> <span class="kt">String</span>
+             <span class="n">address</span> <span class="o">::</span> <span class="kt">String</span>
+             <span class="n">marks</span> <span class="o">::</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
+             <span class="p">}</span>
+             <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">,</span> <span class="kt">Read</span><span class="p">,</span> <span class="kt">Eq</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-19-1"><a href="/UoL/comp105/lectures/2020/11/23/1.html">COMP105 - Lecture 19-1</a></h1>
+<h2 id="custom-types">Custom Types</h2>
+<p>There are two ways to make types in Haskell.</p>
+
+<h3 id="the-type-keyword">The <code class="language-plaintext highlighter-rouge">type</code> Keyword</h3>
+<p>The <code class="language-plaintext highlighter-rouge">type</code> keyword gives a new name to an existing type.</p>
+
+<ul>
+  <li>All types must start with capital letters.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">String'</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+
+<span class="n">exclaim</span> <span class="o">::</span> <span class="kt">String'</span> <span class="o">-&gt;</span> <span class="kt">String'</span>
+<span class="n">exclaim</span> <span class="n">str</span> <span class="o">=</span> <span class="n">str</span> <span class="o">+</span> <span class="s">"!"</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">exclaim</span> <span class="s">"hello"</span>
+<span class="o">&gt;</span> <span class="s">"hello!!
+</span></code></pre></div></div>
+
+<p>Type is useful when you want to give a meaningful name to a complex type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">VoteResults</span> <span class="o">=</span> <span class="p">[(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">String</span><span class="p">)]</span>
+
+<span class="n">results</span> <span class="o">::</span> <span class="kt">VoteResults</span>
+</code></pre></div></div>
+
+<h3 id="the-data-keyword">The <code class="language-plaintext highlighter-rouge">data</code> Keyword</h3>
+<p>The <code class="language-plaintext highlighter-rouge">data</code> keyword is used to create an entirely  new type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Bool'</span> <span class="o">=</span> <span class="kt">True</span> <span class="o">|</span> <span class="kt">False</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">|</code> should be read as OR.</li>
+  <li>Each of the values is a constructor.
+    <ul>
+      <li>Each constructor should start with a capital letter.</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="info">To find out more about a type you can use the GHCI <code class="language-plaintext highlighter-rouge">:info</code> command. For more information about a type constructor then you can use the <code class="language-plaintext highlighter-rouge">type</code> command.</p>
+
+<h4 id="example">Example</h4>
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Direction</span> <span class="o">=</span> <span class="kt">North</span> <span class="o">|</span> <span class="kt">South</span> <span class="o">|</span> <span class="kt">East</span> <span class="o">|</span> <span class="kt">West</span>
+
+<span class="n">rotate</span> <span class="kt">North</span> <span class="o">=</span> <span class="kt">East</span>
+<span class="n">rotate</span> <span class="kt">East</span> <span class="o">=</span> <span class="kt">South</span>
+<span class="n">rotate</span> <span class="kt">South</span> <span class="o">=</span> <span class="kt">West</span>
+<span class="n">rotate</span> <span class="kt">West</span> <span class="o">=</span> <span class="kt">North</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">rotate</span>
+<span class="o">&gt;</span> <span class="n">rotate</span> <span class="o">::</span> <span class="kt">Direction</span> <span class="o">-&gt;</span> <span class="kt">Direction</span>
+</code></pre></div></div>
+
+<h3 id="type-classes">Type Classes</h3>
+<p>By default, a new data type is not part of any type class. This means that running <code class="language-plaintext highlighter-rouge">rotate</code> will give an error. As is GHCI doesn’t know how to <code class="language-plaintext highlighter-rouge">show</code> it.</p>
+
+<p>We can use the <code class="language-plaintext highlighter-rouge">deriving</code> keyword to fix this:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Direction</span> <span class="o">=</span> <span class="kt">North</span> <span class="o">|</span> <span class="kt">South</span> <span class="o">|</span> <span class="kt">East</span> <span class="o">|</span> <span class="kt">West</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This will automatically put the type into the class <code class="language-plaintext highlighter-rouge">Show</code> and will allow it to print to the prompt.</p>
+
+<p>Hakell can automatically implement the following type classes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Show</code>
+    <ul>
+      <li>Will print out the type as it is in the code.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Read</code>
+    <ul>
+      <li>Will parse the type as it is in the code.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Eq</code>
+    <ul>
+      <li>The natural definition of equality.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Ord</code>
+    <ul>
+      <li>Constructors that come first are smaller.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can add these to the tuple that deriving takes as input. You should include all type classes that make sense for your type so that you can use the functions you want.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">type Marks = (String, [Int])</code></li>
+  <li><code class="language-plaintext highlighter-rouge">data Colour = Red | Blue | Green deriving (Show, Read)</code></li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">toRGB</span> <span class="o">::</span> <span class="kt">Colour</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Float</span><span class="p">,</span> <span class="kt">Float</span><span class="p">,</span> <span class="kt">Float</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+ <span class="n">toRGB</span> <span class="kt">Blue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p class="warning">You should note that as this type isn’t in the class <code class="language-plaintext highlighter-rouge">eq</code> then you can’t use guard and equality testing on it.</p>
+  </li>
+</ol>
+
 <h1 id="comp105---lecture-18-2"><a href="/UoL/comp105/lectures/2020/11/19/2.html">COMP105 - Lecture 18-2</a></h1>
 <h2 id="first-past-the-post-example">First Past the Post Example</h2>
 <p>This example covers a first past the post election. This means whoever gets the most votes wins. We are aiming to make a function that performs this task:</p>

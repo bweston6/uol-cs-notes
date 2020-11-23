@@ -1,4 +1,4 @@
-I"u	<h2 id="designing-an-er-schema">Designing an ER Schema</h2>
+I"Ÿ	<h2 id="designing-an-er-schema">Designing an ER Schema</h2>
 <p>You should identify basic components:</p>
 
 <ul>
@@ -13,7 +13,7 @@
 
 <p>There are also weak entities such as tables or chairs. These simple objects donâ€™t need individual identification and should be a child of the strong entity.</p>
 
-<p class="info">The <a href=".pdf">lecture slides</a> have a summary and examples of the ER diagram scheme.</p>
+<p class="info">The <a href="/UoL/assets/COMP107/Tutorials/2020-11-20-1.pdf">lecture slides</a> have a summary and examples of the ER diagram scheme.</p>
 
 <h2 id="evolutionary-data-modelling">Evolutionary Data Modelling</h2>
 

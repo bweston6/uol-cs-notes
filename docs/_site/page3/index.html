@@ -842,6 +842,132 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 6</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Power Sets
+The power set $\text{Pow}{A}$ of a set $A$ is the set of all possible subsets. This includes the null set $\emptyset$ and the full set.
+
+Each set in the power set follows this definition:
+
+\[\{x\vert x\subseteq A\}\]
+
+Example
+The power set $\text{Pow}{A}$ of a set $A={1,2}$ is:
+
+\[\{\emptyset,\{1\},\{2\},\{1,2\}\}\]
+
+For any set $A$:
+...</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/16/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold Continued
+A fold output can be a different type to the input list.
+
+to_csv list = foldr (\x acc -&gt; show x ++ "," ++ acc)  "" list
+
+&gt; to_csv [1,2,3,4]
+&gt; "1,2,3,4,"
+
+
+By using foldr you cannot get the desired outcome as it applies the same rule to every item in the list.
+
+foldr1
+The function foldr1 uses the final value of the list to...</div><p><a href="/UoL/comp105/lectures/2020/11/16/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold
+Some functions take lists and turn them into a single value. This type of computation is called a fold. The things that you can change are:
+
+
+  The base case.
+  The operation applied to the list.
+
+
+foldr
+
+foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+
+foldr' _ init [] = init
+foldr' f init (x:xs) = f x (foldr' f init xs)
+
+&gt; fold...</div><p><a href="/UoL/comp105/lectures/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/13/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 5</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Theorem of Friends and Strangers
+Show that in any group of six people there are either three who all know each other or three complete strangers.
+
+
+
+On this graph blue is people who know each other and red is people who don’t. From the graph you can see that only two people will know each other.
+
+
+
+What the question is saying is that no matter h...</div><p><a href="/UoL/comp109/lectures/2020/11/13/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/13/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Extended Pigeonhole Principle
+Consider a function $f:A\rightarrow B$ where $A$ and $B$ are finite sets and $\vert A\vert &gt;k\vert B\vert $ for some natural number $k$. Then, there is a value of $f$ which occurs at least $k+1$ times.
+
+graph TD
+subgraph A
+a
+b
+c
+d
+e
+f
+g
+end 
+subgraph B
+1
+2
+3
+end
+a --&gt; 1
+b --&gt; 2
+c --&gt; 3
+d --&gt; 1
+e --&gt...</div><p><a href="/UoL/comp109/lectures/2020/11/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
           <header><a href="/UoL/comp109/lectures/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 3</h2></a></header>
           <div class="item__description"><div class="article__content" itemprop="description articleBody">Cardinality of Finite Sets and Functions
 The cardinality of a finite set $S$ is the number of elements in $S$.
@@ -966,114 +1092,8 @@ Given an assignment $I$ we can computer the truth value of compound formulas ste
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
             </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Logic</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">for many purposes, rules are not expressive enough. for example:
-
-
-  You cannot express that something is not the case:
-  \(\text{not FrenchFootballClub(LiverpoolFC)}\)
-  You cannot connect sentences using or:
-  \(\text{Today, I will do the AI exercise or I will play football.}\)
-
-
-A proposition is a statement that can be true or false, but not ...</div><p><a href="/UoL/comp111/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">filter
-filterkeeps only the elements for which f returns True.
-
-filter' :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
-filter' _ [] = []
-filter' f (x:xs)
-	| f x 		= x : rest
-	| otherwise	= rest
-	where rest 	= filter' f xs
-	
-filter' even [1..10]
-&gt; [2,4,6,8,10]
-
-
-In comparison to map which applies a function to each element in a list. filter will apply ...</div><p><a href="/UoL/comp105/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">map
-map applies a funciton f to every element in a list.
-
-map' :: (a -&gt; b) -&gt; [a] -&gt; [b]
-map' _ [] = []
-map' f (x:xs) = f x : map' f xs
-
-
-This saves you from writing out the generic code for applying a function to a list. This allows you to implement the standard functions instead of having to make your own.
-
-map even [1..5]
-&gt; [False...</div><p><a href="/UoL/comp105/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/11/4.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Injective (one-to-one) Functions
-Let $f:A\rightarrow B$ be a function. We call $f$ and injective, or one-to-one, function if:
-
-\[f(a_1)=f(a_2)\Rightarrow a_1 = a_2 \text{ for all } a_1,a_2\in A\]
-
-This is logically equivalent to $a_1\neq a_2 \Rightarrow f(a_1) \neq f(a_2)$ and so injective functions never repeat values. In other words:
-
-Differen...</div><p><a href="/UoL/comp109/lectures/2020/11/11/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/11/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Basics and Definitions
-A function is a method that takes an input value and gives an output value:
-
-graph LR
-x --&gt;\vert Input\vert  F[Function Machine]
-F --&gt;\vert Output\vert  fx
-
-
-A function from a set $A$ to a set $B$ is an assignment of exactly one element of $B$ to each element of $A$.
-
-We write $f(a)=b$ if $b$ is the unique element of...</div><p><a href="/UoL/comp109/lectures/2020/11/11/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>105 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page2">
             <i class="fas fa-angle-left"></i>
