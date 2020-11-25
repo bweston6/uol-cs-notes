@@ -1,0 +1,99 @@
+I"p<p>Logic based knowledge representation and reasoning methods mostly assume that knowledge is certain. Often, this is not the case (or it is impossible to list all assumptions that make it certain):</p>
+
+<ul>
+  <li>When going to the airport by car, how early should I start? 45 minutes should be enough from Liverpool to Manchester Airport, but only under the assumption that there are no accidents, no lane closures, that my car does not break down, and so on.</li>
+  <li>
+    <p>A dental patient has a toothache. Does the patient have a cavity? You might say:</p>
+
+\[\text{Toothache}(x)\rightarrow\text{Cavity}(x)\]
+
+    <p>This is not right as there are many factors that play into this and not just the fact that they have a toothache.</p>
+  </li>
+</ul>
+
+<h2 id="uncertainty">Uncertainty</h2>
+<p>Trying to use exact rules to cope with a domain like medical diagnosis or traffic fails for three main reasons:</p>
+
+<ul>
+  <li>Laziness
+    <ul>
+      <li>It is too much work to list an exception-less set of rules.</li>
+    </ul>
+  </li>
+  <li>Theoretical ignorance
+    <ul>
+      <li>Medical science has, in many cases, no strict laws connecting symptoms with diseases.</li>
+    </ul>
+  </li>
+  <li>Practical ignorance
+    <ul>
+      <li>Even if we have strict laws, we might be uncertain about a particular patient because not all the necessary tests have been or can be run.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="probability-in-ai">Probability in AI</h2>
+
+<p>Probability provides a way of summarising the uncertainty that comes form our laziness and ignorance.</p>
+
+<p>We might not know for sure what disease a particular patient has, but we believe that there is an 80% chance that a patient with toothache has a cavity. The 80% summarises those cases in which all the factors needed for a cavity to cause a toothache are present and other cases in which the patient has both toothache and cavity but the two are unconnected.</p>
+
+<p>The missing 20% summarises all the other possible causes we are too lazy or ignorant to find.</p>
+
+<h2 id="discrete-probability">Discrete Probability</h2>
+<p>We represent random experiments using discrete probability spaces $(S,P)$ consisting of:</p>
+
+<ul>
+  <li>The sample space $S$ of all elementary events $x\in S$. Members of $S$ are also called outcomes of the experiment.</li>
+  <li>A probability distribution $P$ assigning a real number $P(x)$ to every elementary event $x\in S$ such that:
+    <ul>
+      <li>For every $x\in S: 0\leq P(x) \leq 1$</li>
+      <li>And $\sum_{x\in S}P(x)=1$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Recall that if $S$ consists of $x_1,\ldots,x_n$, then:</p>
+
+\[\sum_{x\in S}P(x)=P(x_1)+\ldots+P(x_n)\]
+
+<h3 id="example---flipping-a-fair-coin">Example - Flipping a Fair Coin</h3>
+<p>Consider the random experiment of flipping a coin. The then corresponding probability space $(S,P)$ is given by:</p>
+
+<ul>
+  <li>$S=\{H,T\}$</li>
+  <li>$P(H)=P(T)=\frac{1}{2}$</li>
+</ul>
+
+<p>Consider the random experiment of flipping a count two times, one after the other. Then the corresponding probability space $(S,P)$ is:</p>
+
+<ul>
+  <li>$S=\{HH,HT,TH,TT\}$</li>
+  <li>$P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}$</li>
+</ul>
+
+<h3 id="example---rolling-a-fair-die">Example - Rolling a fair die</h3>
+<p>Consider the random experiment of rolling a die. Then the corresponding probability space $(S, P)$ is given by:</p>
+
+<ul>
+  <li>S = {1, 2, 3, 4, 5, 6};</li>
+  <li>For every $x ∈ S: P(x) = \frac{1}{6}$</li>
+</ul>
+
+<p>Consider the random experiment of rolling a die $n$ times. Then the corresponding probability space $(S, P)$ is given as follows:</p>
+
+<ul>
+  <li>$S$ is the set of sequences of length $n$ over the alphabet $\{1,\ldots, 6\}$
+    <ul>
+      <li>Sometimes denoted $\{1,\ldots, 6\}^n$</li>
+    </ul>
+  </li>
+  <li>$P(x) = \frac{1}{6^n}$ for every elementary event $x$, since $S$ has $6^n$ elements.</li>
+</ul>
+
+<h2 id="uniform-probability-distributions">Uniform Probability Distributions</h2>
+<p>A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $\vert S\vert $ of outcomes in $S$:</p>
+
+\[P(x)=\frac{1}{\vert S\vert }\]
+
+:ET

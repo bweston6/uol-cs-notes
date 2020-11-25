@@ -1,0 +1,3296 @@
+I"A�
+<h1 id="comp111---probabilistic-inference"><a href="/UoL/comp111/lectures/2020/11/25/2.html">COMP111 - Probabilistic Inference</a></h1>
+<h2 id="marginalisation">Marginalisation</h2>
+<p>Given an joint distribution $\mathbf{P}(F_1,\ldots,F_k)$, one can compute the <strong>marginal</strong> probabilities of the random variables $F_i$ by summing out the remaining variables.</p>
+
+<p>For example:</p>
+
+<p>[P(\text{Cavity}=1)=0.108+0.012+0.072+0.008=0.2]</p>
+
+<p>is the sum of the entries in the first row of:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=1$</td>
+      <td style="text-align: center">0.108</td>
+      <td style="text-align: center">0.012</td>
+      <td style="text-align: center">0.072</td>
+      <td style="text-align: center">0.008</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=0$</td>
+      <td style="text-align: center">0.016</td>
+      <td style="text-align: center">0.064</td>
+      <td style="text-align: center">0.144</td>
+      <td style="text-align: center">0.576</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conditional-distributions">Conditional Distributions</h2>
+<p>We can also computer conditional distributions from the full joint distributions.</p>
+
+<ul>
+  <li>We use the $\mathbf{P}$ notion for conditional distributions.</li>
+  <li>$\mathbf{P}(F\ \vert\  G)$ gives the <strong>conditional distribution of $F$ given $G$</strong> given by the probabilities $P(F=r\ \vert\  G=s)$ for all values $r$ and $s$.</li>
+  <li>Using $\mathbf{P}$ notation, the general version of the product rule is as follows:</li>
+</ul>
+
+<p>[\mathbf{P}(F,G)=\mathbf{P}(F\ \vert\ G)\mathbf{P}(G)]</p>
+
+<p>This stands for the list of equations:</p>
+
+<p>[\begin{aligned}
+P(F=r_1,G=s_1)&amp;=P(F=r_1\ \vert\ G=s_1)P(G=s_1)<br />
+P(F=r_2,G=s_2)&amp;=P(F=r_2\ \vert\ G=s_2)P(G=s_2)<br />
+\ldots&amp;=\ldots
+\end{aligned}]</p>
+
+<h2 id="probabilistic-inference">Probabilistic Inference</h2>
+<p>Probabilistic inference can be characterised as the computation of posterior probabilities:</p>
+
+<p>[\mathbf{P}(Q\ \vert\ E_1=e_1,\ldots,E_n=e_n)]</p>
+
+<p>for query variable $Q$ given observed evidence $e_1,\ldots,e_n$.</p>
+
+<p>In principle, we can use the full joint distribution to do this.</p>
+
+<h3 id="example---mathbfptextcavity-vert-texttoothache1">Example - $\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)$</h3>
+<p>We want to compute the conditional probability distribution for $\text{Cavity}$ given the observation or evidence of $\text{Toothache}=1$.</p>
+
+<p>Thus we want to compute:</p>
+
+<ul>
+  <li>$P(\text{Cavity}=1\ \vert\ \text{Toothache}=1)$</li>
+  <li>$P(\text{Cavity}=0\ \vert\ \text{Toothache}=1)$</li>
+</ul>
+
+<p>We can easily obtain this using the table:</p>
+
+<p>[\begin{aligned}
+P(\text{Cavity}=1\ \vert\ \text{Toothache}=1)&amp;=\frac{P(\text{Cavity}=1, \text{Toothache}=1)}{P(\text{Toothache}=1)}<br />
+&amp;=\frac{0.12}{0.2}=0.6<br />
+\end{aligned}]</p>
+
+<p>[\begin{aligned}
+P(\text{Cavity}=0\ \vert\ \text{Toothache}=1)&amp;=\frac{P(\text{Cavity}=0, \text{Toothache}=1)}{P(\text{Toothache}=1)}<br />
+&amp;=\frac{0.08}{0.2}=0.4
+\end{aligned}]</p>
+
+<p>The denominator 0.2 can be viewed as a <strong>normalisation constant</strong> $\frac{1}{\alpha}=5$ for the distribution $\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)$, ensuring that is adds up to 1.</p>
+
+<p>This means that instead of completing the computation above we can consider this:</p>
+
+<p>[\begin{aligned}
+\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)&amp;=\alpha\mathbf{P}(\text{Cavity, Toothache}=1)<br />
+&amp;= \alpha(0.12,0.08)<br />
+&amp;=5(0.12,0.08)<br />
+&amp;= (0.6,0.4)
+\end{aligned}]</p>
+
+<p class="info">In this case $\alpha$ is defined as a value that makes the sum of the vector 1. In this case it is 5.</p>
+
+<h3 id="combinatorial-explosion">Combinatorial Explosion</h3>
+<p>This approach does not scale well: for a domain described by $n$ random variable taking $k$ distinct values each we face tow problems:</p>
+
+<ul>
+  <li>Writing up the full joint distribution requires $k^n-1$ entries.
+    <ul>
+      <li>The $-1$ in this case is as the full joint distribution adds to 1. To optimise we can not calculate the last value and just take the difference of the existing values and one.</li>
+      <li>There are too many calculations</li>
+    </ul>
+  </li>
+  <li>How to we find the numbers (probabilities) for the entries?
+    <ul>
+      <li>We don’t have enough raw data.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For these reasons, the full joint distribution in tabular form in not a practical tool for building reasoning systems.</p>
+
+<h1 id="comp111---joint-probability-distribution"><a href="/UoL/comp111/lectures/2020/11/25/1.html">COMP111 - Joint Probability Distribution</a></h1>
+<h2 id="examples-of-probabilistic-models">Examples of Probabilistic Models</h2>
+<p>To model a domain using probability theory, one first introduces the relevant random variable. We have seen two basic examples:</p>
+
+<ul>
+  <li>
+    <p>The weather domain could be modelled using the single random variable $\text{Weather}$ with values:</p>
+
+\[(\text{sunny},\text{rain},\text{cloudy},\text{snow})\]
+  </li>
+  <li>
+    <p>The dentist domain could be modelled using the random variables $\text{Toothache, Cavity}$ and $\text{Catch}$ with values 0 and 1 for True or False. We might be interested in:</p>
+  </li>
+</ul>
+
+<p>[P(\text{Cavity}=1\vert\text{Toothache}=1,\text{Catch}=1)]</p>
+
+<h2 id="probability-distribution-of-a-single-random-variable">Probability Distribution of a Single Random Variable</h2>
+<p>The probability distribution for a random variable gives the probabilities of all the possible values of the random variable.</p>
+
+<p>For example let $\text{Weather}$ be a random variable with values:</p>
+
+<p>[(\text{sunny},\text{rain},\text{cloudy},\text{snow})]</p>
+
+<p>such that its probability distribution is given by:</p>
+
+<ul>
+  <li>$P(\text{Weather}=\text{sunny})=0.7$</li>
+  <li>$P(\text{Weather}=\text{rain})=0.2$</li>
+  <li>$P(\text{Weather}=\text{cloudy})=0.08$</li>
+  <li>$P(\text{Weather}=\text{snow})=0.02$</li>
+</ul>
+
+<p>Assume the order of the values is fixed. The we write instead:</p>
+
+<p>[\mathbf{P}(\text{Weather})=(0.7,0.2,0.008,0.02)]</p>
+
+<p>Where the bold $\mathbf{P}$ indicates that the result is a vector of number representing the individual values of $\text{Weather}$.</p>
+
+<p class="info">We can write the values as a vector in the case that the properties are ordered.</p>
+
+<h2 id="joint-probability-distribution">Joint Probability Distribution</h2>
+<p>This is the case when you are using many random variables.</p>
+
+<p>Let $F_1,\ldots,F_k$ be random variable. A joint probability distribution for:</p>
+
+<p>[F_1,\ldots,F_k]</p>
+
+<p>gives the probabilities:</p>
+
+<p>[P(F_1=r_1,\ldots,F_k=r_k)]</p>
+
+<p>for the event:</p>
+
+<p>[(F_1=r_1)\text{ and } \cdots \text{ and }(F_k=r_k)]</p>
+
+<p>that $F_1$ takes value $r_1$, $F_2$ take value $r_2$, and so on up to $k$ , for all possible values $r_1,\ldots,r_k$.</p>
+
+<p>The joint probability distribution is denotes $\mathbf{P}(F_1,\ldots,K_k)$.</p>
+
+<h3 id="example">Example</h3>
+<p>A possible joint probabillity distribution $\mathbf{P}(\text{Weather, Cavity})$ for the random varables $\text{Weather}$ and $\text{Cavity}$ is given by the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$\text{Weather}=$</th>
+      <th style="text-align: center">$\text{sunny}$</th>
+      <th style="text-align: center">$\text{rain}$</th>
+      <th style="text-align: center">$\text{cloudy}$</th>
+      <th style="text-align: center">$\text{snow}$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=1$</td>
+      <td style="text-align: center">0.144</td>
+      <td style="text-align: center">0.02</td>
+      <td style="text-align: center">0.016</td>
+      <td style="text-align: center">0.02</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=0$</td>
+      <td style="text-align: center">0.576</td>
+      <td style="text-align: center">0.08</td>
+      <td style="text-align: center">0.064</td>
+      <td style="text-align: center">0.08</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="warning">For this to be plausible we should know that the two events are independent of each-other.</p>
+
+<h3 id="full-joint-probability-distribution">Full Joint Probability Distribution</h3>
+
+<p>A full joint probability distribution:</p>
+
+<p>[\mathbf{P}(F_1,\ldots,K_k)]</p>
+
+<p>is a joint probability distribution for all relavent random variables $F_1,\ldots,F_k$ for a domain of interest.</p>
+
+<p>Every probability quesetion about a domain can be answered by tehf ull joint distributin because the probability of every evenint is a sum of the probabilities:</p>
+
+<p>[P(F_1=r_1,\ldots,F_k=r_k)]</p>
+
+<p class="info">The $r_1,\ldots,r_k$ are often called data points or sample points.</p>
+
+<h4 id="example-1">Example</h4>
+<p>Assume the random variables $\text{Toothache, Cavity, Catch}$ fully describe a visit to a dentist.</p>
+
+<p>The a full joint probability distribution is gien by the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=1$</td>
+      <td style="text-align: center">0.108</td>
+      <td style="text-align: center">0.012</td>
+      <td style="text-align: center">0.072</td>
+      <td style="text-align: center">0.008</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=0$</td>
+      <td style="text-align: center">0.016</td>
+      <td style="text-align: center">0.064</td>
+      <td style="text-align: center">0.144</td>
+      <td style="text-align: center">0.576</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="comp111---introduction-of-random-variables"><a href="/UoL/comp111/lectures/2020/11/24/1.html">COMP111 - Introduction of Random Variables</a></h1>
+<p>Let $(S,P)$ be a probability space. A <strong>random variable</strong> $F$ is a function $F:S\rightarrow\Bbb{R}$ that assigns to every $s\in S$ a single number $F(s)$.</p>
+
+<p class="info">In all these examples $S$ is the sample space and $P$ is the probability space.</p>
+
+<ul>
+  <li>Neither a variable nor random.
+    <ul>
+      <li>As it is the product of a function.</li>
+    </ul>
+  </li>
+  <li>English translation of <strong>variable casuale</strong>.</li>
+</ul>
+
+<p>We still assume that the sample space is finite. Thus, given a random variable $F$ from some sample space $S$, the set of number $r$ that values of $F$ is finite as well.</p>
+
+<p>The event that $F$ takes the value $r$, that is $\{s\vert F(s)=r\}$, is denoted $(F=r)$. the probability $(F=r)$ of the even $(F=r)$ is then:</p>
+
+<p>[P(F=r)=P(\{s\vert F(s)=r\})]</p>
+
+<h2 id="example-1">Example 1</h2>
+<p>Let</p>
+
+<p>[S=\{\text{car, train, plane, ship}\}]</p>
+
+<p>Then the function $F:S\rightarrow \Bbb{R}$ defined by:</p>
+
+<p>[F(\text{car})=1,\ F(\text{train})=1,\ F(\text{plane})=2,\ F(\text{ship})=2]</p>
+
+<p>is a random variable.</p>
+
+<p>$(F=1)$ denotes the event $\{s\in S \vert F(s) =1\} = \{\text{car, train}\}$.</p>
+
+<p>Defining a uniform probability space $(S,P)$ by setting:</p>
+
+<p>[P(\text{car})=P(\text{train})=P(\text{plane})=P(\text{ship})=\frac{1}{4}]</p>
+
+<p class="info">This means that we are setting each event to have the same probability.</p>
+
+<p>Then $P(F=1)=P(\{s\in S \vert F(s)=1\})=P(\{\text{car, train}\})=\frac{1}{2}$.</p>
+
+<h2 id="example-2">Example 2</h2>
+<p>Suppose that I roll two dice. so the same sample space is:</p>
+
+<p>[S=\{1,2,3,4,5,6\}^2]</p>
+
+<p>and $P(ab)=\frac{1}{36}$ for every $ab\in S$.</p>
+
+<p>Let</p>
+
+<p>[F(ab) = a+b]</p>
+
+<p class="info">This means that we are investigating the sum of the two dice.</p>
+
+<p>$F$ is a random variable. This variable maps the two values $ab$ to the sum $a+b$.</p>
+
+<p>The probability that $F=r$ for a number $r$ (say, 12) is given by:</p>
+
+<p>[P(F=r)=P(\{ab\vert F(ab)=r\})]</p>
+
+<p>With this example:</p>
+
+<p>[P(F=12)=P(\{ab\vert F(ab)=12\})=P(66)=\frac{1}{36}]</p>
+
+<h2 id="random-variables">Random Variables</h2>
+<p>when defining a probability distribution $P$ for a random variable $F$, we often do not specify its sample space $S$ by directly assign a probability to the event that $F$ takes a certain value. Thus we directly define the probability:</p>
+
+<p>[P(F=r)]</p>
+
+<p>of the event that $F$ has the value $r$. Observe:</p>
+
+<ul>
+  <li>$0\leq P(F=r)\leq 1$</li>
+  <li>$\sum_{r\in \Bbb{R}}P(F=r)=1$</li>
+</ul>
+
+<p>Thus, the events $(F=r)$ behave in the same way as outcomes of a random experiment.</p>
+
+<h2 id="notation-and-rules">Notation and Rules</h2>
+<h3 id="negation">Negation</h3>
+<p>We write $\neg(F=r)$ for the event $\{s\vert F(s)\neq r\}$. For example, assume the random variable $\text{Die}$ can take values $\{1,2,3,4,5,6\}$ and:</p>
+
+<p>[P(\text{Die}=n)=\frac{1}{6}]</p>
+
+<p>for all $n\in \{1,2,3,4,5,6\}$ (thus we have a fair die). The $\neg(\text{Die}=1)$ denotes the event:</p>
+
+<p>[(\text{Die}=2)\vee (\text{Die}=3)\vee (\text{Die}=4)\vee (\text{Die}=5)\vee (\text{Die}=6)]</p>
+
+<p>We have the following complementation rule:</p>
+
+<p>[P(\neg(F=r))=1-P(F=r)]</p>
+
+<h3 id="intersection">Intersection</h3>
+<p>We can write:</p>
+
+<p>[(F_1=r_1,F_2=r_2)]</p>
+
+<p>for $(F_1=r_1)$ and $(F_2=r_2)$. This takes two random variables</p>
+
+<h3 id="union">Union</h3>
+<p>Two represent the function OR we can write:</p>
+
+<p>[(F_1=r_1)\vee(F_2=r_2)]</p>
+
+<p>From this we can get the law from unions:</p>
+
+<p>[\begin{aligned}
+P((F_1=r_1)\vee (F_2=r_2)) =&amp; P(F_1 = r_1)+P(F_2 = r_2)<br />
+&amp;-P(F_1=r_1,F_2=r_2)
+\end{aligned}]</p>
+
+<h3 id="conditional-probability">Conditional Probability</h3>
+<p>if $P(F_2=r_2)\neq0$ then:</p>
+
+<p>[P(F_1=r_1\vert F_2=r_2)=\frac{P(F_1=r_1,F_2=r_2)}{P(F_2=r_2)}]</p>
+
+<p>This is the probability that $F_1=r_1$ given that $F_2=r_2$.</p>
+
+<h3 id="product-rule">Product Rule</h3>
+<p>\(P(F_1=r_1,F_2=r_2)=P(F_1=r_1\vert F_2=r_2)\times P(F_2=r_2)\)</p>
+
+<h3 id="symbols">Symbols</h3>
+<p>Wo sometimes use symbols distinct from numbers to denote the values of random variables.</p>
+
+<p>For example, for a random variable $\text{Weather}$ rather than using values $1,2,3,4$ we use:</p>
+
+<p>[\text{sunny, rain, cloudy, snow}]</p>
+
+<p>Thus, $(\text{Weather}=\text{sunny})$ denotes the event that it is sunny.</p>
+
+<p class="info">This is to say that random variable must give numbers as an output but we use symbols to represent these numbers.</p>
+
+<p>To model a visit  to a dentist, we use the random variables $\text{Toothache, Cavity}$ and $\text{Catch}$ (the dentist’s steel probe catches in the tooth) that all the take values 1 and 0 (for <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>).</p>
+
+<p>For example, ($\text{Toothache}=1$) states that the person has toothache and ($\text{Toothache}=0$) states that the person does not have a toothache.</p>
+
+<h1 id="comp111---bayes-theorem"><a href="/UoL/comp111/lectures/2020/11/19/3.html">COMP111 - Bayes’ Theorem</a></h1>
+<h2 id="first-form">First Form</h2>
+<p>If $P(A)&gt;0$, then:</p>
+
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}]</p>
+
+<h3 id="proof">Proof</h3>
+<p>We have:</p>
+
+<ul>
+  <li>$P(A\cap B)=P(A\vert B)\times P(B)$</li>
+  <li>$P(A\cap B)=P(B\vert A)\times P(A)$</li>
+</ul>
+
+<p>Thus:</p>
+
+<p>[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)]</p>
+
+<p>By dividing by $P(A)$ we get:</p>
+
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}]</p>
+
+<h3 id="application---diagnosis">Application - Diagnosis</h3>
+<p>Assume a patient walks into a doctor’s office complaining of a stiff neck. The doctor knows:</p>
+
+<ul>
+  <li>Meningitis may cause a patient to have a stiff neck 50% of the time.
+    <ul>
+      <li>Causal knowledge.</li>
+    </ul>
+  </li>
+  <li>The probability of having meningitis is $\frac{1}{50000}$</li>
+  <li>The probability of having a stiff neck is $\frac{1}{20}$</li>
+</ul>
+
+<p>What is the probability that the patient has meningitis?</p>
+
+<p>Let $A$ be the event that the patient has a stiff neck and $B$ the event that they have meningitis:</p>
+
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}=\frac{\frac{1}{2}\times \frac{1}{50000}}{\frac{1}{20}}=\frac{1}{5000}]</p>
+
+<ul>
+  <li>We can interpret the fact that the patient has a stiff neck as a new <strong>observation</strong>.</li>
+  <li>Given this observation, we want to <strong>classify</strong> that patient as either having meningitis or not having meningitis.</li>
+  <li>We have <strong>prior</strong> knowledge about the <strong>unconditional</strong> probability of having a stiff neck.</li>
+  <li>We have <strong>causal</strong> knowledge about the number of times in which meningitis causes a stiff neck.</li>
+  <li>
+    <p>We can then compute the diagnostic probabilities using:</p>
+
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
+  </li>
+</ul>
+
+<h2 id="alternative-form">Alternative Form</h2>
+<p>You may not have the prior probability for $A$ (the observation). In this case you can use other things that you might know in this alternative form.</p>
+
+<p>If $P(A)&gt;0$, then:</p>
+
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}]</p>
+
+<h3 id="proof-1">Proof</h3>
+<p>It suffices to show:</p>
+
+<p>[P(A)=P(A\vert B)\times P(B)+P(A\vert \neg B) \times P(\neg B)]</p>
+
+<p>But this follows from:</p>
+
+<p>$P(A)=P((A\cap B)\cup (A\cap \neg B))$</p>
+
+<p>$=P(A\cap B)+P(A\cap\neg B)$</p>
+
+<p>$=P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)$</p>
+
+<h3 id="application---diagnosis-1">Application - Diagnosis</h3>
+<p>Assume a drug test is:</p>
+
+<ul>
+  <li>Positive for users 99% of the time.</li>
+  <li>Negative for non-users 99% of the time.</li>
+</ul>
+
+<p>Assume that 0.5% take the drug.</p>
+
+<p>What is the probability that a person whose test is positive (event $A$) takes the drug (event $B$)?</p>
+
+<p>We have:</p>
+
+<ul>
+  <li>$P(A\vert B)=\frac{99}{100}$</li>
+  <li>$P(\neg A\vert \neg B)=\frac{99}{100}$</li>
+  <li>$P(B)=\frac{1}{200}$</li>
+</ul>
+
+<p>Thus:</p>
+
+<ul>
+  <li>$P(A\vert \neg B) =\frac{1}{100}$</li>
+  <li>$P(\neg B) =\frac{199}{200}$</li>
+</ul>
+
+<p>Thus:</p>
+
+<p>[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A\vert B)\times P(B)+P(A\vert \neg B)\times P(\neg B)}=\frac{99}{298}\approx0.33]</p>
+
+<p>Due to the low value it means that it is hard to take an action based on the test. This is as a result of the low value of the people who take the drug. This results in many false positives for those that don’t.</p>
+
+<h1 id="comp111---independence"><a href="/UoL/comp111/lectures/2020/11/19/2.html">COMP111 - Independence</a></h1>
+<p>In everyday language we refer to events that have nothing to do with each other as being independent.</p>
+
+<h2 id="definition">Definition</h2>
+<p>Events $A$ and $B$ are independent if:</p>
+
+<p>[P(A\cap B)=P(A)\times P(B)]</p>
+
+<p>If $P(A)\neq 0$ and $P(B)\neq 0$, then the following are equivalent:</p>
+
+<ul>
+  <li>$A$ and $B$ are independent.</li>
+  <li>$P(B)=P(B\vert A)$</li>
+  <li>$P(A)=P(A\vert B)$</li>
+</ul>
+
+<p class="info">See <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slides 31</a> for additional examples. This covers proving independence using the definition above.</p>
+
+<h2 id="independence-for-more-than-two-events">Independence for More Than Two Events</h2>
+<p>For a finite set of events there are two different types of independence:</p>
+
+<h3 id="pairwise-independence">Pairwise Independence</h3>
+<p>$A_1,\ldots,A_n$ are pairwise independent if every pair of events is independent: for all distinct $k,m$</p>
+
+<p>[P(A_m\cap A_k)=P(A_m)P(A_k)]</p>
+
+<h3 id="mutual-independence">Mutual Independence</h3>
+<p>$A_1,\ldots,A_n$ are mutually independent if every event is independent of any intersection of the events: for all distinct $k,m$</p>
+
+<p>[P(A_{k1})\times\ldots\times P(A_{k_m})=P(A_{k_1}\cap\ldots\cap A_{k_m})]</p>
+
+<p>Pairwise independence doesn’t imply pairwise independence. Generally, if it isn’t stated, then we are talking about <strong>mutual independence</strong>.</p>
+
+<p class="info">To see the proof and example of why pairwise independence does not imply mutual independence see <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slide 37 onward</a>. This example also shows examples of probability set notation.</p>
+
+<h1 id="comp111---conditional-probability"><a href="/UoL/comp111/lectures/2020/11/19/1.html">COMP111 - Conditional Probability</a></h1>
+<p>Often we are interested in just part of the sample space. Conditional probability gives us a means of handling this situation.</p>
+
+<h2 id="example">Example</h2>
+<p>Consider a family chosen at random from a set of families having two children (but not having twins). What is the probability that both children are boys?</p>
+
+<p>A suitable sample space $S=\{BB,GB,BG,GG\}$.</p>
+
+<p>It is reasonable to assume that $P(x)=\frac{1}{4}$ for all $x\in S$.</p>
+
+<p>Thus $P(BB)=\frac{1}{4}$.</p>
+
+<p>Now you learn that the families were selected from those who have one child at a boys’ school. Does this change probabilities.</p>
+
+<p>The new sample space $S’=\{BB,GB,BG\}$ and we re now looking for $P(BB\vert \text{at least one boy})+P(BB\vert S’)$</p>
+
+<p>The vertical line is read <strong>given that</strong>.</p>
+
+<h3 id="normalisation">Normalisation</h3>
+<p>$S’$ is a subset of $S$, so every outcome $x$ in $S’$ is also in $S$. It probability $P(x)\in S$ we can determine.</p>
+
+<p>However, if we just take the sum of these probabilities, they will sum to less than 1.</p>
+
+<p>We therefore <strong>normalise</strong> by dividing the probability $P(x)$ of the outcome $x$ in $S$ by the probability $P(S’)$ of $S’$ in $S$:</p>
+
+<p>[P(BB\vert \text{at least one boy})=P(BB\vert S’)=\frac{P(BB)}{P(S’)}=\frac{\frac{1}{4}}{\frac{3}{4}}=\frac{1}{3}]</p>
+
+<h2 id="conditioning">Conditioning</h2>
+<p>Assume now that evens $A$ and $B$ are given.</p>
+
+<p>Assume we know that $B$ happens. So we want to condition on $B$. Thus, we want to know:</p>
+
+<p>[P(A\vert B)]</p>
+
+<p>This is the probability that $A$ occurs given that $B$ is know to occur.</p>
+
+<p>So we want to know the probability $P(A\cap B)$. (as we know that $B$ occurs) after the conditioning on $B$.</p>
+
+<p>We cant take $P(A\cap B)$ itself but have to normalise by dividing by the probability of the new sample space $P(B)$:</p>
+
+<p>[P(A\vert B)=\frac{P(A\cap B)}{P(B)}]</p>
+
+<h3 id="formalised">Formalised</h3>
+<p>Let $A$ and $B$ be events, with $P(B)&gt;0.</p>
+
+<p>The conditional probability $P(A\vert B)$ of $A$ given $B$ is given by:</p>
+
+<p>[P(A\vert B)=\frac{P(A\cap B)}{P(B)}]</p>
+
+<p class="info">View <a href="/UoL/assets/COMP111/Lectures/2020-11-19.pdf">slide 27</a> for additional example.</p>
+
+<h2 id="multiplication-rule">Multiplication Rule</h2>
+<p>We can rewrite the previous equation like so:</p>
+
+<p>[P(A\cap B)=P(A\vert B)P(B)]</p>
+
+<p>Or like:</p>
+
+<p>[P(A\cap B)=P(B\vert A)P(A)]</p>
+
+<p>This rule can also be extended to more events:</p>
+
+<p>[P(A\cap B\cap C)=P(C\vert B\cap A)P(A\cap B)=P(C\vert A\cap B)P(B\vert A)P(A)]</p>
+
+<h3 id="example-1">Example</h3>
+<p>Consider a family chosen at random from a set of families with just one pair of twins. What is the probability that both twins are boys?</p>
+
+<p>Twins  are either identical $I$ or fraternal $F$. We know that a third of human twins are identical:</p>
+
+<p>[P(I)=\frac{1}{3},P(F)=\frac{2}{3}]</p>
+
+<p>and</p>
+
+<p>[P(BB)=P(I\cap BB) + P(F\cap BB)]</p>
+
+<p>By the multiplication rule:</p>
+
+<p>[P(I\cap BB)= P(BB\vert I)P(I),\ P(F\cap BB) = P(BB\vert F)P(F)]</p>
+
+<p>The probability of being a girl of boy for fraternal twins will be the same as for any other two-child family. For the identical twins, the outcomes $BG$ and $GB$ are no longer possible thus:</p>
+
+<p>[P(BB\vert I)=\frac{1}{2},\ P(BB\vert F)=\frac{1}{4}]</p>
+
+<p>From this we obtain:</p>
+
+<p>$P(BB)=P(I\cap BB) + P(F\cap BB)$</p>
+
+<p>$=P(BB\vert I)P(I)+ P(BB\vert F)P(F)$</p>
+
+<p>$=\frac{1}{2}\times\frac{1}{3}+\frac{1}{4}\times\frac{2}{3}$</p>
+
+<p>$=\frac{1}{3}$</p>
+
+<h1 id="comp111---probability-of-the-union-of-events"><a href="/UoL/comp111/lectures/2020/11/18/3.html">COMP111 - Probability of the Union of Events</a></h1>
+<h2 id="disjoint-events">Disjoint Events</h2>
+<p>Assume that $E _1,\ldots,E_n$ are mutually disjoint events. So $E_i\cap E_j=\emptyset$ whenever $i\neq j$.</p>
+
+<p>Then,</p>
+
+<p>[P(\bigcup_{i\leq i \leq n}E_i)=\sum_{1\leq i\leq n}P(E_i)]</p>
+
+<h3 id="example---three-dice">Example - Three Dice</h3>
+<p>Suppose that I roll a fair die three times:</p>
+
+<ul>
+  <li>$S$ is the set of dequences of lengh three over $\{1,\ldots,6\}$ (or $\{1,\ldots,6\}^3$).</li>
+  <li>$P(x)=\frac{1}{6\times6\times6}=\frac{1}{216}$ for all $x\in S$.</li>
+</ul>
+
+<p>What is the probability that I roll at least one 6?</p>
+
+<p>Let $E_1$: even that 1^st roll is a 6, $E_2$: event that 2^nd roll is a 6; $E_3$: event that 3^rd roll is a 6.</p>
+
+<p>This means that we would like to know:</p>
+
+<p>[P(E_1\cup E_2 \cup E_3)]</p>
+
+<h4 id="computing-the-probability-of-a-union-of-three-sets">Computing the Probability of a Union of Three Sets</h4>
+
+<ul>
+  <li>$P(A\cup B \cup C)=P(A)+P(B)+P(C)$</li>
+  <li>$-P(A\cap B)-P(A\cap C)- P(B\cap C)$</li>
+  <li>$+P(A\cap B \cap C)$</li>
+</ul>
+
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-3-1.png" alt="Venn Diagram 1" /></p>
+
+<p>Additionally:</p>
+
+<ul>
+  <li>$\vert A\cup B \cup C\vert  = \vert A\vert  + \vert B\vert +\vert C\vert $</li>
+  <li>$-\vert A\cap B\vert -\vert A\cap C\vert -\vert B\cap C\vert $</li>
+  <li>$+\vert A\cap B \cap C\vert $</li>
+</ul>
+
+<h3 id="example-continued">Example Continued</h3>
+
+<ul>
+  <li>$E_1$: even that 1^st roll is a 6.</li>
+  <li>$E_2$: event that 2^nd roll is a 6.</li>
+  <li>$E_3$: event that 3^rd roll is a 6.</li>
+</ul>
+
+<p>We can calculate the answer with the equation from earlier:</p>
+
+<ul>
+  <li>$P(E_1\cup E_2 \cup E_3)=P(E_1)+P(E_2)+P(E_3)$</li>
+  <li>$-P(E_1\cap E_2)-P(E_1\cap E_3)- P(E_2\cap E_3)$</li>
+  <li>$+P(E_1\cap E_2 \cap E_3)$</li>
+  <li>$=\frac{36}{216}+\frac{36}{216}+\frac{36}{216}$</li>
+  <li>$-\frac{6}{216}-\frac{6}{216}-\frac{6}{216}$</li>
+  <li>$+\frac{1}{216}$</li>
+  <li>$=\frac{91}{216}\approx0.42$</li>
+</ul>
+
+<h1 id="comp111---events"><a href="/UoL/comp111/lectures/2020/11/18/2.html">COMP111 - Events</a></h1>
+<p>An event is a subset $E ⊆ S$ of the sample space $S$. The probability of the even $E$ is given by:</p>
+
+<p>[P(E)=\sum_{x\in E}P(x)]</p>
+
+<ul>
+  <li>$0 ≤ P(E) ≤ 1$ for every event $E$</li>
+  <li>$P(\emptyset) = 0$ and $P(S) = 1$</li>
+</ul>
+
+<h2 id="example---fair-dice">Example - Fair Dice</h2>
+<p>If I roll a die three times, the event $E$ of rolling at least one 6 is given by:</p>
+
+<ul>
+  <li>The set of sequences of length 4 over $\{1,\ldots,6\}$ containing at least one 6.</li>
+  <li>$P(E)$ is the number of sequences containing at least one 6 divided by $6\times6\times6\times6=216$.</li>
+</ul>
+
+<p>If we roll a fair die, then the event E of rolling an odd number is given by:</p>
+
+<ul>
+  <li>The set $E=\{1,3,5\}$</li>
+  <li>$P(E)=P(1)+P(3)+P(5)=\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{1}{2}$</li>
+</ul>
+
+<h2 id="probability-of-composed-events">Probability of Composed Events</h2>
+<ul>
+  <li>The complement of an event can be computed from the probability of the event.</li>
+  <li>The union of events can be computed from the probabilities of the individual events.</li>
+</ul>
+
+<h3 id="complement">Complement</h3>
+<p>Let $\neg E = S - E$. Then $P(\neg E)=1-P(E)$</p>
+
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-2-1.png" alt="Venn Diagram 1" /></p>
+
+<p>Additionally, $S=\neg E\cup E$.</p>
+
+<h4 id="proof">Proof</h4>
+<p>\(1=\sum_{x\in S}P(x)=\sum_{x\in E}P(x)+\sum_{x\in \neg E}P(x)\)</p>
+
+<p>Thus,</p>
+
+<p>[\sum_{x\in\neg E}P(x)=1-\sum_{x\in E}P(x)]</p>
+
+<h4 id="example">Example</h4>
+<p>What is the probability that at least one bit in a randomly generated sequence of 10 bits is 0?</p>
+
+<ul>
+  <li>$S = \{0, 1\}^{10} =$ all sequences of 0 and 1 of length 10.</li>
+  <li>For every $x ∈ S, P(x) = (\frac{1}{2})^{10} = \frac{1}{2^{10}}$.</li>
+  <li>$E =$ all sequences of 0 and 1 of length 10 containing at least one 0.</li>
+  <li>$\neg E=\{1111111111\}$</li>
+  <li>$P(\neg E)=\frac{1}{2^{10}}$</li>
+  <li>$P(E)=1-\frac{1}{2^{10}}$</li>
+</ul>
+
+<h3 id="union">Union</h3>
+<p>\(P(E_1\cup U_2)=P(E_1)+P(E_2)-P(E_1\cap E_2)\)</p>
+
+<p><img src="/UoL/assets/COMP111/Lectures/2020-11-18-2-2.png" alt="Venn Diagram 2" /></p>
+
+<p>Additionally, $\vert E_1\cup E_2\vert  = \vert E_1\vert +\vert E_2\vert -\vert E_1\cap E_2\vert $</p>
+
+<h4 id="proof-1">Proof</h4>
+
+<ul>
+  <li>$P(E_1)=\sum_{x\in E_1}P(x)$</li>
+  <li>$P(E_2)=\sum_{x\in E_2}P(x)$</li>
+  <li>$P(E_1\cup E_2)=\sum_{x\in E_1\cup E_2}P(x)$</li>
+</ul>
+
+<p>Thus,</p>
+
+<p>$P(E_1\cup E_2)=\sum_{x\in E_1\cup E_2}P(x)$</p>
+
+<p>$=\sum_{x\in E_1}P(x)+\sum_{x\in E_3}P(x)-\sum_{x\in E_1\cup E_2}P(x)$</p>
+
+<p>$=P(E_1)+P(E_2)-P(E_1\cap E_2)$</p>
+
+<h4 id="example-1">Example</h4>
+<p>Suppose I have a jar of 30 sweets:</p>
+
+<p>\vert  \vert  Red \vert  Blue \vert  Green \vert 
+\vert  :-: \vert  :-: \vert  :-: \vert  :-: \vert 
+\vert  Circular \vert  2 \vert  4 \vert  3 \vert 
+\vert  Square \vert  6 \vert  7 \vert  8 \vert</p>
+
+<p>The sample space $S$ has 30 elements and if one chooses a sweet uniformly at random then then the probability for all $x\in S$ is:</p>
+
+<p>[P(x)=\frac{1}{30}]</p>
+
+<p>What is the probability of choosing a red or circular sweet?</p>
+
+<ul>
+  <li>The probability that it is red is $\frac{2+6}{30}=\frac{8}{30}(P(R)=\frac{8}{30})$</li>
+  <li>The probability that it is cicular is $\frac{2+4+3}{30}=\frac{9}{30}(P(C)=\frac{9}{30})$</li>
+</ul>
+
+<p>Then $P(R\cup C)$ is the probability that the sweet is red or circular:</p>
+
+<p>[P(R\cup C) = P(R)+P(C)-P(R\cap C) = \frac{8}{30}+\frac{9}{30}-\frac{2}{30}=\frac{15}{30}=\frac{1}{2}]</p>
+
+<h1 id="comp111---reasoning-under-uncertainty"><a href="/UoL/comp111/lectures/2020/11/18/1.html">COMP111 - Reasoning Under Uncertainty</a></h1>
+<p>Logic based knowledge representation and reasoning methods mostly assume that knowledge is certain. Often, this is not the case (or it is impossible to list all assumptions that make it certain):</p>
+
+<ul>
+  <li>When going to the airport by car, how early should I start? 45 minutes should be enough from Liverpool to Manchester Airport, but only under the assumption that there are no accidents, no lane closures, that my car does not break down, and so on.</li>
+  <li>
+    <p>A dental patient has a toothache. Does the patient have a cavity? You might say:</p>
+
+\[\text{Toothache}(x)\rightarrow\text{Cavity}(x)\]
+
+    <p>This is not right as there are many factors that play into this and not just the fact that they have a toothache.</p>
+  </li>
+</ul>
+
+<h2 id="uncertainty">Uncertainty</h2>
+<p>Trying to use exact rules to cope with a domain like medical diagnosis or traffic fails for three main reasons:</p>
+
+<ul>
+  <li>Laziness
+    <ul>
+      <li>It is too much work to list an exception-less set of rules.</li>
+    </ul>
+  </li>
+  <li>Theoretical ignorance
+    <ul>
+      <li>Medical science has, in many cases, no strict laws connecting symptoms with diseases.</li>
+    </ul>
+  </li>
+  <li>Practical ignorance
+    <ul>
+      <li>Even if we have strict laws, we might be uncertain about a particular patient because not all the necessary tests have been or can be run.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="probability-in-ai">Probability in AI</h2>
+
+<p>Probability provides a way of summarising the uncertainty that comes form our laziness and ignorance.</p>
+
+<p>We might not know for sure what disease a particular patient has, but we believe that there is an 80% chance that a patient with toothache has a cavity. The 80% summarises those cases in which all the factors needed for a cavity to cause a toothache are present and other cases in which the patient has both toothache and cavity but the two are unconnected.</p>
+
+<p>The missing 20% summarises all the other possible causes we are too lazy or ignorant to find.</p>
+
+<h2 id="discrete-probability">Discrete Probability</h2>
+<p>We represent random experiments using discrete probability spaces $(S,P)$ consisting of:</p>
+
+<ul>
+  <li>The sample space $S$ of all elementary events $x\in S$. Members of $S$ are also called outcomes of the experiment.</li>
+  <li>A probability distribution $P$ assigning a real number $P(x)$ to every elementary event $x\in S$ such that:
+    <ul>
+      <li>For every $x\in S: 0\leq P(x) \leq 1$</li>
+      <li>And $\sum_{x\in S}P(x)=1$</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Recall that if $S$ consists of $x_1,\ldots,x_n$, then:</p>
+
+<p>[\sum_{x\in S}P(x)=P(x_1)+\ldots+P(x_n)]</p>
+
+<h3 id="example---flipping-a-fair-coin">Example - Flipping a Fair Coin</h3>
+<p>Consider the random experiment of flipping a coin. The then corresponding probability space $(S,P)$ is given by:</p>
+
+<ul>
+  <li>$S=\{H,T\}$</li>
+  <li>$P(H)=P(T)=\frac{1}{2}$</li>
+</ul>
+
+<p>Consider the random experiment of flipping a count two times, one after the other. Then the corresponding probability space $(S,P)$ is:</p>
+
+<ul>
+  <li>$S=\{HH,HT,TH,TT\}$</li>
+  <li>$P(HH)=P(HT)=P(TH)=P(TT)=\frac{1}{4}$</li>
+</ul>
+
+<h3 id="example---rolling-a-fair-die">Example - Rolling a fair die</h3>
+<p>Consider the random experiment of rolling a die. Then the corresponding probability space $(S, P)$ is given by:</p>
+
+<ul>
+  <li>S = {1, 2, 3, 4, 5, 6};</li>
+  <li>For every $x ∈ S: P(x) = \frac{1}{6}$</li>
+</ul>
+
+<p>Consider the random experiment of rolling a die $n$ times. Then the corresponding probability space $(S, P)$ is given as follows:</p>
+
+<ul>
+  <li>$S$ is the set of sequences of length $n$ over the alphabet $\{1,\ldots, 6\}$
+    <ul>
+      <li>Sometimes denoted $\{1,\ldots, 6\}^n$</li>
+    </ul>
+  </li>
+  <li>$P(x) = \frac{1}{6^n}$ for every elementary event $x$, since $S$ has $6^n$ elements.</li>
+</ul>
+
+<h2 id="uniform-probability-distributions">Uniform Probability Distributions</h2>
+<p>A probability distribution is uniform if every outcome is equally likely. For uniform probability distributions, the probability of an outcome $x$ is 1 divided by the number $\vert S\vert $ of outcomes in $S$:</p>
+
+<p>[P(x)=\frac{1}{\vert S\vert }]</p>
+
+<h1 id="comp111---propositional-knowledge-bases-and-reasoning"><a href="/UoL/comp111/lectures/2020/11/12/4.html">COMP111 - Propositional Knowledge Bases and Reasoning</a></h1>
+<p><em>The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.</em></p>
+
+<p>Consequence: <em>If the meeting does not take place, we conclude that there were fewer than 15 members present, or there was a postal strike.</em></p>
+
+<p>Let:</p>
+
+<ul>
+  <li>$m$: The meeting takes place.</li>
+  <li>$a$: All members have been informed.</li>
+  <li>$p$: There is a postal strike.</li>
+  <li>$q$: The meeting is quorate.</li>
+  <li>$f$: There are at least 15 members present.</li>
+</ul>
+
+<p>Then the text can be formalised as the following knowledge base:</p>
+
+<p>[((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)]</p>
+
+<h2 id="definition">Definition</h2>
+<p>A propositional knowledge base $X$ is a finite set of propositional formulas.</p>
+
+<p>Suppose a propositional knowledge base $X$ is given. Then a propositional formula $P$ follows from $X$ if the following folds for ever interpretation $I$:</p>
+
+<p>[\text{If } I(Q) = 1 \text{ for all } Q\in X, \text{ then } I(P)=1]</p>
+
+<p>This is denoted by:</p>
+
+<p>[X\models P]</p>
+
+<h3 id="example">Example</h3>
+<p>We have seen that:</p>
+
+<p>[\{((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\}\models(\neg m \Rightarrow(\neg f \vee p))]</p>
+
+<h2 id="simpler-example">Simpler Example</h2>
+<p>Show $\{(p_1\wedge p_2)\}\models(p_1\vee p_2)$</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p_1$</th>
+      <th style="text-align: center">$p_2$</th>
+      <th style="text-align: center">$(p_1\wedge p_2)$</th>
+      <th style="text-align: center">$(p_1\vee p_2)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus, from $I(p_1\wedge p_2) = 1$ is follows that $I(P_1\vee p_2)=1$. We are basically seeing if the left hand side is a subset of the right hand side. “If the statement on the left is true, then the statement on the right is true.”</p>
+
+<h2 id="reasoning">Reasoning</h2>
+<p>We want a computer to solve this for us so we should take the following into account:</p>
+
+<ul>
+  <li>$X\models P$ if $I(P)=1$ for all interpretations $I$ such that $I(Q)=1$ for all $Q\in X$.</li>
+  <li>There are $2^n$ different relevant interpretations if $P$ and $X$ together heave $n$ propositional atoms.</li>
+  <li>Thus, to check $X\models P$ directly using truth tables, a table with $2^n$ rows is needed.</li>
+  <li>
+    <p>$X\models P$ can be checked using a SAT solver:</p>
+
+    <p>Assume that $X$ contains the propositional formula $P_1,\ldots,P_n$ and let</p>
+
+\[Q=P_1\wedge\ldots\wedge P_n\wedge\neg P\]
+
+    <p>Then:</p>
+
+    <p>$X\models P$ if and only if $Q$ is not satisfiable.</p>
+
+    <p>This means that the knowledge base is not satisfiable if when all propositions in the knowledge base are true but still the knowledge base is false.</p>
+  </li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>In KR&amp;R knowledge is stored in a knowledge base. Reasoning is needed to make implicit knowledge explicit.</li>
+  <li>We have considered rule-based and propositional knowledge bases and corresponding reasoning.</li>
+  <li>in the rule-based case we have given reasoning algorithms.</li>
+  <li>Databases only store atomic assertions. In contrast, knowledge bases store knowledge that goes beyond atomic assertions (such as rules and compound propositions.</li>
+  <li>Knowledge stored in knowledge bases is mostly incomplete, whereas knowledge stored in databases is mostly complete.</li>
+  <li>Many other KR&amp;R languages with corresponding reasoning algorithms have been developed.</li>
+</ul>
+
+<h1 id="comp111---satisfiability-of-propositional-formulas"><a href="/UoL/comp111/lectures/2020/11/12/3.html">COMP111 - Satisfiability of Propositional Formulas</a></h1>
+<p>A propositional formula is satisfiable if there exist an interpretation under which it is true.</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>The formula $(p\wedge\neg p)$ is not satisfiable, because:</p>
+
+<p>[I(p\wedge\neg p)=0]</p>
+
+<p>for all interpretations $I$:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p$</th>
+      <th style="text-align: center">$\neg p$</th>
+      <th style="text-align: center">$(p\wedge\neg p)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As you can see from the table there is no case in which the case is satisfiable.</p>
+
+<h3 id="example-2">Example 2</h3>
+<p>There are some cases which don’t require the truth table to be parsed in order to find out if it is satisfiable. See this question:</p>
+
+<p>Is the formula, $P=(p_1\Rightarrow(p_2\wedge\neg p_2))$ satisfiable.</p>
+
+<p>To see this, simply choose any interpretation $I$ with $I(p_1)=0$. Then $I(P)=1$ and we have found an interpretation $I$ that makes $P$ true.</p>
+
+<p>The same argument shows that every formula of the form $(p_1\Rightarrow Q)$ is satisfiable.</p>
+
+<p>There are also other combinations where you can prove that they are satisfiable without working any values. E.g.:</p>
+
+<p>[(p_1\Leftrightarrow Q)]</p>
+
+<p>such that $p_1$ does not occur in $Q$ is satisfiable.</p>
+
+<h2 id="deciding-satisfiability">Deciding Satisfiability</h2>
+<ul>
+  <li>$P$ is satisfiable if $I(P)=1$ for some interpretation $I$.</li>
+  <li>There are $2^n$ interpretations if $P$ has $n$ propositional atoms.</li>
+  <li>Thus, to check whether $P$ is satisfiable directly using truth tables, a table with $2^n$ rows is needed.</li>
+  <li>This is not practical, even for small $n$
+    <ul>
+      <li>Another case of combinatorial explosion.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There has been great progress in developing very fast satisfiability algorithms (called <strong>SAT solvers</strong>) that can deal with formulas with bery large numbers of propositional atoms (using heuristics).</p>
+
+<h1 id="comp111---truth-values"><a href="/UoL/comp111/lectures/2020/11/12/2.html">COMP111 - Truth Values</a></h1>
+<p>An interpretations $I$ assigns to every atomic proposition $p$ a truth value:
+\(I(p)\in\\{0,1\\}\)</p>
+
+<p>This means:</p>
+
+<ul>
+  <li>If $I(p)=1$, then $p$ is called true under the interpretation $I$.</li>
+  <li>If $I(p)=1$, then $p$ is called false under the interpretation $I$.</li>
+</ul>
+
+<p>Given an assignment $I$ we can computer the truth value of compound formulas step by step by using truth tables.</p>
+
+<h2 id="negation">Negation</h2>
+<p>The negation $\neg P$ of a formula $P$. It is not the case that $P$:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$P$</th>
+      <th style="text-align: center">$\neg P$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conjunction">Conjunction</h2>
+<p>The conjunction $(P\wedge Q)$ of $P$ and $Q$. Both $P$ and $Q$ are true:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$P$</th>
+      <th style="text-align: center">$Q$</th>
+      <th style="text-align: center">$(P\wedge Q)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="disjunction">Disjunction</h2>
+<p>The disjunction $(P\vee Q)$ of $P$ and $Q$, at least one of $P$ and $Q$ is true:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$P$</th>
+      <th style="text-align: center">$Q$</th>
+      <th style="text-align: center">$(P\vee Q)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="equivalence">Equivalence</h2>
+<p>The equivalence $(P\Leftrightarrow Q)$ of $P$ and $Q$, $P$ and $Q$ take the same truth value:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$P$</th>
+      <th style="text-align: center">$Q$</th>
+      <th style="text-align: center">$(P\Leftrightarrow Q)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="implication">Implication</h2>
+<p>The implication $(P\Rightarrow Q)$, if $P$ then $Q$:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$P$</th>
+      <th style="text-align: center">$Q$</th>
+      <th style="text-align: center">$(P\Rightarrow Q)$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="truth-under-an-interpretation">Truth Under an Interpretation</h2>
+<p>So, given an interpretation $I$, we can compute the truth value of any formula $P$ under $I$:</p>
+
+<ul>
+  <li>If $I(p)=1$, then $p$ is called true under the interpretation $I$.</li>
+  <li>If $I(p)=1$, then $p$ is called false under the interpretation $I$.</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">$p_1$</th>
+      <th style="text-align: center">$p_2$</th>
+      <th style="text-align: center">$\neg p_2$</th>
+      <th style="text-align: center">$\neg p_1$</th>
+      <th style="text-align: center">$(p_1\wedge\neg p_2)$</th>
+      <th style="text-align: center">$(p_2\wedge\neg p_1)$</th>
+      <th style="text-align: center">$P$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Thus the interpretations $I$ making $P$ true are:</p>
+
+<ul>
+  <li>$I(p_1)=1$ and $I(p_2)=1$</li>
+  <li>$I(p_1)=0$ and $I(p_2)=1$</li>
+  <li>$I(p_1)=0$ and $I(p_2)=0$</li>
+</ul>
+
+<h1 id="comp111---propositional-logic"><a href="/UoL/comp111/lectures/2020/11/12/1.html">COMP111 - Propositional Logic</a></h1>
+<p>for many purposes, rules are not expressive enough. for example:</p>
+
+<ul>
+  <li>You cannot express that something is not the case:
+  \(\text{not FrenchFootballClub(LiverpoolFC)}\)</li>
+  <li>You cannot connect sentences using or:<br />
+  \(\text{Today, I will do the AI exercise or I will play football.}\)</li>
+</ul>
+
+<p>A proposition is a statement that can be true or false, but not both at the same time.</p>
+
+<ul>
+  <li>Logic is easy.</li>
+  <li>I eat toast.</li>
+  <li>$2+3=5$</li>
+</ul>
+
+<p>Questions and statements are not propositions.</p>
+
+<h2 id="reasoning-about-propositions">Reasoning About Propositions</h2>
+
+<p><em>The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.</em></p>
+
+<p>Therefore:</p>
+
+<p><em>If the meeting does not take place, we conclude that there were fewer than 15 members present, or there was a postal strike.</em></p>
+
+<h3 id="understanding-compound-propositions">Understanding Compound Propositions</h3>
+<p>Compound statements are built from <strong>atomic propositions</strong> - the simplest statements that is possible to make about the world.</p>
+
+<p>To simplify this for a computer then we can assign the atomic propositions variables to form a logical statement with:</p>
+
+<ul>
+  <li>$m$: The meeting takes place.</li>
+  <li>$a$: All members have been informed.</li>
+  <li>$p$: There is a postal strike.</li>
+  <li>$q$: The meeting is quorate.</li>
+  <li>$f$: There are at least 15 members present.</li>
+</ul>
+
+<p>From:
+\(\text{If $a$ and $q$ then $m$. If $f$ then $q$. If not $p$ then $a$.}\)</p>
+
+<p>Conclude:
+\(\text{If not $m$ then not $f$ or $p$.}\)</p>
+
+<h2 id="connectives">Connectives</h2>
+<p>Propositions may be combined with other propositions to form compound propositions. These in turn may be combined into further propositions.</p>
+
+<p>The connectives that may be used are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Connective</th>
+      <th style="text-align: center">English Equivalent</th>
+      <th style="text-align: center">Math Symbol</th>
+      <th style="text-align: center">Mathematical Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\neg$</td>
+      <td style="text-align: center">not</td>
+      <td style="text-align: center">$\sim$</td>
+      <td style="text-align: center">Negation</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\wedge$</td>
+      <td style="text-align: center">and</td>
+      <td style="text-align: center">$\&amp;$ or $.$</td>
+      <td style="text-align: center">Conjuction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\vee$</td>
+      <td style="text-align: center">or</td>
+      <td style="text-align: center">$\vert$ or $+$</td>
+      <td style="text-align: center">Disjunction</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\iff$ or $\Leftrightarrow$</td>
+      <td style="text-align: center">If and only if</td>
+      <td style="text-align: center">$\leftrightarrow$</td>
+      <td style="text-align: center">Equivalence</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\Rightarrow$</td>
+      <td style="text-align: center">If … then</td>
+      <td style="text-align: center">$\rightarrow$</td>
+      <td style="text-align: center">Implication</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="propositional-formulas">Propositional Formulas</h2>
+<p>The set of propositional formulas is defines as follows:</p>
+
+<ul>
+  <li>Every atomic proposition is a propositional formula. We denote atomic propositions by $p, q,a, p_1, p_2,\ldots$</li>
+  <li>If $P$ and $Q$ are propositional formulas, then:
+    <ul>
+      <li>$(P\wedge Q)$</li>
+      <li>$(P\vee Q)$</li>
+      <li>$(P\Rightarrow Q)$</li>
+      <li>$(P\Leftrightarrow Q)$</li>
+    </ul>
+
+    <p>are propositional formulas.</p>
+  </li>
+  <li>If $P$ is a propositional formula, then $\neg P$ is a propositional formula.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<p>The following are propositional formulas:</p>
+
+<ul>
+  <li>$p$</li>
+  <li>$\neg\neg p$</li>
+  <li>$(p\vee q)$</li>
+  <li>$(((p\Rightarrow q)\wedge\neg q)\Rightarrow\neg p)$</li>
+</ul>
+
+<p>The following are not propositional formulas:</p>
+
+<ul>
+  <li>$p\wedge q$</li>
+  <li>$(p)$</li>
+  <li>$(p\wedge q)\neg q$</li>
+</ul>
+
+<h3 id="example-with-compund-proposition">Example With Compund Proposition</h3>
+<p>By this syntax the proposition before would be:</p>
+
+<p>From:</p>
+
+<ul>
+  <li>$((a\wedge q) \Rightarrow m)$</li>
+  <li>$(f \Rightarrow q)$</li>
+  <li>$(\neg p \Rightarrow a)$</li>
+</ul>
+
+<p>Conclude:</p>
+
+<ul>
+  <li>$(\neg m \Rightarrow\neg (f\vee p))$</li>
+</ul>
+
+<h1 id="comp111---relations--non-unary-rule-based-systems"><a href="/UoL/comp111/lectures/2020/11/05/4.html">COMP111 - Relations &amp; Non-Unary Rule-Based Systems</a></h1>
+<p>You cannot express relations between objects using the concepts we have learned so far. <strong>Relations</strong> are expressed as such:</p>
+
+<ul>
+  <li>A <strong>relation name</strong> $R$ denotes a set of <strong>pairs</strong> of individual object. Relation names are also called <strong>binary predicates</strong>:
+    <ul>
+      <li>$\text{sonOf}$</li>
+      <li>$\text{grandsonOf}$</li>
+      <li>These call also be denotes by upper case letters $R,S,R_1,R_2$ and so on.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To express that an individual object $a$ is in the relation $R$ to an individual object $b$ we write $R(a,b)$. $R(a,b)$ is <em>also</em> called an <strong>atomic assertion</strong>. This can also be read as $a$ is in relation $R$ to $b$:</p>
+
+<ul>
+  <li>$\text{sonOf(Peter, John)}$, where $\text{Peter}$ is the son of $\text{John}$.</li>
+</ul>
+
+<h2 id="rule-based-systems">Rule-Based Systems</h2>
+<p>A rule has the form:
+\(R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow R(x,y)\)
+or
+\(R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow A(x)\)
+Where:</p>
+
+<ul>
+  <li>$R_1,\ldots,R_n$ and $R$ are relation names.</li>
+  <li>$A_1,\ldots,A_n$ and $A$ are class names.</li>
+  <li>$x_1,y_1,\ldots,x_n,y_n,x_{n+1},\ldots,x_{n+m},x,y$ are individual variables.</li>
+</ul>
+
+<p>A rule-based knowledge base $K$ is a collection $K_a$ of atomic assertions and $K_r$ of rules.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Consider the following set $K_a$ of atomic assertions:</p>
+
+<ul>
+  <li>$\text{sonOf(Peter, John)}$</li>
+  <li>$\text{sonOf(John, Joseph)}$</li>
+</ul>
+
+<p>Consider the following set $K_r$ of rules:</p>
+
+<ul>
+  <li>$\text{sonOf}(x,y)\wedge\text{sonOf}(y,z)\rightarrow\text{grandsonOf}(x,z)$</li>
+</ul>
+
+<p>Then $\text{grandsonOf(Peter, Joseph)}$ follows from $K$, in symbols:
+\(K\models\text{grandsonOf(Peter, Joseph)}\)</p>
+
+<h2 id="knowledge-graphs">Knowledge Graphs</h2>
+
+<p>Binary predicates allow us to talk about graphs.</p>
+
+<p>Let $K_r$ contain:</p>
+
+<ul>
+  <li>$\text{sonOf}(x,y)\rightarrow\text{descendantOf}(x,y)$</li>
+  <li>$\text{sonOf}(x,y)\wedge\text{descendantOf}(y,z)\rightarrow\text{descendantOf}(x,z)$</li>
+</ul>
+
+<p>Let $K_A$ be $\{\text{sonOf(Peter, John), sonOf(John, Joseph)}\}$</p>
+
+<p>$K_a$ can be seen as the following graph  (individual names = nodes, relations = edges):</p>
+
+<pre><code class="language-mermaid">graph LR
+Peter --&gt;|sonOf| John
+Peter --&gt;|descendantOf| John
+John --&gt;|sonOf| Joseph
+John --&gt;|descendantOf| Joseph
+Peter --&gt;|descendantOf| Joseph
+
+</code></pre>
+<p><em>Labeled Graph.</em></p>
+
+<p>Computing $\text{DerivedAssertions}$ corresponds to graph completion.</p>
+
+<h3 id="example-1">Example</h3>
+
+<p>Let $K_r$ contain:</p>
+
+<ul>
+  <li>$\text{childOf}(x,y)\wedge\text{childOf}(z,y)\rightarrow\text{siblingOf}(x,z)$</li>
+  <li>$\text{Female}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{sisterOf}(x,y)$</li>
+  <li>$\text{Male}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{brotherOf}(x,y)$</li>
+</ul>
+
+<p>Let $K_a$ be:
+\(\\{\text{Female(Alice),Male(Bob),childOf(Alice,Carl),childOf(Bob,Carl)}\\}\)</p>
+
+<pre><code class="language-mermaid">graph LR
+subgraph Female
+Alice
+end
+subgraph Male
+Bob
+end
+Alice ---|siblingOf| Bob
+Alice --&gt;|sisterOf| Bob
+Bob --&gt;|brotherOf| Alice
+Alice --&gt;|childOf| Carl
+Bob --&gt;|childOf| Carl
+</code></pre>
+
+<p>We assume different variable are replace by different individuals. This statement means that people can’t be their own siblings.</p>
+
+<h1 id="comp111---derived-assertions-algorithm"><a href="/UoL/comp111/lectures/2020/11/05/3.html">COMP111 - Derived Assertions Algorithm</a></h1>
+<p>The following algorithm take as input the knowledge base $K$ containing $K_a$ and $K_r$ and computes all assertions $E(a)$ with $E$ a class name and $a$ an individual name such that $K\models E(a)$. This set is stored in: \(\text{DerivedAssertions}\) In only remains to check whether $A(b)$ is in $\text{DerivedAssertions}$.</p>
+
+<p>The algorithm computes the set $\text{DerivedAssertions}$ by starting with $K_a$ and then applying the rules $K_r$ exhaustively to already derived atomic assertions.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a knowledge base K containing assertions K_a and rules K_r
+	
+DerivedAssertions := K_a
+repeat
+	if there exits E(a) not in DerivedAssertions
+		and A_1(x)^...^A_n(x) --&gt; E(x) in K_r
+		and A_1(x),...,A_n(x) in DerivedAssertions
+	then 
+		add E(a) to DerivedAssertions
+		NewAssertion := true
+	else 
+		NewAssertion := false
+	endif
+until NewAssertion = false
+return Derived Assertions
+</code></pre></div></div>
+
+<h2 id="rule-application">Rule Application</h2>
+<p>In the algorithm above we say that:</p>
+
+<p>$E(a)$ is added to $\text{DerivedAssertions}$ by applying the rule:
+\(A_1(x)\wedge\ldots\wedge A_n\rightarrow E(x)\)
+to the atomic assertions:
+\(A_1(x),\ldots,A_n\in\text{DerivedAssertions}\)</p>
+
+<h3 id="example">Example</h3>
+<p>Let:</p>
+
+<ul>
+  <li>$K_a=\{A_1(a)\}$</li>
+  <li>$K_a=\{A_1(x)\rightarrow A_2(x),A_2(x)\rightarrow A_3(x)\}$</li>
+</ul>
+
+<p>In:</p>
+
+<ul>
+  <li>
+    <p>First $\text{DerivedAssertions}$ contains $K_a$ only.</p>
+  </li>
+  <li>
+    <p>Then an application of $A_1(x)\rightarrow A_2(x)$ to $A_1(a)$ adds $A_2(a)$ to $\text{DerivedAssertions}$.</p>
+  </li>
+  <li>
+    <p>Then an application of $A_2(x)\rightarrow A_3(x)$ to $A_2(a)$ adds $A_3(a)$ to $\text{DerivedAssertions}$.</p>
+  </li>
+  <li>
+    <p>Now no rule is applicable. Thus:
+\(\text{DerivedAssertions}=\\{A_1(a),A_2(a),A_3(a)\\}\)
+is returned.</p>
+  </li>
+</ul>
+
+<h1 id="comp111---rule-based-languages"><a href="/UoL/comp111/lectures/2020/11/05/2.html">COMP111 - Rule Based Languages</a></h1>
+<h2 id="syntax">Syntax</h2>
+<p>An <strong>individual name</strong> denote an individual object. They are also called <strong>constant symbols</strong>:</p>
+
+<ul>
+  <li>England</li>
+  <li>We also use lower case letters: $a,b,c,a_1,a_2,\ldots$</li>
+</ul>
+
+<p>An <strong>individual variable</strong> is a placeholder for an individual name. They are denoted by lower case letters:</p>
+
+<ul>
+  <li>$x,y,z,x_1,x_2,\ldots$</li>
+</ul>
+
+<p>A <strong>class name</strong> denotes a set of individual objects. They are often also called <strong>unary predicate symbols</strong>:</p>
+
+<ul>
+  <li>Human_Being</li>
+  <li>We also often use upper case letters such as $A,B,C,A_1,A_2$</li>
+</ul>
+
+<h3 id="atomic-assertions">Atomic Assertions</h3>
+
+<p>An atomic assertion takes the form $A(b)$ and state the $b$ is in the class $A$:</p>
+
+<ul>
+  <li>The assertion,
+\(\text{CompetesInPremierLeague}(\text{LiverpoolFC})\) states that Liverpool FC competes in the Premier League.</li>
+</ul>
+
+<h3 id="unary-rule">Unary Rule</h3>
+<p>A unary rule take the form:
+\(A_1(x)\wedge\ldots\wedge A_n(x)\rightarrow A(x)\)
+Where $A_1,ldots,A_n$ and $A$ are class names and $x$ is an individual variable.</p>
+
+<ul>
+  <li>The $\wedge$ symbol is the symbol for logical AND.</li>
+  <li>The $\rightarrow$ symbol means <strong>implies that</strong>.</li>
+</ul>
+
+<p>The rule states the everything in all classes $A_1,A_2,\ldots,A_n$ is in the class A.</p>
+
+<h4 id="example">Example</h4>
+
+<p>The rule:
+\(\text{Disease}(x)\wedge\text{LocatedInHeart}(x)\rightarrow\text{HeartDisease}(x)\)
+states that every disease located in the heart is a heart disease.</p>
+
+<p>You can also say that the result of the evaluation on the left side is a subset of the objects in the set on the right hand side.</p>
+
+<h4 id="unary-rule-based-systems">Unary Rule-Based Systems</h4>
+<p>A unary rule-based knowledge base $K$ is a collection $K_a$ of <strong>atomic assertions</strong> and $K_r$ of <strong>unary rules</strong>.</p>
+
+<h5 id="example-1">Example</h5>
+<p>Let $K_a$ contain the following atomic assertions:</p>
+
+<ul>
+  <li>$\text{CompetesInPremierLeague}(\text{LiverpoolFC})$</li>
+  <li>$\text{CompetesInPremierLeague}(\text{Everton})$ and so on for all members of the class $\text{CompetesInPremierLeague}$</li>
+</ul>
+
+<p>Let $K_r$ contain the following rules:</p>
+
+<ul>
+  <li>$\text{CompetesInPremierLeague}(x)\rightarrow\text{CompetesInFACup}(x)$</li>
+  <li>$\text{CompetesInPremierLeague}(x)\rightarrow\text{FootballClub}(x)$</li>
+  <li>$\text{CompetesInPremierLeague}(x)\rightarrow\text{BasedInEngland}(x)$</li>
+</ul>
+
+<p>The follwoing atomic asseritons follow from $K$:</p>
+
+<ul>
+  <li>$\text{CompetesInFACup}(\text{LiverpoolFC})$</li>
+  <li>$\text{FootBallClub}(\text{Everton})$, and so on.</li>
+</ul>
+
+<p>Thus from 20 facts and 3 rules, we can deduce 60 additional facts. This allows us to store much more data in a compact way.</p>
+
+<h2 id="reasoning-in-rule-based-systems">Reasoning in Rule-Based Systems</h2>
+<p>Let $K$ be a knowledge base and $A(b)$ an atomic assertion. Then $A(b)$ <strong>follows from</strong> $K$:
+\(K\models A(b)\)</p>
+
+<p>You can also say that $K$ <strong>models</strong> $A(b)$.</p>
+
+<p>This means that whenever $K$ is true, then $A(b)$ is true. If that is not the case you can write $K\nvDash A(b)$.</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>In the example $K$ earlier:
+\(K\models\text{CompetesInFACup}(\text{LiverpoolFC})\)</p>
+
+<h3 id="example-2">Example 2</h3>
+<p>Let:</p>
+
+<ul>
+  <li>$K_a=\{A_1(a)\}$</li>
+  <li>$K_r=\{A_1(a)\rightarrow A_2(x),A_2(x)\rightarrow A_3(x)\}$</li>
+</ul>
+
+<p>Let $K$ contain $K_a$ and $K_r$. Then:</p>
+
+<ul>
+  <li>$K\models A_1(a)$</li>
+  <li>$K\models A_2(a)$</li>
+  <li>$K\models A_3(a)$</li>
+</ul>
+
+<p>This chaining shows that if $a$ is in $A_1$ then is also in $A_2$ and so on.</p>
+
+<h1 id="comp111---basic-knowledge-representation-and-reasoning"><a href="/UoL/comp111/lectures/2020/11/05/1.html">COMP111 - Basic Knowledge Representation and Reasoning</a></h1>
+<h2 id="declarative-approach">Declarative Approach</h2>
+<p>The declarative approach to building agents includes telling the agent what it needs to know. From this the agent uses reasoning to deduce relevant consequences. It requires:</p>
+
+<ul>
+  <li>A <strong>knowledge base</strong> / ontology
+    <ul>
+      <li>Which contains fact and general knowledge about a domain in some formal language.</li>
+    </ul>
+  </li>
+  <li>A <strong>reasoning engine</strong>
+    <ul>
+      <li>That produces relevant consequences of the knowledge base.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example">Example</h3>
+
+<p>We want to know what day it is from the following crude knowledge base:</p>
+
+<ul>
+  <li>If I have an AI lecture today, then it is Tuesday or Friday.</li>
+  <li>It is not Tuesday.</li>
+  <li>I have an AI lecture today or I have no class today.</li>
+  <li>If I have no  class today, then I am sad.</li>
+  <li>I am not sad.</li>
+</ul>
+
+<p>From this knowledge base we can <strong>infer</strong> that the day is: Friday.</p>
+
+<p>A machine would use reasoning algorithms to solve particular problems in the knowledge base.</p>
+
+<h2 id="languages-for-krr">Languages for KR&amp;R</h2>
+<p>To store knowledge in a knowledge base and so reasoning. you have to represent the knowledge in a formal language that ca be processed by machines.</p>
+
+<p>Rule-based languages and propositional logic are KR&amp;R languages.</p>
+
+<h1 id="comp111---alpha---beta-pruning"><a href="/UoL/comp111/lectures/2020/11/04/2.html">COMP111 - Alpha - Beta Pruning</a></h1>
+<p>If you know half way through a calculation that it will succeed or fail, then there is no point in doing the rest of it. This removes redundant information.</p>
+
+<pre><code class="language-mermaid">graph TD
+subgraph MAX
+A0
+end
+subgraph MIN
+A1
+A2
+A3
+end
+subgraph MAX
+A11
+A12
+A13
+A21
+A22
+A23
+A31
+A32
+A33
+end
+A0[&gt;= 3, then just 3] --&gt;|A1| A1[3]
+A0 --&gt;|A2| A2[&lt;= 2]
+A0 --&gt;|A3| A3[&lt;= 14, then &lt;= 5, then 2]
+A1 --&gt;|A11| A11[3]
+A1 --&gt;|A12| A12[12]
+A1 --&gt;|A13| A13[8]
+A2 --&gt;|A21| A21[2]
+A2 .-&gt;|A22| A22[x]
+A2 .-&gt;|A23| A23[x]
+A3 --&gt;|A31| A31[14]
+A3 --&gt;|A32| A32[5]
+A3 --&gt;|A33| A33[2]
+
+</code></pre>
+
+<p>From the example we can see from the subparagraph for <code class="language-plaintext highlighter-rouge">MIN</code> that the MAX value can only get larger than three. Hence, we can make assumptions and ignore paths based on what we have found already.</p>
+
+<p>This can be seen on the path <code class="language-plaintext highlighter-rouge">A21</code>. As there is such a low value we don’t have to search the other items in the tree as we already have a greater value on <code class="language-plaintext highlighter-rouge">A1</code>.</p>
+
+<p>The essence is that we can prune redundant states.</p>
+
+<h2 id="cutoffs-and-heuristics">Cutoffs and Heuristics</h2>
+<p>As it is not always possible to explore the full tree to evaluate the move you can cut off the end of the tree to speed up calculation at the cost of getting potentially lower quality moves.</p>
+
+<ul>
+  <li>Problem
+    <ul>
+      <li>Utilities are defines only at terminal states</li>
+    </ul>
+  </li>
+  <li>Solution
+    <ul>
+      <li>Evaluate the pre-terminal leaf states using <strong>heuristic evaluation function</strong> rather than using the actual utility  function.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="cutoff-value">Cutoff Value</h3>
+
+<p>Instead of $\text{MiniMaxV}(s)$ we compute $\text{CutOffV}(s)$.</p>
+
+<p>Assume that we con compute a function $\text{Evaluation}(s)$ which gives us a utility value for any state $s$ which we do not want explored (every cutoff state).</p>
+
+<p>Then define $\text{CutOffV}(s)$ recursively:</p>
+
+<p>[\text{CutOffV}(s)=
+\begin{cases}
+	\text{Utility}(s) &amp; s\ \text{is terminal}<br />
+	\text{Evaluation}(s) &amp; s\ \text{is CutOff} <br />
+	\max_{n\in\text{Succ}(s)}\text{CutOffV}(n) &amp; s\ \text{is}\max<br />
+	\min_{n\in\text{Succ}(s)}\text{CutOffV}(n) &amp; s\ \text{is}\min
+\end{cases}]</p>
+
+<p>How good this is depends crucially on how good the heuristic evaluation function is.</p>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Minimax algorithm (with $\alpha - \beta$ pruning) fundamental for game playing.</li>
+  <li>Not efficient enough for games such as chess, go, etc.</li>
+  <li>Evaluation function are needed to replace terminal states by cutoff states.</li>
+  <li>Various approaches to define evaluation function.</li>
+  <li>Most successful approach: machine learning. Evaluate position using experience  from previous games.</li>
+</ul>
+
+<h1 id="comp111---adversarial-search"><a href="/UoL/comp111/lectures/2020/11/04/1.html">COMP111 - Adversarial Search</a></h1>
+<p>Adversarial search is a method of reaching a goal while making moves against another player. This allows the agent to react to the moves of another player.</p>
+
+<p>In search we make all moves. In games we play against an unpredictable opponent:</p>
+
+<ul>
+  <li>Solution is a strategy  specifying a move for every possible move of the opponent.</li>
+  <li>A method is need for selecting good moves that stand a good chance of achieving a winning state whatever the opponent does.</li>
+  <li>Because of combinatorial explosion, in practice we must approximate using heuristics.</li>
+</ul>
+
+<h2 id="types-of-games">Types of Games</h2>
+
+<ul>
+  <li>Information
+    <ul>
+      <li>In some games we have fully observable environment. These are called games with prefect information.</li>
+      <li>In others we have partially observable environments. These are called games with imperfect information.</li>
+    </ul>
+  </li>
+  <li>Determinism
+    <ul>
+      <li>Some games are deterministic</li>
+      <li>Other games have an element of chance.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In addition we will limit ourselves to two-player games, with a zero-sum. This means:</p>
+
+<ul>
+  <li>The utility values at the end are equal and opposite</li>
+  <li>If one player wins then the other player loses.</li>
+</ul>
+
+<p>As a result we can calculate a perfect strategy for the player.</p>
+
+<h2 id="problem-formulation">Problem Formulation</h2>
+<p>The difference between single player searches and adversarial search is that the set of goal states are replace by the <strong>utility function</strong>.</p>
+
+<ul>
+  <li>Initial state $S_{start}$
+    <ul>
+      <li>Initial board position. Which player moves first.</li>
+    </ul>
+  </li>
+  <li>Successor function
+    <ul>
+      <li>Provides for every state $s$ and move the new state after the move.</li>
+    </ul>
+  </li>
+  <li>Terminal test
+    <ul>
+      <li>Determines when the game is over.</li>
+    </ul>
+  </li>
+  <li>Utility function
+    <ul>
+      <li>Numeric value for terminal states
+        <ul>
+          <li>E.g. chess $+1,-1,0$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="game-tree">Game Tree</h3>
+<ul>
+  <li>Each level labelled with player to move.</li>
+  <li>Each level represents a ply.
+    <ul>
+      <li>Half a turn.</li>
+    </ul>
+  </li>
+  <li>Represents whit happen with competing agents.</li>
+</ul>
+
+<h2 id="minimax-algorithm">minimax Algorithm</h2>
+<p>MIN and MAX are two players</p>
+
+<ul>
+  <li>MAX want to win (maximise utility)</li>
+  <li>Min wants to MAX to lose (minimise utility for MAX)</li>
+  <li>MIN is the opponent</li>
+</ul>
+
+<p>Both players will play to the best of their ability</p>
+
+<ul>
+  <li>MAX wants a strategy for maximising utility assuming MIN will do best to minimise MAX’s utility.</li>
+  <li>Considers the minimax value of each state
+    <ul>
+      <li>The utility of a state given that both players play optimally.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="minimax-value">minimax Value</h3>
+
+<ul>
+  <li>The utility (=minimax value) of a <strong>terminal state</strong> is given by its utility already (as an input).</li>
+  <li>The utility (=minimaxvalue) of a <strong>MAX-state</strong> (when MAX moves) is the maximum of the utilities of its successor states.</li>
+  <li>The utility (=minimax value) of <strong>MIN-state</strong> (when MIN moves) is the minimum of the utilities of its successor states.</li>
+</ul>
+
+<p>Thus we can compute the minimax value recursively starting from the terminal states.</p>
+
+<p>Formally, let $\text{Succ}(s)$ denote the set of successor state of state $s$. Define the function $\text{MinimaxV}(s)$ recursively as follows:</p>
+
+<p>[\text{MinimaxV}(s)=
+\begin{cases}
+	\text{Utility}(s) &amp; s\ \text{is terminal}<br />
+	\max_{n\in\text{Succ}(s)}\text{MinimaxV}(n) &amp; \max\text{moves in}\ s<br />
+	\min_{n\in\text{Succ}(s)}\text{MinimaxV}(n) &amp; \min\text{moves in}\ s
+\end{cases}]</p>
+
+<ul>
+  <li>Calculate minimax value of each state using the equation above starting from the terminal states.</li>
+  <li>Games tree as minimax tree
+    <ul>
+      <li>$\bigtriangleup$ max node, $\bigtriangledown$ min node</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TD
+subgraph MAX
+A0
+end
+subgraph MIN
+A1
+A2
+A3
+end
+subgraph MAX
+A11
+A21
+A31
+A12
+A22
+A32
+A13
+A23
+A33
+end
+A0[3] --&gt;|A1| A1[3]
+A0 --&gt;|A2| A2[2]
+A0 --&gt;|A3| A3[2]
+A1 --&gt;|A11| A11[3]
+A1 --&gt;|A12| A12[12]
+A1 --&gt;|A13| A13[8]
+A2 --&gt;|A21| A21[2]
+A2 --&gt;|A22| A22[4]
+A2 --&gt;|A23| A23[6]
+A3 --&gt;|A31| A31[14]
+A3 --&gt;|A32| A32[5]
+A3 --&gt;|A33| A33[2]
+
+</code></pre>
+
+<h3 id="properties-of-minimax">Properties of minimax</h3>
+<p>Assuming MAX always moves to the state with the maximal minimax value.</p>
+
+<ul>
+  <li>Optimal
+    <ul>
+      <li>Against an optimal opponent. Otherwise MAX will do even better. There may however, be better strategies against suboptimal opponents.</li>
+    </ul>
+  </li>
+  <li>Time complexity
+    <ul>
+      <li>Can be implemented DFS so that space complexity is $b^m$ (branching factor $b$, depth $m$).</li>
+    </ul>
+  </li>
+  <li>Space complexity
+    <ul>
+      <li>can be implemented DFS so that space complexity is $bm$.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For chess, $b\approx 35,\ m\approx 100$ for reasonable games.</p>
+
+<ul>
+  <li>10^154 paths to explore</li>
+  <li>Infeasible</li>
+</ul>
+
+<p>But do we need to explore every path?</p>
+
+<h1 id="comp111---a-search"><a href="/UoL/comp111/lectures/2020/10/28/1.html">COMP111 - A* Search</a></h1>
+<p>It was made in 1968 in Stanford by the team that constructed Shaky, the robot.</p>
+
+<ul>
+  <li>The basic idea was to combine uniform cost search and greedy search</li>
+  <li>We look at the cost so far and the estimated cost to goal</li>
+  <li>Thus  we use the <strong>heuristic</strong> $f:$ \(f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\) where:
+    <ul>
+      <li>$g(s_0\ldots s_k)$ is the path cost of $s_0\ldots s_k$
+        <ul>
+          <li>Not heuristic</li>
+        </ul>
+      </li>
+      <li>$h(s_k)$ is expected cost of cheapest solution from $s_k$
+        <ul>
+          <li>Is heuristic</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Aims to reduce the <strong>overall cost</strong>.</li>
+</ul>
+
+<h2 id="general-algorithm-for-a-search">General Algorithm for A* Search</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
+		for each state s the successors of s
+		a test goal(s) checking whether s is a goal state
+		g(s_0...s_k) for every path s_0...s_k
+		h(s) for every state s
+		
+Set frontier := {s_0}
+while frontier is not empty do
+		select and remove from the frontier the path s_0...s_k
+		with g(s_0...s_k) + h(s_k) minimal
+		if goal(s_k) then
+			return s_0...s_k (and terminate)
+		else for every successor s of s_k and s_0...s_ks to frontier
+		end if
+end while
+</code></pre></div></div>
+
+<h3 id="example">Example</h3>
+<p>An A* search is completed on the following graph:</p>
+
+<pre><code class="language-mermaid">graph TD
+S[S, h = 8] --&gt;|1| A[A, h = 8]
+S --&gt;|5| B[B, h = 4]
+S --&gt;|8| C[C, h = 3]
+A --&gt;|3| D[D, h = Infty]
+A --&gt;|7| E[E, h = Infty]
+A --&gt;|9| G[G, h = 0]
+B --&gt;|4| G[G, h = 0]
+C --&gt;|5| G[G, h = 0]
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>S:8</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA:9, SB:9, SC:11</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SB:9, SC:11, SAD:Infty, SAE:Infty, SAG:10</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SC:11, SAD:Infty, SAE:Infty, SAG:10, SBG:9</td>
+    </tr>
+    <tr>
+      <td>SGB is goal</td>
+      <td>SC:11, SAD:Infty, SAE:Infty, SAG:10</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Chose the value which has the lowest value
+    <ul>
+      <li>If the two values are the same it is non-deterministic.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="properties-of-a-search">Properties of A* Search</h2>
+
+<ul>
+  <li>Complete and optimal under minor conditions
+    <ul>
+      <li>If an <strong>admissible</strong> heuristic $h$ is used: \(h(s)\leq h^*(s)\) where $h^*$ is the true cost form $s$ to goal.</li>
+      <li>Thus, a heuristic $h$ is admissible if it never overestimates the distance to the goal (is optimistic).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>Heuristic functions estimate costs of shortest paths.
+    <ul>
+      <li>These can be obtained via computer learning to find better heuristic functions.</li>
+    </ul>
+  </li>
+  <li>Good heuristics can dramatically reduce search cost.</li>
+  <li>Greedy best-first search expands lowest $h$.
+    <ul>
+      <li>Incomplete and not always optimal.</li>
+    </ul>
+  </li>
+  <li>A* search expands lowest $g+h$.
+    <ul>
+      <li>Complete and optimal.</li>
+      <li>Optimally efficient.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="comp111---informed-strategies"><a href="/UoL/comp111/lectures/2020/10/27/2.html">COMP111 - Informed Strategies</a></h1>
+<ul>
+  <li>Use problem-specific knowledge to make the search more efficient.</li>
+  <li>Based on your knowledge, select the most promising path first.</li>
+  <li>Rather than trying all possible search paths, you try to focus on paths  that get you nearer to the goal state according to your estimate.</li>
+</ul>
+
+<h2 id="heuristics">Heuristics</h2>
+<ul>
+  <li>They estimate the oct of cheapest path form a state to a goal state</li>
+  <li>We have a <strong>heuristic function</strong> \(h:\text{States}\rightarrow\text{real numbers}\) which estimates the cost of going form that state to the goal. $h$ can be any function by $h(s) = 0$ if $s$ is a goal.</li>
+  <li>In route finding, heuristic might be straight line distance from node to destination. Hence:
+    <ul>
+      <li>Greedy search expands the path that appears to be closest to the goal.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="greedy-search">Greedy Search</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
+		for each state s the successors of s
+		a test goal(s) checking whether s is a goal state
+		g(s_0...s_k) for every path s_0...s_k
+		
+Set frontier := {s_0}
+while frontier is not empty do
+		select and remove from the frontier the path s_0...s_k
+		with h(s_k) minimal
+		if goal(s_k) then
+			return s_0...s_k (and terminate)
+		else for every successor s of s_k and s_0...s_ks to frontier
+		end if
+end while
+</code></pre></div></div>
+
+<h4 id="example">Example</h4>
+<p>A greedy search is completed on the following graph:</p>
+
+<pre><code class="language-mermaid">graph TD
+S[S, h = 8] --&gt;|1| A[A, h = 8]
+S --&gt;|5| B[B, h = 4]
+S --&gt;|8| C[C, h = 3]
+A --&gt;|3| D[D, h = Infty]
+A --&gt;|7| E[E, h = Infty]
+A --&gt;|9| G[G, h = 0]
+B --&gt;|4| G[G, h = 0]
+C --&gt;|5| G[G, h = 0]
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>S:8</td>
+    </tr>
+    <tr>
+      <td>S is not goal</td>
+      <td>SA:8, SB:4, SC:3</td>
+    </tr>
+    <tr>
+      <td>SC is not goal</td>
+      <td>SA:8, SB:4, SCG:0</td>
+    </tr>
+    <tr>
+      <td>SCG is goal</td>
+      <td>SA:8, SB:4</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Always expand the state which is closest to the goal as estimated by the heuristic function.</li>
+  <li>This uses much less iterations that the uniform cost search but it is not the shortest path.</li>
+</ul>
+
+<h4 id="properties-of-greedy-search">Properties of Greedy Search</h4>
+<ul>
+  <li>Sometimes find solutions quickly</li>
+  <li>Doesn’t always find the best solution</li>
+  <li>May not fins a solution if the is one
+    <ul>
+      <li>Incomplete</li>
+    </ul>
+  </li>
+  <li>Susceptible to false starts</li>
+  <li>Only looking at current state
+    <ul>
+      <li>Only takes into account estimates which are based on how close they are to the destination and not how long the path to the next step is.</li>
+      <li>Ignores past states.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="comp111---uniform-cost-search-and-informed-tree-search"><a href="/UoL/comp111/lectures/2020/10/27/1.html">COMP111 - Uniform Cost Search and Informed Tree Search</a></h1>
+<p>Basic problem solving techniques such as BFS and DFS are either incomplete, in the case of DFS or computationally expensive.</p>
+
+<p>You can make some tweaks to generate other uniform cost search algorithms or add more information to give an informed search algorithm. Either of these are an improvement</p>
+
+<ul>
+  <li><strong>Uniform cost search</strong> is similar to a BFS but including cost.</li>
+  <li>Heuristic searches include rules of thumb and can include:
+    <ul>
+      <li>Greedy search</li>
+      <li>A* search
+        <ul>
+          <li>This is the most easiest and most popular search method made in 1968.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="search-graph-with-costs">Search Graph with Costs</h2>
+<p>A path cost function,
+\(g:\text{Paths}\rightarrow\text{real numbers}\)
+gives a cost to each path. We assume that the cost of a path is the sum over the costs of the steps in the path.</p>
+
+<h3 id="uniform-cost-search">Uniform Cost Search</h3>
+<ul>
+  <li>Why not expand the cheapest path first?</li>
+  <li>Intuition: cheapest is likely to be best.</li>
+  <li>Performance is like BFS but we select the minimum cost path rather than the shortest path.</li>
+  <li>Uniform cost search behaves in exactly the same way as BFS if the cost of every step is the same.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
+		for each state s the successors of s
+		a test goal(s) checking whether s is a goal state
+		g(s_0...s_k) for every path s_0...s_k
+		
+Set frontier := {s_0}
+while frontier is not empty do
+		select and remove from the frontier the path s_0...s_k
+		with g(s_0...s_k) minimal
+		if goal(s_k) then
+			return s_0...s_k (and terminate)
+		else for every successor s of s_k add s0...s_ks to frontier
+		end if
+end while
+</code></pre></div></div>
+
+<h4 id="example">Example</h4>
+<p>A uniform cost search is completed on the following graph:</p>
+
+<pre><code class="language-mermaid">graph TD
+S --&gt;|5| A
+S --&gt;|2| B
+S --&gt;|4| C
+A --&gt;|9| D
+A --&gt;|4| E
+B --&gt;|6| G
+E --&gt;|6| G
+C --&gt;|2| F
+F --&gt;|1| G
+D --&gt;|7| H
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>{S:0}</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA:5, SB:2, SC:4</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SA:5, SC:4, SBG:8</td>
+    </tr>
+    <tr>
+      <td>SC not goal</td>
+      <td>SA:5, SBG:8, SCF:6</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SABG:8, SCF:6, SAD:14, SAE:9</td>
+    </tr>
+    <tr>
+      <td>SCF not goal</td>
+      <td>SABG:8, SAD:14, SAE:9, SCFG,7</td>
+    </tr>
+    <tr>
+      <td>SCFG is goal</td>
+      <td>SABG:8, SAD:14, SAE:9</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>In this graph you always choose the frontier with the shortest path length.</li>
+  <li>Carry on other tasks the same as BFS.</li>
+</ul>
+
+<h4 id="properties-of-uniform-cost-search">Properties of Uniform Cost Search</h4>
+
+<ul>
+  <li>Complete and optimal
+    <ul>
+      <li>Provided that the path costs grow monotonically</li>
+    </ul>
+  </li>
+  <li>Only works provided that each step makes the path more costly</li>
+  <li>If the path doesn’t grow monotonically, then exhaustive search is required</li>
+  <li>Time and space complexity
+    <ul>
+      <li>Same as BFS</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="real-life-problems">Real Life problems</h5>
+<ul>
+  <li>Whatever search technique we use, exponential time complexity.</li>
+  <li>Tweaks to the algorithm will not reduce this to polynomial.</li>
+  <li>We need a problem specific knowledge to guide the search.</li>
+  <li>Simplest from of problem specific knowledge is heuristic.</li>
+  <li>Standard implementation in search is via an evaluation function which indicates desirability of selecting a state.</li>
+</ul>
+
+<h1 id="comp111---properties-of-searches"><a href="/UoL/comp111/lectures/2020/10/20/3.html">COMP111 - Properties of Searches</a></h1>
+<p>For all algorithms there are certain properties that they can be evaluated against:</p>
+
+<ul>
+  <li>Completeness
+    <ul>
+      <li>Does the algorithm always find a solution if one exists?</li>
+    </ul>
+
+    <p>This is true for BFS but not for DFS as cycles can stop depth first if there is a loop.</p>
+  </li>
+  <li>Optimality
+    <ul>
+      <li>Does the algorithm always find a shortest path or one of lowest cost?</li>
+    </ul>
+
+    <p>Yes for BFS but no for DFS (neither take into account cost, just steps.)</p>
+  </li>
+  <li>Time Complexity
+    <ul>
+      <li>What are the number of paths generated?/How long will it take to compute?</li>
+    </ul>
+
+    <p>Harder to answer. This will need to be computed</p>
+  </li>
+  <li>Space Complexity
+    <ul>
+      <li>What are the maximum number of paths in memory (in frontier)?</li>
+    </ul>
+
+    <p>This will always be smaller or equal to the time complexity but it is still harder to answer.</p>
+  </li>
+</ul>
+
+<h2 id="time--space-complexity">Time &amp; Space Complexity</h2>
+
+<p>Time and space complexity are measured in terms of:</p>
+
+<ul>
+  <li>$b$ - Maximum branching factor
+    <ul>
+      <li>The maximal number of successor states of a state in the state space.</li>
+    </ul>
+  </li>
+  <li>$d$ - Depth of the optimal solution
+    <ul>
+      <li>The length of the shortest path from the start state to a goal state.</li>
+    </ul>
+  </li>
+  <li>$m$ - Maximum depth of the state space
+    <ul>
+      <li>the length of the longest path in the state space (may be $\infty$ to to loops)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="example-1---8-puzzle">Example 1 - 8 Puzzle</h3>
+
+<ul>
+  <li>$b$ (maximum branching factor) is 4</li>
+  <li>$d$ (optimal solution) is 31</li>
+  <li>$m$ (longest path) is $\infty$ as there are cycles</li>
+</ul>
+
+<h3 id="example-2---holiday-in-romania">Example 2 - Holiday in Romania</h3>
+
+<ul>
+  <li>$b=4$</li>
+  <li>$d=3$</li>
+  <li>$m=\infty$</li>
+</ul>
+
+<h2 id="properties-of-breadth-first-search">Properties of Breadth First Search</h2>
+
+<p class="info">The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</p>
+
+<p class="info">The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</p>
+
+<ul>
+  <li>Time complexity
+    <ul>
+      <li>If the shortest path to a goal state has length $d$ then the worst case BFS will look at: \(1+b+B^2+\ldots +b^d\) paths before reaching a goal state.</li>
+    </ul>
+  </li>
+  <li>Space complexity
+    <ul>
+      <li>If the shortest path to a goal state has length $d$, then in the worst case the frontier can contain $b^d$ paths and so the memory requirement is $b^d$.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="complexity">Complexity</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Depth</th>
+      <th>Paths</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1 msec</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>11</td>
+      <td>.01 sec</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>111</td>
+      <td>.1 sec</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>11,111</td>
+      <td>11 sec</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>10^6</td>
+      <td>18 sec</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>10^8</td>
+      <td>31 hours</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>10^10</td>
+      <td>128 days</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>10^12</td>
+      <td>35 years</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Example of combinatorial explosion of a BFS at 1000 states/sec.</em></p>
+
+<h2 id="properties-of-depth-first-search">Properties of Depth First Search</h2>
+
+<ul>
+  <li>Not complete - No guarenteed to find a solution</li>
+  <li>Not optimal - Solution is not guaranteed to be the shortest path.</li>
+  <li>Time Complexity
+    <ul>
+      <li>If the length of the longest path from the start state is $m$, then the worst case DFS will look at: \(1+b+b^2+\ldots +b^m\) This may be an issue as $m$ is infinite in many problems.</li>
+    </ul>
+  </li>
+  <li>Space Complexity
+    <ul>
+      <li>If the length of the longest path starting at a goal state is $m$, then the worst case the frontier can contain: \(b\times m\) paths. if $m$ is infinite, then the space requirement is infinite in the worst case. But if DFS finds a path to the goal state, then memory requirement is much less than for BFS.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>DFS is complete ut expensive</li>
+  <li>DFS is cheap in space complexity but incomplete</li>
+</ul>
+
+<h1 id="comp111---depth-first-search"><a href="/UoL/comp111/lectures/2020/10/20/2.html">COMP111 - Depth First Search</a></h1>
+<p>Depth first always selects the longest path from the frontier as opposed to the shortest path. From the perspective of the frontier you are expanding the path that was most recently added as opposed to the oldest path in the frontier.</p>
+
+<h2 id="change-to-pseudo-code">Change to Pseudo-code</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7:	select and remove from frontier the path s_o...s_k that was
+8: 	last added to frontier
+</code></pre></div></div>
+
+<p>As a result a stack should be used instead of a queue such that the last into the data structure is the first out.</p>
+
+<h2 id="example">Example</h2>
+
+<pre><code class="language-mermaid">graph TD
+S --&gt; A
+S --&gt; B
+S --&gt; C
+A --&gt; D
+A --&gt; E
+B --&gt; G
+E --&gt; G
+C --&gt; F
+F --&gt; G
+D --&gt; H
+</code></pre>
+<p><em>Example Graph.</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expansion Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>SA, SB, SC</td>
+    </tr>
+    <tr>
+      <td>SA is not goal</td>
+      <td>SB, SC, SAD, SAE</td>
+    </tr>
+    <tr>
+      <td>SAD is not goal</td>
+      <td>SB, SC, SAE, SADH</td>
+    </tr>
+    <tr>
+      <td>SADH is not goal</td>
+      <td>SB, SC, SAE</td>
+    </tr>
+    <tr>
+      <td>SAE is not goal</td>
+      <td>SB, SC, SAEG</td>
+    </tr>
+    <tr>
+      <td>SAEG is goal</td>
+      <td>SB, SC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This additionally illustrates that depth first doesn’t always find the shortest path as the longest paths are searched first.</p>
+
+<p>Breadth first however always finds the shortest path.</p>
+
+<h1 id="comp111---breadth-first-search"><a href="/UoL/comp111/lectures/2020/10/20/1.html">COMP111 - Breadth First Search</a></h1>
+<ol>
+  <li>Select and expand start state to give a tree of depth 1.</li>
+  <li>Select and expand all paths that resulted from previous step to give a tree of depth 2.</li>
+  <li>and so on.</li>
+</ol>
+
+<p>In general select adn expand all paths of depth $n$ before depth $n + 1$</p>
+
+<h2 id="maze-example">Maze example</h2>
+
+<p>First explore paths of length 1, then depth 2 then length three. This has the result of following all paths and then returning to the source via the shortest path.</p>
+
+<h2 id="example-1">Example 1</h2>
+
+<pre><code class="language-mermaid">graph TD
+S --&gt; A
+S --&gt; B
+S --&gt; C
+A --&gt; D
+A --&gt; E
+B --&gt; G
+E --&gt; G
+C --&gt; F
+F --&gt; G
+D --&gt; H
+</code></pre>
+<p><em>Example Graph.</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA, SB, SC</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SB, SC, SAD, SAE</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SC, SAD, SAE, SBG</td>
+    </tr>
+    <tr>
+      <td>SC not goal</td>
+      <td>SAD, SAE, SBG, SCF</td>
+    </tr>
+    <tr>
+      <td>SAD not goal</td>
+      <td>SAE, SBG, SCF, SADH</td>
+    </tr>
+    <tr>
+      <td>SAE not goal</td>
+      <td>SBG, SCF, SADH, SAEG</td>
+    </tr>
+    <tr>
+      <td>SBG is goal</td>
+      <td>SCF, SADH, SAEG</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the route was expanded at the same time then they are allowed to be added in any order. Otherwise they should be searched in the order that they were first added to the frontier. Choosing the first item in the frontier is always the right option as it is first in first out.</p>
+
+<h1 id="comp111---tutorial-1"><a href="/UoL/comp111/tutorials/2020/10/19/1.html">COMP111 - Tutorial 1</a></h1>
+<p>Covering the tutorial sheets from week 1. The tutorial leader’s email is <a href="mailto:F.Alves@liverpool.ac.uk">F.Alves@liverpool.ac.uk</a>.</p>
+
+<ol>
+  <li>The leader chose to cover one of the options which was football.
+    <ul>
+      <li>Performance Measure
+        <ul>
+          <li>Games won, goals scored.</li>
+        </ul>
+      </li>
+      <li>Environment
+        <ul>
+          <li>Football pitch, the players, the ball.</li>
+        </ul>
+      </li>
+      <li>Actuators
+        <ul>
+          <li>Legs, head.</li>
+        </ul>
+      </li>
+      <li>Sensors
+        <ul>
+          <li>Visual, hearing, pressure.</li>
+        </ul>
+      </li>
+      <li>Classification
+        <ul>
+          <li>Partially observable environment as they can’t see what is behind them and they have to memorise the positions of the players that they can’t see.</li>
+          <li>Stochastic as there is uncertainty about the state that will come from performing an action</li>
+          <li>Sequential as the current decision could affect all future decisions.</li>
+          <li>Dynamic environment as other players are acting while you make your decision.</li>
+          <li>Continuous as there is no fixed states for the positions.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Refer to the textbook or lecture notes.</li>
+  <li>For a path $a_0 \rightarrow a_1 \rightarrow a_2 \rightarrow a_3$, the length of the path is 3 as that is the number of actions that need to be performed.
+    <ul>
+      <li>When listing paths you can list them by length
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab, ac, ad</li>
+          <li>2 : abe, ace, ade</li>
+          <li>3 : abef, acef, adef</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>This may help with drawing search trees.</p>
+
+    <ul>
+      <li></li>
+    </ul>
+
+    <pre><code class="language-mermaid"> graph LR
+ a --&gt; ab
+ a --&gt; ac
+ a --&gt; ad
+ ab --&gt; abe
+ ac --&gt; ace
+ ad --&gt; ade
+ abe --&gt; abef
+ ace --&gt; acef
+ ade --&gt; adef
+</code></pre>
+  </li>
+  <li>
+    <ul>
+      <li>Paths
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab</li>
+          <li>2 : aba, abc</li>
+          <li>3 : abab</li>
+          <li>4 : ababa, ababc</li>
+        </ul>
+      </li>
+      <li>Search graph</li>
+    </ul>
+
+    <pre><code class="language-mermaid">graph LR
+a --&gt; ab
+ab --&gt; aba
+ab --&gt; abc
+aba --&gt; abab
+abab --&gt; ababa
+abab --&gt; ababc
+ababc .-&gt; A[ ]
+</code></pre>
+    <p>You should draw the trailing arrow to indicate that the graph has bee truncated.</p>
+
+    <p class="info">Search graphs should be drawn with the whole path at each level as it shows the full search at each level.</p>
+  </li>
+  <li>Similar to 3. and 4.</li>
+  <li>
+    <ul>
+      <li>This problem is very large so I will describe the result
+        <ul>
+          <li>The set of $S$ states are all 16 or $4^4$ states that exist as a subset of the set $N = \{ 1,2,3,4 \}$</li>
+          <li>The start state $S_{start}$ is an empty subest $\{ \phi \}$ with a sum of zero.</li>
+          <li>The set of goal states $S_{goal}$ are all the subsets which add to 6</li>
+          <li>The set of actions $A$ are any addition or subtraction of a number that is in the set.</li>
+          <li>The cost function for each action should just be one such that the shortest route from $S_{start}$ is achieved.</li>
+        </ul>
+      </li>
+      <li>
+        <p>The search graph starts at level 1 with the empty list and then each subsequent level adds an additional item to the list via an action which adds or subtracts an item from the set:</p>
+
+        <pre><code class="language-mermaid">  graph TD
+  A[phi 0] --&gt; |a1| B[&lt;1&gt; 1]
+  A --&gt; |+2| C[&lt;2&gt; 2]
+  A --&gt; |+3| D[&lt;3&gt; 3]
+  A --&gt; |+4| E[&lt;4&gt; 4]
+  B --&gt; |+2| F[&lt;1,2&gt; 3]
+  B --&gt; |+3| G[&lt;1,3&gt; 4]
+  B --&gt; |+4| H[&lt;1,4&gt; 5]
+  C --&gt; |+1| F
+  C --&gt; |+3| I[&lt;2,3&gt; 5]
+  C --&gt; |+4| J[&lt;2,4&gt; 6]
+  D --&gt; |+1| G
+  D --&gt; |+2| I
+  D --&gt; |+4| K[&lt;3,4&gt; 7]
+  E --&gt; |+1| H
+  E --&gt; |+2| J
+  E --&gt; |+3| K
+  F .-&gt; L[ ]
+  G .-&gt; M[ ]
+  H .-&gt; N[ ]
+  I .-&gt; O[ ]
+  J .-&gt; P[ ]
+  K .-&gt; Q[ ]
+</code></pre>
+
+        <p>As you can see this is very tedious indeed.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="comp111---generic-search-algorithm-in-pseudo-code"><a href="/UoL/comp111/lectures/2020/10/14/3.html">COMP111 - Generic Search Algorithm in Pseudo-code</a></h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 	a start state s_0
+		for each state s the successors of s
+		a test goals(s) checking whether s is a goal state
+		
+Set frontier := {s_0}
+while frontier is not empty do
+	select and remove from frontier a path s_0...s_k
+	if goal(s_k) then
+		return s_0...s_k (and terminate)
+	else for every successor s of s_k and s_0...s_k s to frontier
+	end if
+end while
+</code></pre></div></div>
+
+<ul>
+  <li>Lines 1-3 are specifying the input of the program.</li>
+  <li>Line 5 sets the frontier (the set of paths) to s$_0$.</li>
+  <li>Line 7 remove a path and expand it.</li>
+  <li>Lines 8-9 if the final state in the frontier is the goal state then return the path and end.</li>
+  <li>Line 10 if the goal isn’t reached then add all expansions of successors to the frontier.</li>
+</ul>
+
+<p>The algorithm maintains a set called the <strong>frontier</strong> containing the paths. It is also sometimes called the <strong>agenda</strong>. As long as the frontier is not empty is selects and removes a path from itself and adds the paths expansions. The differences between algorithms are with which path is removed and expanded in the frontier.</p>
+
+<h2 id="bfs-vs-dfs">BFS vs DFS</h2>
+
+<p>In line 7, if you remove and expand the item that was added first that is called breadth first. If you remove and expand the one that was added last that is a depth first search.</p>
+
+<h1 id="comp111---size-of-search-graphs-and-search-trees"><a href="/UoL/comp111/lectures/2020/10/14/2.html">COMP111 - Size of Search Graphs and Search Trees</a></h1>
+<p>In real search problems the state space is huge e.g. Rubik’s Cube - $10^{18}$ which will take 68,000 years to brute force at 10 million states/sec. This is an example of the combinatorial explosion. In addition, we cannot store all of the states.</p>
+
+<p>Instead, given the start state. We can describe the actions and compute the successor states. A description of the goal states can be given to check whether the goal is reached.</p>
+
+<p class="info">Search is the systematic exploration of the search tree consisting of all possible paths of states starting with the start state using the action available until a path to a goal state is reached.</p>
+
+<h2 id="search-tree-for-holiday-in-romania">Search Tree for Holiday in Romania</h2>
+
+<ul>
+  <li>Arad</li>
+  <li>Arad, Sibiu and Arad, Timisoara and Arad, Zerind</li>
+</ul>
+
+<p>Thus we have a Single path of length 0 and three paths of length 1. Later on going back is a valid path e.g. Arad, Sibiu, Arad.</p>
+
+<p>The search algorithm says how to reach the nodes of the tree. Applying actions longer paths are generated by adding up successor states. This is called <strong>expanding</strong> the path/state.</p>
+
+<pre><code class="language-mermaid">graph TD
+A[Arad] .-&gt; S[Sibu]
+A .-&gt; T[Timisoara]
+A .-&gt; Z[Zerind]
+S .-&gt; A1[Arad]
+S .-&gt; Fagaras
+S .-&gt; Oradea
+S .-&gt; R[Rimnicu Vilcea]
+T .-&gt; A2[Arad]
+T .-&gt; Lugoj
+Z .-&gt; A3[Arad]
+Z .-&gt; O1[Oradea]
+</code></pre>
+<p><em>The initial state.</em></p>
+
+<pre><code class="language-mermaid">graph TD
+A[Arad] --&gt; S[Sibu]
+A --&gt; T[Timisoara]
+A --&gt; Z[Zerind]
+S .-&gt; A1[Arad]
+S .-&gt; Fagaras
+S .-&gt; Oradea
+S .-&gt; R[Rimnicu Vilcea]
+T .-&gt; A2[Arad]
+T .-&gt; Lugoj
+Z .-&gt; A3[Arad]
+Z .-&gt; O1[Oradea]
+</code></pre>
+<p><em>After expanding Arad.</em></p>
+
+<pre><code class="language-mermaid">graph TD
+A[Arad] --&gt; S[Sibu]
+A --&gt; T[Timisoara]
+A --&gt; Z[Zerind]
+S --&gt; A1[Arad]
+S --&gt; Fagaras
+S --&gt; Oradea
+S --&gt; R[Rimnicu Vilcea]
+T .-&gt; A2[Arad]
+T .-&gt; Lugoj
+Z .-&gt; A3[Arad]
+Z .-&gt; O1[Oradea]
+</code></pre>
+<p><em>After expanding Sibiu.</em></p>
+
+<h1 id="comp111---search-graphs"><a href="/UoL/comp111/lectures/2020/10/14/1.html">COMP111 - Search Graphs</a></h1>
+<p>BFS and DFS are blind search algorithms meaning we have no further information about the tree.</p>
+
+<h2 id="solving-problems-by-searching">Solving Problems by Searching</h2>
+
+<p>Considering that there is a goal-based agent that want to bring about a state of affairs by completing some actions. These actions need to be ordered in order to reach the goal. We may also want to minimise time or fuel consumption. This is all part of the problem formulation.</p>
+
+<ul>
+  <li>Describing the Goal</li>
+  <li>Describing the Relevant State of the Environment</li>
+  <li>Describing the Possible Actions</li>
+  <li>Describing the Optimality Criterion</li>
+</ul>
+
+<p>Once the problem has been formulated, looking for a sequence of actions that lead to a goal state and is optimal is called search.</p>
+
+<h2 id="formulating-the-search-graph">Formulating the Search Graph</h2>
+
+<p>S are the possible states or nodes in a graph. There can be:</p>
+
+<ul>
+  <li>S$_\textrm{start}$ for the starting point.</li>
+  <li>S$_\textrm{goal}$ for the goal states.</li>
+  <li>A set of A actions that can be performed that will take the agent from one state in S to another state in S.</li>
+  <li>There can sometimes be a cost function that states how expensive an action is. If all actions are equally expensive, we set $\textrm{cost}(a)=1$</li>
+</ul>
+
+<p>A solution to the search problem is a sequence of actions such that when performed in the start state S$<em>\textrm{start}$, that agents reaches a goal state in S$</em>\textrm{goal}$. A solution is <em>optimal</em> if there is no less expensive solution.</p>
+
+<h3 id="notation">Notation</h3>
+
+<p>For any node S, which is a state:</p>
+
+<ul>
+  <li>The children are called successor states (s)</li>
+  <li>The parents are called predecessor states (s’)</li>
+</ul>
+
+<h2 id="abstraction">Abstraction</h2>
+
+<p>As the real world is very complex state space must be abstracted for problem solving. This can be seen as an abstract state could be any number of real states. In addition and abstract action could be any complex combination of real actions.</p>
+
+<p>A good abstraction sound guarantee reasonability. E.g. Any one real state must get to another real state following the abstracted actions.</p>
+
+<p>An abstract solution is a set of real paths that are solutions in the real world.</p>
+
+<h1 id="comp111---classification-of-intelligent-agents"><a href="/UoL/comp111/lectures/2020/10/13/2.html">COMP111 - Classification of Intelligent Agents</a></h1>
+<p>Intelligent agents are classified depending on how they map their precepts to their actions. They can be classed under:</p>
+
+<ul>
+  <li>Simple reflex agents
+    <ul>
+      <li>Select actions to execute based upon the current percept</li>
+      <li>Don’t take the percept history into account.</li>
+      <li>Very simple IFTTT actions.</li>
+      <li>Very simple to implement but have limited intelligence.</li>
+      <li>They have no memory.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TB
+    A(Environment)--&gt; |Sensors| B
+    B[What the world is like now] --&gt; C
+    C[What action I should do now]--&gt; |Actuators| A
+    D[Condition-action rules]--&gt;C
+</code></pre>
+
+<ul>
+  <li>Model-based reflex agents
+    <ul>
+      <li>Maintain an internal state that depends upon the percept history - memory.</li>
+      <li>Helps deal with partial observability.</li>
+      <li>Knows how the world evolves and how its actions affect the world.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TB
+    A(Environment)--&gt; |Sensors| B
+    B[What the world is like now] --&gt; C
+    C[What action I should do now]--&gt; |Actuators| A
+    D[Condition-action rules]--&gt;C
+    E--&gt;B
+    B.-&gt;E(State)
+    F(How the world evolves)--&gt;B
+    G(What my actions do)--&gt;B
+</code></pre>
+
+<ul>
+  <li>Goal-based agents
+    <ul>
+      <li>Select appropriate actions to achieve desirable state of the environment.</li>
+      <li>Knowledge of the current state does not automatically mean that the agent knows what to do.</li>
+      <li>It will have to plan what to do over a long sequence of actions.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TB
+    A(Environment)  --&gt; |Sensors| B
+    B[What the world is like now] --&gt; H
+    H[What it will be like if I do action A] --&gt; C
+    C[What action I should do now]--&gt; |Actuators| A
+    D[Condition-action rules]--&gt;C
+    B.-&gt;E(State)
+    E--&gt;B
+    F(How the world evolves)--&gt;B
+    F --&gt; H
+    G(What my actions do)--&gt;B
+    G --&gt; H
+</code></pre>
+
+<ul>
+  <li>Utility-based agents
+    <ul>
+      <li>Make use of a utility function to compare the <strong>desirability</strong> of different states that result from actions.</li>
+      <li>Many actions may satisfy the goal but which one is the most desirable?</li>
+      <li>Utility function maps a state, or sequence of states, onto a number to give the degree of <strong>usefulness</strong> of the state to the agents.</li>
+      <li>Agent maximises the value of its utility function.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TB
+    A(Environment)--&gt; |Sensors| B
+    B[What the world is like now] --&gt; H
+    H[What it will be like if I do action A] --&gt; I
+    I[How happy I will be in such a state] --&gt; C
+    J(Utility)--&gt;I
+    C[What action I should do now]--&gt; |Actuators| A
+    D[Condition-action rules]--&gt;C
+    B.-&gt;E(State)
+    E--&gt;B
+    F(How the world evolves)--&gt;B
+    F --&gt; H
+    G(What my actions do)--&gt;B
+    G --&gt; H
+</code></pre>
+
+<ul>
+  <li>Learning agents
+    <ul>
+      <li>Learning agents find ways of maximising their utility function based on previous experience</li>
+      <li>The performance element is the same choice mechanism from the previous agents. This is now informed by the learning element.</li>
+      <li>The performance standard informs the learning element how well it’s actions have worked.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">graph TB
+	A(Environment) --&gt; |Sensors| B[Performance element]
+	B --&gt; |Actuators| A
+	D[Performance standard] --&gt; C[Critic]
+	C --&gt; |Feedback| L[Learning element]
+	L --&gt; |Changes| B
+	B --&gt; |Knowledge| L
+	L --&gt; |Learning Goals| P[Problem Generator]
+	P --&gt; B
+</code></pre>
+
+<h1 id="comp111---intelligent-agents"><a href="/UoL/comp111/lectures/2020/10/13/1.html">COMP111 - Intelligent Agents</a></h1>
+<p>Entities that are engineered in AI are known as agents.</p>
+
+<p class="info">An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.</p>
+
+<h2 id="peas">PEAS</h2>
+<ul>
+  <li>Performance Measure
+    <ul>
+      <li>The criteria by which we can measure the success of an agent’s behaviour.</li>
+    </ul>
+  </li>
+  <li>Environment
+    <ul>
+      <li>The external environment that the agent inhabits.</li>
+    </ul>
+  </li>
+  <li>Actuators
+    <ul>
+      <li>The means by which the agent acts within its environment.</li>
+    </ul>
+  </li>
+  <li>Sensors
+    <ul>
+      <li>The means by which the agent senses its environment.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ex-vacuum-cleaner">Ex. Vacuum Cleaner</h3>
+<ul>
+  <li>Performance measure
+    <ul>
+      <li>Clean all rooms quickly</li>
+    </ul>
+  </li>
+  <li>Environment
+    <ul>
+      <li>A vacuum cleaner located in one of two rooms, each possibly containing dirt</li>
+    </ul>
+  </li>
+  <li>Actuators
+    <ul>
+      <li>Move left/right, suck up the dirt, do nothing</li>
+    </ul>
+  </li>
+  <li>Sensors
+    <ul>
+      <li>In which room is the vacuum cleaner? Is there dirt in that room?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="task-environments">Task Environments</h2>
+<h3 id="fully-observable-vs-partially-observable">Fully Observable vs Partially Observable</h3>
+<p>A fully observable environment is one in which the agent can fully obtain complete, up-to-date info about the environment’s state. Generally games can be fully observable but most real-life situations are partially observable.</p>
+
+<p>Partially observable environments require a memory to deduce what might happen based on the last gained information.</p>
+
+<h3 id="deterministic-vs-stochastic">Deterministic vs Stochastic</h3>
+<p>Deterministic environments are where any action has a single guaranteed effect. Stochastic means that there is no certainty about the outcome given a certain input.</p>
+
+<h3 id="episodic-vs-sequential">Episodic vs Sequential</h3>
+<p>Episodic environments are where the performance of an agent is dependent on a number of discrete episodes with no link between it’s performance in each episode. In sequential environments different episodes are linked.</p>
+
+<p>In sequential environments decisions made now may affect the future and must be taken into account.</p>
+
+<h3 id="static-vs-dynamic">Static vs Dynamic</h3>
+<p>In a static environment everything will stay the same while the agent is deliberating. This is common in turn based games. For dynamic environments things will change while the agent is deliberating and actions are more urgent.</p>
+<h3 id="discrete-vs-continuous">Discrete vs Continuous</h3>
+<p>In a discrete environment there are a fixed number of distinct states. In continuous environments there can be many states such that we consider them as infinite.</p>
+
+<h1 id="comp111---views-and-history-of-ai"><a href="/UoL/comp111/lectures/2020/10/12/1.html">COMP111 - Views and History of AI</a></h1>
+<h2 id="views-of-ai">Views of AI</h2>
+<h3 id="typical-ai-application-areas">Typical AI Application Areas</h3>
+<ul>
+  <li>Natural Language Processing</li>
+  <li>Computer Vision</li>
+  <li>Robotics</li>
+  <li>Theorem Proving</li>
+  <li>Speech Recognition</li>
+  <li>Game Playing</li>
+  <li>Sematic Web Search</li>
+  <li>Diagnosis</li>
+</ul>
+
+<h3 id="what-is-ai">What is AI</h3>
+<p>The goal of AI is to build machines that perform tasks that normally require human intelligence. This can also be construed as what is new in computing as the computers performing the task can be seen as intelligent.</p>
+
+<p>AI is both science and engineering as it is:</p>
+
+<ul>
+  <li>the <em>science</em> of understanding intelligent entities: developing theories/models which attempt to explain and predict the nature of such entities.</li>
+  <li>the <em>engineering</em> of such entities.</li>
+</ul>
+
+<h3 id="four-views-of-ai">Four Views of AI</h3>
+<ul>
+  <li>Systems that <em>think</em> like <em>humans</em></li>
+  <li>Systems that <em>act</em> like <em>humans</em></li>
+  <li>Systems that <em>think rationally</em> (think the correct way)</li>
+  <li>Systems that <em>act rationally</em> (act optimal to achieve a goal)</li>
+</ul>
+
+<h3 id="thinking-humanly-vs-acting-humanly">Thinking Humanly vs Acting Humanly</h3>
+<p>Computer science is concerned with acting intelligently rather than simulating a brain like a cognitive scientist might want. An abstract of this is whether they act intelligently. This is because although an entity might not think intelligently it can appear intelligent by acting intelligently.</p>
+
+<h3 id="turing-test-1950">Turing Test 1950</h3>
+<p>A human should not be able to tell whether an entity is a human or a machine.</p>
+
+<p>No system has yet passed the test. In addition, it is not always the most practical or foolproof as those who are the most successful rely on tricks.</p>
+
+<h3 id="thinking-and-acting-rationally">Thinking and Acting Rationally</h3>
+
+<p>This is the focus on making systems that act how we think that they should act. To do this we can use techniques from logic and probability theory to create machines that can reason correctly.</p>
+
+<ul>
+  <li>Acting Rationally - Acting in such a way to achieve one’s goals optimally and given one’s beliefs.</li>
+</ul>
+
+<p>As a result of this view, we can use techniques from <em>economics/game theory</em> to investigate and create machines that act rationally.</p>
+
+<h2 id="history-of-ai">History of AI</h2>
+
+<h3 id="combinatorial-explosion---chess">Combinatorial Explosion - Chess</h3>
+
+<p>For a simple game it is possible to write a program that will select the best possible move from all possible moves. However in chess there are an exponential number of moves after each move.</p>
+
+<p><strong>The fact that a program can find a solution in principle
+does not mean that the program will be able to find it in practice.</strong></p>
+
+<h3 id="expert-systems">Expert systems</h3>
+
+<ul>
+  <li>As general purpose brute force techniques don’t work we should use knowledge rich solutions.
+    <ul>
+      <li>These are very specialised systems with vast amounts of knowledge about a tightly focused domain.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The main problems with expert systems are:</p>
+
+<ul>
+  <li>The knowledge elicitation bottleneck
+    <ul>
+      <li>Finding knowledge from experts is very time consuming and expensive</li>
+    </ul>
+  </li>
+  <li>Lack of trust in recommendations given by expert systems
+    <ul>
+      <li>The main problem as you don’t know how the system has came to the solution.</li>
+    </ul>
+  </li>
+</ul>
+
+:ET

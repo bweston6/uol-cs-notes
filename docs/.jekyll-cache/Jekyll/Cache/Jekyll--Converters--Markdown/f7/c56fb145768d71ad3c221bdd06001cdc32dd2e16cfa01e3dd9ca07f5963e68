@@ -1,0 +1,88 @@
+I"^<h2 id="basics-and-definitions">Basics and Definitions</h2>
+<p>A function is a method that takes an input value and gives an output value:</p>
+
+<pre><code class="language-mermaid">graph LR
+x --&gt;|Input| F[Function Machine]
+F --&gt;|Output| fx
+</code></pre>
+
+<p>A function from a set $A$ to a set $B$ is an assignment of exactly one element of $B$ to each element of $A$.</p>
+
+<p>We write $f(a)=b$ if $b$ is the unique element of $B$ assigned by the function $f$ to the element of $a$.</p>
+
+<p>If $f$ is a function from $A$ to $B$ we write $f: A\rightarrow B$.</p>
+
+<pre><code class="language-mermaid">graph LR
+subgraph x
+1
+2
+3
+end 
+subgraph fx
+4
+5
+6
+end
+1 --&gt; 4
+2 --&gt; 5
+3 --&gt; 4
+6
+</code></pre>
+<p><em>A function $f:\{1,2,3} \rightarrow \{4,5,6}$.</em></p>
+
+<p>For every value on the left there should be a <strong>single</strong> value associated to it on the right.</p>
+
+<h2 id="domain-co-domain--range">Domain, Co-domain &amp; Range</h2>
+<p>Suppose $f:A\rightarrow B$</p>
+
+<ul>
+  <li>$A$ is called the domain of $f$.</li>
+  <li>$B$ is called the co-domain fo $f$.</li>
+  <li>The range $f(A)$ of $f$ is $f(A)=\{f(x)\vert x\in A}$.</li>
+</ul>
+
+<h3 id="co-domain-vs-range">Co-domain v.s. Range</h3>
+<p>The difference between co-domain and range is that the co-domain is all values in the set $B$ and the range is all the values, $f(x)$, that $A$ maps to via the function $f$.</p>
+
+<pre><code class="language-mermaid">graph LR
+subgraph B
+fA
+end
+A --&gt;|f| fA
+</code></pre>
+<p><em>The range of $f$.</em></p>
+
+<h4 id="example">Example</h4>
+<p>Give the range of the function:</p>
+
+\[\sin(x):\mathbb{R}\rightarrow\mathbb{R}\]
+
+<p>The range of the function would be:</p>
+
+\[\sin(x)=\\{x\in\mathbb{R}\vert -1\leq x\leq 1\}\]
+
+<h2 id="composition-of-functions">Composition of Functions</h2>
+<p>If $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ are functions, then their composition $g\circ f$ is a function from $X$ to $Z$ given by:</p>
+
+\[(g\circ f)(x)=g(f(x))\]
+
+<p>```mermaid
+graph LR
+subgraph X
+x
+end
+subgraph Y
+subgraph Y’
+fx
+end
+end
+subgraph Z
+gfx
+end</p>
+
+<p>x –&gt; fx
+fx –&gt; gfx
+x –&gt; gfx
+X –&gt;|f| Y
+Y –&gt;|g| Z</p>
+:ET

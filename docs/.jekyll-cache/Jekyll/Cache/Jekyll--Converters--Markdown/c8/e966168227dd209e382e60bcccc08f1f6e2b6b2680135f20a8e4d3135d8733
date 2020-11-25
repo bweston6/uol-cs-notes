@@ -1,0 +1,51 @@
+I"�<h2 id="digraph-representation-of-relations">Digraph Representation of Relations</h2>
+
+<p>Recall that a function $f$ from a set $A$ to a set $B$ assigns exactly one element of $B$ to each element of $A$.</p>
+
+<ul>
+  <li>Gives rise to the relation $R_f={(a,b)\in A\times B \vert b =f(a)}$</li>
+</ul>
+
+<p>If a relation $S\subseteq A\times B$ is such that for every $a\in A$ there exists at most one $b\in B$ with $(a,b)\in S$, relation $S$ is <strong>functional</strong>.</p>
+
+<p>Sometimes in the literature, functions are introduces through functional relations.</p>
+
+<h3 id="example">Example</h3>
+<p>$A{i\in \Bbb{N}\vert i&lt;10},B={i\in\Bbb{N}\vert 5&lt;i&lt;15},R={((x,y)\in A\times B\vert y =2x)}$</p>
+
+<pre><code class="language-mermaid">graph TD
+subgraph A
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+end
+subgraph B
+62[6]
+72[7]
+82[8]
+92[9]
+10
+11
+12
+13
+14
+end
+3 --&gt; 62
+4 --&gt; 82
+5 --&gt; 10
+6 --&gt; 12
+7 --&gt; 14
+
+</code></pre>
+
+<p class="info">As this is a relation there are allowed to be values in the set $A$ which don’t have a mapping to a value in the set $B$. If this was a function and not a relation that wouldn’t be allowed.</p>
+
+<p class="info">This is a functional relation as each item in  $A$ only has <strong>one</strong> mapping to $B$.</p>
+:ET

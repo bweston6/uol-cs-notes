@@ -1,0 +1,143 @@
+I"�
+<h1 id="comp107---tutorial-3"><a href="/UoL/comp107/tutorials/2020/11/20/1.html">COMP107 - Tutorial 3</a></h1>
+<h2 id="designing-an-er-schema">Designing an ER Schema</h2>
+<p>You should identify basic components:</p>
+
+<ul>
+  <li>Entity types, relationship types, attributes:
+    <ul>
+      <li>Key attributes.</li>
+      <li>Cardinality and participation constrains of relationships.</li>
+      <li>Different entity types.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There are also weak entities such as tables or chairs. These simple objects don’t need individual identification and should be a child of the strong entity.</p>
+
+<p class="info">The <a href="/UoL/assets/COMP107/Tutorials/2020-11-20-1.pdf">lecture slides</a> have a summary and examples of the ER diagram scheme.</p>
+
+<h2 id="evolutionary-data-modelling">Evolutionary Data Modelling</h2>
+
+<p>Evolutionary data modelling is an approach that proceeds in an incremental manner:</p>
+
+<ul>
+  <li>An initial slim model is created that satisfies some initial requirements.</li>
+  <li>The model is then refines in a set of iterations adding details.</li>
+</ul>
+
+<h2 id="exercise">Exercise</h2>
+<p>Draw an ER model to describe the data need by the conference planner app starting from users stories:</p>
+
+<ul>
+  <li>3 iterations with 8 minutes each.</li>
+</ul>
+
+<h3 id="task-1">Task 1</h3>
+<ol>
+  <li>
+    <p>As a speaker, I want to upload the details of my keynote.</p>
+  </li>
+  <li>
+    <p>As a speaker I want to know then my keynote is scheduled.</p>
+  </li>
+</ol>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-20-1-1.png" alt="Screenshot 1" /></p>
+
+<h3 id="task-2">Task 2</h3>
+<ol>
+  <li>As a participant I want to register my attendance to a keynote.</li>
+  <li>As a participant I want to book a room in a hotel.</li>
+</ol>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-20-1-2.png" alt="Screenshot 2" /></p>
+
+<h3 id="task-3">Task 3</h3>
+<ol>
+  <li>As an organiser, I want to know which conference participants are giving keynotes.</li>
+</ol>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-20-1-3.png" alt="Screenshot 3" /></p>
+
+<h3 id="tutor-review">Tutor Review</h3>
+<ul>
+  <li>Speaker or not is redundant as it is implied by the fact they are presenting or not.</li>
+  <li>This is the same for the list of speakers. As it can be derived as a query</li>
+  <li>The organiser doesn’t need to be represented as they are just querying.</li>
+</ul>
+
+<h4 id="final-diagram-after-review">Final diagram after review:</h4>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-20-1-4.png" alt="ER Diagram" /></p>
+
+<h1 id="comp107---tutorial-2"><a href="/UoL/comp107/tutorials/2020/11/13/1.html">COMP107 - Tutorial 2</a></h1>
+<h2 id="how-to-describe-data">How to Describe Data</h2>
+<p>The ER model describes data in terms of:</p>
+
+<ul>
+  <li>Entities
+    <ul>
+      <li>A thing which can be distinctly identified</li>
+    </ul>
+  </li>
+  <li>Attributes
+    <ul>
+      <li>A property of an entity.</li>
+    </ul>
+  </li>
+  <li>Relationships
+    <ul>
+      <li>An association among entities.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-mermaid">erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+</code></pre>
+
+<p>Attempt a data description of a system you know well:</p>
+
+<ul>
+  <li>Scoping which part of the system do you want to represent</li>
+  <li>Write three sentences that are relevant to the system and depict them graphically.</li>
+</ul>
+
+<p>Use the system of YouTube</p>
+
+<p>The group made the following:</p>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-13-1.png" alt="Screenshot" /></p>
+
+<h1 id="comp107---tutorial-1"><a href="/UoL/comp107/tutorials/2020/11/06/1.html">COMP107 - Tutorial 1</a></h1>
+<p>In this tutorial the first main focus was the group project.</p>
+
+<h2 id="user-stories">User Stories</h2>
+<p>You might want to use user stories or define user personas:</p>
+
+<ul>
+  <li>As a… <em>[which type of user has this need?]</em></li>
+  <li>I need… <em>[what does the user want to do?]</em></li>
+  <li>So that… <em>[why does the user want to do this?]</em></li>
+  <li>When… <em>[what triggers the user’s need?]</em></li>
+  <li>Because… <em>[what does the user need?]</em></li>
+</ul>
+
+<h3 id="task">Task</h3>
+<p>In groups, define three user stories for a conference planner app:</p>
+
+<ul>
+  <li>Comic-con, etc.</li>
+</ul>
+
+<h3 id="user">User</h3>
+<h4 id="speaker">Speaker</h4>
+<p>As a speaker I need to share slides, knowledge and interact with attendees. This is so that I can present to the attendees throughout the conference because I want to answer user questions and share knowledge.</p>
+
+<h3 id="shared-board">Shared Board</h3>
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-06-1.png" alt="Screenshot" /></p>
+
+:ET

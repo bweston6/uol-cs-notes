@@ -1,0 +1,135 @@
+I"<<p>Let $(S,P)$ be a probability space. A <strong>random variable</strong> $F$ is a function $F:S\rightarrow\Bbb{R}$ that assigns to every $s\in S$ a single number $F(s)$.</p>
+
+<p class="info">In all these examples $S$ is the sample space and $P$ is the probability space.</p>
+
+<ul>
+  <li>Neither a variable nor random.
+    <ul>
+      <li>As it is the product of a function.</li>
+    </ul>
+  </li>
+  <li>English translation of <strong>variable casuale</strong>.</li>
+</ul>
+
+<p>We still assume that the sample space is finite. Thus, given a random variable $F$ from some sample space $S$, the set of number $r$ that values of $F$ is finite as well.</p>
+
+<p>The event that $F$ takes the value $r$, that is ${s\vert F(s)=r}$, is denoted $(F=r)$. the probability $(F=r)$ of the even $(F=r)$ is then:</p>
+
+\[P(F=r)=P(\{s\vert F(s)=r\})\]
+
+<h2 id="example-1">Example 1</h2>
+<p>Let</p>
+
+\[S=\{\text{car, train, plane, ship}\}\]
+
+<p>Then the function $F:S\rightarrow \Bbb{R}$ defined by:</p>
+
+\[F(\text{car})=1,\ F(\text{train})=1,\ F(\text{plane})=2,\ F(\text{ship})=2\]
+
+<p>is a random variable.</p>
+
+<p>$(F=1)$ denotes the event ${s\in S \vert F(s) =1} = {\text{car, train}}$.</p>
+
+<p>Defining a uniform probability space $(S,P)$ by setting:</p>
+
+\[P(\text{car})=P(\text{train})=P(\text{plane})=P(\text{ship})=\frac{1}{4}\]
+
+<p class="info">This means that we are setting each event to have the same probability.</p>
+
+<p>Then $P(F=1)=P({s\in S \vert F(s)=1})=P({\text{car, train}})=\frac{1}{2}$.</p>
+
+<h2 id="example-2">Example 2</h2>
+<p>Suppose that I roll two dice. so the same sample space is:</p>
+
+\[S=\{1,2,3,4,5,6\}^2\]
+
+<p>and $P(ab)=\frac{1}{36}$ for every $ab\in S$.</p>
+
+<p>Let</p>
+
+\[F(ab) = a+b\]
+
+<p class="info">This means that we are investigating the sum of the two dice.</p>
+
+<p>$F$ is a random variable. This variable maps the two values $ab$ to the sum $a+b$.</p>
+
+<p>The probability that $F=r$ for a number $r$ (say, 12) is given by:</p>
+
+\[P(F=r)=P(\{ab\vert F(ab)=r\})\]
+
+<p>With this example:</p>
+
+\[P(F=12)=P(\{ab\vert F(ab)=12\})=P(66)=\frac{1}{36}\]
+
+<h2 id="random-variables">Random Variables</h2>
+<p>when defining a probability distribution $P$ for a random variable $F$, we often do not specify its sample space $S$ by directly assign a probability to the event that $F$ takes a certain value. Thus we directly define the probability:</p>
+
+\[P(F=r)\]
+
+<p>of the event that $F$ has the value $r$. Observe:</p>
+
+<ul>
+  <li>$0\leq P(F=r)\leq 1$</li>
+  <li>$\sum_{r\in \Bbb{R}}P(F=r)=1$</li>
+</ul>
+
+<p>Thus, the events $(F=r)$ behave in the same way as outcomes of a random experiment.</p>
+
+<h2 id="notation-and-rules">Notation and Rules</h2>
+<h3 id="negation">Negation</h3>
+<p>We write $\neg(F=r)$ for the event ${s\vert F(s)\neq r}$. For example, assume the random variable $\text{Die}$ can take values ${1,2,3,4,5,6}$ and:</p>
+
+\[P(\text{Die}=n)=\frac{1}{6}\]
+
+<p>for all $n\in {1,2,3,4,5,6}$ (thus we have a fair die). The $\neg(\text{Die}=1)$ denotes the event:</p>
+
+\[(\text{Die}=2)\vee (\text{Die}=3)\vee (\text{Die}=4)\vee (\text{Die}=5)\vee (\text{Die}=6)\]
+
+<p>We have the following complementation rule:</p>
+
+\[P(\neg(F=r))=1-P(F=r)\]
+
+<h3 id="intersection">Intersection</h3>
+<p>We can write:</p>
+
+\[(F_1=r_1,F_2=r_2)\]
+
+<p>for $(F_1=r_1)$ and $(F_2=r_2)$. This takes two random variables</p>
+
+<h3 id="union">Union</h3>
+<p>Two represent the function OR we can write:</p>
+
+\[(F_1=r_1)\vee(F_2=r_2)\]
+
+<p>From this we can get the law from unions:</p>
+
+\[\begin{aligned}
+P((F_1=r_1)\vee (F_2=r_2)) =&amp; P(F_1 = r_1)+P(F_2 = r_2)\\
+&amp;-P(F_1=r_1,F_2=r_2)
+\end{aligned}\]
+
+<h3 id="conditional-probability">Conditional Probability</h3>
+<p>if $P(F_2=r_2)\neq0$ then:</p>
+
+\[P(F_1=r_1\vert F_2=r_2)=\frac{P(F_1=r_1,F_2=r_2)}{P(F_2=r_2)}\]
+
+<p>This is the probability that $F_1=r_1$ given that $F_2=r_2$.</p>
+
+<h3 id="product-rule">Product Rule</h3>
+<p>\(P(F_1=r_1,F_2=r_2)=P(F_1=r_1\vert F_2=r_2)\times P(F_2=r_2)\)</p>
+
+<h3 id="symbols">Symbols</h3>
+<p>Wo sometimes use symbols distinct from numbers to denote the values of random variables.</p>
+
+<p>For example, for a random variable $\text{Weather}$ rather than using values $1,2,3,4$ we use:</p>
+
+\[\text{sunny, rain, cloudy, snow}\]
+
+<p>Thus, $(\text{Weather}=\text{sunny})$ denotes the event that it is sunny.</p>
+
+<p class="info">This is to say that random variable must give numbers as an output but we use symbols to represent these numbers.</p>
+
+<p>To model a visit  to a dentist, we use the random variables $\text{Toothache, Cavity}$ and $\text{Catch}$ (the dentist’s steel probe catches in the tooth) that all the take values 1 and 0 (for <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>).</p>
+
+<p>For example, ($\text{Toothache}=1$) states that the person has toothache and ($\text{Toothache}=0$) states that the person does not have a toothache.</p>
+:ET

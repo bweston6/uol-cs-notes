@@ -1,0 +1,126 @@
+I"�<h2 id="marginalisation">Marginalisation</h2>
+<p>Given an joint distribution $\mathbf{P}(F_1,\ldots,F_k)$, one can compute the <strong>marginal</strong> probabilities of the random variables $F_i$ by summing out the remaining variables.</p>
+
+<p>For example:</p>
+
+\[P(\text{Cavity}=1)=0.108+0.012+0.072+0.008=0.2\]
+
+<p>is the sum of the entries in the first row of:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=1$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+      <th style="text-align: center">$\text{Toothache}=0$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+      <td style="text-align: center">$\text{Catch}=1$</td>
+      <td style="text-align: center">$\text{Catch}=0$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=1$</td>
+      <td style="text-align: center">0.108</td>
+      <td style="text-align: center">0.012</td>
+      <td style="text-align: center">0.072</td>
+      <td style="text-align: center">0.008</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\text{Cavity}=0$</td>
+      <td style="text-align: center">0.016</td>
+      <td style="text-align: center">0.064</td>
+      <td style="text-align: center">0.144</td>
+      <td style="text-align: center">0.576</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conditional-distributions">Conditional Distributions</h2>
+<p>We can also computer conditional distributions from the full joint distributions.</p>
+
+<ul>
+  <li>We use the $\mathbf{P}$ notion for conditional distributions.</li>
+  <li>$\mathbf{P}(F\ \vert\  G)$ gives the <strong>conditional distribution of $F$ given $G$</strong> given by the probabilities $P(F=r\ \vert\  G=s)$ for all values $r$ and $s$.</li>
+  <li>Using $\mathbf{P}$ notation, the general version of the product rule is as follows:</li>
+</ul>
+
+\[\mathbf{P}(F,G)=\mathbf{P}(F\ \vert\ G)\mathbf{P}(G)\]
+
+<p>This stands for the list of equations:</p>
+
+\[\begin{aligned}
+P(F=r_1,G=s_1)&amp;=P(F=r_1\ \vert\ G=s_1)P(G=s_1)\\
+P(F=r_2,G=s_2)&amp;=P(F=r_2\ \vert\ G=s_2)P(G=s_2)\\
+\ldots&amp;=\ldots
+\end{aligned}\]
+
+<h2 id="probabilistic-inference">Probabilistic Inference</h2>
+<p>Probabilistic inference can be characterised as the computation of posterior probabilities:</p>
+
+\[\mathbf{P}(Q\ \vert\ E_1=e_1,\ldots,E_n=e_n)\]
+
+<p>for query variable $Q$ given observed evidence $e_1,\ldots,e_n$.</p>
+
+<p>In principle, we can use the full joint distribution to do this.</p>
+
+<h3 id="example---mathbfptextcavity-vert-texttoothache1">Example - $\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)$</h3>
+<p>We want to compute the conditional probability distribution for $\text{Cavity}$ given the observation or evidence of $\text{Toothache}=1$.</p>
+
+<p>Thus we want to compute:</p>
+
+<ul>
+  <li>$P(\text{Cavity}=1\ \vert\ \text{Toothache}=1)$</li>
+  <li>$P(\text{Cavity}=0\ \vert\ \text{Toothache}=1)$</li>
+</ul>
+
+<p>We can easily obtain this using the table:</p>
+
+\[\begin{aligned}
+P(\text{Cavity}=1\ \vert\ \text{Toothache}=1)&amp;=\frac{P(\text{Cavity}=1, \text{Toothache}=1)}{P(\text{Toothache}=1)}\\
+&amp;=\frac{0.12}{0.2}=0.6\\
+\end{aligned}\]
+
+\[\begin{aligned}
+P(\text{Cavity}=0\ \vert\ \text{Toothache}=1)&amp;=\frac{P(\text{Cavity}=0, \text{Toothache}=1)}{P(\text{Toothache}=1)}\\
+&amp;=\frac{0.08}{0.2}=0.4
+\end{aligned}\]
+
+<p>The denominator 0.2 can be viewed as a <strong>normalisation constant</strong> $\frac{1}{\alpha}=5$ for the distribution $\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)$, ensuring that is adds up to 1.</p>
+
+<p>This means that instead of completing the computation above we can consider this:</p>
+
+\[\begin{aligned}
+\mathbf{P}(\text{Cavity}\ \vert\ \text{Toothache}=1)&amp;=\alpha\mathbf{P}(\text{Cavity, Toothache}=1)\\
+&amp;= \alpha(0.12,0.08)\\
+&amp;=5(0.12,0.08)\\
+&amp;= (0.6,0.4)
+\end{aligned}\]
+
+<p class="info">In this case $\alpha$ is defined as a value that makes the sum of the vector 1. In this case it is 5.</p>
+
+<h3 id="combinatorial-explosion">Combinatorial Explosion</h3>
+<p>This approach does not scale well: for a domain described by $n$ random variable taking $k$ distinct values each we face tow problems:</p>
+
+<ul>
+  <li>Writing up the full joint distribution requires $k^n-1$ entries.
+    <ul>
+      <li>The $-1$ in this case is as the full joint distribution adds to 1. To optimise we can not calculate the last value and just take the difference of the existing values and one.</li>
+      <li>There are too many calculations</li>
+    </ul>
+  </li>
+  <li>How to we find the numbers (probabilities) for the entries?
+    <ul>
+      <li>We don’t have enough raw data.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For these reasons, the full joint distribution in tabular form in not a practical tool for building reasoning systems.</p>
+:ET

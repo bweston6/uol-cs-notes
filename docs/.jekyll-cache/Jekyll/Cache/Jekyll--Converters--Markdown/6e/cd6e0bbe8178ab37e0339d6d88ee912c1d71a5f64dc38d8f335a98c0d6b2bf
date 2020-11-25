@@ -1,0 +1,79 @@
+I"�<p>The cardinality of a set is the number of elements in the set. The notation for this is $\vert A\vert $ where $A$ is a set to be counted.</p>
+
+<h2 id="power-set-and-bit-vectors">Power Set and Bit Vectors</h2>
+<p>We use the correspondence between bit vectors and subsets: $\left\vert  \text{\textit{Pow}}(A)\right\vert $ is the number of bit vectors of length $n$.</p>
+
+\[A\ s.t \left\vert  A \right\vert  = n,\ S_n = \langle\ldots\rangle\]
+
+\[B \subseteq A \rightarrow X_b = \underbrace{\left[\frac{0}{1},\ldots,\frac{0}{1}\right]}_n\]
+
+<p>A bit vector of the set $C$ is represented by the vector $X_C$:</p>
+
+\[X_c=\left[\ldots\right] \rightarrow C\]
+
+<p>This means that provided you know the set you and reconstruct a subset from the bit vector of that subset.</p>
+
+<h2 id="the-number-of-n-bit-vectors-in-2n">The Number of $n$-bit vectors in $2^n$</h2>
+<p>We prove the statement by induction</p>
+<h3 id="base-case">Base Case:</h3>
+<p>$n=1$</p>
+
+<p>There are two bit vectors of length 1:</p>
+
+<p>$\left[0\right], \left[1\right]$</p>
+
+<p>$2^1=2$</p>
+
+<h3 id="inductive-step">Inductive Step:</h3>
+<p>Assume that the property holds for $n=m$, so the number of $m$-bit vectors is $2^m$. Now consider the set $B$ of all $(m+1)$-bit vectors. We must show that $\left\vert B\right\vert =2^{m+1}$.</p>
+
+<p>We know that all elements of $B$ are bit vectors of length $m+1$:</p>
+
+\[\underbrace{\left[\hspace{0.5cm},\right]}_{m+1}\in B\]
+
+<p>The first elements apart from the last one are put in a new bit vector:</p>
+
+\[\underbrace{\left[\ldots\right]}_m\]
+
+<p>Given any bit vector there are only two ways of filling in the last value, with a 0 or a 1. As there are two ways of extending a bit vector then you times the bit vector by two.</p>
+
+\[\left\vert  B \right\vert  = 2 \times 2^m = 2^{m+1}\]
+
+<h2 id="computing-the-cardinality-of-a-union-of-two-sets">Computing the Cardinality of a Union of Two Sets</h2>
+<p>If $A$ and $B$ are sets then:</p>
+
+\[\left\vert  A \cup B \right\vert  = \left\vert  A \right\vert  + \left\vert  B \right\vert  - \left\vert  A\cap B \right\vert\]
+
+<h3 id="example">Example</h3>
+<p>Suppose there are 100 third-year students. 40 of them take the module “Sequential Algorithms” and 80 of them take the module “Multi-Agent Systems”. 25 of them took both modules. How many students took neither modules?</p>
+
+<p>$S=\{s\in \text{Student} \vert  s \text{ takes Seq. Alg.}}$<br />
+$M=\{s\in \text{Student} \vert  s \text{ takes Mult. Agent Systems}}$</p>
+
+<ul>
+  <li>$\vert \text{Students}\vert  =100$</li>
+  <li>$\vert S\vert =40$</li>
+  <li>$\vert M\vert  = 80$</li>
+  <li>$\vert S\cap M\vert  =25$</li>
+</ul>
+
+<p>$40+80-25=95=\vert S\cup M\vert $<br />
+$\vert \sim(S\cup M)\vert =100-95=5$</p>
+
+<p>Therefore, 5 students took neither as they were part of the universal set but not part of the union of the two subsets.</p>
+
+<h2 id="computing-the-cardinality-of-a-union-of-three-sets">Computing the Cardinality of a Union of Three Sets</h2>
+<p>If $A$, $B$ and $C$ are sets then:</p>
+
+\[\vert A\cup B \cup C\vert = \vert A\vert  +\vert B\vert  + \vert C\vert  - \vert A\cap B\vert -\vert A\cap C\vert  - \vert B\cap C\vert  + \vert A\cap B\cap C\vert\]
+
+<p>This and the last union are special cases of the <strong>principle of inclusion and exclusion</strong>.</p>
+
+<h2 id="principle-of-inclusion-and-exclusion">Principle of Inclusion and Exclusion</h2>
+<p>Let $A_1,A_2,\ldots,A_n$ be sets.</p>
+
+<p>Then:</p>
+
+<p>\(\left\vert A_1\cup\ldots\cup A_n\right\vert =\sum_{1\leq k\leq n} \left\vert A_i\right\vert -\sum_{1\leq j\leq k\leq n} \left\vert A_j \cap A_k\right\vert +\sum_{1\leq i\leq j\leq k\leq n} \left\vert A_i \cap A_j \cap A_k\right\vert\)
+\(-...+(-1)^{n-1}\left\vert A_1\cap\ldots\cap A_n\right\vert\)</p>
+:ET
