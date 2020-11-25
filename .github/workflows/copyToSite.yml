@@ -73,6 +73,9 @@ jobs:
           cp -r COMP111/Tutorials/*/* docs/assets/COMP111/Tutorials
           rm -rf docs/assets/COMP111/Tutorials/*.md
           grep -rliF '$' docs/COMP*/*/* | xargs -i@ docs/tools/debuck @
+          grep -rliF '\(' docs/COMP*/*/* | xargs -i@ sed -i 's/
+          grep -rliF '\(' docs/COMP*/*/* | xargs -i@ sed -i 's/\\(/{% raw %}\\(/g; s/\\)/\\){% endraw %}/g' @
+          grep -rliF '\[' docs/COMP*/*/* | xargs -i@ sed -i 's/\\\[/{% raw %}\\\[/g; s/\\\[/\\\]{% endraw %}/g' @
           rm -rf docs/COMP*/*/_posts/*.bak
           git config user.name bweston6
           git config user.email 35574350+bweston6@users.noreply.github.com
