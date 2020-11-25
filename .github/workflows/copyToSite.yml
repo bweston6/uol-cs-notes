@@ -77,3 +77,15 @@ jobs:
           git add .
           git commit -m "Copying site assets."
           git push
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "\{"
+          replace: "\\{"
+          include: docs/COMP*/*/*
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "\}"
+          replace: "\\}"
+          include: docs/COMP*/*/*
