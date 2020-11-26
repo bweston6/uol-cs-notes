@@ -29,3 +29,24 @@ up_two (Point x y) = Point x (y + 2)
 
 add_points :: Point -> Point -> Point
 add_points (Point a b) (Point c d) = Point (a + c) (b + d)
+
+-- Lecture 21 - Maybe
+not_nothing :: Eq a => Maybe a -> Bool
+not_nothing Nothing = False
+not_nothing _ = True
+
+mult_maybe :: Maybe Int -> Maybe Int -> Maybe Int
+mult_maybe x y
+    | x == Nothing || y == Nothing = Nothing
+    | otherwise = Just ((unjust x)*(unjust y))
+    where unjust (Just x) = x
+
+-- Lecture 21 - Either
+return_two :: Int -> Either Bool Char
+return_two n
+        | n==1      = Left True
+        | otherwise = Right 'a'
+
+show_right :: Either String Int -> String
+show_right (Left x) = x
+show_right (Right y) = show y
