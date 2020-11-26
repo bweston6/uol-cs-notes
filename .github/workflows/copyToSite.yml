@@ -74,8 +74,8 @@ jobs:
           rm -rf docs/assets/COMP111/Tutorials/*.md
           grep -rliF ' $ ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$ /??????/g' @
           grep -rliF '$' docs/COMP*/*/* | xargs -i@ docs/tools/debuck @
-          grep -rliF '\(' docs/COMP*/*/* | xargs -i@ sed -i 's/\\(/{% raw %}\\\\\\(/g; s/\\)/\\\\\\){% endraw %}/g' @
-          grep -rliF '\[' docs/COMP*/*/* | xargs -i@ sed -i 's/\\\[/{% raw %}\\\\\\\[/g; s/\\\]/\\\\\\\]{% endraw %}/g' @
+          grep -rliF '\(' docs/COMP*/*/* | xargs -i@ sed -i 's/\\(/`{% raw %}\\(/g; s/\\)/\\){% endraw %}`/g' @
+          grep -rliF '\[' docs/COMP*/*/* | xargs -i@ sed -i 's/\\\[/`{% raw %}\\\[/g; s/\\\]/\\\]{% endraw %}`/g' @
           rm -rf docs/COMP*/*/_posts/*.bak
           grep -rliF ' $ ' docs/COMP*/*/* | xargs -i@ sed -i 's/??????/ \$ /g' @
           git config user.name bweston6
