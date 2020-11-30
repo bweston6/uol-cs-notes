@@ -92,6 +92,4 @@ string_to_trade_log string prices =
                 map (\ [a,b,c,d] -> ((if a == "BUY" then 'B' else 'S'),(string_to_int b),(price_finder c (string_to_int d) prices),c,(string_to_int d))) parsed
 
 complex_profit_report :: String -> Prices -> String
--- complex_profit_report = error "Not implemented"
 complex_profit_report string prices = profit_report (list_stock_name prices) (string_to_trade_log string prices)
-
