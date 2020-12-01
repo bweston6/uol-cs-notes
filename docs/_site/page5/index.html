@@ -842,234 +842,246 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/10/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Type Classes
-show
-This function converts other types to strings. However, it can only take the type class of Show into a string:
+          <header><a href="/UoL/comp105/lectures/2020/11/17/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 17-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Higher Order Functions - Continued
+takewhile
+This function takes while a condition is true.
 
-show :: Show a =&gt; a -&gt; a
-
-
-Show contains:
+&gt; takeWhile (&lt;=5) [1..10]
+&gt; [1,2,3,4,5]
 
 
-  All basic types.
-  All tuples of show-able types.
-  All lists of show-able types.
+This is different to filter which only removes individual elements.
+
+&gt; takeWhile (\ x -&gt; length x &lt;= 2) ["ab","cd","efg"]
+&gt; ["ab", "cd"]
 
 
-read
-This converts strings to other types, provided they are formatted corre...</div><p><a href="/UoL/comp105/lectures/2020/11/10/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Implementation
+
+takeWhile' :: (a -&gt; Bool) -&...</div><p><a href="/UoL/comp105/lectures/2020/11/17/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 17, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-17T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 5</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Example 1
-$A={1,2,7,8,9}, B={x\in A\vert x \text{ is odd}}$
+          <header><a href="/UoL/comp105/lectures/2020/11/17/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 17-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Higher Order Functions
+Scan
+The scan set of functions is similar to the fold set of functions. However instead of outputting a single value it outputs a list showing the accumulator at each step in the function:
 
-Where:
+&gt; scanr (+) 0 [1,2,3,4]
+&gt; [10,9,7,4,0]
 
-$C=A-B=A\cap B$
 
-Therefore:
+The function scanr is implemented like so:
 
-$B={1,7,9}$
+scanr' :: (a-&gt; b -&gt; b -&gt;) -&g...</div><p><a href="/UoL/comp105/lectures/2020/11/17/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 17, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-17T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 6</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Power Sets
+The power set \(\text{Pow}\{A\}\) of a set \(A\) is the set of all possible subsets. This includes the null set \(\emptyset\) and the full set.
 
-$C={2,8} = {x\in A \vert x \notin B}$
+Each set in the power set follows this definition:
 
-Proving Identities
-To prove an identity you would consider the sections of a Venn diagram and consider each of the four cases. These cover all of the locations in the Venn diagram.</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+\[\{x\vert x\subseteq A\}\]
+
+Example
+The power set \(\text{Pow}\{A\}\) of a set \(A=\{1,2\}\) is:
+
+\[\{\emptyset,\{1\},\{2\},\{1,2\}\}\]
+
+F...</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/seminars/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 4</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Introducing assignment 4.
-Activities
+          <header><a href="/UoL/comp105/lectures/2020/11/16/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold Continued
+A fold output can be a different type to the input list.
 
-  Identification of Application areas and users groups
-  Analysis of existing documentation of application areas
-  Analysis of current operating environments and the planned use of the information
-    
-      Information flow
-      Types of transactions
-    
-  
-  Responses to user questionnaires are analysed....</div><p><a href="/UoL/comp107/seminars/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Seminars">Seminars</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Seminars"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/09/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Type Classes
-Some functions are polymorphic, but can’t be applied to any type. + is a good example. It can work on float and integer but not on mixed types or Char. The type of + is:
+to_csv list = foldr (\x acc -&gt; show x ++ "," ++ acc)  "" list
 
-(+) :: Num a =&gt; a -&gt; a -&gt; a
+&gt; to_csv [1,2,3,4]
+&gt; "1,2,3,4,"
 
 
-This means that a is a number in the definition: a -&gt; a -&gt; a.
+By using foldr you cannot get the desired outcome as it applies the same rule to every item in the list.
 
-Num
-Num is a type class:
-
-
-  It restricts the type vari...</div><p><a href="/UoL/comp105/lectures/2020/11/09/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+foldr1
+The function foldr1 uses the final value of the list to...</div><p><a href="/UoL/comp105/lectures/2020/11/16/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Polymorphic Types
-Some functions accept many different types. An example of this is length which accepts many different types of lists.
-
-if you ask what the type of then function length is then it will return the type:
-
-length :: [a] -&gt; Int
+          <header><a href="/UoL/comp105/lectures/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold
+Some functions take lists and turn them into a single value. This type of computation is called a fold. The things that you can change are:
 
 
-a is a type variable. This means that:
+  The base case.
+  The operation applied to the list.
 
 
-  The function can be applied to any list.
-  a will represen...</div><p><a href="/UoL/comp105/lectures/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+foldr
+
+foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+
+foldr' _ init [] = init
+foldr' f init (x:xs) = f x (foldr' f init xs)
+
+&gt; fold...</div><p><a href="/UoL/comp105/lectures/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Algebra of Sets</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Suppose that $A,B,C,U$ are sets with $A \subseteq U, B \subseteq U, C \subseteq U$.
-
-Commutative Laws
-These laws say that is doesn’t matter in which order the operation takes place.
+          <header><a href="/UoL/comp109/lectures/2020/11/13/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 5</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Theorem of Friends and Strangers
+Show that in any group of six people there are either three who all know each other or three complete strangers.
 
 
-  $A\cup B = B \cup A$
-  $A\cap B = B \cap A$
+
+On this graph blue is people who know each other and red is people who don’t. From the graph you can see that only two people will know each other.
 
 
-Associative Laws
-These laws say that is doesn’t matter where you put brackets around an operation
 
-
-  $A\cup(B\cup ...</div><p><a href="/UoL/comp109/lectures/2020/11/06/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+What the question is saying is that no matter h...</div><p><a href="/UoL/comp109/lectures/2020/11/13/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/tutorials/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">In this tutorial the first main focus was the group project.
+          <header><a href="/UoL/comp109/lectures/2020/11/13/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Extended Pigeonhole Principle
+Consider a function \(f:A\rightarrow B\) where \(A\) and \(B\) are finite sets and \(\vert A\vert &gt;k\vert B\vert\) for some natural number \(k\). Then, there is a value of \(f\) which occurs at least \(k+1\) times.
 
-User Stories
-You might want to use user stories or define user personas:
+graph TD
+subgraph A
+a
+b
+c
+d
+e
+f
+g
+end 
+subgraph B
+1
+2
+3
+end
+a --&gt; 1
+b --&gt; 2
+c --&gt; 3
+d --&...</div><p><a href="/UoL/comp109/lectures/2020/11/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cardinality of Finite Sets and Functions
+The cardinality of a finite set \(S\) is the number of elements in \(S\).
+
+A bijection \(f:S\rightarrow\{1,\ldots,n\}\). This means that there are as many elements in the set that \(S\) maps to as there are in \(S\).
+
+For finite sets \(A\) and \(B\):
 
 
-  As a… [which type of user has this need?]
-  I need… [what does the user want to do?]
-  So that… [why does the user want to do this?]
-  When… [what triggers the user’s need?]
-  Because… [what does the user nee...</div><p><a href="/UoL/comp107/tutorials/2020/11/06/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  \(\vert A\vert \geq\vert B\vert \Rightarrow\) there...</div><p><a href="/UoL/comp109/lectures/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/tutorials/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">How to Describe Data
+The ER model describes data in terms of:
+
+
+  Entities
+    
+      A thing which can be distinctly identified
+    
+  
+  Attributes
+    
+      A property of an entity.
+    
+  
+  Relationships
+    
+      An association among entities.
+    
+  
+
+
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+  ...</div><p><a href="/UoL/comp107/tutorials/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP107,Tutorials"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/06/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 12-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Function Types
-Functions also have types in the type system. The type of a function is based on the values it takes as an argument and returns.
+          <header><a href="/UoL/comp111/lectures/2020/11/12/4.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Knowledge Bases and Reasoning</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.
 
-Single Argument Functions
-For a one argument function, the type is written as:
-
-[input type] -&gt; [output type]
-
-
-Multi-Argument Functions
-For a function with more than one argument, the type uses mult...</div><p><a href="/UoL/comp105/lectures/2020/11/06/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 12-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Types
-Everything in Haskell has a type. In GHCI :type or :t will display the type of an expression.
-
-Basic Types
-Int
-Holds a 64-bit integer between $-2^{63}$ and $2^{63}-1$
-
-Integer
-Holds arbitrary size integers but is slightly slower than an Int. Ideally you should use an Int if you are using smaller numbers.
-
-Float
-Holds 32-bit floating point ...</div><p><a href="/UoL/comp105/lectures/2020/11/06/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/4.html"><h2 itemprop="headline" class="item__header">COMP111 - Relations & Non-Unary Rule-Based Systems</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">You cannot express relations between objects using the concepts we have learned so far. Relations are expressed as such:
-
-
-  A relation name $R$ denotes a set of pairs of individual object. Relation names are also called binary predicates:
-    
-      $\text{sonOf}$
-      $\text{grandsonOf}$
-      These call also be denotes by upper case letters ...</div><p><a href="/UoL/comp111/lectures/2020/11/05/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Consequence: If the meeting does not take place, we conclude that there were fewer than 15 members present, or there...</div><p><a href="/UoL/comp111/lectures/2020/11/12/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page4">
             <i class="fas fa-angle-left"></i>
@@ -1082,7 +1094,7 @@ Holds 32-bit floating point ...</div><p><a href="/UoL/comp105/lectures/2020/11/0
             </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page6"><span>6</span></a>
                 </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page6">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1117,7 +1129,7 @@ Holds 32-bit floating point ...</div><p><a href="/UoL/comp105/lectures/2020/11/0
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

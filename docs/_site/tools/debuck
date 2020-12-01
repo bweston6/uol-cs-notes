@@ -1,0 +1,168 @@
+#!/usr/bin/perl -w
+#
+# debuck - convert $ and $$ in a LaTeX document to \(\) and \[\].
+# Providing the original document LaTeX'd okay and there are no sneaky
+# macros then it should work fine.
+# 
+# Copyright (C) 2007--2016   Andrew Stacey <loopspace@mathforge.org>
+# 
+# This program is free software; you can redistribute it and/or mod
+# ify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or any later version.
+# 
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+# USA.
+# 
+
+use strict;
+use Pod::Usage;
+
+# These keep track of whether we're inside a maths environment or not,
+# and whether it is display or inline.
+
+my $dbl = 0;
+my $sgl = 0;
+
+# Set up some variables to hold the special characters that we have to
+# match; saves remembering to escape them later and ensures that Emacs
+# indents the code correctly.
+
+my $dol = chr(36);
+my $bk  = chr(92);
+my $lsb = chr(91);
+my $rsb = chr(93);
+my $lb  = chr(40);
+my $rb  = chr(41);
+my $nl  = chr(10);
+
+my @divided;
+
+my @sgl = ($bk . $lb,  $bk . $rb);
+my @dbl = ($bk . $lsb, $bk . $rsb);
+
+# Were we given any arguments?  If so, the filename is the first
+
+my $file;
+if (@ARGV) {
+
+    $file = $ARGV[0];
+}
+# File must exist
+
+($file and -e $file) or pod2usage(-exitval => 1, -verbose => 1);
+
+# Backup file
+
+my $infile = &backup($file);
+
+# Set up input and output
+
+open (INFILE, $infile)
+    or die "Couldn't open $infile for input: $!\n";
+
+open (OUTFILE, ">$file")
+    or die "Couldn't open $file for output: $!\n";
+
+# Step through the file
+
+while (<INFILE>) {
+    chomp;
+    s/$bk$dol$bk$dol/$nl/g;
+
+    while ($_ =~ /$nl/) {
+	s/$nl/$dbl[$dbl]/;
+	$dbl = 1 - $dbl;
+    }
+    
+    s/$bk$dol/$nl/g;
+
+    while ($_ =~ /$nl/) {
+	s/$nl/$sgl[$sgl]/;
+	$sgl = 1 - $sgl;
+    }
+
+    print OUTFILE $_ . $nl;
+}
+
+exit 0;
+
+sub backup {
+    my $file = shift @_;
+    my $bfile = $file . ".bak";
+
+    unless (-e $file) {
+        die "File $file does not exist so can't backup: $!\n";
+    }
+
+    if (-e $bfile) {
+        unlink ($bfile)
+            or die "Couldn't remove old backups: $!\n";
+    }
+
+    rename $file, $bfile;
+    unless (-e $bfile) {
+        die "Couldn't backup $file: $!\n";
+    }
+
+    return $bfile;
+}
+
+__END__
+
+=head1 NAME
+
+debuck - change $ and $$s in a LaTeX document into \(\) and \[\]s.
+
+=head1 SYNOPSIS
+
+ debuck file
+ debuck < file
+
+Modify I<file> changing $ and $$s in a LaTeX document into \(\) and \[\]s.
+
+ Options:
+    --man              print man page
+    -h, -?, --help     print basic help
+    -V, --version      print version information
+    -gpl               print GPL
+
+=head1 DESCRIPTION
+
+B<debuck> steps through a LaTeX file changing TeX-style maths delimiters into LaTeX-style ones.  Providing there are no sneaky macros and the file LaTeX's correctly it does a reasonable job.
+
+If given a filename it makes a backup and then puts the new version in place of the original.  If the file is piped, it prints the new version on standard output.
+
+=head1 BUGS
+
+The TeX-style maths delimiters are robust whereas the LaTeX ones are fragile.  Therefore maths in seaction heads or footnotes might not work correctly.
+
+=head1 AUTHOR
+
+Andrew Stacey
+
+=head1 LICENSE
+
+Copyright (C) 2008--2016   Andrew Stacey
+
+This program is free software; you can redistribute it and/or mod ify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or any
+later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
+USA.

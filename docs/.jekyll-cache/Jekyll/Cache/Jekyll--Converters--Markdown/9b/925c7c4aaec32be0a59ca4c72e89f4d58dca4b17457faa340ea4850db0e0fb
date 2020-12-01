@@ -1,0 +1,100 @@
+I"@)<h2 id="recursive-types">Recursive Types</h2>
+
+<p>We have seen types which contain other types. In a recursive custom type, some constructors contain the type itself.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">IntList</span> <span class="o">=</span> <span class="kt">Empty</span> <span class="o">|</span> <span class="kt">Cons</span> <span class="kt">Int</span> <span class="kt">IntList</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Some examples using this type:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Empty</span> <span class="c1">-- []</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Empty</span><span class="p">)</span> <span class="c1">-- [1]</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Cons</span> <span class="mi">2</span> <span class="kt">Empty</span><span class="p">)</span> <span class="c1">-- [1,2]</span>
+</code></pre></div></div>
+
+<p>Here is a more general list using a type variable:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Empty</span> <span class="o">|</span> <span class="kt">Cons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span> <span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is the same as the previous example but using any type (provided that it is the same type all the way through the list). To use this as an infix operator like <code class="language-plaintext highlighter-rouge">:</code> you would do the following:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="mi">1</span> <span class="p">`</span><span class="kt">Cons</span><span class="p">`</span> <span class="p">(</span><span class="mi">2</span> <span class="p">`</span><span class="kt">Cons</span><span class="p">`</span> <span class="kt">Empty</span><span class="p">)</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Cons</span> <span class="mi">2</span> <span class="kt">Empty</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="functions-with-recursive-types">Functions with Recursive Types</h3>
+
+<p>We can write functions for our custom list type:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_head</span> <span class="o">::</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+
+<span class="n">our_head</span> <span class="kt">Empty</span>		<span class="o">=</span> <span class="n">error</span> <span class="s">"Empty list"</span>
+<span class="n">our_head</span> <span class="p">(</span><span class="kt">Cons</span> <span class="n">x</span> <span class="kr">_</span><span class="p">)</span>	<span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>This takes the first item in our custom list type and prints it.</p>
+
+<p>To get the tail you would use this function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_tail</span> <span class="o">::</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">List</span> <span class="n">a</span>
+
+<span class="n">our_tail</span> <span class="kt">Empty</span>		<span class="o">=</span> <span class="n">error</span> <span class="s">"Empty list"</span>
+<span class="n">our_tail</span> <span class="p">(</span><span class="kt">Cons</span> <span class="kr">_</span> <span class="n">x</span><span class="p">)</span>	<span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<h4 id="recursing-on-recursive-types">Recursing on Recursive Types</h4>
+
+<p>We can also write recursive functions to process our recursive types. This is exactly the same as recusing on a list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_sum</span> <span class="o">::</span> <span class="kt">List</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+
+<span class="n">our_sum</span> <span class="kt">Empty</span> 		<span class="o">=</span> <span class="mi">0</span>
+<span class="n">our_sum</span> <span class="p">(</span><span class="kt">Cons</span> <span class="n">x</span> <span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">our_sum</span> <span class="n">xs</span>
+</code></pre></div></div>
+
+<h3 id="custom-lists">Custom Lists</h3>
+
+<p>Here is a new list type that can contain two different types.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="kt">TwoEmpty</span>
+				<span class="o">|</span> <span class="kt">ACons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+				<span class="o">|</span> <span class="kt">BCons</span> <span class="n">b</span> <span class="p">(</span><span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+					<span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is the type when making a list that contains a <code class="language-plaintext highlighter-rouge">Char</code> and a <code class="language-plaintext highlighter-rouge">Bool</code>:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="sc">'a'</span> <span class="p">`</span><span class="kt">ACons</span><span class="p">`(</span><span class="kt">False</span> <span class="p">`</span><span class="kt">BCons</span><span class="p">`</span> <span class="kt">TwoEmpty</span><span class="p">)</span>
+<span class="kt">TwoList</span> <span class="kt">Char</span> <span class="kt">Bool</span>
+</code></pre></div></div>
+
+<p class="info">This is not the same as a list with tuples as the next item in the list can be of type <code class="language-plaintext highlighter-rouge">a</code> or type <code class="language-plaintext highlighter-rouge">b</code> not of both all the time. There is a cost also as you have to explicitly say if it is type <code class="language-plaintext highlighter-rouge">a</code> or type <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<h2 id="exercises">Exercises</h2>
+
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">ourElem</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+ <span class="n">ourElem</span> <span class="kt">Empty</span> <span class="kr">_</span> <span class="o">=</span> <span class="kt">False</span>
+ <span class="n">ourElem</span> <span class="p">(</span><span class="kt">List</span> <span class="n">x</span> <span class="n">xs</span><span class="p">)</span> <span class="n">y</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> 	<span class="o">=</span> <span class="kt">True</span>
+     <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">ourElem</span> <span class="n">xs</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">ourRange</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">List</span> <span class="kt">Int</span>
+ <span class="n">ourRange</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">Empty</span>
+ <span class="n">ourRange</span> <span class="n">x</span> <span class="o">=</span> <span class="kt">Cons</span> <span class="n">x</span> <span class="p">(</span><span class="n">ourRange</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">=</span> <span class="kt">ThreeEmpty</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">b</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">c</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

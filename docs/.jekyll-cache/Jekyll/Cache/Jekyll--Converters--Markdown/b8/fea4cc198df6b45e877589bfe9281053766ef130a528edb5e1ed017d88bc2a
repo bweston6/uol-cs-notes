@@ -1,0 +1,34 @@
+I"<h2 id="properties-of-relations-on-a-set">Properties of Relations on a Set</h2>
+<h3 id="infix-notation-for-binary-relations">Infix Notation for Binary Relations</h3>
+<p>If \(R\) is a binary relation then we write \(xRy\) whenever \((x,y)\in R\). The predicate \(xRy\) is read as \(x\) is \(R\)-related to \(y\).</p>
+
+<p>This is similar to the notation \(a\subseteq b\) or \(a\leq b\).</p>
+
+<h3 id="comparing-strings">Comparing Strings</h3>
+<p>Consider relations \(R,S\) and \(L\) on the set of all strings:</p>
+
+<ul>
+  <li>\(R\)-lexicographic ordering.
+    <ul>
+      <li>This is alphabetic ordering.</li>
+    </ul>
+  </li>
+  <li>\(uSv\) if, and only if, \(u\) is a sub-string of \(v\).
+    <ul>
+      <li>\(\text{an}S\text{ana},\ \text{ana}S\text{banana}\).</li>
+      <li>\(uSv,\ vSw\Rightarrow uSw\).
+        <ul>
+          <li>This means that for any ordering such as \(u\) then \(v\) the ordering of \(u\) and \(w\) is also true provided that we know that \(v&lt;w\).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>\(uLv\) if, and only if, \(\text{len}(u)\leq \text{len}(v)\).</li>
+</ul>
+
+<p>For any of these relations:</p>
+
+<p>\[\forall u,v \text{ if } uRv \text{ and } vRu\Rightarrow u=v\]</p>
+
+<p>This means if the relation works both ways then they are equal in terms of the ordering.</p>
+:ET

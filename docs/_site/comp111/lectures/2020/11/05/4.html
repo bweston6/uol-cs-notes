@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - Relations & Non-Unary Rule-Based Systems - Uni Notes</title>
 
-<meta name="description" content="You cannot express relations between objects using the concepts we have learned so far. Relations are expressed as such:  A relation name $R$ denotes a set o...">
+<meta name="description" content="You cannot express relations between objects using the concepts we have learned so far. Relations are expressed as such:  A relation name \(R\) denotes a set...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp111/lectures/2020/11/05/4.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - Relations & Non-Unary Rule-Based Systems</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-11-05-4.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-11-05-4.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - Relations & Non-Unary Rule-Based Systems"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -859,68 +859,68 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <div class="article__content" itemprop="articleBody"><p>You cannot express relations between objects using the concepts we have learned so far. <strong>Relations</strong> are expressed as such:</p>
 
 <ul>
-  <li>A <strong>relation name</strong> $R$ denotes a set of <strong>pairs</strong> of individual object. Relation names are also called <strong>binary predicates</strong>:
+  <li>A <strong>relation name</strong> \(R\) denotes a set of <strong>pairs</strong> of individual object. Relation names are also called <strong>binary predicates</strong>:
     <ul>
-      <li>$\text{sonOf}$</li>
-      <li>$\text{grandsonOf}$</li>
-      <li>These call also be denotes by upper case letters $R,S,R_1,R_2$ and so on.</li>
+      <li>\(\text{sonOf}\)</li>
+      <li>\(\text{grandsonOf}\)</li>
+      <li>These call also be denotes by upper case letters \(R,S,R_1,R_2\) and so on.</li>
     </ul>
   </li>
 </ul>
 
-<p>To express that an individual object $a$ is in the relation $R$ to an individual object $b$ we write $R(a,b)$. $R(a,b)$ is <em>also</em> called an <strong>atomic assertion</strong>. This can also be read as $a$ is in relation $R$ to $b$:</p>
+<p>To express that an individual object \(a\) is in the relation \(R\) to an individual object \(b\) we write \(R(a,b)\). \(R(a,b)\) is <em>also</em> called an <strong>atomic assertion</strong>. This can also be read as \(a\) is in relation \(R\) to \(b\):</p>
 
 <ul>
-  <li>$\text{sonOf(Peter, John)}$, where $\text{Peter}$ is the son of $\text{John}$.</li>
+  <li>\(\text{sonOf(Peter, John)}\), where \(\text{Peter}\) is the son of \(\text{John}\).</li>
 </ul>
 
 <h2 id="rule-based-systems">Rule-Based Systems</h2>
 <p>A rule has the form:
-\(R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow R(x,y)\)
+\[R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow R(x,y)\]
 or
-\(R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow A(x)\)
+\[R_1(x_1,y_1)\wedge\ldots\wedge R_n(x_n,y_n)\wedge A_1(x_{n+1})\wedge\ldots\wedge A_m(x_{n+m})\rightarrow A(x)\]
 Where:</p>
 
 <ul>
-  <li>$R_1,\ldots,R_n$ and $R$ are relation names.</li>
-  <li>$A_1,\ldots,A_n$ and $A$ are class names.</li>
-  <li>$x_1,y_1,\ldots,x_n,y_n,x_{n+1},\ldots,x_{n+m},x,y$ are individual variables.</li>
+  <li>\(R_1,\ldots,R_n\) and \(R\) are relation names.</li>
+  <li>\(A_1,\ldots,A_n\) and \(A\) are class names.</li>
+  <li>\(x_1,y_1,\ldots,x_n,y_n,x_{n+1},\ldots,x_{n+m},x,y\) are individual variables.</li>
 </ul>
 
-<p>A rule-based knowledge base $K$ is a collection $K_a$ of atomic assertions and $K_r$ of rules.</p>
+<p>A rule-based knowledge base \(K\) is a collection \(K_a\) of atomic assertions and \(K_r\) of rules.</p>
 
 <h3 id="example">Example</h3>
 
-<p>Consider the following set $K_a$ of atomic assertions:</p>
+<p>Consider the following set \(K_a\) of atomic assertions:</p>
 
 <ul>
-  <li>$\text{sonOf(Peter, John)}$</li>
-  <li>$\text{sonOf(John, Joseph)}$</li>
+  <li>\(\text{sonOf(Peter, John)}\)</li>
+  <li>\(\text{sonOf(John, Joseph)}\)</li>
 </ul>
 
-<p>Consider the following set $K_r$ of rules:</p>
+<p>Consider the following set \(K_r\) of rules:</p>
 
 <ul>
-  <li>$\text{sonOf}(x,y)\wedge\text{sonOf}(y,z)\rightarrow\text{grandsonOf}(x,z)$</li>
+  <li>\(\text{sonOf}(x,y)\wedge\text{sonOf}(y,z)\rightarrow\text{grandsonOf}(x,z)\)</li>
 </ul>
 
-<p>Then $\text{grandsonOf(Peter, Joseph)}$ follows from $K$, in symbols:
-\(K\models\text{grandsonOf(Peter, Joseph)}\)</p>
+<p>Then \(\text{grandsonOf(Peter, Joseph)}\) follows from \(K\), in symbols:
+\[K\models\text{grandsonOf(Peter, Joseph)}\]</p>
 
 <h2 id="knowledge-graphs">Knowledge Graphs</h2>
 
 <p>Binary predicates allow us to talk about graphs.</p>
 
-<p>Let $K_r$ contain:</p>
+<p>Let \(K_r\) contain:</p>
 
 <ul>
-  <li>$\text{sonOf}(x,y)\rightarrow\text{descendantOf}(x,y)$</li>
-  <li>$\text{sonOf}(x,y)\wedge\text{descendantOf}(y,z)\rightarrow\text{descendantOf}(x,z)$</li>
+  <li>\(\text{sonOf}(x,y)\rightarrow\text{descendantOf}(x,y)\)</li>
+  <li>\(\text{sonOf}(x,y)\wedge\text{descendantOf}(y,z)\rightarrow\text{descendantOf}(x,z)\)</li>
 </ul>
 
-<p>Let $K_A$ be ${\text{sonOf(Peter, John), sonOf(John, Joseph)}}$</p>
+<p>Let \(K_A\) be \(\{\text{sonOf(Peter, John), sonOf(John, Joseph)}\}\)</p>
 
-<p>$K_a$ can be seen as the following graph  (individual names = nodes, relations = edges):</p>
+<p>\(K_a\) can be seen as the following graph  (individual names = nodes, relations = edges):</p>
 
 <pre><code class="language-mermaid">graph LR
 Peter --&gt;|sonOf| John
@@ -932,20 +932,20 @@ Peter --&gt;|descendantOf| Joseph
 </code></pre>
 <p><em>Labeled Graph.</em></p>
 
-<p>Computing $\text{DerivedAssertions}$ corresponds to graph completion.</p>
+<p>Computing \(\text{DerivedAssertions}\) corresponds to graph completion.</p>
 
 <h3 id="example-1">Example</h3>
 
-<p>Let $K_r$ contain:</p>
+<p>Let \(K_r\) contain:</p>
 
 <ul>
-  <li>$\text{childOf}(x,y)\wedge\text{childOf}(z,y)\rightarrow\text{siblingOf}(x,z)$</li>
-  <li>$\text{Female}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{sisterOf}(x,y)$</li>
-  <li>$\text{Male}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{brotherOf}(x,y)$</li>
+  <li>\(\text{childOf}(x,y)\wedge\text{childOf}(z,y)\rightarrow\text{siblingOf}(x,z)\)</li>
+  <li>\(\text{Female}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{sisterOf}(x,y)\)</li>
+  <li>\(\text{Male}(x)\wedge\text{siblingOf}(x,y)\rightarrow\text{brotherOf}(x,y)\)</li>
 </ul>
 
-<p>Let $K_a$ be:
-\(\{\text{Female(Alice),Male(Bob),childOf(Alice,Carl),childOf(Bob,Carl)}\}\)</p>
+<p>Let \(K_a\) be:
+\[\{\text{Female(Alice),Male(Bob),childOf(Alice,Carl),childOf(Bob,Carl)}\}\]</p>
 
 <pre><code class="language-mermaid">graph LR
 subgraph Female
@@ -1018,7 +1018,7 @@ Bob --&gt;|childOf| Carl
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

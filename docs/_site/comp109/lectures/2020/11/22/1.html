@@ -844,36 +844,39 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP109 - Relations - 1</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP109/Lectures/_posts/2020-11-22-1.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP109/Lectures/_posts/2020-11-22-1.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP109 - Relations - 1"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 22, 2020</span>
             </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+    <meta itemprop="keywords" content="COMP109,Lectures"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody"><h2 id="cartesian-product">Cartesian Product</h2>
 <p>For the Cartesian product you are making a list of all possibilities of the elements in both sets. This is similar to multiplying brackets.</p>
 
 <h3 id="example">Example</h3>
-<p>Let $A={1,2}$ and $B={a,b,c}$, then:</p>
+<p>Let \(A=\{1,2\}\) and \(B=\{a,b,c\}\), then:</p>
 
-\[A\times B = \{(1,a),(2,a),(1,b),(2,b),(1,c),(2,c)\}\]
+<p>\[A\times B = \{(1,a),(2,a),(1,b),(2,b),(1,c),(2,c)\}\]</p>
 
 <p>Therefore:</p>
 
-\[B\times A = \{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}\]
+<p>\[B\times A = \{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}\]</p>
 
 <h3 id="relations">Relations</h3>
-<p>Any relation between the elements in set $A$ and $B$ will be in the set of their Cartesian product.</p>
+<p>Any relation between the elements in set \(A\) and \(B\) will be in the set of their Cartesian product.</p>
 
-<p>A <strong>binary relation</strong> between two sets $A$ and $B$ is a subset $R$ of the Cartesian product $A\times B$.</p>
+<p>A <strong>binary relation</strong> between two sets \(A\) and \(B\) is a subset \(R\) of the Cartesian product \(A\times B\).</p>
 
-<p>If $A=B$, then $R$ is called <strong>a binary relation on $A$</strong>.</p>
+<p>If \(A=B\), then \(R\) is called <strong>a binary relation on \(A\)</strong>.</p>
 
 <h3 id="family-tree-example">Family Tree Example</h3>
-<p>The set $A$ is the set of all people in the tree.</p>
+<p>The set \(A\) is the set of all people in the tree.</p>
 
 <pre><code class="language-mermaid">graph TD
 fm[Fred and Mavis] --- Alice
@@ -888,38 +891,38 @@ jm --- Penny
 
 <ol>
   <li>
-    <p>$R={(x,y)\vert x\text{ is a grandfather of } y}$</p>
+    <p>\(R=\{(x,y)\vert x\text{ is a grandfather of } y\}\)</p>
 
     <p>For this set:</p>
 
-    <p>$R={\text{(Fred, Jane), (Fred, Fiona), (Fred, Alan), (John, Jayne), (John, Fiona), (John, Alan)}}$</p>
+    <p>\(R=\{\text{(Fred, Jane), (Fred, Fiona), (Fred, Alan), (John, Jayne), (John, Fiona), (John, Alan)}\}\)</p>
   </li>
   <li>
-    <p>$S={(x,y)\vert x\text{ is a sister of } y}$</p>
+    <p>\(S=\{(x,y)\vert x\text{ is a sister of } y\}\)</p>
 
     <p>For this set:</p>
 
-    <p>$S={\text{(Alice, Ken), (Sue, Mike), (Sue, Penny), (Penny, Sue), (Penny, Mike), (Jane, Fiona)}}$</p>
+    <p>\(S=\{\text{(Alice, Ken), (Sue, Mike), (Sue, Penny), (Penny, Sue), (Penny, Mike), (Jane, Fiona)}\}\)</p>
   </li>
 </ol>
 
 <h3 id="algebraic-example">Algebraic Example</h3>
-<p>Write down the ordered parts belonging to the following binary relations between $A={1,3,5,7}$ and $B={2,4,6}$:</p>
+<p>Write down the ordered parts belonging to the following binary relations between \(A=\{1,3,5,7\}\) and \(B=\{2,4,6\}:\)</p>
 
 <ol>
   <li>
-    <p>$U={(x,y)\in A\times B \vert x + y = 9}$</p>
+    <p>\(U=\{(x,y)\in A\times B \vert x + y = 9\}\)</p>
 
     <p>This means the combinations from the two sets where the elements sum to 9.</p>
 
-    <p>$U={(3,6),(5,4),(7,2)}$</p>
+    <p>\(U=\{(3,6),(5,4),(7,2)\}\)</p>
   </li>
   <li>
-    <p>$V={(x,y)\in A\times B \vert x &lt; y }$</p>
+    <p>\(V=\{(x,y)\in A\times B \vert x &lt; y \}\)</p>
 
     <p>This is the set of all pairs such that the first element is smaller than the second element.</p>
 
-    <p>$V={(1,2),(1,4),(1,6),(3,4),(3,6),(5,6)}$</p>
+    <p>\(V=\{(1,2),(1,4),(1,6),(3,4),(3,6),(5,6)\}\)</p>
   </li>
 </ol>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-11-22T00:00:00+00:00"><!-- start custom article footer snippet -->
@@ -977,7 +980,7 @@ jm --- Penny
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

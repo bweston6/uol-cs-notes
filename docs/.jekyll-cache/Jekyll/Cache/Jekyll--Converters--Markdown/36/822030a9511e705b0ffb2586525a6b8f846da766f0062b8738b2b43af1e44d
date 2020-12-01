@@ -1,0 +1,40 @@
+I"K<p class="info">This topic is very similar to the subjects covered in COMP111’s <a href="/UoL/comp111/lectures/2020-11-12-1">propositional logic</a>. As result I will only be noting down significant differences.</p>
+
+<p>Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements.</p>
+
+<h2 id="propositional-logic">Propositional Logic</h2>
+<p>Propositional logic is logic which only concerns itself with whether something is true or false. Other languages differ themselves as they deal with uncertainties.</p>
+
+<p>A proposition is a statement that can either be true or false. A statement like \(4+5\) is not a proposition as it doesn’t give a true or false answer.</p>
+
+<h3 id="compound-propositions">Compound Propositions</h3>
+<p>More complex propositions are formed using logical connectives (also called Boolean connectives).</p>
+
+<p>The basic connectives are:</p>
+
+<ol>
+  <li>\(\neg\): Negation (read “not”).</li>
+  <li>\(\wedge\): Conjunction (read “and”).</li>
+  <li>\(\vee\): Disjunction (read “or”).
+    <ul>
+      <li>These are the scientific names and they make a difference between the english and mathematical words.</li>
+    </ul>
+  </li>
+  <li>\(\Rightarrow\): Implication (read “if…then”).
+    <ul>
+      <li>In other schools this may be written as \(\rightarrow\) or as \(\subseteq\).</li>
+    </ul>
+  </li>
+  <li>\(\Leftrightarrow\): Equivalence (read “if, and only if,”).
+    <ul>
+      <li>Similar to 4. the notation is not as set as 1,2 and 3. This may be written as \(\leftrightarrow\) or \(\equiv\).</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Propositional formed using these logical connectives are called compound propositions; otherwise atomic propositions.</p>
+
+<ul>
+  <li>A propositional formula is either an atom ic or compound proposition.</li>
+</ul>
+:ET

@@ -842,258 +842,252 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 6</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Power Sets
-The power set $\text{Pow}{A}$ of a set $A$ is the set of all possible subsets. This includes the null set $\emptyset$ and the full set.
+          <header><a href="/UoL/comp109/lectures/2020/11/23/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Building New Relations from Given Ones
+Inverse Relation
+Given a realtion \(R\subseteq A \times B\). We define the inverse relation \(R^{-1}\subset B\times A\) by:
 
-Each set in the power set follows this definition:
+\[R^{-1}=\{(b,a)\vert (a,b) \in R\}\]
 
-\[\{x\vert x\subseteq A\}\]
+Example:
+
+
+  The inverse of the relation is a parent of on the set of people is the relation is a child of.
+
+
+In other words if you swap the ele...</div><p><a href="/UoL/comp109/lectures/2020/11/23/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/23/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Digraph Representation of Relations
+
+Recall that a function \(f\) from a set \(A\) to a set \(B\) assigns exactly one element of \(B\) to each element of \(A\).
+
+
+  Gives rise to the relation \(R_f=\{(a,b)\in A\times B \vert b =f(a)\}\)
+
+
+If a relation \(S\subseteq A\times B\) is such that for every \(a\in A\) there exists at most one \(b\in B\)...</div><p><a href="/UoL/comp109/lectures/2020/11/23/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/seminars/2020/11/23/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 5</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Enhanced ER
+EER is an ER model bu with hierarchal relationships.
+
+Entities that are member of one entity type (the superclass) may be grouped into meaningful subsets (the subclasses).
+
+
+  Often referred to as an “is-A” relationship.
+    
+      The two subclasses of TRAINEE is the training courses company: EMPLOYEE and PROFESSIONAL.
+    
+  
+
+
+Inh...</div><p><a href="/UoL/comp107/seminars/2020/11/23/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Seminars">Seminars</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Seminars"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/23/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 19-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Complex Custom Types
+More Complex Constructors
+More complex constructors can contain other types.
+
+data Point = Point Int Int deriving (Show, Read, Eq)
+
+
+This is saying that the type Point has one constructor called Point and in that constructor there are two Int. The constructor name has no relation to the type name.
+
+It is common that if ...</div><p><a href="/UoL/comp105/lectures/2020/11/23/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/23/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 19-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Custom Types
+There are two ways to make types in Haskell.
+
+The type Keyword
+The type keyword gives a new name to an existing type.
+
+
+  All types must start with capital letters.
+
+
+type String' = [Char]
+
+exclaim :: String' -&gt; String'
+exclaim str = str + "!"
+
+
+&gt; exclaim "hello"
+&gt; "hello!!
+
+
+Type is useful when you want to give a meaningfu...</div><p><a href="/UoL/comp105/lectures/2020/11/23/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/22/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cartesian Product
+For the Cartesian product you are making a list of all possibilities of the elements in both sets. This is similar to multiplying brackets.
 
 Example
-The power set $\text{Pow}{A}$ of a set $A={1,2}$ is:
+Let \(A=\{1,2\}\) and \(B=\{a,b,c\}\), then:
 
-\[\{\emptyset,\{1\},\{2\},\{1,2\}\}\]
+\[A\times B = \{(1,a),(2,a),(1,b),(2,b),(1,c),(2,c)\}\]
 
-For any set $A$:
-...</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/16/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold Continued
-A fold output can be a different type to the input list.
+Therefore:
 
-to_csv list = foldr (\x acc -&gt; show x ++ "," ++ acc)  "" list
+\[B\times A = \{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}\]
 
-&gt; to_csv [1,2,3,4]
-&gt; "1,2,3,4,"
-
-
-By using foldr you cannot get the desired outcome as it applies the same rule to every item in the list.
-
-foldr1
-The function foldr1 uses the final value of the list to...</div><p><a href="/UoL/comp105/lectures/2020/11/16/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/16/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 16-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Fold
-Some functions take lists and turn them into a single value. This type of computation is called a fold. The things that you can change are:
-
-
-  The base case.
-  The operation applied to the list.
-
-
-foldr
-
-foldr' :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
-
-foldr' _ init [] = init
-foldr' f init (x:xs) = f x (foldr' f init xs)
-
-&gt; fold...</div><p><a href="/UoL/comp105/lectures/2020/11/16/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 16, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-16T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/13/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 5</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Theorem of Friends and Strangers
-Show that in any group of six people there are either three who all know each other or three complete strangers.
-
-
-
-On this graph blue is people who know each other and red is people who don’t. From the graph you can see that only two people will know each other.
-
-
-
-What the question is saying is that no matter h...</div><p><a href="/UoL/comp109/lectures/2020/11/13/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Relation...</div><p><a href="/UoL/comp109/lectures/2020/11/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 22, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/13/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 4</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Extended Pigeonhole Principle
-Consider a function $f:A\rightarrow B$ where $A$ and $B$ are finite sets and $\vert A\vert &gt;k\vert B\vert $ for some natural number $k$. Then, there is a value of $f$ which occurs at least $k+1$ times.
+          <header><a href="/UoL/comp107/lectures/2020/11/22/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Evolutionary Modelling</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">This type of modelling is inspired by agile principles.
 
-graph TD
-subgraph A
-a
-b
-c
-d
-e
-f
-g
-end 
-subgraph B
-1
-2
-3
-end
-a --&gt; 1
-b --&gt; 2
-c --&gt; 3
-d --&gt; 1
-e --&gt...</div><p><a href="/UoL/comp109/lectures/2020/11/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 3</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cardinality of Finite Sets and Functions
-The cardinality of a finite set $S$ is the number of elements in $S$.
-
-A bijection $f:S\rightarrow{1,\ldots,n}$. This means that there are as many elements in the set that $S$ maps to as there are in $S$.
-
-For finite sets $A$ and $B$:
+Designing an ER Schema
+You should identify the basic components:
 
 
-  $\vert A\vert \geq\vert B\vert \Rightarrow$ there is a surjective f...</div><p><a href="/UoL/comp109/lectures/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/tutorials/2020/11/13/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">How to Describe Data
-The ER model describes data in terms of:
-
-
-  Entities
-    
-      A thing which can be distinctly identified
-    
-  
+  Entity types.
+  Relationship types.
   Attributes
+  And for each of these components:
     
-      A property of an entity.
+      Key attributes (unique for each identity).
+      Cardinality and participation constraints of relationships.
+      Different ...</div><p><a href="/UoL/comp107/lectures/2020/11/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 22, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/tutorials/2020/11/20/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Designing an ER Schema
+You should identify basic components:
+
+
+  Entity types, relationship types, attributes:
     
-  
-  Relationships
-    
-      An association among entities.
+      Key attributes.
+      Cardinality and participation constrains of relationships.
+      Different entity types.
     
   
 
 
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-  ...</div><p><a href="/UoL/comp107/tutorials/2020/11/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+There are also weak entities such as tables or chairs. These simple objects don’t need individual identi...</div><p><a href="/UoL/comp107/tutorials/2020/11/20/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-13T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 20, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP107,Tutorials"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/12/4.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Knowledge Bases and Reasoning</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">The meeting takes place if all members have been informed in advance, and it is quorate. It is quorate provided that there are at least 15 people present. Member will have been informed in advance if there is not a postal strike.
+          <header><a href="/UoL/comp111/lectures/2020/11/19/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Bayes' Theorem</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">First Form
+If \(P(A)&gt;0\), then:
 
-Consequence: If the meeting does not take place, we conclude that there were fewer than 15 members present, or there...</div><p><a href="/UoL/comp111/lectures/2020/11/12/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
+
+Proof
+We have:
+
+
+  \(P(A\cap B)=P(A\vert B)\times P(B)\)
+  \(P(A\cap B)=P(B\vert A)\times P(A)\)
+
+
+Thus:
+
+\[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)\]
+
+By dividing by \(P(A)\) we get:
+
+\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
+
+Application - D...</div><p><a href="/UoL/comp111/lectures/2020/11/19/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/12/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Satisfiability of Propositional Formulas</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">A propositional formula is satisfiable if there exist an interpretation under which it is true.
+          <header><a href="/UoL/comp111/lectures/2020/11/19/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Independence</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">In everyday language we refer to events that have nothing to do with each other as being independent.
 
-Example 1
-The formula $(p\wedge\neg p)$ is not satisfiable, because:
+Definition
+Events \(A\) and \(B\) are independent if:
 
-\[I(p\wedge\neg p)=0\]
+\[P(A\cap B)=P(A)\times P(B)\]
 
-for all interpretations $I$:
+If \(P(A)\neq 0\) and \(P(B)\neq 0\), then the following are equivalent:
 
 
-  
-    
-      $p$
-      $\neg p$
-      $(p\wedge\neg p)$
-    
-  
-  
-    
-      1
-      0
-      0
-    
-    
-      0
-      1
-  ...</div><p><a href="/UoL/comp111/lectures/2020/11/12/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  \(A\) and \(B\) are independent.
+  \(P(B)=P(B\vert A)\)
+  \(P(A)=P(A\vert B)\)
+
+...</div><p><a href="/UoL/comp111/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Truth Values</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">An interpretations $I$ assigns to every atomic proposition $p$ a truth value:
-\(I(p)\in\{0,1\}\)
-
-This means:
-
-
-  If $I(p)=1$, then $p$ is called true under the interpretation $I$.
-  If $I(p)=1$, then $p$ is called false under the interpretation $I$.
-
-
-Given an assignment $I$ we can computer the truth value of compound formulas step by step by u...</div><p><a href="/UoL/comp111/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page2">
             <i class="fas fa-angle-left"></i>
@@ -1106,7 +1100,7 @@ Given an assignment $I$ we can computer the truth value of compound formulas ste
             </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page4"><span>4</span></a>
                 </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page4">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1141,7 +1135,7 @@ Given an assignment $I$ we can computer the truth value of compound formulas ste
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

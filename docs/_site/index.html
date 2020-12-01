@@ -842,249 +842,234 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/seminars/2020/11/23/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 5</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Enhanced ER
-EER is an ER model bu with hierarchal relationships.
-
-Entities that are member of one entity type (the superclass) may be grouped into meaningful subsets (the subclasses).
-
-
-  Often referred to as an “is-A” relationship.
-    
-      The two subclasses of TRAINEE is the training courses company: EMPLOYEE and PROFESSIONAL.
-    
-  
-
-
-Inh...</div><p><a href="/UoL/comp107/seminars/2020/11/23/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+          <header><a href="/UoL/comp111/lectures/2020/12/01/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Independent Random Variables</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody"></div><p><a href="/UoL/comp111/lectures/2020/12/01/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Seminars">Seminars</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Seminars"></div>
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Dec 01, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-12-01T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/23/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 19-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Complex Custom Types
-More Complex Constructors
-More complex constructors can contain other types.
+          <header><a href="/UoL/comp105/lectures/2020/12/01/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 23-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Writing IO Code
+We can write our own IO actions:
 
-data Point = Point Int Int deriving (Show, Read, Eq)
+print_two :: String -&gt; String -&gt; IO ()
+Print_two s1 s2 = putStrLn (s1 ++ s2)
 
 
-This is saying that the type Point has one constructor called Point and in that constructor there are two Int. The constructor name has no relation to the type name.
+&gt; print_two "abc" "def"
+abcdef
 
-It is common that if ...</div><p><a href="/UoL/comp105/lectures/2020/11/23/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+
+Note that the return type is IO ().
+
+Combining Multiple IO Calls
+The do syntax allows us to combine multiple IO actions.
+
+get_and_print :: IO ()
+get_and_print =
+    do
+        ...</div><p><a href="/UoL/comp105/lectures/2020/12/01/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Dec 01, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-12-01T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/23/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 19-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Custom Types
-There are two ways to make types in Haskell.
-
-The type Keyword
-The type keyword gives a new name to an existing type.
+          <header><a href="/UoL/comp105/lectures/2020/12/01/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 23-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">So far, we have studied pure functional programming. Pure functions:
 
 
-  All types must start with capital letters.
+  Have no side effects.
+  Always return a value.
+  Are deterministic.
 
 
-type String' = [Char]
+All computation can be done in pure functional programming.
 
-exclaim :: String' -&gt; String'
-exclaim str = str + "!"
-
-
-&gt; exclaim "hello"
-&gt; "hello!!
+IO
+Sometimes programs need to do non-pure things:
 
 
-Type is useful when you want to give a meaningfu...</div><p><a href="/UoL/comp105/lectures/2020/11/23/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  Print something to the screen.
+  Read or write a file.
+  …
+
+
+IO v.s. Pure Functional
+
+gra...</div><p><a href="/UoL/comp105/lectures/2020/12/01/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 23, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-23T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Dec 01, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-12-01T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/22/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cartesian Product
-For the Cartesian product you are making a list of all possibilities of the elements in both sets. This is similar to multiplying brackets.
+          <header><a href="/UoL/comp109/lectures/2020/11/30/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Logic - 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">This lecture is very similar to COMP111’s truth values lecture. View that lecture for all truth tables.
 
-Example
-Let $A={1,2}$ and $B={a,b,c}$, then:
+Truth Values
+Interpretations are a way of assigning values to propositions which may vary depending on the situation or person who answers them.
 
-\[A\times B = \{(1,a),(2,a),(1,b),(2,b),(1,c),(2,c)\}\]
-
-Therefore:
-
-\[B\times A = \{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}\]
-
-Relations
-Any re...</div><p><a href="/UoL/comp109/lectures/2020/11/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+An interpretation \(I\) is a function which assigns to any atomic proposition \(p_i\) a truth va...</div><p><a href="/UoL/comp109/lectures/2020/11/30/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 22, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/lectures/2020/11/22/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Evolutionary Modelling</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">This type of modelling is inspired by agile principles.
-
-Designing an ER Schema
-You should identify the basic components:
-
-
-  Entity types.
-  Relationship types.
-  Attributes
-  And for each of these components:
-    
-      Key attributes (unique for each identity).
-      Cardinality and participation constraints of relationships.
-      Different ...</div><p><a href="/UoL/comp107/lectures/2020/11/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 22, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-22T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 30, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-30T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/tutorials/2020/11/20/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 3</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Designing an ER Schema
-You should identify basic components:
+          <header><a href="/UoL/comp109/lectures/2020/11/30/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Logic - 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">This topic is very similar to the subjects covered in COMP111’s propositional logic. As result I will only be noting down significant differences.
+
+Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements.
+
+Propositional Logic
+Propositional logic is logic which only concerns...</div><p><a href="/UoL/comp109/lectures/2020/11/30/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 30, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-30T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/30/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 22-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Trees
+
+graph TD
+a[ ] --&gt; b[ ]
+a --&gt; c[ ]
+b --&gt; d[ ]
+b --&gt; e[ ]
+d --&gt; f[ ]
+d --&gt; g[ ]
+c --&gt; h[ ]
+c --&gt; i[ ]
 
 
-  Entity types, relationship types, attributes:
+A tree is composed of:
+
+
+  Leaf nodes.
     
-      Key attributes.
-      Cardinality and participation constrains of relationships.
-      Different entity types.
+      Leaves have no children.
+    
+  
+  Branch nodes.
+    
+      Has a child which is a leaf.
     
   
 
 
-There are also weak entities such as tables or chairs. These simple objects don’t need individual identi...</div><p><a href="/UoL/comp107/tutorials/2020/11/20/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 20, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-20T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/19/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Bayes' Theorem</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">First Form
-If $P(A)&gt;0$, then:
-
-\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
-
-Proof
-We have:
-
-
-  $P(A\cap B)=P(A\vert B)\times P(B)$
-  $P(A\cap B)=P(B\vert A)\times P(A)$
-
-
-Thus:
-
-\[P(A\vert B)\times P(B)=P(B\vert A)\times P(A)\]
-
-By dividing by $P(A)$ we get:
-
-\[P(B\vert A)=\frac{P(A\vert B)\times P(B)}{P(A)}\]
-
-Application - Diagnosis...</div><p><a href="/UoL/comp111/lectures/2020/11/19/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/19/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Independence</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">In everyday language we refer to events that have nothing to do with each other as being independent.
-
-Definition
-Events $A$ and $B$ are independent if:
-
-\[P(A\cap B)=P(A)\times P(B)\]
-
-If $P(A)\neq 0$ and $P(B)\neq 0$, then the following are equivalent:
-
-
-  $A$ and $B$ are independent.
-  $P(B)=P(B\vert A)$
-  $P(A)=P(A\vert B)$
-
-
-See slides 31 f...</div><p><a href="/UoL/comp111/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/19/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Conditional Probability</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Often we are interested in just part of the sample space. Conditional probability gives us a means of handling this situation.
-
-Example
-Consider a family chosen at random from a set of families having two children (but not having twins). What is the probability that both children are boys?
-
-A suitable sample space $S={BB,GB,BG,GG}$.
-
-It is reaso...</div><p><a href="/UoL/comp111/lectures/2020/11/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/19/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 18-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">First Past the Post Example
-This example covers a first past the post election. This means whoever gets the most votes wins. We are aiming to make a function that performs this task:
-
-&gt; winner ["red", "blue", "red", "red", "green"]
-&gt; "red"
-
-
-Getting the Candidates
-First we need to figure out who the candidates are:
-
-uniq [] = []
-uniq (x:xs...</div><p><a href="/UoL/comp105/lectures/2020/11/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+A Tree Type in Haskell
+Any binary tree can be represented in this...</div><p><a href="/UoL/comp105/lectures/2020/11/30/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-19T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 30, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-30T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/30/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 22-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Recursive Types
+
+We have seen types which contain other types. In a recursive custom type, some constructors contain the type itself.
+
+data IntList = Empty | Cons Int IntList deriving(Show)
+
+
+Some examples using this type:
+
+Empty -- []
+Cons 1 (Empty) -- [1]
+Cons 1 (Cons 2 Empty) -- [1,2]
+
+
+Here is a more general list using a type variable:
+
+data...</div><p><a href="/UoL/comp105/lectures/2020/11/30/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 30, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-30T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/27/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 10</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">All the relations we have been looking at so far have been binary relations however this can be generalised for greater numbered relations.
+
+\(n\)-ary Relations
+The Cartesian product \(A_1\times A_2\times \ldots \times A_n\) of sets \(A_1,A_2,\ldots,A_n\) is defined by:
+
+\[A_1\times A_2\times \ldots \times A_n=\{(a_1,\ldots,a_n)\ \vert\ a_1\in A...</div><p><a href="/UoL/comp109/lectures/2020/11/27/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/27/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 9</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Partial Orders
+A binary relation \(R\) on set \(A\) which is reflexive, transitive and antisymmetric is called  a partial order.
+
+Partial orders are important in situations where we wish to characterise precedence.
+
+Examples
+
+  The relation \(\leq\) on the set of \(\Bbb{R}\) of real numbers.
+  The relation \(\subseteq\) on \(\text{Pow}(A)\).
+  “...</div><p><a href="/UoL/comp109/lectures/2020/11/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/tutorials/2020/11/27/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">ER by View Integration
+
+You should consider each user perspective separately.
+
+
+  Requirements are given for many users groups or applications independently.
+  an ER schema is designed  for each user group and application (typically by different developers.)
+  Individual views are merged into a global conceptual schema.
+  Individual views can be...</div><p><a href="/UoL/comp107/tutorials/2020/11/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><div class="button button--secondary button--circle disabled">
             <i class="fas fa-angle-left"></i>
@@ -1097,7 +1082,7 @@ uniq (x:xs...</div><p><a href="/UoL/comp105/lectures/2020/11/19/2.html">Read mor
                 </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page4"><span>4</span></a>
                 </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page2">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1132,7 +1117,7 @@ uniq (x:xs...</div><p><a href="/UoL/comp105/lectures/2020/11/19/2.html">Read mor
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

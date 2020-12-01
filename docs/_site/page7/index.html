@@ -842,225 +842,245 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/lectures/2020/10/31/3.html"><h2 itemprop="headline" class="item__header">COMP107 - How to Cite</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Referencing is a description that identifies an information source, whereas citation is the use of a reference in text.
+          <header><a href="/UoL/comp105/lectures/2020/11/10/3.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Anonymous Functions
+Sometimes is it convenient to define a function inline. Anonymous functions allow you to use a function without a name.
+
+&gt; (\ x -&gt; x + 1) 7
+&gt; 8
 
 
-  It is not a good practice to simply list all your references at the end of a document without a connection.
-  Need to clearly mark what is your own work and what is the work of others.
-  Need to help readers get more inform...</div><p><a href="/UoL/comp107/lectures/2020/10/31/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+This allows you to pass functions to a higher order function without giving it a name:
+
+&gt; apply_twice (\ x -&gt; 2 * x ) 2
+&gt; 8
+
+
+Syntax
+The syntax for an anonymous fu...</div><p><a href="/UoL/comp105/lectures/2020/11/10/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 31, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-31T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/lectures/2020/10/31/2.html"><h2 itemprop="headline" class="item__header">COMP107 - How to Reference</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">The purpose of referencing is to show how work extends the current state-of-the-art knowledge in the area, proof originality of work, give credit to other people’s work, support and validate arguments made and demonstrate familiarity with work done in the area.
+          <header><a href="/UoL/comp105/lectures/2020/11/10/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Higher Order Functions
+A higher order function is a function that:
 
-Culture of Citing
-For fiction there might be sources in your work, but these are nev...</div><p><a href="/UoL/comp107/lectures/2020/10/31/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+
+  Takes another function as an argument.
+  Returns a function.
+
+
+apply_twice :: (a -&gt; a) -&gt; a -&gt; a
+apply_twice f input = f (f input)
+
+&gt; apply_twice tail [1,2,3,4]
+&gt; [3,4]
+
+
+This function takes a function and an input as an argument and then uses the supplied func...</div><p><a href="/UoL/comp105/lectures/2020/11/10/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 31, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-31T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/lectures/2020/10/31/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Evaluating and Gathering Information Sources</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">How to we form our knowledge?
-Generally we form our personal collection of facts from sources that we meet in our every day life. This means that a good proportion of the knowledge we might think that we have is composed of myths. This is especially found in news articles.
+          <header><a href="/UoL/comp105/lectures/2020/11/10/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 14-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Type Classes
+show
+This function converts other types to strings. However, it can only take the type class of Show into a string:
 
-These articles are generally based in fact in the sense that they refere...</div><p><a href="/UoL/comp107/lectures/2020/10/31/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+show :: Show a =&gt; a -&gt; a
+
+
+Show contains:
+
+
+  All basic types.
+  All tuples of show-able types.
+  All lists of show-able types.
+
+
+read
+This converts strings to other types, provided they are formatted corre...</div><p><a href="/UoL/comp105/lectures/2020/11/10/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 31, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-31T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/10/29/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Common Mistakes and Good Practice</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Definitions of Supplementary Statements
-Conjectures are built on other conjectures. They can be subdivided into the following parts:
+          <header><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 5</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Example 1
+\(A=\{1,2,7,8,9\}, B=\{x\in A\vert x \text{ is odd}\}\)
 
+Where:
 
-  Theorem
+\(C=A-B=A\cap B\)
+
+Therefore:
+
+\(B=\{1,7,9\}\)
+
+\(C=\{2,8\} = \{x\in A \vert x \notin B\}\)
+
+Proving Identities
+To prove an identity you would consider the sections of a Venn diagram and consider each of the four cases. These cover all of the locations in the Venn diagram.</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/seminars/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Introducing assignment 4.
+Activities
+
+  Identification of Application areas and users groups
+  Analysis of existing documentation of application areas
+  Analysis of current operating environments and the planned use of the information
     
-      A very important true statement.
+      Information flow
+      Types of transactions
     
   
-  Proposition
-    
-      A less important by still interesting statement.
-    
-  
-  Lemma
-    
-      A true statement used to prove other statements.
-...</div><p><a href="/UoL/comp109/lectures/2020/10/29/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  Responses to user questionnaires are analysed....</div><p><a href="/UoL/comp107/seminars/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+                href="/UoL/archive.html?tag=Seminars">Seminars</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Seminars"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/10/29/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Strong Induction</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">For a normal case of mathematical induction you can prove that a statement holds for all numbers from a particular start point.
+          <header><a href="/UoL/comp105/lectures/2020/11/09/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Type Classes
+Some functions are polymorphic, but can’t be applied to any type. + is a good example. It can work on float and integer but not on mixed types or Char. The type of + is:
 
-It uses a base case so show that it holds for an individual number and an induction rule that proves that it holds for all numbers following.
-
-
-  Prove that the property holds for the natural number $n=0$
-  Prove that ...</div><p><a href="/UoL/comp109/lectures/2020/10/29/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/10/29/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Proving Properties of Programs</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Using induction to show that a program is correct.
-Example on a Recursive Function that Generates Factorials
-Proof
-By mathematical induction on $n$.
-
-Base Case $n=1$
-\(g(1)=1=1!\)
-
-Inductive Step
-Suppose that for some $n=m, g(n)=n!$
-
-Consider $n=m+1$
-
-$g(m+1)$ the code returns $g(m)\times(m+1)$
-
-By induction hypothesis, $g(m)=m!$
-
-So: 
-\(g(m)\ti...</div><p><a href="/UoL/comp109/lectures/2020/10/29/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/29/3.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 9-3</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Mutual and Multiple Recursion
-Mutual Recursion
-Mutual recursion is when two functions call each other:
-
-even' 0 = True
-even' n = odd' (n-1)
-
-odd' 0 = False
-odd' n = even' (n-1)
+(+) :: Num a =&gt; a -&gt; a -&gt; a
 
 
-We have to make sure that:
+This means that a is a number in the definition: a -&gt; a -&gt; a.
+
+Num
+Num is a type class:
 
 
-  We terminate in a base case.
-  We always make progress towards a base case.
-
-
-Mutual recursion is a stylistic choice.
-
-Multiple Recursion...</div><p><a href="/UoL/comp105/lectures/2020/10/29/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  It restricts the type vari...</div><p><a href="/UoL/comp105/lectures/2020/11/09/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/29/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 9-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Recursion with Multiple Lists
-Sometimes we want to use recursion on more than one list at a time. The following example adds the elements of two lists together:
+          <header><a href="/UoL/comp105/lectures/2020/11/09/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 13-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Polymorphic Types
+Some functions accept many different types. An example of this is length which accepts many different types of lists.
 
-add_lists _ [] = []
-add_lists [] _ = []
-addlists (x:xs) (y:ys) = x + y : addlists xs ys
+if you ask what the type of then function length is then it will return the type:
+
+length :: [a] -&gt; Int
 
 
+a is a type variable. This means that:
 
-  Base cases stop when either of the lists is empty.
-  Recursive rule pulls an element form bo...</div><p><a href="/UoL/comp105/lectures/2020/10/29/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+
+  The function can be applied to any list.
+  a will represen...</div><p><a href="/UoL/comp105/lectures/2020/11/09/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 09, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-09T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/29/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 9-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">where Syntax
-Sometimes it is useful to bind names across a whole function:
+          <header><a href="/UoL/comp109/lectures/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Algebra of Sets</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Suppose that \(A,B,C,U\) are sets with \(A \subseteq U, B \subseteq U, C \subseteq U\).
 
-remove_twos [] = []
-remove_twos (x:xs)
-	| x == 2	= rest
-	| otherwise = x:rest
-	where rest = remove_twos xs
+Commutative Laws
+These laws say that is doesn’t matter in which order the operation takes place.
 
 
-As the two expressions are in different guards then you can’t use a let expression.
-
-A general example is:
-
-f x y = 1 + a + b
-	where 	a = 2 * x
-			b = y / 2
+  \(A\cup B = B \cup A\)
+  \(A\cap B = B \cap A\)
 
 
-whe...</div><p><a href="/UoL/comp105/lectures/2020/10/29/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Associative Laws
+These laws say that is doesn’t matter where you put brackets around an operation
+
+
+  \(A\c...</div><p><a href="/UoL/comp109/lectures/2020/11/06/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/tutorials/2020/11/06/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">In this tutorial the first main focus was the group project.
+
+User Stories
+You might want to use user stories or define user personas:
+
+
+  As a… [which type of user has this need?]
+  I need… [what does the user want to do?]
+  So that… [why does the user want to do this?]
+  When… [what triggers the user’s need?]
+  Because… [what does the user nee...</div><p><a href="/UoL/comp107/tutorials/2020/11/06/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/11/06/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 12-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Function Types
+Functions also have types in the type system. The type of a function is based on the values it takes as an argument and returns.
+
+Single Argument Functions
+For a one argument function, the type is written as:
+
+[input type] -&gt; [output type]
+
+
+Multi-Argument Functions
+For a function with more than one argument, the type uses mult...</div><p><a href="/UoL/comp105/lectures/2020/11/06/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 06, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-06T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/28/1.html"><h2 itemprop="headline" class="item__header">COMP111 - A* Search</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">It was made in 1968 in Stanford by the team that constructed Shaky, the robot.
-
-
-  The basic idea was to combine uniform cost search and greedy search
-  We look at the cost so far and the estimated cost to goal
-  Thus  we use the heuristic $f:$ \(f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\) where:
-    
-      $g(s_0\ldots s_k)$ is the path cost of...</div><p><a href="/UoL/comp111/lectures/2020/10/28/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 28, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-28T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page6">
             <i class="fas fa-angle-left"></i>
@@ -1073,7 +1093,7 @@ whe...</div><p><a href="/UoL/comp105/lectures/2020/10/29/1.html">Read more</a></
             </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page8"><span>8</span></a>
                 </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page8">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1108,7 +1128,7 @@ whe...</div><p><a href="/UoL/comp105/lectures/2020/10/29/1.html">Read more</a></
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

@@ -842,257 +842,247 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/14/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 3-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Defining Custom Functions
-Functions are defined as such:
+          <header><a href="/UoL/comp105/lectures/2020/10/26/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 7-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Complex Recursion and Guards
+Multiple Base Cases
+Each base case represents a different stopping position:
 
-[functionName][arguments][=][body]
-
-
-Functions and arguments must start with small letters as only types use capitals.
-
-They can be written into a file and loaded into GHCI or compiled for use in a program. An example of a simple function:
-
-addTwo x = x + 2
-twoInAddTwo x y = x + y + 2
+isEven 0 = True
+isEven 1 = False
+isEven n = isEven (n - 2)
 
 
-A...</div><p><a href="/UoL/comp105/lectures/2020/10/14/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
+
+
+Multiple Recursive Rules
+More complex recursive functions may have more than one recursi...</div><p><a href="/UoL/comp105/lectures/2020/10/26/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/14/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 3-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Functions and Libraries
-When using Haskell the default library is Prelude.
+          <header><a href="/UoL/comp105/lectures/2020/10/26/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 7-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Recursion
+There is no such thing as a while loop in Haskell so you must use recursion to complete the same task. This links into Assignment 1 as it leans heavily on recursion.
 
-Haskell uses special syntax for function calls. min from the Prelude library will work as min 1 2. This is as functions are called as:
+Factorial
+A recursive function is one that calls itself:
 
-[function name][space][arg1][space][arg2]...
+factorial n = if n &gt; 1
+				then n * factorial (n - 1)
+				else 1
 
 
-Additionally in Haskell functions bind tighter than mathematical operators:
+A recursive function has:
 
-Prelude&gt;...</div><p><a href="/UoL/comp105/lectures/2020/10/14/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+
+  A base case....</div><p><a href="/UoL/comp105/lectures/2020/10/26/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/13/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Classification of Intelligent Agents</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Intelligent agents are classified depending on how they map their precepts to their actions. They can be classed under:
+          <header><a href="/UoL/comp109/lectures/2020/10/25/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Continuation of Week 1 Summary</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Proving Existential Statements
+An existential statement is a statement in the form: 
+\[\exists x\ Q(x)\]
+This means that there exists a value to which the function \(Q(x)\) holds true. This may be under additional parameters.
 
-
-  Simple reflex agents
-    
-      Select actions to execute based upon the current percept
-      Don’t take the percept history into account.
-      Very simple IFTTT actions.
-      Very simple to implement but have limited in...</div><p><a href="/UoL/comp111/lectures/2020/10/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+The easiest way to prove this is to find an \(x\) that makes the function \(Q(x)\) true. Not all can be proved this way....</div><p><a href="/UoL/comp109/lectures/2020/10/25/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 25, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-25T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/13/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Intelligent Agents</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Entities that are engineered in AI are known as agents.
+          <header><a href="/UoL/comp109/lectures/2020/10/24/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Week 1 Summary</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Notion of Proof
+Types of Numbers
 
-An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.
+  Natural numbers \(\mathbb{N}\) are whole numbers that start from 0.
+  Integers are whole numbers including negatives.
+  Rational numbers are any number that can be represented as fractions without a denominator of 0.
+  Real numbers are any decimal number that can be presented on a number line. E.g. \(\pi\)
 
-PEAS
 
-  Performance Measure
-    
-      The criteria by which we can measure the success of an agent’s behaviour.
-    
-  
-  Environment
-    
-      The e...</div><p><a href="/UoL/comp111/lectures/2020/10/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+P...</div><p><a href="/UoL/comp109/lectures/2020/10/24/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 24, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-24T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/13/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 2-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">What is Functional Programming?
-In a functional programming language everything is a pure function.
+          <header><a href="/UoL/comp107/lectures/2020/10/24/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Requirement Elicitation</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">The process of obtaining, through systematic research the requirements of a system form the various users, customers and other stakeholders.
 
 
-  The program is built out of pure functions.
-  Simple functions are combined to build more complex functions.
+  Needs a principle approach as it is often hard for users to articulate their need or their business problems.
+  Any system that doesn’t meet the users need is neither useful nor useable.
 
 
-This very different style still allows you to do anything you could have done in an imperative language.
-
-Building Functions
-Every l...</div><p><a href="/UoL/comp105/lectures/2020/10/13/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/13/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 2-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">What is a pure function?
-A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$
-
-In imperative languages, functions can do much more and are called subroutines.
-
-Every function can be implemented in a subroutine but not all subroutines are functions.
-
-A function maps inputs to outputs, however subroutines can have an effec...</div><p><a href="/UoL/comp105/lectures/2020/10/13/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 13, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-13T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/12/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Views and History of AI</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Views of AI
-Typical AI Application Areas
-
-  Natural Language Processing
-  Computer Vision
-  Robotics
-  Theorem Proving
-  Speech Recognition
-  Game Playing
-  Sematic Web Search
-  Diagnosis
-
-
-What is AI
-The goal of AI is to build machines that perform tasks that normally require human intelligence. This can also be construed as what is new in comp...</div><p><a href="/UoL/comp111/lectures/2020/10/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/seminars/2020/10/12/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Staff List
-
-  Floriana Grasso
-    
-      Module leader
-    
-  
-  Alexis Nolan-Webster
-    
-      Employability officer
-    
-  
-  A number of graduate teaching assistants
-    
-      Co-ordinate tutorials
-    
-  
-  Guest Speakers
-
-
-Aims
-
-  To provide the students with a wide-rage understanding of the discipline of computing, and to introduce stude...</div><p><a href="/UoL/comp107/seminars/2020/10/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+How to Elicit...</div><p><a href="/UoL/comp107/lectures/2020/10/24/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Seminars">Seminars</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP107,Seminars"></div>
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 24, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-24T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP107,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 1-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Covering dates and logistics of homework and lectures.
+          <header><a href="/UoL/comp107/lectures/2020/10/22/1.html"><h2 itemprop="headline" class="item__header">COMP107 - System Analysis and Design</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">SAD seeks to understand what humans need to analyse data input or data flow systematically, process or transform data, store data, and output information in the context of a particular organisation or enterprise.
 
-Learning Outcomes
+Information - A Key Resource
 
-  Describe functional and imperative languages and the differences between them.
-    
-      Weeks 1 - 2
-    
-  
-  Apply recursion to solve algorithmic tasks.
-    
-      Weeks 3 - 4
-    
-  
-  Apply common functional programming idioms such as map, filter, fold and scan.
-  ...</div><p><a href="/UoL/comp105/lectures/2020/10/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  Information needs to be managed correctly.
+  Managing computer-generated information differs from han...</div><p><a href="/UoL/comp107/lectures/2020/10/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 22, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-22T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP107,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/10/22/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 6-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Comprehensions
+List ranges can produce simple arithmetic sequences but list comprehensions can produce more complex lists:
+
+&gt; [x*x | x &lt;- [1..10]]
+&gt; [1,4,9,16,25,36,49,64,81,100]
+
+
+By using this you can apply a function to a list and put the result into a list.
+
+Predicates
+Predicates also add evaluations into the list to limit the ...</div><p><a href="/UoL/comp105/lectures/2020/10/22/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 22, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-22T00:00:00+01:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 1-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Programming languages can be split into imperative and functional. This course will focus on the functional language of Haskell.
+          <header><a href="/UoL/comp105/lectures/2020/10/22/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 6-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Ranges
+A list range lets us write a long list in a compact way:
+
+&gt; [1..10]
+&gt; [1,2,3,4,5,6,7,8,9,10]
 
 
-  Imperative programs tell the computer how to compute the answer.
-    
-      Declare variables
-      Go around a loop
-      Do the same instructions each time
-    
-  
-  Functional programming languages follow mathem...</div><p><a href="/UoL/comp105/lectures/2020/10/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+If the start is bigger than the end then you will get an empty list. This means you can’t count down in a list in this way. Using .. also works with letters to fill in the letters in between.
+
+To give a step size give the first two el...</div><p><a href="/UoL/comp105/lectures/2020/10/22/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 12, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-12T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 22, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-22T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/10/21/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 5-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Lists
+A list contains any number of items that all have the same type.
+
+[1, 2, 3, 4, 5]
+['a', 'b', 'c', 'd', 'e']
+
+
+Lists are built with [] as opposed to tuples which are built with().
+
+
+  
+    A list can have any number of elements including 0.
+
+      []
+  [1]
+  [1, 2]
+    
+  
+  
+    In Haskell lists are linked lists:
+    
+      This means that...</div><p><a href="/UoL/comp105/lectures/2020/10/21/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 21, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-21T00:00:00+01:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/10/21/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 5-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Tuples
+A tuples allows us to bind two or more values together:
+
+(1,2)
+("A", "few", "words")
+(6, "six")
+
+
+
+  Tuples can have any size but must be at least 2.
+  The size should be thought of as being fixed as it is not easy to change  the length of a tuple.
+  Tuples can mix types.
+
+
+Example Functions
+Taking Tuples as Input
+f (x, y) = x
+
+
+This will...</div><p><a href="/UoL/comp105/lectures/2020/10/21/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 21, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-21T00:00:00+01:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page10">
             <i class="fas fa-angle-left"></i>
           </a></li><li>
               <a class="button button--secondary button--circle" href="/UoL/"><span>1</span></a>
             </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page8"><span>8</span></a>
-                </li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page9"><span>9</span></a>
-                </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page10"><span>10</span></a>
                 </li><li>
               <div class="button button--primary button--circle focus"><span>11</span></div>
-            </li><li><div class="button button--secondary button--circle disabled">
+            </li><li>
+                  <a class="button button--secondary button--circle" href="/UoL/page12"><span>12</span></a>
+                </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
+                </li><li><a class="button button--secondary button--circle" href="/UoL/page12">
             <i class="fas fa-angle-right"></i>
-          </div></li></ul>
+          </a></li></ul>
     </div>
   </div></div>
 <script>/*(function () {
@@ -1124,7 +1114,7 @@ Learning Outcomes
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

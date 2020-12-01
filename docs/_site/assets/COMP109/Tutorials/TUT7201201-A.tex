@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz-cd,amsmath,float}
+\title{Tutorial for Week 7 - Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}\setcounter{enumi}{1}
+        \item
+        \begin{enumerate}
+                \item $R=\{(1,2),(1,3),(1,4),(2,3),(2,4),(3,4)\}$
+                \item $S=\{(1,a),(2,c),(3,b),(4,a)\}$
+                \item {
+                                \leavevmode\vadjust{\vspace{-\baselineskip}}\newline
+                                \begin{center}
+                                        \begin{tikzcd}
+                                                1 \arrow[rd] &   & 4 \arrow[ld] & 3 \arrow[d] & 2 \arrow[d] \\
+                                                             & a &              & b           & c
+                                        \end{tikzcd}
+                                \end{center}
+                        }
+                \item {
+                                $$M_R=
+                                \begin{bmatrix}
+                                        0 & 1 & 1 & 1\\
+                                        0 & 0 & 1 & 1\\
+                                        0 & 0 & 0 & 1\\
+                                        0 & 0 & 0 & 0
+                                \end{bmatrix}$$
+                        }
+                \item {
+                                $$M_{S\circ R}=
+                                \begin{bmatrix}
+                                        1 & 1 & 1\\
+                                        1 & 1 & 1\\
+                                        1 & 0 & 0\\
+                                        0 & 0 & 0
+                                \end{bmatrix}$$
+                        }
+
+        \end{enumerate}
+\end{enumerate}
+\end{document}

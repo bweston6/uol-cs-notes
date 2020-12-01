@@ -857,6 +857,890 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
+<h1 id="comp105---lecture-23-2"><a href="/UoL/comp105/lectures/2020/12/01/2.html">COMP105 - Lecture 23-2</a></h1>
+<h2 id="writing-io-code">Writing IO Code</h2>
+<p>We can write our own IO actions:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">print_two</span> <span class="o">::</span> <span class="kt">String</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="kt">Print_two</span> <span class="n">s1</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">putStrLn</span> <span class="p">(</span><span class="n">s1</span> <span class="o">++</span> <span class="n">s2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">print_two</span> <span class="s">"abc"</span> <span class="s">"def"</span>
+<span class="n">abcdef</span>
+</code></pre></div></div>
+
+<p>Note that the return type is <code class="language-plaintext highlighter-rouge">IO ()</code>.</p>
+
+<h3 id="combining-multiple-io-calls">Combining Multiple IO Calls</h3>
+<p>The <code class="language-plaintext highlighter-rouge">do</code> syntax allows us to combine multiple IO actions.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_and_print</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">get_and_print</span> <span class="o">=</span>
+    <span class="kr">do</span>
+        <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+        <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+        <span class="n">putStrLn</span> <span class="p">(</span><span class="n">x</span> <span class="o">++</span> <span class="s">" "</span> <span class="o">++</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This syntax allows us two write a sequence of statements that will be executed in order.</p>
+
+<p>You could also write this with the following syntax:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_and_print</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">get_and_print</span> <span class="o">=</span> <span class="kr">do</span>
+    <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+    <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+    <span class="n">putStrLn</span> <span class="p">(</span><span class="n">x</span> <span class="o">++</span> <span class="s">" "</span> <span class="o">++</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="the-do-syntax">The <code class="language-plaintext highlighter-rouge">do</code> Syntax</h4>
+<p>A <code class="language-plaintext highlighter-rouge">do</code> block has the following syntax:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">do</span>
+    <span class="n">v1</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="kt">IO</span> <span class="n">action</span><span class="p">]</span>
+    <span class="n">v2</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="kt">IO</span> <span class="n">action</span><span class="p">]</span>
+    <span class="o">...</span>
+    <span class="n">vk</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="kt">IO</span> <span class="n">action</span><span class="p">]</span>
+    <span class="p">[</span><span class="kt">IO</span> <span class="n">action</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">v1</code> through <code class="language-plaintext highlighter-rouge">vk</code> unbox the results of IO actions.</li>
+  <li>The final IO action is the return value.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">v &lt;-</code> portion can be skipped if you are using an IO action purely for the side effect.</p>
+
+<h4 id="let-in-do-blocks"><code class="language-plaintext highlighter-rouge">let</code> in <code class="language-plaintext highlighter-rouge">do</code> Blocks</h4>
+<p><code class="language-plaintext highlighter-rouge">let</code> expressions can be used inside <code class="language-plaintext highlighter-rouge">do</code> block in order to complete pure computations:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add_one</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">add_one</span> <span class="o">=</span>
+    <span class="kr">do</span>
+        <span class="n">n</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+        <span class="kr">let</span> <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="n">read</span> <span class="n">n</span><span class="p">)</span> <span class="o">::</span> <span class="kt">Int</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">show</span> <span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">putStrLn</span> <span class="n">out</span>
+</code></pre></div></div>
+
+<p class="info">In a <code class="language-plaintext highlighter-rouge">do</code> block you can type anything out that you would type into the command line of GHCI.</p>
+
+<h4 id="if-in-do-blocks"><code class="language-plaintext highlighter-rouge">if</code> in <code class="language-plaintext highlighter-rouge">do</code> Blocks</h4>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">guess</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="kr">do</span>
+    <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+    <span class="kr">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s">"42"</span>
+        <span class="kr">then</span> <span class="n">putStrLn</span> <span class="s">"Correct!"</span>
+        <span class="kr">else</span> <span class="n">putStrLn</span> <span class="s">"You are very wrong."</span>
+</code></pre></div></div>
+
+<p>Both branches of the <code class="language-plaintext highlighter-rouge">if</code> mut have the same type.</p>
+
+<h3 id="do-blocks"><code class="language-plaintext highlighter-rouge">do</code> Blocks</h3>
+<p><code class="language-plaintext highlighter-rouge">do</code> blocks let you sequence multiple actions:</p>
+
+<ul>
+  <li>Works with IO actions.</li>
+  <li>Will not work in pure functional code.</li>
+</ul>
+
+<p>Functional programs consist of:</p>
+
+<ul>
+  <li>A small amount of IO code.</li>
+  <li>A large amount of pure functional node.</li>
+</ul>
+
+<p class="warning">Don’t try to write your entire program in IO code.</p>
+
+<h3 id="putting-values-in-the-io-box">Putting Values in the IO Box</h3>
+<p>Sometimes we need to pus a pure value into <code class="language-plaintext highlighter-rouge">IO</code>.</p>
+
+<ul>
+  <li>We can use the <code class="language-plaintext highlighter-rouge">return</code> function to do this.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="s">"hello"</span>
+<span class="s">"hello"</span> <span class="o">::</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">return</span> <span class="s">"hello"</span>
+<span class="kt">IO</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">example</span> <span class="o">::</span> <span class="kt">IO</span> <span class="kt">String</span>
+<span class="n">example</span> <span class="o">=</span> <span class="kr">do</span>
+    <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+    <span class="n">return</span> <span class="p">(</span><span class="n">tail</span> <span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You must use return to get the value out of an impure function.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">print_if_short</span> <span class="o">::</span> <span class="kt">String</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">print_if_short</span> <span class="n">str</span> <span class="o">=</span>
+    <span class="kr">if</span> <span class="n">length</span> <span class="n">str</span> <span class="o">&lt;=</span> <span class="mi">2</span>
+        <span class="kr">then</span> <span class="n">putStrLn</span> <span class="n">str</span>
+        <span class="kr">else</span> <span class="n">return</span> <span class="nb">()</span>
+</code></pre></div></div>
+
+<p>Both sides of the <code class="language-plaintext highlighter-rouge">if</code> must have the type <code class="language-plaintext highlighter-rouge">IO ()</code>:</p>
+
+<ul>
+  <li>So we use <code class="language-plaintext highlighter-rouge">return ()</code> in the <code class="language-plaintext highlighter-rouge">else</code> part.</li>
+</ul>
+
+<h4 id="return"><code class="language-plaintext highlighter-rouge">return</code></h4>
+<p>This function is not the same as in imperative languages <code class="language-plaintext highlighter-rouge">return</code> <strong>does not stop execution</strong>. It just convert pure values to IO values.</p>
+
+<h3 id="monad"><code class="language-plaintext highlighter-rouge">Monad</code></h3>
+<p>The type of <code class="language-plaintext highlighter-rouge">return</code> mentions monads.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">return</span>
+<span class="n">return</span> <span class="o">::</span> <span class="kt">Monad</span> <span class="n">m</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>This is because IO is a <strong>monad</strong>.</p>
+
+<ul>
+  <li>Whenever you see <code class="language-plaintext highlighter-rouge">Monad m =&gt;</code> substitute <code class="language-plaintext highlighter-rouge">IO</code> for <code class="language-plaintext highlighter-rouge">m</code>.</li>
+  <li>So <code class="language-plaintext highlighter-rouge">return :: a -&gt; IO a</code></li>
+</ul>
+
+<p>You don’t need to know anything about monads for COMP105.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">doubleEcho</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+ <span class="n">doubleEcho</span> <span class="o">=</span> <span class="kr">do</span>
+     <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+     <span class="n">putStrLn</span> <span class="n">x</span>
+     <span class="n">putStrLn</span> <span class="n">x</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">firstWord</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+ <span class="n">firstWord</span> <span class="o">=</span> <span class="kr">do</span>
+     <span class="n">string</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+     <span class="kr">if</span> <span class="p">(</span><span class="n">words</span> <span class="n">string</span><span class="p">)</span> <span class="o">==</span> <span class="kt">[]</span>
+         <span class="kr">then</span> <span class="n">putStrLn</span> <span class="s">""</span>
+         <span class="kr">else</span> <span class="n">putStrLn</span> <span class="p">(</span><span class="n">head</span> <span class="o">.</span> <span class="n">words</span> <span class="o">$</span> <span class="n">string</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">printEven</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+ <span class="n">printEven</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">if</span> <span class="p">(</span><span class="n">even</span> <span class="n">x</span><span class="p">)</span> 
+     <span class="kr">then</span> <span class="p">(</span><span class="n">putStrLn</span> <span class="n">x</span><span class="p">)</span>
+     <span class="kr">else</span> <span class="n">return</span> <span class="nb">()</span>
+</code></pre></div>    </div>
+
+    <p>This doesn’t need to be done in a <code class="language-plaintext highlighter-rouge">do</code> block as it is just one line.</p>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-23-1"><a href="/UoL/comp105/lectures/2020/12/01/1.html">COMP105 - Lecture 23-1</a></h1>
+<p>So far, we have studied pure functional programming. Pure functions:</p>
+
+<ul>
+  <li>Have no side effects.</li>
+  <li>Always return a value.</li>
+  <li>Are deterministic.</li>
+</ul>
+
+<p>All <strong>computation</strong> can be done in pure functional programming.</p>
+
+<h2 id="io">IO</h2>
+<p>Sometimes programs need to do non-pure things:</p>
+
+<ul>
+  <li>Print something to the screen.</li>
+  <li>Read or write a file.</li>
+  <li>…</li>
+</ul>
+
+<h3 id="io-vs-pure-functional">IO v.s. Pure Functional</h3>
+
+<pre><code class="language-mermaid">graph LR
+IO --&gt; p[Pure Functional]
+p --&gt; IO
+</code></pre>
+
+<ul>
+  <li>Impure IO code talks to the outside world.</li>
+  <li>Pure functional code does the interesting computation.</li>
+  <li>IO code can call pure functions; pure functions cannot call IO.</li>
+</ul>
+
+<p>We can call the “functions” that complete IO: IO actions. This is because they are not functions.</p>
+
+<h3 id="getline"><code class="language-plaintext highlighter-rouge">getLine</code></h3>
+<p><code class="language-plaintext highlighter-rouge">getLine</code> read a line of input from the console.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">getLine</span>
+<span class="n">hello</span> <span class="n">there</span>
+<span class="s">"hello there"</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">getLine</span>
+<span class="n">getLine</span> <span class="o">::</span> <span class="kt">IO</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<h3 id="the-io-type">The <code class="language-plaintext highlighter-rouge">IO</code> Type</h3>
+<p>This type marks a value as being impure.</p>
+
+<p>If a function returns an <code class="language-plaintext highlighter-rouge">IO</code> type then it is impure:</p>
+
+<ul>
+  <li>It may have side effects.</li>
+  <li>It may return different values for the same inputs.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">IO</code> type should be thought of as a box:</p>
+
+<ul>
+  <li>The box hold a value from an impure computation.</li>
+  <li>we can use <code class="language-plaintext highlighter-rouge">&lt;-</code> to get an impure value from the <code class="language-plaintext highlighter-rouge">IO</code> type.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">getLine</span>
+<span class="kt">Hello</span>
+<span class="o">&gt;</span> <span class="n">x</span>
+<span class="s">"Hello"</span>
+</code></pre></div></div>
+
+<p>Values must be unboxed before you use them in a pure function.</p>
+
+<h3 id="getchar"><code class="language-plaintext highlighter-rouge">getChar</code></h3>
+
+<p>This function is similar to <code class="language-plaintext highlighter-rouge">getLine</code> but returns a single <code class="language-plaintext highlighter-rouge">Char</code> instead of a string.</p>
+
+<h3 id="putstrln"><code class="language-plaintext highlighter-rouge">putStrLn</code></h3>
+<p>This IO action prints a string onto the console.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">putStrLn</span> <span class="s">"Hello"</span>
+<span class="kt">Hello</span>
+</code></pre></div></div>
+
+<p>There are no quotation marks as we are seeing this being written to the <code class="language-plaintext highlighter-rouge">StdOut</code> and not via <code class="language-plaintext highlighter-rouge">read</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">putStrLn</span>
+<span class="n">putStrLn</span> <span class="o">::</span> <span class="kt">String</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+</code></pre></div></div>
+
+<p>The unit type has the <code class="language-plaintext highlighter-rouge">IO</code> type indicating that it has a side effect.</p>
+
+<h3 id="the-unit-type">The Unit Type</h3>
+<p>The unit type is a type represented by <code class="language-plaintext highlighter-rouge">()</code>. It only has one value which is itself.</p>
+
+<p>This is used to indicate that nothing interesting is returned. An example of this is with <code class="language-plaintext highlighter-rouge">putStrLn</code> where is doesn’t return a value but does have the side effect of printing to the <code class="language-plaintext highlighter-rouge">StdOut</code>.</p>
+
+<h2 id="exercise">Exercise</h2>
+<ol>
+  <li>It will ask for two lines. It will then print out the two lines with a space between them back to the <code class="language-plaintext highlighter-rouge">StdOut</code>.</li>
+  <li>It will read in a line with the expectation that there will be a number on it. It will then convert the line into an <code class="language-plaintext highlighter-rouge">Int</code> and print out the number <code class="language-plaintext highlighter-rouge">+ 1</code>.</li>
+  <li>Error due to mismatched types. <code class="language-plaintext highlighter-rouge">putStrLn</code> expects a <code class="language-plaintext highlighter-rouge">String</code> but an <code class="language-plaintext highlighter-rouge">IO</code> type was given.</li>
+</ol>
+
+<h1 id="comp105---lecture-22-2"><a href="/UoL/comp105/lectures/2020/11/30/2.html">COMP105 - Lecture 22-2</a></h1>
+<h2 id="trees">Trees</h2>
+
+<pre><code class="language-mermaid">graph TD
+a[ ] --&gt; b[ ]
+a --&gt; c[ ]
+b --&gt; d[ ]
+b --&gt; e[ ]
+d --&gt; f[ ]
+d --&gt; g[ ]
+c --&gt; h[ ]
+c --&gt; i[ ]
+</code></pre>
+
+<p>A tree is composed of:</p>
+
+<ul>
+  <li>Leaf nodes.
+    <ul>
+      <li>Leaves have no children.</li>
+    </ul>
+  </li>
+  <li>Branch nodes.
+    <ul>
+      <li>Has a child which is a leaf.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="a-tree-type-in-haskell">A Tree Type in Haskell</h3>
+<p>Any binary tree can be represented in this data type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Tree</span> <span class="o">=</span> <span class="kt">Leaf</span> <span class="o">|</span> <span class="kt">Branch</span> <span class="kt">Tree</span> <span class="kt">Tree</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre><code class="language-mermaid">graph TD
+a[ ] --&gt; b[ ]
+a --&gt; c[ ]
+c --&gt; h[ ]
+c --&gt; i[ ]
+</code></pre>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="p">(</span><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="kt">Leaf</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="recursion-on-trees">Recursion on Trees</h3>
+<p>We can write recursive function that process tress.</p>
+
+<ul>
+  <li>Usually the recursive case will process both branches.</li>
+</ul>
+
+<p>This function counts all the nodes in a tree:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">size</span> <span class="o">::</span> <span class="kt">Tree</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+
+<span class="n">size</span> <span class="p">(</span><span class="kt">Leaf</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">size</span> <span class="p">(</span><span class="kt">Branch</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span><span class="n">size</span> <span class="n">x</span> <span class="o">+</span> <span class="n">size</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p class="info">For trees usually the base case is the <code class="language-plaintext highlighter-rouge">Leaf</code> and the recursive rule operates on the two sub-trees of the branch node.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">size</span> <span class="p">(</span><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="p">(</span><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="kt">Leaf</span><span class="p">))</span>
+<span class="mi">5</span>
+</code></pre></div></div>
+
+<h2 id="trees-with-data">Trees with Data</h2>
+<p>Nodes in a tree often hold data.</p>
+
+<pre><code class="language-mermaid">graph TD
+9 --&gt; 4
+4 --&gt; 1
+4 --&gt; 6
+1 --&gt; 10 
+1 --&gt; 7
+2 --&gt; 3 
+2 --&gt; 0
+9 --&gt; 2
+</code></pre>
+
+<h3 id="type-of-trees-with-data">Type of Trees with Data</h3>
+<p>This type allows each branch and leaf to have data of a single type associated with it:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">DTree</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">DLeaf</span> <span class="n">a</span>
+             <span class="o">|</span> <span class="kt">DBranch</span> <span class="n">a</span> <span class="p">(</span><span class="kt">DTree</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="kt">DTree</span> <span class="n">a</span><span class="p">)</span>
+             <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre><code class="language-mermaid">graph TD
+1 --&gt; 7
+7 --&gt; 2 
+7 --&gt; 9
+1 --&gt; 4
+</code></pre>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">DBranch</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="mi">7</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">9</span><span class="p">))</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="recursion-on-trees-with-data">Recursion on Trees with Data</h3>
+<p>This function adds together the numbers from all the branches and leaves in a tree with data.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tree_sum</span> <span class="o">::</span> <span class="kt">Num</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">DTree</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+
+<span class="n">tree_sum</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="n">x</span><span class="p">)</span>       <span class="o">=</span> <span class="n">x</span>
+<span class="n">tree_sum</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="n">x</span> <span class="mi">1</span> <span class="n">l</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">tree_sum</span> <span class="n">l</span> <span class="o">+</span> <span class="n">tree_sum</span> <span class="n">r</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">tree_sum</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="mi">7</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">9</span><span class="p">))</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="mi">4</span><span class="p">))</span>
+<span class="mi">22</span>
+</code></pre></div></div>
+
+<h4 id="example---fibonacci-numbers">Example - Fibonacci Numbers</h4>
+<p>Before we used this code to calculate the Fibonacci numbers. This is slow due to the large amount of branching:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fib</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fib</span> <span class="n">n</span> <span class="o">=</span> <span class="n">fib</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre><code class="language-mermaid">graph TD
+A[fib 4] --&gt; B[fib 3]
+A --&gt; C[fib 2]
+B --&gt; D[fib 2]
+B --&gt; E[fib 1]
+D --&gt; F[fib 1]
+D --&gt; G[fib 0]
+C --&gt; H[fib 1]
+C --&gt; I[fib 0]
+</code></pre>
+
+<h5 id="how-many-recursive-calls-does-the-code-make">How many recursive calls does the code make?</h5>
+<p>We can make a function to build the call tree.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib_tree</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Tree</span>
+
+<span class="n">fib_tree</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">Leaf</span>
+<span class="n">fib_tree</span> <span class="mi">1</span> <span class="o">=</span> <span class="kt">Leaf</span>
+<span class="n">fib_tree</span> <span class="n">n</span> <span class="o">=</span> <span class="kt">Branch</span> <span class="p">(</span><span class="n">fib_tree</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="p">(</span><span class="n">fib_tree</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">fib_tree</span> <span class="mi">4</span>
+<span class="kt">Branch</span> <span class="p">(</span><span class="kt">Branch</span> <span class="p">(</span><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="kt">Leaf</span><span class="p">)</span> <span class="kt">Leaf</span><span class="p">)</span> <span class="p">(</span><span class="kt">Branch</span> <span class="kt">Leaf</span> <span class="kt">Leaf</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is the same structure  as the tree at the top of the example.</p>
+
+<p>To count the nodes in this tree we can use the function <code class="language-plaintext highlighter-rouge">size</code> from earlier:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib_calls</span> <span class="n">n</span> <span class="o">=</span> <span class="n">size</span> <span class="p">(</span><span class="n">fib_tree</span> <span class="n">n</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">fib_calls</span> <span class="mi">10</span>
+<span class="mi">177</span>
+<span class="o">&gt;</span> <span class="n">fib_calls</span> <span class="mi">20</span>
+<span class="mi">21891</span>
+<span class="o">&gt;</span><span class="n">fib_calls</span> <span class="mi">30</span>
+<span class="mi">2692537</span>
+</code></pre></div></div>
+
+<p>As we can see multiple recursion can be very slow if used incorrectly.</p>
+
+<h4 id="example---finding-a-file">Example - Finding a File</h4>
+<p>Suppose that we have a directory structure:</p>
+
+<pre><code class="language-mermaid">graph TD
+h["~/"] --&gt; d[docs/]
+d --&gt; a[a.txt]
+d --&gt; b[b.txt]
+h --&gt; c[c.txt]
+</code></pre>
+
+<p>Write a function that, given a filename, finds the path to that file.</p>
+
+<p>We can formulate the files as a data tree:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">let</span> <span class="n">fs</span> <span class="o">=</span>
+    <span class="kt">DBranch</span> <span class="s">"~/"</span>
+        <span class="p">(</span><span class="kt">DBranch</span> <span class="s">"docs/"</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="s">"a.txt"</span> <span class="p">)</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="s">"b.txt"</span><span class="p">))</span>
+        <span class="p">(</span><span class="kt">DLeaf</span> <span class="s">"c.txt"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p class="info">This is the same as the <code class="language-plaintext highlighter-rouge">DTree</code> above.</p>
+
+<p>Note that the file might not exist:</p>
+
+<ul>
+  <li>So we will use the maybe type.</li>
+</ul>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">find_file</span> <span class="s">"a.txt"</span> <span class="n">fs</span>
+<span class="kt">Just</span> <span class="s">"home/docs/a.txt"</span>
+
+<span class="o">&gt;</span> <span class="n">find_file</span> <span class="s">"d.txt"</span> <span class="n">fs</span>
+<span class="kt">Nothing</span>
+</code></pre></div></div>
+
+<h5 id="implementation">Implementation</h5>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">find_file</span> <span class="n">file</span> <span class="p">(</span><span class="kt">Dleaf</span> <span class="n">x</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">file</span> <span class="o">=</span> <span class="kt">Just</span> <span class="n">file</span>
+    <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="kt">Nothing</span>
+    
+<span class="n">find_file</span> <span class="n">file</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="n">x</span> <span class="n">l</span> <span class="n">r</span><span class="p">)</span> <span class="o">=</span>
+    <span class="kr">let</span>
+        <span class="n">left</span>  <span class="o">=</span> <span class="n">find_file</span> <span class="n">l</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">find_file</span> <span class="n">r</span>
+    <span class="kr">in</span>
+        <span class="kr">case</span> <span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="kr">of</span>
+            <span class="p">(</span><span class="kt">Just</span> <span class="n">y</span><span class="p">,</span> <span class="kr">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">++</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">(</span><span class="kr">_</span><span class="p">,</span> <span class="kt">Just</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">x</span> <span class="o">++</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">(</span><span class="kr">_</span><span class="p">,</span> <span class="kr">_</span><span class="p">)</span>      <span class="o">-&gt;</span> <span class="kt">Nothing</span>
+</code></pre></div></div>
+
+<p>This implementation has two cases, one for the leaf and one for the branch.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">leafSum</span> <span class="o">::</span> <span class="kt">DTree</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+ <span class="n">leafSum</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="n">x</span><span class="p">)</span>       <span class="o">=</span> <span class="n">x</span>
+ <span class="n">leafSum</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="kr">_</span> <span class="n">l</span> <span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="n">leafSum</span> <span class="n">l</span> <span class="o">+</span> <span class="n">leafSum</span> <span class="n">r</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">treeElem</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">DTree</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+ <span class="n">treeElem</span> <span class="n">x</span> <span class="p">(</span><span class="kt">DLeaf</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+ <span class="n">treeElem</span> <span class="n">x</span> <span class="p">(</span><span class="kt">DBranch</span> <span class="n">y</span> <span class="n">l</span> <span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="o">||</span> <span class="n">treeElem</span> <span class="n">x</span> <span class="n">l</span> <span class="o">||</span> <span class="n">treeElem</span> <span class="n">x</span> <span class="n">r</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-22-1"><a href="/UoL/comp105/lectures/2020/11/30/1.html">COMP105 - Lecture 22-1</a></h1>
+<h2 id="recursive-types">Recursive Types</h2>
+
+<p>We have seen types which contain other types. In a recursive custom type, some constructors contain the type itself.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">IntList</span> <span class="o">=</span> <span class="kt">Empty</span> <span class="o">|</span> <span class="kt">Cons</span> <span class="kt">Int</span> <span class="kt">IntList</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Some examples using this type:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Empty</span> <span class="c1">-- []</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Empty</span><span class="p">)</span> <span class="c1">-- [1]</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Cons</span> <span class="mi">2</span> <span class="kt">Empty</span><span class="p">)</span> <span class="c1">-- [1,2]</span>
+</code></pre></div></div>
+
+<p>Here is a more general list using a type variable:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Empty</span> <span class="o">|</span> <span class="kt">Cons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span> <span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is the same as the previous example but using any type (provided that it is the same type all the way through the list). To use this as an infix operator like <code class="language-plaintext highlighter-rouge">:</code> you would do the following:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="mi">1</span> <span class="p">`</span><span class="kt">Cons</span><span class="p">`</span> <span class="p">(</span><span class="mi">2</span> <span class="p">`</span><span class="kt">Cons</span><span class="p">`</span> <span class="kt">Empty</span><span class="p">)</span>
+<span class="kt">Cons</span> <span class="mi">1</span> <span class="p">(</span><span class="kt">Cons</span> <span class="mi">2</span> <span class="kt">Empty</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="functions-with-recursive-types">Functions with Recursive Types</h3>
+
+<p>We can write functions for our custom list type:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_head</span> <span class="o">::</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+
+<span class="n">our_head</span> <span class="kt">Empty</span>		<span class="o">=</span> <span class="n">error</span> <span class="s">"Empty list"</span>
+<span class="n">our_head</span> <span class="p">(</span><span class="kt">Cons</span> <span class="n">x</span> <span class="kr">_</span><span class="p">)</span>	<span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>This takes the first item in our custom list type and prints it.</p>
+
+<p>To get the tail you would use this function:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_tail</span> <span class="o">::</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">List</span> <span class="n">a</span>
+
+<span class="n">our_tail</span> <span class="kt">Empty</span>		<span class="o">=</span> <span class="n">error</span> <span class="s">"Empty list"</span>
+<span class="n">our_tail</span> <span class="p">(</span><span class="kt">Cons</span> <span class="kr">_</span> <span class="n">x</span><span class="p">)</span>	<span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<h4 id="recursing-on-recursive-types">Recursing on Recursive Types</h4>
+
+<p>We can also write recursive functions to process our recursive types. This is exactly the same as recusing on a list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">our_sum</span> <span class="o">::</span> <span class="kt">List</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+
+<span class="n">our_sum</span> <span class="kt">Empty</span> 		<span class="o">=</span> <span class="mi">0</span>
+<span class="n">our_sum</span> <span class="p">(</span><span class="kt">Cons</span> <span class="n">x</span> <span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">our_sum</span> <span class="n">xs</span>
+</code></pre></div></div>
+
+<h3 id="custom-lists">Custom Lists</h3>
+
+<p>Here is a new list type that can contain two different types.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="kt">TwoEmpty</span>
+				<span class="o">|</span> <span class="kt">ACons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+				<span class="o">|</span> <span class="kt">BCons</span> <span class="n">b</span> <span class="p">(</span><span class="kt">TwoList</span> <span class="n">a</span> <span class="n">b</span><span class="p">)</span>
+					<span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This is the type when making a list that contains a <code class="language-plaintext highlighter-rouge">Char</code> and a <code class="language-plaintext highlighter-rouge">Bool</code>:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="sc">'a'</span> <span class="p">`</span><span class="kt">ACons</span><span class="p">`(</span><span class="kt">False</span> <span class="p">`</span><span class="kt">BCons</span><span class="p">`</span> <span class="kt">TwoEmpty</span><span class="p">)</span>
+<span class="kt">TwoList</span> <span class="kt">Char</span> <span class="kt">Bool</span>
+</code></pre></div></div>
+
+<p class="info">This is not the same as a list with tuples as the next item in the list can be of type <code class="language-plaintext highlighter-rouge">a</code> or type <code class="language-plaintext highlighter-rouge">b</code> not of both all the time. There is a cost also as you have to explicitly say if it is type <code class="language-plaintext highlighter-rouge">a</code> or type <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<h2 id="exercises">Exercises</h2>
+
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">ourElem</span> <span class="o">::</span> <span class="kt">Eq</span> <span class="n">a</span> <span class="o">=&gt;</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+ <span class="n">ourElem</span> <span class="kt">Empty</span> <span class="kr">_</span> <span class="o">=</span> <span class="kt">False</span>
+ <span class="n">ourElem</span> <span class="p">(</span><span class="kt">List</span> <span class="n">x</span> <span class="n">xs</span><span class="p">)</span> <span class="n">y</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> 	<span class="o">=</span> <span class="kt">True</span>
+     <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">ourElem</span> <span class="n">xs</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">ourRange</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">List</span> <span class="kt">Int</span>
+ <span class="n">ourRange</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">Empty</span>
+ <span class="n">ourRange</span> <span class="n">x</span> <span class="o">=</span> <span class="kt">Cons</span> <span class="n">x</span> <span class="p">(</span><span class="n">ourRange</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">=</span> <span class="kt">ThreeEmpty</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">b</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="o">|</span> <span class="kt">ACons</span> <span class="n">c</span> <span class="p">(</span><span class="kt">ThreeList</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
+                      <span class="kr">deriving</span><span class="p">(</span><span class="n">show</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-21-2"><a href="/UoL/comp105/lectures/2020/11/26/2.html">COMP105 - Lecture 21-2</a></h1>
+<h2 id="maybe"><code class="language-plaintext highlighter-rouge">Maybe</code></h2>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Just</span> <span class="n">a</span> <span class="o">|</span> <span class="kt">Nothing</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Just</span> <span class="s">"hello"</span>
+<span class="kt">Maybe</span> <span class="p">[</span><span class="kt">Char</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Just</span> <span class="kt">False</span>
+<span class="kt">Maybe</span> <span class="kt">Bool</span>
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Nothing</span>
+<span class="kt">Maybe</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>From here you can see that when you call the <code class="language-plaintext highlighter-rouge">Just</code> constructor you force the type variable <code class="language-plaintext highlighter-rouge">a</code> to be a particular type and if you call <code class="language-plaintext highlighter-rouge">Nothing</code> then no type is assigned to <code class="language-plaintext highlighter-rouge">a</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Maybe</code> type is used in pure functional code that <strong>might fail</strong>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">safe_head</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">Nothing</span>
+<span class="n">safe_head</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Just</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">safe_head</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="kt">Just</span> <span class="mi">1</span> 
+<span class="o">&gt;</span> <span class="n">safe_head</span> <span class="kt">[]</span>
+<span class="kt">Nothing</span>
+</code></pre></div></div>
+
+<p>Given that the function will always give an output this means that it wont give an exception and crash the program.</p>
+
+<h3 id="example">Example</h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">safe_get_heads</span> <span class="n">list</span> <span class="o">=</span>
+    <span class="kr">let</span>
+        <span class="n">mapped</span> <span class="o">=</span> <span class="n">map</span> <span class="n">safe_head</span> <span class="n">list</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter</span> <span class="p">(</span><span class="o">/=</span><span class="kt">Nothing</span><span class="p">)</span> <span class="n">mapped</span>
+        <span class="n">unjust</span> <span class="o">=</span> <span class="p">(</span><span class="nf">\</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="kr">case</span> <span class="n">x</span> <span class="kr">of</span> <span class="kt">Just</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span>
+    <span class="kr">in</span>
+        <span class="n">map</span> <span class="n">unjust</span> <span class="n">filtered</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">safe_get_heads</span> <span class="p">[</span><span class="kt">[]</span><span class="p">,[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This code will not crash in the event that an empty list is given to head.</p>
+
+<h2 id="exceptions-in-haskell">Exceptions in Haskell</h2>
+<p>Haskell does include support for exceptions</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">head</span> <span class="kt">[]</span>
+<span class="o">***</span> <span class="kt">Exception</span><span class="o">:</span> <span class="kt">Prelude</span><span class="o">.</span><span class="n">head</span><span class="o">:</span> <span class="n">empty</span> <span class="n">list</span>
+</code></pre></div></div>
+
+<p>Exceptions are not pure functional:</p>
+
+<ul>
+  <li>Every function returns exactly one value.</li>
+  <li>You can’t catch exceptions in pure functional code.</li>
+  <li>Exceptions are mostly used in IO code.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">Maybe</code> type provides a way to do exception-like behaviour in pure functional code.</p>
+
+<p>Can this function fail for some inputs?</p>
+
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">Maybe</code> type.</li>
+</ul>
+
+<p>Exceptions should only be used in IO code:</p>
+
+<ul>
+  <li>File not found, could not connect to server, etc.</li>
+  <li>These are unpredictable events.</li>
+</ul>
+
+<h2 id="either"><code class="language-plaintext highlighter-rouge">Either</code></h2>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Either'</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="kt">Left</span> <span class="n">a</span> <span class="o">|</span> <span class="kt">Right</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Left</span> <span class="sc">'a'</span>
+<span class="kt">Either</span> <span class="kt">Char</span> <span class="sc">'b'</span>
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Right</span> <span class="sc">'b'</span>
+<span class="kt">Either</span> <span class="n">a</span> <span class="kt">Char</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Either</code> type is useful if you want to store different types in the same list:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_left</span> <span class="p">(</span><span class="kt">Left</span> <span class="kr">_</span><span class="p">)</span>    <span class="o">=</span> <span class="kt">True</span>
+<span class="n">is_left</span> <span class="kr">_</span>           <span class="o">=</span> <span class="kt">False</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Left</span> <span class="s">"one"</span><span class="p">,</span> <span class="kt">Right</span> <span class="mi">2</span><span class="p">,</span> <span class="kt">Left</span> <span class="s">"three"</span><span class="p">,</span> <span class="kt">Right</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">map</span> <span class="n">is_left</span> <span class="n">list</span>
+<span class="p">[</span><span class="kt">True</span><span class="p">,</span><span class="kt">False</span><span class="p">,</span><span class="kt">True</span><span class="p">,</span><span class="kt">False</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="example---filtering-off-left">Example - Filtering off <code class="language-plaintext highlighter-rouge">Left</code></h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_lefts</span> <span class="n">list</span> <span class="o">=</span> 
+    <span class="kr">let</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">filter</span> <span class="n">is_left</span> <span class="n">list</span>
+        <span class="n">unleft</span> <span class="o">=</span> <span class="p">(</span><span class="nf">\</span> <span class="p">(</span><span class="kt">Left</span> <span class="n">x</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="p">)</span>
+    <span class="kr">in</span>
+        <span class="n">map</span> <span class="n">unleft</span> <span class="n">filtered</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">get_lefts</span> <span class="n">list</span>
+<span class="p">[</span><span class="s">"one"</span><span class="p">,</span><span class="s">"three"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="example---squaring-mixed-number-types">Example - Squaring Mixed Number Types</h3>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">square</span> <span class="p">(</span><span class="kt">Left</span> <span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Left</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">square</span> <span class="p">(</span><span class="kt">Rightx</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Right</span> <span class="p">(</span><span class="n">x</span> <span class="o">^</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kr">let</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Left</span> <span class="n">pi</span><span class="p">,</span> <span class="kt">Right</span> <span class="p">(</span><span class="mi">4</span><span class="o">::</span><span class="kt">Int</span><span class="p">),</span> <span class="kt">Left</span> <span class="mf">2.7182</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">map</span> <span class="n">square</span> <span class="n">nums</span>
+<span class="p">[</span><span class="kt">Left</span> <span class="mf">9.86</span><span class="p">,</span><span class="kt">Right</span> <span class="mi">16</span><span class="p">,</span><span class="kt">Left</span> <span class="mf">7.38</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="meaningful-error-messages">Meaningful Error Messages</h3>
+<p><code class="language-plaintext highlighter-rouge">Either</code> can also be used to give detailed error messages.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">safe_head_either</span> <span class="kt">[]</span>     <span class="o">=</span> <span class="kt">Right</span> <span class="s">"empty list"</span>
+<span class="n">safe_head_either</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="kt">Left</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">safe_head_either</span> <span class="kt">[]</span>
+<span class="kt">Right</span> <span class="s">"empty list"</span>
+<span class="o">&gt;</span> <span class="n">safe_head_either</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="kt">Left</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>This is required as a function can’t return values of two different types.</p>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">safeTail</span> <span class="o">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Maybe</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+ <span class="n">safeTail</span> <span class="kt">[]</span>     <span class="o">=</span> <span class="kt">Nothing</span>
+ <span class="n">safeTail</span> <span class="n">x</span><span class="o">:</span><span class="n">xs</span>   <span class="o">=</span> <span class="kt">Just</span> <span class="n">xs</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">safeDiv</span> <span class="o">::</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Maybe</span> <span class="kt">Int</span>
+ <span class="n">safeDiv</span> <span class="kr">_</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">Nothing</span>
+ <span class="n">safeDiv</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> <span class="kt">Just</span> <span class="p">(</span><span class="n">div</span> <span class="n">x</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">safeGet</span> <span class="o">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="kt">Either</span> <span class="n">a</span> <span class="kt">String</span>
+ <span class="n">safeGet</span> <span class="n">x</span> <span class="n">y</span>
+     <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">=</span> <span class="kt">Right</span> <span class="s">"Negative index."</span>
+     <span class="o">|</span> <span class="n">length</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">=</span> <span class="kt">Right</span> <span class="s">"Index too large."</span>
+     <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="kt">Left</span> <span class="p">(</span><span class="n">x</span> <span class="o">!!</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h1 id="comp105---lecture-21-1"><a href="/UoL/comp105/lectures/2020/11/26/1.html">COMP105 - Lecture 21-1</a></h1>
+<h2 id="parameterised-custom-types">Parameterised Custom Types</h2>
+<h3 id="type-variables-in-custom-types">Type Variables in Custom Types</h3>
+<p>We can use type variables in custom types:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Point</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Point</span> <span class="n">a</span> <span class="n">a</span>
+</code></pre></div></div>
+<p>Here we say we are making a new type where the <strong>constructor</strong> <code class="language-plaintext highlighter-rouge">point</code> is made of type <code class="language-plaintext highlighter-rouge">a</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="kt">Point</span> <span class="p">(</span><span class="mi">1</span><span class="o">::</span><span class="kt">Int</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="o">::</span><span class="kt">Int</span><span class="p">)</span>
+<span class="kt">Point</span> <span class="kt">Int</span>
+</code></pre></div></div>
+
+<p>We can also use multiple variable in the same type.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Things</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">=</span> <span class="kt">Things</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="kt">Things</span> <span class="s">"string"</span> <span class="mi">1</span> <span class="kt">True</span>
+<span class="kt">Things</span> <span class="s">"string"</span> <span class="mi">1</span> <span class="kt">True</span>
+</code></pre></div></div>
+
+<p class="warning">When using a type that includes type variables the resultant type has its own type based on the types of data it was given. This links to how you can’t  compare lists of two different types.</p>
+
+<p>We can write functions using these types:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first_thing</span> <span class="p">(</span><span class="kt">Things</span> <span class="n">x</span> <span class="kr">_</span> <span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">first_thing</span> <span class="p">(</span><span class="kt">Things</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="o">:</span><span class="n">t</span> <span class="n">first_thing</span>
+<span class="n">first_thing</span> <span class="o">::</span> <span class="kt">Things</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">-&gt;</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<h3 id="case-expressions"><code class="language-plaintext highlighter-rouge">case</code> Expressions</h3>
+<p><code class="language-plaintext highlighter-rouge">case</code> expressions allow you to do pattern matching inside of functions.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Example</span> <span class="o">=</span> <span class="kt">One</span> <span class="kt">Int</span> <span class="o">|</span> <span class="kt">Two</span> <span class="kt">Float</span>
+
+<span class="n">f</span> <span class="o">::</span> <span class="kt">Example</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+<span class="n">f</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">case</span> <span class="n">x</span> <span class="kr">of</span> <span class="kt">One</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+                <span class="kt">Two</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">f</span> <span class="p">(</span><span class="kt">One</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">3</span>
+<span class="o">&gt;</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Two</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="mi">0</span>
+</code></pre></div></div>
+
+<h4 id="example">Example</h4>
+<p>Using <code class="language-plaintext highlighter-rouge">case</code> you can write functions that formerly would have been implemented in pattern matching:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="kt">[]</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="n">f</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">f</span> <span class="n">xs</span>
+
+<span class="n">f'</span> <span class="n">list</span> <span class="o">=</span> <span class="kr">case</span> <span class="n">list</span> <span class="kr">of</span>  <span class="kt">[]</span>      <span class="o">-&gt;</span> <span class="mi">0</span>
+                        <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>  <span class="o">-&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">f</span> <span class="n">xs</span>
+</code></pre></div></div>
+
+<h4 id="syntax">Syntax</h4>
+<p>The syntax for a case expression is:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">case</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span> <span class="kr">of</span>    <span class="p">[</span><span class="n">pattern</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+                        <span class="p">[</span><span class="n">pattern</span> <span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+                        <span class="o">...</span>
+                        <span class="p">[</span><span class="n">pattern</span> <span class="n">k</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p class="warning">All patterns should be on the same column in order for Haskell to process the expression correctly.</p>
+
+<p>Additionally you can use the <code class="language-plaintext highlighter-rouge">_</code> as a catch all at the end of the expression.</p>
+
+<p>You can put them all on one line using the following syntax:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">case</span> <span class="n">x</span> <span class="kr">of</span> <span class="p">{</span><span class="kt">One</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">;</span> <span class="kt">Two</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="mi">0</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finally <code class="language-plaintext highlighter-rouge">case</code> is an expression so you can treat its result as a value:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="p">(</span><span class="kr">case</span> <span class="mi">1</span> <span class="kr">of</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="kr">case</span> <span class="mi">2</span> <span class="kr">of</span> <span class="mi">2</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">BigThings</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">=</span> <span class="kt">BigThings</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="n">derive</span> <span class="kt">Show</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">middleTwo</span> <span class="o">::</span> <span class="kt">BigThings</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+ <span class="n">middleTwo</span> <span class="p">(</span><span class="kt">BigThings</span> <span class="kr">_</span> <span class="n">x</span> <span class="n">y</span> <span class="kr">_</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kr">data</span> <span class="kt">Example</span> <span class="o">=</span> <span class="kt">One</span> <span class="kt">Int</span> <span class="o">|</span> <span class="kt">Two</span> <span class="kt">Float</span>
+ <span class="n">isOne</span> <span class="o">::</span> <span class="kt">Example</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+ <span class="n">isOne</span> <span class="n">x</span> <span class="o">=</span> <span class="kr">case</span> <span class="n">x</span> <span class="kr">of</span> <span class="kt">One</span> <span class="kr">_</span> <span class="o">-&gt;</span> <span class="kt">True</span>
+                     <span class="kr">_</span>     <span class="o">-&gt;</span> <span class="kt">False</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 <h1 id="comp105---lecture-19-2"><a href="/UoL/comp105/lectures/2020/11/23/2.html">COMP105 - Lecture 19-2</a></h1>
 <h2 id="more-complex-custom-types">More Complex Custom Types</h2>
 <h3 id="more-complex-constructors">More Complex Constructors</h3>
@@ -1761,8 +2645,8 @@ ccc		25.0
 <h2 id="exercises">Exercises</h2>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">cubeList = map (^3)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">middleElem = map (\(_,x,_) -&gt; x)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ruinStrings = map (map (\x -&gt; if x == 'e' then 'x' else x))</code></li>
+  <li><code class="language-plaintext highlighter-rouge">middleElem = map (\ (_,x,_) -&gt; x)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ruinStrings = map (map (\ x -&gt; if x == 'e' then 'x' else x))</code></li>
 </ol>
 
 <h1 id="comp105---lecture-14-3"><a href="/UoL/comp105/lectures/2020/11/10/3.html">COMP105 - Lecture 14-3</a></h1>
@@ -1785,10 +2669,10 @@ ccc		25.0
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">\</span> <span class="p">[</span><span class="n">arg1</span><span class="p">]</span> <span class="p">[</span><span class="n">arg2</span><span class="p">]</span>  <span class="o">...</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">\</code> is supposed to resemble an lambda $\lambda$.</p>
+<p>The <code class="language-plaintext highlighter-rouge">\</code> is supposed to resemble an lambda \(\lambda\).</p>
 
 <ul>
-  <li>Anonymous function are sometimes called $\lambda$-functions in recognition of lambda calculus.</li>
+  <li>Anonymous function are sometimes called \(\lambda\)-functions in recognition of lambda calculus.</li>
 </ul>
 
 <h3 id="functions-that-return-functions">Functions that Return Functions</h3>
@@ -1912,15 +2796,15 @@ ccc		25.0
   <li>It is preferred.</li>
 </ul>
 
-<h3 id="the--operator-1">The <code class="language-plaintext highlighter-rouge">$</code> Operator</h3>
+<h3 id="the-92-operator">The <code class="language-plaintext highlighter-rouge">&amp;#92;(</code> Operator</h3>
 
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">evaluate</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span>
 <span class="n">evaluate</span> <span class="n">f</span> <span class="n">input</span> <span class="o">=</span> <span class="n">f</span> <span class="n">input</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">$</code> operator is exactly the same as evaluate. <code class="language-plaintext highlighter-rouge">$</code> is infix.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&amp;#92;)</code> operator is exactly the same as evaluate. <code class="language-plaintext highlighter-rouge">&amp;#92;(</code> is infix.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">$</code> operator has the lowest precedence of any operator. As a result it can be used in place of brackets:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&amp;#92;)</code> operator has the lowest precedence of any operator. As a result it can be used in place of brackets:</p>
 
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">((</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="n">length</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="p">(</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">.</span> <span class="n">length</span> <span class="o">$</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -2306,7 +3190,7 @@ ccc		25.0
 
 <h3 id="basic-types">Basic Types</h3>
 <h4 id="int"><code class="language-plaintext highlighter-rouge">Int</code></h4>
-<p>Holds a 64-bit integer between $-2^{63}$ and $2^{63}-1$</p>
+<p>Holds a 64-bit integer between \(-2^{63}\) and \(2^{63}-1\)</p>
 
 <h4 id="integer"><code class="language-plaintext highlighter-rouge">Integer</code></h4>
 <p>Holds arbitrary size integers but is slightly slower than an <code class="language-plaintext highlighter-rouge">Int</code>. Ideally you should use an <code class="language-plaintext highlighter-rouge">Int</code> if you are using smaller numbers.</p>
@@ -2360,7 +3244,9 @@ ccc		25.0
 
 <h3 id="chi-squared-score">Chi-Squared Score</h3>
 
-<p>[\sum^z_{i=a}{\frac{(\text{freq}_i-\text{english}_i)^2}{\text{english}_i}}]</p>
+<p>\[
+\sum^z_{i=a}{\frac{(\text{freq}_i-\text{english}_i)^2}{\text{english}_i}}
+\]</p>
 
 <p>To check if two frequency distributions are similar you can use the chi-squared score. The lower the output the closer the distributions match.</p>
 
@@ -3491,7 +4377,7 @@ C --&gt; I[fib 0]
 
 <h2 id="loading-functions">Loading Functions</h2>
 <ul>
-  <li>To load a functions from a file run GHCI on the file. <code class="language-plaintext highlighter-rouge">$ ghci functions.hs</code></li>
+  <li>To load a functions from a file run GHCI on the file. <code class="language-plaintext highlighter-rouge">ghci functions.hs</code></li>
   <li>To reload the current file run <code class="language-plaintext highlighter-rouge">:reload</code> in GHCI.</li>
   <li>To load in a file run <code class="language-plaintext highlighter-rouge">:load</code> and the file-path.</li>
 </ul>
@@ -3609,7 +4495,7 @@ C --&gt; I[fib 0]
 
 <h1 id="comp105---lecture-2-1"><a href="/UoL/comp105/lectures/2020/10/13/1.html">COMP105 - Lecture 2-1</a></h1>
 <h2 id="what-is-a-pure-function">What is a pure function?</h2>
-<p>A function takes inputs and produces outputs. E.g. Input: $x$, Output: $f(x)$</p>
+<p>A function takes inputs and produces outputs. E.g. Input: \(x\), Output: \(f(x)\)</p>
 
 <p>In imperative languages, functions can do much more and are called <em>subroutines</em>.</p>
 
@@ -3821,7 +4707,7 @@ C --&gt; I[fib 0]
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

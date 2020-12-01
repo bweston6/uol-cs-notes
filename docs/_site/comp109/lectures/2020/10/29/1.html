@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP109 - Proving Properties of Programs - Uni Notes</title>
 
-<meta name="description" content="Using induction to show that a program is correct.Example on a Recursive Function that Generates FactorialsProofBy mathematical induction on $n$.Base Case $n...">
+<meta name="description" content="Using induction to show that a program is correct.Example on a Recursive Function that Generates FactorialsProofBy mathematical induction on \(n\).Base Case ...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp109/lectures/2020/10/29/1.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP109 - Proving Properties of Programs</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP109/Lectures/_posts/2020-10-29-1.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP109/Lectures/_posts/2020-10-29-1.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP109 - Proving Properties of Programs"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
@@ -859,22 +859,22 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <div class="article__content" itemprop="articleBody"><p>Using induction to show that a program is correct.</p>
 <h2 id="example-on-a-recursive-function-that-generates-factorials">Example on a Recursive Function that Generates Factorials</h2>
 <h3 id="proof">Proof</h3>
-<p>By mathematical induction on $n$.</p>
+<p>By mathematical induction on \(n\).</p>
 
-<h4 id="base-case-n1">Base Case $n=1$</h4>
-<p>\(g(1)=1=1!\)</p>
+<h4 id="base-case-n1">Base Case \(n=1\)</h4>
+<p>\[g(1)=1=1!\]</p>
 
 <h4 id="inductive-step">Inductive Step</h4>
-<p>Suppose that for some $n=m, g(n)=n!$</p>
+<p>Suppose that for some \(n=m, g(n)=n!\)</p>
 
-<p>Consider $n=m+1$</p>
+<p>Consider \(n=m+1\)</p>
 
-<p>$g(m+1)$ the code returns $g(m)\times(m+1)$</p>
+<p>\(g(m+1)\) the code returns \(g(m)\times(m+1)\)</p>
 
-<p>By induction hypothesis, $g(m)=m!$</p>
+<p>By induction hypothesis, \(g(m)=m!\)</p>
 
 <p>So: 
-\(g(m)\times(m+1)=m!\times(m+1)=(m+1)!\)</p>
+\[g(m)\times(m+1)=m!\times(m+1)=(m+1)!\]</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-10-29T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->
@@ -930,7 +930,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

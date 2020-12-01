@@ -1,0 +1,62 @@
+I"8	<p>A propositional formula is satisfiable if there exist an interpretation under which it is true.</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>The formula \((p\wedge\neg p)\) is not satisfiable, because:</p>
+
+<p>\[I(p\wedge\neg p)=0\]</p>
+
+<p>for all interpretations \(I\):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\(p\)</th>
+      <th style="text-align: center">\(\neg p\)</th>
+      <th style="text-align: center">\((p\wedge\neg p)\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As you can see from the table there is no case in which the case is satisfiable.</p>
+
+<h3 id="example-2">Example 2</h3>
+<p>There are some cases which don’t require the truth table to be parsed in order to find out if it is satisfiable. See this question:</p>
+
+<p>Is the formula, \(P=(p_1\Rightarrow(p_2\wedge\neg p_2))\) satisfiable.</p>
+
+<p>To see this, simply choose any interpretation \(I\) with \(I(p_1)=0\). Then \(I(P)=1\) and we have found an interpretation \(I\) that makes \(P\) true.</p>
+
+<p>The same argument shows that every formula of the form \((p_1\Rightarrow Q)\) is satisfiable.</p>
+
+<p>There are also other combinations where you can prove that they are satisfiable without working any values. E.g.:</p>
+
+<p>\[(p_1\Leftrightarrow Q)\]</p>
+
+<p>such that \(p_1\) does not occur in \(Q\) is satisfiable.</p>
+
+<h2 id="deciding-satisfiability">Deciding Satisfiability</h2>
+<ul>
+  <li>\(P\) is satisfiable if \(I(P)=1\) for some interpretation \(I\).</li>
+  <li>There are \(2^n\) interpretations if \(P\) has \(n\) propositional atoms.</li>
+  <li>Thus, to check whether \(P\) is satisfiable directly using truth tables, a table with \(2^n\) rows is needed.</li>
+  <li>This is not practical, even for small \(n\)
+    <ul>
+      <li>Another case of combinatorial explosion.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There has been great progress in developing very fast satisfiability algorithms (called <strong>SAT solvers</strong>) that can deal with formulas with bery large numbers of propositional atoms (using heuristics).</p>
+:ET

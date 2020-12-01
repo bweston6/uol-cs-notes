@@ -1,0 +1,79 @@
+I"´<p>All the relations we have been looking at so far have been binary relations however this can be generalised for greater numbered relations.</p>
+
+<h2 id="n-ary-relations">\(n\)-ary Relations</h2>
+<p>The Cartesian product \(A_1\times A_2\times \ldots \times A_n\) of sets \(A_1,A_2,\ldots,A_n\) is defined by:</p>
+
+<p>\[A_1\times A_2\times \ldots \times A_n=\{(a_1,\ldots,a_n)\ \vert\ a_1\in A_1,\ldots,a_n\in A_n\}\]</p>
+
+<p>Here \((a_1,\ldots,a_n)=(b_1,\ldots,b_n\) if and only if \(a_i=b_i\) for all \(1\leq i\leq n\).</p>
+
+<p>An \(n\)-ary relation is a subset of \(A_1\times\ldots A_n\)</p>
+
+<h3 id="databases-and-relations">Databases and Relations</h3>
+<p>A database table \(\approx\) relation.</p>
+
+<h4 id="table-1-textstudents">Table 1 \(\text{Students}\)</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Student_name</th>
+      <th style="text-align: center">ID_number</th>
+      <th style="text-align: left">Major</th>
+      <th style="text-align: center">GPA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Ackermann</td>
+      <td style="text-align: center">231455</td>
+      <td style="text-align: left">Computer Science</td>
+      <td style="text-align: center">3.88</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Adams</td>
+      <td style="text-align: center">888323</td>
+      <td style="text-align: left">Physics</td>
+      <td style="text-align: center">3.45</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Chou</td>
+      <td style="text-align: center">102147</td>
+      <td style="text-align: left">Computer Science</td>
+      <td style="text-align: center">3.49</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Goodfriend</td>
+      <td style="text-align: center">453876</td>
+      <td style="text-align: left">Mathematics</td>
+      <td style="text-align: center">3.45</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Rao</td>
+      <td style="text-align: center">678543</td>
+      <td style="text-align: left">Mathematics</td>
+      <td style="text-align: center">3.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Stevens</td>
+      <td style="text-align: center">786576</td>
+      <td style="text-align: left">Psychology</td>
+      <td style="text-align: center">2.99</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This student table is a subset of the Cartesian product of four sets containing names, ID numbers, subject and GPA. We can then write these properties in tuples in the subset:</p>
+
+<p>\[\text{Students}=\{\text{(Ackerman, 231455, Computer Science, 3.88)}\ldots\}\]</p>
+
+<h2 id="unary-relations">Unary Relations</h2>
+<p>Unary relation are just subsets of a set.</p>
+
+<h3 id="example">Example</h3>
+<p>The unary relation \(\text{EvenPositiveIntegers}\) on the set \(\Bbb{Z^+}\) of positive integers is:</p>
+
+<p>\[\{x\in\Bbb{Z^+}\ \vert\ x \text{ is even}\}\]</p>
+
+<p>This shows that a unary relation is just a list of items in a set the satisfy a property.</p>
+:ET

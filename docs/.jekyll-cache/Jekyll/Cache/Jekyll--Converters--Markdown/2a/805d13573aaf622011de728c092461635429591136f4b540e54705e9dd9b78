@@ -1,0 +1,35 @@
+I"8<h2 id="notion-of-proof">Notion of Proof</h2>
+<h3 id="types-of-numbers">Types of Numbers</h3>
+<ul>
+  <li>Natural numbers \(\mathbb{N}\) are whole numbers that start from 0.</li>
+  <li>Integers are whole numbers including negatives.</li>
+  <li>Rational numbers are any number that can be represented as fractions without a denominator of 0.</li>
+  <li>Real numbers are any decimal number that can be presented on a number line. E.g. \(\pi\)</li>
+</ul>
+
+<h3 id="proofs">Proofs</h3>
+<p>A mathematical proof is a carefully reasoned argument to convince a sceptical listener that a statement is true.</p>
+
+<h2 id="properties-of-odd-and-even-numbers">Properties of Odd and Even Numbers</h2>
+<p>An even number \(m\) is in the form \(m = 2k\) where \(k\) is an integer.</p>
+
+<p>An odd number \(n\) is in the form \(n= 2l+1\) where \(l\) is an integer.</p>
+
+<h3 id="notation">Notation</h3>
+<ul>
+  <li>The symbol \(\exists\) means exists.</li>
+  <li>The symbol \(\Leftrightarrow\) means if and only if.</li>
+  <li>The symbol \(\forall\) means for all.</li>
+</ul>
+
+<p>Some definitions written in notation may look like:</p>
+
+<ul>
+  <li>
+    <p>\(n\) is even \(\Leftrightarrow \exists\)  an integer \(k\) such that \(n=2k\)</p>
+  </li>
+  <li>
+    <p>\(n\) is odd \(\Leftrightarrow \exists\)  an integer \(k\) such that \(n=2k+1\)</p>
+  </li>
+</ul>
+:ET

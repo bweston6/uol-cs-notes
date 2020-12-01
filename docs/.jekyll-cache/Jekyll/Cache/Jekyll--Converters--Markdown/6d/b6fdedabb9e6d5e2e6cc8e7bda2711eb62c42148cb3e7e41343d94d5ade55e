@@ -1,0 +1,129 @@
+I"K<h2 id="equivalence-relations">Equivalence Relations</h2>
+<p>A binary relation \(R\) on a set \(A\) is called an equivalence relation if it is <strong>reflective</strong>, <strong>transitive</strong> and <strong>symmetric</strong>.</p>
+
+<p>This is the same as \(x=y\) in that \(x\) has the same property as \(y\).</p>
+
+<h3 id="example-1">Example 1</h3>
+<p>The relation \(R\) on the non-zero integers given by \(xRy\) if \(xy&gt;0\).</p>
+
+<p class="info">This means that the relation is satisfied if \(x\) and \(y\) are both positive or both negative.</p>
+
+<ol>
+  <li>
+    <p>Reflexivity: \(\forall x\in \Bbb{Z}-\{0\}\)</p>
+
+    <p>\(x\times x=x^2\)</p>
+  </li>
+  <li>Symmetry: \(\forall x,y\in \Bbb{Z}-\{0\}\text{ if }x\times y&gt;0\text{ then } y\times x =x\times y&gt;0\)</li>
+  <li>
+    <p>Transitivity: \(\forall x,y,z\in \Bbb{Z}-\{0\}\text{ if } xRy\text{ and }yRz \text{ then } xRz\)</p>
+
+    <p class="warning">This is a statement which must be proved in order to be valid. See below.</p>
+
+    <p>Suppose that \(x,y,z\) are particular but arbitrarily chosen non-zero numbers such that \(x\times y&gt;0\) and \(y\times z&gt;0\).</p>
+
+    <p>Case 1 - \(y&gt;0\)</p>
+
+    <p>\(y&gt;0\Rightarrow x&gt;0,z&gt;0\Rightarrow x\times z&gt;0\)</p>
+
+    <p>Case 2 - \(y&lt;0\)</p>
+
+    <p>\(y&lt;0\Rightarrow x&lt;0,z&lt;0\Rightarrow x\times z &gt;0\)</p>
+  </li>
+</ol>
+
+<h3 id="example">Example</h3>
+<p>Let \(f:A\rightarrow B\) be a function. Define a relation \(R\) on \(A\) by:</p>
+
+<p>\[a_1Ra_2\Leftrightarrow f(a_1)=f(a_2)\]</p>
+
+<p>\(A\) is a set of cars,  \(B\) is the set of real numbers, and \(f\) assigns to any car in \(A\) its length. Then \(a_1Ra_2\) if and only if \(a_1\) and \(a_2\) are of the same length.</p>
+
+<p>In this case the length of the car is mapped to a real number. They could also be mapped to a word such as \(\text{long}\).</p>
+
+<h2 id="partition-of-a-set">Partition of a Set</h2>
+<p>A partition of a set \(A\) is a collection of non-empty subsets \(A_1,\ldots A_n\) of \(A\) satisfying:</p>
+
+<ul>
+  <li>\(A=A-1\cup A_2\cup\ldots\cup A_n\).</li>
+  <li>\(A_i\cap A_j=\emptyset\) for \(i\neq j\).</li>
+</ul>
+
+<p>The \(A_i\) are called the blocks of the partition.</p>
+
+<pre><code class="language-mermaid">graph TD
+subgraph A
+A1
+A2
+A3
+A4
+end
+</code></pre>
+
+<p class="info">This set \(A\) has four blocks and the four blocks cover every element in the set \(A\).</p>
+
+<p>This is the same as example 1 where the relation split the set of non-zero real numbers into two blocks of positive and negative numbers.</p>
+
+<h2 id="equivalence-class">Equivalence Class</h2>
+<p>The equivalence class \(E_x\) of any \(x\in A\) is defined by:</p>
+
+<p>\[E_x=\{y\vert yRx\}\]</p>
+
+<p>From the example before, the equivalence class of any positive integer is the class of positive integers and the equivalence class of any negative integer is the class of all negative integers.</p>
+
+<h2 id="connecting-partitions-and-equivalence-relations">Connecting Partitions and Equivalence Relations</h2>
+<h3 id="statement-1">Statement 1</h3>
+<p>Let \(R\) be an equivalence relation on a non-empty set \(A\). Then the equivalence classes \(\{E_x\vert x\in A\}\) form a partition of \(A\).</p>
+
+<h4 id="proof-optional">Proof (Optional)</h4>
+<p>The proof is in four parts:</p>
+
+<ol>
+  <li>
+    <p>We show that the equivalence classes \(E_x=\{y\vert yRx\},x\in A\), are non-empty subsets of \(A\): by definition, each \(E_x\) is a subset of \(A\). Since \(R\) is reflexive, \(xRx\). Therefore \(x\in E_x\) and so \(E_x\) is non-empty.</p>
+
+    <p class="info">This means that no equivalence class is not empty. This is because in a reflexive relation there are links to every element.</p>
+  </li>
+  <li>
+    <p>We show that \(A\) is the union of equivalence classes \(E_x,x\in A\): We know that \(E_x\subseteq A\), for all \(E_x, x\in A\). Then \(x\in E_x\). So, \(A\) is a subset of the union of the equivalence classes.</p>
+
+    <p class="info">This means that the union of all the classes forms the full set and that they don’t share any elements.</p>
+  </li>
+  <li>We show that if \(xRy\) then \(E_x=E_y\): Suppose that \(xRy\) and let \(z\in E_x\). Then \(zRx\) and \(xRy\). Since \(R\) is a <strong>transitive</strong> relation, \(zRy\). Therefore, \(z\in E_y\). We have shown that \(E_x\subseteq E_y\). An analogous argument shows that \(E_y\subseteq E_x\). So, \(E_x=E_y\).</li>
+  <li>
+    <p>We show that any two distinct equivalence classes are disjoint: To this end we show that if two equivalence classes are not disjoint then they are identical. Suppose \(E_x\cup E_y\neq \emptyset\). Take a \(z\in E_x\cap E_y\). Then, \(zRx\) and \(zRy\). Since \(R\) is symmetric, \(xRZ\) and \(zRy\). Bu then, by transitivity of \(R\), \(xRy\). Therefore, by 3., \(E_x=E_y\)</p>
+
+    <p class="info">These two mean that there can be no different partitions that overlap but don’t contain the same items. By this they must be the same equivalence class or be disjoint (have no elements in common).</p>
+  </li>
+</ol>
+
+<h3 id="statement-2">Statement 2</h3>
+<p>Suppose that \(A_1,\ldots,A_n\) is a partition of \(A\). Define a relation \(R\) on \(A\) by setting: \(xRy\) of an only if there exists \(i\) such that \(1\leq i\leq n\) and \(x,y\in  A_i\). Then \(R\) is an equivalence relation.</p>
+
+<h4 id="proof-optional-1">Proof (Optional)</h4>
+<ul>
+  <li>Reflexivity: if \(x\in A\), then \(x\in A_i\) for some \(i\). Therefore \(xRx\).</li>
+  <li>Transitivity: if \(xRy\) and \(yRz\), then there exists \(A_i\) and \(A_j\) such that \(x,y\in A_i\) and \(y,z\in A_j\). \(y\in A_i\cap A_j\) implies \(i=j\). Therefore \(x,z\in A_i\) which implies \(xRz\).</li>
+  <li>Symmetry: if \(xRy\), then there exist \(A_i\) such that \(x,y\in A_i\). Therefore \(yRx\).</li>
+</ul>
+
+<h3 id="application---rational-numbers">Application - Rational Numbers</h3>
+<p>From what we have learned you can define the concept of rational numbers based on the set of integers.</p>
+
+<p>\(r\) is rational if \(r=\frac{k}{k}\), where \(k,l\) are integers and \(l\neq 0\).</p>
+
+<p>Evidently, \(\frac{1}{2}=\frac{2}{4}=\frac{3}{6}=\ldots\)</p>
+
+<p>Consider the set \(A=\{(a,b)\in\Bbb{Z\times Z}\vert b\neq0\}\) and relation \(R\) on \(A\) defined as:</p>
+
+<p>\[(a,b)R(c,d)\Leftrightarrow ad=bc\]</p>
+
+<ul>
+  <li>\(R\) is an equivalence relation on\(A\) and the set of all equivalence classes of.</li>
+  <li>\(R\) is the set of rationals</li>
+</ul>
+
+<p>In other words:</p>
+
+<p>\[\Bbb{Q}=\{E_x\vert x\in A\}\]</p>
+:ET

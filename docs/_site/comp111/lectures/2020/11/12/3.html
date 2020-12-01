@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - Satisfiability of Propositional Formulas - Uni Notes</title>
 
-<meta name="description" content="A propositional formula is satisfiable if there exist an interpretation under which it is true.Example 1The formula $(p\wedge\neg p)$ is not satisfiable, bec...">
+<meta name="description" content="A propositional formula is satisfiable if there exist an interpretation under which it is true.Example 1The formula \((p\wedge\neg p)\) is not satisfiable, b...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp111/lectures/2020/11/12/3.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - Satisfiability of Propositional Formulas</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-11-12-3.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-11-12-3.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - Satisfiability of Propositional Formulas"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -859,18 +859,18 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <div class="article__content" itemprop="articleBody"><p>A propositional formula is satisfiable if there exist an interpretation under which it is true.</p>
 
 <h3 id="example-1">Example 1</h3>
-<p>The formula $(p\wedge\neg p)$ is not satisfiable, because:</p>
+<p>The formula \((p\wedge\neg p)\) is not satisfiable, because:</p>
 
-\[I(p\wedge\neg p)=0\]
+<p>\[I(p\wedge\neg p)=0\]</p>
 
-<p>for all interpretations $I$:</p>
+<p>for all interpretations \(I\):</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">$p$</th>
-      <th style="text-align: center">$\neg p$</th>
-      <th style="text-align: center">$(p\wedge\neg p)$</th>
+      <th style="text-align: center">\(p\)</th>
+      <th style="text-align: center">\(\neg p\)</th>
+      <th style="text-align: center">\((p\wedge\neg p)\)</th>
     </tr>
   </thead>
   <tbody>
@@ -892,24 +892,24 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h3 id="example-2">Example 2</h3>
 <p>There are some cases which don’t require the truth table to be parsed in order to find out if it is satisfiable. See this question:</p>
 
-<p>Is the formula, $P=(p_1\Rightarrow(p_2\wedge\neg p_2))$ satisfiable.</p>
+<p>Is the formula, \(P=(p_1\Rightarrow(p_2\wedge\neg p_2))\) satisfiable.</p>
 
-<p>To see this, simply choose any interpretation $I$ with $I(p_1)=0$. Then $I(P)=1$ and we have found an interpretation $I$ that makes $P$ true.</p>
+<p>To see this, simply choose any interpretation \(I\) with \(I(p_1)=0\). Then \(I(P)=1\) and we have found an interpretation \(I\) that makes \(P\) true.</p>
 
-<p>The same argument shows that every formula of the form $(p_1\Rightarrow Q)$ is satisfiable.</p>
+<p>The same argument shows that every formula of the form \((p_1\Rightarrow Q)\) is satisfiable.</p>
 
 <p>There are also other combinations where you can prove that they are satisfiable without working any values. E.g.:</p>
 
-\[(p_1\Leftrightarrow Q)\]
+<p>\[(p_1\Leftrightarrow Q)\]</p>
 
-<p>such that $p_1$ does not occur in $Q$ is satisfiable.</p>
+<p>such that \(p_1\) does not occur in \(Q\) is satisfiable.</p>
 
 <h2 id="deciding-satisfiability">Deciding Satisfiability</h2>
 <ul>
-  <li>$P$ is satisfiable if $I(P)=1$ for some interpretation $I$.</li>
-  <li>There are $2^n$ interpretations if $P$ has $n$ propositional atoms.</li>
-  <li>Thus, to check whether $P$ is satisfiable directly using truth tables, a table with $2^n$ rows is needed.</li>
-  <li>This is not practical, even for small $n$
+  <li>\(P\) is satisfiable if \(I(P)=1\) for some interpretation \(I\).</li>
+  <li>There are \(2^n\) interpretations if \(P\) has \(n\) propositional atoms.</li>
+  <li>Thus, to check whether \(P\) is satisfiable directly using truth tables, a table with \(2^n\) rows is needed.</li>
+  <li>This is not practical, even for small \(n\)
     <ul>
       <li>Another case of combinatorial explosion.</li>
     </ul>
@@ -972,7 +972,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

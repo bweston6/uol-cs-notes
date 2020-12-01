@@ -842,217 +842,235 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Derived Assertions Algorithm</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">The following algorithm take as input the knowledge base $K$ containing $K_a$ and $K_r$ and computes all assertions $E(a)$ with $E$ a class name and $a$ an individual name such that $K\models E(a)$. This set is stored in: \(\text{DerivedAssertions}\) In only remains to check whether $A(b)$ is in $\text{DerivedAssertions}$.
+          <header><a href="/UoL/comp111/lectures/2020/11/12/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Satisfiability of Propositional Formulas</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">A propositional formula is satisfiable if there exist an interpretation under which it is true.
 
-The algorithm compute...</div><p><a href="/UoL/comp111/lectures/2020/11/05/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Rule Based Languages</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Syntax
-An individual name denote an individual object. They are also called constant symbols:
+Example 1
+The formula \((p\wedge\neg p)\) is not satisfiable, because:
+
+\[I(p\wedge\neg p)=0\]
+
+for all interpretations \(I\):
 
 
-  England
-  We also use lower case letters: $a,b,c,a_1,a_2,\ldots$
-
-
-An individual variable is a placeholder for an individual name. They are denoted by lower case letters:
-
-
-  $x,y,z,x_1,x_2,\ldots$
-
-
-A class name denotes a set of individual objects....</div><p><a href="/UoL/comp111/lectures/2020/11/05/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/05/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Basic Knowledge Representation and Reasoning</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Declarative Approach
-The declarative approach to building agents includes telling the agent what it needs to know. From this the agent uses reasoning to deduce relevant consequences. It requires:
-
-
-  A knowledge base / ontology
+  
     
-      Which contains fact and general knowledge about a domain in some formal language.
+      \(p\)
+      \(\neg p\)
+      \((p\wedge\neg p)\)
     
   
-  A reasoning engi...</div><p><a href="/UoL/comp111/lectures/2020/11/05/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  
+    
+      1
+      0
+      0
+    
+    
+      0
+...</div><p><a href="/UoL/comp111/lectures/2020/11/12/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 05, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-05T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/04/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Alpha - Beta Pruning</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">If you know half way through a calculation that it will succeed or fail, then there is no point in doing the rest of it. This removes redundant information.
+          <header><a href="/UoL/comp111/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Truth Values</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">An interpretations \(I\) assigns to every atomic proposition \(p\) a truth value:
+\[I(p)\in\{0,1\}\]
 
-graph TD
-subgraph MAX
-A0
-end
-subgraph MIN
-A1
-A2
-A3
-end
-subgraph MAX
-A11
-A12
-A13
-A21
-A22
-A23
-A31
-A32
-A33
-end
-A0[&gt;= 3, then just 3] --&gt;|A1| A1[3]
-A0 --&gt;|A2| A2[&lt;= 2]
-A0 --&gt;|A3|...</div><p><a href="/UoL/comp111/lectures/2020/11/04/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+This means:
+
+
+  If \(I(p)=1\), then \(p\) is called true under the interpretation \(I\).
+  If \(I(p)=1\), then \(p\) is called false under the interpretation \(I\).
+
+
+Given an assignment \(I\) we can computer the truth value of compound formulas...</div><p><a href="/UoL/comp111/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 04, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-04T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/11/04/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Adversarial Search</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Adversarial search is a method of reaching a goal while making moves against another player. This allows the agent to react to the moves of another player.
-
-In search we make all moves. In games we play against an unpredictable opponent:
+          <header><a href="/UoL/comp111/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Propositional Logic</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">for many purposes, rules are not expressive enough. for example:
 
 
-  Solution is a strategy  specifying a move for every possible move of the opponent.
-  A method is need for...</div><p><a href="/UoL/comp111/lectures/2020/11/04/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  You cannot express that something is not the case:
+  \[\text{not FrenchFootballClub(LiverpoolFC)}\]
+  You cannot connect sentences using or:
+  \[\text{Today, I will do the AI exercise or I will play football.}\]
+
+
+A proposition is a statement that can be true or false, but not ...</div><p><a href="/UoL/comp111/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 04, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-04T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/03/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Set Operations</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Union
-The union of two sets $A$ and $B$ is the set: 
-\(A\cup B = \{x\vert x\in A\ \text{or} \in B\}\)
+          <header><a href="/UoL/comp105/lectures/2020/11/12/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">filter
+filterkeeps only the elements for which f returns True.
 
-This is the same as logical OR ($+$)
-
-Example
-Suppose
-\(A=\{4,7,8\},\ B=\{4,9,10\}\) 
-Then
-\(A\cup B = \{4,7,8,9,10\}\)
-
-In bit vectors you just perform a logical OR on both of the bit vectors. The result of the OR is the bit vector of the resu...</div><p><a href="/UoL/comp109/lectures/2020/11/03/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 03, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-03T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/03/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Subsets and Set Equality.</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Subsets
-A set $B$ is called a subset of a set $A$ if every element of $B$ is an element of $A$. This is denoted by $B\subseteq A$.
-
-Examples
-\(\{3,4,5\}\subseteq\{1,5,4,2,1,3\},\ \{3,3,5\}\subseteq\{3,5\},\ \{5,3\}\subseteq\{3,5\}\)
-
-graph TB
-    subgraph A
-    B(B)
-    end
-
-Venn diagram of $B$ subset $A$.
-
-Therefore, $\forall$ sets $A$, $A\subs...</div><p><a href="/UoL/comp109/lectures/2020/11/03/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 03, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-03T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/03/1.html"><h2 itemprop="headline" class="item__header">COMP109 - (Naive) Set Theory</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Notation for Sets
-A set is a collection of objects, called the elements of the set.
+filter' :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+filter' _ [] = []
+filter' f (x:xs)
+	| f x 		= x : rest
+	| otherwise	= rest
+	where rest 	= filter' f xs
+	
+filter' even [1..10]
+&gt; [2,4,6,8,10]
 
 
-  ${7,5,3}$
-
-
-We have written down the element of each set and contained them between the braces ${}$.
-
-Repetitions and orderings don’t matter in sets hence ${7,5,3}$ is the same as ${5,3,3,3,7}$.
-
-We write $a\in A$ to denote that the object $a$ is an element o...</div><p><a href="/UoL/comp109/lectures/2020/11/03/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 03, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-03T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/02/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 10-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Cracking the Caesar Cipher
-In order to crack a Caesar Cipher you can use the fact that, in English, each letter isn’t used equally. From this you can shift around the letters until you find a shift that fits the distribution of the English language.
-
-As a result of this you should be able to write a program that can guess and decode an English C...</div><p><a href="/UoL/comp105/lectures/2020/11/02/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+In comparison to map which applies a function to each element in a list. filter will apply ...</div><p><a href="/UoL/comp105/lectures/2020/11/12/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 02, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-02T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/11/02/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 10-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">The Caesar Cipher
-The Caesar Cipher is a shift method of encoding. This shifts every letter forward by three and wraps around when z is reached.
+          <header><a href="/UoL/comp105/lectures/2020/11/12/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 15-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">map
+map applies a funciton f to every element in a list.
 
-There is no particular reason to shift by three and you can shift by any number between zero and 25. Shifting by 13 would be a ROT13.
+map' :: (a -&gt; b) -&gt; [a] -&gt; [b]
+map' _ [] = []
+map' f (x:xs) = f x : map' f xs
 
-Working with Characters
-The Data.Char package has some useful func...</div><p><a href="/UoL/comp105/lectures/2020/11/02/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+
+This saves you from writing out the generic code for applying a function to a list. This allows you to implement the standard functions instead of having to make your own.
+
+map even [1..5]
+&gt; [False...</div><p><a href="/UoL/comp105/lectures/2020/11/12/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP105">COMP105</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 02, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-02T00:00:00+00:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 12, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-12T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/11/4.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Injective (one-to-one) Functions
+Let \(f:A\rightarrow B\) be a function. We call \(f\) and injective, or one-to-one, function if:
+
+\[f(a_1)=f(a_2)\Rightarrow a_1 = a_2 \text{ for all } a_1,a_2\in A\]
+
+This is logically equivalent to \(a_1\neq a_2 \Rightarrow f(a_1) \neq f(a_2)\) and so injective functions never repeat values. In other words:
+
+Di...</div><p><a href="/UoL/comp109/lectures/2020/11/11/4.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/11/3.html"><h2 itemprop="headline" class="item__header">COMP109 - Functions - 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Basics and Definitions
+A function is a method that takes an input value and gives an output value:
+
+graph LR
+x --&gt;|Input| F[Function Machine]
+F --&gt;|Output| fx
+
+
+A function from a set \(A\) to a set \(B\) is an assignment of exactly one element of \(B\) to each element of \(A\).
+
+We write \(f(a)=b\) if \(b\) is the unique element of \(B\) a...</div><p><a href="/UoL/comp109/lectures/2020/11/11/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/11/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Russell's Paradox</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Why is this set theory “Naive”? The reason is that is suffers from paradoxes.
+
+A barber is the man who shaves all those, and only those, men who do not shave themselves.
+
+
+  Who shaves the barber?
+
+
+This statement and question form a paradox.
+
+As yet we know that you should always write a predicate like so:
+
+\[\{x\in A \vert  x \text{ satisfies ...</div><p><a href="/UoL/comp109/lectures/2020/11/11/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/11/11/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Cardinality of Sets</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">The cardinality of a set is the number of elements in the set. The notation for this is \(\vert A\vert\) where \(A\) is a set to be counted.
+
+Power Set and Bit Vectors
+We use the correspondence between bit vectors and subsets: \(\left\vert  \text{\textit{Pow}}(A)\right\vert\) is the number of bit vectors of length \(n\).
+
+\[A\ s.t \left\vert  A ...</div><p><a href="/UoL/comp109/lectures/2020/11/11/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 11, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-11T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/tutorials/2020/11/10/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Tutorial 4</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">For the following questions:
+
+
+  \(\emptyset \in\{\text{Leeds, Liverpool}\}\)
+    
+      False
+    
+  
+  \(\emptyset \subseteq\{\text{Leeds, Liverpool}\}\)
+    
+      True
+    
+  
+  \(\emptyset = \{\}\)
+    
+      False as they are different types.</div><p><a href="/UoL/comp109/tutorials/2020/11/10/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Tutorials"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page5">
             <i class="fas fa-angle-left"></i>
@@ -1065,7 +1083,7 @@ The Data.Char package has some useful func...</div><p><a href="/UoL/comp105/lect
             </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page7"><span>7</span></a>
                 </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page7">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1100,7 +1118,7 @@ The Data.Char package has some useful func...</div><p><a href="/UoL/comp105/lect
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

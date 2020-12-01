@@ -1,0 +1,117 @@
+I"<h2 id="transitive-closure">Transitive Closure</h2>
+<p>Given a binary relation \(R\) on a set \(A\) the transitive closure \(R^*\) of \(R\) is the (uniquely determined) relation on \(A\) with the following properties:</p>
+
+<ul>
+  <li>\(R^*\) is transitive.</li>
+  <li>
+    <p>\(R\subseteq R^*\).</p>
+
+    <p class="info">All links you find in \(R\) you should also find in \(R^*\).</p>
+  </li>
+  <li>If \(S\) is a transitive relation on \(A\) and \(R\subseteq S\), then \(R^*\subseteq S\).</li>
+</ul>
+
+<h3 id="simple-example">Simple Example</h3>
+<p>You are given the following links. What links are missing to make the relation transitive.</p>
+
+<pre><code class="language-mermaid">graph LR
+a((a)) --&gt; b((b))
+b --&gt; c((c))
+</code></pre>
+
+<p>As there is an arrow from \(a\) to \(b\) and an arrow from \(b\) to \(c\) there should be and arrow from \(a\) to \(c\) to make this transitive.</p>
+
+<pre><code class="language-mermaid">graph LR
+a((a)) --&gt; b((b))
+b --&gt; c((c))
+a -.-&gt; c
+</code></pre>
+
+<h3 id="example-1">Example 1</h3>
+<p>Let \(A=\{1,2,3\}\). Find the transitive closure of:</p>
+
+<p>\[R=\{(1,1),(1,2),(1,3),(2,3),(3,1)\}\]</p>
+
+<p>This relation has the following graph:</p>
+
+<pre><code class="language-mermaid">graph LR
+1((1)) --&gt; 1
+1 --&gt; 2((2))
+1 --&gt; 3((3))
+2 --&gt; 3
+3 --&gt; 1
+</code></pre>
+
+<p>You should add the following links:</p>
+
+<pre><code class="language-mermaid">graph LR
+1((1)) --&gt; 1
+1 --&gt; 2((2))
+1 --&gt; 3((3))
+2 --&gt; 1
+3 --&gt; 2
+2 --&gt; 3
+3 --&gt; 1
+3 --&gt; 3
+2 --&gt; 2
+</code></pre>
+
+<h2 id="transitivity-and-composition">Transitivity and Composition</h2>
+<p>A relation \(S\) is transitive if and only if \(S\circ S\subseteq S\). This is because:</p>
+
+<p>\[S\circ S=\{(a,c)\vert \text{ exists } b \text{ such that } aSb \text{ and } bSc\}\]</p>
+
+<p class="info">This is the definition of what the composition of a relation is.</p>
+
+<p>Let \(S\) be a relation. Set \(S^1=S,S^2=S\circ S,S^3=S\circ S\circ S\circ S\) and so on.</p>
+
+<h3 id="theorem">Theorem</h3>
+<p>Denote by \(S^<em>\) the transitive closure of \(S\). Then \(xS^</em>y\) if and only if there exists \(n&gt;0\) such that \(xS^ny\).</p>
+
+<p class="info">This theorem states that by repeating Warshall’s algorithm on your matrix until there is no change then you will reach transitive closure for that relational matrix.</p>
+
+<h2 id="transitive-closure-in-matrix-form">Transitive Closure in Matrix Form</h2>
+<p>The relation \(R\) on the set \(A=\{1,2,3,4,5\}\) is represented by the matrix:</p>
+
+<p>\[
+\begin{bmatrix}
+1&amp;0&amp;0&amp;1&amp;0\\
+0&amp;1&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0\\
+1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;1&amp;0&amp;1&amp;0
+\end{bmatrix}
+\]</p>
+
+<p>Determine the matrix \(R\circ R\) and hence explain why \(R\) is not transitive.</p>
+
+<p>To compute this we transpose the row \(i\) onto the column \(j\) and see if there are two ones in the same position. If this is the case then the resultant matrix has a 1 in row \(i\) and column \(j\). If not then there is a zero:</p>
+
+<p>\[
+\begin{bmatrix}
+1&amp;0&amp;0&amp;1&amp;0\\
+0&amp;1&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0\\
+1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;1&amp;0&amp;1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+1&amp;0&amp;0&amp;1&amp;0\\
+0&amp;1&amp;0&amp;0&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0\\
+1&amp;0&amp;1&amp;0&amp;0\\
+0&amp;1&amp;0&amp;1&amp;0
+\end{bmatrix}=
+\begin{bmatrix}
+1&amp;0&amp;1&amp;1&amp;0\\
+0&amp;1&amp;0&amp;1&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0\\
+1&amp;0&amp;1&amp;1&amp;0\\
+1&amp;1&amp;1&amp;0&amp;1
+\end{bmatrix}
+\]</p>
+
+<p>\(R\) is not transitive as \(R^2\neq R\)</p>
+
+<p class="info">This is the same as Warshall’s Algorithm. In this algorithm you iterate through every item in each column and row and each column and row. If there is a match you put a <code class="language-plaintext highlighter-rouge">1</code> in the resultant matrix and if there is not then you put a <code class="language-plaintext highlighter-rouge">0</code>.</p>
+:ET

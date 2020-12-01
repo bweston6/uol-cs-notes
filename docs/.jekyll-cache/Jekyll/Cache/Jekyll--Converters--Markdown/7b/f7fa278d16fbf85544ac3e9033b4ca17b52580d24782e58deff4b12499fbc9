@@ -1,0 +1,58 @@
+I"Š<h2 id="properties-of-binary-relations">Properties of Binary Relations</h2>
+<p>A binary relation \(R\) on a set \(A\) is:</p>
+
+<h3 id="reflexive">Reflexive</h3>
+<p>When \(xRx\) for all \(x\in A\).</p>
+
+<p>\[\forall x\ A(x)\Rightarrow xRx\]</p>
+
+<p>This means that if two of the same elements are compared successfully then the relation is reflexive.</p>
+
+<p>As example of a relation that is non-reflexive is \(&lt;\) as the left must be different to the right.</p>
+
+<h3 id="symmetric">Symmetric</h3>
+<p>When \(xRy\) implies \(yRx\) for all \(x,y\in A\):</p>
+
+<p>\[\forall x,y\ xRy\Rightarrow yRx\]</p>
+
+<p>This is similar to Facebook friends. If you are friends with one person they have to be your friend too.</p>
+
+<p>An example that is non-symmetric is \(\leq\) as they are not necessarily comparable.</p>
+
+<h3 id="antisymmetric">Antisymmetric</h3>
+<p>When \(xRy\) and \(yRx\) imply \(x=y\) for all \(x,y\in A\):</p>
+
+<p>\[\forall x,y\ xRy\text{ and } yRx\Rightarrow y = x\]</p>
+
+<p>This means that if you can swap the elements and the relation still holds true then the elements must be equal. This is the same as the \(\leq\) relation.</p>
+
+<p>The \(L\) relation from before doesnâ€™t satisfy this property as two different words with the same length are not the same.</p>
+
+<h3 id="transitive">Transitive</h3>
+<p>When \(xRy\) and \(yRz\) imply \(xRz\) for all \(x,y,z\in A\):</p>
+
+<p>\[\forall x,y,z\ xRy\text{ and }yRz\Rightarrow xRz\]</p>
+
+<p>This is the same as the ordering example from before. Thus the relationship \(&lt;\) satisfies this property.</p>
+
+<h2 id="examples">Examples</h2>
+<p>Which of the following define a relation that is reflexive, symmetric, antisymmetric of transitive?</p>
+
+<ol>
+  <li>\(x\) divides \(y\) on the set \(\Bbb{Z^+}\) of positive integers.
+    <ul>
+      <li>This relations is reflexive, antisymmetric and transitive.</li>
+    </ul>
+  </li>
+  <li>\(x\neq y\) on the set \(\Bbb{Z}\) of integers.
+    <ul>
+      <li>This relations is symmetric and transitive.</li>
+    </ul>
+  </li>
+  <li>\(x\) has the same age as \(y\) on the set of people.
+    <ul>
+      <li>This relations is reflexive, symmetric and transitive.</li>
+    </ul>
+  </li>
+</ol>
+:ET

@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - A* Search</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-10-28-1.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-10-28-1.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - A* Search"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -861,14 +861,14 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <ul>
   <li>The basic idea was to combine uniform cost search and greedy search</li>
   <li>We look at the cost so far and the estimated cost to goal</li>
-  <li>Thus  we use the <strong>heuristic</strong> $f:$ \(f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\) where:
+  <li>Thus  we use the <strong>heuristic</strong> \(f:\) \[f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\] where:
     <ul>
-      <li>$g(s_0\ldots s_k)$ is the path cost of $s_0\ldots s_k$
+      <li>\(g(s_0\ldots s_k)\) is the path cost of \(s_0\ldots s_k\)
         <ul>
           <li>Not heuristic</li>
         </ul>
       </li>
-      <li>$h(s_k)$ is expected cost of cheapest solution from $s_k$
+      <li>\(h(s_k)\) is expected cost of cheapest solution from \(s_k\)
         <ul>
           <li>Is heuristic</li>
         </ul>
@@ -954,8 +954,8 @@ C --&gt;|5| G[G, h = 0]
 <ul>
   <li>Complete and optimal under minor conditions
     <ul>
-      <li>If an <strong>admissible</strong> heuristic $h$ is used: \(h(s)\leq h^*(s)\) where $h^*$ is the true cost form $s$ to goal.</li>
-      <li>Thus, a heuristic $h$ is admissible if it never overestimates the distance to the goal (is optimistic).</li>
+      <li>If an <strong>admissible</strong> heuristic \(h\) is used: \[h(s)\leq h^<em>(s)\] where \(h^</em>\) is the true cost form \(s\) to goal.</li>
+      <li>Thus, a heuristic \(h\) is admissible if it never overestimates the distance to the goal (is optimistic).</li>
     </ul>
   </li>
 </ul>
@@ -968,12 +968,12 @@ C --&gt;|5| G[G, h = 0]
     </ul>
   </li>
   <li>Good heuristics can dramatically reduce search cost.</li>
-  <li>Greedy best-first search expands lowest $h$.
+  <li>Greedy best-first search expands lowest \(h\).
     <ul>
       <li>Incomplete and not always optimal.</li>
     </ul>
   </li>
-  <li>A* search expands lowest $g+h$.
+  <li>A* search expands lowest \(g+h\).
     <ul>
       <li>Complete and optimal.</li>
       <li>Optimally efficient.</li>
@@ -1035,7 +1035,7 @@ C --&gt;|5| G[G, h = 0]
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

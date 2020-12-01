@@ -1,0 +1,51 @@
+I"e	<h2 id="types">Types</h2>
+<p>Everything in Haskell has a type. In GHCI <code class="language-plaintext highlighter-rouge">:type</code> or <code class="language-plaintext highlighter-rouge">:t</code> will display the type of an expression.</p>
+
+<h3 id="basic-types">Basic Types</h3>
+<h4 id="int"><code class="language-plaintext highlighter-rouge">Int</code></h4>
+<p>Holds a 64-bit integer between \(-2^{63}\) and \(2^{63}-1\)</p>
+
+<h4 id="integer"><code class="language-plaintext highlighter-rouge">Integer</code></h4>
+<p>Holds arbitrary size integers but is slightly slower than an <code class="language-plaintext highlighter-rouge">Int</code>. Ideally you should use an <code class="language-plaintext highlighter-rouge">Int</code> if you are using smaller numbers.</p>
+
+<h4 id="float"><code class="language-plaintext highlighter-rouge">Float</code></h4>
+<p>Holds 32-bit floating point numbers.</p>
+
+<h4 id="double"><code class="language-plaintext highlighter-rouge">Double</code></h4>
+<p>Holds a 64-bit floating point number.</p>
+
+<h4 id="bool"><code class="language-plaintext highlighter-rouge">Bool</code></h4>
+<p>Holds truth values.</p>
+
+<h4 id="char"><code class="language-plaintext highlighter-rouge">Char</code></h4>
+<p>Holds a single character and can store any Unicode character.</p>
+
+<h3 id="compound-types">Compound Types</h3>
+<h4 id="tuples">Tuples</h4>
+<p>The type of a tuple is the type of its constituents.</p>
+
+<ul>
+  <li>The size of a tuple is encoded in its type.</li>
+  <li>Tuple elements can be different types.</li>
+</ul>
+
+<h4 id="lists">Lists</h4>
+<p>The type of a list is determined by the type of its elements.</p>
+
+<ul>
+  <li>A list of type<code class="language-plaintext highlighter-rouge">x</code> is denoted by <code class="language-plaintext highlighter-rouge">[x]</code>.</li>
+  <li>This is why lists must contain elements of the same type.</li>
+  <li>The length is not encoded in the type.</li>
+</ul>
+
+<h2 id="exercises">Exercises</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">:: [Bool]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">:: ([[Bool]], [Char])</code>
+    <ul>
+      <li>As strings are just lists of <code class="language-plaintext highlighter-rouge">Char</code> then you must represent them as such.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">:: [([Bool], Bool)]</code></li>
+</ol>
+:ET

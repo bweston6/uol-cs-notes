@@ -842,237 +842,238 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/20/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Breadth First Search</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Select and expand start state to give a tree of depth 1.
-  Select and expand all paths that resulted from previous step to give a tree of depth 2.
-  and so on.
+          <header><a href="/UoL/comp105/lectures/2020/10/29/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 9-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">where Syntax
+Sometimes it is useful to bind names across a whole function:
+
+remove_twos [] = []
+remove_twos (x:xs)
+	| x == 2	= rest
+	| otherwise = x:rest
+	where rest = remove_twos xs
 
 
-In general select adn expand all paths of depth $n$ before depth $n + 1$
+As the two expressions are in different guards then you can’t use a let expression.
 
-Maze example
+A general example is:
 
-First explore paths of length 1, then depth 2 then length three. This has the result of following...</div><p><a href="/UoL/comp111/lectures/2020/10/20/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+f x y = 1 + a + b
+	where 	a = 2 * x
+			b = y / 2
+
+
+whe...</div><p><a href="/UoL/comp105/lectures/2020/10/29/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 29, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-29T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/10/28/1.html"><h2 itemprop="headline" class="item__header">COMP111 - A* Search</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">It was made in 1968 in Stanford by the team that constructed Shaky, the robot.
+
+
+  The basic idea was to combine uniform cost search and greedy search
+  We look at the cost so far and the estimated cost to goal
+  Thus  we use the heuristic \(f:\) \[f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\] where:
+    
+      \(g(s_0\ldots s_k)\) is the path cos...</div><p><a href="/UoL/comp111/lectures/2020/10/28/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 20, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-20T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 28, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-28T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/tutorials/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Tutorial 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Covering the tutorial sheets from week 1. The tutorial leader’s email is F.Alves@liverpool.ac.uk.
+          <header><a href="/UoL/comp109/lectures/2020/10/28/2.html"><h2 itemprop="headline" class="item__header">COMP109 - Mathematical Induction</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">They are used to check conjectures about outcomes of processes that occur repeatedly and according to definite patterns.
+  In general, mathematical induction is a method for proving that a property defined for integers \(n\) is true for all values of \(n\) that are greater than or equal to come initial integer.
 
 
-  The leader chose to cover one of the options which was football.
-    
-      Performance Measure
-        
-          Games won, goals scored.
-        
-      
-      Environment
-        
-          Football pitch, the players, the ball.
-        
-    ...</div><p><a href="/UoL/comp111/tutorials/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+Generic Particular v.s. Inductio...</div><p><a href="/UoL/comp109/lectures/2020/10/28/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 28, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-28T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/10/28/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Week 2 Summary Continued</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Two Classic Results
+These are classical proofs as they we’re proven by the Ancient Greeks. They are both proofs by contradiction.
+
+Use proof by contradiction to show that there is no greatest prime number.
+
+  2, as the smallest prime number, is known as \(P_1\). All following prime numbers are numbered sequentially.
+  For each prime number that ...</div><p><a href="/UoL/comp109/lectures/2020/10/28/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 28, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-28T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp111/lectures/2020/10/27/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Informed Strategies</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Use problem-specific knowledge to make the search more efficient.
+  Based on your knowledge, select the most promising path first.
+  Rather than trying all possible search paths, you try to focus on paths  that get you nearer to the goal state according to your estimate.
+
+
+Heuristics
+
+  They estimate the oct of cheapest path form a state to a go...</div><p><a href="/UoL/comp111/lectures/2020/10/27/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Tutorials"></div>
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/tutorials/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Tutorial 1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">This is following the questions from the tutorial for week 1.
+          <header><a href="/UoL/comp111/lectures/2020/10/27/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Uniform Cost Search and Informed Tree Search</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Basic problem solving techniques such as BFS and DFS are either incomplete, in the case of DFS or computationally expensive.
 
-The tutorial leader’s email is: p.austin@liverpool.ac.uk</div><p><a href="/UoL/comp109/tutorials/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+You can make some tweaks to generate other uniform cost search algorithms or add more information to give an informed search algorithm. Either of these are an improvement
+
+
+  Uniform cost search is similar to a BFS but in...</div><p><a href="/UoL/comp111/lectures/2020/10/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP111">COMP111</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP111,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/10/27/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 8-2</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Recursion Examples
+In this section we will be re-implementing the built in functions for operating on lists.
+
+take
+
+take' 0 list	= []
+take' n []		= []
+take' n (x:xs)	= x : take' (n - 1) xs
+
+
+With the two base cases the program will end in one of two ways:
+
+
+  We take as many items as we asked for.
+  We run out of elements to take.
+
+
+drop
+
+d...</div><p><a href="/UoL/comp105/lectures/2020/10/27/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp105/lectures/2020/10/27/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 8-1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">List Recursion
+Lists have a head and a tail. We use these command and pattern matching to recurse lists. Generally list recursions use the empty list [] as part of the base case.
+
+Consuming Lists
+
+sum' []		= 0 
+sum' (x:xs)	= x + sum' xs
+
+
+
+  The base case is the empty list.
+  The recursive rule breaks the list into its head and tail.
+
+
+length' [...</div><p><a href="/UoL/comp105/lectures/2020/10/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP105">COMP105</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 27, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-27T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP105,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/10/26/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Week 2 Summary</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">More Examples of Direct Proof
+
+  \(\forall\ n\) if \(n\) is an integer then \(n\) is rational.
+    
+      Proof: Suppose that \(n\) is a particular but arbitrarily chosen integer.
+        
+          \(n=\frac{n}{1}\)
+            
+              By definition of a rational number \(\frac{n}{1}\) is rational.
+            
+          
+        
+      ...</div><p><a href="/UoL/comp109/lectures/2020/10/26/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP109,Tutorials"></div>
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
       </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/catch-up%20sessions/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Catch-up Session 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Methods of Proof
+          <header><a href="/UoL/comp107/seminars/2020/10/26/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">The seminar opened with a catch-up of the lectures that had been released during the week including:
 
-  Counter Example Method
+
+  Systems Development Life-Cycle
+  Requirement Elicitation
     
-      Prove that a statement is false by use of a counter-statement.
-    
-  
-  Universal Proof
-    
-      Applies to all integers e.g. odd if $a=2k+1$
+      Gathering information from people.
     
   
 
 
-Example
-\((a+b)^2=a^2+b^2\)
-
-Holds for:
+Assignment
+An overview of the assignment requirements and materials provided.
 
 
-  Some integers
-  All integers
-  No integers
-
-
-The answer is that it holds for some integers as ...</div><p><a href="/UoL/comp109/catch-up%20sessions/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Catch-up%2BSessions">Catch-up+Sessions</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP109,Catch-up+Sessions"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/seminars/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Seminar 2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">System design as Modelling
-
-graph TD
-A[The Problem to be Solved] --&gt; |Suitable for computation| B[The Program]
-B --&gt; D[The Output]
-D --&gt; |Result suitable for interpretation| C[The request required]
-A --&gt; |What we want| C
-
-
-Modelling Process
-
-graph LR
-A[Real World Problem] --&gt; B[Information Model]
-B --&gt; C[Conceptual Model]
-C --&...</div><p><a href="/UoL/comp107/seminars/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+  More effort should be put into accrediting team...</div><p><a href="/UoL/comp107/seminars/2020/10/26/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP107">COMP107</a>
             </li><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=Seminars">Seminars</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 26, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-26T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP107,Seminars"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/19/2.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 4-2</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Let
-Sometimes we want to use the same expression more than once:
-
-(x * x - 4) + sqrt (x * x - 4)
-
-
-The problem of writing out the same equation over again can be solved using the following example:
-
-let s = (x * x - 4) in s + sqrt s
-
-
-Syntax
-let &lt;bindings&gt; in &lt;expression&gt;
-
-
-Where:
-
-
-  &lt;binding&gt; gives names to bindings separated...</div><p><a href="/UoL/comp105/lectures/2020/10/19/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp105/lectures/2020/10/19/1.html"><h2 itemprop="headline" class="item__header">COMP105 - Lecture 4-1</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">IF
-Differences Between Imperative and Functional
-In imperative languages if changes the control flow but in functional languages there is no control flow.
-
-Functional if gives a value that you will return based on a test.
-
-if (1==1) then "yes" else "no"
-
-
-Rather than controlling flow, functional if chooses between two alternatives and is a pure ...</div><p><a href="/UoL/comp105/lectures/2020/10/19/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP105">COMP105</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 19, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-19T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP105,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/14/3.html"><h2 itemprop="headline" class="item__header">COMP111 - Generic Search Algorithm in Pseudo-code</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Input: 	a start state s_0
-		for each state s the successors of s
-		a test goals(s) checking whether s is a goal state
-		
-Set frontier := {s_0}
-while frontier is not empty do
-	select and remove from frontier a path s_0...s_k
-	if goal(s_k) then
-		return s_0...s_k (and terminate)
-	else for every successor s of s_k and s_0...s_k s to frontier
-	end i...</div><p><a href="/UoL/comp111/lectures/2020/10/14/3.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/14/2.html"><h2 itemprop="headline" class="item__header">COMP111 - Size of Search Graphs and Search Trees</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">In real search problems the state space is huge e.g. Rubik’s Cube - $10^{18}$ which will take 68,000 years to brute force at 10 million states/sec. This is an example of the combinatorial explosion. In addition, we cannot store all of the states.
-
-Instead, given the start state. We can describe the actions and compute the successor states. A des...</div><p><a href="/UoL/comp111/lectures/2020/10/14/2.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp111/lectures/2020/10/14/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Search Graphs</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">BFS and DFS are blind search algorithms meaning we have no further information about the tree.
-
-Solving Problems by Searching
-
-Considering that there is a goal-based agent that want to bring about a state of affairs by completing some actions. These actions need to be ordered in order to reach the goal. We may also want to minimise time or fuel ...</div><p><a href="/UoL/comp111/lectures/2020/10/14/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP111">COMP111</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Oct 14, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-10-14T00:00:00+01:00">
-    <meta itemprop="keywords" content="COMP111,Lectures"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>110 post articles, 11 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><a class="button button--secondary button--circle" href="/UoL/page9">
             <i class="fas fa-angle-left"></i>
           </a></li><li>
               <a class="button button--secondary button--circle" href="/UoL/"><span>1</span></a>
             </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
-                  <a class="button button--secondary button--circle" href="/UoL/page8"><span>8</span></a>
-                </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page9"><span>9</span></a>
                 </li><li>
               <div class="button button--primary button--circle focus"><span>10</span></div>
             </li><li>
                   <a class="button button--secondary button--circle" href="/UoL/page11"><span>11</span></a>
+                </li><li><span class="pagination__omit"><i class="fas fa-ellipsis-h"></i></span></li><li>
+                  <a class="button button--secondary button--circle" href="/UoL/page14"><span>14</span></a>
                 </li><li><a class="button button--secondary button--circle" href="/UoL/page11">
             <i class="fas fa-angle-right"></i>
           </a></li></ul>
@@ -1107,7 +1108,7 @@ Considering that there is a goal-based agent that want to bring about a state of
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

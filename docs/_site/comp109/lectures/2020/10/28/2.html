@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP109 - Mathematical Induction</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP109/Lectures/_posts/2020-10-28-2.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP109/Lectures/_posts/2020-10-28-2.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP109 - Mathematical Induction"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
@@ -858,13 +858,13 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody"><ul>
   <li>They are used to check conjectures about outcomes of processes that occur repeatedly and according to definite patterns.</li>
-  <li>In general, mathematical induction is a method for proving that a property defined for integers $n$ is true for all values of $n$ that are greater than or equal to come initial integer.</li>
+  <li>In general, mathematical induction is a method for proving that a property defined for integers \(n\) is true for all values of \(n\) that are greater than or equal to come initial integer.</li>
 </ul>
 
 <h2 id="generic-particular-vs-induction-for-universal-statements">Generic Particular v.s. Induction for Universal Statements</h2>
 <h3 id="generalisation-from-the-generic-particular">Generalisation from the generic particular:</h3>
 
-<p class="info">“Suppose that $x$ is a particular but arbitrarily chosen…” “…property holds for this $x$…” “…then the property holds for all $x$”</p>
+<p class="info">“Suppose that \(x\) is a particular but arbitrarily chosen…” “…property holds for this \(x\)…” “…then the property holds for all \(x\)”</p>
 
 <p>This argument states that as we have chosen an arbitrary value from a set then the argument will hold for all numbers within the same set.</p>
 
@@ -872,59 +872,59 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>We apply a process to all the values in a set. This process is carried on until an arbitrary value is reached.</p>
 
 <ul>
-  <li>Prove that the property holds for some initial value (e.g. $n=0$).</li>
-  <li>Prove that if the property hold for $n=m$ (for any natural number $m$) then it holds for $n=m+1$.</li>
+  <li>Prove that the property holds for some initial value (e.g. \(n=0\)).</li>
+  <li>Prove that if the property hold for \(n=m\) (for any natural number \(m\)) then it holds for \(n=m+1\).</li>
 </ul>
 
 <h3 id="example">Example</h3>
 <p>For a set of dominoes the following process can be applied:</p>
 
-<p>For a domino at position $i$, when it is pushed the domino at position $i+1$ will fall sequentially.</p>
+<p>For a domino at position \(i\), when it is pushed the domino at position \(i+1\) will fall sequentially.</p>
 
 <p>The conclusion can be that all of the dominoes will fall.</p>
 
 <h3 id="typical-structure">Typical Structure</h3>
-<p>We prove the statement by mathematical induction on $n$.</p>
+<p>We prove the statement by mathematical induction on \(n\).</p>
 
 <h4 id="base-case">Base Case</h4>
-<p>Show that the property hold for some initial value (e.g. $n=0$).</p>
+<p>Show that the property hold for some initial value (e.g. \(n=0\)).</p>
 
 <h4 id="inductive-step">Inductive Step</h4>
-<p>Assume that the property holds for $n=m$. Show that is hold for $n=m+1$.</p>
+<p>Assume that the property holds for \(n=m\). Show that is hold for \(n=m+1\).</p>
 
 <h4 id="conclusion">Conclusion</h4>
-<p>You can now conclude that the property holds for every natural number $n$.</p>
+<p>You can now conclude that the property holds for every natural number \(n\).</p>
 
 <h3 id="carl-friedrich-gauss">Carl Friedrich Gauss</h3>
-<p>\(1+\ldots+100=5050\)</p>
+<p>\[1+\ldots+100=5050\]</p>
 
 <p>If you split the number line in the middle the sum of every column is 101. With 50 columns the answer is 5050.</p>
 
-<p>For every natural number $n$, 
-\(0+1+\ldots+n=\frac{n(n+1)}{2}\)</p>
+<p>For every natural number \(n\), 
+\[0+1+\ldots+n=\frac{n(n+1)}{2}\]</p>
 
 <h4 id="proof">Proof</h4>
 <h5 id="base-case-1">Base Case</h5>
-<p>$n=0$</p>
+<p>\(n=0\)</p>
 
-<p>$0 = \frac{0(0+1)}{2} = 0$</p>
+<p>\(0 = \frac{0(0+1)}{2} = 0\)</p>
 
 <h5 id="inductive-step-1">Inductive Step</h5>
-<p>Suppose that for $n=m$ the property holds.</p>
+<p>Suppose that for \(n=m\) the property holds.</p>
 
-<p>Then \(0+1+\ldots+m=\frac{m(m+1)}{2}\)</p>
+<p>Then \[0+1+\ldots+m=\frac{m(m+1)}{2}\]</p>
 
-<p>Consider the statement for $n=m+1$.</p>
+<p>Consider the statement for \(n=m+1\).</p>
 
-<p>$0+1+2+\ldots+m+(m+1)$.</p>
+<p>\(0+1+2+\ldots+m+(m+1)\).</p>
 
-<p>By induction hypothesis, $0+1+\ldots+m=\frac{m(m+1)}{2}$</p>
+<p>By induction hypothesis, \(0+1+\ldots+m=\frac{m(m+1)}{2}\)</p>
 
-<p>So, $0+1+\ldots+m+(m+1)=\frac{m(m+1)}{2}+(m+1)$</p>
+<p>So, \(0+1+\ldots+m+(m+1)=\frac{m(m+1)}{2}+(m+1)\)</p>
 
-<p>$=\frac{m(m+1)}{2}+\frac{2(m+1)}{2}=\frac{m(m+1)+2(m+1)}{2}$</p>
+<p>\(=\frac{m(m+1)}{2}+\frac{2(m+1)}{2}=\frac{m(m+1)+2(m+1)}{2}\)</p>
 
-<p>$=\frac{(m+1)(m+2)}{2}=\frac{(m+1)((m+1)+1)}{2}=\frac{n(n+1)}{2}$</p>
+<p>\(=\frac{(m+1)(m+2)}{2}=\frac{(m+1)((m+1)+1)}{2}=\frac{n(n+1)}{2}\)</p>
 
 <p>This shows that for any sequential number the fraction simplifies to the statement, thus proving that it holds for any number.</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-10-28T00:00:00+00:00"><!-- start custom article footer snippet -->
@@ -982,7 +982,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

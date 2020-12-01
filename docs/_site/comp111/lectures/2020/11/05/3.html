@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP111 - Derived Assertions Algorithm - Uni Notes</title>
 
-<meta name="description" content="The following algorithm take as input the knowledge base $K$ containing $K_a$ and $K_r$ and computes all assertions $E(a)$ with $E$ a class name and $a$ an i...">
+<meta name="description" content="The following algorithm take as input the knowledge base \(K\) containing \(K_a\) and \(K_r\) and computes all assertions \(E(a)\) with \(E\) a class name an...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp111/lectures/2020/11/05/3.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - Derived Assertions Algorithm</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-11-05-3.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-11-05-3.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - Derived Assertions Algorithm"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -856,9 +856,9 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
     <meta itemprop="keywords" content="COMP111,Lectures"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<div class="article__content" itemprop="articleBody"><p>The following algorithm take as input the knowledge base $K$ containing $K_a$ and $K_r$ and computes all assertions $E(a)$ with $E$ a class name and $a$ an individual name such that $K\models E(a)$. This set is stored in: \(\text{DerivedAssertions}\) In only remains to check whether $A(b)$ is in $\text{DerivedAssertions}$.</p>
+<div class="article__content" itemprop="articleBody"><p>The following algorithm take as input the knowledge base \(K\) containing \(K_a\) and \(K_r\) and computes all assertions \(E(a)\) with \(E\) a class name and \(a\) an individual name such that \(K\models E(a)\). This set is stored in: \[\text{DerivedAssertions}\] In only remains to check whether \(A(b)\) is in \(\text{DerivedAssertions}\).</p>
 
-<p>The algorithm computes the set $\text{DerivedAssertions}$ by starting with $K_a$ and then applying the rules $K_r$ exhaustively to already derived atomic assertions.</p>
+<p>The algorithm computes the set \(\text{DerivedAssertions}\) by starting with \(K_a\) and then applying the rules \(K_r\) exhaustively to already derived atomic assertions.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a knowledge base K containing assertions K_a and rules K_r
 	
@@ -880,34 +880,34 @@ return Derived Assertions
 <h2 id="rule-application">Rule Application</h2>
 <p>In the algorithm above we say that:</p>
 
-<p>$E(a)$ is added to $\text{DerivedAssertions}$ by applying the rule:
-\(A_1(x)\wedge\ldots\wedge A_n\rightarrow E(x)\)
+<p>\(E(a)\) is added to \(\text{DerivedAssertions}\) by applying the rule:
+\[A_1(x)\wedge\ldots\wedge A_n\rightarrow E(x)\]
 to the atomic assertions:
-\(A_1(x),\ldots,A_n\in\text{DerivedAssertions}\)</p>
+\[A_1(x),\ldots,A_n\in\text{DerivedAssertions}\]</p>
 
 <h3 id="example">Example</h3>
 <p>Let:</p>
 
 <ul>
-  <li>$K_a={A_1(a)}$</li>
-  <li>$K_a={A_1(x)\rightarrow A_2(x),A_2(x)\rightarrow A_3(x)}$</li>
+  <li>\(K_a=\{A_1(a)\}\)</li>
+  <li>\(K_a=\{A_1(x)\rightarrow A_2(x),A_2(x)\rightarrow A_3(x)\}\)</li>
 </ul>
 
 <p>In:</p>
 
 <ul>
   <li>
-    <p>First $\text{DerivedAssertions}$ contains $K_a$ only.</p>
+    <p>First \(\text{DerivedAssertions}\) contains \(K_a\) only.</p>
   </li>
   <li>
-    <p>Then an application of $A_1(x)\rightarrow A_2(x)$ to $A_1(a)$ adds $A_2(a)$ to $\text{DerivedAssertions}$.</p>
+    <p>Then an application of \(A_1(x)\rightarrow A_2(x)\) to \(A_1(a)\) adds \(A_2(a)\) to \(\text{DerivedAssertions}\).</p>
   </li>
   <li>
-    <p>Then an application of $A_2(x)\rightarrow A_3(x)$ to $A_2(a)$ adds $A_3(a)$ to $\text{DerivedAssertions}$.</p>
+    <p>Then an application of \(A_2(x)\rightarrow A_3(x)\) to \(A_2(a)\) adds \(A_3(a)\) to \(\text{DerivedAssertions}\).</p>
   </li>
   <li>
     <p>Now no rule is applicable. Thus:
-\(\text{DerivedAssertions}=\{A_1(a),A_2(a),A_3(a)\}\)
+\[\text{DerivedAssertions}=\{A_1(a),A_2(a),A_3(a)\}\]
 is returned.</p>
   </li>
 </ul>
@@ -966,7 +966,7 @@ is returned.</p>
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

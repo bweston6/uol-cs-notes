@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - Properties of Searches</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-10-20-3.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-10-20-3.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - Properties of Searches"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -894,19 +894,19 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>Time and space complexity are measured in terms of:</p>
 
 <ul>
-  <li>$b$ - Maximum branching factor
+  <li>\(b\) - Maximum branching factor
     <ul>
       <li>The maximal number of successor states of a state in the state space.</li>
     </ul>
   </li>
-  <li>$d$ - Depth of the optimal solution
+  <li>\(d\) - Depth of the optimal solution
     <ul>
       <li>The length of the shortest path from the start state to a goal state.</li>
     </ul>
   </li>
-  <li>$m$ - Maximum depth of the state space
+  <li>\(m\) - Maximum depth of the state space
     <ul>
-      <li>the length of the longest path in the state space (may be $\infty$ to to loops)</li>
+      <li>the length of the longest path in the state space (may be \(\infty\) to to loops)</li>
     </ul>
   </li>
 </ul>
@@ -914,34 +914,34 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <h3 id="example-1---8-puzzle">Example 1 - 8 Puzzle</h3>
 
 <ul>
-  <li>$b$ (maximum branching factor) is 4</li>
-  <li>$d$ (optimal solution) is 31</li>
-  <li>$m$ (longest path) is $\infty$ as there are cycles</li>
+  <li>\(b\) (maximum branching factor) is 4</li>
+  <li>\(d\) (optimal solution) is 31</li>
+  <li>\(m\) (longest path) is \(\infty\) as there are cycles</li>
 </ul>
 
 <h3 id="example-2---holiday-in-romania">Example 2 - Holiday in Romania</h3>
 
 <ul>
-  <li>$b=4$</li>
-  <li>$d=3$</li>
-  <li>$m=\infty$</li>
+  <li>\(b=4\)</li>
+  <li>\(d=3\)</li>
+  <li>\(m=\infty\)</li>
 </ul>
 
 <h2 id="properties-of-breadth-first-search">Properties of Breadth First Search</h2>
 
-<p class="info">The number of paths of length $d$ in a search tree with maximum branching factor $b$ is at most $b^d$.</p>
+<p class="info">The number of paths of length \(d\) in a search tree with maximum branching factor \(b\) is at most \(b^d\).</p>
 
-<p class="info">The number of paths of length at most $d$ in a search tree with maximum branching factor $b$ is at most $1+b+b^2+\ldots + b^d$.</p>
+<p class="info">The number of paths of length at most \(d\) in a search tree with maximum branching factor \(b\) is at most \(1+b+b^2+\ldots + b^d\).</p>
 
 <ul>
   <li>Time complexity
     <ul>
-      <li>If the shortest path to a goal state has length $d$ then the worst case BFS will look at: \(1+b+B^2+\ldots +b^d\) paths before reaching a goal state.</li>
+      <li>If the shortest path to a goal state has length \(d\) then the worst case BFS will look at: \[1+b+B^2+\ldots +b^d\] paths before reaching a goal state.</li>
     </ul>
   </li>
   <li>Space complexity
     <ul>
-      <li>If the shortest path to a goal state has length $d$, then in the worst case the frontier can contain $b^d$ paths and so the memory requirement is $b^d$.</li>
+      <li>If the shortest path to a goal state has length \(d\), then in the worst case the frontier can contain \(b^d\) paths and so the memory requirement is \(b^d\).</li>
     </ul>
   </li>
 </ul>
@@ -1009,12 +1009,12 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   <li>Not optimal - Solution is not guaranteed to be the shortest path.</li>
   <li>Time Complexity
     <ul>
-      <li>If the length of the longest path from the start state is $m$, then the worst case DFS will look at: \(1+b+b^2+\ldots +b^m\) This may be an issue as $m$ is infinite in many problems.</li>
+      <li>If the length of the longest path from the start state is \(m\), then the worst case DFS will look at: \[1+b+b^2+\ldots +b^m\] This may be an issue as \(m\) is infinite in many problems.</li>
     </ul>
   </li>
   <li>Space Complexity
     <ul>
-      <li>If the length of the longest path starting at a goal state is $m$, then the worst case the frontier can contain: \(b\times m\) paths. if $m$ is infinite, then the space requirement is infinite in the worst case. But if DFS finds a path to the goal state, then memory requirement is much less than for BFS.</li>
+      <li>If the length of the longest path starting at a goal state is \(m\), then the worst case the frontier can contain: \[b\times m\] paths. if \(m\) is infinite, then the space requirement is infinite in the worst case. But if DFS finds a path to the goal state, then memory requirement is much less than for BFS.</li>
     </ul>
   </li>
 </ul>
@@ -1080,7 +1080,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

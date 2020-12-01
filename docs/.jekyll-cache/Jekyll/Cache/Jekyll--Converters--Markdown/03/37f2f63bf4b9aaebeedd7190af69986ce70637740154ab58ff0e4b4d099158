@@ -1,0 +1,106 @@
+I"\<h2 id="notation-for-sets">Notation for Sets</h2>
+<p>A set is a collection of objects, called the elements of the set.</p>
+
+<ul>
+  <li>\(\{7,5,3\}\)</li>
+</ul>
+
+<p>We have written down the element of each set and contained them between the braces \(\{\}\).</p>
+
+<p>Repetitions and orderings don’t matter in sets hence \(\{7,5,3\}\) is the same as \(\{5,3,3,3,7\}\).</p>
+
+<p>We write \(a\in A\) to denote that the object \(a\) is an element of the set \(a\): \[7\in\{7,5,3\},4\notin\{7,5,3\}\]</p>
+
+<p class="info">The order of elements does not matter.</p>
+
+<p class="info">Repetitions don’t count.</p>
+
+<p>For a large set, especially an infinite set, we cannot write down all the elements. We use a <strong>predicate</strong> \(P\) instead.
+\[A=\{x\in S\vert P(x)\]
+denotes the set of objects \(x\) from \(S\) fro which the predicate \(P(x)\) is true.</p>
+
+<h3 id="example">Example</h3>
+<p>Let:
+\[A = \{1,3,5,7,\ldots\}\]
+Then:
+\[A=\{x\in \mathbb{Z} \vert x \text{ is odd}\}\]</p>
+
+<h2 id="more-examples">More Examples</h2>
+<p>Find simpler descriptions of the following sets by listing their elements. (The set \(A\) is written properly however \(B\) and \(C\) are written informally.</p>
+
+<ol>
+  <li>
+    <p>\(A=\{x\in\mathbb{z}\vert x^2+4x=12\}\)</p>
+
+    <p>\(\{2,-6\}\)</p>
+  </li>
+  <li>
+    <p>\(B=\{n^2\vert n \text{ is an integer}\}\)</p>
+
+    <p>\(\{0,1,4,9,16,25,\ldots\}\)</p>
+
+    <p>\(B=\{m\in\mathbb{Z}\vert m=n^2 \text{ for some integer } n\}\)</p>
+  </li>
+  <li>
+    <p>\(C=\{x\vert x \text{ a day of the week not containing “u”}\}\)</p>
+
+    <p>\(\{\text{Monday, Wednesday, Friday}\}\)</p>
+  </li>
+</ol>
+
+<h2 id="important-sets">Important Sets</h2>
+<p>The empty set had no elements. It is written as \(\emptyset\) or as \(\{\}\).</p>
+
+<p>Here are some other sets:</p>
+
+<ul>
+  <li>\(\mathbb{N}=\{0,1,2,3,\ldots\}\) The natural numbers.</li>
+  <li>\(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\) The integers.</li>
+  <li>\(\mathbb{Z^+}=\{1,2,3,\ldots\}\) The positive integers.</li>
+  <li>\(\mathbb{Q}=\{\frac{x}{y}\vert x \in\mathbb{Z},y\in\mathbb{Z},y\neq0\}\) The rationals.</li>
+  <li>\(\mathbb{R}\) Real numbers.
+    <ul>
+      <li>\([a,b]=\{x\in\mathbb{R}\vert a\leq x \leq b\}\) The set of real numbers between \(a\) and \(b\) inclusive.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="computer-representation-of-sets">Computer Representation of Sets</h2>
+<p>Only finite sets can represented.</p>
+
+<ul>
+  <li>Number of elements not fixed.
+    <ul>
+      <li>Lists</li>
+    </ul>
+  </li>
+  <li>All elements of \(A\) are drawn from some ordered sequence \(S=\langle s_1,\ldots,s_n\rangle\). The characteristic vector of \(A\) is the sequence \([b_1,\ldots,b_n]\) where:
+\[
+  b_i=
+  \begin{cases}
+    1 &amp; \text{if}\ S_i\in A \\
+    0 &amp; \text{if}\ S_i\notin A
+  \end{cases}
+\]</li>
+  <li>Sequences of zeros and ones of length \(n\) are called bit strings of length \(n\). These are also known as bit vectors or bit arrays.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<p>Let \(S\langle 1,2,3,4,5\rangle, A = \{1,3,5\}\) and \(B=\{3,4\}\)</p>
+
+<ul>
+  <li>Characteristic vectors show how sets relate to sequences. The \(1\) shows that the value is in the set.
+    <ul>
+      <li>The characteristic vector of \(A\) is \([1,0,1,0,1]\).</li>
+      <li>The characteristic vector of \(B\) is \([0,0,1,1,0]\).</li>
+    </ul>
+  </li>
+  <li>You would answer a question in the opposite direction like so:
+    <ul>
+      <li>The set characterised by \([1,1,1,0,1]\) is \(\{1,2,3,5\}\).</li>
+      <li>The set characterised by \([1,1,1,1,1]\) is \(\{1,2,3,4,5\}\).</li>
+      <li>The set characterised by \([0,0,0,0,0]\) is \(\emptyset\).</li>
+    </ul>
+  </li>
+</ul>
+:ET

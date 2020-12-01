@@ -1,0 +1,28 @@
+I"ú
+<h1 id="comp109---tutorial-4"><a href="/UoL/comp109/tutorials/2020/11/10/1.html">COMP109 - Tutorial 4</a></h1>
+<p>For the following questions:</p>
+
+<ul>
+  <li>\(\emptyset \in\{\text{Leeds, Liverpool}\}\)
+    <ul>
+      <li>False</li>
+    </ul>
+  </li>
+  <li>\(\emptyset \subseteq\{\text{Leeds, Liverpool}\}\)
+    <ul>
+      <li>True</li>
+    </ul>
+  </li>
+  <li>\(\emptyset = \{\}\)
+    <ul>
+      <li>False as they are different types.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="comp109---tutorial-1"><a href="/UoL/comp109/tutorials/2020/10/19/1.html">COMP109 - Tutorial 1</a></h1>
+<p>This is following the questions from the tutorial for week 1.</p>
+
+<p>The tutorial leaderâ€™s email is: <a href="mailto:p.austin@liverpool.ac.uk">p.austin@liverpool.ac.uk</a></p>
+
+:ET

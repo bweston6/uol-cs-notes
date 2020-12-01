@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP111 - Propositional Knowledge Bases and Reasoning</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP111/Lectures/_posts/2020-11-12-4.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP111/Lectures/_posts/2020-11-12-4.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP111 - Propositional Knowledge Bases and Reasoning"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
@@ -863,43 +863,43 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>Let:</p>
 
 <ul>
-  <li>$m$: The meeting takes place.</li>
-  <li>$a$: All members have been informed.</li>
-  <li>$p$: There is a postal strike.</li>
-  <li>$q$: The meeting is quorate.</li>
-  <li>$f$: There are at least 15 members present.</li>
+  <li>\(m\): The meeting takes place.</li>
+  <li>\(a\): All members have been informed.</li>
+  <li>\(p\): There is a postal strike.</li>
+  <li>\(q\): The meeting is quorate.</li>
+  <li>\(f\): There are at least 15 members present.</li>
 </ul>
 
 <p>Then the text can be formalised as the following knowledge base:</p>
 
-\[((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\]
+<p>\[((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\]</p>
 
 <h2 id="definition">Definition</h2>
-<p>A propositional knowledge base $X$ is a finite set of propositional formulas.</p>
+<p>A propositional knowledge base \(X\) is a finite set of propositional formulas.</p>
 
-<p>Suppose a propositional knowledge base $X$ is given. Then a propositional formula $P$ follows from $X$ if the following folds for ever interpretation $I$:</p>
+<p>Suppose a propositional knowledge base \(X\) is given. Then a propositional formula \(P\) follows from \(X\) if the following folds for ever interpretation \(I\):</p>
 
-\[\text{If } I(Q) = 1 \text{ for all } Q\in X, \text{ then } I(P)=1\]
+<p>\[\text{If } I(Q) = 1 \text{ for all } Q\in X, \text{ then } I(P)=1\]</p>
 
 <p>This is denoted by:</p>
 
-\[X\models P\]
+<p>\[X\models P\]</p>
 
 <h3 id="example">Example</h3>
 <p>We have seen that:</p>
 
-\[\{((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\}\models(\neg m \Rightarrow(\neg f \vee p))\]
+<p>\[\{((a\wedge q)\Rightarrow m ), (f\Rightarrow q), (\neg p\Rightarrow a)\}\models(\neg m \Rightarrow(\neg f \vee p))\]</p>
 
 <h2 id="simpler-example">Simpler Example</h2>
-<p>Show ${(p_1\wedge p_2)}\models(p_1\vee p_2)$</p>
+<p>Show \(\{(p_1\wedge p_2)\}\models(p_1\vee p_2)\)</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">$p_1$</th>
-      <th style="text-align: center">$p_2$</th>
-      <th style="text-align: center">$(p_1\wedge p_2)$</th>
-      <th style="text-align: center">$(p_1\vee p_2)$</th>
+      <th style="text-align: center">\(p_1\)</th>
+      <th style="text-align: center">\(p_2\)</th>
+      <th style="text-align: center">\((p_1\wedge p_2)\)</th>
+      <th style="text-align: center">\((p_1\vee p_2)\)</th>
     </tr>
   </thead>
   <tbody>
@@ -936,25 +936,25 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
   </tbody>
 </table>
 
-<p>Thus, from $I(p_1\wedge p_2) = 1$ is follows that $I(P_1\vee p_2)=1$. We are basically seeing if the left hand side is a subset of the right hand side. “If the statement on the left is true, then the statement on the right is true.”</p>
+<p>Thus, from \(I(p_1\wedge p_2) = 1\) is follows that \(I(P_1\vee p_2)=1\). We are basically seeing if the left hand side is a subset of the right hand side. “If the statement on the left is true, then the statement on the right is true.”</p>
 
 <h2 id="reasoning">Reasoning</h2>
 <p>We want a computer to solve this for us so we should take the following into account:</p>
 
 <ul>
-  <li>$X\models P$ if $I(P)=1$ for all interpretations $I$ such that $I(Q)=1$ for all $Q\in X$.</li>
-  <li>There are $2^n$ different relevant interpretations if $P$ and $X$ together heave $n$ propositional atoms.</li>
-  <li>Thus, to check $X\models P$ directly using truth tables, a table with $2^n$ rows is needed.</li>
+  <li>\(X\models P\) if \(I(P)=1\) for all interpretations \(I\) such that \(I(Q)=1\) for all \(Q\in X\).</li>
+  <li>There are \(2^n\) different relevant interpretations if \(P\) and \(X\) together heave \(n\) propositional atoms.</li>
+  <li>Thus, to check \(X\models P\) directly using truth tables, a table with \(2^n\) rows is needed.</li>
   <li>
-    <p>$X\models P$ can be checked using a SAT solver:</p>
+    <p>\(X\models P\) can be checked using a SAT solver:</p>
 
-    <p>Assume that $X$ contains the propositional formula $P_1,\ldots,P_n$ and let</p>
+    <p>Assume that \(X\) contains the propositional formula \(P_1,\ldots,P_n\) and let</p>
 
-\[Q=P_1\wedge\ldots\wedge P_n\wedge\neg P\]
+    <p>\[Q=P_1\wedge\ldots\wedge P_n\wedge\neg P\]</p>
 
     <p>Then:</p>
 
-    <p>$X\models P$ if and only if $Q$ is not satisfiable.</p>
+    <p>\(X\models P\) if and only if \(Q\) is not satisfiable.</p>
 
     <p>This means that the knowledge base is not satisfiable if when all propositions in the knowledge base are true but still the knowledge base is false.</p>
   </li>
@@ -1024,7 +1024,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

@@ -857,6 +857,82 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
+<h1 id="comp107---tutorial-4"><a href="/UoL/comp107/tutorials/2020/11/27/1.html">COMP107 - Tutorial 4</a></h1>
+<h2 id="er-by-view-integration">ER by View Integration</h2>
+
+<p>You should consider each user perspective separately.</p>
+
+<ul>
+  <li>Requirements are given for many users groups or applications independently.</li>
+  <li>an ER schema is designed  for each user group and application (typically by different developers.)</li>
+  <li>Individual views are merged into a global conceptual schema.</li>
+  <li>Individual views can be reconstructed as external schema after view integration.</li>
+</ul>
+
+<h3 id="view-integration">View Integration</h3>
+
+<ol>
+  <li>Identification of correspondences and conflicts among schema.
+    <ul>
+      <li>Need to identify constructs in schemas that represent the same real-world concept.</li>
+    </ul>
+  </li>
+  <li>Modification of views to conform to one another.
+    <ul>
+      <li>Some of the view schemas may need to be refined to resolve conflicts identified in 1.</li>
+    </ul>
+  </li>
+  <li>Merging of views.
+    <ul>
+      <li>Global schema is created by merging individual schemas.</li>
+    </ul>
+  </li>
+  <li>Restructuring.
+    <ul>
+      <li>Global schema may require further refinement to remove redundancies or unnecessary complexity.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="example">Example</h4>
+<ol>
+  <li>In the example we put up all the diagrams next to each other to view the conflicts. They include:
+    <ul>
+      <li>Names (including synonyms).
+        <ul>
+          <li>Homonyms - Using the same name for different things.</li>
+        </ul>
+      </li>
+      <li>Notions
+        <ul>
+          <li>Where concepts are represented as entities or attributes.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>From this you change each view individually to make them coherent with each other.</li>
+  <li>After this you eliminate redundancies to make them into a single diagram.</li>
+</ol>
+
+<h3 id="task">Task</h3>
+<p>Draw and ER or EER model to describe a library by using a view integration approach.</p>
+
+<p>The group made this in the first phase:</p>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-27-1-1.svg" alt="1st Phase" /></p>
+
+<p class="warning">We should stick very specifically to the story. Over-designing is bad for other people’s designs and you should stick to only the points in your story.</p>
+
+<p class="error">The subject of the user story <strong>does not</strong> need to be included in the diagram. This is because they are the user and don’t need data stored about them to use the database.</p>
+
+<p>The group made this in the second phase.</p>
+
+<p><img src="/UoL/assets/COMP107/Tutorials/2020-11-27-1-2.svg" alt="1st Phase" /></p>
+
+<p class="error">Attributes should not be shared between different entities.</p>
+
+<p class="error">The attribute course should be an entity and not a complex attribute. This would make a student enrolled in many courses.</p>
+
 <h1 id="comp107---seminar-5"><a href="/UoL/comp107/seminars/2020/11/23/1.html">COMP107 - Seminar 5</a></h1>
 <h2 id="enhanced-er">Enhanced ER</h2>
 <p>EER is an ER model bu with hierarchal relationships.</p>
@@ -933,7 +1009,7 @@ The notation mentioned here is notation <em>e)(i)</em> in the book.</p>
 
 <ul>
   <li>Subclasses are attached to a circle which is connected with the superclass.</li>
-  <li>The subset symbol $\subset$ indicates direction of a relationship.</li>
+  <li>The subset symbol \(\subset\) indicates direction of a relationship.</li>
   <li>Generic attributes are attaches to the superclass.</li>
   <li>Specific attributes are attaches to the subclasses.</li>
 </ul>
@@ -1412,7 +1488,7 @@ s ---|"(0,1) Supervisee"| Employee
 </ul>
 
 <h4 id="cardinality">Cardinality</h4>
-<p>Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality $&gt;0$.</p>
+<p>Some attributes may have more than one value. If this is the case then you can say that a particular value has a cardinality \(&gt;0\).</p>
 
 <h4 id="primitiveness">Primitiveness</h4>
 <p>A primitive attribute is any attribute which will be stored as data in the system.</p>
@@ -1574,7 +1650,7 @@ l --- s((&lt;u&gt;Staff Number&lt;/u&gt;))
   <li>Binary relationships between two entities.</li>
   <li>Ternary relationships among three entities.</li>
   <li>If entities participate to several relationships, a <em>role</em> may be added to some edges for clarity.</li>
-  <li>The cardinality is represented on the connecting lines (an $N$ represents the many side.
+  <li>The cardinality is represented on the connecting lines (an \(N\) represents the many side.
     <ul>
       <li>One to many (works_in)</li>
       <li>Many to many (teaches, advises)</li>
@@ -2600,7 +2676,7 @@ D --&gt; E[Physical Model]
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

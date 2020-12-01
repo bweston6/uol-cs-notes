@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>COMP109 - (Naive) Set Theory - Uni Notes</title>
 
-<meta name="description" content="Notation for SetsA set is a collection of objects, called the elements of the set.  ${7,5,3}$We have written down the element of each set and contained them ...">
+<meta name="description" content="Notation for SetsA set is a collection of objects, called the elements of the set.  \(\{7,5,3\}\)We have written down the element of each set and contained t...">
 <link rel="canonical" href="http://localhost:4000/UoL/comp109/lectures/2020/11/03/1.html"><link rel="alternate" type="application/rss+xml" title="Uni Notes" href="/UoL/feed.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP109 - (Naive) Set Theory</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP109/Lectures/_posts/2020-11-03-1.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP109/Lectures/_posts/2020-11-03-1.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP109 - (Naive) Set Theory"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
@@ -860,65 +860,65 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>A set is a collection of objects, called the elements of the set.</p>
 
 <ul>
-  <li>${7,5,3}$</li>
+  <li>\(\{7,5,3\}\)</li>
 </ul>
 
-<p>We have written down the element of each set and contained them between the braces ${}$.</p>
+<p>We have written down the element of each set and contained them between the braces \(\{\}\).</p>
 
-<p>Repetitions and orderings don’t matter in sets hence ${7,5,3}$ is the same as ${5,3,3,3,7}$.</p>
+<p>Repetitions and orderings don’t matter in sets hence \(\{7,5,3\}\) is the same as \(\{5,3,3,3,7\}\).</p>
 
-<p>We write $a\in A$ to denote that the object $a$ is an element of the set $a$: \(7\in\{7,5,3\},4\notin\{7,5,3\}\)</p>
+<p>We write \(a\in A\) to denote that the object \(a\) is an element of the set \(a\): \[7\in\{7,5,3\},4\notin\{7,5,3\}\]</p>
 
 <p class="info">The order of elements does not matter.</p>
 
 <p class="info">Repetitions don’t count.</p>
 
-<p>For a large set, especially an infinite set, we cannot write down all the elements. We use a <strong>predicate</strong> $P$ instead.
-\(A=\{x\in S\vert P(x)\)
-denotes the set of objects $x$ from $S$ fro which the predicate $P(x)$ is true.</p>
+<p>For a large set, especially an infinite set, we cannot write down all the elements. We use a <strong>predicate</strong> \(P\) instead.
+\[A=\{x\in S\vert P(x)\]
+denotes the set of objects \(x\) from \(S\) fro which the predicate \(P(x)\) is true.</p>
 
 <h3 id="example">Example</h3>
 <p>Let:
-\(A = \{1,3,5,7,\ldots\}\)
+\[A = \{1,3,5,7,\ldots\}\]
 Then:
-\(A=\{x\in \mathbb{Z} \vert x \text{ is odd}\}\)</p>
+\[A=\{x\in \mathbb{Z} \vert x \text{ is odd}\}\]</p>
 
 <h2 id="more-examples">More Examples</h2>
-<p>Find simpler descriptions of the following sets by listing their elements. (The set $A$ is written properly however $B$ and $C$ are written informally.</p>
+<p>Find simpler descriptions of the following sets by listing their elements. (The set \(A\) is written properly however \(B\) and \(C\) are written informally.</p>
 
 <ol>
   <li>
-    <p>$A={x\in\mathbb{z}\vert x^2+4x=12}$</p>
+    <p>\(A=\{x\in\mathbb{z}\vert x^2+4x=12\}\)</p>
 
-    <p>${2,-6}$</p>
+    <p>\(\{2,-6\}\)</p>
   </li>
   <li>
-    <p>$B={n^2\vert n \text{ is an integer}}$</p>
+    <p>\(B=\{n^2\vert n \text{ is an integer}\}\)</p>
 
-    <p>${0,1,4,9,16,25,\ldots}$</p>
+    <p>\(\{0,1,4,9,16,25,\ldots\}\)</p>
 
-    <p>$B={m\in\mathbb{Z}\vert m=n^2 \text{ for some integer } n}$</p>
+    <p>\(B=\{m\in\mathbb{Z}\vert m=n^2 \text{ for some integer } n\}\)</p>
   </li>
   <li>
-    <p>$C={x\vert x \text{ a day of the week not containing “u”}}$</p>
+    <p>\(C=\{x\vert x \text{ a day of the week not containing “u”}\}\)</p>
 
-    <p>${\text{Monday, Wednesday, Friday}}$</p>
+    <p>\(\{\text{Monday, Wednesday, Friday}\}\)</p>
   </li>
 </ol>
 
 <h2 id="important-sets">Important Sets</h2>
-<p>The empty set had no elements. It is written as $\emptyset$ or as ${}$.</p>
+<p>The empty set had no elements. It is written as \(\emptyset\) or as \(\{\}\).</p>
 
 <p>Here are some other sets:</p>
 
 <ul>
-  <li>$\mathbb{N}={0,1,2,3,\ldots}$ The natural numbers.</li>
-  <li>$\mathbb{Z}={\ldots,-2,-1,0,1,2,\ldots}$ The integers.</li>
-  <li>$\mathbb{Z^+}={1,2,3,\ldots}$ The positive integers.</li>
-  <li>$\mathbb{Q}={\frac{x}{y}\vert x \in\mathbb{Z},y\in\mathbb{Z},y\neq0}$ The rationals.</li>
-  <li>$\mathbb{R}$ Real numbers.
+  <li>\(\mathbb{N}=\{0,1,2,3,\ldots\}\) The natural numbers.</li>
+  <li>\(\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}\) The integers.</li>
+  <li>\(\mathbb{Z^+}=\{1,2,3,\ldots\}\) The positive integers.</li>
+  <li>\(\mathbb{Q}=\{\frac{x}{y}\vert x \in\mathbb{Z},y\in\mathbb{Z},y\neq0\}\) The rationals.</li>
+  <li>\(\mathbb{R}\) Real numbers.
     <ul>
-      <li>$[a,b]={x\in\mathbb{R}\vert a\leq x \leq b}$ The set of real numbers between $a$ and $b$ inclusive.</li>
+      <li>\([a,b]=\{x\in\mathbb{R}\vert a\leq x \leq b\}\) The set of real numbers between \(a\) and \(b\) inclusive.</li>
     </ul>
   </li>
 </ul>
@@ -932,30 +932,32 @@ Then:
       <li>Lists</li>
     </ul>
   </li>
-  <li>All elements of $A$ are drawn from some ordered sequence $S=\langle s_1,\ldots,s_n\rangle$. The characteristic vector of $A$ is the sequence $[b_1,\ldots,b_n]$ where:
-\(b_i=
+  <li>All elements of \(A\) are drawn from some ordered sequence \(S=\langle s_1,\ldots,s_n\rangle\). The characteristic vector of \(A\) is the sequence \([b_1,\ldots,b_n]\) where:
+\[
+  b_i=
   \begin{cases}
     1 &amp; \text{if}\ S_i\in A \\
     0 &amp; \text{if}\ S_i\notin A
-  \end{cases}\)</li>
-  <li>Sequences of zeros and ones of length $n$ are called bit strings of length $n$. These are also known as bit vectors or bit arrays.</li>
+  \end{cases}
+\]</li>
+  <li>Sequences of zeros and ones of length \(n\) are called bit strings of length \(n\). These are also known as bit vectors or bit arrays.</li>
 </ul>
 
 <h3 id="examples">Examples</h3>
-<p>Let $S\langle 1,2,3,4,5\rangle, A = {1,3,5}$ and $B={3,4}$</p>
+<p>Let \(S\langle 1,2,3,4,5\rangle, A = \{1,3,5\}\) and \(B=\{3,4\}\)</p>
 
 <ul>
-  <li>Characteristic vectors show how sets relate to sequences. The $1$ shows that the value is in the set.
+  <li>Characteristic vectors show how sets relate to sequences. The \(1\) shows that the value is in the set.
     <ul>
-      <li>The characteristic vector of $A$ is $[1,0,1,0,1]$.</li>
-      <li>The characteristic vector of $B$ is $[0,0,1,1,0]$.</li>
+      <li>The characteristic vector of \(A\) is \([1,0,1,0,1]\).</li>
+      <li>The characteristic vector of \(B\) is \([0,0,1,1,0]\).</li>
     </ul>
   </li>
   <li>You would answer a question in the opposite direction like so:
     <ul>
-      <li>The set characterised by $[1,1,1,0,1]$ is ${1,2,3,5}$.</li>
-      <li>The set characterised by $[1,1,1,1,1]$ is ${1,2,3,4,5}$.</li>
-      <li>The set characterised by $[0,0,0,0,0]$ is $\emptyset$.</li>
+      <li>The set characterised by \([1,1,1,0,1]\) is \(\{1,2,3,5\}\).</li>
+      <li>The set characterised by \([1,1,1,1,1]\) is \(\{1,2,3,4,5\}\).</li>
+      <li>The set characterised by \([0,0,0,0,0]\) is \(\emptyset\).</li>
     </ul>
   </li>
 </ul>
@@ -1014,7 +1016,7 @@ Then:
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

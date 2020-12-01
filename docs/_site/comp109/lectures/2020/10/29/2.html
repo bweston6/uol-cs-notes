@@ -844,7 +844,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>COMP109 - Strong Induction</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
-            href="https://github.com/bweston6/UoL/tree/master/docs/COMP109/Lectures/_posts/2020-10-29-2.md">
+            href="https://github.com/bweston6/UoL/tree/main/docs/COMP109/Lectures/_posts/2020-10-29-2.md">
             <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="COMP109 - Strong Induction"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP109">COMP109</a>
@@ -861,59 +861,63 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <p>It uses a base case so show that it holds for an individual number and an induction rule that proves that it holds for all numbers following.</p>
 
 <ul>
-  <li>Prove that the property holds for the natural number $n=0$</li>
-  <li>Prove that if the property holds for $n=0,1,\ldots,m$ (and not just for m) then it holds for $n=m+1$.</li>
+  <li>Prove that the property holds for the natural number \(n=0\)</li>
+  <li>Prove that if the property holds for \(n=0,1,\ldots,m\) (and not just for m) then it holds for \(n=m+1\).</li>
 </ul>
 
-<p>Can also be used to prove a property for all integers greater than or equal to some particular natural number $b$.</p>
+<p>Can also be used to prove a property for all integers greater than or equal to some particular natural number \(b\).</p>
 
 <h2 id="example-1">Example 1</h2>
-<p>Every natural number $n \geq 2$, is a prime or product of primes.</p>
+<p>Every natural number \(n \geq 2\), is a prime or product of primes.</p>
 
 <h3 id="base-case">Base Case</h3>
-<p>Take $n=2$</p>
+<p>Take \(n=2\)</p>
 
-<p>Then $n$ is a prime number.</p>
+<p>Then \(n\) is a prime number.</p>
 
 <h3 id="inductive-step">Inductive Step</h3>
-<p>Assume that the property holds for $n=m$ so every number $i$ such that $2\leq i\leq m$ is a prime or a product of primes.</p>
+<p>Assume that the property holds for \(n=m\) so every number \(i\) such that \(2\leq i\leq m\) is a prime or a product of primes.</p>
 
-<p>Now consider $n=m+1$.</p>
+<p>Now consider \(n=m+1\).</p>
 
 <p>We proceed by considering cases.</p>
 
 <h4 id="case-1">Case 1</h4>
-<p>$m+1$ is prime.</p>
+<p>\(m+1\) is prime.</p>
 
 <p>There is nothing to prove.</p>
 
 <h4 id="case-2">Case 2</h4>
-<p>$m+1$ is not prime.</p>
+<p>\(m+1\) is not prime.</p>
 
-<p>So $m+1=k\times l$, where $k\neq1,\ k\neq m+1$ and $l\neq 1,\ l\neq\ m+1$</p>
+<p>So \(m+1=k\times l\), where \(k\neq1,\ k\neq m+1\) and \(l\neq 1,\ l\neq\ m+1\)</p>
 
-<p>So $k\geq2,\ l\geq2,\ k\leq m,\ l \leq m$</p>
+<p>So \(k\geq2,\ l\geq2,\ k\leq m,\ l \leq m\)</p>
 
-<p>So $k=P_1\ldots P_n,\ l=Q_1\ldots Q_m$. Then $k\times l$ is a product of primes.</p>
+<p>So \(k=P_1\ldots P_n,\ l=Q_1\ldots Q_m\). Then \(k\times l\) is a product of primes.</p>
 
 <h2 id="example-2">Example 2</h2>
-<p>For any integer $n\geq1$, if $x_1,x_2,\ldots,x_n$ are $n$ numbers, then no matter how the parentheses are inserted into their product, the number of multiplications used to compute the products is $n-1$.</p>
+<p>For any integer \(n\geq1\), if \(x_1,x_2,\ldots,x_n\) are \(n\) numbers, then no matter how the parentheses are inserted into their product, the number of multiplications used to compute the products is \(n-1\).</p>
 
 <p class="info">As the number are all individual you can’t use tricks like using already computed values to speed up the computation.</p>
 
 <h3 id="base-case-1">Base Case</h3>
-<p>\(X_1 \text{ for } n=1,\ n-1=0\)</p>
+<p>\[
+X_1 \text{ for } n=1,\ n-1=0
+\]</p>
 
 <h3 id="induction-step">Induction Step</h3>
-<p>Suppose that no matter how I put parentheses on a sequence of $i$ elements, where $1\leq i\leq m$, I need $m-1$ multiplications.</p>
+<p>Suppose that no matter how I put parentheses on a sequence of \(i\) elements, where \(1\leq i\leq m\), I need \(m-1\) multiplications.</p>
 
-<p>Consider, where $1\leq l \leq m$:
-\(\underbrace{\underbrace{(x_1\times\ldots)}_{l}\times\underbrace{(\ldots\times x_{m+1})}_{m+1-l}}_{m+1}\)</p>
+<p>Consider, where \(1\leq l \leq m\):
+\[
+\underbrace{\underbrace{(x_1\times\ldots)}<em>{l}\times\underbrace{(\ldots\times x</em>{m+1})}<em>{m+1-l}}</em>{m+1}
+\]</p>
 
 <p>By induction hypothesis
-\(\require{cancel}\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\)</p>
+\[\require{cancel}\cancel{l}-1+m+1-\cancel{l}-\cancel{1}+\cancel{1}=(m+1)-1\]</p>
 
-<p>This proves that the property holds for the next value to infinitude. $\square$</p>
+<p>This proves that the property holds for the next value to infinitude. \(\square\)</p>
 </div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-10-29T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->
@@ -969,7 +973,7 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 </div>
 </div>
     </div><div class="site-info mt-2">
-      <div>© Uni Notes 2020,
+      <div>© Ben Weston 2020,
         Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
         title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>

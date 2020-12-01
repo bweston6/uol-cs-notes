@@ -1,0 +1,125 @@
+I"‘<p>It was made in 1968 in Stanford by the team that constructed Shaky, the robot.</p>
+
+<ul>
+  <li>The basic idea was to combine uniform cost search and greedy search</li>
+  <li>We look at the cost so far and the estimated cost to goal</li>
+  <li>Thus  we use the <strong>heuristic</strong> \(f:\) \[f(s_0\ldots s_k)=g(s_0\ldots s_k)+ h(s_k)\] where:
+    <ul>
+      <li>\(g(s_0\ldots s_k)\) is the path cost of \(s_0\ldots s_k\)
+        <ul>
+          <li>Not heuristic</li>
+        </ul>
+      </li>
+      <li>\(h(s_k)\) is expected cost of cheapest solution from \(s_k\)
+        <ul>
+          <li>Is heuristic</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Aims to reduce the <strong>overall cost</strong>.</li>
+</ul>
+
+<h2 id="general-algorithm-for-a-search">General Algorithm for A* Search</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: a start state s_0
+		for each state s the successors of s
+		a test goal(s) checking whether s is a goal state
+		g(s_0...s_k) for every path s_0...s_k
+		h(s) for every state s
+		
+Set frontier := {s_0}
+while frontier is not empty do
+		select and remove from the frontier the path s_0...s_k
+		with g(s_0...s_k) + h(s_k) minimal
+		if goal(s_k) then
+			return s_0...s_k (and terminate)
+		else for every successor s of s_k and s_0...s_ks to frontier
+		end if
+end while
+</code></pre></div></div>
+
+<h3 id="example">Example</h3>
+<p>An A* search is completed on the following graph:</p>
+
+<pre><code class="language-mermaid">graph TD
+S[S, h = 8] --&gt;|1| A[A, h = 8]
+S --&gt;|5| B[B, h = 4]
+S --&gt;|8| C[C, h = 3]
+A --&gt;|3| D[D, h = Infty]
+A --&gt;|7| E[E, h = Infty]
+A --&gt;|9| G[G, h = 0]
+B --&gt;|4| G[G, h = 0]
+C --&gt;|5| G[G, h = 0]
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expanded Paths</th>
+      <th>Frontier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Â </td>
+      <td>S:8</td>
+    </tr>
+    <tr>
+      <td>S not goal</td>
+      <td>SA:9, SB:9, SC:11</td>
+    </tr>
+    <tr>
+      <td>SA not goal</td>
+      <td>SB:9, SC:11, SAD:Infty, SAE:Infty, SAG:10</td>
+    </tr>
+    <tr>
+      <td>SB not goal</td>
+      <td>SC:11, SAD:Infty, SAE:Infty, SAG:10, SBG:9</td>
+    </tr>
+    <tr>
+      <td>SGB is goal</td>
+      <td>SC:11, SAD:Infty, SAE:Infty, SAG:10</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Chose the value which has the lowest value
+    <ul>
+      <li>If the two values are the same it is non-deterministic.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="properties-of-a-search">Properties of A* Search</h2>
+
+<ul>
+  <li>Complete and optimal under minor conditions
+    <ul>
+      <li>If an <strong>admissible</strong> heuristic \(h\) is used: \[h(s)\leq h^<em>(s)\] where \(h^</em>\) is the true cost form \(s\) to goal.</li>
+      <li>Thus, a heuristic \(h\) is admissible if it never overestimates the distance to the goal (is optimistic).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+<ul>
+  <li>Heuristic functions estimate costs of shortest paths.
+    <ul>
+      <li>These can be obtained via computer learning to find better heuristic functions.</li>
+    </ul>
+  </li>
+  <li>Good heuristics can dramatically reduce search cost.</li>
+  <li>Greedy best-first search expands lowest \(h\).
+    <ul>
+      <li>Incomplete and not always optimal.</li>
+    </ul>
+  </li>
+  <li>A* search expands lowest \(g+h\).
+    <ul>
+      <li>Complete and optimal.</li>
+      <li>Optimally efficient.</li>
+    </ul>
+  </li>
+</ul>
+:ET
