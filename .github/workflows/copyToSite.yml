@@ -72,6 +72,11 @@ jobs:
           cp -r COMP111/Tutorials/*/*.md docs/COMP111/Tutorials/_posts
           cp -r COMP111/Tutorials/*/* docs/assets/COMP111/Tutorials
           rm -rf docs/assets/COMP111/Tutorials/*.md
+          mkdir -p docs/COMP107/Assessments/_posts
+          mkdir -p docs/assets/COMP107/Assessments
+          cp -r COMP107/Assessments/*/*/*.md docs/COMP107/Assessments/_posts
+          cp -r COMP107/Assessments/*/*/* docs/assets/COMP107/Assessments
+          rm -rf docs/assets/COMP107/Assessments/*.md
           grep -rliF ' $ ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$ /??????/g' @
           grep -rliF '$' docs/COMP*/*/* | xargs -i@ docs/tools/debuck @
           grep -rliF '\' docs/COMP*/*/* | xargs -i@ sed -i 's/\\(/\&#92;(/g; s/\\)/\&#92;)/g; s/\\\[/\&#92;\[/g; s/\\\]/\&#92;\]/g; s/\\{/\&#92;{/g; s/\\}/\&#92;}/g; s/\\\\/\&#92;\&#92;/g; s/\\\$/\&#92;\$/g' @
