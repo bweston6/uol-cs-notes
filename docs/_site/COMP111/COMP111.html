@@ -858,6 +858,79 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 <!-- end custom article top snippet -->
 <div class="article__content" itemprop="articleBody">
 <h1 id="comp111---independent-random-variables"><a href="/UoL/comp111/lectures/2020/12/01/1.html">COMP111 - Independent Random Variables</a></h1>
+<p>Random variables \(F\) and \(G\) are independent if:</p>
+
+<p>\[\mathbf{P}(F,G)=\mathbf{P}(F)\times\mathbf{P}(G)\]</p>
+
+<p>That is, for all values \(r\) and \(s\):</p>
+
+<p>\[P(F=r,G=s)=P(F=r)\times P(G=s)\]</p>
+
+<p>As one’s dental problems do not influence the weather, the pairs of random variables are each independent:</p>
+
+<ul>
+  <li>\(\text{Toothache},\text{Weather}\)</li>
+  <li>\(\text{Catch},\text{Weather}\)</li>
+  <li>\(\text{Cavity},\text{Weather}\)</li>
+</ul>
+
+<h2 id="example---weather-and-dental-problems">Example - Weather and Dental Problems</h2>
+<p>The full joint probability distribution:</p>
+
+<p>\[\mathbf{P}(\text{Toothache, Catch, Cavity, Weather})\]</p>
+
+<p>has 32 entries. It contains four tables for the dentist variables and one for the four kinds of weather.</p>
+
+<p class="info">The number of entries comes from the \(2\times2\times2\times4\) of the 2 outcomes for the 4 dentist variables and the 4 outcomes of the \(\text{Weather}\) variable.</p>
+
+<p>Thus we have:</p>
+
+<ul>
+  <li>8 probabilities for \((\text{Weather}=\text{sunny})\):
+    <ul>
+      <li>\(P(\text{Weather}=\text{sunny}, \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\)</li>
+    </ul>
+  </li>
+  <li>And so on for the other three weather types.</li>
+</ul>
+
+<p>Clearly we can make the independence assumption that for any combination of values of the random variables \(\text{Toothache, Catch, Cavity,}\) the probability for \(\text{Weather}\). For example:</p>
+
+<p>\[
+\begin{aligned}
+&amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp; P(\text{Weather}=\text{sunny})
+\end{aligned}
+\]</p>
+
+<p>for all \(r_1,r_2,r_3\in\{0,1\}\).</p>
+
+<p>Thus equivalently:</p>
+
+<p>\[
+\begin{aligned}
+&amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp; P(\text{Weather}=\text{sunny})P(\text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)
+\end{aligned}
+\]</p>
+
+<p>for all \(r_1,r_2,r_3\in\{0,1\}\).</p>
+
+<p>This means that they are related proportionally.</p>
+
+<p>We have seen that the join probability distribution</p>
+
+<p>\[\mathbf{P}(\text{Weather, Toothache, Catch, Cavity})\]</p>
+
+<p>can be written as:</p>
+
+<p>\[\mathbf{P}(\text{Weather})\times\mathbf{P}(\text{Toothache, Catch, Cavity})\]</p>
+
+<p>The 32-element table for four variables can be constructed from one 4-element table and an 8-element table.</p>
+
+<h2 id="independence-analysis">Independence Analysis</h2>
+<p>Unfortunately this type of independence is very rare as generally things that you want to compare are inter-related. This is especially true within a single domain.
+Conditional independence is much more prevalent and useful.</p>
 
 <h1 id="comp111---probabilistic-inference"><a href="/UoL/comp111/lectures/2020/11/25/2.html">COMP111 - Probabilistic Inference</a></h1>
 <h2 id="marginalisation">Marginalisation</h2>

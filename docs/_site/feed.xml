@@ -1,5 +1,254 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/UoL/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/UoL/" rel="alternate" type="text/html" /><updated>2020-12-01T15:01:11+00:00</updated><id>http://localhost:4000/UoL/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
-</subtitle><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><entry><title type="html">COMP105 - Lecture 23-1</title><link href="http://localhost:4000/UoL/comp105/lectures/2020/12/01/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 23-1" /><published>2020-12-01T00:00:00+00:00</published><updated>2020-12-01T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp105/lectures/2020/12/01/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp105/lectures/2020/12/01/1.html">&lt;p&gt;So far, we have studied pure functional programming. Pure functions:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/UoL/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/UoL/" rel="alternate" type="text/html" /><updated>2020-12-02T15:58:06+00:00</updated><id>http://localhost:4000/UoL/feed.xml</id><title type="html">Uni Notes</title><subtitle>A site containing my notes for all my modules taken at the University of Liverpool.
+</subtitle><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><entry><title type="html">COMP107 - Assessment 2 - Meeting 1</title><link href="http://localhost:4000/UoL/comp107/assessments/2020/12/02/1.html" rel="alternate" type="text/html" title="COMP107 - Assessment 2 - Meeting 1" /><published>2020-12-02T00:00:00+00:00</published><updated>2020-12-02T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp107/assessments/2020/12/02/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp107/assessments/2020/12/02/1.html">&lt;h2 id=&quot;role-call&quot;&gt;Role Call&lt;/h2&gt;
+&lt;p&gt;Liam, Ravi and Ben Weston were present.&lt;/p&gt;
+
+&lt;h2 id=&quot;identifying-submission-requirements&quot;&gt;Identifying Submission Requirements&lt;/h2&gt;
+&lt;p&gt;We had a look at the marking criteria to identify the requirements for the report.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Identify at least three users or view which provide three different perspectives on the model?&lt;/li&gt;
+  &lt;li&gt;For the user preservatives create 4 - 5 different user stories.&lt;/li&gt;
+  &lt;li&gt;Group them in a number of iterations.&lt;/li&gt;
+  &lt;li&gt;Draw out the user stories in an EER diagram. Over various iterations.
+    &lt;ul&gt;
+      &lt;li&gt;Draw EER diagram for each user story.&lt;/li&gt;
+      &lt;li&gt;Merge those together into user perspectives&lt;/li&gt;
+      &lt;li&gt;Merge those together into one EER diagram for the butler.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure to include all EER diagram features in our diagrams to make them as complete as possible.&lt;/p&gt;
+
+    &lt;p class=&quot;warning&quot;&gt;Find out about tableaux testing to check if your design produces spurious records.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Additionally there should be descriptions that tie the EER diagrams together.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;method-of-collaboration&quot;&gt;Method of Collaboration&lt;/h2&gt;
+&lt;p&gt;We should collaborate in a collaborative word document. The link will be in the chat and I will put it &lt;a href=&quot;https://theuniversityofliverpool-my.sharepoint.com/:w:/g/personal/pslrimme_liverpool_ac_uk/EeQ192A2au5BiL3bXaAfThYBg70DZD49EASdD04O2dLZYQ?e=yVUTC8&quot;&gt;here&lt;/a&gt; too.&lt;/p&gt;
+
+&lt;p&gt;We should base our document on the following &lt;a href=&quot;https://liverpool.instructure.com/courses/17251/files/1391047/download?wrap=1&quot;&gt;template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;The slides for the assignment are &lt;a href=&quot;https://liverpool.instructure.com/courses/17251/files/1390327/download?wrap=1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP107" /><category term="Assessments" /><category term="COMP107" /><category term="Meetings" /><summary type="html">Role Call Liam, Ravi and Ben Weston were present. Identifying Submission Requirements We had a look at the marking criteria to identify the requirements for the report. Identify at least three users or view which provide three different perspectives on the model? For the user preservatives create 4 - 5 different user stories. Group them in a number of iterations. Draw out the user stories in an EER diagram. Over various iterations. Draw EER diagram for each user story. Merge those together into user perspectives Merge those together into one EER diagram for the butler. Make sure to include all EER diagram features in our diagrams to make them as complete as possible. Find out about tableaux testing to check if your design produces spurious records. Additionally there should be descriptions that tie the EER diagrams together. Method of Collaboration We should collaborate in a collaborative word document. The link will be in the chat and I will put it here too. We should base our document on the following template. The slides for the assignment are here.</summary></entry><entry><title type="html">COMP109 - Logic - 3</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/12/02/1.html" rel="alternate" type="text/html" title="COMP109 - Logic - 3" /><published>2020-12-02T00:00:00+00:00</published><updated>2020-12-02T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/12/02/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/12/02/1.html">&lt;h2 id=&quot;semantic-consequence&quot;&gt;Semantic Consequence&lt;/h2&gt;
+&lt;p&gt;Suppose \(\Gamma\) is a finite set of formulas and \(P\) is a formula. Then \(P\) follows from \(\Gamma\) (is a semantic consequence of \(\Gamma\)) if the following implication holds for every interpretation \(I\):&lt;/p&gt;
+
+&lt;p&gt;\[\text{If } I(Q)=1\text{ for all } Q\in \Gamma,\text{then } I(P)=1\]&lt;/p&gt;
+
+&lt;p&gt;This is denoted by:&lt;/p&gt;
+
+&lt;p&gt;\[\Gamma \models P\]&lt;/p&gt;
+
+&lt;h3 id=&quot;logical-puzzles&quot;&gt;Logical Puzzles&lt;/h3&gt;
+&lt;p&gt;An island has two kinds of inhabitants, knights, who always tell the truth, and knaves, who always lie.&lt;/p&gt;
+
+&lt;p&gt;You go to the island and meet \(A\) and \(B\).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(A\) says, “\(B\) is a knight.”&lt;/li&gt;
+  &lt;li&gt;\(B\) says, “The two of us are opposite types.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What are \(A\) and \(B\)?&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;We can prove this in a proof by cases or, as the two people have a binary type you can model this question as below.&lt;/p&gt;
+
+&lt;p&gt;\(p\): “\(A\) is a knight”; and \(q\): “\(B\) is a knight”&lt;/p&gt;
+
+&lt;p&gt;Options for \(A\)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(p\) is true \(p\Rightarrow q\)&lt;/li&gt;
+  &lt;li&gt;\(p\) is false \(\neg p\Rightarrow \neg q\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Options for \(B\)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(q\) is true \(q\Rightarrow \neg p\)&lt;/li&gt;
+  &lt;li&gt;\(q\) is false \(\neg q\Rightarrow \neg p\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;info&quot;&gt;Here we are summarising the two statements as logical propositions.&lt;/p&gt;
+
+&lt;h4 id=&quot;truth-table&quot;&gt;Truth Table&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(p\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(q\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(\neg p\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(\neg q\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(p\Rightarrow q\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(\neg p\Rightarrow \neg q\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(q\Rightarrow \neg p\)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;\(\neg q\Rightarrow \neg p\)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;\(\wedge\)-ing together all the answers shows that the correct answer is \(p=0,q=0\). This means that \(A\) is a knave and \(B\) is a knave.&lt;/p&gt;
+
+&lt;p&gt;Say that the implications in the truth table are numbered, \(\{1,2,3,4\}\). We can then rewrite this table as the following statement:&lt;/p&gt;
+
+&lt;p&gt;\[\{1,2,3,4\}\models \neg p \wedge \neg q\]&lt;/p&gt;
+
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Show \(\{(p_1\wedge p_2)\}\models (p_1\vee p_2)\).&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\(p_1\)&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\(p_2\)&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\((p_1\wedge p_2)\)&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\((p_1\vee p_2)\)&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;The top line represents \((p_1\vee p_2)\) which we can see as \(p_1=1, p_2=1\). As the proposition and the result hold true in this case then the statement is correct.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Show \(\{p_1\}\not\models p_2\)&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\(p_1\)&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;\(p_2\)&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;From this table we can see that the statement is correct as when \(p_1=1, p_2=0\).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;logic-and-proof-principles&quot;&gt;Logic and Proof Principles&lt;/h3&gt;
+&lt;h4 id=&quot;modus-ponens&quot;&gt;&lt;em&gt;Modus Ponens&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Direct proof corresponds to the following semantic consequence:&lt;/p&gt;
+
+&lt;p&gt;\[\{P,(P\Rightarrow Q)\}\models Q\]&lt;/p&gt;
+
+&lt;h4 id=&quot;reducto-ad-absurdum&quot;&gt;&lt;em&gt;Reducto ad Absurdum&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Proof by contradiction corresponds to:&lt;/p&gt;
+
+&lt;p&gt;\[\{(\neg P\Rightarrow\bot)\}\models P\]&lt;/p&gt;
+
+&lt;p&gt;where \(\bot\) is a &lt;strong&gt;special proposition&lt;/strong&gt;, which is false under ever interpretation. \(\bot=a\wedge\neg a\).&lt;/p&gt;
+
+&lt;h4 id=&quot;modus-tollens&quot;&gt;&lt;em&gt;Modus Tollens&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;Another look at proof by contradiction:&lt;/p&gt;
+
+&lt;p&gt;\[\{(P\Rightarrow Q),\neg Q\}\models\neg P\]&lt;/p&gt;
+
+&lt;h4 id=&quot;case-analysis&quot;&gt;Case Analysis&lt;/h4&gt;
+
+&lt;p&gt;\[\{(P\Rightarrow Q),(R\Rightarrow Q),(P\vee R)\}\models Q\]&lt;/p&gt;
+
+&lt;h2 id=&quot;proof-theory&quot;&gt;Proof Theory&lt;/h2&gt;
+
+&lt;p&gt;We have studies proof as carefully reasoned arguments  to convince a sceptical listener that a given statement is true. These are called &lt;strong&gt;social proofs&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proof theory&lt;/strong&gt; is a branch of mathematical logic dealing with proofs as a mathematical objects:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Strings of symbols.&lt;/li&gt;
+  &lt;li&gt;Rules for manipulation.&lt;/li&gt;
+  &lt;li&gt;Mathematics becomes a game played with strings of symbols.&lt;/li&gt;
+  &lt;li&gt;Can be read and interpreted by computers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is to say that in prof theory we make statements that computers are able to solve by putting them in a very structured language. This language can then be solved by Boolean logic.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP109" /><category term="Lectures" /><category term="COMP109" /><category term="Lectures" /><summary type="html">Semantic Consequence Suppose \(\Gamma\) is a finite set of formulas and \(P\) is a formula. Then \(P\) follows from \(\Gamma\) (is a semantic consequence of \(\Gamma\)) if the following implication holds for every interpretation \(I\): \[\text{If } I(Q)=1\text{ for all } Q\in \Gamma,\text{then } I(P)=1\] This is denoted by: \[\Gamma \models P\] Logical Puzzles An island has two kinds of inhabitants, knights, who always tell the truth, and knaves, who always lie. You go to the island and meet \(A\) and \(B\). \(A\) says, “\(B\) is a knight.” \(B\) says, “The two of us are opposite types.” What are \(A\) and \(B\)? We can prove this in a proof by cases or, as the two people have a binary type you can model this question as below. \(p\): “\(A\) is a knight”; and \(q\): “\(B\) is a knight” Options for \(A\) \(p\) is true \(p\Rightarrow q\) \(p\) is false \(\neg p\Rightarrow \neg q\) Options for \(B\) \(q\) is true \(q\Rightarrow \neg p\) \(q\) is false \(\neg q\Rightarrow \neg p\) Here we are summarising the two statements as logical propositions. Truth Table \(p\) \(q\) \(\neg p\) \(\neg q\) \(p\Rightarrow q\) \(\neg p\Rightarrow \neg q\) \(q\Rightarrow \neg p\) \(\neg q\Rightarrow \neg p\) 0 0 1 1 1 1 1 1 0 1 1 0 1 0 1 1 1 0 0 1 0 1 1 0 1 1 0 0 1 1 0 1 \(\wedge\)-ing together all the answers shows that the correct answer is \(p=0,q=0\). This means that \(A\) is a knave and \(B\) is a knave. Say that the implications in the truth table are numbered, \(\{1,2,3,4\}\). We can then rewrite this table as the following statement: \[\{1,2,3,4\}\models \neg p \wedge \neg q\] Examples Show \(\{(p_1\wedge p_2)\}\models (p_1\vee p_2)\). \(p_1\) \(p_2\) \((p_1\wedge p_2)\) \((p_1\vee p_2)\) 1 1 1 1 1 0 0 1 0 1 0 1 0 0 0 0 The top line represents \((p_1\vee p_2)\) which we can see as \(p_1=1, p_2=1\). As the proposition and the result hold true in this case then the statement is correct. Show \(\{p_1\}\not\models p_2\) \(p_1\) \(p_2\) 1 1 1 0 0 1 0 0 From this table we can see that the statement is correct as when \(p_1=1, p_2=0\). Logic and Proof Principles Modus Ponens Direct proof corresponds to the following semantic consequence: \[\{P,(P\Rightarrow Q)\}\models Q\] Reducto ad Absurdum Proof by contradiction corresponds to: \[\{(\neg P\Rightarrow\bot)\}\models P\] where \(\bot\) is a special proposition, which is false under ever interpretation. \(\bot=a\wedge\neg a\). Modus Tollens Another look at proof by contradiction: \[\{(P\Rightarrow Q),\neg Q\}\models\neg P\] Case Analysis \[\{(P\Rightarrow Q),(R\Rightarrow Q),(P\vee R)\}\models Q\] Proof Theory We have studies proof as carefully reasoned arguments to convince a sceptical listener that a given statement is true. These are called social proofs. Proof theory is a branch of mathematical logic dealing with proofs as a mathematical objects: Strings of symbols. Rules for manipulation. Mathematics becomes a game played with strings of symbols. Can be read and interpreted by computers. This is to say that in prof theory we make statements that computers are able to solve by putting them in a very structured language. This language can then be solved by Boolean logic.</summary></entry><entry><title type="html">COMP105 - Lecture 23-1</title><link href="http://localhost:4000/UoL/comp105/lectures/2020/12/01/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 23-1" /><published>2020-12-01T00:00:00+00:00</published><updated>2020-12-01T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp105/lectures/2020/12/01/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp105/lectures/2020/12/01/1.html">&lt;p&gt;So far, we have studied pure functional programming. Pure functions:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Have no side effects.&lt;/li&gt;
@@ -277,7 +526,79 @@ p --&amp;gt; IO
 
     &lt;p&gt;This doesn’t need to be done in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;do&lt;/code&gt; block as it is just one line.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Writing IO Code We can write our own IO actions: print_two :: String -&amp;gt; String -&amp;gt; IO () Print_two s1 s2 = putStrLn (s1 ++ s2) &amp;gt; print_two &quot;abc&quot; &quot;def&quot; abcdef Note that the return type is IO (). Combining Multiple IO Calls The do syntax allows us to combine multiple IO actions. get_and_print :: IO () get_and_print = do x &amp;lt;- getLine y &amp;lt;- getLine putStrLn (x ++ &quot; &quot; ++ y) This syntax allows us two write a sequence of statements that will be executed in order. You could also write this with the following syntax: get_and_print :: IO () get_and_print = do x &amp;lt;- getLine y &amp;lt;- getLine putStrLn (x ++ &quot; &quot; ++ y) The do Syntax A do block has the following syntax: do v1 &amp;lt;- [IO action] v2 &amp;lt;- [IO action] ... vk &amp;lt;- [IO action] [IO action] v1 through vk unbox the results of IO actions. The final IO action is the return value. The v &amp;lt;- portion can be skipped if you are using an IO action purely for the side effect. let in do Blocks let expressions can be used inside do block in order to complete pure computations: add_one :: IO () add_one = do n &amp;lt;- getLine let num = (read n) :: Int out = show (num + 1) putStrLn out In a do block you can type anything out that you would type into the command line of GHCI. if in do Blocks guess :: IO () guess = do x &amp;lt;- getLine if x == &quot;42&quot; then putStrLn &quot;Correct!&quot; else putStrLn &quot;You are very wrong.&quot; Both branches of the if mut have the same type. do Blocks do blocks let you sequence multiple actions: Works with IO actions. Will not work in pure functional code. Functional programs consist of: A small amount of IO code. A large amount of pure functional node. Don’t try to write your entire program in IO code. Putting Values in the IO Box Sometimes we need to pus a pure value into IO. We can use the return function to do this. &amp;gt; :t &quot;hello&quot; &quot;hello&quot; :: [Char] &amp;gt; :t return &quot;hello&quot; IO [Char] example :: IO String example = do x &amp;lt;- getLine return (tail x) You must use return to get the value out of an impure function. print_if_short :: String -&amp;gt; IO () print_if_short str = if length str &amp;lt;= 2 then putStrLn str else return () Both sides of the if must have the type IO (): So we use return () in the else part. return This function is not the same as in imperative languages return does not stop execution. It just convert pure values to IO values. Monad The type of return mentions monads. &amp;gt; :t return return :: Monad m =&amp;gt; a -&amp;gt; m a This is because IO is a monad. Whenever you see Monad m =&amp;gt; substitute IO for m. So return :: a -&amp;gt; IO a You don’t need to know anything about monads for COMP105. Exercises doubleEcho :: IO () doubleEcho = do x &amp;lt;- getLine putStrLn x putStrLn x firstWord :: IO () firstWord = do string &amp;lt;- getLine if (words string) == [] then putStrLn &quot;&quot; else putStrLn (head . words $ string) printEven :: Int -&amp;gt; IO () printEven x = if (even x) then (putStrLn x) else return () This doesn’t need to be done in a do block as it is just one line.</summary></entry><entry><title type="html">COMP111 - Independent Random Variables</title><link href="http://localhost:4000/UoL/comp111/lectures/2020/12/01/1.html" rel="alternate" type="text/html" title="COMP111 - Independent Random Variables" /><published>2020-12-01T00:00:00+00:00</published><updated>2020-12-01T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp111/lectures/2020/12/01/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp111/lectures/2020/12/01/1.html"></content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP111" /><category term="Lectures" /><category term="COMP111" /><category term="Lectures" /><summary type="html"></summary></entry><entry><title type="html">COMP105 - Lecture 22-1</title><link href="http://localhost:4000/UoL/comp105/lectures/2020/11/30/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 22-1" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp105/lectures/2020/11/30/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp105/lectures/2020/11/30/1.html">&lt;h2 id=&quot;recursive-types&quot;&gt;Recursive Types&lt;/h2&gt;
+&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Writing IO Code We can write our own IO actions: print_two :: String -&amp;gt; String -&amp;gt; IO () Print_two s1 s2 = putStrLn (s1 ++ s2) &amp;gt; print_two &quot;abc&quot; &quot;def&quot; abcdef Note that the return type is IO (). Combining Multiple IO Calls The do syntax allows us to combine multiple IO actions. get_and_print :: IO () get_and_print = do x &amp;lt;- getLine y &amp;lt;- getLine putStrLn (x ++ &quot; &quot; ++ y) This syntax allows us two write a sequence of statements that will be executed in order. You could also write this with the following syntax: get_and_print :: IO () get_and_print = do x &amp;lt;- getLine y &amp;lt;- getLine putStrLn (x ++ &quot; &quot; ++ y) The do Syntax A do block has the following syntax: do v1 &amp;lt;- [IO action] v2 &amp;lt;- [IO action] ... vk &amp;lt;- [IO action] [IO action] v1 through vk unbox the results of IO actions. The final IO action is the return value. The v &amp;lt;- portion can be skipped if you are using an IO action purely for the side effect. let in do Blocks let expressions can be used inside do block in order to complete pure computations: add_one :: IO () add_one = do n &amp;lt;- getLine let num = (read n) :: Int out = show (num + 1) putStrLn out In a do block you can type anything out that you would type into the command line of GHCI. if in do Blocks guess :: IO () guess = do x &amp;lt;- getLine if x == &quot;42&quot; then putStrLn &quot;Correct!&quot; else putStrLn &quot;You are very wrong.&quot; Both branches of the if mut have the same type. do Blocks do blocks let you sequence multiple actions: Works with IO actions. Will not work in pure functional code. Functional programs consist of: A small amount of IO code. A large amount of pure functional node. Don’t try to write your entire program in IO code. Putting Values in the IO Box Sometimes we need to pus a pure value into IO. We can use the return function to do this. &amp;gt; :t &quot;hello&quot; &quot;hello&quot; :: [Char] &amp;gt; :t return &quot;hello&quot; IO [Char] example :: IO String example = do x &amp;lt;- getLine return (tail x) You must use return to get the value out of an impure function. print_if_short :: String -&amp;gt; IO () print_if_short str = if length str &amp;lt;= 2 then putStrLn str else return () Both sides of the if must have the type IO (): So we use return () in the else part. return This function is not the same as in imperative languages return does not stop execution. It just convert pure values to IO values. Monad The type of return mentions monads. &amp;gt; :t return return :: Monad m =&amp;gt; a -&amp;gt; m a This is because IO is a monad. Whenever you see Monad m =&amp;gt; substitute IO for m. So return :: a -&amp;gt; IO a You don’t need to know anything about monads for COMP105. Exercises doubleEcho :: IO () doubleEcho = do x &amp;lt;- getLine putStrLn x putStrLn x firstWord :: IO () firstWord = do string &amp;lt;- getLine if (words string) == [] then putStrLn &quot;&quot; else putStrLn (head . words $ string) printEven :: Int -&amp;gt; IO () printEven x = if (even x) then (putStrLn x) else return () This doesn’t need to be done in a do block as it is just one line.</summary></entry><entry><title type="html">COMP111 - Independent Random Variables</title><link href="http://localhost:4000/UoL/comp111/lectures/2020/12/01/1.html" rel="alternate" type="text/html" title="COMP111 - Independent Random Variables" /><published>2020-12-01T00:00:00+00:00</published><updated>2020-12-01T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp111/lectures/2020/12/01/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp111/lectures/2020/12/01/1.html">&lt;p&gt;Random variables \(F\) and \(G\) are independent if:&lt;/p&gt;
+
+&lt;p&gt;\[\mathbf{P}(F,G)=\mathbf{P}(F)\times\mathbf{P}(G)\]&lt;/p&gt;
+
+&lt;p&gt;That is, for all values \(r\) and \(s\):&lt;/p&gt;
+
+&lt;p&gt;\[P(F=r,G=s)=P(F=r)\times P(G=s)\]&lt;/p&gt;
+
+&lt;p&gt;As one’s dental problems do not influence the weather, the pairs of random variables are each independent:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(\text{Toothache},\text{Weather}\)&lt;/li&gt;
+  &lt;li&gt;\(\text{Catch},\text{Weather}\)&lt;/li&gt;
+  &lt;li&gt;\(\text{Cavity},\text{Weather}\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;example---weather-and-dental-problems&quot;&gt;Example - Weather and Dental Problems&lt;/h2&gt;
+&lt;p&gt;The full joint probability distribution:&lt;/p&gt;
+
+&lt;p&gt;\[\mathbf{P}(\text{Toothache, Catch, Cavity, Weather})\]&lt;/p&gt;
+
+&lt;p&gt;has 32 entries. It contains four tables for the dentist variables and one for the four kinds of weather.&lt;/p&gt;
+
+&lt;p class=&quot;info&quot;&gt;The number of entries comes from the \(2\times2\times2\times4\) of the 2 outcomes for the 4 dentist variables and the 4 outcomes of the \(\text{Weather}\) variable.&lt;/p&gt;
+
+&lt;p&gt;Thus we have:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;8 probabilities for \((\text{Weather}=\text{sunny})\):
+    &lt;ul&gt;
+      &lt;li&gt;\(P(\text{Weather}=\text{sunny}, \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;And so on for the other three weather types.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Clearly we can make the independence assumption that for any combination of values of the random variables \(\text{Toothache, Catch, Cavity,}\) the probability for \(\text{Weather}\). For example:&lt;/p&gt;
+
+&lt;p&gt;\[
+\begin{aligned}
+&amp;amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp;amp; P(\text{Weather}=\text{sunny})
+\end{aligned}
+\]&lt;/p&gt;
+
+&lt;p&gt;for all \(r_1,r_2,r_3\in\{0,1\}\).&lt;/p&gt;
+
+&lt;p&gt;Thus equivalently:&lt;/p&gt;
+
+&lt;p&gt;\[
+\begin{aligned}
+&amp;amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp;amp; P(\text{Weather}=\text{sunny})P(\text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)
+\end{aligned}
+\]&lt;/p&gt;
+
+&lt;p&gt;for all \(r_1,r_2,r_3\in\{0,1\}\).&lt;/p&gt;
+
+&lt;p&gt;This means that they are related proportionally.&lt;/p&gt;
+
+&lt;p&gt;We have seen that the join probability distribution&lt;/p&gt;
+
+&lt;p&gt;\[\mathbf{P}(\text{Weather, Toothache, Catch, Cavity})\]&lt;/p&gt;
+
+&lt;p&gt;can be written as:&lt;/p&gt;
+
+&lt;p&gt;\[\mathbf{P}(\text{Weather})\times\mathbf{P}(\text{Toothache, Catch, Cavity})\]&lt;/p&gt;
+
+&lt;p&gt;The 32-element table for four variables can be constructed from one 4-element table and an 8-element table.&lt;/p&gt;
+
+&lt;h2 id=&quot;independence-analysis&quot;&gt;Independence Analysis&lt;/h2&gt;
+&lt;p&gt;Unfortunately this type of independence is very rare as generally things that you want to compare are inter-related. This is especially true within a single domain.
+Conditional independence is much more prevalent and useful.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP111" /><category term="Lectures" /><category term="COMP111" /><category term="Lectures" /><summary type="html">Random variables \(F\) and \(G\) are independent if: \[\mathbf{P}(F,G)=\mathbf{P}(F)\times\mathbf{P}(G)\] That is, for all values \(r\) and \(s\): \[P(F=r,G=s)=P(F=r)\times P(G=s)\] As one’s dental problems do not influence the weather, the pairs of random variables are each independent: \(\text{Toothache},\text{Weather}\) \(\text{Catch},\text{Weather}\) \(\text{Cavity},\text{Weather}\) Example - Weather and Dental Problems The full joint probability distribution: \[\mathbf{P}(\text{Toothache, Catch, Cavity, Weather})\] has 32 entries. It contains four tables for the dentist variables and one for the four kinds of weather. The number of entries comes from the \(2\times2\times2\times4\) of the 2 outcomes for the 4 dentist variables and the 4 outcomes of the \(\text{Weather}\) variable. Thus we have: 8 probabilities for \((\text{Weather}=\text{sunny})\): \(P(\text{Weather}=\text{sunny}, \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\) And so on for the other three weather types. Clearly we can make the independence assumption that for any combination of values of the random variables \(\text{Toothache, Catch, Cavity,}\) the probability for \(\text{Weather}\). For example: \[ \begin{aligned} &amp;amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\ =&amp;amp; P(\text{Weather}=\text{sunny}) \end{aligned} \] for all \(r_1,r_2,r_3\in\{0,1\}\). Thus equivalently: \[ \begin{aligned} &amp;amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\ =&amp;amp; P(\text{Weather}=\text{sunny})P(\text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3) \end{aligned} \] for all \(r_1,r_2,r_3\in\{0,1\}\). This means that they are related proportionally. We have seen that the join probability distribution \[\mathbf{P}(\text{Weather, Toothache, Catch, Cavity})\] can be written as: \[\mathbf{P}(\text{Weather})\times\mathbf{P}(\text{Toothache, Catch, Cavity})\] The 32-element table for four variables can be constructed from one 4-element table and an 8-element table. Independence Analysis Unfortunately this type of independence is very rare as generally things that you want to compare are inter-related. This is especially true within a single domain. Conditional independence is much more prevalent and useful.</summary></entry><entry><title type="html">COMP105 - Lecture 22-1</title><link href="http://localhost:4000/UoL/comp105/lectures/2020/11/30/1.html" rel="alternate" type="text/html" title="COMP105 - Lecture 22-1" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp105/lectures/2020/11/30/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp105/lectures/2020/11/30/1.html">&lt;h2 id=&quot;recursive-types&quot;&gt;Recursive Types&lt;/h2&gt;
 
 &lt;p&gt;We have seen types which contain other types. In a recursive custom type, some constructors contain the type itself.&lt;/p&gt;
 
@@ -603,7 +924,7 @@ h --&amp;gt; c[c.txt]
  &lt;span class=&quot;n&quot;&gt;treeElem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;DBranch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;treeElem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;treeElem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Trees graph TD a[ ] --&amp;gt; b[ ] a --&amp;gt; c[ ] b --&amp;gt; d[ ] b --&amp;gt; e[ ] d --&amp;gt; f[ ] d --&amp;gt; g[ ] c --&amp;gt; h[ ] c --&amp;gt; i[ ] A tree is composed of: Leaf nodes. Leaves have no children. Branch nodes. Has a child which is a leaf. A Tree Type in Haskell Any binary tree can be represented in this data type. data Tree = Leaf | Branch Tree Tree deriving(Show) graph TD a[ ] --&amp;gt; b[ ] a --&amp;gt; c[ ] c --&amp;gt; h[ ] c --&amp;gt; i[ ] Branch Leaf (Branch Leaf Leaf) Recursion on Trees We can write recursive function that process tress. Usually the recursive case will process both branches. This function counts all the nodes in a tree: size :: Tree -&amp;gt; Int size (Leaf) = 1 size (Branch x y) = 1 +size x + size y For trees usually the base case is the Leaf and the recursive rule operates on the two sub-trees of the branch node. &amp;gt; size (Branch Leaf (Branch Leaf Leaf)) 5 Trees with Data Nodes in a tree often hold data. graph TD 9 --&amp;gt; 4 4 --&amp;gt; 1 4 --&amp;gt; 6 1 --&amp;gt; 10 1 --&amp;gt; 7 2 --&amp;gt; 3 2 --&amp;gt; 0 9 --&amp;gt; 2 Type of Trees with Data This type allows each branch and leaf to have data of a single type associated with it: data DTree a = DLeaf a | DBranch a (DTree a) (DTree a) deriving (Show) graph TD 1 --&amp;gt; 7 7 --&amp;gt; 2 7 --&amp;gt; 9 1 --&amp;gt; 4 DBranch 1 (DBranch 7 (DLeaf 2) (DLeaf 9)) (DLeaf 4) Recursion on Trees with Data This function adds together the numbers from all the branches and leaves in a tree with data. tree_sum :: Num a =&amp;gt; DTree a -&amp;gt; a tree_sum (DLeaf x) = x tree_sum (DBranch x 1 l) = x + tree_sum l + tree_sum r &amp;gt; tree_sum (DBranch 1 (DBranch 7 (DLeaf 2) (DLeaf 9)) (DLeaf 4)) 22 Example - Fibonacci Numbers Before we used this code to calculate the Fibonacci numbers. This is slow due to the large amount of branching: fib 0 = 0 fib 1 = 1 fib n = fib (n-1) + fib (n-2) graph TD A[fib 4] --&amp;gt; B[fib 3] A --&amp;gt; C[fib 2] B --&amp;gt; D[fib 2] B --&amp;gt; E[fib 1] D --&amp;gt; F[fib 1] D --&amp;gt; G[fib 0] C --&amp;gt; H[fib 1] C --&amp;gt; I[fib 0] How many recursive calls does the code make? We can make a function to build the call tree. fib_tree :: Int -&amp;gt; Tree fib_tree 0 = Leaf fib_tree 1 = Leaf fib_tree n = Branch (fib_tree (n-1)) (fib_tree (n-2)) &amp;gt; fib_tree 4 Branch (Branch (Branch Leaf Leaf) Leaf) (Branch Leaf Leaf) This is the same structure as the tree at the top of the example. To count the nodes in this tree we can use the function size from earlier: fib_calls n = size (fib_tree n) &amp;gt; fib_calls 10 177 &amp;gt; fib_calls 20 21891 &amp;gt;fib_calls 30 2692537 As we can see multiple recursion can be very slow if used incorrectly. Example - Finding a File Suppose that we have a directory structure: graph TD h[&quot;~/&quot;] --&amp;gt; d[docs/] d --&amp;gt; a[a.txt] d --&amp;gt; b[b.txt] h --&amp;gt; c[c.txt] Write a function that, given a filename, finds the path to that file. We can formulate the files as a data tree: let fs = DBranch &quot;~/&quot; (DBranch &quot;docs/&quot; (DLeaf &quot;a.txt&quot; ) (DLeaf &quot;b.txt&quot;)) (DLeaf &quot;c.txt&quot;) This is the same as the DTree above. Note that the file might not exist: So we will use the maybe type. &amp;gt; find_file &quot;a.txt&quot; fs Just &quot;home/docs/a.txt&quot; &amp;gt; find_file &quot;d.txt&quot; fs Nothing Implementation find_file file (Dleaf x) | x == file = Just file | otherwise = Nothing find_file file (DBranch x l r) = let left = find_file l right = find_file r in case (left, right) of (Just y, _) -&amp;gt; Just (x ++ y) (_, Just y) -&amp;gt; Just (x ++ y) (_, _) -&amp;gt; Nothing This implementation has two cases, one for the leaf and one for the branch. Exercises leafSum :: DTree Int -&amp;gt; Int leafSum (DLeaf x) = x leafSum (DBranch _ l r) = leafSum l + leafSum r treeElem :: Eq a =&amp;gt; a -&amp;gt; DTree a -&amp;gt; Bool treeElem x (DLeaf y) = x == y treeElem x (DBranch y l r) = (x == y) || treeElem x l || treeElem x r</summary></entry><entry><title type="html">COMP109 - Logic - 1</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/30/1.html" rel="alternate" type="text/html" title="COMP109 - Logic - 1" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/30/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/30/1.html">&lt;p class=&quot;info&quot;&gt;This topic is very similar to the subjects covered in COMP111’s &lt;a href=&quot;/UoL/comp111/lectures/2020-11-12-1&quot;&gt;propositional logic&lt;/a&gt;. As result I will only be noting down significant differences.&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP105" /><category term="Lectures" /><category term="COMP105" /><category term="Lectures" /><summary type="html">Trees graph TD a[ ] --&amp;gt; b[ ] a --&amp;gt; c[ ] b --&amp;gt; d[ ] b --&amp;gt; e[ ] d --&amp;gt; f[ ] d --&amp;gt; g[ ] c --&amp;gt; h[ ] c --&amp;gt; i[ ] A tree is composed of: Leaf nodes. Leaves have no children. Branch nodes. Has a child which is a leaf. A Tree Type in Haskell Any binary tree can be represented in this data type. data Tree = Leaf | Branch Tree Tree deriving(Show) graph TD a[ ] --&amp;gt; b[ ] a --&amp;gt; c[ ] c --&amp;gt; h[ ] c --&amp;gt; i[ ] Branch Leaf (Branch Leaf Leaf) Recursion on Trees We can write recursive function that process tress. Usually the recursive case will process both branches. This function counts all the nodes in a tree: size :: Tree -&amp;gt; Int size (Leaf) = 1 size (Branch x y) = 1 +size x + size y For trees usually the base case is the Leaf and the recursive rule operates on the two sub-trees of the branch node. &amp;gt; size (Branch Leaf (Branch Leaf Leaf)) 5 Trees with Data Nodes in a tree often hold data. graph TD 9 --&amp;gt; 4 4 --&amp;gt; 1 4 --&amp;gt; 6 1 --&amp;gt; 10 1 --&amp;gt; 7 2 --&amp;gt; 3 2 --&amp;gt; 0 9 --&amp;gt; 2 Type of Trees with Data This type allows each branch and leaf to have data of a single type associated with it: data DTree a = DLeaf a | DBranch a (DTree a) (DTree a) deriving (Show) graph TD 1 --&amp;gt; 7 7 --&amp;gt; 2 7 --&amp;gt; 9 1 --&amp;gt; 4 DBranch 1 (DBranch 7 (DLeaf 2) (DLeaf 9)) (DLeaf 4) Recursion on Trees with Data This function adds together the numbers from all the branches and leaves in a tree with data. tree_sum :: Num a =&amp;gt; DTree a -&amp;gt; a tree_sum (DLeaf x) = x tree_sum (DBranch x 1 l) = x + tree_sum l + tree_sum r &amp;gt; tree_sum (DBranch 1 (DBranch 7 (DLeaf 2) (DLeaf 9)) (DLeaf 4)) 22 Example - Fibonacci Numbers Before we used this code to calculate the Fibonacci numbers. This is slow due to the large amount of branching: fib 0 = 0 fib 1 = 1 fib n = fib (n-1) + fib (n-2) graph TD A[fib 4] --&amp;gt; B[fib 3] A --&amp;gt; C[fib 2] B --&amp;gt; D[fib 2] B --&amp;gt; E[fib 1] D --&amp;gt; F[fib 1] D --&amp;gt; G[fib 0] C --&amp;gt; H[fib 1] C --&amp;gt; I[fib 0] How many recursive calls does the code make? We can make a function to build the call tree. fib_tree :: Int -&amp;gt; Tree fib_tree 0 = Leaf fib_tree 1 = Leaf fib_tree n = Branch (fib_tree (n-1)) (fib_tree (n-2)) &amp;gt; fib_tree 4 Branch (Branch (Branch Leaf Leaf) Leaf) (Branch Leaf Leaf) This is the same structure as the tree at the top of the example. To count the nodes in this tree we can use the function size from earlier: fib_calls n = size (fib_tree n) &amp;gt; fib_calls 10 177 &amp;gt; fib_calls 20 21891 &amp;gt;fib_calls 30 2692537 As we can see multiple recursion can be very slow if used incorrectly. Example - Finding a File Suppose that we have a directory structure: graph TD h[&quot;~/&quot;] --&amp;gt; d[docs/] d --&amp;gt; a[a.txt] d --&amp;gt; b[b.txt] h --&amp;gt; c[c.txt] Write a function that, given a filename, finds the path to that file. We can formulate the files as a data tree: let fs = DBranch &quot;~/&quot; (DBranch &quot;docs/&quot; (DLeaf &quot;a.txt&quot; ) (DLeaf &quot;b.txt&quot;)) (DLeaf &quot;c.txt&quot;) This is the same as the DTree above. Note that the file might not exist: So we will use the maybe type. &amp;gt; find_file &quot;a.txt&quot; fs Just &quot;home/docs/a.txt&quot; &amp;gt; find_file &quot;d.txt&quot; fs Nothing Implementation find_file file (Dleaf x) | x == file = Just file | otherwise = Nothing find_file file (DBranch x l r) = let left = find_file l right = find_file r in case (left, right) of (Just y, _) -&amp;gt; Just (x ++ y) (_, Just y) -&amp;gt; Just (x ++ y) (_, _) -&amp;gt; Nothing This implementation has two cases, one for the leaf and one for the branch. Exercises leafSum :: DTree Int -&amp;gt; Int leafSum (DLeaf x) = x leafSum (DBranch _ l r) = leafSum l + leafSum r treeElem :: Eq a =&amp;gt; a -&amp;gt; DTree a -&amp;gt; Bool treeElem x (DLeaf y) = x == y treeElem x (DBranch y l r) = (x == y) || treeElem x l || treeElem x r</summary></entry><entry><title type="html">COMP109 - Logic - 1</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/30/1.html" rel="alternate" type="text/html" title="COMP109 - Logic - 1" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/30/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/30/1.html">&lt;p class=&quot;info&quot;&gt;This topic is very similar to the subjects covered in COMP111’s &lt;a href=&quot;/UoL/comp111/lectures/2020/11/12/1&quot;&gt;propositional logic&lt;/a&gt;. As result I will only be noting down significant differences.&lt;/p&gt;
 
 &lt;p&gt;Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements.&lt;/p&gt;
 
@@ -641,7 +962,7 @@ h --&amp;gt; c[c.txt]
 
 &lt;ul&gt;
   &lt;li&gt;A propositional formula is either an atom ic or compound proposition.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP109" /><category term="Lectures" /><category term="COMP109" /><category term="Lectures" /><summary type="html">This topic is very similar to the subjects covered in COMP111’s propositional logic. As result I will only be noting down significant differences. Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements. Propositional Logic Propositional logic is logic which only concerns itself with whether something is true or false. Other languages differ themselves as they deal with uncertainties. A proposition is a statement that can either be true or false. A statement like \(4+5\) is not a proposition as it doesn’t give a true or false answer. Compound Propositions More complex propositions are formed using logical connectives (also called Boolean connectives). The basic connectives are: \(\neg\): Negation (read “not”). \(\wedge\): Conjunction (read “and”). \(\vee\): Disjunction (read “or”). These are the scientific names and they make a difference between the english and mathematical words. \(\Rightarrow\): Implication (read “if…then”). In other schools this may be written as \(\rightarrow\) or as \(\subseteq\). \(\Leftrightarrow\): Equivalence (read “if, and only if,”). Similar to 4. the notation is not as set as 1,2 and 3. This may be written as \(\leftrightarrow\) or \(\equiv\). Propositional formed using these logical connectives are called compound propositions; otherwise atomic propositions. A propositional formula is either an atom ic or compound proposition.</summary></entry><entry><title type="html">COMP109 - Logic - 2</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/30/2.html" rel="alternate" type="text/html" title="COMP109 - Logic - 2" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/30/2</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/30/2.html">&lt;p class=&quot;info&quot;&gt;This lecture is very similar to COMP111’s &lt;a href=&quot;/UoL/comp111/lectures/2020-11-12-2&quot;&gt;truth values&lt;/a&gt; lecture. View that lecture for all truth tables.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP109" /><category term="Lectures" /><category term="COMP109" /><category term="Lectures" /><summary type="html">This topic is very similar to the subjects covered in COMP111’s propositional logic. As result I will only be noting down significant differences. Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements. Propositional Logic Propositional logic is logic which only concerns itself with whether something is true or false. Other languages differ themselves as they deal with uncertainties. A proposition is a statement that can either be true or false. A statement like \(4+5\) is not a proposition as it doesn’t give a true or false answer. Compound Propositions More complex propositions are formed using logical connectives (also called Boolean connectives). The basic connectives are: \(\neg\): Negation (read “not”). \(\wedge\): Conjunction (read “and”). \(\vee\): Disjunction (read “or”). These are the scientific names and they make a difference between the english and mathematical words. \(\Rightarrow\): Implication (read “if…then”). In other schools this may be written as \(\rightarrow\) or as \(\subseteq\). \(\Leftrightarrow\): Equivalence (read “if, and only if,”). Similar to 4. the notation is not as set as 1,2 and 3. This may be written as \(\leftrightarrow\) or \(\equiv\). Propositional formed using these logical connectives are called compound propositions; otherwise atomic propositions. A propositional formula is either an atom ic or compound proposition.</summary></entry><entry><title type="html">COMP109 - Logic - 2</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/30/2.html" rel="alternate" type="text/html" title="COMP109 - Logic - 2" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/30/2</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/30/2.html">&lt;p class=&quot;info&quot;&gt;This lecture is very similar to COMP111’s &lt;a href=&quot;/UoL/comp111/lectures/2020/11/12/2&quot;&gt;truth values&lt;/a&gt; lecture. View that lecture for all truth tables.&lt;/p&gt;
 
 &lt;h2 id=&quot;truth-values&quot;&gt;Truth Values&lt;/h2&gt;
 &lt;p&gt;Interpretations are a way of assigning values to propositions which may vary depending on the situation or person who answers them.&lt;/p&gt;
@@ -779,220 +1100,4 @@ h --&amp;gt; c[c.txt]
 
 &lt;p class=&quot;error&quot;&gt;Attributes should not be shared between different entities.&lt;/p&gt;
 
-&lt;p class=&quot;error&quot;&gt;The attribute course should be an entity and not a complex attribute. This would make a student enrolled in many courses.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP107" /><category term="Tutorials" /><category term="COMP107" /><category term="Tutorials" /><summary type="html">ER by View Integration You should consider each user perspective separately. Requirements are given for many users groups or applications independently. an ER schema is designed for each user group and application (typically by different developers.) Individual views are merged into a global conceptual schema. Individual views can be reconstructed as external schema after view integration. View Integration Identification of correspondences and conflicts among schema. Need to identify constructs in schemas that represent the same real-world concept. Modification of views to conform to one another. Some of the view schemas may need to be refined to resolve conflicts identified in 1. Merging of views. Global schema is created by merging individual schemas. Restructuring. Global schema may require further refinement to remove redundancies or unnecessary complexity. Example In the example we put up all the diagrams next to each other to view the conflicts. They include: Names (including synonyms). Homonyms - Using the same name for different things. Notions Where concepts are represented as entities or attributes. From this you change each view individually to make them coherent with each other. After this you eliminate redundancies to make them into a single diagram. Task Draw and ER or EER model to describe a library by using a view integration approach. The group made this in the first phase: We should stick very specifically to the story. Over-designing is bad for other people’s designs and you should stick to only the points in your story. The subject of the user story does not need to be included in the diagram. This is because they are the user and don’t need data stored about them to use the database. The group made this in the second phase. Attributes should not be shared between different entities. The attribute course should be an entity and not a complex attribute. This would make a student enrolled in many courses.</summary></entry><entry><title type="html">COMP109 - Relations - 9</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/27/1.html" rel="alternate" type="text/html" title="COMP109 - Relations - 9" /><published>2020-11-27T00:00:00+00:00</published><updated>2020-11-27T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/27/1</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/27/1.html">&lt;h2 id=&quot;partial-orders&quot;&gt;Partial Orders&lt;/h2&gt;
-&lt;p&gt;A binary relation \(R\) on set \(A\) which is reflexive, transitive and antisymmetric is called  a partial order.&lt;/p&gt;
-
-&lt;p&gt;Partial orders are important in situations where we wish to characterise precedence.&lt;/p&gt;
-
-&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The relation \(\leq\) on the set of \(\Bbb{R}\) of real numbers.&lt;/li&gt;
-  &lt;li&gt;The relation \(\subseteq\) on \(\text{Pow}(A)\).&lt;/li&gt;
-  &lt;li&gt;“Is a divisor of” on the set \(\Bbb{Z^+}\) of positive integers.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;example---job-scheduling&quot;&gt;Example - Job Scheduling&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Task&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Immediate Dependencies&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2, 3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2, 3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4, 5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6, 7, 8&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
-1[Task 1 - 7 Hours] --&amp;gt; 2[Task 2 - 6 Hours]
-1 --&amp;gt; 3[Task 3 - 3 Hours]
-2 --&amp;gt; 4[Task 4 - 6 Hours]
-2 --&amp;gt; 5[Task 5 - 3 Hours]
-3 --&amp;gt; 5
-4 --&amp;gt; 6[Task 6 - 1 Hour]
-2 --&amp;gt; 7[Task 7 - 1 Hour]
-3 --&amp;gt; 7
-4 --&amp;gt; 8[Task 8 - 2 Hours]
-5 --&amp;gt; 8
-6 --&amp;gt; 9[Task 9 - 5 Hours]
-7 --&amp;gt; 9
-8 --&amp;gt; 9
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;predecessors-in-partial-orders&quot;&gt;Predecessors in Partial Orders&lt;/h3&gt;
-&lt;p&gt;if \(R\) is a partial order on a set \(A\) and \(xRy, x\neq y\) we call \(x\) a &lt;strong&gt;predecessor&lt;/strong&gt; of \(y\).&lt;/p&gt;
-
-&lt;p&gt;If \(x\) is a predecessor of \(y\) and there is no \(z\in\{x,y\}\) for which \(xRy\) and \(zRy\), we call \(x\) and &lt;strong&gt;immeditate predecessor&lt;/strong&gt; of \(y\).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
-subgraph R
-y -.-&amp;gt; z
-z -.-&amp;gt; x
-x --&amp;gt; y
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p class=&quot;info&quot;&gt;In this graph if you can see no \(z\) in-between \(x\) and \(y\) then \(y\) is an immediate predecessor of \(x\).&lt;/p&gt;
-
-&lt;h4 id=&quot;integer-example&quot;&gt;Integer Example&lt;/h4&gt;
-&lt;p&gt;For the function \(\leq\) on the set \(\Bbb{Z}\) the immediate predecessor of a number \(n\) is \(n-1\).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
-subgraph Z
-1[n-1] --&amp;gt; 2[n]
-end 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;hasse-diagram&quot;&gt;Hasse Diagram&lt;/h4&gt;
-&lt;p&gt;The Hasse Diagram of a partial order is a digraph. The vertices of the digraph are the elements of the partial order, and the edges of the digraph are given by the “immediate predecessor” relation.&lt;/p&gt;
-
-&lt;p&gt;This is an example for the bit vector representation of a set containing 3 elements. Each relation is a subset relation:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph BT
-0[0,0,0] --- 1[0,0,1]
-0 --- 2[0,1,0]
-0 --- 4[1,0,0]
-1 --- 3[0,1,1]
-1 --- 5[1,0,1]
-2 --- 3
-2 --- 6[1,1,0]
-4 --- 5
-4 --- 6
-3 --- 7[1,1,1]
-5 --- 7
-6 --- 7
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p class=&quot;info&quot;&gt;It is typical to assume that the arrow pointing upwards.&lt;/p&gt;
-
-&lt;p&gt;This diagram notation saves us from having to draw all the reflexive links and also all of the dependency links by just drawing the &lt;strong&gt;immediate dependency&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;total-orders&quot;&gt;Total Orders&lt;/h2&gt;
-&lt;p&gt;A binary relation \(R\) on a set \(A\) is a total order if it is a partial order such that any \(x,y\in A,xRy\) or \(yRx\).&lt;/p&gt;
-
-&lt;p class=&quot;info&quot;&gt;This means that for any relation you can always compare them.&lt;/p&gt;
-
-&lt;p&gt;The Hasse diagram of a total order is a chain.&lt;/p&gt;
-
-&lt;p class=&quot;info&quot;&gt;This means that there are no splits as splits mean that they aren’t comparable.&lt;/p&gt;
-
-&lt;h3 id=&quot;examples-1&quot;&gt;Examples&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;The relation \(\leq\) on the set \(\Bbb{R}\) of real numbers.&lt;/li&gt;
-  &lt;li&gt;The usual lexicographical ordering on words in a dictionary.&lt;/li&gt;
-  &lt;li&gt;The relation “is a divisor of” is &lt;strong&gt;not&lt;/strong&gt; a total order.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP109" /><category term="Lectures" /><category term="COMP109" /><category term="Lectures" /><summary type="html">Partial Orders A binary relation \(R\) on set \(A\) which is reflexive, transitive and antisymmetric is called a partial order. Partial orders are important in situations where we wish to characterise precedence. Examples The relation \(\leq\) on the set of \(\Bbb{R}\) of real numbers. The relation \(\subseteq\) on \(\text{Pow}(A)\). “Is a divisor of” on the set \(\Bbb{Z^+}\) of positive integers. Example - Job Scheduling Task Immediate Dependencies 1   2 1 3 1 4 2 5 2, 3 6 4 7 2, 3 8 4, 5 9 6, 7, 8 graph LR 1[Task 1 - 7 Hours] --&amp;gt; 2[Task 2 - 6 Hours] 1 --&amp;gt; 3[Task 3 - 3 Hours] 2 --&amp;gt; 4[Task 4 - 6 Hours] 2 --&amp;gt; 5[Task 5 - 3 Hours] 3 --&amp;gt; 5 4 --&amp;gt; 6[Task 6 - 1 Hour] 2 --&amp;gt; 7[Task 7 - 1 Hour] 3 --&amp;gt; 7 4 --&amp;gt; 8[Task 8 - 2 Hours] 5 --&amp;gt; 8 6 --&amp;gt; 9[Task 9 - 5 Hours] 7 --&amp;gt; 9 8 --&amp;gt; 9 Predecessors in Partial Orders if \(R\) is a partial order on a set \(A\) and \(xRy, x\neq y\) we call \(x\) a predecessor of \(y\). If \(x\) is a predecessor of \(y\) and there is no \(z\in\{x,y\}\) for which \(xRy\) and \(zRy\), we call \(x\) and immeditate predecessor of \(y\). graph LR subgraph R y -.-&amp;gt; z z -.-&amp;gt; x x --&amp;gt; y end In this graph if you can see no \(z\) in-between \(x\) and \(y\) then \(y\) is an immediate predecessor of \(x\). Integer Example For the function \(\leq\) on the set \(\Bbb{Z}\) the immediate predecessor of a number \(n\) is \(n-1\). graph LR subgraph Z 1[n-1] --&amp;gt; 2[n] end Hasse Diagram The Hasse Diagram of a partial order is a digraph. The vertices of the digraph are the elements of the partial order, and the edges of the digraph are given by the “immediate predecessor” relation. This is an example for the bit vector representation of a set containing 3 elements. Each relation is a subset relation: graph BT 0[0,0,0] --- 1[0,0,1] 0 --- 2[0,1,0] 0 --- 4[1,0,0] 1 --- 3[0,1,1] 1 --- 5[1,0,1] 2 --- 3 2 --- 6[1,1,0] 4 --- 5 4 --- 6 3 --- 7[1,1,1] 5 --- 7 6 --- 7 It is typical to assume that the arrow pointing upwards. This diagram notation saves us from having to draw all the reflexive links and also all of the dependency links by just drawing the immediate dependency. Total Orders A binary relation \(R\) on a set \(A\) is a total order if it is a partial order such that any \(x,y\in A,xRy\) or \(yRx\). This means that for any relation you can always compare them. The Hasse diagram of a total order is a chain. This means that there are no splits as splits mean that they aren’t comparable. Examples The relation \(\leq\) on the set \(\Bbb{R}\) of real numbers. The usual lexicographical ordering on words in a dictionary. The relation “is a divisor of” is not a total order.</summary></entry><entry><title type="html">COMP109 - Relations - 10</title><link href="http://localhost:4000/UoL/comp109/lectures/2020/11/27/2.html" rel="alternate" type="text/html" title="COMP109 - Relations - 10" /><published>2020-11-27T00:00:00+00:00</published><updated>2020-11-27T00:00:00+00:00</updated><id>http://localhost:4000/UoL/comp109/lectures/2020/11/27/2</id><content type="html" xml:base="http://localhost:4000/UoL/comp109/lectures/2020/11/27/2.html">&lt;p&gt;All the relations we have been looking at so far have been binary relations however this can be generalised for greater numbered relations.&lt;/p&gt;
-
-&lt;h2 id=&quot;n-ary-relations&quot;&gt;\(n\)-ary Relations&lt;/h2&gt;
-&lt;p&gt;The Cartesian product \(A_1\times A_2\times \ldots \times A_n\) of sets \(A_1,A_2,\ldots,A_n\) is defined by:&lt;/p&gt;
-
-&lt;p&gt;\[A_1\times A_2\times \ldots \times A_n=\{(a_1,\ldots,a_n)\ \vert\ a_1\in A_1,\ldots,a_n\in A_n\}\]&lt;/p&gt;
-
-&lt;p&gt;Here \((a_1,\ldots,a_n)=(b_1,\ldots,b_n\) if and only if \(a_i=b_i\) for all \(1\leq i\leq n\).&lt;/p&gt;
-
-&lt;p&gt;An \(n\)-ary relation is a subset of \(A_1\times\ldots A_n\)&lt;/p&gt;
-
-&lt;h3 id=&quot;databases-and-relations&quot;&gt;Databases and Relations&lt;/h3&gt;
-&lt;p&gt;A database table \(\approx\) relation.&lt;/p&gt;
-
-&lt;h4 id=&quot;table-1-textstudents&quot;&gt;Table 1 \(\text{Students}\)&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Student_name&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;ID_number&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Major&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;GPA&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Ackermann&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;231455&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Computer Science&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.88&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Adams&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;888323&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Physics&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.45&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Chou&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;102147&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Computer Science&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.49&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Goodfriend&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;453876&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Mathematics&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.45&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Rao&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;678543&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Mathematics&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3.9&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Stevens&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;786576&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Psychology&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2.99&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;This student table is a subset of the Cartesian product of four sets containing names, ID numbers, subject and GPA. We can then write these properties in tuples in the subset:&lt;/p&gt;
-
-&lt;p&gt;\[\text{Students}=\{\text{(Ackerman, 231455, Computer Science, 3.88)}\ldots\}\]&lt;/p&gt;
-
-&lt;h2 id=&quot;unary-relations&quot;&gt;Unary Relations&lt;/h2&gt;
-&lt;p&gt;Unary relation are just subsets of a set.&lt;/p&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;The unary relation \(\text{EvenPositiveIntegers}\) on the set \(\Bbb{Z^+}\) of positive integers is:&lt;/p&gt;
-
-&lt;p&gt;\[\{x\in\Bbb{Z^+}\ \vert\ x \text{ is even}\}\]&lt;/p&gt;
-
-&lt;p&gt;This shows that a unary relation is just a list of items in a set the satisfy a property.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP109" /><category term="Lectures" /><category term="COMP109" /><category term="Lectures" /><summary type="html">All the relations we have been looking at so far have been binary relations however this can be generalised for greater numbered relations. \(n\)-ary Relations The Cartesian product \(A_1\times A_2\times \ldots \times A_n\) of sets \(A_1,A_2,\ldots,A_n\) is defined by: \[A_1\times A_2\times \ldots \times A_n=\{(a_1,\ldots,a_n)\ \vert\ a_1\in A_1,\ldots,a_n\in A_n\}\] Here \((a_1,\ldots,a_n)=(b_1,\ldots,b_n\) if and only if \(a_i=b_i\) for all \(1\leq i\leq n\). An \(n\)-ary relation is a subset of \(A_1\times\ldots A_n\) Databases and Relations A database table \(\approx\) relation. Table 1 \(\text{Students}\) Student_name ID_number Major GPA Ackermann 231455 Computer Science 3.88 Adams 888323 Physics 3.45 Chou 102147 Computer Science 3.49 Goodfriend 453876 Mathematics 3.45 Rao 678543 Mathematics 3.9 Stevens 786576 Psychology 2.99 This student table is a subset of the Cartesian product of four sets containing names, ID numbers, subject and GPA. We can then write these properties in tuples in the subset: \[\text{Students}=\{\text{(Ackerman, 231455, Computer Science, 3.88)}\ldots\}\] Unary Relations Unary relation are just subsets of a set. Example The unary relation \(\text{EvenPositiveIntegers}\) on the set \(\Bbb{Z^+}\) of positive integers is: \[\{x\in\Bbb{Z^+}\ \vert\ x \text{ is even}\}\] This shows that a unary relation is just a list of items in a set the satisfy a property.</summary></entry></feed>
+&lt;p class=&quot;error&quot;&gt;The attribute course should be an entity and not a complex attribute. This would make a student enrolled in many courses.&lt;/p&gt;</content><author><name>Ben Weston</name><email>b.weston60@gmail.com</email></author><category term="COMP107" /><category term="Tutorials" /><category term="COMP107" /><category term="Tutorials" /><summary type="html">ER by View Integration You should consider each user perspective separately. Requirements are given for many users groups or applications independently. an ER schema is designed for each user group and application (typically by different developers.) Individual views are merged into a global conceptual schema. Individual views can be reconstructed as external schema after view integration. View Integration Identification of correspondences and conflicts among schema. Need to identify constructs in schemas that represent the same real-world concept. Modification of views to conform to one another. Some of the view schemas may need to be refined to resolve conflicts identified in 1. Merging of views. Global schema is created by merging individual schemas. Restructuring. Global schema may require further refinement to remove redundancies or unnecessary complexity. Example In the example we put up all the diagrams next to each other to view the conflicts. They include: Names (including synonyms). Homonyms - Using the same name for different things. Notions Where concepts are represented as entities or attributes. From this you change each view individually to make them coherent with each other. After this you eliminate redundancies to make them into a single diagram. Task Draw and ER or EER model to describe a library by using a view integration approach. The group made this in the first phase: We should stick very specifically to the story. Over-designing is bad for other people’s designs and you should stick to only the points in your story. The subject of the user story does not need to be included in the diagram. This is because they are the user and don’t need data stored about them to use the database. The group made this in the second phase. Attributes should not be shared between different entities. The attribute course should be an entity and not a complex attribute. This would make a student enrolled in many courses.</summary></entry></feed>

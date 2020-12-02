@@ -29,8 +29,8 @@ comp107:
         url:    /COMP107/Seminars
       - title:  Tutorials
         url:    /COMP107/Tutorials
-	  - title:  Assessments
-        url:    /COMP107/Assessments
+      - title:  Meetings
+        url:    /COMP107/Meetings
 
 comp109:
   - title:      COMP109
@@ -49,5 +49,3 @@ comp111:
         url:    /COMP111/Lectures
       - title:  Tutorials
         url:    /COMP111/Tutorials
-
-

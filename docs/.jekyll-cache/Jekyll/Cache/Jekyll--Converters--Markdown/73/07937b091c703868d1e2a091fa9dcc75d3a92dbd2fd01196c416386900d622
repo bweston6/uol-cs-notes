@@ -1,5 +1,78 @@
-I"‘¹
+I"ŽÕ
 <h1 id="comp111---independent-random-variables"><a href="/UoL/comp111/lectures/2020/12/01/1.html">COMP111 - Independent Random Variables</a></h1>
+<p>Random variables \(F\) and \(G\) are independent if:</p>
+
+<p>\[\mathbf{P}(F,G)=\mathbf{P}(F)\times\mathbf{P}(G)\]</p>
+
+<p>That is, for all values \(r\) and \(s\):</p>
+
+<p>\[P(F=r,G=s)=P(F=r)\times P(G=s)\]</p>
+
+<p>As oneâ€™s dental problems do not influence the weather, the pairs of random variables are each independent:</p>
+
+<ul>
+  <li>\(\text{Toothache},\text{Weather}\)</li>
+  <li>\(\text{Catch},\text{Weather}\)</li>
+  <li>\(\text{Cavity},\text{Weather}\)</li>
+</ul>
+
+<h2 id="example---weather-and-dental-problems">Example - Weather and Dental Problems</h2>
+<p>The full joint probability distribution:</p>
+
+<p>\[\mathbf{P}(\text{Toothache, Catch, Cavity, Weather})\]</p>
+
+<p>has 32 entries. It contains four tables for the dentist variables and one for the four kinds of weather.</p>
+
+<p class="info">The number of entries comes from the \(2\times2\times2\times4\) of the 2 outcomes for the 4 dentist variables and the 4 outcomes of the \(\text{Weather}\) variable.</p>
+
+<p>Thus we have:</p>
+
+<ul>
+  <li>8 probabilities for \((\text{Weather}=\text{sunny})\):
+    <ul>
+      <li>\(P(\text{Weather}=\text{sunny}, \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\)</li>
+    </ul>
+  </li>
+  <li>And so on for the other three weather types.</li>
+</ul>
+
+<p>Clearly we can make the independence assumption that for any combination of values of the random variables \(\text{Toothache, Catch, Cavity,}\) the probability for \(\text{Weather}\). For example:</p>
+
+<p>\[
+\begin{aligned}
+&amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp; P(\text{Weather}=\text{sunny})
+\end{aligned}
+\]</p>
+
+<p>for all \(r_1,r_2,r_3\in\{0,1\}\).</p>
+
+<p>Thus equivalently:</p>
+
+<p>\[
+\begin{aligned}
+&amp; P(\text{Weather}=\text{sunny} \vert \text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)\\
+=&amp; P(\text{Weather}=\text{sunny})P(\text{Toothache}=r_1, \text{Catch} =r_2,\text{Cavity}=r_3)
+\end{aligned}
+\]</p>
+
+<p>for all \(r_1,r_2,r_3\in\{0,1\}\).</p>
+
+<p>This means that they are related proportionally.</p>
+
+<p>We have seen that the join probability distribution</p>
+
+<p>\[\mathbf{P}(\text{Weather, Toothache, Catch, Cavity})\]</p>
+
+<p>can be written as:</p>
+
+<p>\[\mathbf{P}(\text{Weather})\times\mathbf{P}(\text{Toothache, Catch, Cavity})\]</p>
+
+<p>The 32-element table for four variables can be constructed from one 4-element table and an 8-element table.</p>
+
+<h2 id="independence-analysis">Independence Analysis</h2>
+<p>Unfortunately this type of independence is very rare as generally things that you want to compare are inter-related. This is especially true within a single domain.
+Conditional independence is much more prevalent and useful.</p>
 
 <h1 id="comp111---probabilistic-inference"><a href="/UoL/comp111/lectures/2020/11/25/2.html">COMP111 - Probabilistic Inference</a></h1>
 <h2 id="marginalisation">Marginalisation</h2>
@@ -2772,6 +2845,147 @@ D --&gt; H
 </table>
 
 <p>If the route was expanded at the same time then they are allowed to be added in any order. Otherwise they should be searched in the order that they were first added to the frontier. Choosing the first item in the frontier is always the right option as it is first in first out.</p>
+
+<h1 id="comp111---tutorial-1"><a href="/UoL/comp111/tutorials/2020/10/19/1.html">COMP111 - Tutorial 1</a></h1>
+<p>Covering the tutorial sheets from week 1. The tutorial leaderâ€™s email is <a href="mailto:F.Alves@liverpool.ac.uk">F.Alves@liverpool.ac.uk</a>.</p>
+
+<ol>
+  <li>The leader chose to cover one of the options which was football.
+    <ul>
+      <li>Performance Measure
+        <ul>
+          <li>Games won, goals scored.</li>
+        </ul>
+      </li>
+      <li>Environment
+        <ul>
+          <li>Football pitch, the players, the ball.</li>
+        </ul>
+      </li>
+      <li>Actuators
+        <ul>
+          <li>Legs, head.</li>
+        </ul>
+      </li>
+      <li>Sensors
+        <ul>
+          <li>Visual, hearing, pressure.</li>
+        </ul>
+      </li>
+      <li>Classification
+        <ul>
+          <li>Partially observable environment as they canâ€™t see what is behind them and they have to memorise the positions of the players that they canâ€™t see.</li>
+          <li>Stochastic as there is uncertainty about the state that will come from performing an action</li>
+          <li>Sequential as the current decision could affect all future decisions.</li>
+          <li>Dynamic environment as other players are acting while you make your decision.</li>
+          <li>Continuous as there is no fixed states for the positions.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Refer to the textbook or lecture notes.</li>
+  <li>For a path \(a_0 \rightarrow a_1 \rightarrow a_2 \rightarrow a_3\), the length of the path is 3 as that is the number of actions that need to be performed.
+    <ul>
+      <li>When listing paths you can list them by length
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab, ac, ad</li>
+          <li>2 : abe, ace, ade</li>
+          <li>3 : abef, acef, adef</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>This may help with drawing search trees.</p>
+
+    <ul>
+      <li></li>
+    </ul>
+
+    <pre><code class="language-mermaid"> graph LR
+ a --&gt; ab
+ a --&gt; ac
+ a --&gt; ad
+ ab --&gt; abe
+ ac --&gt; ace
+ ad --&gt; ade
+ abe --&gt; abef
+ ace --&gt; acef
+ ade --&gt; adef
+</code></pre>
+  </li>
+  <li>
+    <ul>
+      <li>Paths
+        <ul>
+          <li>0 : a</li>
+          <li>1 : ab</li>
+          <li>2 : aba, abc</li>
+          <li>3 : abab</li>
+          <li>4 : ababa, ababc</li>
+        </ul>
+      </li>
+      <li>Search graph</li>
+    </ul>
+
+    <pre><code class="language-mermaid">graph LR
+a --&gt; ab
+ab --&gt; aba
+ab --&gt; abc
+aba --&gt; abab
+abab --&gt; ababa
+abab --&gt; ababc
+ababc .-&gt; A[ ]
+</code></pre>
+    <p>You should draw the trailing arrow to indicate that the graph has bee truncated.</p>
+
+    <p class="info">Search graphs should be drawn with the whole path at each level as it shows the full search at each level.</p>
+  </li>
+  <li>Similar to 3. and 4.</li>
+  <li>
+    <ul>
+      <li>This problem is very large so I will describe the result
+        <ul>
+          <li>The set of \(S\) states are all 16 or \(4^4\) states that exist as a subset of the set \(N = \{ 1,2,3,4 \}\)</li>
+          <li>The start state \(S_{start}\) is an empty subest \(\{ \phi \}\) with a sum of zero.</li>
+          <li>The set of goal states \(S_{goal}\) are all the subsets which add to 6</li>
+          <li>The set of actions \(A\) are any addition or subtraction of a number that is in the set.</li>
+          <li>The cost function for each action should just be one such that the shortest route from \(S_{start}\) is achieved.</li>
+        </ul>
+      </li>
+      <li>
+        <p>The search graph starts at level 1 with the empty list and then each subsequent level adds an additional item to the list via an action which adds or subtracts an item from the set:</p>
+
+        <pre><code class="language-mermaid">  graph TD
+  A[phi 0] --&gt; |a1| B[&lt;1&gt; 1]
+  A --&gt; |+2| C[&lt;2&gt; 2]
+  A --&gt; |+3| D[&lt;3&gt; 3]
+  A --&gt; |+4| E[&lt;4&gt; 4]
+  B --&gt; |+2| F[&lt;1,2&gt; 3]
+  B --&gt; |+3| G[&lt;1,3&gt; 4]
+  B --&gt; |+4| H[&lt;1,4&gt; 5]
+  C --&gt; |+1| F
+  C --&gt; |+3| I[&lt;2,3&gt; 5]
+  C --&gt; |+4| J[&lt;2,4&gt; 6]
+  D --&gt; |+1| G
+  D --&gt; |+2| I
+  D --&gt; |+4| K[&lt;3,4&gt; 7]
+  E --&gt; |+1| H
+  E --&gt; |+2| J
+  E --&gt; |+3| K
+  F .-&gt; L[ ]
+  G .-&gt; M[ ]
+  H .-&gt; N[ ]
+  I .-&gt; O[ ]
+  J .-&gt; P[ ]
+  K .-&gt; Q[ ]
+</code></pre>
+
+        <p>As you can see this is very tedious indeed.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 <h1 id="comp111---generic-search-algorithm-in-pseudo-code"><a href="/UoL/comp111/lectures/2020/10/14/3.html">COMP111 - Generic Search Algorithm in Pseudo-code</a></h1>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 	a start state s_0

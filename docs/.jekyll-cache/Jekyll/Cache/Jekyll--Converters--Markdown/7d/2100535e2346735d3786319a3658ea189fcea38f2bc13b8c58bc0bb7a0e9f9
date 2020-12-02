@@ -1,6 +1,228 @@
-I"�
+I"��
+<h1 id="comp109---logic---3"><a href="/UoL/comp109/lectures/2020/12/02/1.html">COMP109 - Logic - 3</a></h1>
+<h2 id="semantic-consequence">Semantic Consequence</h2>
+<p>Suppose \(\Gamma\) is a finite set of formulas and \(P\) is a formula. Then \(P\) follows from \(\Gamma\) (is a semantic consequence of \(\Gamma\)) if the following implication holds for every interpretation \(I\):</p>
+
+<p>\[\text{If } I(Q)=1\text{ for all } Q\in \Gamma,\text{then } I(P)=1\]</p>
+
+<p>This is denoted by:</p>
+
+<p>\[\Gamma \models P\]</p>
+
+<h3 id="logical-puzzles">Logical Puzzles</h3>
+<p>An island has two kinds of inhabitants, knights, who always tell the truth, and knaves, who always lie.</p>
+
+<p>You go to the island and meet \(A\) and \(B\).</p>
+
+<ul>
+  <li>\(A\) says, “\(B\) is a knight.”</li>
+  <li>\(B\) says, “The two of us are opposite types.”</li>
+</ul>
+
+<p>What are \(A\) and \(B\)?</p>
+
+<p class="info">We can prove this in a proof by cases or, as the two people have a binary type you can model this question as below.</p>
+
+<p>\(p\): “\(A\) is a knight”; and \(q\): “\(B\) is a knight”</p>
+
+<p>Options for \(A\)</p>
+
+<ul>
+  <li>\(p\) is true \(p\Rightarrow q\)</li>
+  <li>\(p\) is false \(\neg p\Rightarrow \neg q\)</li>
+</ul>
+
+<p>Options for \(B\)</p>
+
+<ul>
+  <li>\(q\) is true \(q\Rightarrow \neg p\)</li>
+  <li>\(q\) is false \(\neg q\Rightarrow \neg p\)</li>
+</ul>
+
+<p class="info">Here we are summarising the two statements as logical propositions.</p>
+
+<h4 id="truth-table">Truth Table</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\(p\)</th>
+      <th style="text-align: center">\(q\)</th>
+      <th style="text-align: center">\(\neg p\)</th>
+      <th style="text-align: center">\(\neg q\)</th>
+      <th style="text-align: center">\(p\Rightarrow q\)</th>
+      <th style="text-align: center">\(\neg p\Rightarrow \neg q\)</th>
+      <th style="text-align: center">\(q\Rightarrow \neg p\)</th>
+      <th style="text-align: center">\(\neg q\Rightarrow \neg p\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>\(\wedge\)-ing together all the answers shows that the correct answer is \(p=0,q=0\). This means that \(A\) is a knave and \(B\) is a knave.</p>
+
+<p>Say that the implications in the truth table are numbered, \(\{1,2,3,4\}\). We can then rewrite this table as the following statement:</p>
+
+<p>\[\{1,2,3,4\}\models \neg p \wedge \neg q\]</p>
+
+<h3 id="examples">Examples</h3>
+<ol>
+  <li>
+    <p>Show \(\{(p_1\wedge p_2)\}\models (p_1\vee p_2)\).</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">\(p_1\)</th>
+          <th style="text-align: center">\(p_2\)</th>
+          <th style="text-align: center">\((p_1\wedge p_2)\)</th>
+          <th style="text-align: center">\((p_1\vee p_2)\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The top line represents \((p_1\vee p_2)\) which we can see as \(p_1=1, p_2=1\). As the proposition and the result hold true in this case then the statement is correct.</p>
+  </li>
+  <li>
+    <p>Show \(\{p_1\}\not\models p_2\)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">\(p_1\)</th>
+          <th style="text-align: center">\(p_2\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>From this table we can see that the statement is correct as when \(p_1=1, p_2=0\).</p>
+  </li>
+</ol>
+
+<h3 id="logic-and-proof-principles">Logic and Proof Principles</h3>
+<h4 id="modus-ponens"><em>Modus Ponens</em></h4>
+<p>Direct proof corresponds to the following semantic consequence:</p>
+
+<p>\[\{P,(P\Rightarrow Q)\}\models Q\]</p>
+
+<h4 id="reducto-ad-absurdum"><em>Reducto ad Absurdum</em></h4>
+<p>Proof by contradiction corresponds to:</p>
+
+<p>\[\{(\neg P\Rightarrow\bot)\}\models P\]</p>
+
+<p>where \(\bot\) is a <strong>special proposition</strong>, which is false under ever interpretation. \(\bot=a\wedge\neg a\).</p>
+
+<h4 id="modus-tollens"><em>Modus Tollens</em></h4>
+<p>Another look at proof by contradiction:</p>
+
+<p>\[\{(P\Rightarrow Q),\neg Q\}\models\neg P\]</p>
+
+<h4 id="case-analysis">Case Analysis</h4>
+
+<p>\[\{(P\Rightarrow Q),(R\Rightarrow Q),(P\vee R)\}\models Q\]</p>
+
+<h2 id="proof-theory">Proof Theory</h2>
+
+<p>We have studies proof as carefully reasoned arguments  to convince a sceptical listener that a given statement is true. These are called <strong>social proofs</strong>.</p>
+
+<p><strong>Proof theory</strong> is a branch of mathematical logic dealing with proofs as a mathematical objects:</p>
+
+<ul>
+  <li>Strings of symbols.</li>
+  <li>Rules for manipulation.</li>
+  <li>Mathematics becomes a game played with strings of symbols.</li>
+  <li>Can be read and interpreted by computers.</li>
+</ul>
+
+<p>This is to say that in prof theory we make statements that computers are able to solve by putting them in a very structured language. This language can then be solved by Boolean logic.</p>
+
 <h1 id="comp109---logic---2"><a href="/UoL/comp109/lectures/2020/11/30/2.html">COMP109 - Logic - 2</a></h1>
-<p class="info">This lecture is very similar to COMP111’s <a href="/UoL/comp111/lectures/2020-11-12-2">truth values</a> lecture. View that lecture for all truth tables.</p>
+<p class="info">This lecture is very similar to COMP111’s <a href="/UoL/comp111/lectures/2020/11/12/2">truth values</a> lecture. View that lecture for all truth tables.</p>
 
 <h2 id="truth-values">Truth Values</h2>
 <p>Interpretations are a way of assigning values to propositions which may vary depending on the situation or person who answers them.</p>
@@ -68,7 +290,7 @@
 </ul>
 
 <h1 id="comp109---logic---1"><a href="/UoL/comp109/lectures/2020/11/30/1.html">COMP109 - Logic - 1</a></h1>
-<p class="info">This topic is very similar to the subjects covered in COMP111’s <a href="/UoL/comp111/lectures/2020-11-12-1">propositional logic</a>. As result I will only be noting down significant differences.</p>
+<p class="info">This topic is very similar to the subjects covered in COMP111’s <a href="/UoL/comp111/lectures/2020/11/12/1">propositional logic</a>. As result I will only be noting down significant differences.</p>
 
 <p>Logic is concerned with the truth a falsity of statements. The question is when does a statement follow from a set of statements.</p>
 
@@ -1389,60 +1611,6 @@ plot:
 
 <p>This graph shows that there is a one to one mapping of the numbers between 0 and 1 to all real numbers. This is becuse for all values for x between 0 and one all real numbers are produced on the y axis.</p>
 
-<h1 id="comp109---catch-up-session-6"><a href="/UoL/comp109/catch-up%20sessions/2020/11/16/1.html">COMP109 - Catch-up Session 6</a></h1>
-<h2 id="power-sets">Power Sets</h2>
-<p>The power set \(\text{Pow}\{A\}\) of a set \(A\) is the set of all possible subsets. This includes the null set \(\emptyset\) and the full set.</p>
-
-<p>Each set in the power set follows this definition:</p>
-
-<p>\[\{x\vert x\subseteq A\}\]</p>
-
-<h3 id="example">Example</h3>
-<p>The power set \(\text{Pow}\{A\}\) of a set \(A=\{1,2\}\) is:</p>
-
-<p>\[\{\emptyset,\{1\},\{2\},\{1,2\}\}\]</p>
-
-<p>For any set \(A\):</p>
-
-<p>\[\vert \text{Pow(A)}\vert =2^{\vert A\vert }\]</p>
-
-<p>Therefore:</p>
-
-<p>\[\{x\vert x\in\text{Pow}(A)\}=\{\emptyset,\ldots\}\]</p>
-
-<h2 id="russells-paradox">Russell’s Paradox</h2>
-<p>People say that you can define a set just by defining the constraints of the set:</p>
-
-<p>\[\{x\in\mathbb{R}\vert x&lt;4,x\geq-1\}\]</p>
-
-<p>However statements written in this way are susceptible to paradoxes. For example the following paradox:</p>
-
-<p>Everyone from Crete is a liar. <cite>(Said by a person from Crete)</cite></p>
-
-<h3 id="paradoxes-in-general">Paradoxes in General</h3>
-<p>A paradox is a case that when expanded contains a contradiction.</p>
-
-<h2 id="avoiding-paradoxes">Avoiding Paradoxes</h2>
-<p>To avoid paradoxes we should write the set definition in the following way:</p>
-
-<p>\[\{x\in\ldots\vert \ldots\}\]</p>
-
-<p>This means that the set or value x should be taken from some other set.</p>
-
-<p>They should not be written like this:</p>
-
-<p>\[\{x\ldots\vert \ldots\}\]</p>
-
-<h2 id="venn-diagrams-and-set-logic">Venn Diagrams and Set Logic</h2>
-
-<p>Draw the following as a Venn diagram: \(A\cap (B\cup C)\)</p>
-
-<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-1.png" alt="" /></p>
-
-<p>Draw the following as a Venn diagram: \((A\cap B)\cup(A\cap C)\)</p>
-
-<p><img src="/UoL/assets/COMP109/Catch-up Sessions/2020-11-16-1-2.png" alt="" /></p>
-
 <h1 id="comp109---functions---5"><a href="/UoL/comp109/lectures/2020/11/13/3.html">COMP109 - Functions - 5</a></h1>
 <h2 id="theorem-of-friends-and-strangers">Theorem of Friends and Strangers</h2>
 <p>Show that in any group of six people there are either three who all know each other or three complete strangers.</p>
@@ -1970,44 +2138,6 @@ Y –&gt;|g| Z</p>
 
 <p>\[\left\vert A_1\cup\ldots\cup A_n\right\vert =\sum_{1\leq k\leq n} \left\vert A_i\right\vert -\sum_{1\leq j\leq k\leq n} \left\vert A_j \cap A_k\right\vert +\sum_{1\leq i\leq j\leq k\leq n} \left\vert A_i \cap A_j \cap A_k\right\vert \]
 \[-…+(-1)^{n-1}\left\vert A_1\cap\ldots\cap A_n\right\vert \]</p>
-
-<h1 id="comp109---tutorial-4"><a href="/UoL/comp109/tutorials/2020/11/10/1.html">COMP109 - Tutorial 4</a></h1>
-<p>For the following questions:</p>
-
-<ul>
-  <li>\(\emptyset \in\{\text{Leeds, Liverpool}\}\)
-    <ul>
-      <li>False</li>
-    </ul>
-  </li>
-  <li>\(\emptyset \subseteq\{\text{Leeds, Liverpool}\}\)
-    <ul>
-      <li>True</li>
-    </ul>
-  </li>
-  <li>\(\emptyset = \{\}\)
-    <ul>
-      <li>False as they are different types.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="comp109---catch-up-session-5"><a href="/UoL/comp109/catch-up%20sessions/2020/11/09/1.html">COMP109 - Catch-up Session 5</a></h1>
-<h2 id="example-1">Example 1</h2>
-<p>\(A=\{1,2,7,8,9\}, B=\{x\in A\vert x \text{ is odd}\}\)</p>
-
-<p>Where:</p>
-
-<p>\(C=A-B=A\cap B\)</p>
-
-<p>Therefore:</p>
-
-<p>\(B=\{1,7,9\}\)</p>
-
-<p>\(C=\{2,8\} = \{x\in A \vert x \notin B\}\)</p>
-
-<h2 id="proving-identities">Proving Identities</h2>
-<p>To prove an identity you would consider the sections of a Venn diagram and consider each of the four cases. These cover all of the locations in the Venn diagram.</p>
 
 <h1 id="comp109---algebra-of-sets"><a href="/UoL/comp109/lectures/2020/11/06/1.html">COMP109 - Algebra of Sets</a></h1>
 <p>Suppose that \(A,B,C,U\) are sets with \(A \subseteq U, B \subseteq U, C \subseteq U\).</p>
@@ -2935,49 +3065,5 @@ You are saying that the opposite is true:
     <p>\(n\) is odd \(\Leftrightarrow \exists\)  an integer \(k\) such that \(n=2k+1\)</p>
   </li>
 </ul>
-
-<h1 id="comp109---tutorial-1"><a href="/UoL/comp109/tutorials/2020/10/19/1.html">COMP109 - Tutorial 1</a></h1>
-<p>This is following the questions from the tutorial for week 1.</p>
-
-<p>The tutorial leader’s email is: <a href="mailto:p.austin@liverpool.ac.uk">p.austin@liverpool.ac.uk</a></p>
-
-<h1 id="comp109---catch-up-session-2"><a href="/UoL/comp109/catch-up%20sessions/2020/10/19/1.html">COMP109 - Catch-up Session 2</a></h1>
-<h2 id="methods-of-proof">Methods of Proof</h2>
-<ul>
-  <li>Counter Example Method
-    <ul>
-      <li>Prove that a statement is false by use of a counter-statement.</li>
-    </ul>
-  </li>
-  <li>Universal Proof
-    <ul>
-      <li>Applies to all integers e.g. odd if \(a=2k+1\)</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="example">Example</h2>
-<p>\[(a+b)^2=a^2+b^2\]</p>
-
-<p>Holds for:</p>
-
-<ul>
-  <li>Some integers</li>
-  <li>All integers</li>
-  <li>No integers</li>
-</ul>
-
-<p>The answer is that it holds for some integers as when \(a=0,\ b=0\). \[ (0+0)^2=0^2+0^2\] This also follows for \(a\neq0,\ b=0\).</p>
-
-<p>The two proofs I gave as answers to the question count for both a counter example proof and a universal proof.</p>
-
-<h2 id="example-of-proof-by-contradiction">Example of Proof by Contradiction</h2>
-<p>Suppose for a proof by contradiction that \(P_n\) is the largest prime number. Therefore, \(P_1\ldots P_n\) are all the primes.</p>
-
-<p>Consider \(P=P_1\times P_2\ldots P_n+1\)</p>
-
-<p>Case 1: \(P_p\) is prime</p>
-
-<p>Case 2: \(P_p\) not prime. Then \(P\) must have prime member.</p>
 
 :ET

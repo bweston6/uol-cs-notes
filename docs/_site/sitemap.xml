@@ -529,6 +529,14 @@
 <lastmod>2020-12-01T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/UoL/comp107/assessments/2020/12/02/1.html</loc>
+<lastmod>2020-12-02T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/UoL/comp109/lectures/2020/12/02/1.html</loc>
+<lastmod>2020-12-02T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/UoL/COMP105/COMP105.html</loc>
 </url>
 <url>
@@ -554,6 +562,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/UoL/COMP109/Lectures.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/UoL/COMP107/Meetings.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/UoL/COMP107/Seminars.html</loc>

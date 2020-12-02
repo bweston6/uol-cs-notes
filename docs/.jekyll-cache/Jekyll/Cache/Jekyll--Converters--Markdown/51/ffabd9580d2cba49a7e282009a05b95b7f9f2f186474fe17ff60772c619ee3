@@ -1,4 +1,37 @@
-I"?
+I"³
+<h1 id="comp107---assessment-2---meeting-1"><a href="/UoL/comp107/assessments/2020/12/02/1.html">COMP107 - Assessment 2 - Meeting 1</a></h1>
+<h2 id="role-call">Role Call</h2>
+<p>Liam, Ravi and Ben Weston were present.</p>
+
+<h2 id="identifying-submission-requirements">Identifying Submission Requirements</h2>
+<p>We had a look at the marking criteria to identify the requirements for the report.</p>
+
+<ol>
+  <li>Identify at least three users or view which provide three different perspectives on the model?</li>
+  <li>For the user preservatives create 4 - 5 different user stories.</li>
+  <li>Group them in a number of iterations.</li>
+  <li>Draw out the user stories in an EER diagram. Over various iterations.
+    <ul>
+      <li>Draw EER diagram for each user story.</li>
+      <li>Merge those together into user perspectives</li>
+      <li>Merge those together into one EER diagram for the butler.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Make sure to include all EER diagram features in our diagrams to make them as complete as possible.</p>
+
+    <p class="warning">Find out about tableaux testing to check if your design produces spurious records.</p>
+  </li>
+  <li>Additionally there should be descriptions that tie the EER diagrams together.</li>
+</ol>
+
+<h2 id="method-of-collaboration">Method of Collaboration</h2>
+<p>We should collaborate in a collaborative word document. The link will be in the chat and I will put it <a href="https://theuniversityofliverpool-my.sharepoint.com/:w:/g/personal/pslrimme_liverpool_ac_uk/EeQ192A2au5BiL3bXaAfThYBg70DZD49EASdD04O2dLZYQ?e=yVUTC8">here</a> too.</p>
+
+<p>We should base our document on the following <a href="https://liverpool.instructure.com/courses/17251/files/1391047/download?wrap=1">template</a>.</p>
+
+<p class="info">The slides for the assignment are <a href="https://liverpool.instructure.com/courses/17251/files/1390327/download?wrap=1">here</a>.</p>
+
 <h1 id="comp107---tutorial-4"><a href="/UoL/comp107/tutorials/2020/11/27/1.html">COMP107 - Tutorial 4</a></h1>
 <h2 id="er-by-view-integration">ER by View Integration</h2>
 

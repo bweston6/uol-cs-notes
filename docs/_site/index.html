@@ -842,8 +842,58 @@ c27 37 21 38 -76 15 -81 -20 -97 -32 -54 -40 18 -4 37 -14 42 -24 5 -10 25
 
 <!-- end custom main top snippet -->
 <article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>Home</h1></header><meta itemprop="headline" content="Home"><meta itemprop="author" content="Ben Weston"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp109/lectures/2020/12/02/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Logic - 3</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Semantic Consequence
+Suppose \(\Gamma\) is a finite set of formulas and \(P\) is a formula. Then \(P\) follows from \(\Gamma\) (is a semantic consequence of \(\Gamma\)) if the following implication holds for every interpretation \(I\):
+
+\[\text{If } I(Q)=1\text{ for all } Q\in \Gamma,\text{then } I(P)=1\]
+
+This is denoted by:
+
+\[\Gamma \models P...</div><p><a href="/UoL/comp109/lectures/2020/12/02/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP109">COMP109</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Lectures">Lectures</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Dec 02, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-12-02T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP109,Lectures"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
+          <header><a href="/UoL/comp107/assessments/2020/12/02/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Assessment 2 - Meeting 1</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Role Call
+Liam, Ravi and Ben Weston were present.
+
+Identifying Submission Requirements
+We had a look at the marking criteria to identify the requirements for the report.
+
+
+  Identify at least three users or view which provide three different perspectives on the model?
+  For the user preservatives create 4 - 5 different user stories.
+  Group them...</div><p><a href="/UoL/comp107/assessments/2020/12/02/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=COMP107">COMP107</a>
+            </li><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/UoL/archive.html?tag=Meetings">Meetings</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Dec 02, 2020</span>
+            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-12-02T00:00:00+00:00">
+    <meta itemprop="keywords" content="COMP107,Meetings"></div>
+      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
           <header><a href="/UoL/comp111/lectures/2020/12/01/1.html"><h2 itemprop="headline" class="item__header">COMP111 - Independent Random Variables</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody"></div><p><a href="/UoL/comp111/lectures/2020/12/01/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">Random variables \(F\) and \(G\) are independent if:
+
+\[\mathbf{P}(F,G)=\mathbf{P}(F)\times\mathbf{P}(G)\]
+
+That is, for all values \(r\) and \(s\):
+
+\[P(F=r,G=s)=P(F=r)\times P(G=s)\]
+
+As one’s dental problems do not influence the weather, the pairs of random variables are each independent:
+
+
+  \(\text{Toothache},\text{Weather}\)
+  \(\text{Catc...</div><p><a href="/UoL/comp111/lectures/2020/12/01/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
                 href="/UoL/archive.html?tag=COMP111">COMP111</a>
             </li><li>
@@ -1029,47 +1079,8 @@ The Cartesian product \(A_1\times A_2\times \ldots \times A_n\) of sets \(A_1,A_
             </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
             </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
     <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp109/lectures/2020/11/27/1.html"><h2 itemprop="headline" class="item__header">COMP109 - Relations - 9</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">Partial Orders
-A binary relation \(R\) on set \(A\) which is reflexive, transitive and antisymmetric is called  a partial order.
-
-Partial orders are important in situations where we wish to characterise precedence.
-
-Examples
-
-  The relation \(\leq\) on the set of \(\Bbb{R}\) of real numbers.
-  The relation \(\subseteq\) on \(\text{Pow}(A)\).
-  “...</div><p><a href="/UoL/comp109/lectures/2020/11/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP109">COMP109</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Lectures">Lectures</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP109,Lectures"></div>
-      </article><article class="item" itemscope itemtype="http://schema.org/BlogPosting"><div class="item__content">
-          <header><a href="/UoL/comp107/tutorials/2020/11/27/1.html"><h2 itemprop="headline" class="item__header">COMP107 - Tutorial 4</h2></a></header>
-          <div class="item__description"><div class="article__content" itemprop="description articleBody">ER by View Integration
-
-You should consider each user perspective separately.
-
-
-  Requirements are given for many users groups or applications independently.
-  an ER schema is designed  for each user group and application (typically by different developers.)
-  Individual views are merged into a global conceptual schema.
-  Individual views can be...</div><p><a href="/UoL/comp107/tutorials/2020/11/27/1.html">Read more</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=COMP107">COMP107</a>
-            </li><li>
-              <a class="button button--secondary button--pill button--sm"
-                href="/UoL/archive.html?tag=Tutorials">Tutorials</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>Nov 27, 2020</span>
-            </li></ul></div><meta itemprop="author" content="Ben Weston"/><meta itemprop="datePublished" content="2020-11-27T00:00:00+00:00">
-    <meta itemprop="keywords" content="COMP107,Tutorials"></div>
       </article></div>
-</div><div class="layout--home"><div class="pagination"><p>132 post articles, 14 pages.</p>
+</div><div class="layout--home"><div class="pagination"><p>134 post articles, 14 pages.</p>
     <div class="pagination__menu">
       <ul class="menu menu--nowrap"><li><div class="button button--secondary button--circle disabled">
             <i class="fas fa-angle-left"></i>
