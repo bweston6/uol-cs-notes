@@ -1,4 +1,7 @@
+import Control.Monad
+
 -- Lecture 23 - getLine and putStrLn
+
 echo :: IO ()
 echo = do
         str <- getLine
@@ -60,3 +63,18 @@ get_two_strings = do
         let     tuple = (x,y)
         return tuple
         
+-- Lecture 24 - Looping in IO Code
+
+add_one_forever = do
+        n <- readLn :: IO Int
+        print (n + 1)
+        add_one_forever
+
+echo_until_quit :: IO ()
+echo_until_quit = do
+        n <- getLine
+        when (n /= "quit") (sequence_ [print n, echo_until_quit])
+
+print_numbers_between :: Int -> Int -> IO ()
+print_numbers_between x y = do
+        mapM_ print [x..y]
