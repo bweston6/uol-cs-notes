@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{tikz-cd,float}
+\title{Tutorial for Week 8 - Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+        \item
+                \begin{enumerate}
+                        \item {
+                                        $R$ can be represented by the following graph:
+                                        \begin{figure}[H]
+                                                \centering 
+                                                \begin{tikzcd}
+                                                        1 \arrow[r] & 3 \arrow[r]                                   & 2 \arrow[ll, bend left=49] \\
+                                                                    & 4 \arrow[loop, distance=2em, in=305, out=235] &                           
+                                                \end{tikzcd}
+                                        \end{figure}
+                                        \begin{itemize}
+                                                \item Functional: True as each element in $A$ has $\leq 1$ assignment.
+                                                \item Reflexive: False as there are not links from every node to itself.
+                                                \item Symmetric: False as there are not return arrows for all nodes.
+                                                \item Anti-symmetric: True as there are no return arrows. Loops don't count.
+                                                \item Transitive: False as there is no link for $1\rightarrow 2$.
+                                        \end{itemize}
+                                        $S$ can be represented by the following graph:
+                                        \begin{figure}[H]
+                                                \centering 
+                                                \begin{tikzcd}
+                                                        1 \arrow[r] & 2 \arrow[r]                                   & 4 \\
+                                                                    & 3 \arrow[loop, distance=2em, in=305, out=235] &
+                                                \end{tikzcd}
+                                        \end{figure}
+                                        \begin{itemize}
+                                                \item Functional: True as each element in $A$ has $\leq 1$ assignment.
+                                                \item Reflexive: False as there are not links from every node to itself.
+                                                \item Symmetric: False as there are not return arrows for all nodes.
+                                                \item Anti-symmetric: True as there are no return arrows. Loops don't count.
+                                                \item Transitive: False as there is no link for $4\rightarrow 1$.
+                                        \end{itemize}
+                                        \newpage
+                                        $T$ can be represented by the following graph:
+                                        \begin{figure}[H]
+                                                \centering
+                                                \begin{tikzcd}
+                                                        1 \arrow[rr]              &  & 2                         \\
+                                                                                  &  &                           \\
+                                                        4 \arrow[uu] \arrow[rruu] &  & 3 \arrow[lluu] \arrow[uu]
+                                                \end{tikzcd}
+                                        \end{figure}
+                                        \begin{itemize}
+                                                \item Functional: False as nodes have multiple assignments.
+                                                \item Reflexive: False as there are not links from every node to itself.
+                                                \item Symmetric: False as there are not return arrows for all nodes.
+                                                \item Anti-symmetric: True as there are no return arrows.
+                                                \item Transitive: True as for every link $x$ to $y$ and $y$ to $z$ there is a link from $x$ to $z$.
+                                        \end{itemize}
+                                        $U$ can be represented by the following graph:
+                                        \begin{figure}[H]
+                                                \centering 
+                                                \begin{tikzcd}
+                                                        1                                    &  & 2 \arrow[ll]              \\
+                                                                                             &  &                           \\
+                                                        4 \arrow[uu] \arrow[rr] \arrow[rruu] &  & 3 \arrow[lluu] \arrow[uu]
+                                                \end{tikzcd}
+                                        \end{figure}
+                                        \begin{itemize}
+                                                \item Functional: False as nodes have multiple assignments.
+                                                \item Reflexive: False as there are not links from every node to itself.
+                                                \item Symmetric: False as there are not return arrows for all nodes.
+                                                \item Anti-symmetric: True as there are no return arrows.
+                                                \item Transitive: True as for every link $x$ to $y$ and $y$ to $z$ there is a link from $x$ to $z$.
+                                        \end{itemize}
+                                }
+                                \item{ The following graph represents the transitive closure of $R$:
+                                                \begin{figure}[H]
+                                                        \centering
+                                                        \begin{tikzcd}
+                                                                                                                                                              & 2 \arrow[ldd, shift right] \arrow[rdd, shift left] \arrow[loop, distance=2em, in=125, out=55] &                                                                                              \\
+                                                                                                                                                              & 4 \arrow[loop, distance=2em, in=305, out=235]                                                 &                                                                                              \\
+                                                                1 \arrow[rr, shift left] \arrow[ruu, shift right] \arrow[loop, distance=2em, in=305, out=235] &                                                                                               & 3 \arrow[luu, shift left] \arrow[ll, shift left] \arrow[loop, distance=2em, in=305, out=235]
+                                                        \end{tikzcd}
+                                                \end{figure}
+                                }
+                                \item An equivalence relation is described as a relation which is reflective, transitive and symmetric. In $R^*$ ever node has a loop to itself, making it reflective, and it is a transitive closure making it transitive. Additionally, for every arrow there is a return arrow; this makes it symmetric. As a result of these three properties, $R^*$ is an equivalence relation.
+
+                                        I'm not too sure about this one. As, in $R^*$, $1,2$ and $3$ are in a closed loop and $4$ is in a loop then $A$ is split into two equivalence classes: $\{1,2,3\}$ and $\{4\}$.
+
+                \end{enumerate}
+\end{enumerate}
+
+\end{document}
