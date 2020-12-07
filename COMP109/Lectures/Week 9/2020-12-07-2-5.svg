@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 1.0.0.0 -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="340" height="120" xmlns="http://www.w3.org/2000/svg">
+	<line x1="110" y1="70" x2="110" y2="90" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="110" y1="30" x2="110" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="110" y1="50" x2="125" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="110" y1="70" x2="125" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 125,50 M 125,40 L 125,80 L 149,80 M 125,40 L 149,40 M 149,80 A 5,5 90 0 0 149,40 M 170,60 A 2,2 -5 1 1 176,60 A 2,2 -5 1 1 170,60" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="176" y1="60" x2="180" y2="60" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="20" y="90" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 20, 90)">Q</text>
+	<line x1="30" y1="90" x2="40" y2="90" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="80" x2="40" y2="100" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="80" x2="55" y2="80" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="100" x2="55" y2="100" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 55,80 M 55,70 L 55,110 L 79,110 M 55,70 L 79,70 M 79,110 A 5,5 90 0 0 79,70 M 100,90 A 2,2 -5 1 1 106,90 A 2,2 -5 1 1 100,90" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="106" y1="90" x2="110" y2="90" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="230" y="70" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 230, 70)">Q</text>
+	<line x1="240" y1="50" x2="255" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="240" y1="70" x2="255" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 249,50 M 249,40 Q 269,60 249,80 M 248,80 Q 283,75 298,60 Q 283,45 248,40" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="300" y1="60" x2="310" y2="60" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="230" y="50" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 230, 50)">P</text>
+	<text x="200" y="60" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 200, 60)">--&gt;</text>
+	<text x="20" y="30" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 20, 30)">P</text>
+	<line x1="30" y1="30" x2="40" y2="30" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="20" x2="40" y2="40" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="20" x2="55" y2="20" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="40" y1="40" x2="55" y2="40" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 55,20 M 55,10 L 55,50 L 79,50 M 55,10 L 79,10 M 79,50 A 5,5 90 0 0 79,10 M 100,30 A 2,2 -5 1 1 106,30 A 2,2 -5 1 1 100,30" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="106" y1="30" x2="110" y2="30" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<ellipse cx="40" cy="90" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+	<ellipse cx="40" cy="30" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+</svg>

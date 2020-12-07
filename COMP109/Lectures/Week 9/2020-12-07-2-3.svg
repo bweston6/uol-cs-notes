@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 1.0.0.0 -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="320" height="80" xmlns="http://www.w3.org/2000/svg">
+	<line x1="220" y1="30" x2="235" y2="30" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="220" y1="50" x2="235" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 229,30 M 229,20 Q 249,40 229,60 M 237,20 Q 257,40 237,60 M 236,60 Q 271,55 286,40 Q 271,25 236,20 M 287,40 A 2,2 -5 1 1 293,40 A 2,2 -5 1 1 287,40" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="293" y1="40" x2="290" y2="40" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="120" y1="30" x2="135" y2="30" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="120" y1="50" x2="135" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 129,30 M 129,20 Q 149,40 129,60 M 128,60 Q 163,55 178,40 Q 163,25 128,20 M 179,40 A 2,2 -5 1 1 185,40 A 2,2 -5 1 1 179,40" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="185" y1="40" x2="190" y2="40" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="20" y1="30" x2="35" y2="30" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="20" y1="50" x2="35" y2="50" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 35,30 M 35,20 L 35,60 L 59,60 M 35,20 L 59,20 M 59,60 A 5,5 90 0 0 59,20 M 80,40 A 2,2 -5 1 1 86,40 A 2,2 -5 1 1 80,40" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="86" y1="40" x2="90" y2="40" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+</svg>
