@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Circuit Diagram, cdlibrary.dll 1.0.0.0 -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="760" height="300" xmlns="http://www.w3.org/2000/svg">
+	<line x1="680" y1="60" x2="680" y2="80" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="520" y1="60" x2="520" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="360" y1="60" x2="360" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="200" y1="60" x2="200" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="200" y1="60" x2="680" y2="60" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="700" y1="40" x2="700" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="540" y1="40" x2="540" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="380" y1="40" x2="380" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="220" y1="40" x2="220" y2="70" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="220" y1="70" x2="220" y2="80" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="220" y1="70" x2="220" y2="80" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="90" y1="60" x2="200" y2="60" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="90" y1="60" x2="90" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="70" y1="200" x2="100" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="360" y1="70" x2="360" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="380" y1="70" x2="380" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 360,79 M 350,79 Q 370,99 390,79 M 350,87 Q 370,107 390,87 M 390,86 Q 385,121 370,136 Q 355,121 350,86" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="370" y1="135" x2="370" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="380" y="30" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 380, 30)">b1</text>
+	<line x1="520" y1="70" x2="520" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="540" y1="70" x2="540" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 520,79 M 510,79 Q 530,99 550,79 M 510,87 Q 530,107 550,87 M 550,86 Q 545,121 530,136 Q 515,121 510,86" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="530" y1="135" x2="530" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="680" y1="70" x2="680" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="700" y1="70" x2="700" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 680,79 M 670,79 Q 690,99 710,79 M 670,87 Q 690,107 710,87 M 710,86 Q 705,121 690,136 Q 675,121 670,86" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="690" y1="135" x2="690" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="200" y1="70" x2="200" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="220" y1="70" x2="220" y2="85" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 200,79 M 190,79 Q 210,99 230,79 M 190,87 Q 210,107 230,87 M 230,86 Q 225,121 210,136 Q 195,121 190,86" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="210" y1="135" x2="210" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="220" y="30" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 220, 30)">b0</text>
+	<text x="290" y="130" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 290, 130)">a1</text>
+	<text x="450" y="130" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 450, 130)">a2</text>
+	<text x="540" y="30" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 540, 30)">b2</text>
+	<text x="610" y="130" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 610, 130)">a3</text>
+	<text x="700" y="30" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 700, 30)">b3</text>
+	<text x="730" y="200" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 730, 200)">c</text>
+	<text x="650" y="270" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 650, 270)">s3</text>
+	<text x="490" y="270" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 490, 270)">s2</text>
+	<text x="330" y="270" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 330, 270)">s1</text>
+	<text x="170" y="270" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 170, 270)">s0</text>
+	<text x="20" y="200" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 20, 200)">Subtract</text>
+	<text x="130" y="130" style="font-family:Arial;font-size:11px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 130, 130)">a0</text>
+	<line x1="560" y1="200" x2="580" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="400" y1="200" x2="420" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="240" y1="200" x2="260" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<path d="M 170,200 M 170,230 L 130,230 L 100,170 L 155,170 L 170,200 L 185,170 L 240,170 L 210,230 L 170,230" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="130" y1="170" x2="130" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="210" y1="170" x2="210" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="170" y1="230" x2="170" y2="260" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="225" y1="200" x2="240" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="130" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 130, 180)">A</text>
+	<text x="210" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 210, 180)">B</text>
+	<text x="170" y="220" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 170, 220)">SUM</text>
+	<line x1="100" y1="200" x2="115" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="123" y="200" style="font-family:Arial;font-size:12px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 123, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">in</tspan></text>
+	<text x="217" y="200" style="font-family:Arial;font-size:12px;text-anchor:end" dominant-baseline="middle" transform="rotate(0, 217, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">out</tspan></text>
+	<path d="M 330,200 M 330,230 L 290,230 L 260,170 L 315,170 L 330,200 L 345,170 L 400,170 L 370,230 L 330,230" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="290" y1="170" x2="290" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="370" y1="170" x2="370" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="330" y1="230" x2="330" y2="260" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="385" y1="200" x2="400" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="290" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 290, 180)">A</text>
+	<text x="370" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 370, 180)">B</text>
+	<text x="330" y="220" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 330, 220)">SUM</text>
+	<line x1="260" y1="200" x2="275" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="283" y="200" style="font-family:Arial;font-size:12px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 283, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">in</tspan></text>
+	<text x="377" y="200" style="font-family:Arial;font-size:12px;text-anchor:end" dominant-baseline="middle" transform="rotate(0, 377, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">out</tspan></text>
+	<path d="M 490,200 M 490,230 L 450,230 L 420,170 L 475,170 L 490,200 L 505,170 L 560,170 L 530,230 L 490,230" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="450" y1="170" x2="450" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="530" y1="170" x2="530" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="490" y1="230" x2="490" y2="260" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="545" y1="200" x2="560" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="450" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 450, 180)">A</text>
+	<text x="530" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 530, 180)">B</text>
+	<text x="490" y="220" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 490, 220)">SUM</text>
+	<line x1="420" y1="200" x2="435" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="443" y="200" style="font-family:Arial;font-size:12px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 443, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">in</tspan></text>
+	<text x="537" y="200" style="font-family:Arial;font-size:12px;text-anchor:end" dominant-baseline="middle" transform="rotate(0, 537, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">out</tspan></text>
+	<path d="M 650,200 M 650,230 L 610,230 L 580,170 L 635,170 L 650,200 L 665,170 L 720,170 L 690,230 L 650,230" style="fill-opacity:0;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="610" y1="170" x2="610" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="690" y1="170" x2="690" y2="140" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="650" y1="230" x2="650" y2="260" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<line x1="705" y1="200" x2="720" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="610" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 610, 180)">A</text>
+	<text x="690" y="180" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 690, 180)">B</text>
+	<text x="650" y="220" style="font-family:Arial;font-size:12px;text-anchor:middle" dominant-baseline="middle" transform="rotate(0, 650, 220)">SUM</text>
+	<line x1="580" y1="200" x2="595" y2="200" style="stroke:rgb(0, 0, 0);stroke-linecap:square;stroke-width:2" />
+	<text x="603" y="200" style="font-family:Arial;font-size:12px;text-anchor:start" dominant-baseline="middle" transform="rotate(0, 603, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">in</tspan></text>
+	<text x="697" y="200" style="font-family:Arial;font-size:12px;text-anchor:end" dominant-baseline="middle" transform="rotate(0, 697, 200)">C<tspan baseline-shift="sub" style="font-size:0.8em">out</tspan></text>
+	<ellipse cx="520" cy="60" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+	<ellipse cx="360" cy="60" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+	<ellipse cx="200" cy="60" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+	<ellipse cx="90" cy="200" rx="2" ry="2" style="fill-opacity:1;fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:2" />
+</svg>
