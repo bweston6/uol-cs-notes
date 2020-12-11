@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Tutorial for Week 9 - Answers}
+\author{Ben Weston}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}\setcounter{enumi}{1}
+        \item{
+                        \begin{enumerate}
+                                \item $S=(P\wedge Q\wedge R)\vee(P\wedge\neg Q\wedge R)\vee(P\wedge\neg Q\wedge\neg R)$ where $S$ is the output of the circuit. Therefore, $S=0$.
+                                \item As above the DNF is: $(P\wedge Q\wedge R)\vee(P\wedge\neg Q\wedge R)\vee(P\wedge\neg Q\wedge\neg R)$
+                                \item{        \begin{align*}
+                                                        S &= (P\wedge Q\wedge R)\vee(P\wedge\neg Q\wedge R)\vee(P\wedge\neg Q\wedge\neg R)\\
+                                                          &= (P\wedge((Q\wedge R)\vee(\neg Q\wedge R)\vee(\neg Q\wedge\neg R)))\\
+                                                          &= (P\wedge((Q\wedge R)\vee(\neg Q\wedge(R\vee\neg R))))\\
+                                                          &= (P\wedge((Q\wedge R)\vee(\neg Q \wedge 1)))\\
+                                                          &= (P\wedge((Q\wedge R)\vee \neg Q))\\
+                                                          &= (P\wedge((\neg Q\vee Q)\wedge(\neg Q\vee R)))\\
+                                                          &= (P\wedge(1\wedge(\neg Q\vee R)))\\
+                                                          &= (P\wedge(\neg Q\vee R))
+                                                \end{align*}
+                                        }
+                        \end{enumerate}
+                }
+\end{enumerate}
+
+\end{document}
