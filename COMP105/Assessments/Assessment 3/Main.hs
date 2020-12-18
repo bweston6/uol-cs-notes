@@ -84,23 +84,34 @@ game_loop maze (x,y) = do
 
 -- Question 8 
 
-get_path_helper :: [String] -> (Int,Int) -> (Int,Int) -> (Int,Int) -> [(Int,Int)] -> [(Int,Int)]
-get_path_helper _ current end start path
-        | current == end = path ++ [current]
-get_path_helper maze (x,y) (ex,ey) start path
-        | dead_end                 = get_path_helper wall_off start (ex,ey) start []
-        | (cm 'd') && nin_path 'd' = get_path_helper maze (move (x,y) 'd') (ex,ey) start (path ++ [(x,y)])
-        | (cm 's') && nin_path 's' = get_path_helper maze (move (x,y) 's') (ex,ey) start (path ++ [(x,y)])
-        | (cm 'a') && nin_path 'a' = get_path_helper maze (move (x,y) 'a') (ex,ey) start (path ++ [(x,y)])
-        | (cm 'w') && nin_path 'w' = get_path_helper maze (move (x,y) 'w') (ex,ey) start (path ++ [(x,y)])
-        where dead_end = ((cm 'd' && cnm 's' && cnm 'a' && cnm 'w') || (cnm 'd' && cm 's' && cnm 'a' && cnm 'w') || (cnm 'd' && cnm 's' && cm 'a' && cnm 'w') || (cnm 'd' && cnm 's' && cnm 'a' && cm 'w')) && ((x,y) /= start)
-              cm key       = can_move maze (x,y) key
-              cnm key      = not $ cm key
-              wall_off     = set maze x y '#'
-              nin_path key = not $ elem (move (x,y) key) path
-
 get_path :: [String] -> (Int, Int) -> (Int, Int) -> [(Int, Int)]
-get_path maze start end = get_path_helper maze start end start []
+get_path maze start end = get_path_helper maze start end []
+
+sum_bool_list list = 
+        let
+                bin_to_int True  = 1
+                bin_to_int False = 0
+        in
+                sum (map bin_to_int list)
+
+get_path_helper :: [String] -> (Int,Int) -> (Int,Int) -> [(Int,Int)] -> [(Int,Int)]
+get_path_helper maze (x,y) end path
+        -- base cases
+        | current == end       = path ++ [current]
+        | num_direc_avail == 0 = []
+        -- recursive steps
+        | num_direc_avail == 3 = [] ++ (go (list_direc_avail !! 0)) ++ (go (list_direc_avail !! 1)) ++ (go (list_direc_avail !! 2))
+        | num_direc_avail == 2 = [] ++ (go (list_direc_avail !! 0)) ++ (go (list_direc_avail !! 1))
+        | num_direc_avail == 1 = [] ++ (go (list_direc_avail !! 0))
+        where   num_direc_avail  = sum_bool_list [(cm 'w'),(cm 'd'),(cm 's'),(cm 'a')]
+                go key           = get_path_helper wall_off (move (x,y) key) end (path ++ [current])
+                list_direc_avail = (cm_direc 'w') ++ (cm_direc 'd') ++ (cm_direc 's') ++ (cm_direc 'a')
+                current     = (x,y)
+                wall_off    = set maze x y '#'
+                cm key      = can_move maze current key
+                cm_direc key
+                        | cm key == True = [key]
+                        | otherwise      = [] 
 
 -- Question 9
 
