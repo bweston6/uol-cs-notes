@@ -77,8 +77,8 @@ jobs:
           cp -r COMP107/Assessments/*/*/*.md docs/COMP107/Assessments/_posts
           cp -r COMP107/Assessments/*/*/* docs/assets/COMP107/Assessments
           rm -rf docs/assets/COMP107/Assessments/*.md
-          grep -rliF ' $ ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$ /??????/g' @
-          grep -rliF ' $! ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$! /~~~~~~/g' @
+          grep -rliF ' $ ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$ /??????/g; s/`\$`/`??????`/g' @
+          grep -rliF ' $! ' docs/COMP*/*/* | xargs -i@ sed -i 's/ \$! /~~~~~~/g; s/`\$!`/`~~~~~~`/g' @
           grep -rliF '$$' docs/COMP*/*/* | xargs -i@ sed -i 's/_{/\&#95;\&#123;/g' @
           grep -rliF '$' docs/COMP*/*/* | xargs -i@ docs/tools/debuck @
           rm -rf docs/COMP*/*/_posts/*.bak
