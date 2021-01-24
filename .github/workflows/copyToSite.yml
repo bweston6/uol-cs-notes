@@ -32,6 +32,11 @@ jobs:
           cp -r COMP105/Lectures/*/*.md docs/COMP105/Lectures/_posts
           cp -r COMP105/Lectures/*/* docs/assets/COMP105/Lectures
           rm -rf docs/assets/COMP105/Lectures/*.md
+          mkdir -p docs/COMP116/Lectures/_posts
+          mkdir -p docs/assets/COMP116/Lectures
+          cp -r COMP116/Lectures/*/*.md docs/COMP116/Lectures/_posts
+          cp -r COMP116/Lectures/*/* docs/assets/COMP116/Lectures
+          rm -rf docs/assets/COMP116/Lectures/*.md
           mkdir -p docs/COMP107/Lectures/_posts
           mkdir -p docs/assets/COMP107/Lectures
           cp -r COMP107/Lectures/*/*.md docs/COMP107/Lectures/_posts
