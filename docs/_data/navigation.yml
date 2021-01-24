@@ -1,25 +1,21 @@
 header:
   - title: COMP105
     url: /COMP105/COMP105
-
   - title: COMP107
     url: /COMP107/COMP107
-
   - title: COMP109
     url: /COMP109/COMP109
-
   - title: COMP111
     url: /COMP111/COMP111
-
+  - title: COMP116
+    url: /COMP111/COMP116
   - title: Archive
     url: /archive.html
-
 comp105:
   - title:      COMP105
     children:
       - title:  Lectures
         url:    /COMP105/Lectures
-
 comp107:
   - title:      COMP107
     children:
@@ -31,7 +27,6 @@ comp107:
         url:    /COMP107/Tutorials
       - title:  Meetings
         url:    /COMP107/Meetings
-
 comp109:
   - title:      COMP109
     children:
@@ -41,7 +36,6 @@ comp109:
         url:    /COMP109/Catch-up Sessions
       - title:  Tutorials
         url:    /COMP109/Tutorials
-
 comp111:
   - title:      COMP111
     children:
@@ -49,3 +43,8 @@ comp111:
         url:    /COMP111/Lectures
       - title:  Tutorials
         url:    /COMP111/Tutorials
+comp116:
+  - title:      COMP116
+    children:
+      - title:  Lectures
+        url:    /COMP116/Lectures
