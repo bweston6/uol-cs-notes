@@ -61,7 +61,7 @@ jobs:
           grep -rliF ' $! ' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/ \$! /~~~~~~/g; s/`\$!`/`~~~~~~`/g' @
           grep -rliF '$$' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/_{/\&#95;\&#123;/g' @
           grep -rliF '$' docs/comp*/*/*/*.md | xargs -i@ docs/tools/debuck @
-          rm -rf docs/COMP*/*/_posts/*.bak
+          rm -rf docs/comp*/*/_posts/*.bak
           grep -rliF '\' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/\\(/\&#92;(/g; s/\\)/\&#92;)/g; s/\\\[/\&#92;\[/g; s/\\\]/\&#92;\]/g; s/\\{/\&#92;{/g; s/\\}/\&#92;}/g; s/\\\\/\&#92;\&#92;/g; s/\\\$/\&#92;\$/g' @
           grep -rliF '??????' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`\?\?\?\?\?\?`/`\$`/g; s/\?\?\?\?\?\?/ \$ /g' @
           grep -rliF '~~~~~~' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`~~~~~~`/`\$!`/g; s/~~~~~~/ \$! /g' @
