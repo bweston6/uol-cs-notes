@@ -33,9 +33,13 @@ jobs:
           rm -rf docs/assets/comp*/
           rm -rf docs/assets/COMP*/
           # Creating note folders.
-          mkdir -vp docs/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs,catchup_sessions}/_posts
+          mkdir -vp docs/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs}/_posts
           # Creating asset folders.
-          mkdir -vp docs/assets/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs,catchup_sessions}
+          mkdir -vp docs/assets/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs}
+          # Custom folders.
+          mkdir -vp docs/comp109/catchup_sessions/_posts
+          mkdir -vp docs/assets/comp109/catchup_sessions
+          mkdir -vp docs/comp107/meetings/_posts
           # Copying notes.
           for i in COMP*/{Assessments,Lectures,Seminars,Tutorials,Labs}/*/*.md
           do
@@ -54,6 +58,10 @@ jobs:
           do
           cp -rv "$i" "$(echo "$i" | awk -F/ '{print "docs/assets/" tolower($1) "/catchup_sessions"}')"
           done
+          # Custom copies.
+          cp COMP109/Catch-up\ Sessions/*/*.md docs/comp109/catchup_sessions/_posts
+          cp COMP109/Catch-up\ Sessions/*/* docs/assets/comp109/catchup_sessions
+          cp COMP107/Assessments/Assessment\ 2/Meetings/*.md docs/comp107/meetings/_posts
           # Removing notes from assets.
           rm -rf docs/assets/*/*/*.md
           # Reformatting maths.
