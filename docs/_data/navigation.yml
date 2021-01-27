@@ -1,14 +1,14 @@
 header:
   - title: COMP105
-    url: /comp105/comp105
+    url: /comp105
   - title: COMP107
-    url: /comp107/comp107
+    url: /comp107
   - title: COMP109
-    url: /comp109/comp109
+    url: /comp109
   - title: COMP111
-    url: /comp111/comp111
+    url: /comp111
   - title: COMP116
-    url: /comp116/comp116
+    url: /comp116
   - title: Archive
     url: /archive.html
 comp105:
