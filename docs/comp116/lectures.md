@@ -7,7 +7,7 @@ sidebar:
  nav: comp116
 ---
 {% for post in site.posts %}
-{% if post.tags contains "Lectures" and post.categories contains "COMP116" %}
+{% if post.tags contains "Lectures" and post.tags contains "COMP116" %}
 # [{{post.title}}]({{site.baseurl}}{{post.url}})
 {{post.content}}
 {% endif %}
