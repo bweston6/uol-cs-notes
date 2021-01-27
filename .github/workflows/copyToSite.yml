@@ -41,7 +41,7 @@ jobs:
           do
           cp -v "$i" "$(echo "$i" | awk -F/ '{print "docs/" tolower($1) "/" tolower($2) "/_posts"}')"
           done
-          for i in "COMP*/Catch-up Sessions/*/*.md"
+          for i in COMP*/Catch-up\ Sessions/*/*.md
           do
           cp -v "$i" "$(echo "$i" | awk -F/ '{print "docs/" tolower($1) "/catchup_sessions/_posts"}')"
           done
@@ -50,7 +50,7 @@ jobs:
           do
           cp -rv "$i" "$(echo "$i" | awk -F/ '{print "docs/assets/" tolower($1) "/" tolower($2)}')"
           done
-          for i in "COMP*/Catch-up Sessions/*/*"
+          for i in COMP*/Catch-up\ Sessions/*/*
           do
           cp -rv "$i" "$(echo "$i" | awk -F/ '{print "docs/assets/" tolower($1) "/catchup_sessions"}')"
           done
