@@ -48,13 +48,13 @@ jobs:
           # Removing notes from assets.
           rm -rf docs/assets/*/*/*.md
           # Reformatting maths.
-          grep -rliF ' $ ' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/ \$ /\?\?\?\?\?\?/g; s/`\$`/`\?\?\?\?\?\?`/g' @
-          grep -rliF ' $! ' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/ \$! /~~~~~~/g; s/`\$!`/`~~~~~~`/g' @
-          grep -rliF '$$' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/_{/\&#95;\&#123;/g' @
+          grep -rliF ' $ ' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/ \$ /\?\?\?\?\?\?/g; s/`\$`/`\?\?\?\?\?\?`/g' @
+          grep -rliF ' $! ' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/ \$! /~~~~~~/g; s/`\$!`/`~~~~~~`/g' @
+          grep -rliF '$$' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/_{/\&#95;\&#123;/g' @
           grep -rliF '$' docs/comp*/*/*/*.md | xargs -i@ docs/tools/debuck @
-          grep -rliF '\' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/\\(/\&#92;(/g; s/\\)/\&#92;)/g; s/\\\[/\&#92;\[/g; s/\\\]/\&#92;\]/g; s/\\{/\&#92;{/g; s/\\}/\&#92;}/g; s/\\\\/\&#92;\&#92;/g; s/\\\$/\&#92;\$/g' @
-          grep -rliF '??????' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/`\?\?\?\?\?\?`/`\$`/g; s/\?\?\?\?\?\?/ \$ /g' @
-          grep -rliF '~~~~~~' docs/comp*/*/*/*.md | xargs -i@ sed --debug -i 's/`~~~~~~`/`\$!`/g; s/~~~~~~/ \$! /g' @
+          grep -rliF '\' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/\\(/\&#92;(/g; s/\\)/\&#92;)/g; s/\\\[/\&#92;\[/g; s/\\\]/\&#92;\]/g; s/\\{/\&#92;{/g; s/\\}/\&#92;}/g; s/\\\\/\&#92;\&#92;/g; s/\\\$/\&#92;\$/g' @
+          grep -rliF '??????' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`\?\?\?\?\?\?`/`\$`/g; s/\?\?\?\?\?\?/ \$ /g' @
+          grep -rliF '~~~~~~' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`~~~~~~`/`\$!`/g; s/~~~~~~/ \$! /g' @
           # Pushing changes.
           git config user.name bweston6
           git config user.email 35574350+bweston6@users.noreply.github.com
