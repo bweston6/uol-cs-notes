@@ -1,0 +1,113 @@
+---
+title: COMP109 - Relations - 9
+tags: COMP109 Lectures
+---
+## Partial Orders
+A binary relation $R$ on set $A$ which is reflexive, transitive and antisymmetric is called  a partial order.
+
+Partial orders are important in situations where we wish to characterise precedence.
+
+### Examples
+* The relation $\leq$ on the set of $\Bbb{R}$ of real numbers.
+* The relation $\subseteq$ on $\text{Pow}(A)$.
+* "Is a divisor of" on the set $\Bbb{Z^+}$ of positive integers.
+
+### Example - Job Scheduling
+
+| Task | Immediate Dependencies |
+| :-: | :-: |
+| 1 |  |
+| 2 | 1 |
+| 3 | 1 |
+| 4 | 2 | 
+| 5 | 2, 3 |
+| 6 | 4 |
+| 7 | 2, 3 |
+| 8 | 4, 5 |
+| 9 | 6, 7, 8 |
+
+```mermaid
+graph LR
+1[Task 1 - 7 Hours] --> 2[Task 2 - 6 Hours]
+1 --> 3[Task 3 - 3 Hours]
+2 --> 4[Task 4 - 6 Hours]
+2 --> 5[Task 5 - 3 Hours]
+3 --> 5
+4 --> 6[Task 6 - 1 Hour]
+2 --> 7[Task 7 - 1 Hour]
+3 --> 7
+4 --> 8[Task 8 - 2 Hours]
+5 --> 8
+6 --> 9[Task 9 - 5 Hours]
+7 --> 9
+8 --> 9
+```
+
+### Predecessors in Partial Orders
+if $R$ is a partial order on a set $A$ and $xRy, x\neq y$ we call $x$ a **predecessor** of $y$.
+
+If $x$ is a predecessor of $y$ and there is no $z\in\{x,y\}$ for which $xRy$ and $zRy$, we call $x$ and **immeditate predecessor** of $y$.
+
+```mermaid
+graph LR
+subgraph R
+y -.-> z
+z -.-> x
+x --> y
+end
+```
+
+In this graph if you can see no $z$ in-between $x$ and $y$ then $y$ is an immediate predecessor of $x$.
+{:.info}
+
+#### Integer Example
+For the function $\leq$ on the set $\Bbb{Z}$ the immediate predecessor of a number $n$ is $n-1$.
+
+```mermaid
+graph LR
+subgraph Z
+1[n-1] --> 2[n]
+end 
+```
+
+#### Hasse Diagram
+The Hasse Diagram of a partial order is a digraph. The vertices of the digraph are the elements of the partial order, and the edges of the digraph are given by the "immediate predecessor" relation.
+
+This is an example for the bit vector representation of a set containing 3 elements. Each relation is a subset relation:
+
+```mermaid
+graph BT
+0[0,0,0] --- 1[0,0,1]
+0 --- 2[0,1,0]
+0 --- 4[1,0,0]
+1 --- 3[0,1,1]
+1 --- 5[1,0,1]
+2 --- 3
+2 --- 6[1,1,0]
+4 --- 5
+4 --- 6
+3 --- 7[1,1,1]
+5 --- 7
+6 --- 7
+```
+
+It is typical to assume that the arrow pointing upwards.
+{:.info}
+
+This diagram notation saves us from having to draw all the reflexive links and also all of the dependency links by just drawing the **immediate dependency**.
+
+## Total Orders
+A binary relation $R$ on a set $A$ is a total order if it is a partial order such that any $x,y\in A,xRy$ or $yRx$.
+
+This means that for any relation you can always compare them.
+{:.info}
+
+The Hasse diagram of a total order is a chain.
+
+This means that there are no splits as splits mean that they aren't comparable.
+{:.info}
+
+### Examples
+* The relation $\leq$ on the set $\Bbb{R}$ of real numbers.
+* The usual lexicographical ordering on words in a dictionary.
+* The relation "is a divisor of" is **not** a total order.

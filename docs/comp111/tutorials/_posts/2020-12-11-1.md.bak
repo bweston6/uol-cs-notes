@@ -1,0 +1,10 @@
+---
+title: COMP111 - Tutorial 8
+tags: COMP111 Tutorials
+---
+## Independence and Disjoints
+* $P(A\vert B)=0$ if $A,B$ are disjoint.
+
+* Unless $P(A)=0$, there are not independent.
+
+Independence is about the dependence relation between evens however disjoint just means they don't happen as the same time.

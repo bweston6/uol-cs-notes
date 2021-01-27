@@ -28,9 +28,10 @@ jobs:
           # Set null output for no matches.
           shopt -s nullglob
           # Initlialising folders.
-          rm -rfv docs/comp*
-          rm -rfv docs/COMP*
-          rm -rfv docs/assets/*
+          rm -rfv docs/comp*/*/
+          rm -rfv docs/COMP*/*/
+          rm -rf docs/assets/comp*/
+          rm -rf docs/assets/COMP*/
           # Creating note folders.
           mkdir -vp docs/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs,catchup_sessions}/_posts
           # Creating asset folders.
@@ -52,6 +53,7 @@ jobs:
           grep -rliF ' $! ' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/ \$! /~~~~~~/g; s/`\$!`/`~~~~~~`/g' @
           grep -rliF '$$' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/_{/\&#95;\&#123;/g' @
           grep -rliF '$' docs/comp*/*/*/*.md | xargs -i@ docs/tools/debuck @
+          rm -rf docs/COMP*/*/_posts/*.bak
           grep -rliF '\' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/\\(/\&#92;(/g; s/\\)/\&#92;)/g; s/\\\[/\&#92;\[/g; s/\\\]/\&#92;\]/g; s/\\{/\&#92;{/g; s/\\}/\&#92;}/g; s/\\\\/\&#92;\&#92;/g; s/\\\$/\&#92;\$/g' @
           grep -rliF '??????' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`\?\?\?\?\?\?`/`\$`/g; s/\?\?\?\?\?\?/ \$ /g' @
           grep -rliF '~~~~~~' docs/comp*/*/*/*.md | xargs -i@ sed -i 's/`~~~~~~`/`\$!`/g; s/~~~~~~/ \$! /g' @

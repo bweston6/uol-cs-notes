@@ -1,0 +1,107 @@
+---
+title: COMP111 - Tutorial 1
+tags: COMP111 Tutorials
+---
+Covering the tutorial sheets from week 1. The tutorial leader's email is [F.Alves@liverpool.ac.uk](mailto:F.Alves@liverpool.ac.uk).
+
+1. The leader chose to cover one of the options which was football.
+	* Performance Measure
+		* Games won, goals scored.
+	* Environment
+		* Football pitch, the players, the ball.
+	* Actuators
+		* Legs, head.
+	* Sensors
+		* Visual, hearing, pressure.
+	* Classification
+		* Partially observable environment as they can't see what is behind them and they have to memorise the positions of the players that they can't see.
+		* Stochastic as there is uncertainty about the state that will come from performing an action
+		* Sequential as the current decision could affect all future decisions.
+		* Dynamic environment as other players are acting while you make your decision.
+		* Continuous as there is no fixed states for the positions.
+1. Refer to the textbook or lecture notes.
+1. For a path $a_0 \rightarrow a_1 \rightarrow a_2 \rightarrow a_3$, the length of the path is 3 as that is the number of actions that need to be performed.
+	* When listing paths you can list them by length
+		* 0 : a
+		* 1 : ab, ac, ad
+		* 2 : abe, ace, ade
+		* 3 : abef, acef, adef
+		
+	This may help with drawing search trees.
+
+	* 
+	
+	```mermaid
+	graph LR
+	a --> ab
+	a --> ac
+	a --> ad
+	ab --> abe
+	ac --> ace
+	ad --> ade
+	abe --> abef
+	ace --> acef
+	ade --> adef
+	```
+1. 
+	* Paths
+		* 0 : a
+		* 1 : ab
+		* 2 : aba, abc
+		* 3 : abab
+		* 4 : ababa, ababc
+	* Search graph
+	
+	```mermaid
+	graph LR
+	a --> ab
+	ab --> aba
+	ab --> abc
+	aba --> abab
+	abab --> ababa
+	abab --> ababc
+	ababc .-> A[ ]
+	```
+	You should draw the trailing arrow to indicate that the graph has bee truncated.
+	
+	
+	Search graphs should be drawn with the whole path at each level as it shows the full search at each level.
+	{:.info}
+	
+1. Similar to 3. and 4.
+1. 
+	* This problem is very large so I will describe the result
+		* The set of $S$ states are all 16 or $4^4$ states that exist as a subset of the set $N = \{ 1,2,3,4 \}$
+		* The start state $S_{start}$ is an empty subest $\{ \phi \}$ with a sum of zero.
+		* The set of goal states $S_{goal}$ are all the subsets which add to 6
+		* The set of actions $A$ are any addition or subtraction of a number that is in the set.
+		* The cost function for each action should just be one such that the shortest route from $S_{start}$ is achieved.
+	* The search graph starts at level 1 with the empty list and then each subsequent level adds an additional item to the list via an action which adds or subtracts an item from the set:
+	
+		```mermaid
+		graph TD
+		A[phi 0] --> |a1| B[<1> 1]
+		A --> |+2| C[<2> 2]
+		A --> |+3| D[<3> 3]
+		A --> |+4| E[<4> 4]
+		B --> |+2| F[<1,2> 3]
+		B --> |+3| G[<1,3> 4]
+		B --> |+4| H[<1,4> 5]
+		C --> |+1| F
+		C --> |+3| I[<2,3> 5]
+		C --> |+4| J[<2,4> 6]
+		D --> |+1| G
+		D --> |+2| I
+		D --> |+4| K[<3,4> 7]
+		E --> |+1| H
+		E --> |+2| J
+		E --> |+3| K
+		F .-> L[ ]
+		G .-> M[ ]
+		H .-> N[ ]
+		I .-> O[ ]
+		J .-> P[ ]
+		K .-> Q[ ]
+		```
+		
+		As you can see this is very tedious indeed.

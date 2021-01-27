@@ -1,0 +1,83 @@
+---
+title: COMP105 - Lecture 14-3
+tags: COMP105 Lectures
+---
+## Anonymous Functions
+Sometimes is it convenient to define a function inline. Anonymous functions allow you to use a function without a name.
+
+```haskell
+> (\ x -> x + 1) 7
+> 8
+```
+
+This allows you to pass functions to a higher order function without giving it a name:
+
+```haskell
+> apply_twice (\ x -> 2 * x ) 2
+> 8
+```
+
+### Syntax
+The syntax for an anonymous function is:
+
+```haskell
+\ [arg1] [arg2]  ... -> [expression]
+```
+
+The `\` is supposed to resemble an lambda $\lambda$.
+
+* Anonymous function are sometimes called $\lambda$-functions in recognition of lambda calculus.
+
+### Functions that Return Functions
+Higher order functions can also return other functions:
+
+```haskell
+f_than_adds_n :: Int -> (Int -> Int)
+f_that_adds_n n = (\x -> x + n)
+
+> let f = (f_that_adds_n 10) in (f 1)
+> 11
+```
+
+This function returns another function that you can use in other functions.
+
+Higher order function can take and return functions:
+
+```haskell
+swap f = \ x y -> f y x
+```
+
+This is a two argument function and then swaps the arguments for the function.
+
+```haskell
+g = swap take
+```
+
+This has swapped the arguments for the function `take` and can be called with `g`
+
+### Currying Revisited
+Previously we've seen that it is possible to partially apply a function:
+
+```haskell
+add_two = (+2)
+```
+
+This is just a nicer syntax for a function that returns a function:
+
+```haskell
+add_two = (\ x -> x + 2)
+```
+
+## Exercises
+1. ```
+	(\ x y -> x + y)
+	```
+	
+1. ```
+	addChar c = (\ string -> string ++ [c])
+	```
+	
+1. ```
+	curry' :: ((a, b) -> c) -> (a -> b -> c)
+	curry' f = (\ x y -> f (x, y))
+	```
