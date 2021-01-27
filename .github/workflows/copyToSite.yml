@@ -43,7 +43,7 @@ jobs:
           # Copying assets.
           for i in COMP*/{Assessments,Lectures,Seminars,Tutorials,Labs}/*/*
           do
-          cp -v "$i" "$(echo "$i" | awk -F/ '{print "docs/assets/" tolower($1) "/" tolower($2)}')"
+          cp -rv "$i" "$(echo "$i" | awk -F/ '{print "docs/assets/" tolower($1) "/" tolower($2)}')"
           done
           # Removing notes from assets.
           rm -rf docs/assets/*/*/*.md
