@@ -1,0 +1,45 @@
+---
+title: COMP105 - Lecture 12-1
+tags: COMP105 Lectures
+---
+## Types
+Everything in Haskell has a type. In GHCI `:type` or `:t` will display the type of an expression.
+
+### Basic Types
+#### `Int`
+Holds a 64-bit integer between $-2^{63}$ and $2^{63}-1$
+
+#### `Integer`
+Holds arbitrary size integers but is slightly slower than an `Int`. Ideally you should use an `Int` if you are using smaller numbers.
+
+#### `Float`
+Holds 32-bit floating point numbers.
+
+#### `Double`
+Holds a 64-bit floating point number.
+
+#### `Bool`
+Holds truth values.
+
+#### `Char`
+Holds a single character and can store any Unicode character.
+
+### Compound Types
+#### Tuples
+The type of a tuple is the type of its constituents.
+
+* The size of a tuple is encoded in its type.
+* Tuple elements can be different types.
+
+#### Lists
+The type of a list is determined by the type of its elements.
+
+* A list of type`x` is denoted by `[x]`.
+* This is why lists must contain elements of the same type.
+* The length is not encoded in the type.
+
+## Exercises
+1. `:: [Bool]`
+1. `:: ([[Bool]], [Char])`
+	* As strings are just lists of `Char` then you must represent them as such.
+1. `:: [([Bool], Bool)]`

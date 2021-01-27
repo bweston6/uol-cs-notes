@@ -1,0 +1,73 @@
+---
+title: COMP109 - Functions - 6
+tags: COMP109 Lectures
+---
+## Bijections and Cardinality
+The cardinality of a finite set is the number of element in the set. Sets $A$ and $B$ have the same cardinality $\Rightarrow$ there is a bijection from $A$ to $B$.
+
+Let $S=\{1,2,\ldots,n\}$ and let $B^n$ be the set of bit strings of length $n$. The function:
+
+$$f:\text{Pow}(S)\rightarrow B^n$$
+
+assigns each subset $A$ of $S$ to its characteristic vector is a bijection.
+
+We used this to compute the cardinality of the powerset.
+
+### Infinite Sets
+Sets $A$ and $B$ have the **same cardinality** iff there is a **bijection** from $A$ to $B$.
+
+#### $\mathbb{Z}$ and even integers.
+
+$S=\{n\in\mathbb{Z}\vert n\text{ is even}\}$
+
+$f:\mathbb{Z}\rightarrow S$
+
+$f(n)=2n$
+
+$f$ is a bijection
+
+This is by the definition of bijection as the function maps one to one.
+
+#### Hilberts Infinite Hotel
+
+$\mathbb{N}$ and $\mathbb{Z}$
+
+Consider a hotel with rooms and a train with people having the cardinality $\in \mathbb{N^+}$. Each person in the train is given a unique room.
+
+A second train arrives with the same properties. Consider that people in train one are given odd rooms and people in train two are given even rooms.
+
+The relation between the cardinality of the hotel and the two trains:
+
+$f:\mathbb{Z}\rightarrow\mathbb{N}$
+
+$$f(n) = \begin{cases}2n,& \text{if } n\geq 0\\ -2n-1,& \text{if }n<0\end{cases}$$
+
+This proves that there is a bijection between the two sets $\mathbb{Z}$ (the integers) and $\mathbb{N}$ (natural numbers).
+
+#### Real numbers $\{x\in\mathbb{R}\vert o<x<1\}$ and $\mathbb{R^+}$
+
+```charter
+x-axis:
+	label: x
+	range: -10 10
+y-axis:
+	label: g(x)=1/x-1
+	range: -3 3
+plot:
+	x: range: -10 10 200
+	y: math: x^(-1)-1
+plot:
+	x: 0
+	y: -3 3
+	color: black
+plot:
+	x: -11 11
+	y: 0 0
+	color: black
+plot:
+	x: 1 1
+	y: -3 3
+	color: blue
+```
+
+This graph shows that there is a one to one mapping of the numbers between 0 and 1 to all real numbers. This is becuse for all values for x between 0 and one all real numbers are produced on the y axis.

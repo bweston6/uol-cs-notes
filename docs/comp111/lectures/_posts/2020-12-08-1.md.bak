@@ -1,0 +1,80 @@
+---
+title: COMP111 - Introduction to Learning
+tags: COMP111 Lectures
+---
+Learning is the process of converting experience into expertise or knowledge.
+
+For a machine the **input** to a learning algorithms is **training data** (representing experience) and the **output** is some expertise, which usually takes the form of another **computer program** that can perform some task.
+
+## Types of Learning
+### Supervised Learning
+The learner is presented with examples:
+
+$$(x_1,L(x_1)),\ldots,(x_n,L(x_n))\in \mathcal{X}\times\mathcal{Y}$$
+
+This is to say that it contains a list of pairs where the first element is data and the second is a provided label.
+{:.info}
+
+of labelled data $x_i$ $(L(x_i)$ is the label of $x_i$) and the task is to generalise the examples to a function $f:\mathcal{X}\rightarrow\mathcal{Y}$. If $\mathcal{Y}$ is finite, then $f$ is also called a classifier.
+
+### Unsupervised Learning
+The learner aims to find structure (also called patterns) in data without using examples. Clustering data into similar ones is a typical unsupervised learning problem.
+
+### Reinforcement Learning
+Learning from rewards or punishments in a dynamic setting in which an agent has a long-term goal (winning a game, driving a car). Different from supervised learning as actions of the learner are not directly classified.
+
+## Examples
+### Hand-Written Digit Recognition
+Say that you are given a set of handwritten numbers. There are a set of labelled images and the rest are unlabelled.
+
+An input image of 28 by 28 pixels is given as a vector $\vec x=(x_1,\ldots,x&#95;&#123;28\times28}$ of real numbers. Learn a **classifier**:
+
+$f:\{\text{images}\}\rightarrow\{0,1,2,3,4,5,6,7,8,9\}$
+
+### Face Detection
+Learn a classifier:
+
+$f:\{\text{image windows}\}\mapsto \{\text{non-face, frontal face,}\) \(\text{profile-face}\}$
+
+Again a supervised learning problem:
+
+* Start with training data:
+	* Image windows labelled with $\{\text{non-face, frontal face, profile-face}\}$.
+	* Generalise the training data to classifier $f$.
+
+### Spam Detection
+Detect whether incoming email is pam or not.
+
+A supervised learning problem: 
+
+* Learn classifier:
+
+	$$f:\{\text{emails}\}\rightarrow\{\text{spam, not-spam}\}$$
+
+	from labelled input data (emails).
+	
+Input data is word-count (e.g. word viagra in email indicated spam.)
+
+Requires a learning system as "enemy" keeps innovating.
+
+## When do we Need Machine Learning?
+
+* The problem's complexity.
+* The need for adaptivity.
+
+### Tasks that are too Complex to Program
+
+* Tasks performed by animals/humans.
+	* There are numerous tasks that we human beings perform routinely, yet our introspection concerning how we do them is not sufficiently elaborate to extract a well defined program.
+	* Examples are given above.
+	* Machine learning programs achieve quite satisfactory results.
+* Tasks beyond human capabilities.
+	* Another wide family of tasks that benefit from machine learning techniques are related to the analysis of very large and complex data sets.
+	* Examples include: astronomical data, weather prediction, web search engines.
+	* Meaningful information is buried in data archives that are way too large and too complex for humans to make sense of.
+	
+### Adaptivity
+
+* One limiting feature of programmed tools is their rigidity. Once a program has been written down and installed, it stays unchanged. However many tasks change over time or from one user to another.
+* Machine learning tools (programs whose behaviour adapts to their input data) offer a solution to such issues; they are, by nature, adaptive to changes in the environment they interact with.
+* Examples include individual handwritten text, spam detection, speach recognition.

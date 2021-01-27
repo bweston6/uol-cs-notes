@@ -1,0 +1,72 @@
+---
+title: COMP109 - Mathematical Induction
+tags: COMP109 Lectures
+---
+* They are used to check conjectures about outcomes of processes that occur repeatedly and according to definite patterns.
+* In general, mathematical induction is a method for proving that a property defined for integers $n$ is true for all values of $n$ that are greater than or equal to come initial integer.
+
+## Generic Particular v.s. Induction for Universal Statements
+### Generalisation from the generic particular:
+
+"Suppose that $x$ is a particular but arbitrarily chosen..." "...property holds for this $x$..." "...then the property holds for all $x$"
+{:.info}
+
+This argument states that as we have chosen an arbitrary value from a set then the argument will hold for all numbers within the same set.
+
+## Induction
+We apply a process to all the values in a set. This process is carried on until an arbitrary value is reached.
+
+* Prove that the property holds for some initial value (e.g. $n=0$).
+* Prove that if the property hold for $n=m$ (for any natural number $m$) then it holds for $n=m+1$.
+
+### Example
+For a set of dominoes the following process can be applied:
+
+For a domino at position $i$, when it is pushed the domino at position $i+1$ will fall sequentially.
+
+The conclusion can be that all of the dominoes will fall.
+
+### Typical Structure
+We prove the statement by mathematical induction on $n$.
+
+#### Base Case
+Show that the property hold for some initial value (e.g. $n=0$).
+
+#### Inductive Step
+Assume that the property holds for $n=m$. Show that is hold for $n=m+1$.
+
+#### Conclusion
+You can now conclude that the property holds for every natural number $n$.
+
+### Carl Friedrich Gauss
+$$1+\ldots+100=5050$$
+
+If you split the number line in the middle the sum of every column is 101. With 50 columns the answer is 5050.
+
+For every natural number $n$, 
+$$0+1+\ldots+n=\frac{n(n+1)}{2}$$
+
+#### Proof
+##### Base Case
+$n=0$ 
+
+$0 = \frac{0(0+1)}{2} = 0$
+
+##### Inductive Step
+Suppose that for $n=m$ the property holds.
+
+Then $$0+1+\ldots+m=\frac{m(m+1)}{2}$$
+
+Consider the statement for $n=m+1$.
+
+$0+1+2+\ldots+m+(m+1)$.
+
+By induction hypothesis, $0+1+\ldots+m=\frac{m(m+1)}{2}$
+
+So, $0+1+\ldots+m+(m+1)=\frac{m(m+1)}{2}+(m+1)$
+
+$=\frac{m(m+1)}{2}+\frac{2(m+1)}{2}=\frac{m(m+1)+2(m+1)}{2}$
+
+$=\frac{(m+1)(m+2)}{2}=\frac{(m+1)((m+1)+1)}{2}=\frac{n(n+1)}{2}$
+
+This shows that for any sequential number the fraction simplifies to the statement, thus proving that it holds for any number.
