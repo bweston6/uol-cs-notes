@@ -33,9 +33,9 @@ jobs:
           rm -rf docs/assets/comp*/
           rm -rf docs/assets/COMP*/
           # Creating note folders.
-          mkdir -vp docs/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs}/_posts
+          mkdir -vp docs/{comp105,comp107,comp108,comp109,comp111,comp116,comp122,comp124}/{assessments,lectures,seminars,tutorials,labs}/_posts
           # Creating asset folders.
-          mkdir -vp docs/assets/{comp105,comp107,comp108,comp109,comp111,comp116,comp112,comp124}/{assessments,lectures,seminars,tutorials,labs}
+          mkdir -vp docs/assets/{comp105,comp107,comp108,comp109,comp111,comp116,comp122,comp124}/{assessments,lectures,seminars,tutorials,labs}
           # Custom folders.
           mkdir -vp docs/comp109/catchup_sessions/_posts
           mkdir -vp docs/assets/comp109/catchup_sessions
