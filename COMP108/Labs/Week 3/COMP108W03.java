@@ -1,6 +1,6 @@
 //
-// Enter your name:
-// Enter your student ID:
+// Enter your name: Ben Weston
+// Enter your student ID: 201415468
 //
 class COMP108W03 {
 
@@ -40,6 +40,28 @@ class COMP108W03 {
 	// You can assume that data[] is already sorted
 	// refer to Lecture 6
 	static void binarySearch(int[] data, int n, int key) {
+		int first = 0;
+		int last = n - 1;
+		int mid;
+		int count = 0;
+		boolean found = false;
+		while(first <= last && found == false) {
+			mid = (int)((first + last) / 2);
+			if(data[mid] == key) {
+				found = true;
+			}
+			else if(data[mid] > key) { 	// these two cases will trip if first <= last
+				last = mid - 1;
+			}
+			else {
+				first = mid + 1;
+			}
+			count++;
+		}
+		System.out.print("The number " + key + " is ");
+		if (found == false)
+			System.out.print("not ");
+		System.out.println("found by binary search and the number of comparisons used is " + count);
 	}
 
 	// print the smallest number in the array of size n
@@ -59,19 +81,51 @@ class COMP108W03 {
 	// print the largest number in the array of size n
 	// refer to Lecture 8
 	static void findMax(int[] data, int n) {
-
+		int i, max;
+		max = data[0];
+		i = 1;
+		while (i < n){
+			if (data[i] > max)
+				max = data[i];
+			i++;
+		}
+		System.out.println("The largest number is " + max + ".");
 	}
 
 	// print the second smallest number in the array of size n
 	// refer to Lecture 8
 	static void findSecondMin(int[] data, int n) {
+		int i, min, secmin;
 
+		min = data[0];
+		secmin = data[0];
+		i = 1;
+		while (i < n) {
+			if (data[i] < min){
+				secmin = min;
+				min = data[i];
+			}
+			i++;
+		}
+		System.out.println("The smallest number is " + min + ". The second smallest number is " + secmin + ".");
 	}
 
 	// print the second largest number in the array of size n
 	// refer to Lecture 8
 	static void findSecondMax(int[] data, int n) {
+		int i, max, secmax;
 
+		max = data[0];
+		secmax = data[0];
+		i = 1;
+		while (i < n) {
+			if (data[i] > max){
+				secmax = max;
+				max = data[i];
+			}
+			i++;
+		}
+		System.out.println("The largest number is " + max + ". The second largest number is " + secmax + ".");
 	}
 	
 	// print the smallest number and its position in an array of size n
@@ -80,7 +134,7 @@ class COMP108W03 {
 		int i, pos, min;
 
 		pos = 0;
-		min = 0;
+		min = data[0];
 		i = 1;
 		while (i < n) {
 			if (data[i] < min) {
