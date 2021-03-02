@@ -40,6 +40,17 @@ default:
     search: default
 
 sources:
+  jsdelivr:
+    font_awesome: 'https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css'
+    jquery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js'
+    leancloud_js_sdk: 'https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js'
+    chart: 'https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js'
+    gitalk:
+      js: 'https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js'
+      css: 'https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css'
+    valine: 'https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'
+    mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-chtml.js'
+    mermaid: 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js'
   bootcdn:
     font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
     jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js'
