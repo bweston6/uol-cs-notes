@@ -41,7 +41,7 @@ default:
 
 sources:
   jsdelivr:
-    font_awesome: 'https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css'
+    font_awesome: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css'
     jquery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js'
     leancloud_js_sdk: 'https://cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js'
     chart: 'https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js'
