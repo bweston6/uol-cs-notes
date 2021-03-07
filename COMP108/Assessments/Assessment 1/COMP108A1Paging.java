@@ -11,12 +11,24 @@ included.
 
 // ----------Task 5--------------
 /* noEvict()
+The time complexity of this algorithm is O(n) as it loops through each request
+once.
 */
 /* evictFIFo()
+The complexity is O(n*p) as it loops through each request once and for each
+request it loops through the contents of the cache once.
 */
 /* evictLFU()
+The time complexity is O(p+3pn)) as it loops though each element in the cache
+to initialise then loops through each request. For each request it then loops
+through the cache three times.
 */
 /* evictLFD()
+The time complexity is O(2pn+0.5n^3). When it initialises it loops through the
+cache and for each iteration it loops through the requests. It then loops
+through each request where it loops through the cache once and the request queue
+once less time for each loop. This gives a total time complexity of:
+pn+n(p+(n(n-1))/(2)). This simplifies to 2pn+0.5n^3+0.5n^2.
 */
 
 /**
