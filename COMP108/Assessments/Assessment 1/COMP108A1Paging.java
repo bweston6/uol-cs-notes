@@ -19,16 +19,19 @@ The complexity is O(n*p) as it loops through each request once and for each
 request it loops through the contents of the cache once.
 */
 /* evictLFU()
-The time complexity is O(p+3pn)) as it loops though each element in the cache
-to initialise then loops through each request. For each request it then loops
-through the cache three times.
+The time complexity is O(p+pn) as it loops though each element in the cache,
+to initialise, then loops through each request. For each request it then loops
+through the cache three times. The constant 3 is not significant enough so it
+is dropped.
 */
 /* evictLFD()
-The time complexity is O(2pn+0.5n^3). When it initialises it loops through the
-cache and for each iteration it loops through the requests. It then loops
+The time complexity is (.5n^3+.5n^2+2pn). When it initialises it loops through
+the cache and for each iteration it loops through the requests. It then loops
 through each request where it loops through the cache once and the request queue
 once less time for each loop. This gives a total time complexity of:
-pn+n(p+(n(n-1))/(2)). This simplifies to 2pn+0.5n^3+0.5n^2.
+pn+n(p+(n(n-1))/(2)) which simplifies to the expression I began with.
+In big-O notation that is: O(n^3+pn) as you keep the most significant powers of
+each variable and drop any constant coefficients.
 */
 
 /**
