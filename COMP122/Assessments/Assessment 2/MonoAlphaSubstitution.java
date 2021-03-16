@@ -5,6 +5,7 @@
  * @version 1.0
  */
 public class MonoAlphaSubstitution extends Substitution{
+	private char[][] mapping = new char[26][2];
 	/**
 	 * Tests the input parameters for validity and returns
 	 * {@link #encrypt(String s)} or {@link #decrypt(String s)} depending
@@ -14,7 +15,6 @@ public class MonoAlphaSubstitution extends Substitution{
 	 * {@code decrypt}, argument 2 is the mapping string and argument 3 is
 	 * the cipher-text.
 	 */
-	private char[][] mapping = new char[26][2];
 	public static void main(String[] args) {
 		if (args.length == 3) {
 			if (args[0].equals("encrypt")) {
@@ -118,6 +118,10 @@ public class MonoAlphaSubstitution extends Substitution{
 		}
 		return c;
 	}
+	/** Getter function to fetch the private variable {@code mapping[][]}.
+	*
+	* @return The private 2d array of {@code char}.
+	*/
 	public char[][] getMapping() {
 		return mapping;
 	}

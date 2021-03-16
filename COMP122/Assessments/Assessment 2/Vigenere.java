@@ -1,12 +1,12 @@
 /**
-* Extension of {@link #Substitution} that implements Vigenere encryption.
+* Extension of {@link Substitution} that implements Vigenere encryption.
 *
 * @author Ben Weston
 * @version 1.0
 */
 public class Vigenere extends Substitution{
 	private String ciphers = "";
-	public int progress = 0;
+	private int progress = 0;
 	/**
 	 * Tests the input parameters for validity and returns
 	 * {@link #encrypt(String s)} or {@link #decrypt(String s)} depending

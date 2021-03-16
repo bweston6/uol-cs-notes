@@ -1,5 +1,5 @@
 /**
-* Extension of {@link #MonoAlphaSubstitution} that implements Caesar shift
+* Extension of {@link MonoAlphaSubstitution} that implements Caesar shift
 * encryption.
 *
 * @author Ben Weston
