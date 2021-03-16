@@ -1,93 +1,112 @@
 /**
- * A command line tool to apply a shift cipher to an input string, given any
- * shift integer.
- * 
- * <p>Usage: Caesar {@code n} "cipher text"</p>
- *
- * @author Ben Weston
- * @version 1.0
- */
-public class Caesar {
+* Extension of {@link MonoAlphaSubstitution} that implements Caesar shift
+* encryption.
+*
+* @author Ben Weston
+* @version 1.0
+*/
+public class Caesar extends MonoAlphaSubstitution{
+	private int shift;
+	private char[][] mapping = new char[26][2];
 	/**
-	 * Applies a shift cipher to the cipher text given a shift integer {@code n}.
-	 *
-	 * <p>This code will validate the number of arguments and provide the
-	 * user with feedback if their input in incorrect.</p>
-	 *
-	 * <p>If the input is correct then this function will convert the inputs
-	 * to appropriate data types and then pass them on to the function 
-	 *  rotate().</p>
-	 *
-	 * @param args {@code args[0]} is the rotation as a {@code String} and {@code args[1]}
-	 * is the text to be rotated.
-	 */
-	public static void main(String[] args) {
-		if (args.length == 2){
-			int shift = Integer.parseInt(args[0]); // Convert string to int
-			System.out.println(rotate(shift, args[1]));
-		}
-		else if (args.length > 2) {
-			System.out.println("Too many parameters!");
-			System.out.println("Usage: java Caesar n \"cipher text\"");
-		}
-		else {
-			System.out.println("Too few parameters!");
-			System.out.println("Usage: java Caesar n \"cipher text\"");
-		}
-
+	* A constructor to give a zero shift.
+	*/
+	public Caesar(){
+		shift = 0;
+		MonoAlphaSubstitution m = new MonoAlphaSubstitution(); // set 1:1 mapping
+		mapping = m.getMapping();
 	}
 	/**
-	 * Rotates a string into cipher text by the given {@code shift} value.
-	 *
-	 * <p> Rotation is achieved by starting with an empty string and
-	 * iterating through each letter of the input string. This letter is
-	 * passed to {@code rotate(int, char)} and appended onto the 
-	 * resultant string.</p>
-	 *
-	 * @param shift An integer value to shift the text by. Can be positive 
-	 * or negative and will wrap around if it exceeds the alphabet.
-	 * @param text The string to be converted to cipher text.
-	 * @return The shifted cipher text.
-	 */
-	public static String rotate(int shift, String text) {
-		String shiftText = "";
-		for (int i = 0; i < text.length(); i++)
-		       shiftText += rotate(shift, text.charAt(i));
-		return shiftText;
-	}
-	/**
-	 * Rotates a single char by the given {@code shift} value.
-	 *
-	 * <p>Rotation is achieved by first converting the {@code shift} value
-	 * to a positive offset. It is then checked whether the character is
-	 * upper-case or lower; if it is neither then the original character is
-	 * returned.</p>
-	 * <p>For upper-case the new character is calculated as a positive
-	 * offset from A mod 26. This offset is then added to A and the
-	 * character is returned.</p>
-	 * <p> For lower-case the new character is calculates as a positive
-	 * offset from a mod 26. This offset is then added to a and the
-	 * character is returned.</p>
-	 * 
-	 * @param shift An integer value to shift the text by. Can be positive
-	 * or negative and will wrap around if it exceeds the alphabet.
-	 * @param letter A char to be shifted.
-	 * @return In the case of a letter - the shifted letter will be
-	 *  returned. For all other characters, the original character is 
-	 *  returned.
-	 */
-	public static char rotate(int shift, char letter) {
-		if (shift < 0)
+	* A constructor to initialise the shift based on the input {@code key}.
+	*
+	* @param key The amount to shift the input by.
+	*/
+	public Caesar(int key){
+		shift = key;
+		if (shift < 0){
 			shift %= 26; // Account for wraparound
 			shift = 26 + shift; // Convert to positive offset
-		if (Character.isUpperCase(letter)) {
-			int position = (int)((letter + shift - 65) % 26); // Calculate new position
-			letter = (char)('A' + position); // Apply new position as an offset on 'A'
 		}
-		else if (Character.isLowerCase(letter)) {
-			int position = (int)((letter + shift - 97) % 26); // Calculate new position
-			letter = (char)('a' + position); // Apply new position as an offset on 'a'
+		for (int i = 0; i < 26; i++){
+			mapping[i][0] = "abcdefghijklmnopqrstuvwxyz".charAt(i);
+			mapping[i][1] = "abcdefghijklmnopqrstuvwxyz".charAt((i + shift) % 26);
 		}
-		return letter;
+	}
+	/**
+	 * Tests the input parameters for validity and returns
+	 * {@link #encrypt(String s)} or {@link #decrypt(String s)} depending
+	 * on the input.
+	 *
+	 * @param args The list of arguments. Argument 1 is {@code encrypt} or
+	 * {@code decrypt}, argument 2 is the shift key and argument 3 is
+	 * the cipher-text.
+	*/
+	public static void main(String[] args){
+		if (args.length == 3) {
+			if (args[0].equals("encrypt")) {
+				Caesar c = new Caesar(Integer.parseInt(args[1]));
+				System.out.println(c.encrypt(args[2]));
+			}
+			else if (args[0].equals("decrypt")) {
+				Caesar c = new Caesar(Integer.parseInt(args[1]));
+				System.out.println(c.decrypt(args[2]));
+			}
+			else {
+				System.out.println("The first parameter must be \"encrypt\" or \"decrypt\"!");
+				System.out.println("Usage: java Caesar encrypt n \"cipher text\"");
+			}
+		}
+		else {
+			if (args.length < 3)
+				System.out.println("Too few parameters!");
+			else if (args.length > 3)
+				System.out.println("Too many parameters!");
+			System.out.println("Usage: java Caesar encrypt n \"cipher text\"");
+		}
+	}
+	/**
+	 * An overriding method to encrypt a single char using this encryption
+	 * scheme.
+	 *
+	 * @param c The character to be encrypted.
+	 * @return The encrypted character.
+	 */
+	public char encrypt(char c) {
+		if (Character.isUpperCase(c)) {
+			c = (char)(mapping[(int)(c - 65)][1] - 32); // convert lower-case to upper
+		}
+		else if (Character.isLowerCase(c)) {
+			c = mapping[(int)(c - 97)][1];
+		}
+		return c;
+	}
+	/**
+	 * An overriding method to decrypt a single char using this decryption
+	 * scheme.
+	 *
+	 * @param c The character to be decrypted.
+	 * @return The decrypted character.
+	 */
+	public char decrypt(char c) {
+		if (Character.isUpperCase(c) || Character.isLowerCase(c)){
+			boolean upper = false;
+			if (Character.isUpperCase(c)) {
+				upper = true;
+				c += 32; // convert to lower-case
+			}
+			boolean flag = false;
+			int i = 0;
+			while (flag == false && i < 26) {
+				if (c == mapping[i][1])
+					flag = true;
+				else
+					i++;
+			}
+			if (flag)
+				c = mapping[i][0];
+			if (upper)
+				c -=32; // back to upper
+		}
+		return c;
 	}
 }

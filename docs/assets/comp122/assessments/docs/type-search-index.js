@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Brutus"},{"p":"<Unnamed>","l":"Caesar"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Caesar"},{"p":"<Unnamed>","l":"Cipher"},{"p":"<Unnamed>","l":"MonoAlphaSubstitution"},{"p":"<Unnamed>","l":"Substitution"},{"p":"<Unnamed>","l":"Vigenere"}];updateSearchResults();
