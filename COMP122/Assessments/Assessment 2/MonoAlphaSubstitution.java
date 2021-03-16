@@ -118,4 +118,7 @@ public class MonoAlphaSubstitution extends Substitution{
 		}
 		return c;
 	}
+	public char[][] getMapping() {
+		return mapping;
+	}
 }
