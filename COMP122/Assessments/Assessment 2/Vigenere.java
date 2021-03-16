@@ -53,6 +53,8 @@ public class Vigenere extends Substitution{
 	*/
 	public Vigenere(String key){
 		ciphers = key.toLowerCase(); // cipher is always lowercase
+		if (key.equals(""))
+			ciphers = "a";
 	}
 	/**
 	 * An overriding method to encrypt a single char using this encryption
