@@ -5,7 +5,7 @@
  * @author Ben Weston
  * @version 1.0 
  */
-public abstract class Substitution{
+public abstract class Substitution implements Cipher{
 	/**
 	 * An abstract method for encrypting a single character.
 	 *
