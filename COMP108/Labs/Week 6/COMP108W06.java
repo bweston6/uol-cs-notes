@@ -1,6 +1,6 @@
 //
-// Enter your name:
-// Enter your student ID:
+// Enter your name: Ben Weston
+// Enter your student ID: 201415467
 //
 
 class COMP108W06 {
@@ -18,7 +18,14 @@ class COMP108W06 {
 	// You should implement a list traversal algorithm here
 	public boolean seqSearchList(int key) {
 		boolean found = false;
-		
+		Node curr = head;
+		while (curr != null && found == false) {
+			if (curr.data == key)
+				found = true;
+			
+			else
+				curr = curr.next;
+		}
 		return found;		
 	}
 
@@ -28,7 +35,12 @@ class COMP108W06 {
 	// You should implement a list traversal algorithm here
 	public int countList(int key) {
 		int count=0;
-		
+		Node curr = head;
+		while (curr != null) {
+			if (curr.data == key)
+				count++;
+			curr = curr.next;
+		}
 		return count;
 	}
 
@@ -37,8 +49,15 @@ class COMP108W06 {
 	// Do NOT change its signature
 	// You should implement a list traversal algorithm here
 	public int searchMin() {
-		int min=Integer.MAX_VALUE;
-		
+		Node curr = head;
+		int min = curr.data;
+		curr = curr.next;
+		while (curr!= null) {
+			if (curr.data < min)
+				min = curr.data;
+			else
+				curr = curr.next;
+		}
 		return min;
 	}
 
@@ -47,8 +66,15 @@ class COMP108W06 {
 	// Do NOT change its signature
 	// You should implement a list traversal algorithm here
 	public int searchMax() {
-		int max=Integer.MIN_VALUE;
-		
+		Node curr = head;
+		int max= curr.data;
+		curr = curr.next;
+		while (curr!= null) {
+			if (curr.data > max)
+				max = curr.data;
+			else
+				curr = curr.next;
+		}
 		return max;
 	}
 
