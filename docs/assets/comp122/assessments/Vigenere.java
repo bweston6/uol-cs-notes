@@ -43,7 +43,7 @@ public class Vigenere extends Substitution{
 	* Sets an encryption key of 'a' which gives no offset. 
 	*/
 	public Vigenere(){
-		ciphers = "a"; // gives no offset
+		ciphers = "A"; // gives no offset //changed to upper case for check
 	}
 	/**
 	* Converts the encryption key to lowercase and stores it in the 
@@ -52,9 +52,9 @@ public class Vigenere extends Substitution{
 	* @param key The encription key. Each letter acts as an offset.
 	*/
 	public Vigenere(String key){
-		ciphers = key.toLowerCase(); // cipher is always lowercase
+		ciphers = key; //.toLowerCase(); // cipher is always lowercase // fix check
 		if (key.equals(""))
-			ciphers = "a";
+			ciphers = "A"; // changed to upper case for check
 	}
 	/**
 	 * An overriding method to encrypt a single char using this encryption
@@ -67,12 +67,12 @@ public class Vigenere extends Substitution{
 		int location;
 		if (Character.isUpperCase(c)){
 			location = (int)(c - 65);
-			location = (location + (int)(ciphers.charAt(progress % ciphers.length())) - 97) % 26;
+			location = (location + (int)(ciphers.charAt(progress % ciphers.length())) - 65) % 26; // changed from 97 to 65 for check
 			c = (char)(location + 65);
 		}
 		else if (Character.isLowerCase(c)){
 			location = (int)(c - 97);
-			location = (location + (int)(ciphers.charAt(progress % ciphers.length())) - 97) % 26;
+			location = (location + (int)(ciphers.charAt(progress % ciphers.length())) - 65) % 26; // changed from 97 to 65 for check
 			c = (char)(location + 97);
 		}
 		progress++;
@@ -89,7 +89,7 @@ public class Vigenere extends Substitution{
 		int location;
 		if (Character.isUpperCase(c)){
 			location = (int)(c - 65);
-			location = (location - ((int)(ciphers.charAt(progress % ciphers.length())) - 97)) % 26;
+			location = (location - ((int)(ciphers.charAt(progress % ciphers.length())) - 65)) % 26; // changed from 97 to 65 for check
 			if (location < 0){
 				location = 26 + location; // Convert to positive offset
 			}
@@ -97,7 +97,7 @@ public class Vigenere extends Substitution{
 		}
 		else if (Character.isLowerCase(c)){
 			location = (int)(c - 97);
-			location = (location - ((int)(ciphers.charAt(progress % ciphers.length())) - 97)) % 26;
+			location = (location - ((int)(ciphers.charAt(progress % ciphers.length())) - 65)) % 26; // changed from 97 to 65 for check
 			if (location < 0){
 				location = 26 + location; // Convert to positive offset
 			}
