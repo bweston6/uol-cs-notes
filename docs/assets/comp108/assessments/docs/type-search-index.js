@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"COMP108A1Paging"},{"p":"<Unnamed>","l":"Functions"}];updateSearchResults();
