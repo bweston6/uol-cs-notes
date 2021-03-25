@@ -9,6 +9,8 @@ sidebar:
 {% for post in site.posts %}
 {% if post.tags contains "Labs" and post.tags contains "COMP124" %}
 # [{{post.title}}]({{site.baseurl}}{{post.url}})
+{::nomarkdown}
 {{post.content}}
+{:/nomarkdown}
 {% endif %}
 {% endfor %}

@@ -9,6 +9,8 @@ sidebar:
 {% for post in site.posts %}
 {% if post.tags contains "COMP108" %}
 # [{{post.title}}]({{site.baseurl}}{{post.url}})
+{::nomarkdown}
 {{post.content}}
+{:/nomarkdown}
 {% endif %}
 {% endfor %}

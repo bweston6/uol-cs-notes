@@ -180,8 +180,6 @@ analytics:
 ## => Build
 ##############################
 markdown: kramdown
-kramdown:
-  math_engine: nil
 highlighter : rouge
 permalink   : date
 
