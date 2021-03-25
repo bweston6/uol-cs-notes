@@ -49,5 +49,5 @@ To build this site manually use the following instructions for *Arch Linux*. For
 	
 	This will build the site in the folder `/docs/_site`. You can also preview the site at `http://localhost:4000/UoL/`. Make sure to remember the trailing slash.
 	
-# File Relocation
-To move my module content to the correct folders in `/docs` the script in [`.github/workflows`](https://github.com/bweston6/UoL/tree/main/.github/workflows) is used. This script is not an ideal solution, as it makes an additional commit to move the site files and fix maths delimiters on every push. It does make following the Jekyll folder structure easier and automatic though.
+# File Organisation
+All source files are located in `/docs`. To make accessing these files easier on desktop, they are symlinked by folders in each module. This structure doesn't work well on [github.com](https://github.com/bweston6/UoL) as the links are treated as files. 
