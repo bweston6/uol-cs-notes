@@ -32,8 +32,6 @@ comp108:
         url:    /comp108/lectures
       - title:  Seminars
         url:    /comp108/seminars
-      - title:  Labs
-        url:    /comp108/labs
 comp109:
   - title:      COMP109
     children:
@@ -71,7 +69,5 @@ comp124:
     children:
       - title:  Lectures
         url:    /comp124/lectures
-      - title:  Seminars
-        url:    /comp124/seminars
       - title:  Labs
         url:    /comp124/labs
