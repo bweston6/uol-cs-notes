@@ -9,13 +9,79 @@ header:
     url: /comp218
   - title: Archive
     url: /archive.html
+archive:
+    - title: COMP105
+      url: /comp105
+      children:
+        - title:  Lectures
+          url:    /comp105/lectures
+    - title:      COMP107
+      url: /comp107
+      children:
+        - title:  Lectures
+          url:    /comp107/lectures
+        - title:  Seminars
+          url:    /comp107/seminars
+        - title:  Tutorials
+          url:    /comp107/tutorials
+        - title:  Meetings
+          url:    /comp107/meetings
+    - title:      COMP108
+      url: /comp108
+      children:
+        - title:  Lectures
+          url:    /comp108/lectures
+        - title:  Seminars
+          url:    /comp108/seminars
+    - title:      COMP109
+      url: /comp109
+      children:
+        - title:  Lectures
+          url:    /comp109/lectures
+        - title:  Catch-up Sessions
+          url:    /comp109/catchup_sessions
+        - title:  Tutorials
+          url:    /comp109/tutorials
+    - title:      COMP111
+      url: /comp111
+      children:
+        - title:  Lectures
+          url:    /comp111/lectures
+        - title:  Tutorials
+          url:    /comp111/tutorials
+    - title:      COMP116
+      url: /comp116
+      children:
+        - title:  Lectures
+          url:    /comp116/lectures
+        - title:  Tutorials
+          url:    /comp116/tutorials
+    - title:      COMP122
+      url: /comp122
+      children:
+        - title:  Lectures
+          url:    /comp122/lectures
+        - title:  Seminars
+          url:    /comp122/seminars
+        - title:  Labs
+          url:    /comp122/labs
+    - title:      COMP124
+      url: /comp124
+      children:
+        - title:  Lectures
+          url:    /comp124/lectures
+        - title:  Labs
+          url:    /comp124/labs
+
 comp105:
   - title:      COMP105
+    url: /comp105
     children:
       - title:  Lectures
         url:    /comp105/lectures
 comp107:
   - title:      COMP107
+    url: /comp107
     children:
       - title:  Lectures
         url:    /comp107/lectures
@@ -27,6 +93,7 @@ comp107:
         url:    /comp107/meetings
 comp108:
   - title:      COMP108
+    url: /comp108
     children:
       - title:  Lectures
         url:    /comp108/lectures
@@ -34,6 +101,7 @@ comp108:
         url:    /comp108/seminars
 comp109:
   - title:      COMP109
+    url: /comp109
     children:
       - title:  Lectures
         url:    /comp109/lectures
@@ -43,6 +111,7 @@ comp109:
         url:    /comp109/tutorials
 comp111:
   - title:      COMP111
+    url: /comp111
     children:
       - title:  Lectures
         url:    /comp111/lectures
@@ -50,6 +119,7 @@ comp111:
         url:    /comp111/tutorials
 comp116:
   - title:      COMP116
+    url: /comp116
     children:
       - title:  Lectures
         url:    /comp116/lectures
@@ -57,6 +127,7 @@ comp116:
         url:    /comp116/tutorials
 comp122:
   - title:      COMP122
+    url: /comp122
     children:
       - title:  Lectures
         url:    /comp122/lectures
@@ -66,6 +137,7 @@ comp122:
         url:    /comp122/labs
 comp124:
   - title:      COMP124
+    url: /comp124
     children:
       - title:  Lectures
         url:    /comp124/lectures
@@ -73,6 +145,7 @@ comp124:
         url:    /comp124/labs
 comp201:
   - title:      COMP201
+    url: /comp201
     children:
       - title:  Lectures
         url:    /comp201/lectures
@@ -80,6 +153,7 @@ comp201:
         url:    /comp201/tutorials
 comp207:
   - title:      COMP207
+    url: /comp207
     children:
       - title:  Lectures
         url:    /comp207/lectures
@@ -87,6 +161,7 @@ comp207:
         url:    /comp207/tutorials
 comp202:
   - title:      COMP202
+    url: /comp202
     children:
       - title:  Lectures
         url:    /comp202/lectures
@@ -94,6 +169,7 @@ comp202:
         url:    /comp202/tutorials
 comp208:
   - title:      COMP208
+    url: /comp208
     children:
       - title:  Lectures
         url:    /comp208/lectures
@@ -101,6 +177,7 @@ comp208:
         url:    /comp208/tutorials
 comp211:
   - title:      COMP211
+    url: /comp211
     children:
       - title:  Lectures
         url:    /comp211/lectures
@@ -108,6 +185,7 @@ comp211:
         url:    /comp211/tutorials
 comp218:
   - title:      COMP218
+    url: /comp218
     children:
       - title:  Lectures
         url:    /comp218/lectures
@@ -115,6 +193,7 @@ comp218:
         url:    /comp218/tutorials
 comp281:
   - title:      COMP281
+    url: /comp281
     children:
       - title:  Lectures
         url:    /comp281/lectures
@@ -122,6 +201,7 @@ comp281:
         url:    /comp281/tutorials
 comp282:
   - title:      COMP282
+    url: /comp282
     children:
       - title:  Lectures
         url:    /comp282/lectures
@@ -129,6 +209,7 @@ comp282:
         url:    /comp282/tutorials
 comp284:
   - title:      COMP284
+    url: /comp284
     children:
       - title:  Lectures
         url:    /comp284/lectures
@@ -136,6 +217,7 @@ comp284:
         url:    /comp284/tutorials
 comp285:
   - title:      COMP285
+    url: /comp285
     children:
       - title:  Lectures
         url:    /comp285/lectures
