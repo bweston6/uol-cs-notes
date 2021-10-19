@@ -14,8 +14,16 @@
 
 {%- include head/favicon.html -%}
 
-{%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%}
-<link rel="stylesheet" href="{{ __return }}">
+<script>
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+if (prefersDarkScheme.matches) {
+	{%- include snippets/prepend-baseurl.html path='/assets/css/main_dark.css' -%}
+	document.write('<link id="theme" rel="stylesheet" href="{{ __return }}">');
+} else {
+	{%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%}
+    document.write('<link id="theme" rel="stylesheet" href="{{ __return }}">');
+}
+</script>
 
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}

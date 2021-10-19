@@ -2,9 +2,18 @@
 {%- assign _sources = __return -%}
 <script>
   window.Lazyload.js('{{ _sources.mermaid }}', function() {
-    mermaid.initialize({
-      startOnLoad: true
+  	if (prefersDarkScheme.matches) {
+  mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark'
     });
+} else {
+  mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default'
+    });
+}
+    
     mermaid.init(undefined, '.language-mermaid');
   });
 </script>

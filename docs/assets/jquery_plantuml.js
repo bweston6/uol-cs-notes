@@ -85,7 +85,13 @@ $("img").each(function () {
   if (done==1) return;
   var u1 = $(this).attr("src");
   if (u1!=null) return;
-  var u2 = $(this).attr("uml");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  if (prefersDarkScheme.matches) {
+  	var u2 = "skinparam monochrome reverse\nskinparam backgroundColor transparent\n" + $(this).attr("uml");
+  }
+  else {
+  	var u2 = $(this).attr("uml");
+  }
   if (u2=="") return;
   var s = unescape(encodeURIComponent(u2));
   if (deflater) {
