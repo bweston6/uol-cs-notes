@@ -27,3 +27,6 @@ defaults:
       type: pages
     values:
       layout: default
+
+# home page options
+paginate: 10
