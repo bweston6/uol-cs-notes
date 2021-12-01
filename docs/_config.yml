@@ -1,0 +1,29 @@
+# site settings
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: Uni Notes
+description: A site containing my notes for all my modules taken at the University of Liverpool.
+
+plugins:
+  - jekyll-seo-tag
+  - rouge
+
+# markdown options
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
+# default layouts
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+  - 
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
