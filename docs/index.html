@@ -1,5 +1,6 @@
 ---
 title: Home
+layout: home
 ---
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
@@ -8,7 +9,8 @@ title: Home
     <span class="date">{{ post.date }}</span>
   </p>
   <div class="content">
-    {{ post.excerpt }}
+    <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+    <p><a href="{{ post.url }}">Read More</a></p>
   </div>
 {% endfor %}
 
