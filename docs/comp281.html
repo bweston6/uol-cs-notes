@@ -1,0 +1,13 @@
+---
+title: COMP281
+aside:
+ toc: true
+sidebar:
+ nav: comp281
+---
+{% for post in site.posts %}
+{% if post.tags contains "COMP281" %}
+<h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
+{{post.content}}
+{% endif %}
+{% endfor %}

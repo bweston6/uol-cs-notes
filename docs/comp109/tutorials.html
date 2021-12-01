@@ -1,0 +1,13 @@
+---
+title: COMP109 - Tutorials
+aside:
+ toc: true
+sidebar:
+ nav: comp109
+---
+{% for post in site.posts %}
+{% if post.tags contains "Tutorials" and post.tags contains "COMP109" %}
+<h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
+{{post.content}}
+{% endif %}
+{% endfor %}
