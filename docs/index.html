@@ -5,12 +5,9 @@ layout: home
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
   <div class="content">
-    <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-    <p><a href="{{ post.url }}">Read More</a></p>
+    <p>{{ post.content | strip_html | truncatewords:50 }} <a href="{{ post.url }}">Read More</a></p>
+    <div style="text-align:right;"class="date">{{ post.date |  date: "%Y-%m-%d" }}</div>
   </div>
 {% endfor %}
 
