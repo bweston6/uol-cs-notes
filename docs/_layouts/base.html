@@ -6,20 +6,23 @@
     <meta name="color-scheme" content="dark light">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-	{% include mathjax.html %}
-  	{% include mermaid-head.html %}
+    {% if site.tags != "" %}
+      {% include collecttags.html %}
+    {% endif %}
   </head>
-  <body class="markdown-body">
+  <body class="markdown-body"> 
   	<ul>
-  	{% for item in site.data.navigation.topnav %}
-  		<li class="topnav-item">
-  			<a href="{{ item.url }}">{{ item.title }}</a>
-  		</li>
-  	{% endfor %}
+    	{% for item in site.data.navigation.topnav %}
+    		<li>
+    			<a href="{{ item.url }}">{{ item.title }}</a>
+    		</li>
+    	{% endfor %}
   	</ul>
     {{ content }}
+    
   </body>
   <footer>
-  	{% include mermaid-tail.html %}
+    {% include mathjax.html %}
+    {% include mermaid.html %}
   </footer>
 </html>

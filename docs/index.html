@@ -2,30 +2,30 @@
 title: Home
 layout: home
 ---
-<!-- This loops through the paginated posts -->
+<!-- posts -->
 {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <div class="content">
-    <p>{{ post.content | strip_html | truncatewords:50 }} <a href="{{ post.url }}">Read More</a></p>
-    <div style="text-align:right;"class="date">{{ post.date |  date: "%Y-%m-%d" }}</div>
+  <div>
+    <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+    <p><a href="{{ post.url }}">Read More</a><span style="float: right;">{{ post.date |  date: "%Y-%m-%d" }}</span></p>
   </div>
 {% endfor %}
 
-<!-- Pagination links -->
-<div class="pagination">
+<!-- navagation links -->
+<div>
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
+    <a href="{{ paginator.previous_page_path }}">
       Previous
     </a>
   {% else %}
-    <span class="previous">Previous</span>
+    <span>Previous</span>
   {% endif %}
-  <span class="page_number ">
+  <span>
     Page: {{ paginator.page }} of {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    <a href="{{ paginator.next_page_path }}">Next</a>
   {% else %}
-    <span class="next ">Next</span>
+    <span>Next</span>
   {% endif %}
 </div>

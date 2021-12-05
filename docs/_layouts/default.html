@@ -2,4 +2,11 @@
 layout: base
 ---
 <h1>{{ page.title }}</h1>
+<p>
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/tag/{{ tag_name }}"><code class="highligher-rouge">{{ tag_name }}</code></a>
+  {% endfor %}
+  <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
+</p>
 {{ content }}
