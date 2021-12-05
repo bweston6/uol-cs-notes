@@ -1,4 +1,6 @@
 topnav:
+  - title: Home
+    url: /
   - title: COMP201
     url: /comp201
   - title: COMP207
