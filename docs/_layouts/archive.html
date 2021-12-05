@@ -9,11 +9,11 @@ layout: default
 {% endcapture %}
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
 
-<a href="/archive/"><code class="highligher-rouge"><nobr>All ({{ site.posts | size }})</nobr></code></a>
+<a href="{{ site.baseurl }}/archive/"><code class="highligher-rouge"><nobr>All ({{ site.posts | size }})</nobr></code></a>
 {% for temptag in sortedtemptags %}
   {% assign tagitems = temptag | split: '#' %}
   {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
   {% capture tagcount %}{{ tagitems[2] }}{% endcapture %}
-  <a href="/archive/{{ tagname }}"><code class="highligher-rouge"><nobr>{{ tagname }} ({{ tagcount }})</nobr></code></a>
+  <a href="{{ site.baseurl }}/archive/{{ tagname }}"><code class="highligher-rouge"><nobr>{{ tagname }} ({{ tagcount }})</nobr></code></a>
 {% endfor %}
 {{ content }}

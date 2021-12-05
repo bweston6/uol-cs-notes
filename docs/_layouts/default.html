@@ -5,7 +5,7 @@ layout: base
 <p>
   {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/archive/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
+    <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
   {% endfor %}
   <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
 </p>
