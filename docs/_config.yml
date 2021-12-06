@@ -4,6 +4,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: Uni Notes
 description: A site containing my notes for all my modules taken at the University of Liverpool.
 
+author:
+  name: Ben Weston
+  github: bweston6
+  email: b.weston60@gmail.com
+
+github:
+  repo: bweston6/UoL
+  repo_tree: main/docs
+
 plugins:
   - jekyll-seo-tag
   - rouge
