@@ -4,7 +4,6 @@
   {% assign rawtags = rawtags | append:ttags %}
 {% endfor %}
 {% assign rawtags = rawtags | split:'|' | sort %}
-
 {% assign site.tags = "" %}
 {% for tag in rawtags %}
   {% if tag != "" %}
@@ -16,4 +15,3 @@
     {% endunless %}
   {% endif %}
 {% endfor %}
-
