@@ -6,23 +6,31 @@
     <meta name="color-scheme" content="dark light">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    {% if site.tags != "" %}
-      {% include collecttags.html %}
-    {% endif %}
   </head>
-  <body class="markdown-body"> 
-  	<ul>
+  <body class="markdown-body">
+    <div class="topnav-width">
+    <div class="topnav">
+    <div class="site-title">
+      <a href="{{ site.baseurl}}/">{{ site.title }}</a>
+    </div>
+  	<div class="scroll-topnav">
     	{% for item in site.data.navigation.topnav %}
-    		<li>
-    			<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-    		</li>
+  			<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
     	{% endfor %}
-  	</ul>
+  	</div>
+  	</div>
+  	</div>
+  	<div class="content">
     {{ content }}
-    
+    </div>
+    <footer>
+      <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>
+      <div>
+        <code><a href="https://github.com/{{ site.author.github }}">Githb</a></code> 
+        <code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
+      </div>
+      {% include mathjax.html %}
+      {% include mermaid.html %}
+    </footer>
   </body>
-  <footer>
-    {% include mathjax.html %}
-    {% include mermaid.html %}
-  </footer>
 </html>
