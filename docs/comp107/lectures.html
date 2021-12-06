@@ -1,13 +1,8 @@
 ---
 title: COMP107 - Lectures
+layout: module
 aside:
  toc: true
 sidebar:
  nav: comp107
 ---
-{% for post in site.posts %}
-{% if post.tags contains "Lectures" and post.tags contains "COMP107" %}
-<h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
-{{post.content}}
-{% endif %}
-{% endfor %}

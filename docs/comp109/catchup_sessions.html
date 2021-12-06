@@ -1,13 +1,8 @@
 ---
-title: COMP109 - Catch-up Sessions
+title: COMP109 - Catch-up+Sessions
+layout: module
 aside:
  toc: true
 sidebar:
  nav: comp109
 ---
-{% for post in site.posts %}
-{% if post.tags contains "Catch-up+Sessions" and post.tags contains "COMP109" %}
-<h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
-{{post.content}}
-{% endif %}
-{% endfor %}
