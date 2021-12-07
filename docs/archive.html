@@ -10,7 +10,9 @@ title: Archive
     <ul style="list-style-type: none; padding: 0">
     {% assign date = currentdate %}
   {% endif %}
-    <li><code>{{ post.date | date: "%b %d" }}</code>&emsp;<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-  {% if forloop.last %}</ul>{% endif %}
+  <li><code>{{ post.date | date: "%b %d" }}</code>&emsp;<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  {% if forloop.last %}
+    </ul>
+  {% endif %}
 {% endfor %}
 

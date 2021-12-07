@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
   <body class="markdown-body">
-    <div class="topnav-width">
-    <div class="topnav">
-    <div class="site-title">
-      <a href="{{ site.baseurl}}/">{{ site.title }}</a>
-    </div>
-  	<div class="scroll-topnav">
-    	{% for item in site.data.navigation.topnav %}
-  			<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-    	{% endfor %}
+    <div class="base-topbar">
+      <nav class="base-topnav">
+        <div class="base-site-title">
+          <a href="{{ site.baseurl}}/">{{ site.title }}</a>
+        </div>
+        <div class="base-topnav-scroll">
+          {% for item in site.data.navigation.topnav %}
+            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+          {% endfor %}
+        </div>
+      </nav>
   	</div>
-  	</div>
-  	</div>
-  	<div class="content">
     {{ content }}
-    </div>
     <footer>
       <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>
       <div>

@@ -2,7 +2,6 @@
 layout: default
 ---
 {% assign attributes = page.title | split: " - " %}
-
 {% for post in site.posts %}
   {% if attributes.size == 1 %}
     {% if post.tags contains attributes[0] %}
@@ -10,7 +9,7 @@ layout: default
       <p>
       {% for tag in post.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
+        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
       {% endfor %}
       <span style="float: right;">{{ post.date |  date: "%Y-%m-%d" }}</span>
       </p>
@@ -22,7 +21,7 @@ layout: default
       <p>
       {% for tag in post.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
+        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
       {% endfor %}
       <span style="float: right;">{{ post.date |  date: "%Y-%m-%d" }}</span>
       </p>

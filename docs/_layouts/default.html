@@ -1,12 +1,21 @@
 ---
 layout: base
 ---
-<h1>{{ page.title }}</h1>
-<p>
-  {% for tag in page.tags %}
-    {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
-  {% endfor %}
-  <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
-</p>
-{{ content }}
+<div class="default">
+  <div class="default-leftnav">
+  </div>
+  <div class ="default-content">
+    <h1>{{ page.title }}</h1>
+    <p>
+      {% for tag in page.tags %}
+        {% capture tag_name %}{{ tag }}{% endcapture %}
+        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
+      {% endfor %}
+      <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
+    </p>
+    {{ content }}
+  </div>
+  <nav class="default-toc">
+    {% include toc.html html=content %}
+  </nav>
+</div>

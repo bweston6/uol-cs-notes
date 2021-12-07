@@ -1,9 +1,7 @@
-.topnav-width {
-  padding: 0px;
+/* base */
+.base-topbar {
   background-color: #21262d;
 }
 footer {
-  text-align: center;
-  padding: 16px;
   background-color: #21262d;
 }

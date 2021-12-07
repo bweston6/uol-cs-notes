@@ -1,4 +1,5 @@
-.content {
+/* home */
+.home,.archive {
 	box-sizing: border-box;
 	min-width: 200px;
 	max-width: 980px;
@@ -6,12 +7,13 @@
 	padding: 45px;
 }
 @media (max-width: 767px) {
-	.content {
+  .home,.archive {
 		padding: 15px;
 	}
 }
 
-.topnav {
+/* base */
+.base-topnav {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -19,28 +21,21 @@
 	max-width: 980px;
 	padding: 0 45px 0 45px;
 	margin: 0 auto;
-	overflow: auto;
 }
-.scroll-topnav {
+.base-site-title a {
+  display: block;
+  white-space: nowrap;
+  padding: 16px 0 16px 0px;
+}
+.base-topnav-scroll {
   overflow: auto;
   white-space: nowrap;
 }
-
-.scroll-topnav a {
+.base-topnav-scroll a {
   display: inline-block;
-  text-align: center;
   padding: 16px 0 16px 32px;
-  text-decoration: none;
 }
-.site-title a {
-  display: block;
+footer {
   text-align: center;
-  white-space: nowrap;
-}
-.site-title a {
-  padding: 16px 0 16px 0px;
-}
-.site-title {
-  float: left;
-  margin: 0;
+  padding: 16px;
 }
