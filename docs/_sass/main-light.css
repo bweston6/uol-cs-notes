@@ -5,3 +5,16 @@
 footer {
   background-color: #f6f8fa;
 }
+
+/* toc */
+.default-toc:before {
+	background-image: linear-gradient(to top, rgba(255,255,255,0), #FFF);
+}
+.default-toc:after {
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0), #FFF);
+}
+
+/* leftnav */
+/*.default-leftnav, .archive-leftnav {
+  background-color: #f6f8fa;
+}*/

@@ -6,7 +6,7 @@ layout: base
     {% include leftnav.html html=content %}
   </nav>
   <div class ="default-content">
-    <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}<span style="float: right;"><a href=""><i class="far fa-edit fa-xs"></i></a></span></h1>
     <p>
       {% for tag in page.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}
@@ -16,7 +16,9 @@ layout: base
     </p>
     {{ content }}
   </div>
-  <nav class="default-toc">
+</div>
+<div class="default-toc">
+  <nav class="default-toc-content">
     {% include toc.html html=content %}
   </nav>
 </div>
