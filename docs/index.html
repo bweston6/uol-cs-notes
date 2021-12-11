@@ -19,20 +19,24 @@ layout: home
 {% endfor %}
 
 <!-- navagation links -->
-<div>
+<hr>
+<div class="home-pagenav">
   {% if paginator.previous_page %}
     <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
-      Previous
+      <i class="fas fa-angle-left"></i> Previous
     </a>
   {% else %}
-    <span>Previous</span>
+    <i class="fas fa-angle-left"></i> Previous
   {% endif %}
-  <span>
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
+  {{ paginator.page }} of {{ paginator.total_pages }}
   {% if paginator.next_page %}
-    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}">Next</a>
+    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+      Next <i class="fas fa-angle-right"></i>
+    </a>
   {% else %}
-    <span>Next</span>
+    Next <i class="fas fa-angle-right"></i>
   {% endif %}
+  <code style="float:right">
+    {{ site.posts | size }} posts
+  </code>
 </div>
