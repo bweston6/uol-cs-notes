@@ -6,15 +6,18 @@ footer {
   background-color: #21262d;
 }
 
-/* toc */
-.default-toc:before {
-	background-image: linear-gradient(to top, rgba(13,17,23,0), #0D1117);
-}
-.default-toc:after {
-	background-image: linear-gradient(to bottom, rgba(13,17,23,0), #0D1117);
+/* leftnav */
+.leftnav > ul > li > a  {
+  border-bottom-color: #21262d;
 }
 
-/* leftnav */
-/*.default-leftnav, .archive-leftnav {
-  background-color: #21262d;
-}*/
+/* toc */
+.toc:before {
+	background-image: linear-gradient(to top, rgba(13,17,23,0), #0D1117);
+}
+.toc:after {
+	background-image: linear-gradient(to bottom, rgba(13,17,23,0), #0D1117);
+}
+.toc-content > ul > li > a {
+  border-bottom-color: #21262d;
+}

@@ -1,16 +1,32 @@
+/* document */
+html {
+  scroll-behavior: smooth;
+}
+footer {
+	clear: left;
+	text-align: center;
+	padding: 16px;
+}
+
 /* home */
 .home {
 	box-sizing: border-box;
-	max-width: 980px;
+	width: 980px;
 	margin: 0 auto;
 	padding: 45px;
 }
-.archive-content,.default-content {
+.archive-content, .post-content {
 	float: left;
 	box-sizing: border-box;
-	max-width: 980px;
+	width: 980px;
 	padding: 45px;
 }
+
+/* archive */
+.archive-tagcloud {
+  line-height: 1.75em;
+}
+
 /* base */
 .base-topnav {
 	box-sizing: border-box;
@@ -34,34 +50,38 @@
 	display: inline-block;
 	padding: 16px 0 16px 32px;
 }
-footer {
-	clear: left;
-	text-align: center;
-	padding: 16px;
-}
 
 /* leftnav */
-.default,.archive {
-
-}
-.default-leftnav, .archive-leftnav {
+.leftnav {
 	float: left;
 	width: 20%;
 	padding: 45px;
 }
-.default-leftnav li,.archive-leftnav li {
+.leftnav li {
 	list-style-type: none;
+}
+.leftnav > ul > li > a {
+  font-weight: bold;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	line-height: 2em;
+	padding: 0.25em 0 0.25em 0;
+	font-size: 0.9rem;
+}
+.leftnav > ul > ul {
+  padding: 0;
+	font-size: 0.8rem;
 }
 
 /* toc */
-.default-toc {
+.toc {
 	position: sticky;
 	top: 0;
 	height: calc(100vh);
 	margin: 0 0 96px 45px;
 	overflow:auto;
 }
-.default-toc:before {
+.toc:before {
     content: '';
     display: block;
     position: absolute;
@@ -70,7 +90,7 @@ footer {
 	height: 45px;
     pointer-events: none;
 }
-.default-toc:after {
+.toc:after {
 	content: '';
 	display: block;
 	position: absolute;
@@ -79,12 +99,29 @@ footer {
 	height: 45px;
 	pointer-events: none;
 }
-.default-toc-content {
+.toc-content, .default-toc-content {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
-	padding: 45px 0 45px 0;
+	padding: 45px 45px 45px 0;
 }
-.default-toc-content li {
+.toc-content li, .default-toc-content li {
 	list-style-type: none;
+}
+.toc-content > ul > li > a {
+  font-weight: bold;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	line-height: 2em;
+	padding: 0.25em 0 0.25em 0;
+	font-size: 0.9rem;
+}
+.toc-content > ul > li > ul > li > a, .default-toc-content > ul > li > a {
+  font-weight: bold;
+}
+.toc-content > ul > li > ul > li a, .default-toc-content {
+	font-size: 0.8rem;
+}
+.toc-content > ul > li > ul {
+  padding: 0;
 }
