@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 ---
 {% assign attributes = page.title | split: " - " %}
 {% for post in site.posts %}
   {% if attributes.size == 1 %}
     {% if post.tags contains attributes[0] %}
-      <h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
+      <h1 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
       <p>
       {% for tag in post.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}
@@ -17,7 +17,7 @@ layout: default
     {% endif %}
   {% else %}
     {% if post.tags contains attributes[0] and post.tags contains attributes[1] %}
-      <h1><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
+      <h1 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
       <p>
       {% for tag in post.tags %}
         {% capture tag_name %}{{ tag }}{% endcapture %}

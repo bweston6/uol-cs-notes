@@ -1,24 +1,22 @@
 ---
-layout: base
+layout: post
 ---
-<div class="default">
-  <nav class="default-leftnav">
-    {% include leftnav.html html=content %}
-  </nav>
-  <div class ="default-content">
-    <h1>{{ page.title }}<span style="float: right;"><a href=""><i class="far fa-edit fa-xs"></i></a></span></h1>
-    <p>
-      {% for tag in page.tags %}
-        {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
-      {% endfor %}
-      <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
-    </p>
-    {{ content }}
-  </div>
-</div>
-<div class="default-toc">
-  <nav class="default-toc-content">
-    {% include toc.html html=content %}
-  </nav>
+{%- assign github-edit-path = site.github.repo | append: '/tree/' | append: site.github.repo_tree | append: '/' | append: page.path | replace:'//','/' -%}
+<h1>{{ page.title }}<span style="float: right;"><a style="font-size: 1rem;" href="https://github.com/{{ github-edit-path }}"><i class="far fa-edit"></i></a></span></h1>
+<p>
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
+  {% endfor %}
+  <span style="float: right;">{{ page.date |  date: "%Y-%m-%d" }}</span>
+</p>
+{{ content }}
+<hr>
+<div class="post-pagenav">
+  {% if page.previous.url %}
+    <a class="post-pagenav-prev" href="{{page.previous.url}}"><i class="fas fa-angle-left"></i> {{page.previous.title}}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="post-pagenav-next" style="float:right;" href="{{page.next.url}}">{{page.next.title}} <i class="fas fa-angle-right"></i></a>
+  {% endif %}
 </div>

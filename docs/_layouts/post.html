@@ -1,0 +1,21 @@
+---
+layout: base
+---
+<div class="post">
+  <nav class="leftnav">
+    {% include leftnav.html html=content %}
+  </nav>
+  <div class ="post-content">
+    {{ content }}
+  </div>
+</div>
+<div class="toc">
+    {% if page.layout == "default" %}
+    <nav class="default-toc-content">
+      {% include toc.html html=content h_min=2 sanitize=true %}
+    {% else %}
+    <nav class="toc-content">
+      {% include toc.html html=content h_min=1 sanitize=true %}
+    {% endif %}
+  </nav>
+</div>
