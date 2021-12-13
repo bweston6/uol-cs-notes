@@ -2,20 +2,42 @@
 layout: base
 ---
 <div class="post">
-  <nav class="leftnav">
-    {% include leftnav.html html=content %}
+  {% if page.layout != "default" %}
+    <script>
+      function openLeftnav(x) {
+        x.setAttribute("onclick", "closeLeftnav(this)");
+        document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-times fa-lg");
+        document.getElementById("leftnav").setAttribute("style", "display: block; visibility: visible; opacity: 1;");
+        document.getElementById("post-content").setAttribute("style", "padding: 24px 16px 24px 45px!important");
+      }
+      function closeLeftnav(x) {
+        x.setAttribute("onclick", "openLeftnav(this)");
+        document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-bars");
+        document.getElementById("leftnav").setAttribute("style", "");
+        document.getElementById("post-content").setAttribute("style", "");
+      }
+    </script>
+    <button class="leftnav-button" onclick="openLeftnav(this)">
+      <i id="leftnav-button-icon" class="fas fa-bars"></i>
+    </button>
+  {% endif %}
+  <nav class="leftnav" id="leftnav">
+    <div class="leftnav-wrapper">
+      {% include leftnav.html html=content %}
+    <div>
   </nav>
-  <div class ="post-content">
+  <div class="post-content" id="post-content">
     {{ content }}
   </div>
+  <div class="toc">
+      {% if page.layout == "default" %}
+        <nav class="default-toc-content">
+          {% include toc.html html=content h_min=2 sanitize=true skip_no_ids=true %}
+      {% else %}
+        <nav class="toc-content">
+          {% include toc.html html=content h_min=1 sanitize=true skip_no_ids=true %}
+      {% endif %}
+        </nav>
+  </div>
 </div>
-<div class="toc">
-    {% if page.layout == "default" %}
-    <nav class="default-toc-content">
-      {% include toc.html html=content h_min=2 sanitize=true %}
-    {% else %}
-    <nav class="toc-content">
-      {% include toc.html html=content h_min=1 sanitize=true %}
-    {% endif %}
-  </nav>
-</div>
+

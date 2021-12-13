@@ -6,10 +6,11 @@ layout: archive
   {% if currentdate != date %}
     {% unless forloop.first %}</ul>{% endunless %}
     <h2>{{ currentdate }}</h2>
-    <ul>
+    <ul style="list-style-type: none; padding: 0 0 0 4.75em; text-indent: -4.75em;">
     {% assign date = currentdate %}
   {% endif %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-  {% if forloop.last %}</ul>{% endif %}
+  <li><code>{{ post.date | date: "%b %d" }}</code>&emsp;<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+  {% if forloop.last %}
+    </ul>
+  {% endif %}
 {% endfor %}
-

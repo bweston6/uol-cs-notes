@@ -7,8 +7,12 @@ footer {
 }
 
 /* leftnav */
-.leftnav > ul > li > a  {
+.leftnav-wrapper > ul > li > a  {
   border-bottom-color: #d8dee4;
+}
+.leftnav-button {
+  background-color: #f6f8fa; 
+  color: #24292f;
 }
 
 /* toc */
