@@ -7,21 +7,58 @@
     <meta name="color-scheme" content="dark light">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    {% include font-awesome.html %}
   </head>
   <body class="markdown-body">
     <div class="base-topbar">
       <nav class="base-topnav">
-        <div class="base-site-title">
+        <div class="base-topnav-title">
           <a href="{{ site.baseurl}}/">{{ site.title }}</a>
         </div>
-        <div class="base-topnav-scroll">
+        <div class="base-topnav-spacer">
+        </div>
+        <div class="base-topnav-scroll" id="base-topnav-scroll">
           {% for item in site.data.navigation.topnav %}
             <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
           {% endfor %}
         </div>
+        <div class="base-searchbar-entry" id="base-searchbar-entry">
+          <input type="search" id="search-input" placeholder="search" class="base-searchbar-input">
+        </div>
+        <div class="base-topnav-search" onclick="openSearch(this)">
+          <i id="topnav-search-icon" class="fas fa-search"></i>
+        </div>
       </nav>
+      <script>
+        function openSearch(x) {
+          document.getElementById("base-topnav-scroll").setAttribute("style", "width: 0; opacity: 0;");
+          document.getElementById("base-topbar-search").setAttribute("style", "padding: 16px 0 16px 0;");
+          document.getElementById("base-searchbar-entry").setAttribute("style", "flex: 0 1 500px; max-width: 500px; min-width: 200px; margin: 8px 0 8px 16px;");
+          document.getElementById("search-input").setAttribute("style", "padding: 8px 8px 8px 8px; width: 100%;");
+          document.getElementById("search-input").focus();
+          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-times");
+          x.setAttribute("onclick", "closeSearch(this)");
+        }
+        function closeSearch(x) {
+          document.getElementById("search-input").value = "";
+          var event = document.createEvent('Event');
+          event.initEvent('input', true, true);
+          document.getElementById("search-input").dispatchEvent(event);
+          document.getElementById("search-input").setAttribute("style", "");
+          document.getElementById("base-topnav-scroll").setAttribute("style", "");
+          document.getElementById("base-searchbar-entry").setAttribute("style", "");
+          document.getElementById("base-topbar-search").setAttribute("style", "");
+          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-search");
+          x.setAttribute("onclick", "openSearch(this)");
+        }
+      </script>
   	</div>
+  	<div id="base-topbar-search" class="base-topbar-search">
+      <div class="base-searchbar">
+        <div class="base-searchbar-results">
+          <ul id="results-container"></ul>
+        </div>
+      </div>
+    </div>
     {{ content }}
     <footer>
       <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>
@@ -32,6 +69,7 @@
       {% include mathjax.html %}
       {% include mermaid.html %}
       {% include plantuml.html %}
+      {% include simple-jekyll-search.html %}
     </footer>
   </body>
 </html>
