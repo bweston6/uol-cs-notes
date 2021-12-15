@@ -16,7 +16,7 @@
   .leftnav-button {
     display: block!important;
   }
-  .base-topnav {
+  .base-topnav, .base-searchbar {
 	  padding: 0 16px 0 16px!important;
   }
   .post-content,.home {
@@ -82,18 +82,67 @@ mjx-container {
 	transition: padding 0.5s;
 	margin: 0 auto;
 }
-.base-site-title a {
+.base-topnav-title a {
 	display: inline-block;
 	white-space: nowrap;
-	padding: 16px 0 16px 0px;
+	padding: 16px 16px 16px 0;
+}
+.base-topnav-spacer {
+  flex: 1 0 auto;
 }
 .base-topnav-scroll {
-	overflow: auto;
+	overflow-x: auto;
 	white-space: nowrap;
+	transition: width 0.5s, opacity 0.5s;
 }
 .base-topnav-scroll a {
 	display: inline-block;
-	padding: 16px 0 16px 32px;
+	padding: 16px 16px 16px 16px;
+}
+.base-topnav-search i {
+  display: inline-block;
+	white-space: nowrap;
+	padding: 16px 0 16px 16px;
+}
+.base-topbar-search {
+  transition: padding 0.5s;
+}
+.base-searchbar {
+	box-sizing: border-box;
+  min-width: 200px;
+	max-width: 980px;
+	padding: 0 45px 0 45px;
+	transition: padding 0.5s;
+	margin: 0 auto;
+}
+.base-searchbar-entry{
+  display: flex;
+	flex: 0 1 0;
+  max-width: 0px;
+	margin: 8px 0 8px 0;
+  transition: flex 0.5s, margin 0.5s, min-width 0.5s, max-width 0.5s; 
+}
+.base-searchbar-input {
+	box-sizing: border-box;
+  border: none;
+	border-radius: 8px;
+	padding: 8px 0px 8px 0px;
+	width: 0;
+	height: 40px;
+	margin-right: 0;
+	margin-left: auto;
+	transition: padding 0.5s, width 0.5s;
+}
+#topnav-search-icon {
+  margin: 4px 0 4px 0;
+}
+.base-searchbar-results {
+	overflow: auto;
+  text-align: right;
+}
+.base-searchbar-results ul {
+	list-style-type: none;
+	margin: 0;
 }
 
 /* leftnav */

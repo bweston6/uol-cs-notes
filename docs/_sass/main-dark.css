@@ -2,6 +2,9 @@
 .base-topbar {
   background-color: #21262d;
 }
+.base-topbar-search {
+  background-color: #2c323c;
+}
 footer {
   background-color: #21262d;
 }
