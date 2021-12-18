@@ -1,5 +1,5 @@
 # site settings
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bweston6.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/UoL-test" # the subpath of your site, e.g. /blog
 title: Uni Notes
 description: A site containing my notes for all my modules taken at the University of Liverpool.
