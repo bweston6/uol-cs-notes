@@ -7,14 +7,12 @@ layout: base
       function openLeftnav(x) {
         x.setAttribute("onclick", "closeLeftnav(this)");
         document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-times fa-lg");
-        document.getElementById("leftnav").setAttribute("style", "display: block; visibility: visible; opacity: 1;");
-        document.getElementById("post-content").setAttribute("style", "padding: 24px 16px 24px 45px!important");
+        document.getElementById("leftnav").setAttribute("style", "visibility: visible; opacity: 1; min-width: 160px!important");
       }
       function closeLeftnav(x) {
         x.setAttribute("onclick", "openLeftnav(this)");
         document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-bars");
         document.getElementById("leftnav").setAttribute("style", "");
-        document.getElementById("post-content").setAttribute("style", "");
       }
     </script>
     <button class="leftnav-button" onclick="openLeftnav(this)">
