@@ -24,9 +24,6 @@ layout: base
       {% include leftnav.html html=content %}
     <div>
   </nav>
-  <div class="post-content" id="post-content">
-    {{ content }}
-  </div>
   <div class="toc">
       {% if page.layout == "default" %}
         <nav class="default-toc-content">
@@ -36,6 +33,9 @@ layout: base
           {% include toc.html html=content h_min=1 sanitize=true skip_no_ids=true %}
       {% endif %}
         </nav>
+  </div>
+  <div class="post-content" id="post-content">
+    {{ content }}
   </div>
 </div>
 
