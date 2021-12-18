@@ -77,15 +77,12 @@
       </div>
     </div>
     {{ content }}
-    <footer>
+    <footer class="markdown-body-footer">
       <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>
       <div>
         <code><a href="https://github.com/{{ site.author.github }}">Githb</a></code> 
         <code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
       </div>
-      {% include mathjax.html %}
-      {% include mermaid.html %}
-      {% include plantuml.html %}
       {% include simple-jekyll-search.html %}
     </footer>
   </body>
