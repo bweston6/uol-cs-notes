@@ -24,7 +24,7 @@
         <div class="base-searchbar-entry" id="base-searchbar-entry">
           <input type="search" id="search-input" placeholder="search" class="base-searchbar-input">
         </div>
-        <div class="base-topnav-search" onclick="openSearch(this)">
+        <div class="base-topnav-search" id="base-topnav-search" onclick="openSearch(this)">
           <i id="topnav-search-icon" class="fas fa-search"></i>
         </div>
       </nav>
@@ -50,6 +50,12 @@
           document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-search");
           x.setAttribute("onclick", "openSearch(this)");
         }
+        document.onkeydown = function(e) {
+            e = e || window.event;
+            if (e.keyCode == 27) {
+                closeSearch(document.getElementById("base-topnav-search"));
+            }
+        };
       </script>
   	</div>
   	<div id="base-topbar-search" class="base-topbar-search">
