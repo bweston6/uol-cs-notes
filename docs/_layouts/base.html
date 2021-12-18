@@ -18,6 +18,14 @@
     <meta name="color-scheme" content="dark light">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% if page.layout == "default" or page.layout == "module" or page.layout == "home" %}
+    {% include mathjax.html %}
+    {% endif %}
+    {% if page.layout == "default" or page.layout == "module" %}
+    {% include mermaid.html %}
+    {% include plantuml.html %}
+    {% endif %}
+    {% include simple-jekyll-search.html %}
   </head>
   <body class="markdown-body">
     <div class="base-topbar">
@@ -83,10 +91,6 @@
         <code><a href="https://github.com/{{ site.author.github }}">Githb</a></code> 
         <code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
       </div>
-      {% include simple-jekyll-search.html %}
-      {% include mathjax.html %}
-      {% include mermaid.html %}
-      {% include plantuml.html %}
     </footer>
   </body>
 </html>
