@@ -5,22 +5,22 @@
 }
 
 /* light mode */
-@import 'main-light';
-@import 'github-markdown-light';
-@import 'alerts-light';
-@import 'highlighting/syntax-github';
+@import 'main-light.css';
+@import 'github-markdown-light.css';
+@import 'alerts-light.scss';
+@import 'highlighting/syntax-github.css';
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-  @import 'main-dark';
-  @import 'github-markdown-dark';
-  @import 'alerts-dark';
-  @import 'highlighting/syntax-base16.monokai.dark';
+  @import 'main-dark.css';
+  @import 'github-markdown-dark.css';
+  @import 'alerts-dark.scss';
+  @import 'highlighting/syntax-base16.monokai.dark.css';
 }
 
 /* agnostic */
-@import 'main';
-@import 'alerts';
-@import 'mermaid';
-@import 'font-awesome/all.min';
-@import 'font-awesome/solid.min';
+@import 'main.css';
+@import 'alerts.scss';
+@import 'mermaid.css';
+@import 'font-awesome/all.min.css';
+@import 'font-awesome/solid.min.css';
