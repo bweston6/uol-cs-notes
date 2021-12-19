@@ -70,6 +70,18 @@ mjx-container {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.post-pagenav {
+  display: flex;
+}
+.post-pagenav-left {
+  flex: 1 auto;
+  padding-right: 16px;
+}
+.post-pagenav-right {
+  flex: 1 auto;
+  text-align: right;
+  padding-left: 16px;
+}
 
 /* archive */
 .archive-tagcloud {
@@ -159,16 +171,16 @@ mjx-container {
   overflow: hidden;
 	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s;
 }
-.leftnav-wrapper {
+.leftnav-content {
   padding: 45px;
 }
-.leftnav-wrapper li {
+.leftnav-content > ul {
+  padding-left: 0;
+}
+.leftnav-content li {
 	list-style-type: none;
 }
-.leftnav-wrapper > ul {
-  padding: 0;
-}
-.leftnav-wrapper > ul > li > a {
+.leftnav-content > ul > li > a {
   font-weight: bold;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
@@ -176,9 +188,14 @@ mjx-container {
 	padding: 0.25em 0 0.25em 0;
 	font-size: 0.9rem;
 }
-.leftnav-wrapper > ul > ul {
-  padding: 0;
+.leftnav-content > ul > li > ul > li > a {
+  font-weight: bold;
+}
+.leftnav-content > ul > li > ul > li a {
 	font-size: 0.8rem;
+}
+.leftnav-content > ul > li > ul {
+  padding: 0;
 }
 .leftnav-button {
   display: none;
