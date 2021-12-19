@@ -13,10 +13,14 @@ layout: post
 {{ content }}
 <hr>
 <div class="post-pagenav">
-  {% if page.previous.url %}
-    <a class="post-pagenav-prev" href="{{ site.baseurl }}{{page.previous.url}}"><i class="fas fa-angle-left"></i> {{page.previous.title}}</a>
-  {% endif %}
-  {% if page.next.url %}
-    <a class="post-pagenav-next" style="float:right;" href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} <i class="fas fa-angle-right"></i></a>
-  {% endif %}
+  <div class="post-pagenav-left">
+    {% if page.previous.url %}
+      <a class="post-pagenav-prev" href="{{ site.baseurl }}{{page.previous.url}}"><i class="fas fa-angle-left"></i> {{page.previous.title}}</a>
+    {% endif %}
+  </div>
+  <div class="post-pagenav-right">
+    {% if page.next.url %}
+      <a class="post-pagenav-next" style="float:right;" href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} <i class="fas fa-angle-right"></i></a>
+    {% endif %}
+  </div>
 </div>
