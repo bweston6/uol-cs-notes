@@ -2,7 +2,8 @@
 url: "https://bweston6.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/UoL-test" # the subpath of your site, e.g. /blog
 title: Uni Notes
-description: A site containing my notes for all my modules taken at the University of Liverpool.
+tagline: Computer science notes for UoL
+description: Notes for computer science modules at University of Liverpool
 
 author:
   name: Ben Weston
