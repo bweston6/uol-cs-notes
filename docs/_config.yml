@@ -1,6 +1,6 @@
 # site settings
 url: "https://bweston6.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/UoL-test" # the subpath of your site, e.g. /blog
+baseurl: "/UoL" # the subpath of your site, e.g. /blog
 title: UoL CS Notes
 tagline: Computer science notes for UoL
 description: Notes for computer science modules at University of Liverpool
