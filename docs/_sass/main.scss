@@ -142,8 +142,7 @@ mjx-container {
 	position: sticky;
 	top: 0;
 	max-height: calc(100vh);
-	overflow-x:hidden;
-	overflow-y:auto;
+	overflow: hidden;
 	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s, max-height 0.5s;
 }
 .leftnav:before {
@@ -172,6 +171,7 @@ mjx-container {
 }
 .leftnav-content > ul {
   padding-left: 0;
+  margin-bottom: 0;
 }
 .leftnav-content li {
 	list-style-type: none;
@@ -204,12 +204,12 @@ mjx-container {
   opacity: 90%;
   z-index: 999;
 }*/
-.leftnav-accordion-bar {
+.leftnav-accordion-bar, .leftnav-accordion-bar-default {
   display: none;
 }
 
 /* toc */
-.toc {
+.toc, .toc-archive {
   order: 5;
   flex: 1 0 0;
   min-width: 180px;
@@ -217,7 +217,7 @@ mjx-container {
 	position: sticky;
 	top: 0;
 	max-height: calc(100vh);
-	overflow:auto;
+	overflow:hidden;
 	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s, max-height 0.5s;
 }
 .toc:before {
@@ -246,6 +246,7 @@ mjx-container {
 }
 .toc-content > ul, .default-toc-content > ul {
   padding-left: 0;
+  margin-bottom: 0;
 }
 .toc-content li, .default-toc-content li {
 	list-style-type: none;
@@ -267,21 +268,20 @@ mjx-container {
 .toc-content > ul > li > ul {
   padding: 0;
 }
-.toc-accordion-bar {
+.toc-accordion-bar, .toc-accordion-bar-archive {
   display: none;
 }
 
 /* responsive */
 @media (max-width: 1520px) {
-  .accordion-spacer {
+  .toc-accordion-bar, .toc-accordion-bar-archive {
     width: 100%;
     order: 2;
     display: block;
   }
-  .toc-accordion-bar {
-    width: 100%;
-    order: 2;
-    display: block;
+  .toc-accordion-bar-archive {
+    height: 0;
+    overflow: hidden;
   }
   .toc-accordion {
     box-sizing: border-box;
@@ -301,22 +301,29 @@ mjx-container {
   .toc:after {
 	  height: 16px;
   }
-  .toc, .leftnav {
+  .toc, .leftnav, .toc-archive {
     flex: 1 auto;
     position: relative;
     max-height: 0;
     max-width: 980px;
   }
-  .toc {
+  .toc, .toc-archive {
     order: 3;
+  }
+  .toc-archive {
+    display: none;
   }
   .leftnav {
     order: 1;
   }
-  .leftnav-accordion-bar {
+  .leftnav-accordion-bar, .leftnav-accordion-bar-not-default {
     width: 100%;
     order: 0;
     display: block;
+  }
+  .leftnav-accordion-bar-default {
+    height: 0;
+    overflow: hidden;
   }
   .leftnav-accordion {
     box-sizing: border-box;
@@ -330,7 +337,7 @@ mjx-container {
   .leftnav-accordion-text, .leftnav-accordion-icon {
     padding: 8px 0;
   }
-  .leftnav-content, .toc-content {
+  .leftnav-content, .toc-content, .default-toc-content {
     padding: 16px;
   }
   .leftnav:before {
@@ -338,5 +345,10 @@ mjx-container {
   }
   .leftnav:after {
 	  height: 16px;
+  }
+  .accordion-spacer {
+    width: 100%;
+    order: 4;
+    display: block;
   }
 }
