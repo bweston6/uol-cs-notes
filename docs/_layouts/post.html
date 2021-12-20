@@ -2,53 +2,61 @@
 layout: base
 ---
 <div class="post">
+  <script>
+    function openAccordion(x) {
+      x.nextElementSibling.setAttribute("style", "max-height: calc(35vh);");
+      x.children[0].children[1].children[0].setAttribute("class", "fas fa-minus");
+      x.setAttribute("onclick", "closeAccordion(this)");
+    }
+    function closeAccordion(x) {
+      x.nextElementSibling.setAttribute("style", "");
+      x.children[0].children[1].children[0].setAttribute("class", "fas fa-plus");
+      x.setAttribute("onclick", "openAccordion(this)");
+    }
+    function mediaAccordion(state) {
+      if (!state.matches) {
+        closeAccordion(document.getElementById("leftnav-accordion-bar"));
+        closeAccordion(document.getElementById("toc-accordion-bar"));
+      }
+    }
+    var state = window.matchMedia("(max-width: 1520px)")
+    state.addListener(mediaAccordion)
+  </script>
   {% if page.layout != "default" %}
-    <script>
-      function openAccordion(x) {
-        x.nextElementSibling.setAttribute("style", "max-height: calc(35vh);");
-        x.children[0].children[1].children[0].setAttribute("class", "fas fa-minus");
-        x.setAttribute("onclick", "closeAccordion(this)");
-      }
-      function closeAccordion(x) {
-        x.nextElementSibling.setAttribute("style", "");
-        x.children[0].children[1].children[0].setAttribute("class", "fas fa-plus");
-        x.setAttribute("onclick", "openAccordion(this)");
-      }
-      function mediaAccordion(state) {
-        if (!state.matches) {
-          closeAccordion(document.getElementById("leftnav-accordion-bar"));
-          closeAccordion(document.getElementById("toc-accordion-bar"));
-        }
-      }
-      var state = window.matchMedia("(max-width: 1520px)")
-      state.addListener(mediaAccordion)
-    </script>
-  {% endif %}
-  <div class="leftnav-accordion-bar" id="leftnav-accordion-bar" onClick="openAccordion(this)">
-    <div class="leftnav-accordion">
-      <div class="leftnav-accordion-text">
-        Filters
-      </div>
-      <div class="leftnav-accordion-icon">
-        <i class="fas fa-plus"></i>
+    <div class="leftnav-accordion-bar" id="leftnav-accordion-bar" onClick="openAccordion(this)">
+      <div class="leftnav-accordion">
+        <div class="leftnav-accordion-text">
+          {% if page.layout == "archive" or page.layout == "tagpage" %}
+          Modules
+          {% else %}
+          Filters
+          {% endif %}
+        </div>
+        <div class="leftnav-accordion-icon">
+          <i class="fas fa-plus"></i>
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
   <div class="leftnav" id="leftnav">
     <nav class="leftnav-content">
       {% include leftnav.html html=content %}
     </nav>
   </div>
-  <div class="toc-accordion-bar" id="toc-accordion-bar" onClick="openAccordion(this)">
-    <div class="toc-accordion">
-      <div class="toc-accordion-text">
-        Contents
-      </div>
-      <div class="toc-accordion-icon">
-        <i class="fas fa-plus"></i>
+  <div class="accordion-spacer">
+  </div>
+  {% if page.layout != "archive" and page.layout != "tagpage" %}
+    <div class="toc-accordion-bar" id="toc-accordion-bar" onClick="openAccordion(this)">
+      <div class="toc-accordion">
+        <div class="toc-accordion-text">
+          Contents
+        </div>
+        <div class="toc-accordion-icon">
+          <i class="fas fa-plus"></i>
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
   <div class="toc">
       {% if page.layout == "default" %}
         <nav class="default-toc-content">

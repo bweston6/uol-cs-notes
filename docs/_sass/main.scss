@@ -273,6 +273,11 @@ mjx-container {
 
 /* responsive */
 @media (max-width: 1520px) {
+  .accordion-spacer {
+    width: 100%;
+    order: 2;
+    display: block;
+  }
   .toc-accordion-bar {
     width: 100%;
     order: 2;
