@@ -1,8 +1,11 @@
+---
+layout: none
+---
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="https://bweston6.github.io/UoL/mstile-150x150.png"/>
+            <square150x150logo src="{{ "/mstile-150x150.png" | absolute_url }}"/>
             <TileColor>#2b5797</TileColor>
         </tile>
     </msapplication>

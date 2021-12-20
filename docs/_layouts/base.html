@@ -1,25 +1,98 @@
 ---
-layout: none
 ---
 <!DOCTYPE html>
-{%- include snippets/get-lang.html -%}
-<html lang="{{ __return }}">
+<html lang="{{ site.lang | default: "en-GB" }}">
   <head>
-    {%- include analytics.html -%}
-    {%- include head.html -%}
-    <script>
-      {%- include scripts/utils/utils.js -%}
-      {%- include scripts/lib/throttle.js -%}
-      {%- include scripts/lib/lazyload.js -%}
-    </script>
-    {%- include scripts/variables.html -%}
+    <meta name="google-site-verification" content="BvJwRfiupRlRLfkuq2QfpOJKN0cXSa-Fn-KjmHg7rdo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/apple-touch-icon.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/favicon-32x32.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/favicon-16x16.png" | relative_url }}">
+    <link rel="manifest" href="{{ "/site.webmanifest" | relative_url }}">
+    <link rel="mask-icon" href="{{ "/safari-pinned-tab.svg" | relative_url }}" color="#2b5797">
+    <link rel="shortcut icon" href="{{ "/favicon.ico" | relative_url }}">
+    <meta name="apple-mobile-web-app-title" content="Uni Notes">
+    <meta name="application-name" content="Uni Notes">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="{{ "/browserconfig.xml" | relative_url }}">
+    <meta name="theme-color" content="#2b5797">
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% if page.layout == "default" or page.layout == "module" or page.layout == "home" %}
+    {% include mathjax.html %}
+    {% endif %}
+    {% if page.layout == "default" or page.layout == "module" %}
+    {% include mermaid.html %}
+    {% include plantuml.html %}
+    {% endif %}
+    {% include simple-jekyll-search.html %}
+		{% seo %}
   </head>
-  <body>
-    <div class="root" data-is-touch="false">
-      {{ content }}
+  <body class="markdown-body">
+    <div class="base-topbar">
+      <nav class="base-topnav">
+        <div class="base-topnav-title">
+          <a href="{{ site.baseurl}}/">{{ site.title }}</a>
+        </div>
+        <div class="base-topnav-spacer">
+        </div>
+        <div class="base-topnav-scroll" id="base-topnav-scroll">
+          {% for item in site.data.navigation.topnav %}
+            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+          {% endfor %}
+        </div>
+        <div class="base-searchbar-entry" id="base-searchbar-entry">
+          <input type="search" id="search-input" placeholder="search" class="base-searchbar-input">
+        </div>
+        <div class="base-topnav-search" id="base-topnav-search" onclick="openSearch(this)">
+          <i id="topnav-search-icon" class="fas fa-search"></i>
+        </div>
+      </nav>
+      <script>
+        function openSearch(x) {
+          document.getElementById("base-topnav-scroll").setAttribute("style", "width: 0; opacity: 0;");
+          document.getElementById("base-topbar-search").setAttribute("style", "padding: 16px 0 16px 0;");
+          document.getElementById("base-searchbar-entry").setAttribute("style", "flex: 0 1 500px; max-width: 500px; min-width: 200px; margin: 8px 0 8px 16px;");
+          document.getElementById("search-input").setAttribute("style", "padding: 8px 8px 8px 8px; width: 100%;");
+          document.getElementById("search-input").focus();
+          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-times");
+          x.setAttribute("onclick", "closeSearch(this)");
+        }
+        function closeSearch(x) {
+          document.getElementById("search-input").value = "";
+          var event = document.createEvent('Event');
+          event.initEvent('input', true, true);
+          document.getElementById("search-input").dispatchEvent(event);
+          document.getElementById("search-input").setAttribute("style", "");
+          document.getElementById("base-topnav-scroll").setAttribute("style", "");
+          document.getElementById("base-searchbar-entry").setAttribute("style", "");
+          document.getElementById("base-topbar-search").setAttribute("style", "");
+          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-search");
+          x.setAttribute("onclick", "openSearch(this)");
+        }
+        document.onkeydown = function(e) {
+            e = e || window.event;
+            if (e.keyCode == 27) {
+                closeSearch(document.getElementById("base-topnav-search"));
+            }
+        };
+      </script>
+  	</div>
+  	<div id="base-topbar-search" class="base-topbar-search">
+      <div class="base-searchbar">
+        <div class="base-searchbar-results">
+          <ul id="results-container"></ul>
+        </div>
+      </div>
     </div>
-    <script>
-      {%- include scripts/common.js -%}
-    </script>
+    {{ content }}
+    <footer>
+      <p>{{ site.description }}</p>
+      <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>
+      <div>
+        <code><a href="https://github.com/{{ site.author.github }}">Githb</a></code> 
+        <code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
+      </div>
+    </footer>
   </body>
 </html>

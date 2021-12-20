@@ -1,4 +1,4 @@
-header:
+topnav:
   - title: COMP201
     url: /comp201
   - title: COMP207
@@ -72,7 +72,6 @@ archive:
           url:    /comp124/lectures
         - title:  Labs
           url:    /comp124/labs
-
 comp105:
   - title:      COMP105
     url: /comp105

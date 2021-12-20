@@ -1,0 +1,42 @@
+/* base */
+.base-topbar {
+  background-color: #f6f8fa;
+}
+.base-topbar-search {
+  background-color: #e6ebf1;
+}
+footer {
+  background-color: #f6f8fa;
+}
+
+/* leftnav */
+.leftnav:before {
+	background-image: linear-gradient(to top, rgba(255,255,255,0), #fff);
+}
+.leftnav:after {
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+}
+.leftnav-content > ul > li > a  {
+  border-bottom-color: #d8dee4;
+}
+.leftnav-button {
+  background-color: #f6f8fa; 
+  color: #24292f;
+}
+.leftnav-accordion-bar {
+  background-color: #d5dfe8;
+}
+
+/* toc */
+.toc:before {
+	background-image: linear-gradient(to top, rgba(255,255,255,0), #fff);
+}
+.toc:after {
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+}
+.toc-content > ul > li > a {
+  border-bottom-color: #d8dee4;
+}
+.toc-accordion-bar {
+  background-color: #d5dfe8;
+}
