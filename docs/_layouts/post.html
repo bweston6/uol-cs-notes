@@ -4,26 +4,51 @@ layout: base
 <div class="post">
   {% if page.layout != "default" %}
     <script>
-      function openLeftnav(x) {
-        x.setAttribute("onclick", "closeLeftnav(this)");
-        document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-times fa-lg");
-        document.getElementById("leftnav").setAttribute("style", "visibility: visible; opacity: 1; min-width: 160px!important");
+      function openAccordion(x) {
+        x.nextElementSibling.setAttribute("style", "max-height: calc(35vh);");
+        x.children[0].children[1].children[0].setAttribute("class", "fas fa-minus");
+        x.setAttribute("onclick", "closeAccordion(this)");
       }
-      function closeLeftnav(x) {
-        x.setAttribute("onclick", "openLeftnav(this)");
-        document.getElementById("leftnav-button-icon").setAttribute("class", "fas fa-bars");
-        document.getElementById("leftnav").setAttribute("style", "");
+      function closeAccordion(x) {
+        x.nextElementSibling.setAttribute("style", "");
+        x.children[0].children[1].children[0].setAttribute("class", "fas fa-plus");
+        x.setAttribute("onclick", "openAccordion(this)");
       }
+      function mediaAccordion(state) {
+        if (!state.matches) {
+          closeAccordion(document.getElementById("leftnav-accordion-bar"));
+          closeAccordion(document.getElementById("toc-accordion-bar"));
+        }
+      }
+      var state = window.matchMedia("(max-width: 1520px)")
+      state.addListener(mediaAccordion)
     </script>
-    <button class="leftnav-button" onclick="openLeftnav(this)">
-      <i id="leftnav-button-icon" class="fas fa-bars"></i>
-    </button>
   {% endif %}
-  <nav class="leftnav" id="leftnav">
-    <div class="leftnav-content">
+  <div class="leftnav-accordion-bar" id="leftnav-accordion-bar" onClick="openAccordion(this)">
+    <div class="leftnav-accordion">
+      <div class="leftnav-accordion-text">
+        Filters
+      </div>
+      <div class="leftnav-accordion-icon">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  </div>
+  <div class="leftnav" id="leftnav">
+    <nav class="leftnav-content">
       {% include leftnav.html html=content %}
-    <div>
-  </nav>
+    </nav>
+  </div>
+  <div class="toc-accordion-bar" id="toc-accordion-bar" onClick="openAccordion(this)">
+    <div class="toc-accordion">
+      <div class="toc-accordion-text">
+        Contents
+      </div>
+      <div class="toc-accordion-icon">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  </div>
   <div class="toc">
       {% if page.layout == "default" %}
         <nav class="default-toc-content">

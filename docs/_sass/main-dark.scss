@@ -10,6 +10,12 @@ footer {
 }
 
 /* leftnav */
+.leftnav:before {
+	background-image: linear-gradient(to top, rgba(13,17,23,0), #0d1117);
+}
+.leftnav:after {
+	background-image: linear-gradient(to bottom, rgba(13,17,23,0), #0d1117);
+}
 .leftnav-content > ul > li > a  {
   border-bottom-color: #21262d;
 }
@@ -17,14 +23,20 @@ footer {
   background-color: #21262d;
   color: #c9d1d9;
 }
+.leftnav-accordion-bar {
+  background-color: #373f4a;
+}
 
 /* toc */
 .toc:before {
-	background-image: linear-gradient(to top, rgba(13,17,23,0), #0D1117);
+	background-image: linear-gradient(to top, rgba(13,17,23,0), #0d1117);
 }
 .toc:after {
-	background-image: linear-gradient(to bottom, rgba(13,17,23,0), #0D1117);
+	background-image: linear-gradient(to bottom, rgba(13,17,23,0), #0d1117);
 }
 .toc-content > ul > li > a {
   border-bottom-color: #21262d;
+}
+.toc-accordion-bar {
+  background-color: #373f4a;
 }

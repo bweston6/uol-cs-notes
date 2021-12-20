@@ -1,34 +1,3 @@
-/* responsive */
-@media (max-width: 1570px) {
-  .toc {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-@media (max-width: 1320px) {
-  .leftnav {
-    visibility: hidden;
-    opacity: 0;
-    min-width: 0!important;
-    max-width: 0 !important;
-  } 
-  .toc {
-    visibility: hidden;
-    opacity: 0;
-    min-width: 0!important;
-    max-width: 0 !important;
-  }
-  .leftnav-button {
-    display: block!important;
-  }
-  .base-topnav, .base-searchbar {
-	  padding: 0 16px 0 16px!important;
-  }
-  .post-content, .home {
-	  padding: 24px 16px 24px 16px!important;
-  }
-}
-
 /* document */
 html {
   scroll-behavior: smooth;
@@ -45,7 +14,7 @@ footer {
 	min-width: 200px;
 	max-width: 980px;
 	margin: 0 auto;
-	padding: 24px 45px 24px 45px;
+	padding: 24px 16px;
 	transition: padding 0.5s;
 }
 
@@ -53,16 +22,17 @@ footer {
 
 .post {
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
 }
 .post-content {
-  order: 2;
+  order: 4;
   flex: 0 1 980px;
   max-width: 980px;
   min-width: 200px;
   box-sizing: border-box;
-	padding: 24px 45px 24px 45px;
+	padding: 24px 16px;
 	transition: padding 0.5s;
 	overflow: auto;
 }
@@ -95,7 +65,7 @@ mjx-container {
 	justify-content: space-between;
 	min-width: 200px;
 	max-width: 980px;
-	padding: 0 45px 0 45px;
+	padding: 0 16px;
 	transition: padding 0.5s;
 	margin: 0 auto;
 }
@@ -128,7 +98,7 @@ mjx-container {
 	box-sizing: border-box;
   min-width: 200px;
 	max-width: 980px;
-	padding: 0 45px 0 45px;
+	padding: 0 16px;
 	transition: padding 0.5s;
 	margin: 0 auto;
 }
@@ -166,13 +136,39 @@ mjx-container {
 .leftnav {
   order: 1;
   flex: 1 0 0;
-  min-width: 160px;
+  min-width: 180px;
   white-space: nowrap;
-  overflow: hidden;
-	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s;
+  box-sizing: border-box;
+	position: sticky;
+	top: 0;
+	max-height: calc(100vh);
+	overflow-x:hidden;
+	overflow-y:auto;
+	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s, max-height 0.5s;
+}
+.leftnav:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  pointer-events: none;
+}
+.leftnav:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 45px;
+	pointer-events: none;
 }
 .leftnav-content {
-  padding: 45px;
+	box-sizing: border-box;
+	height: 100%;
+	overflow: auto;
+	padding: 45px;
 }
 .leftnav-content > ul {
   padding-left: 0;
@@ -197,7 +193,7 @@ mjx-container {
 .leftnav-content > ul > li > ul {
   padding: 0;
 }
-.leftnav-button {
+/*.leftnav-button {
   display: none;
   position: fixed;
   bottom: 45px;
@@ -206,19 +202,23 @@ mjx-container {
   padding: 20px;
   border: none;
   opacity: 90%;
+  z-index: 999;
+}*/
+.leftnav-accordion-bar {
+  display: none;
 }
 
 /* toc */
 .toc {
-  order: 3;
+  order: 5;
   flex: 1 0 0;
-  min-width: 160px;
+  min-width: 180px;
   box-sizing: border-box;
 	position: sticky;
 	top: 0;
-	height: calc(100vh);
+	max-height: calc(100vh);
 	overflow:auto;
-	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s;
+	transition: min-width 0.2s, max-width 0.2s, visibility 0.2s, opacity 0.2s, max-height 0.5s;
 }
 .toc:before {
   content: '';
@@ -266,4 +266,72 @@ mjx-container {
 }
 .toc-content > ul > li > ul {
   padding: 0;
+}
+.toc-accordion-bar {
+  display: none;
+}
+
+/* responsive */
+@media (max-width: 1520px) {
+  .toc-accordion-bar {
+    width: 100%;
+    order: 2;
+    display: block;
+  }
+  .toc-accordion {
+    box-sizing: border-box;
+	  margin: 0 auto;
+    display: flex;
+    min-width: 200px;
+	  max-width: 980px;
+	  padding: 0 16px;
+    justify-content: space-between;
+  }
+  .toc-accordion-text, .toc-accordion-icon {
+    padding: 8px 0;
+  }
+  .toc:before {
+    height: 16px;
+  }
+  .toc:after {
+	  height: 16px;
+  }
+  .toc, .leftnav {
+    flex: 1 auto;
+    position: relative;
+    max-height: 0;
+    max-width: 980px;
+  }
+  .toc {
+    order: 3;
+  }
+  .leftnav {
+    order: 1;
+  }
+  .leftnav-accordion-bar {
+    width: 100%;
+    order: 0;
+    display: block;
+  }
+  .leftnav-accordion {
+    box-sizing: border-box;
+	  margin: 0 auto;
+    display: flex;
+    min-width: 200px;
+	  max-width: 980px;
+	  padding: 0 16px;
+    justify-content: space-between;
+  }
+  .leftnav-accordion-text, .leftnav-accordion-icon {
+    padding: 8px 0;
+  }
+  .leftnav-content, .toc-content {
+    padding: 16px;
+  }
+  .leftnav:before {
+    height: 16px;
+  }
+  .leftnav:after {
+	  height: 16px;
+  }
 }
