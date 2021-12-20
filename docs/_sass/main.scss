@@ -14,7 +14,7 @@ footer {
 	min-width: 200px;
 	max-width: 980px;
 	margin: 0 auto;
-	padding: 24px 16px;
+	padding: 0 16px 24px 16px;
 	transition: padding 0.5s;
 }
 
@@ -32,7 +32,7 @@ footer {
   max-width: 980px;
   min-width: 200px;
   box-sizing: border-box;
-	padding: 24px 16px;
+	padding: 0 16px 24px 16px;
 	transition: padding 0.5s;
 	overflow: auto;
 }
@@ -151,7 +151,7 @@ mjx-container {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 45px;
+  height: 24px;
   pointer-events: none;
 }
 .leftnav:after {
@@ -160,14 +160,14 @@ mjx-container {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 45px;
+	height: 24px;
 	pointer-events: none;
 }
 .leftnav-content {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
-	padding: 45px;
+	padding: 24px;
 }
 .leftnav-content > ul {
   padding-left: 0;
@@ -226,7 +226,7 @@ mjx-container {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 45px;
+  height: 24px;
   pointer-events: none;
 }
 .toc:after {
@@ -235,14 +235,14 @@ mjx-container {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 45px;
+	height: 24px;
 	pointer-events: none;
 }
 .toc-content, .default-toc-content {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
-	padding: 45px;
+	padding: 24px;
 }
 .toc-content > ul, .default-toc-content > ul {
   padding-left: 0;
