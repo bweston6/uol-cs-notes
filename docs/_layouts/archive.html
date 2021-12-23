@@ -11,7 +11,7 @@ sidebar:
 {% endcapture %}
 {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
 <div class="archive-tagcloud">
-  <a href="{{ site.baseurl }}/archive/"><code><nobr>All ({{ site.posts | size }})</nobr></code></a>
+  <a href="{{ site.baseurl }}/archive.html"><code><nobr>All ({{ site.posts | size }})</nobr></code></a>
   {% for temptag in sortedtemptags %}
     {% assign tagitems = temptag | split: '#' %}
     {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
