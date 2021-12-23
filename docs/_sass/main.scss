@@ -72,7 +72,7 @@ mjx-container {
 .base-topnav-title a {
 	display: inline-block;
 	white-space: nowrap;
-	padding: 16px 16px 16px 0;
+	padding: 16px 8px 16px 0;
 }
 .base-topnav-spacer {
   flex: 1 0 auto;
@@ -168,6 +168,7 @@ mjx-container {
 	height: 100%;
 	overflow: auto;
 	padding: 24px;
+	text-align: right;
 }
 .leftnav-content > ul {
   padding-left: 0;
@@ -339,6 +340,9 @@ mjx-container {
   }
   .leftnav-content, .toc-content, .default-toc-content {
     padding: 16px;
+  }
+  .leftnav-content {
+	  text-align: unset;
   }
   .leftnav:before {
     height: 16px;
