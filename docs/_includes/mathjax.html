@@ -1,8 +1,11 @@
 <script>
 MathJax = {
+  loader: {
+    load: ['ui/lazy']
+  },
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']]
   }
 };
 </script>
-<script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-chtml.js"></script>
+<script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-chtml.js"></script>
