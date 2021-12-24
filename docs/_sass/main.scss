@@ -79,6 +79,7 @@ mjx-container {
 }
 .base-topnav-scroll {
 	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 	white-space: nowrap;
 	transition: width 0.5s, opacity 0.5s;
 }
@@ -167,6 +168,7 @@ mjx-container {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	padding: 24px;
 	text-align: right;
 }
@@ -243,6 +245,7 @@ mjx-container {
 	box-sizing: border-box;
 	height: 100%;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	padding: 24px;
 }
 .toc-content > ul, .default-toc-content > ul {
