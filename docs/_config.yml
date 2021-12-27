@@ -15,7 +15,6 @@ github:
   repo_tree: main/docs
 
 plugins:
-  - jekyll-sitemap
   - jekyll-seo-tag
   - rouge
 
