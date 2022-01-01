@@ -18,6 +18,12 @@
     <meta name="theme-color" content="#2b5797">
     <meta name="color-scheme" content="dark light">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% if page.layout == "tagpage" %}
+    <meta name="robots" content="noindex">
+    {% endif %}
+    {% if page.layout == "module" and page.title contains " - " %}
+    <meta name="robots" content="noindex">
+    {% endif %}
     {% if page.layout == "default" or page.layout == "module" or page.layout == "home" %}
     {% include mathjax.html %}
     {% endif %}
