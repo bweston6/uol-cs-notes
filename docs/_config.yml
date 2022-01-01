@@ -4,6 +4,7 @@ baseurl: "/UoL" # the subpath of your site, e.g. /blog
 title: UoL CS Notes
 tagline: Computer science notes for UoL
 description: Notes for computer science modules at University of Liverpool
+locale: en_GB
 
 author:
   name: Ben Weston
