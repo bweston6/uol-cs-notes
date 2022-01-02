@@ -5,3 +5,5 @@ User-agent: *
 Allow: /
 
 Sitemap: {{ "sitemap.xml" | absolute_url }}
+Sitemap: {{ "posts_sitemap.xml" | absolute_url }}
+Sitemap: {{ "pages_sitemap.xml" | absolute_url }}
