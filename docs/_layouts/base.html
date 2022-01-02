@@ -82,6 +82,16 @@
       </div>
     </div>
     {{ content }}
+    <div class="message-of-dissapointment-container" style="min-height: calc(100vh - 136px);position: relative;">
+      <div class="message-of-dissapointment" style="margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);text-align: center;">
+        <p>
+          This site uses features that aren't available in Internet Explorer and will not display correctly.
+        </p>
+        <p>
+          If you are seeing this message and are not using Internet Explorer, please check if an issue has been created <a href="https://github.com/bweston6/UoL/issues">on Github</a>.
+        </p>
+      </div>
+    </div>
     <footer>
       <p>{{ site.description }}</p>
       <p>© {{ site.author.name }} {{ "now" | date: "%Y" }}</p>

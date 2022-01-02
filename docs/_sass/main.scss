@@ -359,3 +359,27 @@ mjx-container {
     display: block;
   }
 }
+
+/* Internet Explorer Specific */
+.message-of-dissapointment-container {
+  display: none;
+  min-height: calc(100vh - 136px);
+  position: relative;
+}
+.message-of-dissapointment {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .message-of-dissapointment-container {
+    display: inherit;
+  }
+  .base-topbar, .home, .post {
+    display: none;
+  }
+}
