@@ -5,5 +5,5 @@ $("code.language-plantuml").each(function() {
   } else {
     var src = "http://www.plantuml.com/plantuml/svg/" + window.plantumlEncoder.encode($(this).text());
   }
-  $(this).replaceWith($('<img>').attr({'src': src, 'loading': 'lazy'}));
+  $(this).replaceWith($('<img>').attr({'src': src, 'loading': 'lazy', 'alt': 'PlantUML diagram.'}));
 });
