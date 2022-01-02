@@ -2,6 +2,13 @@
 title: Home
 layout: home
 ---
+<h1>Home</h1>
+<div class="info">
+<p>
+This website houses my notes from my studies at the University of Liverpool.
+</p>
+To see former modules go to the <a href="{{ site.baseurl }}/archive.html">archive</a>.
+</div>
 <!-- posts -->
 {% for post in paginator.posts %}
   <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
