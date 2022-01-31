@@ -1,20 +1,10 @@
 topnav:
-  - title: COMP201
-    url: /comp201
   - title: COMP202
     url: /comp202
-  - title: COMP207
-    url: /comp207
   - title: COMP208
     url: /comp208
-  - title: COMP211
-    url: /comp211
-  - title: COMP218
-    url: /comp218
   - title: COMP281
     url: /comp281
-  - title: COMP282
-    url: /comp282
   - title: COMP284
     url: /comp284
   - title: COMP285
