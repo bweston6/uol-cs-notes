@@ -1,4 +1,4 @@
 ---
-title: COMP -
+title: 
 tags: COMP Tutorials
 ---
