@@ -223,7 +223,7 @@ comp201:
       - title: Tutorials
         url: /comp201/tutorials
 comp202:
-  - title: COMP201
+  - title: COMP202
     url: /comp202
     children:
       - title: Lectures
