@@ -5,12 +5,12 @@ layout: base
   <script>
     function openAccordion(x) {
       x.nextElementSibling.setAttribute("style", "max-height: calc(35vh);");
-      x.children[0].children[1].children[0].setAttribute("class", "fas fa-minus");
+      x.children[0].children[1].innerHTML = "-";
       x.setAttribute("onclick", "closeAccordion(this)");
     }
     function closeAccordion(x) {
       x.nextElementSibling.setAttribute("style", "");
-      x.children[0].children[1].children[0].setAttribute("class", "fas fa-plus");
+      x.children[0].children[1].innerHTML = "+";
       x.setAttribute("onclick", "openAccordion(this)");
     }
     function mediaAccordion(state) {
@@ -36,7 +36,7 @@ layout: base
           {% endif %}
         </div>
         <div class="leftnav-accordion-icon">
-          <i class="fas fa-plus"></i>
+          +
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ layout: base
           Contents
         </div>
         <div class="toc-accordion-icon">
-          <i class="fas fa-plus"></i>
+          +
         </div>
       </div>
     </div>

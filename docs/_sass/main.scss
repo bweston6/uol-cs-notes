@@ -338,6 +338,12 @@ mjx-container {
 	  padding: 0 16px;
     justify-content: space-between;
   }
+  .leftnav-accordion-icon, .toc-accordion-icon {
+  	text-align:center;
+  	width: 1em;
+  	cursor: default;
+  	font-size: 1.3em;
+  }
   .leftnav-accordion-text, .leftnav-accordion-icon {
     padding: 8px 0;
   }

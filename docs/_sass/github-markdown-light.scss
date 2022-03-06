@@ -277,11 +277,6 @@
   word-wrap: normal;
 }
 
-.markdown-body ::placeholder {
-  color: #6e7781;
-  opacity: 1;
-}
-
 .markdown-body .pl-c {
   color: #6e7781;
 }
@@ -752,7 +747,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  background-color: var(--bg-layer-1);
   border-radius: 6px;
 }
 
