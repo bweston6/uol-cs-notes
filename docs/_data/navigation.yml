@@ -14,136 +14,40 @@ topnav:
 archive:
   - title: COMP105
     url: /comp105
-    children:
-      - title: Lectures
-        url: /comp105/lectures
   - title: COMP107
     url: /comp107
-    children:
-      - title: Lectures
-        url: /comp107/lectures
-      - title: Seminars
-        url: /comp107/seminars
-      - title: Tutorials
-        url: /comp107/tutorials
-      - title: Meetings
-        url: /comp107/meetings
   - title: COMP108
     url: /comp108
-    children:
-      - title: Lectures
-        url: /comp108/lectures
-      - title: Seminars
-        url: /comp108/seminars
   - title: COMP109
     url: /comp109
-    children:
-      - title: Lectures
-        url: /comp109/lectures
-      - title: Catch-up Sessions
-        url: /comp109/catchup_sessions
-      - title: Tutorials
-        url: /comp109/tutorials
   - title: COMP111
     url: /comp111
-    children:
-      - title: Lectures
-        url: /comp111/lectures
-      - title: Tutorials
-        url: /comp111/tutorials
   - title: COMP116
     url: /comp116
-    children:
-      - title: Lectures
-        url: /comp116/lectures
-      - title: Tutorials
-        url: /comp116/tutorials
   - title: COMP122
     url: /comp122
-    children:
-      - title: Lectures
-        url: /comp122/lectures
-      - title: Seminars
-        url: /comp122/seminars
-      - title: Labs
-        url: /comp122/labs
   - title: COMP124
     url: /comp124
-    children:
-      - title: Lectures
-        url: /comp124/lectures
-      - title: Labs
-        url: /comp124/labs
   - title: COMP201
     url: /comp201
-    children:
-      - title: Lectures
-        url: /comp201/lectures
-      - title: Tutorials
-        url: /comp201/tutorials
   - title: COMP202
     url: /comp202
-    children:
-      - title: Lectures
-        url: /comp202/lectures
-      - title: Tutorials
-        url: /comp202/tutorials
   - title: COMP207
     url: /comp207
-    children:
-      - title: Lectures
-        url: /comp207/lectures
-      - title: Tutorials
-        url: /comp207/tutorials
   - title: COMP208
     url: /comp208
-    children:
-      - title: Lectures
-        url: /comp208/lectures
-      - title: Tutorials
-        url: /comp208/tutorials
   - title: COMP211
     url: /comp211
-    children:
-      - title: Lectures
-        url: /comp211/lectures
-      - title: Tutorials
-        url: /comp211/tutorials
   - title: COMP218
     url: /comp218
-    children:
-      - title: Lectures
-        url: /comp218/lectures
-      - title: Tutorials
-        url: /comp218/tutorials
   - title: COMP281
     url: /comp281
-    children:
-      - title: Lectures
-        url: /comp281/lectures
-      - title: Tutorials
-        url: /comp281/tutorials
   - title: COMP282
     url: /comp282
-    children:
-      - title: Lectures
-        url: /comp282/lectures
-      - title: Tutorials
-        url: /comp282/tutorials
   - title: COMP284
     url: /comp284
-    children:
-      - title: Lectures
-        url: /comp284/lectures
-      - title: Tutorials
-        url: /comp284/tutorials
   - title: COMP285
     url: /comp285
-    children:
-      - title: Lectures
-        url: /comp285/lectures
-      - title: Tutorials
-        url: /comp285/tutorials
 comp105:
   - title: COMP105
     url: /comp105
