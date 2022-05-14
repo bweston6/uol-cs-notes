@@ -1,30 +1,14 @@
-{% if page.sidebar.nav %}
-  <ul>
-    {% for element in site.data.navigation.[page.sidebar.nav] %}
-      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a>
-      {% if element.children %}
-        <ul>
-          {% for child in element.children %}
-            <li><a href="{{ site.baseurl }}{{ child.url }}">{{ child.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
-{% if layout.sidebar.nav %}
-  <ul>
-    {% for element in site.data.navigation.[layout.sidebar.nav] %}
-      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a>
-      {% if element.children %}
-        <ul>
-          {% for child in element.children %}
-            <li><a href="{{ site.baseurl }}{{ child.url }}">{{ child.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}
+{% assign nav = page.leftnav.nav | default: layout.leftnav.nav %}
+<ul>
+	{% for element in site.data.navigation.[nav] %}
+	<li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a>
+		{% if element.children %}
+		<ul>
+			{% for child in element.children %}
+			<li><a href="{{ site.baseurl }}{{ child.url }}">{{ child.title }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>

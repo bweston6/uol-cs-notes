@@ -34,8 +34,6 @@ archive:
     url: /comp202
   - title: COMP207
     url: /comp207
-  - title: COMP208
-    url: /comp208
   - title: COMP211
     url: /comp211
   - title: COMP218
@@ -60,12 +58,13 @@ comp107:
     children:
       - title: Lectures
         url: /comp107/lectures
+      - title: Meetings
+        url: /comp107/meetings
       - title: Seminars
         url: /comp107/seminars
       - title: Tutorials
         url: /comp107/tutorials
-      - title: Meetings
-        url: /comp107/meetings
+
 comp108:
   - title: COMP108
     url: /comp108
@@ -78,10 +77,10 @@ comp109:
   - title: COMP109
     url: /comp109
     children:
-      - title: Lectures
-        url: /comp109/lectures
       - title: Catch-up Sessions
         url: /comp109/catchup_sessions
+      - title: Lectures
+        url: /comp109/lectures
       - title: Tutorials
         url: /comp109/tutorials
 comp111:
@@ -104,20 +103,20 @@ comp122:
   - title: COMP122
     url: /comp122
     children:
+      - title: Labs
+        url: /comp122/labs
       - title: Lectures
         url: /comp122/lectures
       - title: Seminars
         url: /comp122/seminars
-      - title: Labs
-        url: /comp122/labs
 comp124:
   - title: COMP124
     url: /comp124
     children:
-      - title: Lectures
-        url: /comp124/lectures
       - title: Labs
         url: /comp124/labs
+      - title: Lectures
+        url: /comp124/lectures
 comp201:
   - title: COMP201
     url: /comp201
@@ -142,14 +141,6 @@ comp207:
         url: /comp207/lectures
       - title: Tutorials
         url: /comp207/tutorials
-comp208:
-  - title: COMP208
-    url: /comp208
-    children:
-      - title: Lectures
-        url: /comp208/lectures
-      - title: Tutorials
-        url: /comp208/tutorials
 comp211:
   - title: COMP211
     url: /comp211
@@ -172,29 +163,21 @@ comp281:
     children:
       - title: Lectures
         url: /comp281/lectures
-      - title: Tutorials
-        url: /comp281/tutorials
 comp282:
   - title: COMP282
     url: /comp282
     children:
       - title: Lectures
         url: /comp282/lectures
-      - title: Tutorials
-        url: /comp282/tutorials
 comp284:
   - title: COMP284
     url: /comp284
     children:
       - title: Lectures
         url: /comp284/lectures
-      - title: Tutorials
-        url: /comp284/tutorials
 comp285:
   - title: COMP285
     url: /comp285
     children:
       - title: Lectures
         url: /comp285/lectures
-      - title: Tutorials
-        url: /comp285/tutorials

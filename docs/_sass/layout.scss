@@ -1,0 +1,72 @@
+/* Light Colours*/
+:root {
+	--brand: hsl(212, 90%, 45%);
+	--color0: hsl(0, 0%, 5%);
+	--color1: hsl(0, 0%, 25%);
+	--color2: hsl(0, 0%, 45%);
+	--layer0: hsl(0, 0%, 100%);
+	--layer1: hsl(0, 0%, 95%);
+	--layer2: hsl(0, 0%, 90%);
+}
+
+/* Sticky Footer */
+html, body {
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+.container {
+	flex: 1 0 auto;
+}
+body>footer {
+	flex-shrink: 0;
+}
+
+/* Font */
+body {
+	font-family: sans-serif;
+}
+
+/* Colours */
+body>header, body>footer {
+	background-color: var(--layer1);
+}
+a:link, a:visited {
+	color: var(--brand);
+}
+body {
+	color: var(--color0);
+}
+h4 {
+	color: var(--color1);
+}
+h5, h6 {
+	color: var(--color2);
+}
+
+/* Alignment */
+.language-mermaid {
+	display: block;
+	margin-inline: auto;
+	max-width: fit-content;
+}
+img {
+	display: block;
+	margin-inline: auto;
+	max-width: 100%;
+}
+pre {
+	overflow-x: auto;
+}
+mjx-container {
+	overflow-x: auto;
+}
+table {
+	display: block;
+	margin-inline: auto;
+	max-width: fit-content;
+	overflow-x: auto;
+}

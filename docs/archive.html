@@ -4,19 +4,20 @@ title: Archive
 description: All pages and modules for computer science undergraduate degree at University of Liverpool.
 ---
 {% for post in site.posts %}
-  {% assign currentdate = post.date | date: "%Y" %}
-  {% if currentdate != date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h2>{{ currentdate }}</h2>
-    <ul style="list-style-type: none; padding: 0 0 0 4.75em; text-indent: -4.75em;">
-    {% assign date = currentdate %}
-  {% endif %}
-  <li><code>{{ post.date | date: "%b %d" }}</code>&emsp;<a href="{{ site.baseurl }}{{ post.url }}">
-  {{ post.title }}{% if post.tags[0] %}
-   - <code><nobr>{{ post.tags[0] }}</nobr></code>
-  {% endif %}</a></li>
-  {% if forloop.last %}
-    </ul>
-  {% endif %}
+{% assign currentdate = post.date | date: "%Y" %}
+{% if currentdate != date %}
+{% unless forloop.first %}</ul>{% endunless %}
+<h2>{{ currentdate }}</h2>
+<ul>
+	{% assign date = currentdate %}
+	{% endif %}
+	<li>
+		<code>{{ post.date | date: "%b %d" }}</code>
+		<a href="{{ site.baseurl }}{{ post.url }}">
+			{{ post.title }} - <code><nobr>{{ post.tags[0] }}</nobr></code>
+		</a>
+	</li>
+	{% if forloop.last %}
+</ul>
+{% endif %}
 {% endfor %}
-
