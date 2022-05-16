@@ -1,0 +1,70 @@
+:root {
+	--gap: unset;
+	--main-max-width: unset;
+	--image-max-size: 10cm;
+}
+/* Page Layout */
+@page {
+	margin: 2cm;
+	orphans: 4;
+	widows: 2;
+}
+@page {
+    counter-increment: page;
+    counter-reset: page 1;
+    @top-right {
+        content: "Page " counter(page) " of " counter(pages);
+    }
+}
+h1 {
+	page-break-before: always;
+}
+h1, h2, h3, h4, h5, h6 {
+	page-break-after: avoid;
+}
+.contents::before {
+	content: "Contents";
+	font-size: 1.5em;
+	margin-bottom: 0.83em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+
+/* Font */
+body {
+	font-family: serif;
+	font-size: 10pt;
+}
+a:link, a:visited {
+	color: var(--color0);
+}
+
+/* Hidden */
+header, footer, .leftnav {
+	display: none
+}
+
+/* Images */
+.language-mermaid > svg {
+	max-width: var(--image-max-size);
+	max-height: var(--image-max-size);
+}
+img {
+	max-width: var(--image-max-size);
+	max-height: var(--image-max-size);
+}
+
+
+/* Markdown */
+/** Ordered Lists **/
+ol { 
+	counter-reset: item;
+}
+li {
+	display: block;
+}
+li:before {
+	content: counters(item, ".") " ";
+	counter-increment: item;
+}

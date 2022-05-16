@@ -1,12 +1,72 @@
-/* Light Colours*/
 :root {
-	--brand: hsl(212, 90%, 45%);
-	--color0: hsl(0, 0%, 5%);
-	--color1: hsl(0, 0%, 25%);
-	--color2: hsl(0, 0%, 45%);
-	--layer0: hsl(0, 0%, 100%);
-	--layer1: hsl(0, 0%, 95%);
-	--layer2: hsl(0, 0%, 90%);
+	--aside-basis: 250px;
+	--aside-max-width: var(--main-max-width);
+	--gap: 2em;
+	--main-basis: 700px;
+	--main-max-width: 900px;
+	--main-min-width: 300px;
+}
+
+
+/* Container Layout */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+	justify-content: center;
+	margin-inline: var(--gap);
+}
+.container > nav {
+	flex: 1 1 var(--aside-basis);
+	max-width: var(--main-max-width);
+}
+.container > main {
+	order: 1;
+	flex: 1 1 var(--main-basis);
+	max-width: var(--main-max-width);
+	min-width: var(--main-min-width);
+}
+.leftnav {
+	order: 0;
+}
+.contents {
+	order: 2;
+}
+
+/* Nav */
+
+nav > ul, nav > ol {
+	padding-left: 0;
+}
+nav ul, nav ol {
+	list-style-type: none;
+}
+
+/* Leftnav */
+.leftnav {
+	text-align: right;
+}
+
+/* Contents */
+
+/** Container Small Layout **/
+@media (max-width:calc(700px + 2*250px + 4*2em)) { // can't use var() in media query
+	:root{
+		--gap: 1em;
+	}
+	.container > nav {
+		flex: 1 1 100%;
+	}
+	.container > main {
+		order: 2;
+	}
+	.leftnav {
+		text-align: left;
+		order: 0;
+	}
+	.contents {
+		order: 1;
+	}
 }
 
 /* Sticky Footer */
@@ -31,13 +91,15 @@ body {
 }
 
 /* Colours */
-body>header, body>footer {
+body>header, body > footer {
 	background-color: var(--layer1);
 }
 a:link, a:visited {
 	color: var(--brand);
+	text-decoration: unset;
 }
 body {
+	background-color: var(--layer0);
 	color: var(--color0);
 }
 h4 {

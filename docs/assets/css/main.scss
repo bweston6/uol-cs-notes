@@ -2,12 +2,20 @@
 ---
 /* light mode */
 @import 'highlighting/syntax-github';
+@import 'light-colours';
 
 /* dark mode */
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   @import 'highlighting/syntax-base16.monokai.dark';
+	@import 'dark-colours';
 }
 
 /* agnostic */
 @import 'layout';
 @import 'font-awesome/all.min';
+
+/* print */
+@media print {
+	@import 'print-layout';
+	@import 'print-colours';
+}
