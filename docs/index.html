@@ -4,51 +4,49 @@ description: Notes for computer science modules at University of Liverpool.
 layout: base
 mathjax: true
 ---
-<main id="main">
-	<h1>Home</h1>
-	<section class="info">
-		<p>
-		This website houses notes from my studies at the University of Liverpool:
-		</p>
-		<ul>
-			<li>If you see anny errors or issues, please do <a href="https://github.com/bweston6/UoL/issues">open an issue</a> on this site's Github.</li>
-			<li>To see former modules go to the <a href="{{site.baseurl}}/archive.html">archive</a>.</li>
-		</ul>
-	</section>
-	{% for post in paginator.posts %}
-	<article>
-		<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-		<p>
-		{% for tag in post.tags %}
-		{% capture tag_name %}{{ tag }}{% endcapture %}
-		<a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
-		{% endfor %}
-		<time>{{ post.date |  date: "%Y-%m-%d" }}</time>
-		</p>
-		<section>
-			<p>{{ post.content | strip_html | truncatewords:50 }}</p>
-			<p><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></p>
-		</section>
-	</article>
+<h1>Home</h1>
+<section class="info">
+	<p>
+	This website houses notes from my studies at the University of Liverpool:
+	</p>
+	<ul>
+		<li>If you see anny errors or issues, please do <a href="https://github.com/bweston6/UoL/issues">open an issue</a> on this site's Github.</li>
+		<li>To see former modules go to the <a href="{{site.baseurl}}/archive.html">archive</a>.</li>
+	</ul>
+</section>
+{% for post in paginator.posts %}
+<article>
+	<h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+	<p>
+	{% for tag in post.tags %}
+	{% capture tag_name %}{{ tag }}{% endcapture %}
+	<a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
 	{% endfor %}
-	<footer>
-		{% if paginator.previous_page %}
-		<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
-			<i class="fas fa-angle-left"></i>Previous
-		</a>
-		{% else %}
-		<i class="fas fa-angle-left"></i>Previous
-		{% endif %}
-		{{ paginator.page }} of {{ paginator.total_pages }}
-		{% if paginator.next_page %}
-		<a href="{{ site.baseurl }}{{ paginator.next_page_path }}">
-			Next<i class="fas fa-angle-right"></i>
-		</a>
-		{% else %}
-		Next<i class="fas fa-angle-right"></i>
-		{% endif %}
-		<code>
-			{{ site.posts | size }} posts
-		</code>
-	</footer>
-</main>
+	<time>{{ post.date |  date: "%Y-%m-%d" }}</time>
+	</p>
+	<section>
+		<p>{{ post.content | strip_html | truncatewords:50 }}</p>
+		<p><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></p>
+	</section>
+</article>
+{% endfor %}
+<footer>
+	{% if paginator.previous_page %}
+	<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
+		<i class="fas fa-angle-left"></i> Previous
+	</a>
+	{% else %}
+	<i class="fas fa-angle-left"></i> Previous
+	{% endif %}
+	{{ paginator.page }} of {{ paginator.total_pages }}
+	{% if paginator.next_page %}
+	<a href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+		Next <i class="fas fa-angle-right"></i>
+	</a>
+	{% else %}
+	Next <i class="fas fa-angle-right"></i>
+	{% endif %}
+	<code class="post-count">
+		{{ site.posts | size }} posts
+	</code>
+</footer>

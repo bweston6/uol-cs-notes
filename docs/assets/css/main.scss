@@ -16,6 +16,6 @@
 
 /* print */
 @media print {
-	@import 'print-layout';
 	@import 'print-colours';
+	@import 'print-layout';
 }
