@@ -48,6 +48,8 @@ archive:
     url: /comp284
   - title: COMP285
     url: /comp285
+  - title: COMP304 
+    url: /comp304
 comp105:
   - title: COMP105
     url: /comp105
@@ -198,3 +200,11 @@ comp285:
         url: /comp285/lectures
       - title: Tutorials
         url: /comp285/tutorials
+comp304:
+  - title: COMP304
+    url: /comp304
+    children:
+      - title: Lectures
+        url: /comp304/lectures
+      - title: Tutorials
+        url: /comp304/tutorials
