@@ -1,13 +1,13 @@
 ---
 layout: base
-contents: true
 mathjax: true
 mermaid: true
 plantuml: true
 ---
 <h1>{{ page.title }}</h1>
+{% assign module = page.categories[0] | upcase %}
 {% for post in site.posts %}
-{% if post.tags contains page.module and page.tags contains post.tags[1]%}
+{% if post.tags contains module %}
 <article>
 	<h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
 	<p>
