@@ -4,22 +4,21 @@ leftnav:
   nav: archive
   label: modules
 ---
+
 <h1>{{ page.title }}</h1>
-{% capture temptags %}
-{% for tag in site.tags %}
-{{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
-{% endfor %}
-{% endcapture %}
-{% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+{% capture temptags %} {% for tag in site.tags %} {{ tag[1].size | plus: 1000
+}}#{{ tag[0] }}#{{ tag[1].size }} {% endfor %} {% endcapture %} {% assign
+sortedtemptags = temptags | split:' ' | sort | reverse %}
 <nav aria-label="tags">
-	<a href="{{ site.baseurl }}/archive.html"><code><nobr>All ({{ site.posts | size }})</nobr></code></a>
-	{% for temptag in sortedtemptags %}
-	{% assign tagitems = temptag | split: '#' %}
-	{% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-	{% capture tagcount %}{{ tagitems[2] }}{% endcapture %}
-	<a href="{{ site.baseurl }}/archive/{{ tagname }}"><code><nobr>{{ tagname }} ({{ tagcount }})</nobr></code></a>
-	{% endfor %}
+  <a href="{{ site.baseurl }}/archive.html"
+    ><code><nobr>All ({{ site.posts | size }})</nobr></code></a
+  >
+  {% for temptag in sortedtemptags %} {% assign tagitems = temptag | split: '#'
+  %} {% capture tagname %}{{ tagitems[1] }}{% endcapture %} {% capture tagcount
+  %}{{ tagitems[2] }}{% endcapture %}
+  <a href="{{ site.baseurl }}/archive/{{ tagname }}"
+    ><code><nobr>{{ tagname }} ({{ tagcount }})</nobr></code></a
+  >
+  {% endfor %}
 </nav>
-<section>
-	{{ content }}
-</section>
+<section>{{ content }}</section>

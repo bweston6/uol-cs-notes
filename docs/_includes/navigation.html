@@ -1,0 +1,27 @@
+<nav aria-label="primary">
+	<ul>
+		{% for year in site.data.years %}
+		<li>Year {{ forloop.index }}
+			<ul>
+				{% for module in year.modules %}
+				<li><a href="{{ module[1].url }}">{{ module[1].title }}</a>
+					{% if page.module contains module[1].title or page.tags contains module[1].title %}
+					<ul>
+						{% for post in site.posts %}
+						{% if post.categories contains page.categories[0] %}
+						<li><a href="{{ post.url }}">{{ post.title }}</a>
+							{% if post.url == page.url %}
+							{% include toc.html html=content h_min=2 santize=true	skip_no_ids=true class="headings" %}
+							{% endif %}
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>

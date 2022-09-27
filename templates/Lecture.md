@@ -1,4 +1,0 @@
----
-title: 
-tags: COMP Lectures
----

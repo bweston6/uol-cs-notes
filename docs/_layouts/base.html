@@ -31,47 +31,20 @@
 			<ul id="results-container"></ul>
 		</header>
 		<div class="container">
-			<nav aria-label="primary">
-				{% assign modules = "" | split: "" %}
-				{% for category in site.categories %}
-				{% if category[0] contains "comp" %}
-				{% assign modules = modules | push: category %}
-				{% endif %}
-				{% endfor%}
-				{% assign modules = modules | sort %}
-				<ul class="modules">
-					{% for module in modules %}
-					<li><a href="{{ site.baseurl }}/{{ module[0] }}">{{ module[0] | upcase }}</a>
-						{% assign tag = module[0] | upcase %}
-						{% if page.module contains tag or page.tags contains tag %}
-						<ul class="articles">
-							{% for post in module.last %}
-							<li>
-								<a href="{{ post.url }}">{{post.title}}</a>
-								{% if post.url == page.url %}
-								{% include toc.html html=content h_min=2 santize=true	skip_no_ids=true class="headings" %}
-								{% endif %}
-							</li>
-							{% endfor %}
-						</ul>
-						{% endif %}
-					</li>
-					{% endfor %}
-				</ul>
-			</nav>
+			{% include navigation.html %}
 			<div class="right">
 				<main id="main">
 					{{ content }}
 				</main>
-				<footer>
-					<p>{{ site.description }}</p>
-					<p>Copyright © {{ "now" | date: "%Y" }} {{ site.author.name }}</p>
-					<div>
-						<code><a href="https://github.com/{{ site.author.github }}">Github</a></code> 
-						<code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
-					</div>
-				</footer>
 			</div>
 		</div>
+		<footer>
+			<p>{{ site.description }}</p>
+			<p>Copyright © {{ "now" | date: "%Y" }} {{ site.author.name }}</p>
+			<div>
+				<code><a href="https://github.com/{{ site.author.github }}">Github</a></code> 
+				<code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
+			</div>
+		</footer>
 	</body>
 </html>
