@@ -1,27 +1,35 @@
-<nav aria-label="primary">
-	<ul>
-		{% for year in site.data.years %}
-		<li>Year {{ forloop.index }}
-			<ul>
-				{% for module in year.modules %}
-				<li><a href="{{ module[1].url }}">{{ module[1].title }}</a>
-					{% if page.module contains module[1].title or page.tags contains module[1].title %}
-					<ul>
-						{% for post in site.posts %}
-						{% if post.categories contains page.categories[0] %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a>
+<details class="nav-collapse">
+	<summary class="nav-button">Menu</summary>
+	<nav aria-label="primary">
+		<ul>
+			{% for year in site.data.years %}
+			<li>Year {{ forloop.index }}
+				<ul>
+					{% for module in year.modules %}
+					{% if page.categories[0] ==  module[0] %}
+					<li data-selected="true"><a href="{{ module[1].url }}">{{ module[1].title }}</a>
+						<ul>
+							{% for post in site.posts %}
+							{% if post.categories[0] == page.categories[0] %}
 							{% if post.url == page.url %}
-							{% include toc.html html=content h_min=2 santize=true	skip_no_ids=true class="headings" %}
+							<li data-selected="true"><a href="{{ post.url }}">{{ post.title }}</a>
+								{% include toc.html html=content h_min=2 santize=true	skip_no_ids=true class="headings" %}
+							</li>
+							{% else %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
 							{% endif %}
-						</li>
-						{% endif %}
-						{% endfor %}
-					</ul>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</li>
+					{% else %}
+					<li><a href="{{ module[1].url }}">{{ module[1].title }}</a></li>
 					{% endif %}
-				</li>
-				{% endfor %}
-			</ul>
-		</li>
-		{% endfor %}
-	</ul>
-</nav>
+					{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+			<li><a href="/archive">Archive</a></li>
+		</ul>
+	</nav>
+</details>
