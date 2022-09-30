@@ -147,12 +147,6 @@
       children:
         - title: Lectures
           url: /comp329/lectures
-    comp390:
-      title: COMP390
-      url: /comp390
-      children:
-        - title: Lectures
-          url: /comp390/lectures
     elec319:
       title: ELEC319
       url: /elec319
