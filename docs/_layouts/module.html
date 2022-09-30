@@ -1,33 +1,29 @@
 ---
-layout: post
+layout: base
+mathjax: true
+mermaid: true
+plantuml: true
 ---
-{% assign attributes = page.title | split: " - " %}
-{% assign module = page.title | split: " " | first %}
 <h1>{{ page.title }}</h1>
+{% assign module = page.categories[0] | upcase %}
 {% for post in site.posts %}
-  {% if attributes.size == 1 %}
-    {% if post.tags contains module %}
-      <h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
-      <p>
-      {% for tag in post.tags %}
-        {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
-      {% endfor %}
-      <span style="float: right;">{{ post.date |  date: "%Y-%m-%d" }}</span>
-      </p>
-      {{ post.content | replace: "<h3", "<h4" | replace: "</h3>", "</h4>" | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" }}
-    {% endif %}
-  {% else %}
-    {% if post.tags contains module and post.tags contains attributes[1] %}
-      <h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
-      <p>
-      {% for tag in post.tags %}
-        {% capture tag_name %}{{ tag }}{% endcapture %}
-        <a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
-      {% endfor %}
-      <span style="float: right;">{{ post.date |  date: "%Y-%m-%d" }}</span>
-      </p>
-      {{ post.content | replace: "<h3", "<h4" | replace: "</h3>", "</h4>" | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" }}
-    {% endif %}
-  {% endif %}
+{% if post.tags contains module %}
+<article>
+	<header>
+		<h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
+		<p>
+		{% for tag in post.tags %}
+		{% capture tag_name %}{{ tag }}{% endcapture %}
+		<a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
+		{% endfor %}
+		{%- assign github-edit-path = site.github.repo | append: '/tree/' | append: site.github.repo_tree | append: '/' | append: post.path | replace:'//','/' -%}
+		<a class="edit" href="https://github.com/{{ github-edit-path }}">
+			<i class="fa-solid fa-pen-to-square"></i>
+		</a>
+		<time>{{ post.date |  date: "%Y-%m-%d" }}</time>
+		</p>
+	</header>
+	{{ post.content | replace: "<h3", "<h4" | replace: "</h3>", "</h4>" | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" }}
+</article>
+{% endif %}
 {% endfor %}

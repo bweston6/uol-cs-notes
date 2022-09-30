@@ -1,21 +1,21 @@
 ---
 ---
 /* light mode */
-@import 'main-light';
-@import 'github-markdown-light';
-@import 'alerts-light';
 @import 'highlighting/syntax-github';
+@import 'light-colours';
 
 /* dark mode */
-@media (prefers-color-scheme: dark) {
-  @import 'main-dark';
-  @import 'github-markdown-dark';
-  @import 'alerts-dark';
+@media screen and (prefers-color-scheme: dark) {
   @import 'highlighting/syntax-base16.monokai.dark';
+	@import 'dark-colours';
 }
 
 /* agnostic */
-@import 'main';
-@import 'alerts';
-@import 'mermaid';
+@import 'layout';
 @import 'font-awesome/all.min';
+
+/* print */
+@media print {
+	@import 'print-colours';
+	@import 'print-layout';
+}

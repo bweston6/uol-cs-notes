@@ -1,8 +1,9 @@
 ---
 layout: archive
-noindex: true
+title: Archive
+description: All pages and modules for computer science undergraduate degree at University of Liverpool.
 ---
-{% for post in site.tags[page.tag] %}
+{% for post in site.posts %}
 {% assign currentdate = post.date | date: "%Y" %}
 {% if currentdate != date %}
 {% unless forloop.first %}</ul>{% endunless %}

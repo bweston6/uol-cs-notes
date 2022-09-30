@@ -1,0 +1,82 @@
+:root {
+	--gap: unset;
+	--main-max-width: unset;
+	--image-max-size: 10cm;
+}
+
+/* Markdown */
+/** Inline Code **/
+code {
+	background-color: unset;
+	padding: unset;
+	border-radius: unset;
+	font-weight: 500;
+}
+/** Code Blocks **/
+.highlight pre {
+	background-color: var(--layer1);
+	padding: unset;
+	border-radius: unset;
+	border-style: solid none;
+	border-width: 1px;
+	padding: var(--xsmall);
+}
+/** Infoboxes **/
+.success, .info, .warning, .error {
+	padding: var(--xsmall);
+	border-style: solid none;
+	border-width: 1px;
+	border-radius: unset;
+}
+/** Images **/
+.language-mermaid > svg {
+	max-width: var(--image-max-size);
+	max-height: var(--image-max-size);
+}
+img {
+	max-width: var(--image-max-size);
+	max-height: var(--image-max-size);
+}
+
+/* Page Layout */
+
+@page {
+	margin: 2cm;
+	orphans: 4;
+	widows: 2;
+}
+
+.container {
+display: block;
+}
+h1 {
+	page-break-before: always;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	page-break-after: avoid;
+}
+
+.contents::before {
+	content: "Contents";
+	font-size: 1.5em;
+	margin-bottom: 0.83em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+
+
+/* Font */
+body {
+	font-family: serif;
+	font-size: 10pt;
+}
+a:link, a:visited {
+	color: var(--color0);
+}
+
+/* Hidden */
+header, footer, .leftnav {
+	display: none
+}

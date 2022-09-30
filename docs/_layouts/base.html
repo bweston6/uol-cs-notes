@@ -2,103 +2,47 @@
 ---
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-GB" }}">
-  <head>
+	<head>
 		<meta name="google-site-verification" content="gGj30sEik2Tr5BjwfVGDXb44J8DxzaGlbe_lKdRPA58" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="dark light">
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    {% include favicon.html %}
-    {% if page.layout == "tagpage" %}
-    <meta name="robots" content="noindex">
-    {% endif %}
-    {% if page.layout == "module" and page.title contains " - " %}
-    <meta name="robots" content="noindex">
-    {% endif %}
-    {% if page.layout == "default" or page.layout == "module" or page.layout == "home" %}
-    {% include mathjax.html %}
-    {% endif %}
-    {% if page.layout == "default" or page.layout == "module" %}
-    {% include mermaid.html %}
-    {% include plantuml.html %}
-    {% endif %}
-    {% include simple-jekyll-search.html %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="color-scheme" content="dark light">
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		{% include favicon.html %}
+		{% if page.noindex or layout.noindex %}
+		<meta name="robots" content="noindex">
+		{% endif %}
+		{% if page.mathjax or layout.mathjax %}
+		{% include mathjax.html %}
+		{% endif %}
+		{% if page.mermaid or layout.mermaid %}
+		{% include mermaid.html %}
+		{% endif %}
+		{% if page.plantuml or layout.plantuml %}
+		{% include plantuml.html %}
+		{% endif %}
+		{% include simple-jekyll-search.html %}
 		{% seo %}
-  </head>
-  <body class="markdown-body">
-    <div class="base-topbar">
-      <nav class="base-topnav">
-        <div class="base-topnav-title">
-          <a href="{{ site.baseurl}}/">{{ site.title }}</a>
-        </div>
-        <div class="base-topnav-spacer">
-        </div>
-        <div class="base-topnav-scroll" id="base-topnav-scroll">
-          {% for item in site.data.navigation.topnav %}
-            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-          {% endfor %}
-        </div>
-        <div class="base-searchbar-entry" id="base-searchbar-entry">
-          <input type="search" id="search-input" placeholder="search" class="base-searchbar-input">
-        </div>
-        <div class="base-topnav-search" id="base-topnav-search" onclick="openSearch(this)">
-          <i id="topnav-search-icon" class="fas fa-search"></i>
-        </div>
-      </nav>
-      <script>
-        function openSearch(x) {
-          document.getElementById("base-topnav-scroll").setAttribute("style", "width: 0; opacity: 0; overflow: hidden;");
-          document.getElementById("base-topbar-search").setAttribute("style", "padding: 16px 0 16px 0;");
-          document.getElementById("base-searchbar-entry").setAttribute("style", "flex: 0 1 500px; max-width: 500px; min-width: 200px; margin: 8px 0 8px 8px;");
-          document.getElementById("search-input").setAttribute("style", "padding: 8px 8px 8px 8px; width: 100%;");
-          document.getElementById("search-input").focus();
-          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-times");
-          x.setAttribute("onclick", "closeSearch(this)");
-        }
-        function closeSearch(x) {
-          document.getElementById("search-input").value = "";
-          var event = document.createEvent('Event');
-          event.initEvent('input', true, true);
-          document.getElementById("search-input").dispatchEvent(event);
-          document.getElementById("search-input").setAttribute("style", "");
-          document.getElementById("base-topnav-scroll").setAttribute("style", "");
-          document.getElementById("base-searchbar-entry").setAttribute("style", "");
-          document.getElementById("base-topbar-search").setAttribute("style", "");
-          document.getElementById("topnav-search-icon").setAttribute("class", "fas fa-search");
-          x.setAttribute("onclick", "openSearch(this)");
-        }
-        document.onkeydown = function(e) {
-            e = e || window.event;
-            if (e.keyCode == 27) {
-                closeSearch(document.getElementById("base-topnav-search"));
-            }
-        };
-      </script>
-  	</div>
-  	<div id="base-topbar-search" class="base-topbar-search">
-      <div class="base-searchbar">
-        <div class="base-searchbar-results">
-          <ul id="results-container"></ul>
-        </div>
-      </div>
-    </div>
-    {{ content }}
-    <div class="message-of-dissapointment-container" style="min-height: calc(100vh - 136px);position: relative;">
-      <div class="message-of-dissapointment" style="margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);text-align: center;">
-        <p>
-          This site uses features that aren't available in Internet Explorer and will not display correctly.
-        </p>
-        <p>
-          If you are seeing this message and are not using Internet Explorer, please check if an issue has been created <a href="https://github.com/bweston6/UoL/issues">on Github</a>.
-        </p>
-      </div>
-    </div>
-    <footer>
-      <p>{{ site.description }}</p>
-      <p>Copyright © {{ "now" | date: "%Y" }} {{ site.author.name }}</p>
-      <div>
-        <code><a href="https://github.com/{{ site.author.github }}">Github</a></code> 
-        <code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
-      </div>
-    </footer>
-  </body>
+	</head>
+	<body class="markdown-body">
+		<a class="skip-to-content" href="#main">Skip to content</a>
+		<header>
+			<a href="{{ site.baseurl}}/">{{ site.title }}</a>
+			<input type="search" id="search-input" placeholder="search">
+			<ul id="results-container"></ul>
+		</header>
+		<div class="container">
+			{% include navigation.html %}
+			<main id="main">
+				{{ content }}
+			</main>
+		</div>
+		<footer>
+			<p>{{ site.description }}</p>
+			<p>Copyright © {{ "now" | date: "%Y" }} {{ site.author.name }}</p>
+			<div>
+				<code><a href="https://github.com/{{ site.author.github }}">Github</a></code> 
+				<code><a href="mailto:{{ site.author.email }}">E-mail</a></code>
+			</div>
+		</footer>
+	</body>
 </html>
