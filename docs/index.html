@@ -7,12 +7,8 @@ mathjax: true
 <h1>Home</h1>
 <section class="info">
 	<p>
-	This website houses notes from my studies at the University of Liverpool:
+	This website houses notes from my studies at the University of Liverpool. If you see any errors or issues, please do <a href="https://github.com/bweston6/UoL/issues">open an issue</a> on this site's GitHub.
 	</p>
-	<ul>
-		<li>If you see anny errors or issues, please do <a href="https://github.com/bweston6/UoL/issues">open an issue</a> on this site's Github.</li>
-		<li>To see former modules go to the <a href="{{site.baseurl}}/archive.html">archive</a>.</li>
-	</ul>
 </section>
 {% for post in paginator.posts %}
 <article>
@@ -30,7 +26,7 @@ mathjax: true
 	</section>
 </article>
 {% endfor %}
-<footer>
+<footer data-type="home">
 	{% if paginator.previous_page %}
 	<a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
 		<i class="fas fa-angle-left"></i> Previous
