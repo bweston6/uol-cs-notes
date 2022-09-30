@@ -6,30 +6,32 @@ plantuml: true
 ---
 
 <article>
-  <h1>{{ page.title }}</h1>
-  {%- assign github-edit-path = site.github.repo | append: '/tree/' | append:
-  site.github.repo_tree | append: '/' | append: page.path | replace:'//','/' -%}
-  <a href="https://github.com/{{ github-edit-path }}"
-    ><i class="fa-solid fa-pen-to-square"></i
-  ></a>
-  <p>
-    {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="{{ site.baseurl }}/archive/{{ tag_name }}"
-      ><code><nobr>{{ tag_name }}</nobr></code></a
-    >
-    {% endfor %}
-    <time>{{ page.date | date: "%Y-%m-%d" }}</time>
-  </p>
-  {{ content }}
-  <footer>
-    {% if page.previous.url %}
-    <a href="{{ site.baseurl }}{{page.previous.url}}"
-      ><i class="fas fa-angle-left"></i> {{page.previous.title}}</a
-    >
-    {% endif %} {% if page.next.url %}
-    <a href="{{ site.baseurl }}{{page.next.url}}"
-      >{{page.next.title}} <i class="fas fa-angle-right"></i
-    ></a>
-    {% endif %}
-  </footer>
+	<header>
+		<h1>{{ page.title }}</h1>
+		<p>
+		{% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
+		<a href="{{ site.baseurl }}/archive/{{ tag_name }}">
+			<code><nobr>{{ tag_name }}</nobr></code>
+		</a>
+		{% endfor %}
+		{%- assign github-edit-path = site.github.repo | append: '/tree/' | append:
+		site.github.repo_tree | append: '/' | append: page.path | replace:'//','/' -%}
+		<a class="edit" href="https://github.com/{{ github-edit-path }}">
+			<i class="fa-solid fa-pen-to-square"></i>
+		</a>
+		<time>{{ page.date | date: "%Y-%m-%d" }}</time>
+		</p>
+	</header>
+	{{ content }}
+	<footer>
+		{% if page.previous.url %}
+		<a href="{{ site.baseurl }}{{page.previous.url}}">
+			<i class="fas fa-angle-left"></i> {{page.previous.title}}
+		</a>
+		{% endif %} {% if page.next.url %}
+		<a href="{{ site.baseurl }}{{page.next.url}}">
+			{{page.next.title}} <i class="fas fa-angle-right"></i>
+		</a>
+		{% endif %}
+	</footer>
 </article>
