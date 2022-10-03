@@ -151,6 +151,9 @@ main {
 	}
 }
 /** Navigation **/
+nav[data-type="desktop"] {
+	display: none;
+}
 nav[aria-label="primary"] {
 	background-color: #{'hsla(var(--info), var(--transparent))'};
 	border-radius: var(--medium);
@@ -200,11 +203,11 @@ nav > ul ul {
 		border-radius: var(--large);
 		padding: var(--large);
 	}
-	.nav-collapse {
-		display: contents;
-	}
-	.nav-button {
+	details[data-type="mobile"] {
 		display: none;
+	}
+	nav[data-type="desktop"] {
+		display: initial;
 	}
 }
 
