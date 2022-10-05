@@ -34,9 +34,13 @@
 			{% assign category_module = page.categories[0] %}
 			<details data-type="mobile" class="nav-collapse">
 				<summary class="nav-button">Menu</summary>
-				{% include_cached navigation.html module=category_module url=page.url %}
+				<nav aria-label="primary">
+					{% include_cached navigation.html module=category_module url=page.url %}
+				</nav>
 			</details>
-			{% include_cached navigation.html module=category_module url=page.url %}
+			<nav data-type="desktop" aria-label="primary">
+				{% include_cached navigation.html module=category_module url=page.url %}
+			</nav>
 			<main id="main">
 				{{ content }}
 			</main>
