@@ -21,6 +21,7 @@ a:hover {
 body {
 	color: var(--color0);
 	font-family: system-ui;
+	-webkit-hyphens: auto;
 	hyphens: auto;
 }
 p, ul, ol {
