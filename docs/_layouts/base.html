@@ -7,20 +7,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="color-scheme" content="dark light">
 		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-		{% include favicon.html %}
+		{% include_cached favicon.html %}
 		{% if page.noindex or layout.noindex %}
 		<meta name="robots" content="noindex">
 		{% endif %}
 		{% if page.mathjax or layout.mathjax %}
-		{% include mathjax.html %}
+		{% include_cached mathjax.html %}
 		{% endif %}
 		{% if page.mermaid or layout.mermaid %}
-		{% include mermaid.html %}
+		{% include_cached mermaid.html %}
 		{% endif %}
 		{% if page.plantuml or layout.plantuml %}
-		{% include plantuml.html %}
+		{% include_cached plantuml.html %}
 		{% endif %}
-		{% include simple-jekyll-search.html %}
+		{% include_cached simple-jekyll-search.html %}
 		{% seo %}
 	</head>
 	<body class="markdown-body">
@@ -31,7 +31,12 @@
 			<ul id="results-container"></ul>
 		</header>
 		<div class="container">
-			{% include navigation.html %}
+			{% assign category_module = page.categories[0] %}
+			<details data-type="mobile" class="nav-collapse">
+				<summary class="nav-button">Menu</summary>
+				{% include_cached navigation.html module=category_module url=page.url %}
+			</details>
+			{% include_cached navigation.html module=category_module url=page.url %}
 			<main id="main">
 				{{ content }}
 			</main>

@@ -16,6 +16,7 @@ github:
   repo_tree: main/docs
 
 plugins:
+  - jekyll-include-cache
   - jekyll-seo-tag
   - rouge
 
