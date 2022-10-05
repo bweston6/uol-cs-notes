@@ -21,6 +21,7 @@ a:hover {
 body {
 	color: var(--color0);
 	font-family: system-ui;
+	hyphens: auto;
 }
 p, ul, ol {
 	line-height: 1.5em;
@@ -78,8 +79,8 @@ dd {
 }
 /** Article **/
 article {
-	// sneaky overflow avoidance
-	overflow-x: auto;
+	/* sneaky overflow avoidance */
+	overflow: auto clip;
 }
 article > header .edit,
 article > header time {
@@ -105,15 +106,14 @@ img, svg{
 	max-width: 100%;
 }
 pre {
-	overflow-x: auto;
+	overflow: auto clip;
 }
 mjx-container {
-	overflow-x: auto;
+	overflow: auto clip;
 }
 table {
 	display: block;
-	max-width: fit-content;
-	overflow-x: auto;
+	overflow: auto clip;
 }
 /** Body **/
 body {
@@ -157,7 +157,7 @@ nav[data-type="desktop"] {
 nav[aria-label="primary"] {
 	background-color: #{'hsla(var(--info), var(--transparent))'};
 	border-radius: var(--medium);
-	height: fit-content;
+	height: 100%;
 	padding: var(--medium);
 }
 nav  ul {
@@ -235,6 +235,7 @@ body > header > #search-input {
 	border-style: none;
 	flex-grow: 1;
 	max-width: 30rem;
+	min-width: 0;
 	padding: var(--small);
 }
 body > header > #results-container {
@@ -244,7 +245,7 @@ body > header > #results-container {
 	border-radius: var(--small);
 	list-style: none;
 	margin: var(--medium);
-	max-width: calc(100% - var(--medium) * 2); // remove margin from width
+	max-width: calc(100% - var(--medium) * 2); /* remove margin from width */
 	padding: var(--small);
 	position: absolute;
 	right: 0;
