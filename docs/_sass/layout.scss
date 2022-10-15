@@ -104,7 +104,7 @@ article > footer {
 img, svg{
 	display: block;
 	margin-inline: auto;
-	max-width: min(100%, 400px);
+	max-width: #{'min(100%, 400px)'};
 }
 pre {
 	overflow: auto clip;
