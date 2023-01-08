@@ -1,4 +1,4 @@
-- modules: 
+- modules:
     comp105:
       title: COMP105
       url: /comp105
@@ -141,6 +141,24 @@
       children:
         - title: Lectures
           url: /comp304/lectures
+    comp315:
+      title: COMP315
+      url: /comp315
+      children:
+        - title: Lectures
+          url: /comp315/lectures
+    comp324:
+      title: COMP324
+      url: /comp324
+      children:
+        - title: Lectures
+          url: /comp324/lectures
+    comp328:
+      title: COMP328
+      url: /comp328
+      children:
+        - title: Lectures
+          url: /comp328/lectures
     comp329:
       title: COMP329
       url: /comp329
@@ -153,3 +171,9 @@
       children:
         - title: Lectures
           url: /elec319/lectures
+    elec320:
+      title: ELEC320
+      url: /elec320
+      children:
+        - title: Lectures
+          url: /elec320/lectures
