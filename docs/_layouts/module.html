@@ -6,7 +6,7 @@ plantuml: true
 ---
 <h1>{{ page.title }}</h1>
 {% assign module = page.categories[0] | upcase %}
-{% for post in site.posts %}
+{% for post in site.posts reversed %}
 {% if post.tags contains module %}
 <article>
 	<header>
