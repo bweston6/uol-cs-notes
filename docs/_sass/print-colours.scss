@@ -1,9 +1,7 @@
-@media print {
-    :root {
-	    --success: 110.9, 100%, 42.5%;
-	    --info: 212, 90%, 45%;
-	    --warning: 38.2, 73.6%, 49%;
-	    --error: 317, 73.6%, 49%;
-	    --transparent: 10%;
-    }
+:root {
+	--success: 110.9, 100%, 42.5%;
+	--info: 212, 90%, 45%;
+	--warning: 38.2, 73.6%, 49%;
+	--error: 317, 73.6%, 49%;
+	--transparent: 10%;
 }
