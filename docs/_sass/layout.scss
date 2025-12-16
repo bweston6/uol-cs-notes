@@ -380,7 +380,7 @@ section[data-type="archive"] ul {
   font-weight: 500;
 
   background: #{"hsla(var(--info), var(--transparent))"};
-  color: #6b9bd1;
+  color: var(--brand);
   border: 1px solid #2d4a66;
   border-radius: var(--xsmall);
 

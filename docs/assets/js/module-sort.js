@@ -19,9 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateButton = (order) => {
-    button.dataset.order = order;
-    button.textContent = order === "desc" ? "Newest First ↑" : "Oldest First ↓";
-  };
+  button.dataset.order = order;
+  button.innerHTML =
+  order === "desc"
+    ? 'Newest <nobr>First&nbsp;↑</nobr>'
+    : 'Oldest <nobr>First&nbsp;↓</nobr>';
+};
 
   const savedOrder = localStorage.getItem(STORAGE_KEY);
   const initialOrder =
