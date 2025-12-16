@@ -190,15 +190,6 @@ nav > ul {
 nav > ul ul {
 	padding-left: var(--medium);
 }
-.nav-button {
-	background-color: #{'hsla(var(--info), var(--transparent))'};
-	border-radius: var(--medium);
-	font-size: 1.2rem;
-	font-weight: bold;
-	margin: var(--medium);
-	padding: var(--medium);
-	cursor: pointer;
-}
 @media screen and (min-width: $desktop){
 	nav[aria-label="primary"] {
 		border-radius: var(--large);
@@ -351,6 +342,8 @@ section[data-type="archive"] ul {
 }
 
 
+
+
 /* module */
 .module-heading {
   display: flex;
@@ -367,4 +360,38 @@ section[data-type="archive"] ul {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+
+
+/* Buttons */
+.nav-button {
+	background-color: #{'hsla(var(--info), var(--transparent))'};
+	border-radius: var(--medium);
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: var(--medium);
+	padding: var(--medium);
+	cursor: pointer;
+}
+.def-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  background: #{"hsla(var(--info), var(--transparent))"};
+  color: #6b9bd1;
+  border: 1px solid #2d4a66;
+  border-radius: var(--xsmall);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.def-button:hover {
+  background: var(--info);
+}
+
+.def-button:active {
+  transform: scale(0.98);
 }
