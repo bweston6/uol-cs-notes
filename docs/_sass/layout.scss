@@ -349,3 +349,22 @@ section[data-type="archive"] ul {
 	padding-left: 3.3rem;
 	text-indent: -3.6em;
 }
+
+
+/* module */
+.module-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* same visual behavior as normal h1 */
+  margin-bottom: var(--small);
+  padding-bottom: var(--small);
+  border-bottom: 2px dashed var(--layer2);
+}
+
+.module-heading h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
