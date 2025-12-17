@@ -4,26 +4,36 @@ mathjax: true
 mermaid: true
 plantuml: true
 ---
-<h1>{{ page.title }}</h1>
-{% assign module = page.categories[0] | upcase %}
-{% for post in site.posts reversed %}
-{% if post.tags contains module %}
-<article>
-	<header>
-		<h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
-		<p>
-		{% for tag in post.tags %}
-		{% capture tag_name %}{{ tag }}{% endcapture %}
-		<a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
-		{% endfor %}
-		{%- assign github-edit-path = site.github.repo | append: '/tree/' | append: site.github.repo_tree | append: '/' | append: post.path | replace:'//','/' -%}
-		<a class="edit" href="https://github.com/{{ github-edit-path }}">
-			<i class="fa-solid fa-pen-to-square"></i>
-		</a>
-		<time>{{ post.date |  date: "%Y-%m-%d" }}</time>
-		</p>
-	</header>
-	{{ post.content | replace: "<h3", "<h4" | replace: "</h3>", "</h4>" | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" }}
-</article>
-{% endif %}
-{% endfor %}
+
+<div class="module-heading">
+  <h1>{{ page.title }}</h1>
+  <button id="sort-toggle" class="def-button">Oldest <nobr>First&nbsp;↓</nobr></button>
+</div>
+
+<div id="module-posts">
+	{% assign module = page.categories[0] | upcase %}
+	{% for post in site.posts reversed %}
+	{% if post.tags contains module %}
+	<article
+		data-title="{{ post.title | downcase }}"
+		data-date="{{ post.date | date: '%Y-%m-%d' }}"
+		>
+		<header>
+			<h2 id="{{ post.title | replace: ' ', '-' }}"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h2>
+			<p>
+			{% for tag in post.tags %}
+			{% capture tag_name %}{{ tag }}{% endcapture %}
+			<a href="{{ site.baseurl }}/archive/{{ tag_name }}"><code><nobr>{{ tag_name }}</nobr></code></a>
+			{% endfor %}
+			{%- assign github-edit-path = site.github.repo | append: '/tree/' | append: site.github.repo_tree | append: '/' | append: post.path | replace:'//','/' -%}
+			<a class="edit" href="https://github.com/{{ github-edit-path }}">
+				<i class="fa-solid fa-pen-to-square"></i>
+			</a>
+			<time>{{ post.date |  date: "%Y-%m-%d" }}</time>
+			</p>
+		</header>
+		{{ post.content | replace: "<h3", "<h4" | replace: "</h3>", "</h4>" | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" }}
+	</article>
+	{% endif %}
+	{% endfor %}
+</div>
